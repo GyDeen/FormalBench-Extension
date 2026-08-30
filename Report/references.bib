@@ -1,0 +1,159 @@
+@inproceedings{lecong2025FormalBench,
+  title = {Can {LLM}s Reason About Program Semantics? A Comprehensive Evaluation of {LLM}s on Formal Specification Inference},
+  author = {Le-Cong, Thanh and Le, Bach and Murray, Toby},
+  booktitle = {Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)},
+  year = {2025},
+  pages = {21991--22014},
+  publisher = {Association for Computational Linguistics}
+}
+
+@misc{zhou2026AutoACSL,
+author={Zhou,Han and Luo,Yu and Xu,Dianxiang},
+year={2026},
+title={AutoACSL: Synthesizing ACSL Specifications by Integrating LLMs with CPG-Based Static Analysis},
+journal={arXiv.org},
+note={版权 - © 2026. This work is published under http://arxiv.org/licenses/nonexclusive-distrib/1.0/ (the “License”). Notwithstanding the ProQuest Terms and Conditions, you may use this content in accordance with the terms of the License; 最近更新 - 2026-06-23},
+abstract={Generating formal specifications for C programs remains a challenge in formal verification due to the manual effort, expertise, and semantic precision required. While recent advancements in large language models (LLMs) offer promise in automating specification synthesis, current approaches often lack semantic depth and produce unverifiable or incomplete contracts. To address these limitations, we introduce AutoACSL, a novel framework that integrates LLM prompting with semantic features extracted from Code Property Graphs (CPGs). AutoACSL performs static analyses to extract key semantic elements, including arithmetic operations, loop and recursion structures, and return value propagation, which are encoded into structured prompts. These prompts enable the LLM not only to generate normal behavioral specifications but also to include constraints that prevent inputs leading to runtime errors. AutoACSL employs a feedback-driven synthesis loop, where candidate specifications are verified using Frama-C/WP and refined iteratively until verification succeeds or a termination condition is met. Evaluated on 604 programs drawn from diverse datasets, AutoACSL achieves a 98% specification generation success ratio and a 96% full proof ratio when paired with Gemini-3. Compared to a code-only baseline, AutoACSL improves the full proof ratio by 24.7% to 51.7% across four LLMs (GPT-o4 Mini, GPT-5.2, Grok-4.1, and Gemini-3), demonstrating that integrating large language models with CPG-based static analysis substantially enhances both generation robustness and verification effectiveness for automated ACSL specification synthesis.},
+keywords={Business And Economics--Banking And Finance; Artificial Intelligence; Software Engineering; Feature extraction; Semantics; Prompt engineering; Verification; Large language models; Synthesis; Formal specifications},
+language={English},
+url={https://www.proquest.com/working-papers/autoacsl-synthesizing-acsl-specifications/docview/3354991492/se-2},
+}
+
+@misc{Cheng2024AutoSpec,
+author={Cheng,Wen and Cao,Jialun and Su,Jie and Xu,Zhiwu and Qin,Shengchao and He,Mengda and Li,Haokun and Shing-Chi Cheung and Tian,Cong},
+year={2024},
+title={Enchanting Program Specification Synthesis by Large Language Models using Static Analysis and Program Verification},
+journal={arXiv.org},
+note={版权 - © 2024. This work is published under http://arxiv.org/licenses/nonexclusive-distrib/1.0/ (the “License”). Notwithstanding the ProQuest Terms and Conditions, you may use this content in accordance with the terms of the License; 最近更新 - 2024-04-04},
+abstract={Formal verification provides a rigorous and systematic approach to ensure the correctness and reliability of software systems. Yet, constructing specifications for the full proof relies on domain expertise and non-trivial manpower. In view of such needs, an automated approach for specification synthesis is desired. While existing automated approaches are limited in their versatility, i.e., they either focus only on synthesizing loop invariants for numerical programs, or are tailored for specific types of programs or invariants. Programs involving multiple complicated data types (e.g., arrays, pointers) and code structures (e.g., nested loops, function calls) are often beyond their capabilities. To help bridge this gap, we present AutoSpec, an automated approach to synthesize specifications for automated program verification. It overcomes the shortcomings of existing work in specification versatility, synthesizing satisfiable and adequate specifications for full proof. It is driven by static analysis and program verification, and is empowered by large language models (LLMs). AutoSpec addresses the practical challenges in three ways: (1) driving \name by static analysis and program verification, LLMs serve as generators to generate candidate specifications, (2) programs are decomposed to direct the attention of LLMs, and (3) candidate specifications are validated in each round to avoid error accumulation during the interaction with LLMs. In this way, AutoSpec can incrementally and iteratively generate satisfiable and adequate specifications. The evaluation shows its effectiveness and usefulness, as it outperforms existing works by successfully verifying 79% of programs through automatic specification synthesis, a significant improvement of 1.592x. It can also be successfully applied to verify the programs in a real-world X509-parser project.},
+keywords={Business And Economics--Banking And Finance; Software Engineering; Software reliability; Program verification (computers); System reliability; Nested loops; Invariants; Large language models; Automation; Versatility; Synthesis; Specifications; Computer programming},
+language={English},
+url={https://www.proquest.com/working-papers/enchanting-program-specification-synthesis-large/docview/3031411036/se-2},
+}
+
+@misc{Chen2026CodeSpecBench,
+author={Chen,Zaoyu and Dai,Jianbo and Zhu,Boyu and Wang,Jingdong and Wang,Huiming and Xu,Xin and Yuan,Haoyang and Guo,Zhijiang and Xiao-Ming,Wu},
+year={2026},
+title={CodeSpecBench: Benchmarking LLMs for Executable Behavioral Specification Generation},
+journal={arXiv.org},
+note={版权 - © 2026. This work is published under http://arxiv.org/licenses/nonexclusive-distrib/1.0/ (the “License”). Notwithstanding the ProQuest Terms and Conditions, you may use this content in accordance with the terms of the License; 最近更新 - 2026-04-15},
+abstract={Large language models (LLMs) can generate code from natural language, but the extent to which they capture intended program behavior remains unclear. Executable behavioral specifications, defined via preconditions and postconditions, provide a concrete means to assess such understanding. However, existing work on specification generation is constrained in evaluation methodology, task settings, and specification expressiveness. We introduce CodeSpecBench, a benchmark for executable behavioral specification generation under an execution-based evaluation protocol. CodeSpecBench supports both function-level and repository-level tasks and encodes specifications as executable Python functions. Constructed from diverse real-world codebases, it enables a realistic assessment of both correctness (accepting valid behaviors) and completeness (rejecting invalid behaviors). Evaluating 15 state-of-the-art LLMs on CodeSpecBench, we observe a sharp performance degradation on repository-level tasks, where the best model attains only a 20.2% pass rate. We further find that specification generation is substantially more challenging than code generation, indicating that strong coding performance does not necessarily reflect deep understanding of intended program semantics. Our data and code are available at https://github.com/SparksofAGI/CodeSpecBench.},
+keywords={Business And Economics--Banking And Finance; Software Engineering; Computation and Language; Repositories; Behavior; Semantics; Performance degradation; Large language models; Specifications},
+language={English},
+url={https://www.proquest.com/working-papers/codespecbench-benchmarking-llms-executable/docview/3329531054/se-2},
+}
+
+@inproceedings{Sevenhuijsen2025VeCoGen,
+  title = {VeCoGen: Automating Generation of Formally Verified C Code with Large Language Models},
+  author = {Sevenhuijsen, Merlijn and Etemadi, Khashayar and Nyberg, Mattias},
+  booktitle = {2025 IEEE/ACM 13th International Conference on Formal Methods in Software Engineering (FormaliSE)},
+  year = {2025},
+  doi = {10.1109/FORMALISE66629.2025.00017},
+  publisher = {IEEE/ACM}
+}
+
+
+@article{Gao2026CoRe,
+  author = {Gao, Jun and Peng, Yun and Qiao, Qian and Zhou, Changhai and Zhou, Yuhua and Zhang, Shiyang and Weng, Shichao and Xing, Zhenchang and Ren, Xiaoxue},
+  title = {CoRE: A Fine-Grained Code Reasoning Benchmark Beyond Output Prediction},
+  journal = {arXiv preprint},
+  year = {2026},
+  eprint = {2604.25399},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.SE}
+}
+
+
+@misc{Abdollahi2025DemystifyingErrors,
+  author = {Abdollahi, Mohammad and Tasnia, Khandaker Rifah and Saha, Soumit Kanti and Yang, Jinqiu and Wang, Song and Hemmati, Hadi},
+  title = {Demystifying Errors in LLM Reasoning Traces: An Empirical Study of Code Execution Simulation},
+  year = {2025},
+  eprint = {2512.00215},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.SE}
+}
+
+@misc{Beg2026EvalLLMGeneratedACSL,
+  author = {Beg, Arshad and O'Donoghue, Diarmuid and Monahan, Rosemary},
+  title = {Evaluating LLM-Generated ACSL Annotations for Formal Verification},
+  year = {2026},
+  eprint = {2602.13851},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.SE}
+}
+
+@article{Li2026MultiLanguageCodeSemanticReasoning,
+  author = {Li, Yikun and Jiang, Jinfeng and Zhang, Ting and Yang, Chengran and Zhong, Chenxing and Yide, Yin and Wen Bin, Leow and Ouh, Eng Lieh and Shar, Lwin Khin and Lo, David},
+  title = {An Execution-Verified Multi-Language Benchmark for Code Semantic Reasoning},
+  journal = {arXiv preprint},
+  year = {2026},
+  eprint = {2605.11006},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.SE}
+}
+
+@article{Su2026NL2ACSL,
+  author = {Su, Wenxian and Wu, Xi and Zhao, Yongxin},
+  title = {NL2ACSL: Interactively Translating Natural Language to ANSI C Specification Language with Large Language Models},
+  journal = {Knowledge-Based Systems},
+  volume = {335},
+  pages = {115177},
+  year = {2026}
+}
+
+@misc{Liu2024RefiningChatGPTGeneratedCode,
+  author = {Liu, Yue and Le-Cong, Thanh and Widyasari, Ratnadira and Tantithamthavorn, Chakkrit and Li, Li and Le, Xuan-Bach D. and Lo, David},
+  title = {Refining ChatGPT-Generated Code: Characterizing and Mitigating Code Quality Issues},
+  year = {2024}
+}
+
+@misc{Chen2025REval,
+  author = {Chen, Junkai and Pan, Zhiyuan and Hu, Xing},
+  title = {Reasoning Runtime Behavior of a Program with LLM: How Far Are We?},
+  year = {2025}
+}
+
+@article{Granberry2026SeekingSpecifications,
+  author = {Granberry, George and Ahrendt, Wolfgang and Johansson, Moa},
+  title = {Seeking Specifications: The Case for Neuro-Symbolic Specification Synthesis},
+  journal = {Formal Aspects of Computing},
+  volume = {38},
+  number = {2},
+  pages = {16},
+  year = {2026}
+}
+
+@misc{Granberry2024SpecifyWhat,
+  author = {Granberry, George and Ahrendt, Wolfgang and Johansson, Moa},
+  title = {Specify What? Enhancing Neural Specification Synthesis by Symbolic Methods},
+  year = {2024},
+  eprint = {2406.15540},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.SE}
+}
+
+@misc{Ma2025SpecEval,
+  author = {Ma, Lezhi and Li, Shangru and Liu, Shangqing},
+  title = {SpecEval: Evaluating Code Comprehension in Large Language Models via Program Specifications},
+  year = {2025},
+  eprint = {2409.12866},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.SE}
+}
+
+
+@article{Liu2026LLMAgent,
+author = {Liu, Junwei and Wang, Kaixin and Chen, Yixuan and Peng, Xin and Chen, Zhenpeng and Zhang, Lingming and Lou, Yiling},
+title = {Large Language Model-Based Agents for Software Engineering: A Survey},
+year = {2026},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+issn = {1049-331X},
+url = {https://doi.org/10.1145/3796507},
+doi = {10.1145/3796507},
+abstract = {The recent advance in Large Language Models (LLMs) has shaped a new paradigm of AI agents, i.e., LLM-based agents. Compared to standalone LLMs, LLM-based agents substantially extend the versatility and expertise of LLMs by enhancing LLMs with the capabilities of perceiving and utilizing external resources and tools. To date, LLM-based agents have been applied and shown remarkable effectiveness in Software Engineering (SE). The synergy between multiple agents and human interaction brings further promise in tackling complex real-world SE problems. In this work, we present a comprehensive and systematic survey on LLM-based agents for SE. We collect 124 papers and categorize them from two perspectives, i.e., the SE and agent perspectives. In addition, we discuss open challenges and future directions in this critical domain. The repository of this survey is at .},
+note = {Just Accepted},
+journal = {ACM Trans. Softw. Eng. Methodol.},
+month = mar,
+keywords = {Large Language Model, AI Agent, Software Engineering}
+}
