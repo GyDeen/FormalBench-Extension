@@ -1,0 +1,26 @@
+
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+import java.math.*;
+
+class BigDiff {
+
+	public static int bigDiff(int[] nums) {
+		int max = nums[0];
+		int min = nums[0];
+		for (int i = 1; i < nums.length; i++) {
+			if (!(nums[i] > max))
+				;
+			else {
+				max = nums[i];
+			}
+			if (!(nums[i] < min))
+				;
+			else {
+				min = nums[i];
+			}
+		}
+		return max - min;
+	}
+}

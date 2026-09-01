@@ -1,0 +1,27 @@
+
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+import java.math.*;
+
+class RemoveListRange {
+
+	public static int[][] removeListRange(int[][] list1, int leftrange, int rigthrange) {
+		List<int[]> resultList = new ArrayList<>();
+
+		for (int[] subList : list1) {
+			if (subList.length > 0 && subList[0] >= leftrange && subList[0] <= rigthrange) {
+				resultList.add(subList);
+			}
+		}
+
+		int[][] resultArray = new int[resultList.size()][];
+		int index = 0;
+		while (index < resultList.size()) {
+			resultArray[index] = resultList.get(index);
+			index++;
+		}
+
+		return resultArray;
+	}
+}

@@ -1,0 +1,26 @@
+
+import java.io.*;
+import java.lang.*;
+import java.math.*;
+
+class CountReversePairs {
+
+	public static String countReversePairs(String[] testArray) {
+		int result = 0;
+		int n = testArray.length;
+
+		for (int c = 0; c < n; c++) {
+			for (int k = c + 1; k < n; k++) {
+				if (testArray[c].equals(reverse(testArray[k]))) {
+					result++;
+				}
+			}
+		}
+		return Integer.toString(result);
+	}
+
+	private static String reverse(String Array) {
+		StringBuilder builder = new StringBuilder(Array);
+		return builder.reverse().toString();
+	}
+}

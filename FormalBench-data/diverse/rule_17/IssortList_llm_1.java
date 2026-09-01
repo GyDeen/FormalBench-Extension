@@ -1,0 +1,25 @@
+
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+import java.math.*;
+
+class IssortArray {
+
+	public static Boolean issortArray(int[] array) {
+		if (array.length == 0) {
+			return true;
+		}
+		if (array.length == 1) {
+			return true;
+		}
+		int index = array.length - 1;
+		for (int i = 0; i < index; i++) {
+			int j = i + 1;
+			if (array[i] > array[j]) {
+				return false;
+			}
+		}
+		return true;
+	}
+}

@@ -1,0 +1,19 @@
+
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+import java.math.*;
+
+class NthItems {
+
+	public static int[] nthItems(int[] arr, int n) {
+		int r = arr.length + n - 1;
+		int size = (r) / n;
+		int[] result = new int[size];
+
+		for (int i = 0, j = 0; i < arr.length; i += n, j++) {
+			result[j] = arr[i];
+		}
+		return result;
+	}
+}

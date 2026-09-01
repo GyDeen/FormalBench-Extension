@@ -1,0 +1,18 @@
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+import java.math.*;
+
+class CountOddSquares {
+
+	public static int countOddSquares(int n, int m) {
+		int count = 0;
+		for (int i = n; i <= m; i++) {
+			double square = Math.sqrt(i);
+			if (square % 1 == 0 && i % 1 == 0) {
+				count += 1;
+			}
+		}
+		return count;
+	}
+}

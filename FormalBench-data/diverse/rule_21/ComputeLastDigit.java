@@ -1,0 +1,21 @@
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+import java.math.*;
+
+class ComputeLastDigit {
+
+	public static int computeLastDigit(int a, int b) {
+		int variable = 1;
+		if (b == a) {
+			return 1;
+		} else if ((b - a) >= 5) {
+			return 0;
+		} else {
+			for (int i = a + 1; i < b + 1; i++) {
+				variable = (variable * (i % 10)) % 10;
+			}
+			return variable % 10;
+		}
+	}
+}

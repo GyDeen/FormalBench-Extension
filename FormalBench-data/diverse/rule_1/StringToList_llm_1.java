@@ -1,0 +1,14 @@
+
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+import java.math.*;
+
+class StringToArray {
+
+	public static String[] stringToArray(String Array) {
+		String[] result = Array.split(" ");
+
+		return result;
+	}
+}

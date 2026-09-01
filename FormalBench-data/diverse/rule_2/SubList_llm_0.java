@@ -1,0 +1,18 @@
+
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+
+class SubList {
+
+	public static int[] subList(int[] nums1, int[] nums2) {
+		int length = Math.min(nums1.length, nums2.length);
+		int[] result = new int[length];
+		int num = 0;
+		while (num < length) {
+			result[num] = nums1[num] - nums2[num];
+			num++;
+		}
+		return result;
+	}
+}

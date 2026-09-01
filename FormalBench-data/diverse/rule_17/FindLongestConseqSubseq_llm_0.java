@@ -1,0 +1,37 @@
+
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+import java.math.*;
+
+class FindLongestConseqSubseq {
+
+	public static int findLongestConseqSubseq(int[] arr, int n) {
+		if (n == 0)
+			return 0;
+
+		Arrays.sort(arr);
+
+		int ans = 0;
+		int count = 1;
+
+		for (int i = 1; i < n; i++) {
+			int j = i - 1;
+			if (arr[i] == arr[j]) {
+				continue;
+			}
+
+			int tmp = arr[i - 1] + 1;
+			if (arr[i] == tmp) {
+				count++;
+			} else {
+				ans = Math.max(ans, count);
+				count = 1;
+			}
+		}
+
+		ans = Math.max(ans, count);
+
+		return ans;
+	}
+}

@@ -1,0 +1,22 @@
+
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+import java.math.*;
+
+class LargestSubset {
+
+	public static int largestSubset(int[] a, int n) {
+		int[] dp = new int[n];
+		dp[n - 1] = 1;
+		for (int i = n - 2; i >= 0; i--) {
+			int mxm = 0;
+			for (int j = i + 1; j < n; j++) {
+				mxm = (a[j] % a[i] == 0 || a[i] % a[j] == 0) ? Math.max(mxm, dp[j]) : mxm;
+			}
+			dp[i] = 1 + mxm;
+		}
+
+		return dp[0];
+	}
+}

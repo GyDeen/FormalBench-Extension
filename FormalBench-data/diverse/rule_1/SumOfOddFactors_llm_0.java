@@ -1,0 +1,19 @@
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+import java.math.*;
+
+class SumOfOddFactors {
+
+	public static int sumOfOddFactors(int num) {
+		int N = 0;
+		for (int j = 1; j <= num; j++) {
+			if (num % j == 0) {
+				if (j % 2 != 0) {
+					N += j;
+				}
+			}
+		}
+		return N;
+	}
+}

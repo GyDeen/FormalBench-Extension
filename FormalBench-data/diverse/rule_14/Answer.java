@@ -1,0 +1,21 @@
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+import java.math.*;
+
+class Answer {
+
+	public static List<Integer> answer(int l, int r) {
+		List<Integer> result = new ArrayList<>();
+
+		for (int i = 1; i < r - l + 1; i++) {
+			int temp = l * i;
+			if (!(temp < r)) {
+				break;
+			} else {
+				result.add(temp);
+			}
+		}
+		return result;
+	}
+}

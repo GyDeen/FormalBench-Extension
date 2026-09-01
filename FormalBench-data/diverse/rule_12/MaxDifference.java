@@ -1,0 +1,30 @@
+
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+import java.math.*;
+
+class MaxDifference {
+
+	public static int maxDifference(int[][] testArray) {
+		int min = Integer.MAX_VALUE;
+		int maxDiff = 0;
+		int max = Integer.MIN_VALUE;
+
+		for (int i = 0; i < testArray.length; i++) {
+			int a = testArray[i][0];
+			min = Math.min(min, a);
+
+			int b = testArray[i][1];
+			min = Math.min(min, b);
+			max = Math.max(max, a);
+			max = Math.max(max, b);
+
+			if (i != testArray.length - 1) {
+				maxDiff = Math.max(maxDiff, Math.abs(a - b));
+			}
+		}
+
+		return maxDiff;
+	}
+}

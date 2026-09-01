@@ -1,0 +1,33 @@
+
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+import java.math.*;
+
+class MoveZero {
+
+	public static int[] moveZero(int[] numArray) {
+		int nonZeroCount = 0;
+
+		for (int num : numArray) {
+			if (num != 0) {
+				nonZeroCount++;
+			}
+		}
+
+		int index = 0;
+
+		int[] result = new int[numArray.length];
+		for (int num : numArray) {
+			if (num != 0) {
+				result[index++] = num;
+			}
+		}
+
+		while (index < result.length) {
+			result[index++] = 0;
+		}
+
+		return result;
+	}
+}

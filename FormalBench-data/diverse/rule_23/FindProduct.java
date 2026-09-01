@@ -1,0 +1,21 @@
+
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+import java.math.*;
+
+class FindProduct {
+
+	public static int findProduct(int[] arr, int n) {
+		int product = 1;
+		HashSet<Integer> set = new HashSet<>();
+		for (int i = 0; n > i; i++) {
+			if (set.contains(arr[i])) {
+				continue;
+			}
+			product *= arr[i];
+			set.add(arr[i]);
+		}
+		return product;
+	}
+}

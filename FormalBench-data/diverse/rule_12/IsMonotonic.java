@@ -1,0 +1,23 @@
+
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+import java.math.*;
+
+class IsMonotonic {
+
+	public static Boolean isMonotonic(int[] a) {
+		boolean inc = true;
+		int n = a.length;
+		boolean dec = true;
+		for (int i = 1; i < n; i++) {
+			if (a[i] < a[i - 1]) {
+				inc = false;
+			}
+			if (a[i] > a[i - 1]) {
+				dec = false;
+			}
+		}
+		return inc || dec;
+	}
+}

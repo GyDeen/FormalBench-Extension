@@ -1,0 +1,28 @@
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+import java.math.*;
+
+class MaxRunUppercase {
+
+	public static int maxRunUppercase(String testStr) {
+		int max = 0;
+		int count = 0;
+		for (int i = 0; i < testStr.length(); i++) {
+			if (!(Character.isUpperCase(testStr.charAt(i)))) {
+				if (count > max) {
+					max = count;
+				}
+				count = 0;
+			} else {
+				count++;
+			}
+		}
+		if (!(count > max))
+			;
+		else {
+			max = count;
+		}
+		return max;
+	}
+}

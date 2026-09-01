@@ -1,0 +1,15 @@
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+import java.math.*;
+
+class AsciiValue {
+
+	public static int asciiValue(String k) {
+		if (!(k.length() == 1)) {
+			return -1;
+		} else {
+			return (int) k.charAt(0);
+		}
+	}
+}
