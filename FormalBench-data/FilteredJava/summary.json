@@ -1,0 +1,65 @@
+{
+  "input": "/Users/deenzhou/Downloads/Unimelb/ResearchProject/FormalBench-Extension/FormalBench-data/base/meta_data.jsonl",
+  "seed": 726,
+  "sample_per_category": 30,
+  "exclude_review": false,
+  "total": 699,
+  "eligible": 337,
+  "excluded": 362,
+  "review_required": 163,
+  "total_by_category": {
+    "sequential": 110,
+    "branch": 82,
+    "single_path_loop": 145,
+    "multi_path_loop": 256,
+    "nested": 106
+  },
+  "eligible_by_category": {
+    "sequential": 50,
+    "branch": 32,
+    "single_path_loop": 88,
+    "multi_path_loop": 106,
+    "nested": 61
+  },
+  "total_by_sampling_category": {
+    "sequential": 108,
+    "branch": 64,
+    "single_path_loop": 145,
+    "multi_path_loop": 245,
+    "nested": 103,
+    "recursive": 34
+  },
+  "eligible_by_sampling_category": {
+    "sequential": 48,
+    "branch": 18,
+    "single_path_loop": 88,
+    "multi_path_loop": 104,
+    "nested": 60,
+    "recursive": 19
+  },
+  "sample_by_sampling_category": {
+    "sequential": 30,
+    "branch": 18,
+    "single_path_loop": 30,
+    "multi_path_loop": 30,
+    "nested": 30,
+    "recursive": 19
+  },
+  "exclusion_reason_counts": {
+    "uses Java strings": 211,
+    "declares boxed primitive values": 131,
+    "uses Java collections": 79,
+    "creates Java objects": 69,
+    "uses Object values": 37,
+    "uses streams or lambdas": 12,
+    "uses Java exceptions": 6,
+    "uses boxed primitive operations": 2
+  },
+  "review_reason_counts": {
+    "check the corresponding C math-library operation": 90,
+    "review nontrivial loop control": 26,
+    "check bitwise and shift translation": 26,
+    "review floating-point semantics": 26,
+    "review helper-method translation": 11
+  }
+}
