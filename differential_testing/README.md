@@ -1,21 +1,29 @@
-# EvoSuite input extraction
+# Differential testing
 
-`translate_test.py` extracts only the inputs and ordered target-program calls
-from EvoSuite `*_ESTest.java` files. It ignores scaffolding, constructors, JUnit
-assertions, and expected return values or exceptions.
+The package is divided into two stages:
 
-The implementation is separated by responsibility:
+- `generation/` generates EvoSuite tests and extracts portable inputs.
+- `execution/` contains Java/C execution and comparison logic.
+
+## EvoSuite input extraction
+
+`generation/extract_test_inputs.py` extracts only the inputs and ordered
+target-program calls from EvoSuite `*_ESTest.java` files. It ignores
+scaffolding, constructors, JUnit assertions, and expected return values or
+exceptions.
+
+The extraction implementation is separated by responsibility:
 
 - `java_input_parser.py` handles the supported Java syntax and type conversion.
 - `input_extractor.py` builds fixtures, references, and ordered call records.
-- `translate_test.py` provides the command-line and JSON output interface.
+- `extract_test_inputs.py` provides the command-line and JSON output interface.
 
 Run it with:
 
 ```bash
-python3 test_generator/translate_test.py \
+python3 -m differential_testing.generation.extract_test_inputs \
   FormalBench-data/FilteredJava/evosuite/<run-id>/evosuite-tests \
-  --output test_generator/test_inputs.json
+  --output differential_testing/generation/test_inputs.json
 ```
 
 ## JSON format
@@ -58,12 +66,12 @@ Each entry in `tests` represents one non-constructor JUnit test:
 
 ## Java/C result comparison
 
-`compare_java_c.py` compares normalized execution results produced by Java and
-C runners:
+`execution/compare_java_c.py` compares normalized execution results produced
+by Java and C runners:
 
 ```bash
-python3 test_generator/compare_java_c.py \
-  --inputs test_generator/test_inputs.json \
+python3 -m differential_testing.execution.compare_java_c \
+  --inputs differential_testing/generation/test_inputs.json \
   --java-results java_results.json \
   --c-results c_results.json \
   --output comparison.json

@@ -9,7 +9,7 @@ from collections.abc import Sequence
 from pathlib import Path
 from typing import Any
 
-from test_generator.java_test_generation import (
+from differential_testing.generation.java_test_generation import (
     compile_selected_java,
     extract_selected_java,
     run_evosuite,
