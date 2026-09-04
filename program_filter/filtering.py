@@ -18,8 +18,6 @@ CATEGORIES = (
     "nested",
 )
 
-SAMPLING_CATEGORIES = (*CATEGORIES, "recursive")
-
 
 HARD_EXCLUSION_PATTERNS: tuple[tuple[str, str], ...] = (
     (r"\bString(?:Builder|Buffer)?\b", "uses Java strings"),
@@ -187,9 +185,6 @@ def classify(record: dict[str, Any], exclude_review: bool) -> dict[str, Any]:
 
     return {
         **record,
-        "sampling_category": (
-            "recursive" if features["has_recursion"] else record["category"]
-        ),
         "features": features,
         "eligible": eligible,
         "exclusion_reasons": exclusion_reasons,
@@ -238,7 +233,6 @@ def write_review_csv(path: Path, records: list[dict[str, Any]]) -> None:
     fieldnames = (
         "class_name",
         "category",
-        "sampling_category",
         "eligible",
         "review_required",
         "exclusion_reasons",
@@ -260,7 +254,6 @@ def write_review_csv(path: Path, records: list[dict[str, Any]]) -> None:
                 {
                     "class_name": record["class_name"],
                     "category": record["category"],
-                    "sampling_category": record["sampling_category"],
                     "eligible": record["eligible"],
                     "review_required": record["review_required"],
                     "exclusion_reasons": "; ".join(record["exclusion_reasons"]),
@@ -284,11 +277,11 @@ def stratified_sample(
         return []
     grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for record in eligible:
-        grouped[record["sampling_category"]].append(record)
+        grouped[record["category"]].append(record)
 
     rng = random.Random(seed)
     selected: list[dict[str, Any]] = []
-    for category in SAMPLING_CATEGORIES:
+    for category in CATEGORIES:
         population = sorted(grouped[category], key=lambda item: item["class_name"])
         selected.extend(rng.sample(population, min(per_category, len(population))))
     return selected
@@ -298,11 +291,3 @@ def count_by_category(records: Iterable[dict[str, Any]]) -> dict[str, int]:
     """Count program records in each supported category."""
     counts = Counter(record["category"] for record in records)
     return {category: counts[category] for category in CATEGORIES}
-
-
-def count_by_sampling_category(
-    records: Iterable[dict[str, Any]],
-) -> dict[str, int]:
-    """Count records using the derived categories used for sampling."""
-    counts = Counter(record["sampling_category"] for record in records)
-    return {category: counts[category] for category in SAMPLING_CATEGORIES}

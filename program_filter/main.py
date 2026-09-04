@@ -11,7 +11,6 @@ from typing import Any, Sequence
 from .filtering import (
     classify,
     count_by_category,
-    count_by_sampling_category,
     load_jsonl,
     stratified_sample,
     write_jsonl,
@@ -174,9 +173,7 @@ def main(argv: Sequence[str] | None = None) -> None:
         "review_required": sum(record["review_required"] for record in annotated),
         "total_by_category": count_by_category(records),
         "eligible_by_category": count_by_category(eligible),
-        "total_by_sampling_category": count_by_sampling_category(annotated),
-        "eligible_by_sampling_category": count_by_sampling_category(eligible),
-        "sample_by_sampling_category": count_by_sampling_category(sample),
+        "sample_by_category": count_by_category(sample),
         "generated_artifacts": generated_artifacts,
         "exclusion_reason_counts": dict(exclusion_counts.most_common()),
         "review_reason_counts": dict(review_counts.most_common()),
