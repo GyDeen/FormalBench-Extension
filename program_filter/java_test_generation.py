@@ -61,8 +61,7 @@ def extract_selected_java(
                 "qualified_class_name": (
                     f"{package_name}.{class_name}" if package_name else class_name
                 ),
-                "original_category": record["category"],
-                "sampling_category": record["sampling_category"],
+                "category": record["category"],
                 "source_file": str(java_path.resolve()),
             }
         )
