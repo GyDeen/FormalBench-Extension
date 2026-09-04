@@ -1,0 +1,700 @@
+class_name,category,eligible,review_required,exclusion_reasons,review_reasons,overflow_risk,has_if,has_loop,estimated_loop_depth,has_array,has_recursion,method_count
+ParabolaDirectrix,sequential,True,False,,,possible,False,False,0,False,False,1
+CombineLists,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+SecondFrequent,nested,False,True,uses Java strings; creates Java objects,review nontrivial loop control,possible,True,True,2,True,False,1
+TextMatchOne,branch,False,False,uses Java strings,,low,True,False,0,False,False,1
+MinOps,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+LongestIncreasingSubsequence,nested,True,True,,check the corresponding C math-library operation,possible,True,True,2,True,False,1
+ConsecutiveDuplicates,multi_path_loop,False,True,uses Object values; creates Java objects,review helper-method translation,possible,True,True,1,True,True,2
+Minimum,branch,True,False,,,low,True,False,0,False,False,1
+MinOfTwo,branch,True,False,,,low,True,False,0,False,False,1
+MaxSumIncreasingSubsequence,nested,True,True,,check the corresponding C math-library operation,possible,True,True,2,True,False,1
+CountFac,multi_path_loop,True,True,,review nontrivial loop control,possible,True,True,1,False,False,1
+SumEven,multi_path_loop,True,False,,,possible,True,True,1,False,False,1
+SortCounter,single_path_loop,False,False,uses Java strings; uses Java collections; uses streams or lambdas; uses Object values; creates Java objects,,possible,False,True,1,True,False,1
+PrimeNum,multi_path_loop,False,True,declares boxed primitive values,check the corresponding C math-library operation,possible,True,True,1,False,False,1
+ExtractSingly,nested,False,False,uses Java collections,,possible,False,True,2,True,False,1
+MutipleTuple,single_path_loop,True,False,,,possible,False,True,1,True,False,1
+NumCommDiv,multi_path_loop,True,False,,,possible,True,True,1,False,False,1
+CommonPrefix,nested,False,False,uses Java strings,,possible,True,True,2,True,False,1
+FindLongWord,multi_path_loop,False,False,uses Java strings; creates Java objects,,possible,True,True,1,True,False,1
+RadianDegree,sequential,False,True,declares boxed primitive values,check the corresponding C math-library operation,low,False,False,0,False,False,1
+SumNums,branch,True,False,,,possible,True,False,0,False,False,1
+PairWise,single_path_loop,True,False,,,possible,True,True,1,True,False,1
+Answer,multi_path_loop,False,True,uses Java collections,review nontrivial loop control,possible,True,True,1,False,False,0
+SubstractElements,nested,True,False,,,possible,False,True,2,True,False,1
+TwoUniqueNums,multi_path_loop,False,False,uses Java collections,,possible,True,True,1,True,False,1
+AreaPolygon,sequential,False,True,declares boxed primitive values,check the corresponding C math-library operation,possible,False,False,0,False,False,1
+SimilarElements,multi_path_loop,False,False,uses Java collections,,possible,True,True,1,True,False,1
+MaxSubArraySumRepeated,multi_path_loop,True,True,,check the corresponding C math-library operation,possible,True,True,1,True,False,1
+RotateLeft,single_path_loop,True,False,,,possible,False,True,1,True,False,1
+MultiplesOfNum,single_path_loop,True,False,,,possible,False,True,1,True,False,1
+CheckIsosceles,sequential,False,False,declares boxed primitive values,,low,False,False,0,False,False,1
+CountElim,multi_path_loop,False,False,uses Object values,,possible,True,True,1,True,False,1
+CountIntgralPoints,sequential,True,False,,,possible,False,False,0,False,False,1
+MaxSubArraySum,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+CountingSort,nested,True,False,,,possible,True,True,2,True,False,1
+SumEvenOdd,multi_path_loop,True,True,,review nontrivial loop control,possible,True,True,1,True,False,1
+CheckChar,branch,False,False,uses Java strings,,low,True,False,0,False,False,1
+MinProductTuple,nested,True,True,,check the corresponding C math-library operation,possible,False,True,2,True,False,1
+IsNotPrime,multi_path_loop,False,False,declares boxed primitive values,,possible,True,True,1,False,False,1
+FindLucas,single_path_loop,True,False,,,possible,False,True,1,True,False,1
+RemoveAllSpaces,multi_path_loop,False,False,uses Java strings; creates Java objects,,possible,True,True,1,False,False,1
+Split,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+Count,multi_path_loop,False,False,uses Java strings,,possible,True,True,1,False,False,1
+AddDictToTuple,single_path_loop,False,False,uses Java strings; uses Java collections; declares boxed primitive values; uses Object values,,low,False,True,1,False,False,0
+SumElements,single_path_loop,True,False,,,possible,False,True,1,True,False,1
+TupString,single_path_loop,False,False,uses Java strings; creates Java objects,,low,False,True,1,True,False,1
+ConcatenateStrings,single_path_loop,False,False,uses Java strings; uses Java collections,,possible,False,True,1,False,False,0
+CountElementFreq,nested,False,False,uses Java collections; uses Object values,,possible,True,True,2,True,False,0
+IsUndulating,multi_path_loop,False,False,uses Java strings; declares boxed primitive values,,possible,True,True,1,False,False,1
+LongestSubseqWithDiffOne,nested,True,True,,check the corresponding C math-library operation,possible,True,True,2,True,False,1
+RemoveReplica,multi_path_loop,False,False,uses Java collections; uses Object values; creates Java objects,,possible,True,True,1,True,False,1
+OddValuesString,multi_path_loop,False,False,uses Java strings,,possible,True,True,1,False,False,1
+RemoveUppercase,sequential,False,False,uses Java strings,,low,False,False,0,False,False,1
+SwapList,branch,True,False,,,possible,True,False,0,True,False,1
+IsEven,sequential,False,True,declares boxed primitive values,check bitwise and shift translation,low,False,False,0,False,False,1
+Lcopy,sequential,True,False,,,low,False,False,0,True,False,1
+PairOrSum,nested,True,True,,check bitwise and shift translation,possible,False,True,2,True,False,1
+FindRotations,multi_path_loop,False,False,uses Java strings,,possible,True,True,1,True,False,1
+SuperSeq,branch,False,True,uses Java strings,check the corresponding C math-library operation,possible,True,False,0,False,True,1
+WordLen,branch,False,False,uses Java strings; declares boxed primitive values,,possible,True,False,0,False,False,1
+CountSamepair,multi_path_loop,True,True,,check the corresponding C math-library operation,possible,True,True,1,True,False,1
+ExtractNthElement,single_path_loop,False,False,uses Object values; creates Java objects,,possible,False,True,1,True,False,1
+AddTuple,sequential,True,False,,,possible,False,False,0,True,False,1
+NextPowerOf2,single_path_loop,True,True,,check bitwise and shift translation,low,True,True,1,False,False,1
+CheckOccurences,single_path_loop,False,False,uses Java strings; uses Java collections,,possible,False,True,1,True,False,0
+SampleNam,multi_path_loop,False,True,uses Java strings,review nontrivial loop control,possible,True,True,1,True,False,1
+SquarePerimeter,sequential,True,False,,,possible,False,False,0,False,False,1
+FindSubstring,multi_path_loop,False,False,uses Java strings; declares boxed primitive values,,low,True,True,1,True,False,1
+MaxDifference,multi_path_loop,True,True,,check the corresponding C math-library operation,possible,True,True,1,True,False,1
+Maxaverageofpath,nested,False,True,declares boxed primitive values,review floating-point semantics; check the corresponding C math-library operation,possible,False,True,2,True,False,1
+RemoveDuplicList,multi_path_loop,False,False,uses Java strings; uses Java collections; creates Java objects,,low,True,True,1,True,False,1
+ParabolaVertex,sequential,True,True,,review floating-point semantics,possible,False,False,0,True,False,1
+AreaTetrahedron,sequential,False,True,declares boxed primitive values,check the corresponding C math-library operation,possible,False,False,0,False,False,1
+ExtractMax,multi_path_loop,False,False,uses Java strings,,low,True,True,1,True,False,1
+AdjacentNumProduct,multi_path_loop,False,False,uses Java exceptions; creates Java objects,,possible,True,True,1,True,False,1
+RepeatTuples,single_path_loop,True,False,,,possible,False,True,1,True,False,1
+DecimalToBinary,single_path_loop,False,False,uses Java strings,,possible,False,True,1,False,False,1
+PalindromeLambda,multi_path_loop,False,True,uses Java strings; creates Java objects,review helper-method translation,possible,True,True,1,True,True,2
+CountDivisors,multi_path_loop,False,False,uses Java strings,,possible,True,True,1,False,False,1
+LateralsufaceCylinder,sequential,False,True,declares boxed primitive values,review floating-point semantics,possible,False,False,0,False,False,1
+CatalanNumber,nested,True,False,,,possible,False,True,2,True,False,1
+DictFilter,multi_path_loop,False,False,uses Java strings; uses Java collections,,low,True,True,1,False,False,0
+CountWithOddSetbits,multi_path_loop,True,False,,,possible,True,True,1,False,False,1
+CountSubstrings,nested,False,False,uses Java strings,,possible,True,True,2,False,False,1
+PerimeterPolygon,single_path_loop,True,False,,,possible,False,True,1,False,False,1
+Divisor,multi_path_loop,True,False,,,possible,True,True,1,False,False,1
+ParallelogramArea,sequential,True,False,,,possible,False,False,0,False,False,1
+StringToTuple,multi_path_loop,False,False,uses Java strings; creates Java objects,,possible,True,True,1,True,False,1
+LenComplex,sequential,False,True,declares boxed primitive values,check the corresponding C math-library operation,possible,False,False,0,False,False,1
+DifferAtOneBitPos,sequential,False,True,declares boxed primitive values,check bitwise and shift translation,possible,False,False,0,False,False,1
+TupleIntStr,nested,False,False,uses Java strings,,possible,False,True,2,True,False,1
+FindMaxLenEven,multi_path_loop,False,False,uses Java strings,,possible,True,True,1,True,False,1
+DegreeRadian,sequential,False,True,declares boxed primitive values,check the corresponding C math-library operation,possible,False,False,0,False,False,1
+TnGp,sequential,True,False,,,possible,False,False,0,False,True,1
+ReplaceChar,multi_path_loop,False,False,uses Java strings; creates Java objects,,possible,True,True,1,False,False,1
+ModularInverse,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+AddNestedTuples,nested,True,False,,,possible,False,True,2,True,False,1
+ListTuple,sequential,True,False,,,low,False,False,0,True,False,1
+NoOfCubes,sequential,True,False,,,possible,False,False,0,False,False,1
+CountOddSquares,multi_path_loop,True,True,,review floating-point semantics; check the corresponding C math-library operation,possible,True,True,1,False,False,1
+DifSquare,multi_path_loop,False,False,declares boxed primitive values,,possible,True,True,1,False,False,1
+TupleStrInt,single_path_loop,False,False,uses Java strings,,possible,False,True,1,True,False,1
+EmptyList,single_path_loop,False,False,uses Java collections; uses Object values; creates Java objects,,possible,False,True,1,True,False,0
+FindKth,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+TextMatchWordzMiddle,branch,False,False,uses Java strings,,possible,True,False,0,False,False,1
+SnakeToCamel,single_path_loop,False,False,uses Java strings; creates Java objects,,possible,False,True,1,True,False,1
+GetPell,single_path_loop,True,False,,,possible,False,True,1,True,False,1
+CheckK,multi_path_loop,False,False,declares boxed primitive values,,low,True,True,1,True,False,1
+TestThreeEqual,branch,True,False,,,low,True,False,0,False,False,1
+PositionMin,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+IsSumOfPowersOfTwo,branch,False,True,declares boxed primitive values,check bitwise and shift translation,possible,True,False,0,False,True,1
+IsSamepatterns,multi_path_loop,False,False,uses Java strings; uses Java collections; declares boxed primitive values,,possible,True,True,1,True,False,1
+Sequence,branch,True,False,,,possible,True,False,0,False,True,1
+MaximumSum,nested,True,False,,,possible,True,True,2,True,False,1
+VolumeCone,sequential,False,True,declares boxed primitive values,review floating-point semantics; check the corresponding C math-library operation,possible,False,False,0,False,False,1
+OddNumSum,single_path_loop,True,True,,check the corresponding C math-library operation,possible,False,True,1,False,False,1
+LongestCommonSubsequence,nested,False,True,uses Java strings,check the corresponding C math-library operation,possible,True,True,2,True,False,1
+TupleToInt,single_path_loop,True,False,,,possible,False,True,1,True,False,1
+KthElement,branch,True,False,,,possible,True,False,0,True,False,1
+CheckConsecutive,multi_path_loop,False,False,declares boxed primitive values,,possible,True,True,1,True,False,1
+ListifyList,single_path_loop,False,False,uses Java strings; creates Java objects,,possible,False,True,1,True,False,1
+RemoveNested,nested,False,False,uses Object values,,possible,True,True,2,True,False,1
+GetCoordinates,nested,True,False,,,possible,False,True,2,True,False,1
+FindPeak,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+CountAlphaDigSpl,multi_path_loop,False,True,uses Java strings; uses Java collections,review nontrivial loop control,possible,True,True,1,False,False,0
+OddPosition,multi_path_loop,False,False,declares boxed primitive values,,possible,True,True,1,True,False,1
+SumPositivenum,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+CountInteger,multi_path_loop,False,False,uses Object values,,possible,True,True,1,True,False,1
+IsNumDecagonal,single_path_loop,True,False,,,possible,False,True,1,True,False,1
+ProdSquare,multi_path_loop,False,False,declares boxed primitive values,,possible,True,True,1,False,False,1
+MedianNumbers,sequential,False,True,declares boxed primitive values,review floating-point semantics,possible,False,False,0,True,False,1
+PermutationCoefficient,single_path_loop,True,False,,,possible,False,True,1,False,False,1
+FindMinDiff,nested,True,True,,check the corresponding C math-library operation,possible,True,True,2,True,False,1
+SearchLiteral,branch,False,False,uses Java strings,,possible,True,False,0,True,False,1
+RemoveEven,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+SqrtRoot,multi_path_loop,True,False,,,possible,True,True,1,False,False,1
+MultipleSplit,multi_path_loop,False,False,uses Java strings; creates Java objects,,possible,True,True,1,True,False,1
+CountRectangles,nested,True,False,,,possible,True,True,2,False,False,1
+EulerianNum,branch,True,False,,,possible,True,False,0,False,True,1
+AreaPentagon,sequential,False,True,declares boxed primitive values,review floating-point semantics; check the corresponding C math-library operation,possible,False,False,0,False,False,1
+AddPairwise,single_path_loop,True,False,,,possible,True,True,1,True,False,1
+PerimeterPentagon,sequential,True,False,,,possible,False,False,0,False,False,1
+FindMaxLength,nested,True,True,,review nontrivial loop control,possible,True,True,2,True,False,1
+SumThreeSmallestNums,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+MergeDictionariesThree,multi_path_loop,False,False,uses Java strings; uses Java collections,,low,True,True,1,False,False,0
+ChangeDateFormat,sequential,False,False,uses Java strings,,possible,False,False,0,True,False,1
+CheckValidity,branch,False,False,declares boxed primitive values,,possible,True,False,0,False,False,1
+TextMatch,branch,False,False,uses Java strings,,low,True,False,0,False,False,1
+IsSubArray,nested,False,True,declares boxed primitive values,review nontrivial loop control,possible,True,True,2,True,False,1
+TextUppercaseLowercase,multi_path_loop,False,True,uses Java strings,review nontrivial loop control,possible,True,True,1,False,False,1
+TnAp,sequential,True,False,,,possible,False,False,0,False,False,1
+UniqueElement,multi_path_loop,False,False,uses Java strings,,possible,True,True,1,True,False,1
+ReverseStringList,single_path_loop,False,False,uses Java strings; creates Java objects,,possible,False,True,1,True,False,1
+FindRemainder,single_path_loop,True,False,,,possible,False,True,1,True,False,1
+SdCalc,single_path_loop,False,True,declares boxed primitive values,review floating-point semantics; check the corresponding C math-library operation,possible,False,True,1,True,False,1
+StringListToTuple,single_path_loop,False,False,uses Java strings; creates Java objects,,possible,False,True,1,True,False,1
+CheckString,branch,False,False,uses Java strings; declares boxed primitive values,,low,True,False,0,False,False,1
+CountPrimesNums,nested,True,False,,,possible,True,True,2,True,False,1
+AverageOdd,multi_path_loop,True,False,,,possible,True,True,1,False,False,1
+MostOccurrences,nested,False,False,uses Java strings; uses Java collections,,possible,True,True,2,True,False,1
+ColonTuplex,sequential,False,False,uses Object values; creates Java objects,,low,False,False,0,True,False,1
+TriangleArea,branch,True,True,,check the corresponding C math-library operation,possible,True,False,0,False,False,1
+MoveFirst,branch,True,False,,,possible,True,False,0,True,False,1
+CountOdd,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+FindPlatform,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+MaximumSegments,multi_path_loop,True,True,,check the corresponding C math-library operation,possible,True,True,1,True,False,1
+SeriesSum,single_path_loop,True,False,,,possible,False,True,1,False,False,1
+MaxOfTwo,sequential,True,False,,,low,False,False,0,False,False,1
+SumOfAlternates,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+NthItems,single_path_loop,True,False,,,possible,False,True,1,True,False,1
+FindAngle,sequential,True,False,,,possible,False,False,0,False,False,1
+FindElement,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+SumOfSubarrayProd,nested,True,False,,,possible,False,True,2,True,False,1
+Convert,sequential,False,False,uses Java strings,,low,False,False,0,True,False,1
+CheckMinHeap,branch,False,False,declares boxed primitive values,,possible,True,False,0,True,True,1
+ReplaceSpecialchar,single_path_loop,False,False,uses Java strings,,possible,False,True,1,True,False,1
+RecursiveListSum,multi_path_loop,False,False,uses Object values,,possible,True,True,1,True,True,1
+MaxProductTuple,nested,True,False,,,possible,True,True,2,True,False,1
+CheckAlphanumeric,sequential,False,False,uses Java strings,,low,False,False,0,False,False,1
+BigSum,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+CheckPermutation,multi_path_loop,False,False,uses Java strings; declares boxed primitive values,,possible,True,True,1,True,False,1
+SmallestMultiple,nested,True,True,,review nontrivial loop control,possible,True,True,2,True,False,1
+SumList,single_path_loop,True,True,,check the corresponding C math-library operation,possible,False,True,1,True,False,1
+MoveNum,multi_path_loop,False,False,uses Java strings,,possible,True,True,1,True,False,1
+TestDuplicate,multi_path_loop,False,False,uses Java collections; declares boxed primitive values,,low,True,True,1,True,False,1
+Check,single_path_loop,False,False,declares boxed primitive values,,possible,False,True,1,False,False,1
+Chklist,multi_path_loop,False,False,uses Java strings; declares boxed primitive values,,possible,True,True,1,True,False,1
+TupleModulo,single_path_loop,True,False,,,possible,False,True,1,True,False,1
+IssortList,multi_path_loop,False,False,declares boxed primitive values,,possible,True,True,1,True,False,1
+NcrModP,single_path_loop,True,False,,,possible,True,True,1,False,False,1
+SumOfSeries,single_path_loop,True,False,,,possible,False,True,1,False,False,1
+IsValidParenthese,multi_path_loop,False,False,uses Java strings; declares boxed primitive values,,possible,True,True,1,False,False,1
+TextMatchString,branch,False,False,uses Java strings,,low,True,False,0,False,False,1
+ParallelogramPerimeter,branch,True,False,,,possible,True,False,0,False,False,1
+CheckConcat,multi_path_loop,False,False,uses Java strings; declares boxed primitive values,,possible,True,True,1,False,False,1
+FindLastOccurrence,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+IsWoodall,multi_path_loop,False,False,declares boxed primitive values,,possible,True,True,1,False,False,1
+SumNum,single_path_loop,False,True,declares boxed primitive values,review floating-point semantics,possible,False,True,1,True,False,1
+LargeProduct,nested,False,False,uses Java collections,,possible,False,True,2,False,False,0
+CountPairs,nested,True,False,,,possible,True,True,2,True,False,1
+ExchangeElements,single_path_loop,True,False,,,possible,True,True,1,True,False,1
+CountOccurance,multi_path_loop,False,False,uses Java strings,,possible,True,True,1,False,False,1
+CheckMonthnumbNumber,branch,False,False,declares boxed primitive values,,low,True,False,0,False,False,1
+FindFirstOccurrence,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+CountCharPosition,multi_path_loop,False,False,uses Java strings,,possible,True,True,1,False,False,1
+CheckEvenParity,sequential,False,False,declares boxed primitive values,,possible,False,False,0,False,False,1
+HexagonalNum,sequential,True,False,,,possible,False,False,0,False,False,1
+TopbottomSurfacearea,sequential,False,True,declares boxed primitive values,review floating-point semantics,possible,False,False,0,False,False,1
+RectanglePerimeter,sequential,True,False,,,possible,False,False,0,False,False,1
+FindAdverbPosition,nested,False,False,uses Java strings; uses Java collections; uses Object values,,possible,True,True,2,False,False,0
+StringLength,sequential,False,False,uses Java strings,,low,False,False,0,False,False,1
+MaxSubarrayProduct,multi_path_loop,True,True,,check the corresponding C math-library operation,possible,True,True,1,True,False,1
+NegNos,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+FindRotationCount,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+IsDecimal,sequential,False,False,uses Java strings; declares boxed primitive values,,low,False,False,0,False,False,1
+CheckMonthnumb,branch,False,False,uses Java strings; declares boxed primitive values,,low,True,False,0,False,False,1
+TextMatchTwoThree,branch,False,False,uses Java strings,,low,True,False,0,False,False,1
+BinarySearch,multi_path_loop,False,False,declares boxed primitive values,,possible,True,True,1,True,False,1
+OctalToDecimal,single_path_loop,True,True,,check the corresponding C math-library operation,possible,False,True,1,False,False,1
+SplitArr,single_path_loop,True,False,,,possible,False,True,1,True,False,1
+CountSubstringWithEqualEnds,single_path_loop,False,False,uses Java strings,,possible,False,True,1,True,False,1
+DecimalToOctal,single_path_loop,True,True,,check the corresponding C math-library operation,possible,False,True,1,False,False,1
+OddBitSetNumber,sequential,True,True,,check bitwise and shift translation,low,False,False,0,False,False,1
+FillSpaces,sequential,False,False,uses Java strings,,low,False,False,0,False,False,1
+RemoveOcc,multi_path_loop,False,False,uses Java strings; creates Java objects,,possible,True,True,1,False,False,1
+AsciiValueString,single_path_loop,False,False,uses Java strings,,possible,False,True,1,False,False,1
+ZipTuples,single_path_loop,True,False,,,possible,False,True,1,True,False,1
+MaximumValue,multi_path_loop,False,True,uses Java strings; uses Object values; creates Java objects,review helper-method translation,possible,True,True,1,True,True,2
+MaxChar,multi_path_loop,False,False,uses Java strings; uses Java collections,,possible,True,True,1,False,False,1
+AndTuples,single_path_loop,False,True,uses Java collections,check bitwise and shift translation,possible,False,True,1,False,False,0
+FindChar,multi_path_loop,False,False,uses Java strings; creates Java objects,,possible,True,True,1,True,False,1
+RemoveWords,multi_path_loop,False,False,uses Java strings; uses Java collections; creates Java objects,,low,True,True,1,True,False,1
+ShellSort,nested,True,False,,,possible,False,True,2,True,False,1
+StartWithp,multi_path_loop,False,False,uses Java strings,,low,True,True,1,True,False,1
+PancakeSort,sequential,True,True,,review helper-method translation,possible,True,True,1,True,True,2
+ApSum,single_path_loop,True,False,,,possible,False,True,1,False,False,1
+CheckInteger,sequential,False,False,uses Java strings; declares boxed primitive values; uses Java exceptions,,low,False,False,0,False,False,1
+FloorMax,sequential,True,True,,check the corresponding C math-library operation,possible,False,False,0,False,False,1
+CountVariable,single_path_loop,False,True,uses Java strings; creates Java objects,check the corresponding C math-library operation,possible,False,True,1,True,False,1
+RemoveSpaces,sequential,False,False,uses Java strings,,low,False,False,0,False,False,1
+ExtractFreq,nested,False,False,uses Java collections,,possible,False,True,2,True,False,1
+ExtractMinMax,branch,True,False,,,possible,True,False,0,True,False,1
+IsLower,sequential,False,False,uses Java strings,,low,False,False,0,False,False,1
+PositionMax,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+SumEvenAndEvenIndex,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+SequentialSearch,single_path_loop,False,False,uses Object values; creates Java objects,,possible,True,True,1,True,False,1
+SmallNnum,sequential,True,False,,,low,False,False,0,True,False,1
+IsOctagonal,single_path_loop,True,False,,,possible,False,True,1,True,False,1
+DiffConsecutivenums,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+NumberOfSubstrings,nested,False,False,uses Java strings,,possible,True,True,2,False,False,1
+TupleToSet,single_path_loop,False,False,uses Java strings; uses Java collections,,low,False,True,1,True,False,0
+ReverseArrayUptoK,single_path_loop,True,True,,check the corresponding C math-library operation,possible,False,True,1,True,False,1
+RomanToInt,multi_path_loop,False,False,uses Java strings; uses Java collections,,possible,True,True,1,False,False,1
+UniqueProduct,multi_path_loop,False,False,uses Java collections,,possible,True,True,1,True,False,1
+CheckSolution,branch,False,False,uses Java strings,,possible,True,False,0,False,False,1
+NegCount,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+Frequency,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+IsTriangleexists,sequential,False,False,declares boxed primitive values,,possible,False,False,0,False,False,1
+FindEvenPair,nested,True,True,,check bitwise and shift translation,possible,True,True,2,True,False,1
+SetLeftMostUnsetBit,multi_path_loop,True,True,,check bitwise and shift translation,possible,True,True,1,False,False,1
+MaxRunUppercase,multi_path_loop,False,False,uses Java strings,,possible,True,True,1,False,False,1
+RombusArea,branch,True,False,,,possible,True,False,0,False,False,1
+RectangleArea,sequential,True,False,,,possible,False,False,0,False,False,1
+FirstNonRepeatingCharacter,multi_path_loop,False,False,uses Java strings; uses Java collections,,possible,True,True,1,False,False,1
+Fibonacci,branch,True,False,,,possible,True,False,0,False,True,1
+DiffEvenOdd,multi_path_loop,True,True,,review nontrivial loop control,possible,True,True,1,True,False,1
+FloatSort,branch,False,False,uses Java strings; uses streams or lambdas,,low,True,False,0,True,False,1
+CapitalWordsSpaces,sequential,False,False,uses Java strings,,low,False,False,0,False,False,1
+SumPairs,nested,True,True,,check the corresponding C math-library operation,possible,False,True,2,True,False,1
+CircleCircumference,sequential,False,False,declares boxed primitive values,,possible,False,False,0,False,False,1
+SquareNums,single_path_loop,True,False,,,possible,False,True,1,True,False,1
+RightInsertion,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+CountCharac,sequential,False,False,uses Java strings,,low,False,False,0,False,False,1
+CheckExpression,multi_path_loop,False,False,uses Java strings; declares boxed primitive values,,possible,True,True,1,False,False,1
+RombusPerimeter,sequential,True,False,,,possible,False,False,0,False,False,1
+LargNnum,single_path_loop,True,False,,,possible,False,True,1,True,False,1
+ClearTuple,sequential,False,False,uses Java collections; uses Object values,,low,False,False,0,False,False,0
+CharFrequency,multi_path_loop,False,False,uses Java strings; uses Java collections,,possible,True,True,1,False,False,0
+AddLists,sequential,True,False,,,possible,False,False,0,True,False,1
+ConcatenateTuple,multi_path_loop,False,False,uses Java strings; uses Object values; creates Java objects,,possible,True,True,1,True,False,1
+SumDifference,single_path_loop,True,True,,check the corresponding C math-library operation,possible,False,True,1,False,False,1
+IsProductEven,single_path_loop,False,False,declares boxed primitive values,,possible,False,True,1,True,False,1
+FifthPowerSum,single_path_loop,True,True,,check the corresponding C math-library operation,possible,False,True,1,False,False,1
+JoinTuples,multi_path_loop,False,False,uses streams or lambdas,,possible,True,True,1,True,False,1
+GetMinSquares,nested,True,True,,check the corresponding C math-library operation,possible,False,True,2,True,False,1
+FindMissing,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+VolumeCylinder,sequential,False,True,declares boxed primitive values,review floating-point semantics,possible,False,False,0,False,False,1
+MultipleToSingle,single_path_loop,False,False,uses Java strings; creates Java objects,,low,False,True,1,True,False,1
+ReOrder,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+MaxPathSum,nested,True,True,,check the corresponding C math-library operation,possible,False,True,2,True,False,1
+EvenPosition,multi_path_loop,False,False,declares boxed primitive values,,possible,True,True,1,True,False,1
+SumRangeList,single_path_loop,True,False,,,possible,False,True,1,True,False,1
+Gcd,branch,True,False,,,possible,True,False,0,False,True,1
+LeftRotate,nested,False,False,uses Java strings; creates Java objects,,possible,True,True,2,True,False,1
+MergeDict,single_path_loop,False,False,uses Java strings; uses Java collections,,low,False,True,1,False,False,0
+FirstDigit,single_path_loop,True,False,,,possible,False,True,1,False,False,1
+Array3d,nested,False,False,uses Java strings; creates Java objects,,possible,False,True,2,True,False,1
+LateralsurfaceCube,branch,True,False,,,possible,True,False,0,False,False,1
+LargestNeg,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+BinaryToInteger,single_path_loop,False,True,uses Java strings,check bitwise and shift translation,possible,False,True,1,True,False,1
+GetOddOccurrence,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+NumPosition,multi_path_loop,False,False,uses Java strings,,possible,True,True,1,False,False,1
+Solve,nested,False,False,declares boxed primitive values,,possible,True,True,2,True,False,1
+Smartnumber,branch,True,False,,,possible,True,False,0,False,True,1
+ExtractRear,single_path_loop,False,False,uses Java strings; creates Java objects,,possible,False,True,1,True,False,1
+FirstMissingPositive,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+BinomialProbability,single_path_loop,False,True,declares boxed primitive values,review floating-point semantics; check the corresponding C math-library operation,possible,False,True,1,False,False,1
+MaxSumList,nested,True,False,,,possible,True,True,2,True,False,1
+VolumeCube,sequential,True,False,,,possible,False,False,0,False,False,1
+RemoveTuple,single_path_loop,False,False,uses Java collections; declares boxed primitive values,,possible,False,True,1,True,False,1
+CheckEquilateral,branch,False,False,declares boxed primitive values,,low,True,False,0,False,False,1
+FrequencyLists,nested,False,False,uses Java collections,,possible,False,True,2,True,False,0
+MinDifference,multi_path_loop,True,True,,check the corresponding C math-library operation,possible,True,True,1,True,False,1
+AsciiValue,branch,False,False,uses Java strings,,possible,True,False,0,False,False,1
+FindMax,branch,True,True,,check the corresponding C math-library operation,possible,True,False,0,True,True,1
+PassValidity,branch,False,False,uses Java strings; declares boxed primitive values,,low,True,False,0,False,False,1
+FindFixedPoint,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+Lbs,nested,True,True,,check the corresponding C math-library operation,possible,True,True,2,True,False,1
+LastDigit,sequential,True,False,,,possible,False,False,0,False,False,1
+TetrahedralNumber,single_path_loop,False,True,declares boxed primitive values,review floating-point semantics,possible,False,True,1,True,False,1
+SortedModels,sequential,False,False,uses Java strings; uses Java collections; uses streams or lambdas; uses Object values,,low,False,False,0,True,False,0
+DivOfNums,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+ReturnSum,single_path_loop,False,False,uses Java strings; uses Java collections,,possible,False,True,1,False,False,1
+IsSublist,nested,False,True,declares boxed primitive values,review nontrivial loop control,possible,True,True,2,True,False,1
+AverageTuple,nested,True,True,,review floating-point semantics,possible,False,True,2,True,False,1
+ExtractElements,nested,False,True,uses Java collections,review nontrivial loop control,possible,True,True,2,True,False,1
+FindDivisor,multi_path_loop,True,False,,,possible,True,True,1,False,False,1
+DivisionElements,single_path_loop,True,False,,,possible,False,True,1,True,False,1
+CheckElement,multi_path_loop,False,True,declares boxed primitive values; uses Object values,review helper-method translation,low,True,True,1,True,True,2
+HammingDistance,multi_path_loop,True,True,,check bitwise and shift translation,possible,True,True,1,False,False,1
+RemoveKthElement,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+CountNo,multi_path_loop,True,False,,,possible,True,True,1,False,False,1
+FlattenTuple,nested,False,False,uses Java strings; creates Java objects,,low,False,True,2,True,False,1
+MaxSumSubseq,single_path_loop,True,True,,check the corresponding C math-library operation,possible,True,True,1,True,False,1
+CheckMonthnum,branch,False,False,uses Java strings; declares boxed primitive values,,low,True,False,0,False,False,1
+AddKElement,nested,True,False,,,possible,False,True,2,True,False,1
+MaxSumPairDiffLessthanK,multi_path_loop,True,True,,check the corresponding C math-library operation,possible,True,True,1,True,False,1
+CheckVow,multi_path_loop,False,False,uses Java strings,,possible,True,True,1,False,False,1
+ConcatenateElements,single_path_loop,False,False,uses Java strings; creates Java objects,,low,False,True,1,True,False,1
+FindLength,multi_path_loop,False,True,uses Java strings,check the corresponding C math-library operation,possible,True,True,1,False,False,1
+CountX,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+MinVal,multi_path_loop,False,True,uses Object values,check the corresponding C math-library operation,low,True,True,1,True,False,1
+AverageEven,multi_path_loop,True,False,,,possible,True,True,1,False,False,1
+BellNumber,nested,True,False,,,possible,False,True,2,True,False,1
+Zigzag,branch,True,False,,,possible,True,False,0,False,True,1
+MoveZero,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+AddDict,multi_path_loop,False,False,uses Java strings; uses Java collections,,possible,True,True,1,False,False,0
+CheckTriangle,branch,False,True,uses Java strings,review floating-point semantics; check the corresponding C math-library operation,possible,True,False,0,False,False,1
+CheckTriplet,nested,False,False,declares boxed primitive values,,possible,True,True,2,True,False,1
+SwapNumbers,sequential,True,False,,,low,False,False,0,True,False,1
+MaxOfNth,single_path_loop,True,True,,check the corresponding C math-library operation,possible,False,True,1,True,False,1
+Lps,nested,False,True,uses Java strings,check the corresponding C math-library operation,possible,True,True,2,True,False,1
+CheckSubstring,sequential,False,False,uses Java strings,,possible,False,False,0,False,False,1
+MaxOccurrences,multi_path_loop,False,False,uses Java collections; declares boxed primitive values,,possible,True,True,1,True,False,1
+CheckTypeOfTriangle,branch,False,False,uses Java strings,,possible,True,False,0,False,False,1
+LcsOfThree,nested,False,True,uses Java strings,check the corresponding C math-library operation,possible,True,True,2,True,False,1
+FindCombinations,nested,True,False,,,possible,False,True,2,True,False,1
+IsCoprime,multi_path_loop,False,False,declares boxed primitive values,,possible,True,True,1,False,False,1
+CheckIp,branch,False,False,uses Java strings,,low,True,False,0,False,False,1
+MaxVolume,nested,True,False,,,possible,True,True,2,False,False,1
+RearrangeNumbs,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+NoOfTriangle,branch,True,False,,,possible,True,False,0,False,False,1
+SmallestMissing,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+ExtractColumn,single_path_loop,True,False,,,possible,False,True,1,True,False,1
+ComputeLastDigit,multi_path_loop,True,False,,,possible,True,True,1,False,False,1
+FindMinSwaps,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+FindLongestConseqSubseq,multi_path_loop,True,True,,check the corresponding C math-library operation; review nontrivial loop control,possible,True,True,1,True,False,1
+CheckTuples,multi_path_loop,False,False,uses Java collections; declares boxed primitive values,,low,True,True,1,True,False,1
+First,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+CheckMonthnumber,branch,False,False,uses Java strings; declares boxed primitive values,,low,True,False,0,False,False,1
+AllBitsSetInTheGivenRange,multi_path_loop,False,True,uses Java strings; declares boxed primitive values,check bitwise and shift translation,possible,True,True,1,True,False,1
+DoesContainB,branch,False,False,declares boxed primitive values,,low,True,False,0,False,False,1
+InsertElement,single_path_loop,False,False,uses Java strings; creates Java objects,,possible,False,True,1,True,False,1
+MaxOfThree,sequential,True,False,,,low,False,False,0,False,False,1
+OppositeSigns,sequential,False,False,declares boxed primitive values,,possible,False,False,0,False,False,1
+IsPerfectSquare,branch,False,True,declares boxed primitive values,check the corresponding C math-library operation,possible,True,False,0,False,False,1
+UnionElements,single_path_loop,False,False,uses Java collections,,possible,False,True,1,True,False,1
+FrequencyOfLargest,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+FindExtra,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+NthNums,single_path_loop,True,True,,check the corresponding C math-library operation,possible,False,True,1,True,False,1
+DropEmpty,multi_path_loop,False,False,uses Java strings; uses Java collections,,low,True,True,1,False,False,0
+FindProduct,multi_path_loop,False,True,uses Java collections,review nontrivial loop control,possible,True,True,1,True,False,1
+BigDiff,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+FindDiff,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+SumGp,branch,True,False,,,possible,True,False,0,False,True,1
+MinSumPath,nested,True,True,,check the corresponding C math-library operation,possible,False,True,2,True,False,1
+FindStarNum,sequential,True,False,,,possible,False,False,0,False,False,1
+NextPerfectSquare,single_path_loop,True,False,,,possible,False,True,1,False,False,1
+CountNum,multi_path_loop,True,True,,check bitwise and shift translation,possible,True,True,1,False,False,1
+CapitalizeFirstLastLetters,multi_path_loop,False,False,uses Java strings,,possible,True,True,1,False,False,1
+MaxVal,multi_path_loop,False,True,uses Object values,check the corresponding C math-library operation,low,True,True,1,True,False,1
+MergeSort,multi_path_loop,True,True,,review helper-method translation,possible,True,True,1,True,True,2
+TextMatchZeroOne,branch,False,False,uses Java strings,,low,True,False,0,False,False,1
+DecreasingTrend,multi_path_loop,False,False,declares boxed primitive values,,possible,True,True,1,True,False,1
+CountHexadecimal,nested,False,False,uses Java strings,,possible,True,True,2,False,False,1
+DealnnoyNum,branch,True,False,,,possible,True,False,0,False,True,1
+SubList,single_path_loop,True,True,,check the corresponding C math-library operation,possible,False,True,1,True,False,1
+RoadRd,sequential,False,False,uses Java strings,,low,False,False,0,False,False,1
+IntersectionArray,multi_path_loop,False,False,uses Java collections; uses streams or lambdas,,low,True,True,1,True,False,1
+MaxAbsDiff,multi_path_loop,True,True,,check the corresponding C math-library operation,possible,True,True,1,True,False,1
+IsSubset,multi_path_loop,False,False,uses Java collections; declares boxed primitive values,,possible,True,True,1,True,False,1
+RemoveDuplicate,multi_path_loop,False,False,uses Java strings; uses Java collections; creates Java objects,,low,True,True,1,True,False,1
+TotalHammingDistance,single_path_loop,True,True,,check bitwise and shift translation,possible,False,True,1,False,False,1
+MergeDictionaries,single_path_loop,False,False,uses Java strings; uses Java collections,,low,False,True,1,False,False,0
+CheckMonthnumberNumber,branch,False,False,declares boxed primitive values,,low,True,False,0,False,False,1
+SortByDnf,nested,True,False,,,possible,False,True,2,True,False,1
+ReverseListLists,nested,True,False,,,possible,False,True,2,True,False,1
+CenteredHexagonalNumber,single_path_loop,True,False,,,possible,False,True,1,False,False,1
+GetTotalNumberOfSequences,nested,True,False,,,possible,True,True,2,True,False,1
+RemoveListRange,multi_path_loop,False,False,uses Java collections,,possible,True,True,1,True,False,1
+FindMaxVal,multi_path_loop,True,False,,,possible,True,True,1,False,False,1
+Lcm,multi_path_loop,True,False,,,possible,True,True,1,False,False,1
+LengthOfLastWord,branch,False,False,uses Java strings,,possible,True,False,0,True,False,1
+RemoveOdd,multi_path_loop,False,False,uses Java strings,,possible,True,True,1,False,False,1
+CheckTuplex,branch,False,False,declares boxed primitive values; uses Object values,,low,True,False,0,False,False,1
+GetGcd,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+ToggleString,multi_path_loop,False,False,uses Java strings; creates Java objects,,possible,True,True,1,False,False,1
+SumInRange,multi_path_loop,True,False,,,possible,True,True,1,False,False,1
+CommonInNestedLists,nested,False,False,uses Java collections; declares boxed primitive values,,possible,True,True,2,True,False,1
+TextMatchThree,branch,False,False,uses Java strings,,low,True,False,0,False,False,1
+GetInvCount,nested,True,False,,,possible,True,True,2,True,False,1
+MultiplyInt,sequential,True,False,,,possible,False,False,0,False,False,1
+MultiList,nested,False,True,uses Java collections,check bitwise and shift translation,possible,False,True,2,False,False,0
+RadixSort,nested,True,False,,,possible,True,True,2,True,False,1
+IsNumKeith,nested,False,False,declares boxed primitive values,,possible,True,True,2,True,False,1
+ArmstrongNumber,single_path_loop,False,True,declares boxed primitive values,check the corresponding C math-library operation,possible,False,True,1,False,False,1
+Maximum,sequential,True,False,,,low,False,False,0,False,False,1
+GetFirstSetBitPos,single_path_loop,True,True,,check bitwise and shift translation,possible,False,True,1,False,False,1
+MultiplyNum,single_path_loop,False,True,declares boxed primitive values,review floating-point semantics,possible,False,True,1,True,False,1
+LateralsurfaceCuboid,sequential,True,False,,,possible,False,False,0,False,False,1
+FrequencyOfSmallest,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+MaximizeElements,nested,True,True,,check the corresponding C math-library operation,possible,True,True,2,True,False,1
+BabylonianSquareroot,multi_path_loop,False,True,declares boxed primitive values,review floating-point semantics,possible,True,True,1,False,False,1
+InversionElements,single_path_loop,True,True,,check bitwise and shift translation,possible,False,True,1,True,False,1
+FindMinSum,single_path_loop,True,True,,check the corresponding C math-library operation,possible,False,True,1,True,False,1
+IsIsomorphic,multi_path_loop,False,False,uses Java strings; uses Java collections; declares boxed primitive values,,possible,True,True,1,False,False,1
+FindFirstMissing,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+SurfaceareaSphere,sequential,False,True,declares boxed primitive values,review floating-point semantics; check the corresponding C math-library operation,possible,False,False,0,False,False,1
+LargestPalindrome,multi_path_loop,False,True,uses Java strings,check the corresponding C math-library operation; review helper-method translation,possible,True,True,1,True,True,2
+CountSquares,branch,True,False,,,possible,True,False,0,False,False,1
+CountSetBits,single_path_loop,True,False,,,possible,False,True,1,False,False,1
+MinFlipToMakeStringAlternate,multi_path_loop,False,True,uses Java strings,check the corresponding C math-library operation; review helper-method translation,possible,True,True,1,False,True,3
+GetPosition,multi_path_loop,True,True,,review nontrivial loop control,possible,True,True,1,True,False,1
+CheckSmaller,multi_path_loop,False,True,declares boxed primitive values; uses Java exceptions; creates Java objects,review nontrivial loop control,possible,True,True,1,True,False,1
+SurfaceareaCuboid,sequential,True,False,,,possible,False,False,0,False,False,1
+CountReversePairs,nested,False,True,uses Java strings; creates Java objects,review helper-method translation,possible,True,True,2,True,True,2
+FindMin,branch,True,False,,,possible,True,False,0,True,True,1
+ReplaceMaxSpecialchar,multi_path_loop,False,False,uses Java strings; creates Java objects,,possible,True,True,1,True,False,1
+ExtractIndexList,multi_path_loop,False,False,uses Java collections; uses streams or lambdas,,possible,True,True,1,True,False,1
+GetPairsCount,nested,True,False,,,possible,True,True,2,True,False,1
+RemoveEmpty,multi_path_loop,False,False,uses Java strings; uses Java collections; uses Object values,,low,True,True,1,False,False,0
+RoundNum,multi_path_loop,True,False,,,possible,True,True,1,False,False,1
+IsKeyPresent,branch,False,False,uses Java collections; declares boxed primitive values,,low,True,False,0,False,False,1
+CountUnsetBits,nested,True,True,,check bitwise and shift translation,possible,True,True,2,False,False,1
+EvenBitSetNumber,multi_path_loop,True,True,,check bitwise and shift translation,possible,True,True,1,False,False,1
+SplitUpperstring,single_path_loop,False,False,uses Java strings; uses Java collections,,low,False,True,1,True,False,0
+SumNegativenum,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+SurfaceareaCone,sequential,False,True,declares boxed primitive values,review floating-point semantics; check the corresponding C math-library operation,possible,False,False,0,False,False,1
+MaxPrimeFactors,nested,True,False,,,possible,False,True,2,False,False,1
+MaxSumOfThreeConsecutive,single_path_loop,True,True,,check the corresponding C math-library operation,possible,True,True,1,True,False,1
+RemovezeroIp,multi_path_loop,False,False,uses Java strings; creates Java objects,,possible,True,True,1,False,False,1
+LargestSubset,nested,True,True,,check the corresponding C math-library operation,possible,True,True,2,True,False,1
+MinCoins,multi_path_loop,True,False,,,possible,True,True,1,True,True,1
+CountRotation,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+JacobsthalNum,single_path_loop,True,False,,,possible,False,True,1,True,False,1
+ChineseZodiac,sequential,False,False,uses Java strings,,possible,False,False,0,True,False,1
+SumDiv,multi_path_loop,True,False,,,possible,True,True,1,False,False,1
+LeftInsertion,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+CheckAbundant,multi_path_loop,False,False,declares boxed primitive values,,possible,True,True,1,False,False,1
+NewmanPrime,branch,True,False,,,possible,True,False,0,False,True,1
+FindFirstDuplicate,multi_path_loop,False,False,uses Java collections,,possible,True,True,1,True,False,1
+CountFirstElements,multi_path_loop,False,False,uses Object values,,possible,True,True,1,True,False,1
+Difference,single_path_loop,True,False,,,possible,False,True,1,False,False,1
+RemoveNegs,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+ListToFloat,nested,False,False,uses Java strings; uses boxed primitive operations; creates Java objects,,possible,True,True,2,True,False,1
+AddStr,single_path_loop,False,False,uses Java strings; uses Object values; creates Java objects,,possible,False,True,1,True,False,1
+PermuteString,nested,False,False,uses Java strings; creates Java objects,,possible,True,True,2,True,True,1
+IsAllowedSpecificChar,sequential,False,False,uses Java strings; declares boxed primitive values,,low,False,False,0,False,False,1
+CheckKElements,nested,False,False,declares boxed primitive values,,low,True,True,2,True,False,1
+TupleToFloat,sequential,False,False,declares boxed primitive values; uses boxed primitive operations,,possible,False,False,0,True,False,1
+EvenBinomialCoeffSum,nested,True,False,,,possible,False,True,2,True,False,1
+VolumeSphere,sequential,False,True,declares boxed primitive values,review floating-point semantics; check the corresponding C math-library operation,possible,False,False,0,False,False,1
+StringToList,sequential,False,False,uses Java strings,,low,False,False,0,True,False,1
+ExtractEven,multi_path_loop,False,False,uses Java collections; uses Object values,,possible,True,True,1,True,True,1
+MinCost,nested,True,True,,check the corresponding C math-library operation,possible,False,True,2,True,False,1
+NoprofitNoloss,branch,False,False,declares boxed primitive values,,possible,True,False,0,False,False,1
+FloatToTuple,single_path_loop,False,True,uses Java strings,review floating-point semantics,possible,False,True,1,True,False,1
+RemoveMatchingTuple,nested,False,False,uses Java strings; uses Java collections; creates Java objects,,low,True,True,2,True,False,1
+VolumeCuboid,sequential,True,False,,,possible,False,False,0,False,False,1
+CheckNone,multi_path_loop,False,False,declares boxed primitive values,,possible,True,True,1,True,False,1
+SetBitNumber,sequential,True,True,,check the corresponding C math-library operation,possible,False,False,0,False,False,1
+CheckLiterals,multi_path_loop,False,True,uses Java strings,review nontrivial loop control,possible,True,True,1,True,False,1
+RemoveDirtyChars,multi_path_loop,False,False,uses Java strings; creates Java objects,,possible,True,True,1,False,False,1
+SurfaceareaCylinder,sequential,False,True,declares boxed primitive values,review floating-point semantics,possible,False,False,0,False,False,1
+ParallelLines,sequential,False,False,declares boxed primitive values,,possible,False,False,0,True,False,1
+CountDigit,single_path_loop,True,False,,,possible,False,True,1,False,False,1
+LastTwoDigits,single_path_loop,True,False,,,possible,False,True,1,False,False,1
+MinNum,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+IndexMinimum,multi_path_loop,False,False,uses Java strings; uses Object values,,possible,True,True,1,True,False,1
+IsAbundant,multi_path_loop,False,False,declares boxed primitive values,,possible,True,True,1,False,False,1
+ReArrangeTuples,nested,True,True,,review nontrivial loop control,possible,True,True,2,True,False,1
+SumDigits,single_path_loop,True,False,,,possible,False,True,1,False,False,1
+MaxSum,nested,False,True,uses streams or lambdas,check the corresponding C math-library operation,possible,True,True,2,True,False,1
+PerfectSquares,single_path_loop,True,True,,check the corresponding C math-library operation,possible,False,True,1,True,False,1
+RecurGcd,branch,True,False,,,possible,True,False,0,False,True,1
+SortSublists,single_path_loop,False,False,uses Java strings; creates Java objects,,possible,False,True,1,True,False,1
+CheckEquality,branch,False,False,uses Java strings,,possible,True,False,0,False,False,1
+Extract,single_path_loop,True,False,,,possible,False,True,1,True,False,1
+CheckGreater,multi_path_loop,False,False,declares boxed primitive values; uses Java exceptions; creates Java objects,,possible,True,True,1,True,False,1
+IndexMultiplication,nested,True,False,,,possible,False,True,2,True,False,1
+ReverseWords,single_path_loop,False,False,uses Java strings; creates Java objects,,possible,False,True,1,True,False,1
+IsMajority,multi_path_loop,False,False,declares boxed primitive values,,possible,True,True,1,True,False,1
+FirstEven,multi_path_loop,True,True,,review nontrivial loop control,possible,True,True,1,True,False,1
+GetCarol,sequential,True,True,,check the corresponding C math-library operation,possible,False,False,0,False,False,1
+LowerCtr,multi_path_loop,False,False,uses Java strings,,possible,True,True,1,False,False,1
+FirstOdd,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+FreqCount,single_path_loop,False,False,uses Java collections,,possible,False,True,1,True,False,0
+EvenBitToggleNumber,multi_path_loop,True,True,,check bitwise and shift translation,possible,True,True,1,False,False,1
+FirstRepeatedChar,multi_path_loop,False,False,uses Java strings; uses Java collections,,possible,True,True,1,False,False,1
+JacobsthalLucas,single_path_loop,True,False,,,possible,False,True,1,True,False,1
+DigitDistanceNums,single_path_loop,True,True,,check the corresponding C math-library operation,possible,False,True,1,False,False,1
+FindRectNum,sequential,True,False,,,possible,False,False,0,False,False,1
+IsUpper,sequential,False,False,uses Java strings,,low,False,False,0,False,False,1
+SumColumn,single_path_loop,True,False,,,possible,False,True,1,True,False,1
+OddLengthSum,single_path_loop,True,False,,,possible,False,True,1,True,False,1
+AreaTrapezium,sequential,True,False,,,possible,False,False,0,False,False,1
+InterleaveLists,single_path_loop,True,False,,,possible,False,True,1,True,False,1
+GetPerrin,branch,True,False,,,possible,True,False,0,False,True,1
+BinomialCoeff,single_path_loop,True,False,,,possible,True,True,1,False,False,1
+IsValidUrl,sequential,False,False,uses Java strings; declares boxed primitive values,,possible,False,False,0,False,False,1
+LargestPos,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+StrToTuple,single_path_loop,False,False,uses Java strings,,possible,False,True,1,True,False,1
+GetMaxOccuringChar,nested,False,False,uses Java strings,,possible,True,True,2,False,False,1
+PreviousPalindrome,multi_path_loop,False,False,uses Java strings; creates Java objects,,possible,True,True,1,False,False,1
+SortMatrix,single_path_loop,False,False,declares boxed primitive values; uses streams or lambdas; creates Java objects,,possible,True,True,1,True,False,1
+RemoveWhitespaces,sequential,False,False,uses Java strings,,low,False,False,0,False,False,1
+DivEvenOdd,multi_path_loop,True,True,,review nontrivial loop control,possible,True,True,1,True,False,1
+FindExponentio,single_path_loop,True,True,,check the corresponding C math-library operation,possible,False,True,1,True,False,1
+MaxLenSub,nested,True,True,,check the corresponding C math-library operation,possible,True,True,2,True,False,1
+IncreasingTrend,multi_path_loop,False,False,declares boxed primitive values,,possible,True,True,1,True,False,1
+TextMatchWord,branch,False,False,uses Java strings,,low,True,False,0,False,False,1
+DigLet,multi_path_loop,False,False,uses Java strings,,possible,True,True,1,True,False,1
+SumOfOddFactors,multi_path_loop,True,False,,,possible,True,True,1,False,False,1
+MaxProduct,nested,True,False,,,possible,True,True,2,True,False,1
+OddEquivalent,multi_path_loop,False,False,uses Java strings,,possible,True,True,1,False,False,1
+NumberCtr,multi_path_loop,False,False,uses Java strings,,possible,True,True,1,False,False,1
+Removals,nested,True,True,,check the corresponding C math-library operation,possible,False,True,2,True,False,1
+FindIndex,sequential,True,True,,check the corresponding C math-library operation,possible,False,False,0,False,False,1
+AccessElements,single_path_loop,True,False,,,possible,False,True,1,True,False,1
+MinJumps,nested,True,True,,check the corresponding C math-library operation,possible,True,True,2,True,False,1
+CountDuplic,multi_path_loop,False,True,uses Java collections,check bitwise and shift translation,possible,True,True,1,False,False,0
+DogAge,branch,True,False,,,possible,True,False,0,False,False,1
+IsOdd,sequential,False,True,declares boxed primitive values,check bitwise and shift translation,low,False,False,0,False,False,1
+SetToTuple,single_path_loop,False,False,uses Java collections; declares boxed primitive values; creates Java objects,,possible,False,True,1,True,False,1
+Areequivalent,multi_path_loop,False,False,declares boxed primitive values,,possible,True,True,1,False,False,1
+ConcatenateNested,sequential,True,False,,,possible,False,False,0,True,False,1
+FrontAndRear,sequential,True,False,,,possible,False,False,0,True,False,1
+FirstRepeatedWord,multi_path_loop,False,False,uses Java strings; uses Java collections,,low,True,True,1,True,False,1
+SurfaceArea,sequential,True,False,,,possible,False,False,0,False,False,1
+BinaryToDecimal,single_path_loop,True,True,,check the corresponding C math-library operation,possible,False,True,1,False,False,1
+GetEqual,multi_path_loop,False,False,uses Java strings,,possible,True,True,1,True,False,1
+TextStartaEndb,branch,False,False,uses Java strings,,low,True,False,0,False,False,1
+RearrangeBigger,multi_path_loop,False,True,uses Java strings; uses Object values; creates Java objects,review nontrivial loop control,possible,True,True,1,True,False,1
+ReplaceSpaces,sequential,False,False,uses Java strings,,low,False,False,0,False,False,1
+IsWordPresent,multi_path_loop,False,False,uses Java strings; declares boxed primitive values,,possible,True,True,1,True,False,1
+FindOddPair,nested,True,True,,check bitwise and shift translation,possible,True,True,2,True,False,1
+GetChar,single_path_loop,False,False,uses Java strings,,possible,True,True,1,False,False,1
+AddConsecutiveNums,single_path_loop,True,False,,,possible,True,True,1,True,False,1
+Sumoffactors,multi_path_loop,True,False,,,possible,True,True,1,False,False,1
+FlattenList,multi_path_loop,False,True,uses Java collections; uses streams or lambdas; uses Object values,review helper-method translation,low,True,True,1,True,True,2
+HighestPowerOf2,single_path_loop,True,False,,,possible,False,True,1,False,False,1
+FindMaxNum,single_path_loop,True,True,,check the corresponding C math-library operation,possible,False,True,1,True,False,1
+FindPoints,branch,True,True,,check the corresponding C math-library operation,low,True,False,0,True,False,1
+CheckValue,multi_path_loop,False,False,uses Java strings; uses Java collections; declares boxed primitive values,,low,True,True,1,False,False,1
+CheckOddParity,sequential,False,False,declares boxed primitive values,,possible,False,False,0,False,False,1
+TextMatchWordz,branch,False,False,uses Java strings,,low,True,False,0,False,False,1
+AreEqual,single_path_loop,False,False,declares boxed primitive values,,possible,True,True,1,True,False,1
+CountWays,single_path_loop,True,False,,,possible,False,True,1,True,False,1
+FindDemlo,single_path_loop,False,False,uses Java strings,,possible,False,True,1,False,False,1
+EndNum,branch,False,False,uses Java strings; declares boxed primitive values,,possible,True,False,0,False,False,1
+GetNumber,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+CountNoOfWays,single_path_loop,True,False,,,possible,False,True,1,True,False,1
+FindSum,multi_path_loop,False,False,uses streams or lambdas,,possible,True,True,1,True,False,1
+FindKProduct,single_path_loop,True,False,,,possible,False,True,1,True,False,1
+CheckValid,multi_path_loop,False,False,declares boxed primitive values,,low,True,True,1,True,False,1
+IntToRoman,nested,False,False,uses Java strings; creates Java objects,,possible,False,True,2,True,False,1
+Perimeter,sequential,True,False,,,possible,False,False,0,False,False,1
+Sum,nested,True,False,,,possible,True,True,2,True,False,1
+ReverseVowels,nested,False,False,uses Java strings; creates Java objects,,possible,False,True,2,True,False,1
+DiscriminantValue,branch,False,False,uses Java strings; uses Java collections; uses Object values,,possible,True,False,0,False,False,0
+DivisibleByDigits,nested,True,True,,review nontrivial loop control,possible,True,True,2,True,False,1
+MultiplyElements,single_path_loop,True,False,,,possible,True,True,1,True,False,1
+SmallestDivisor,multi_path_loop,True,False,,,possible,True,True,1,False,False,1
+RearExtract,single_path_loop,False,False,uses Object values,,possible,False,True,1,True,False,1
+CheckEmail,sequential,False,False,uses Java strings,,low,False,False,0,False,False,1
+FindLongestRepeatingSubseq,multi_path_loop,False,True,uses Java strings; uses Java collections,check the corresponding C math-library operation,possible,True,True,1,False,False,1
+RemoveLength,multi_path_loop,False,False,uses Java strings; creates Java objects,,possible,True,True,1,True,False,1
+FindVolume,sequential,True,False,,,possible,False,False,0,False,False,1
+IsTwoAlter,multi_path_loop,False,False,uses Java strings; declares boxed primitive values,,possible,True,True,1,False,False,1
+SurfaceareaCube,sequential,True,False,,,possible,False,False,0,False,False,1
+IsMonotonic,multi_path_loop,False,False,declares boxed primitive values,,possible,True,True,1,True,False,1
+EvenPowerSum,single_path_loop,True,False,,,possible,False,True,1,False,False,1
+GetMaxSum,single_path_loop,True,True,,check the corresponding C math-library operation,possible,False,True,1,True,False,1
+GetItem,branch,False,False,uses Java strings; uses Object values,,possible,True,False,0,True,False,1
+RemoveElements,multi_path_loop,False,False,uses Java collections,,possible,True,True,1,True,False,1
+OccuranceSubstring,multi_path_loop,False,False,uses Java strings; uses Object values; creates Java objects,,possible,True,True,1,True,False,1
+FindTripletArray,nested,True,False,,,possible,True,True,2,True,False,1
+ProductEqual,multi_path_loop,False,False,uses Java strings; declares boxed primitive values,,possible,True,True,1,False,False,1
+CheckIdentical,nested,False,False,declares boxed primitive values,,possible,True,True,2,True,False,1
+SpecifiedElement,single_path_loop,True,False,,,possible,False,True,1,True,False,1
+SmallestNum,multi_path_loop,False,False,uses Java exceptions; creates Java objects,,possible,True,True,1,True,False,1
+MultiplyList,single_path_loop,True,False,,,possible,False,True,1,True,False,1
+OddDays,branch,True,False,,,possible,True,False,0,False,False,1
+AllUnique,multi_path_loop,False,False,uses Java collections; declares boxed primitive values,,low,True,True,1,True,False,1
+SumSquare,branch,False,True,declares boxed primitive values,review floating-point semantics; check the corresponding C math-library operation,possible,True,False,0,False,False,1
+FindNthDigit,single_path_loop,True,False,,,possible,False,True,1,False,False,1
+RemoveColumn,nested,True,False,,,possible,True,True,2,True,False,1
+FindCharLong,multi_path_loop,False,False,uses Java strings; creates Java objects,,possible,True,True,1,True,False,1
+ValidityTriangle,branch,False,False,declares boxed primitive values,,possible,True,False,0,False,False,1
+SplitList,sequential,False,False,uses Java strings,,low,False,False,0,True,False,1
+CountList,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+SumSeries,single_path_loop,True,False,,,possible,False,True,1,False,False,1
+Subset,nested,True,True,,check the corresponding C math-library operation,possible,False,True,2,True,False,1
+CubeSum,single_path_loop,True,False,,,possible,False,True,1,False,False,1
+FirstElement,multi_path_loop,False,False,uses Java collections,,possible,True,True,1,True,False,1
+CountTuplex,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+RemoveParenthesis,branch,False,False,uses Java strings,,low,True,False,0,True,False,1
+CheckSubset,multi_path_loop,False,False,uses Java collections; declares boxed primitive values,,possible,True,True,1,True,False,1
+BitwiseXor,single_path_loop,True,True,,check bitwise and shift translation,possible,False,True,1,True,False,1
+SumOfPrimes,nested,True,False,,,possible,True,True,2,True,False,1
+WordsAe,nested,False,False,uses Java strings; creates Java objects,,possible,True,True,2,True,False,1
+SeqLinear,multi_path_loop,False,False,uses Java strings,,possible,True,True,1,True,False,1
+Last,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+MaxProfit,nested,True,True,,check the corresponding C math-library operation; review helper-method translation,possible,True,True,2,True,True,2
+RemoveSplchar,multi_path_loop,False,False,uses Java strings; creates Java objects,,possible,True,True,1,False,False,1
+NtimesList,single_path_loop,True,False,,,possible,False,True,1,True,False,1
+CamelToSnake,single_path_loop,False,False,uses Java strings; creates Java objects,,possible,False,True,1,True,False,1
+Validate,multi_path_loop,False,False,declares boxed primitive values,,possible,True,True,1,True,False,1
+Repeat,nested,False,False,uses Java collections,,possible,True,True,2,False,False,0
+RemoveChar,sequential,False,False,uses Java strings,,low,False,False,0,False,False,1
+MoveLast,single_path_loop,True,False,,,possible,True,True,1,True,False,1
+SubjectMarks,sequential,False,False,uses streams or lambdas; uses Object values,,low,False,False,0,True,False,1
+CheckStr,sequential,False,False,uses Java strings,,low,False,False,0,False,False,1
+Overlapping,multi_path_loop,False,False,declares boxed primitive values,,possible,True,True,1,True,False,1
+Find,sequential,True,False,,,possible,False,False,0,False,False,1
+ChunkTuples,nested,False,True,uses Java collections,check bitwise and shift translation,possible,True,True,2,False,False,0
+FindParity,branch,False,False,uses Java strings,,possible,True,False,0,False,False,1
+ExtractString,multi_path_loop,False,False,uses Java strings; creates Java objects,,possible,True,True,1,True,False,1
+FindMinLength,multi_path_loop,True,False,,,low,True,True,1,True,False,1
+LongWords,multi_path_loop,False,False,uses Java strings; creates Java objects,,possible,True,True,1,True,False,1
+FloorMin,sequential,True,True,,check the corresponding C math-library operation,possible,False,False,0,False,False,1
+MulConsecutiveNums,single_path_loop,True,False,,,possible,True,True,1,True,False,1
+PerimeterTriangle,sequential,True,False,,,possible,False,False,0,False,False,1
+MaxSimilarIndices,nested,False,False,uses Java collections; declares boxed primitive values; uses streams or lambdas; creates Java objects,,possible,True,True,2,True,False,1
+FindLiterals,multi_path_loop,False,True,uses Java strings; uses Java collections; uses Object values; creates Java objects,review nontrivial loop control,possible,True,True,1,True,False,1
+UniqueCharacters,multi_path_loop,False,False,uses Java strings; uses Java collections; declares boxed primitive values,,possible,True,True,1,False,False,1
+MulEvenOdd,multi_path_loop,True,True,,review nontrivial loop control,possible,True,True,1,True,False,1
+ReArrangeArray,multi_path_loop,True,True,,check the corresponding C math-library operation,possible,True,True,1,True,False,1
+MagicSquareTest,nested,False,False,declares boxed primitive values,,possible,True,True,2,True,False,1
+HarmonicSum,single_path_loop,False,True,declares boxed primitive values,review floating-point semantics,possible,False,True,1,False,False,1
+AreRotations,branch,False,False,uses Java strings; declares boxed primitive values,,possible,True,False,0,False,False,1
+PosCount,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+AddString,single_path_loop,False,False,uses Java strings; uses Java collections; uses Object values,,possible,False,True,1,False,False,0
+LenLog,multi_path_loop,False,False,uses Java strings,,low,True,True,1,True,False,1
+Power,branch,True,False,,,possible,True,False,0,False,True,1
+EquilibriumIndex,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+StringLiterals,multi_path_loop,False,True,uses Java strings,review nontrivial loop control,low,True,True,1,True,False,1
+CummulativeSum,nested,True,False,,,possible,False,True,2,True,False,1
+ClosestNum,multi_path_loop,True,True,,check the corresponding C math-library operation,possible,True,True,1,False,False,1
+LateralsurfaceCone,sequential,False,True,declares boxed primitive values,review floating-point semantics; check the corresponding C math-library operation,possible,False,False,0,False,False,1
+CombSort,nested,True,False,,,possible,True,True,2,True,False,1
+RemoveMultipleSpaces,sequential,False,False,uses Java strings,,low,False,False,0,False,False,1
+SameLength,multi_path_loop,False,False,declares boxed primitive values,,possible,True,True,1,False,False,1
+SortString,sequential,False,False,uses Java strings; creates Java objects,,low,False,False,0,True,False,1
+MinOfThree,branch,True,False,,,low,True,False,0,False,False,1
+CalSum,single_path_loop,True,False,,,possible,True,True,1,False,False,1
+RemoveLowercase,sequential,False,False,uses Java strings,,low,False,False,0,False,False,1
+Search,multi_path_loop,True,False,,,possible,True,True,1,True,False,1
+GreaterSpecificnum,multi_path_loop,False,False,declares boxed primitive values,,low,True,True,1,True,False,1
+IsSubsetSum,branch,False,False,declares boxed primitive values,,possible,True,False,0,True,True,1
+TestDistinct,multi_path_loop,False,False,declares boxed primitive values; uses Java exceptions; creates Java objects,,possible,True,True,1,True,False,1
+TextLowercaseUnderscore,multi_path_loop,False,False,uses Java strings,,possible,True,True,1,True,False,1
+NewTuple,single_path_loop,False,False,uses Java strings; creates Java objects,,possible,False,True,1,True,False,1
+MinSwaps,multi_path_loop,False,True,uses Java strings; uses Object values,check bitwise and shift translation,possible,True,True,1,False,False,1
+LastDigitFactorial,single_path_loop,True,True,,check the corresponding C math-library operation,possible,True,True,1,False,False,1
+TupleToDict,single_path_loop,False,False,uses Java collections,,possible,False,True,1,True,False,0
+CheckDistinct,multi_path_loop,False,False,uses Java collections; declares boxed primitive values,,possible,True,True,1,True,False,1
+GetKey,sequential,False,False,uses Java strings; uses Java collections,,low,False,False,0,False,False,0
+EvenOrOdd,branch,False,False,uses Java strings,,possible,True,False,0,False,False,1
+FourthPowerSum,single_path_loop,True,True,,check the corresponding C math-library operation,possible,False,True,1,False,False,1
+DiameterCircle,sequential,True,False,,,possible,False,False,0,False,False,1
+ParabolaFocus,sequential,True,True,,review floating-point semantics,possible,False,False,0,True,False,1
+MonthSeason,branch,False,False,uses Java strings,,low,True,False,0,False,False,1
+Remove,single_path_loop,False,False,uses Java strings; creates Java objects,,possible,False,True,1,True,False,1
+IsNonagonal,single_path_loop,True,False,,,possible,False,True,1,True,False,1
+SquareSum,sequential,True,False,,,possible,False,False,0,False,False,1
+GetLudic,nested,True,False,,,possible,False,True,2,True,False,1
+CheckMonthnumNumber,branch,False,False,declares boxed primitive values,,low,True,False,0,False,False,1
+IncrementNumerics,nested,False,False,uses Java strings,,possible,True,True,2,True,False,0
