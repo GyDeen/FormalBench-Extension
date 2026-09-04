@@ -4,6 +4,12 @@
 from EvoSuite `*_ESTest.java` files. It ignores scaffolding, constructors, JUnit
 assertions, and expected return values or exceptions.
 
+The implementation is separated by responsibility:
+
+- `java_input_parser.py` handles the supported Java syntax and type conversion.
+- `input_extractor.py` builds fixtures, references, and ordered call records.
+- `translate_test.py` provides the command-line and JSON output interface.
+
 Run it with:
 
 ```bash
@@ -49,3 +55,57 @@ Each entry in `tests` represents one non-constructor JUnit test:
 - `steps` preserve call order. A later step may use an earlier step's result
   through its result `id`.
 - `result` records a binding only. It does not contain an expected value.
+
+## Java/C result comparison
+
+`compare_java_c.py` compares normalized execution results produced by Java and
+C runners:
+
+```bash
+python3 test_generator/compare_java_c.py \
+  --inputs test_generator/test_inputs.json \
+  --java-results java_results.json \
+  --c-results c_results.json \
+  --output comparison.json
+```
+
+Each runner must produce this structure:
+
+```json
+{
+  "schema_version": "1.0",
+  "kind": "test_execution_results",
+  "language": "java",
+  "tests": [
+    {
+      "id": "Frequency_ESTest.test0",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "returned",
+          "return": {"type": "int32", "value": 1},
+          "state_after": [
+            {"id": "intArray0", "type": "int32[]", "value": [0, 582]}
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
+
+Use `language: "c"` for the C result file. For a failed call, use a canonical
+error instead of `return`, for example:
+
+```json
+{
+  "id": "call_0",
+  "status": "error",
+  "error": {"kind": "null_dereference", "message": "optional diagnostic"}
+}
+```
+
+The comparison checks return values, canonical errors, and `state_after` so
+in-place array mutations are included. Diagnostic error messages are not
+compared. Floating-point values use configurable relative and absolute
+tolerances.

@@ -6,7 +6,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from test_generator.translate_test import extract_file
+from test_generator.input_extractor import extract_file
 
 SAMPLE = """
 public class Demo_ESTest extends Demo_ESTest_scaffolding {
