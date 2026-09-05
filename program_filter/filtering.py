@@ -65,6 +65,8 @@ METHOD_DECLARATION_RE = re.compile(
 
 def remove_comments_imports_and_literals(code: str) -> str:
     """Remove text that should not affect lexical feature detection."""
+    # Preserve the surrounding syntax while removing places where keywords
+    # are merely text and would create false feature matches.
     cleaned = re.sub(r"/\*.*?\*/", " ", code, flags=re.DOTALL)
     cleaned = re.sub(r"//[^\n]*", " ", cleaned)
     cleaned = re.sub(r"^\s*import\s+[^;]+;\s*$", " ", cleaned, flags=re.MULTILINE)
@@ -107,6 +109,8 @@ def extract_features(record: dict[str, Any]) -> dict[str, Any]:
     methods = METHOD_DECLARATION_RE.findall(lexical_code)
     method_counts = Counter(methods)
 
+    # A method name occurring more often than its declarations indicates a
+    # call with the same name, which is the lightweight recursion heuristic.
     recursive_methods = sorted(
         name
         for name in method_counts
@@ -119,6 +123,8 @@ def extract_features(record: dict[str, Any]) -> dict[str, Any]:
         re.search(r"\[\s*\]", lexical_code)
         or re.search(r"\[[^\]]+\]", lexical_code)
     )
+    # The dataset category supplies nesting information that a lexical regex
+    # cannot reliably reconstruct from braces.
     loop_depth = 2 if category == "nested" else 1 if has_loop_syntax else 0
 
     return {
@@ -165,6 +171,8 @@ def classify(record: dict[str, Any], exclude_review: bool) -> dict[str, Any]:
     if detect_non_array_object_creation(lexical_code):
         exclusion_reasons.append("creates Java objects")
 
+    # Review flags mark translatable programs with semantic edge cases. They
+    # become exclusions only when the caller explicitly requests that policy.
     review_reasons: list[str] = []
     if features["has_floating_point"]:
         review_reasons.append("review floating-point semantics")
@@ -282,6 +290,8 @@ def stratified_sample(
     rng = random.Random(seed)
     selected: list[dict[str, Any]] = []
     for category in CATEGORIES:
+        # Sort before sampling so input-file ordering cannot change a seeded
+        # sample.
         population = sorted(grouped[category], key=lambda item: item["class_name"])
         selected.extend(rng.sample(population, min(per_category, len(population))))
     return selected

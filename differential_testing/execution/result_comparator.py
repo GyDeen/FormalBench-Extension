@@ -48,6 +48,7 @@ def _compare_values(
     relative_tolerance: float,
     absolute_tolerance: float,
 ) -> list[dict[str, Any]]:
+    # bool is a subclass of int in Python, so compare it before numeric values.
     if isinstance(java_value, bool) or isinstance(c_value, bool):
         if type(java_value) is not type(c_value) or java_value != c_value:
             return [_difference(path, "values differ", java_value, c_value)]
@@ -67,6 +68,8 @@ def _compare_values(
         return [_difference(path, "numeric values differ", java_value, c_value)]
 
     if isinstance(java_value, dict) and isinstance(c_value, dict):
+        # Descend recursively so reports identify the exact mismatching field
+        # instead of treating a complete structured result as one value.
         differences: list[dict[str, Any]] = []
         all_keys = sorted(set(java_value) | set(c_value))
         for key in all_keys:
@@ -197,6 +200,8 @@ def _compare_step(
                 )
             )
         elif java_status == "returned":
+            # A declared result is mandatory. For a bare source call, compare a
+            # return only when the runners recovered one from its signature.
             if "result" in expected_step:
                 differences.extend(
                     _compare_optional_field(
@@ -244,6 +249,8 @@ def _compare_step(
                     )
                 )
         else:
+            # Diagnostic text is runtime-specific; the canonical error kind is
+            # the stable semantic value used for comparison.
             java_error = java_step.get("error", {})
             c_error = c_step.get("error", {})
             java_kind = java_error.get("kind") if isinstance(java_error, dict) else None
@@ -349,6 +356,7 @@ def compare_execution_results(
         ]
         extra_java_steps = sorted(set(java_steps) - set(expected_steps))
         extra_c_steps = sorted(set(c_steps) - set(expected_steps))
+        # Extra records are mismatches too, even when every expected step agrees.
         matched_steps += sum(step["status"] == "match" for step in step_reports)
         mismatched_steps += sum(
             step["status"] == "mismatch" for step in step_reports

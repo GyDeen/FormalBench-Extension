@@ -13,6 +13,8 @@ from typing import Any
 
 def sample_run_id(sample: list[dict[str, Any]], seed: int, per_category: int) -> str:
     """Build a stable directory name for one exact sampled dataset."""
+    # Include source code as well as class names so edited programs cannot
+    # accidentally reuse compiled artifacts from an older sample.
     content = "\n".join(
         f"{record['class_name']}\0{record['code']}"
         for record in sorted(sample, key=lambda item: item["class_name"])
@@ -46,6 +48,7 @@ def extract_selected_java(
             flags=re.MULTILINE,
         )
         package_name = package_match.group(1) if package_match else ""
+        # Match Java's package-to-directory convention before invoking javac.
         source_dir = (
             java_dir.joinpath(*package_name.split("."))
             if package_name
@@ -103,6 +106,8 @@ def compile_selected_java(
         str(classes_dir.resolve()),
         *(str(path.resolve()) for path in java_files),
     ]
+    # Compile the exact selected file list rather than scanning the directory;
+    # this prevents stale files from entering the EvoSuite target set.
     result = subprocess.run(command, text=True, capture_output=True, check=False)
     log_path.write_text(result.stdout + result.stderr, encoding="utf-8")
     if result.returncode != 0:
@@ -151,6 +156,8 @@ def run_evosuite(
         f"-Dsearch_budget={search_budget}",
         "-Dstopping_condition=MaxTime",
     ]
+    # EvoSuite writes several relative output directories, so anchor them under
+    # this run's unique directory.
     result = subprocess.run(
         command,
         cwd=evosuite_dir,

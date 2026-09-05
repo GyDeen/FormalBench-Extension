@@ -65,6 +65,7 @@ def matching_delimiter(
     escaped = False
     for index in range(start, len(source)):
         character = source[index]
+        # Delimiters inside string and character literals are data, not syntax.
         if quote:
             if escaped:
                 escaped = False
@@ -103,6 +104,8 @@ def split_statements(body: str) -> list[str]:
     quote: str | None = None
     escaped = False
     for index, character in enumerate(body):
+        # EvoSuite statements are simple enough to split on semicolons once
+        # quoted semicolons have been excluded.
         if quote:
             if escaped:
                 escaped = False
@@ -129,6 +132,8 @@ def _split_top_level(source: str, delimiter: str = ",") -> list[str]:
     quote: str | None = None
     escaped = False
     for index, character in enumerate(source):
+        # Only commas outside nested calls, arrays, and literals separate
+        # arguments in the target call.
         if quote:
             if escaped:
                 escaped = False
@@ -168,7 +173,7 @@ def strip_outer_parentheses(expression: str) -> str:
 
 def parse_literal(expression: str) -> tuple[str, Any] | None:
     """Parse a supported primitive Java literal."""
-    expression = strip_outer_parentheses(expression).replace("_", "")
+    expression = strip_outer_parentheses(expression)
     if expression == "true":
         return "boolean", True
     if expression == "false":
@@ -181,6 +186,9 @@ def parse_literal(expression: str) -> tuple[str, Any] | None:
         if expression.startswith("Integer"):
             return "int32", 2**31 - 1
         return "int64", 2**63 - 1
+    # Remove Java's numeric separators only after checking named constants;
+    # otherwise Integer.MAX_VALUE would become an unrecognizable identifier.
+    expression = expression.replace("_", "")
     if re.fullmatch(r"[-+]?\d+[lL]", expression):
         return "int64", int(expression[:-1], 10)
     if re.fullmatch(r"[-+]?\d+", expression):
@@ -200,6 +208,7 @@ def _materialize_array(base: str, dimensions: list[str]) -> Any:
     if not dimensions:
         return copy.deepcopy(DEFAULT_VALUES[base])
     if dimensions[0] == "":
+        # An omitted inner dimension, as in new int[2][], starts as null.
         return None
     size_literal = parse_literal(dimensions[0])
     if size_literal is None or not isinstance(size_literal[1], int):
@@ -238,6 +247,8 @@ def find_target_call(
         expression, open_parenthesis, "(", ")"
     )
     arguments_source = expression[open_parenthesis + 1 : close_parenthesis]
+    # Split after locating the matching parenthesis so nested calls do not
+    # accidentally contribute arguments to this call.
     arguments = (
         _split_top_level(arguments_source) if arguments_source.strip() else []
     )
