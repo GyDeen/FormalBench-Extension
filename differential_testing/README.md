@@ -22,7 +22,7 @@ Run it with:
 
 ```bash
 python3 -m differential_testing.generation.extract_test_inputs \
-  FormalBench-data/FilteredJava/evosuite/<run-id>/evosuite-tests \
+  FormalBench-data/FilteredData/evosuite/<run-id>/evosuite-tests \
   --output differential_testing/generation/test_inputs.json
 ```
 
@@ -66,14 +66,37 @@ Each entry in `tests` represents one non-constructor JUnit test:
 
 ## Java/C result comparison
 
+First execute the extracted inputs against the corresponding function-only
+Java and C sources:
+
+```bash
+python3 -m differential_testing.execution.run_java_c \
+  --inputs differential_testing/generation/test_inputs.json \
+  --java-dir FormalBench-data/FilteredData/selected_java/<run-id> \
+  --c-dir FormalBench-data/FilteredData/translated_c/<run-id> \
+  --output-dir differential_testing/results
+```
+
+This creates `java_results.json` and `c_results.json`. Each call is isolated
+and has a two-second timeout by default; use `--timeout SECONDS` to change it.
+If an EvoSuite class name differs from the selected source filename, the
+runner locates the unique source containing the called function.
+
+Execution responsibilities are separated across:
+
+- `run_java_c.py`: command-line parsing and JSON file output.
+- `input_manifest.py`: input validation and grouping.
+- `java_harness.py` and `c_harness.py`: language-specific source generation.
+- `execution_orchestrator.py`: source discovery, compilation, and isolation.
+
 `execution/compare_java_c.py` compares normalized execution results produced
 by Java and C runners:
 
 ```bash
 python3 -m differential_testing.execution.compare_java_c \
   --inputs differential_testing/generation/test_inputs.json \
-  --java-results java_results.json \
-  --c-results c_results.json \
+  --java-results differential_testing/results/java_results.json \
+  --c-results differential_testing/results/c_results.json \
   --output comparison.json
 ```
 
