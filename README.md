@@ -70,11 +70,11 @@ First execute the extracted inputs against the corresponding function-only
 Java and C sources:
 
 ```bash
-python3 -m differential_testing.execution.run_java_c \
-  --inputs differential_testing/generation/test_inputs.json \
-  --java-dir FormalBench-data/FilteredData/selected_java/<run-id> \
-  --c-dir FormalBench-data/FilteredData/translated_c/<run-id> \
-  --output-dir differential_testing/results
+FormalBench-Extension % python3 -m differential_testing.execution.run_java_c \
+  --inputs differential_testing/generation/test_inputs-653ade686f.json \
+  --java-dir FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f \
+  --c-dir FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f \
+  --output-dir differential_testing/results/653ade686f
 ```
 
 This creates `java_results.json` and `c_results.json`. Each call is isolated

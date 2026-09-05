@@ -2,12 +2,12 @@
   "schema_version": "1.0",
   "kind": "java_c_comparison",
   "summary": {
-    "overall_match": true,
+    "overall_match": false,
     "expected_tests": 221,
-    "matched_tests": 221,
-    "mismatched_tests": 0,
-    "matched_steps": 299,
-    "mismatched_steps": 0,
+    "matched_tests": 164,
+    "mismatched_tests": 57,
+    "matched_steps": 231,
+    "mismatched_steps": 68,
     "missing_java_tests": [],
     "missing_c_tests": [],
     "extra_java_tests": [],
@@ -16,11 +16,19 @@
   "tests": [
     {
       "id": "CombSort_ESTest.test0",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ]
         }
       ]
     },
@@ -76,11 +84,19 @@
     },
     {
       "id": "CountList_ESTest.test0",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ]
         }
       ]
     },
@@ -190,21 +206,37 @@
     },
     {
       "id": "CountWays_ESTest.test2",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ]
         }
       ]
     },
     {
       "id": "CountWays_ESTest.test3",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ]
         }
       ]
     },
@@ -230,11 +262,19 @@
     },
     {
       "id": "CountingSort_ESTest.test1",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ]
         }
       ]
     },
@@ -254,11 +294,19 @@
     },
     {
       "id": "CountingSort_ESTest.test3",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.return.value",
+              "reason": "values differ",
+              "java": [],
+              "c": null
+            }
+          ]
         }
       ]
     },
@@ -372,11 +420,19 @@
     },
     {
       "id": "DealnnoyNum_ESTest.test2",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "stack_overflow",
+              "c": "process_crash"
+            }
+          ]
         }
       ]
     },
@@ -392,7 +448,7 @@
     },
     {
       "id": "DealnnoyNum_ESTest.test4",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
@@ -400,35 +456,99 @@
         },
         {
           "id": "call_1",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_1.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "stack_overflow",
+              "c": "process_crash"
+            }
+          ]
         },
         {
           "id": "call_2",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_2.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "stack_overflow",
+              "c": "process_crash"
+            }
+          ]
         },
         {
           "id": "call_3",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_3.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "stack_overflow",
+              "c": "process_crash"
+            }
+          ]
         },
         {
           "id": "call_4",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_4.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "stack_overflow",
+              "c": "process_crash"
+            }
+          ]
         },
         {
           "id": "call_5",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_5.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "stack_overflow",
+              "c": "process_crash"
+            }
+          ]
         },
         {
           "id": "call_6",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_6.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "stack_overflow",
+              "c": "process_crash"
+            }
+          ]
         },
         {
           "id": "call_7",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_7.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "stack_overflow",
+              "c": "process_crash"
+            }
+          ]
         },
         {
           "id": "call_8",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_8.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "stack_overflow",
+              "c": "process_crash"
+            }
+          ]
         }
       ]
     },
@@ -504,11 +624,19 @@
     },
     {
       "id": "DiffEvenOdd_ESTest.test3",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ]
         }
       ]
     },
@@ -564,11 +692,19 @@
     },
     {
       "id": "Fibonacci_ESTest.test0",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "stack_overflow",
+              "c": "process_crash"
+            }
+          ]
         }
       ]
     },
@@ -614,21 +750,37 @@
     },
     {
       "id": "FindPeak_ESTest.test1",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "null_dereference",
+              "c": "process_crash"
+            }
+          ]
         }
       ]
     },
     {
       "id": "FindPeak_ESTest.test2",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ]
         }
       ]
     },
@@ -794,11 +946,19 @@
     },
     {
       "id": "LeftInsertion_ESTest.test1",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ]
         }
       ]
     },
@@ -834,21 +994,37 @@
     },
     {
       "id": "MaxDifference_ESTest.test1",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ]
         }
       ]
     },
     {
       "id": "MaxDifference_ESTest.test2",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ]
         }
       ]
     },
@@ -924,31 +1100,55 @@
     },
     {
       "id": "MaxProduct_ESTest.test3",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "null_dereference",
+              "c": "process_crash"
+            }
+          ]
         }
       ]
     },
     {
       "id": "MaxProduct_ESTest.test4",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ]
         }
       ]
     },
     {
       "id": "MaxProduct_ESTest.test5",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ]
         }
       ]
     },
@@ -994,31 +1194,55 @@
     },
     {
       "id": "MaxSubArraySum_ESTest.test2",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "null_dereference",
+              "c": "process_crash"
+            }
+          ]
         }
       ]
     },
     {
       "id": "MaxSubArraySum_ESTest.test3",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ]
         }
       ]
     },
     {
       "id": "MaxSumOfThreeConsecutive_ESTest.test0",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "bounds_error",
+              "c": "process_crash"
+            }
+          ]
         }
       ]
     },
@@ -1064,31 +1288,55 @@
     },
     {
       "id": "MaxSumOfThreeConsecutive_ESTest.test5",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ]
         }
       ]
     },
     {
       "id": "MaxSumOfThreeConsecutive_ESTest.test6",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "null_dereference",
+              "c": "process_crash"
+            }
+          ]
         }
       ]
     },
     {
       "id": "MaxSumOfThreeConsecutive_ESTest.test7",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ]
         }
       ]
     },
@@ -1114,11 +1362,19 @@
     },
     {
       "id": "MaxSumSubseq_ESTest.test2",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ]
         }
       ]
     },
@@ -1174,11 +1430,19 @@
     },
     {
       "id": "MaximumSegments_ESTest.test0",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ]
         }
       ]
     },
@@ -1194,11 +1458,19 @@
     },
     {
       "id": "MaximumSegments_ESTest.test2",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ]
         }
       ]
     },
@@ -1268,7 +1540,7 @@
     },
     {
       "id": "MinCoins_ESTest.test01",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
@@ -1284,13 +1556,21 @@
         },
         {
           "id": "call_3",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_3.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "bounds_error",
+              "c": "process_crash"
+            }
+          ]
         }
       ]
     },
     {
       "id": "MinCoins_ESTest.test02",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
@@ -1306,35 +1586,75 @@
         },
         {
           "id": "call_3",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_3.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "bounds_error",
+              "c": "process_crash"
+            }
+          ]
         }
       ]
     },
     {
       "id": "MinCoins_ESTest.test03",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "bounds_error",
+              "c": "process_crash"
+            }
+          ]
         }
       ]
     },
     {
       "id": "MinCoins_ESTest.test04",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "stack_overflow",
+              "c": "process_crash"
+            }
+          ]
         },
         {
           "id": "call_1",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_1.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "stack_overflow",
+              "c": "process_crash"
+            }
+          ]
         },
         {
           "id": "call_2",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_2.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "stack_overflow",
+              "c": "process_crash"
+            }
+          ]
         }
       ]
     },
@@ -1512,19 +1832,43 @@
     },
     {
       "id": "MinCoins_ESTest.test11",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "stack_overflow",
+              "c": "process_crash"
+            }
+          ]
         },
         {
           "id": "call_1",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_1.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "stack_overflow",
+              "c": "process_crash"
+            }
+          ]
         },
         {
           "id": "call_2",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_2.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "stack_overflow",
+              "c": "process_crash"
+            }
+          ]
         }
       ]
     },
@@ -1540,21 +1884,37 @@
     },
     {
       "id": "MinCoins_ESTest.test13",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "stack_overflow",
+              "c": "process_crash"
+            }
+          ]
         }
       ]
     },
     {
       "id": "MinCoins_ESTest.test14",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "null_dereference",
+              "c": "process_crash"
+            }
+          ]
         }
       ]
     },
@@ -1590,31 +1950,55 @@
     },
     {
       "id": "MinCost_ESTest.test3",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "null_dereference",
+              "c": "process_crash"
+            }
+          ]
         }
       ]
     },
     {
       "id": "MinCost_ESTest.test4",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ]
         }
       ]
     },
     {
       "id": "MinCost_ESTest.test5",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ]
         }
       ]
     },
@@ -1660,31 +2044,55 @@
     },
     {
       "id": "MinJumps_ESTest.test3",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "null_dereference",
+              "c": "process_crash"
+            }
+          ]
         }
       ]
     },
     {
       "id": "MinJumps_ESTest.test4",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ]
         }
       ]
     },
     {
       "id": "MinJumps_ESTest.test5",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ]
         }
       ]
     },
@@ -1730,21 +2138,37 @@
     },
     {
       "id": "MultiplyElements_ESTest.test1",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ]
         }
       ]
     },
     {
       "id": "MultiplyElements_ESTest.test2",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.return.value",
+              "reason": "values differ",
+              "java": [],
+              "c": null
+            }
+          ]
         }
       ]
     },
@@ -1764,11 +2188,19 @@
     },
     {
       "id": "NewmanPrime_ESTest.test0",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "stack_overflow",
+              "c": "process_crash"
+            }
+          ]
         }
       ]
     },
@@ -1924,11 +2356,19 @@
     },
     {
       "id": "OddLengthSum_ESTest.test2",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ]
         }
       ]
     },
@@ -1954,21 +2394,37 @@
     },
     {
       "id": "PairWise_ESTest.test1",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ]
         }
       ]
     },
     {
       "id": "PairWise_ESTest.test2",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.return.value",
+              "reason": "values differ",
+              "java": [],
+              "c": null
+            }
+          ]
         }
       ]
     },
@@ -2068,21 +2524,37 @@
     },
     {
       "id": "RadixSort_ESTest.test1",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ]
         }
       ]
     },
     {
       "id": "RadixSort_ESTest.test2",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ]
         }
       ]
     },
@@ -2168,11 +2640,19 @@
     },
     {
       "id": "SumArray_ESTest.test1",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ]
         }
       ]
     },
@@ -2238,31 +2718,55 @@
     },
     {
       "id": "SumOfPrimes_ESTest.test1",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "runner_protocol_error",
+              "c": "process_crash"
+            }
+          ]
         }
       ]
     },
     {
       "id": "SumOfPrimes_ESTest.test2",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ]
         }
       ]
     },
     {
       "id": "SumOfPrimes_ESTest.test3",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ]
         }
       ]
     },
@@ -2298,21 +2802,37 @@
     },
     {
       "id": "SumOfSubarrayProd_ESTest.test3",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "null_dereference",
+              "c": "process_crash"
+            }
+          ]
         }
       ]
     },
     {
       "id": "SumOfSubarrayProd_ESTest.test4",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "bounds_error",
+              "c": "process_crash"
+            }
+          ]
         }
       ]
     },
@@ -2338,21 +2858,37 @@
     },
     {
       "id": "SumRangeArray_ESTest.test2",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "null_dereference",
+              "c": "process_crash"
+            }
+          ]
         }
       ]
     },
     {
       "id": "SumRangeArray_ESTest.test3",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ]
         }
       ]
     },
@@ -2488,11 +3024,19 @@
     },
     {
       "id": "TupleToInt_ESTest.test2",
-      "status": "match",
+      "status": "mismatch",
       "steps": [
         {
           "id": "call_0",
-          "status": "match"
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ]
         }
       ]
     },
