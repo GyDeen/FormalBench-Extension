@@ -142,6 +142,8 @@ def _state(fixtures: list[dict[str, Any]]) -> str:
         return '"[]"'
     parts: list[str] = []
     for fixture in fixtures:
+        # Build JSON as Java expressions because values may have changed after
+        # the target call and therefore cannot be serialized here in Python.
         value_json = _value_json(fixture["type"], fixture["id"])
         prefix = json.dumps(
             {"id": fixture["id"], "type": fixture["type"]},
@@ -157,6 +159,8 @@ def _effective_result(
     result = step.get("result")
     if result is not None:
         return result
+    # Bare EvoSuite calls discard their return value. Recover its type from
+    # the source signature so differential comparison still observes it.
     result_type = return_types.get(step["function"])
     if result_type is None:
         return None
@@ -173,11 +177,15 @@ def _test_method(
     lines = [f"  static void run{test_index}(int target) {{"]
     for fixture in fixtures:
         lines.append(f"    {JAVA_TYPES[fixture['type']]} {fixture['id']} = null;")
+    # Initialize lower-dimensional arrays first so matrix entries can reuse
+    # the same Java object and preserve aliasing.
     for fixture in sorted(fixtures, key=lambda item: item["type"].count("[]")):
         value = _array_value(fixture["type"], fixture.get("value"))
         lines.append(f"    {fixture['id']} = {value};")
 
     state_expression = _state(fixtures)
+    # A process targeting a later step replays earlier calls first. This keeps
+    # mutations and result dependencies while still isolating crashes/timeouts.
     for step_index, step in enumerate(test["steps"]):
         arguments = ", ".join(_argument(item) for item in step["arguments"])
         invocation = f"{class_name}.{step['function']}({arguments})"

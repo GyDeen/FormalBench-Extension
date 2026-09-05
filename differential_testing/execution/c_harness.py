@@ -73,6 +73,7 @@ def _argument(argument: dict[str, Any]) -> str:
         return _integer(argument["value"])
     if argument.get("value") is not None:
         raise RunnerError("Inline non-null C arrays must be represented as fixtures")
+    # Translated functions represent a null array as an empty array wrapper.
     return f"({C_TYPES[argument['type']]}){{NULL, 0}}"
 
 
@@ -81,6 +82,8 @@ def _fixture_setup(fixtures: list[dict[str, Any]]) -> list[str]:
         f"  {C_TYPES[fixture['type']]} {fixture['id']} = {{NULL, 0}};"
         for fixture in fixtures
     ]
+    # Referenced rows must be initialized before their containing matrix is
+    # copied into an Int32Matrix wrapper.
     ordered = sorted(fixtures, key=lambda item: item["type"].count("[]"))
     for fixture in ordered:
         fixture_id = fixture["id"]
@@ -123,6 +126,7 @@ def _int32_matrix_setup(name: str, value: list[Any]) -> list[str]:
     row_names: list[str] = []
     for index, row in enumerate(value):
         if isinstance(row, dict) and set(row) == {"ref"}:
+            # Reuse the row wrapper so the C harness mirrors Java aliasing.
             row_names.append(identifier(row["ref"], "matrix row reference"))
             continue
         row_name = f"{name}_row_{index}"
@@ -172,6 +176,8 @@ def _state(fixtures: list[dict[str, Any]]) -> list[str]:
         )[:-1]
         lines.append(f'    fputs("{_escape(prefix)},\\\"value\\\":", stdout);')
         if fixture.get("value") is None:
+            # Keep null distinct from an allocated zero-length fixture in JSON,
+            # even though both use {NULL, 0} at the C call boundary.
             lines.append('    fputs("null", stdout);')
         else:
             lines.append(f"    {_print_value(fixture['type'], fixture['id'])};")
@@ -220,6 +226,8 @@ def _effective_result(
     result = step.get("result")
     if result is not None:
         return result
+    # Capture values from bare EvoSuite calls when the Java signature reveals
+    # a return type, rather than silently losing useful comparison data.
     result_type = return_types.get(step["function"])
     if result_type is None:
         return None
@@ -232,6 +240,8 @@ def _test_function(
     fixtures = test.get("fixtures", [])
     lines = [f"static void run_{test_index}(int target) {{"]
     lines.extend(_fixture_setup(fixtures))
+    # Replaying the prefix of the test preserves mutations and dependent call
+    # results; the outer process runner isolates each requested target step.
     for step_index, step in enumerate(test["steps"]):
         arguments = ", ".join(_argument(item) for item in step["arguments"])
         invocation = f"{step['function']}({arguments})"
