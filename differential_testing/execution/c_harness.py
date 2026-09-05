@@ -23,6 +23,7 @@ static void print_int32(int32_t value) {
 
 C_PRINT_INT32_ARRAY = r'''
 static void print_int32_array(Int32Array value) {
+    if (value.data == NULL) { fputs("null", stdout); return; }
     fputc('[', stdout);
     for (size_t i = 0; i < value.length; i++) {
         if (i != 0) fputc(',', stdout);
@@ -34,6 +35,7 @@ static void print_int32_array(Int32Array value) {
 
 C_PRINT_INT32_MATRIX = r'''
 static void print_int32_matrix(Int32Matrix value) {
+    if (value.rows == NULL) { fputs("null", stdout); return; }
     fputc('[', stdout);
     for (size_t i = 0; i < value.length; i++) {
         if (i != 0) fputc(',', stdout);
@@ -45,6 +47,7 @@ static void print_int32_matrix(Int32Matrix value) {
 
 C_PRINT_DOUBLE_ARRAY = r'''
 static void print_double_array(DoubleArray value) {
+    if (value.data == NULL) { fputs("null", stdout); return; }
     fputc('[', stdout);
     for (size_t i = 0; i < value.length; i++) {
         if (i != 0) fputc(',', stdout);
@@ -73,7 +76,8 @@ def _argument(argument: dict[str, Any]) -> str:
         return _integer(argument["value"])
     if argument.get("value") is not None:
         raise RunnerError("Inline non-null C arrays must be represented as fixtures")
-    # Translated functions represent a null array as an empty array wrapper.
+    # A NULL storage pointer denotes null; empty arrays have non-NULL storage.
+    # The wrapper's length alone cannot distinguish the two.
     return f"({C_TYPES[argument['type']]}){{NULL, 0}}"
 
 
@@ -102,9 +106,10 @@ def _fixture_setup(fixtures: list[dict[str, Any]]) -> list[str]:
 
 
 def _int32_array_setup(name: str, value: list[int]) -> list[str]:
-    if not value:
-        return []
-    items = ", ".join(_integer(item) for item in value)
+    # C has no portable zero-sized stack array. Reserve one unused element for
+    # empty arrays so their storage pointer stays distinct from null. The
+    # logical length remains zero; this does not provide Java bounds checks.
+    items = ", ".join(_integer(item) for item in value) or "0"
     return [
         f"  int32_t {name}_data[] = {{{items}}};",
         f"  {name} = (Int32Array){{{name}_data, {len(value)}}};",
@@ -112,9 +117,7 @@ def _int32_array_setup(name: str, value: list[int]) -> list[str]:
 
 
 def _double_array_setup(name: str, value: list[float]) -> list[str]:
-    if not value:
-        return []
-    items = ", ".join(repr(float(item)) for item in value)
+    items = ", ".join(repr(float(item)) for item in value) or "0.0"
     return [
         f"  double {name}_data[] = {{{items}}};",
         f"  {name} = (DoubleArray){{{name}_data, {len(value)}}};",
@@ -131,24 +134,18 @@ def _int32_matrix_setup(name: str, value: list[Any]) -> list[str]:
             continue
         row_name = f"{name}_row_{index}"
         row_names.append(row_name)
-        if row:
-            items = ", ".join(_integer(item) for item in row)
-            lines.extend(
-                [
-                    f"  int32_t {row_name}_data[] = {{{items}}};",
-                    f"  Int32Array {row_name} = "
-                    f"{{{row_name}_data, {len(row)}}};",
-                ]
-            )
-        else:
-            lines.append(f"  Int32Array {row_name} = {{NULL, 0}};")
-    if row_names:
-        lines.extend(
-            [
-                f"  Int32Array {name}_rows[] = {{{', '.join(row_names)}}};",
-                f"  {name} = (Int32Matrix){{{name}_rows, {len(row_names)}}};",
-            ]
-        )
+        lines.append(f"  Int32Array {row_name} = {{NULL, 0}};")
+        if row is not None:
+            lines.extend(_int32_array_setup(row_name, row))
+    # Null rows remain null, but an empty row or outer matrix gets non-NULL
+    # storage, just like a one-dimensional empty array.
+    rows = ", ".join(row_names) or "{NULL, 0}"
+    lines.extend(
+        [
+            f"  Int32Array {name}_rows[] = {{{rows}}};",
+            f"  {name} = (Int32Matrix){{{name}_rows, {len(row_names)}}};",
+        ]
+    )
     return lines
 
 
@@ -175,12 +172,9 @@ def _state(fixtures: list[dict[str, Any]]) -> list[str]:
             separators=(",", ":"),
         )[:-1]
         lines.append(f'    fputs("{_escape(prefix)},\\\"value\\\":", stdout);')
-        if fixture.get("value") is None:
-            # Keep null distinct from an allocated zero-length fixture in JSON,
-            # even though both use {NULL, 0} at the C call boundary.
-            lines.append('    fputs("null", stdout);')
-        else:
-            lines.append(f"    {_print_value(fixture['type'], fixture['id'])};")
+        # Serialize the actual C representation, including nested null rows,
+        # rather than reconstructing nullness from the original input.
+        lines.append(f"    {_print_value(fixture['type'], fixture['id'])};")
         lines.append("    fputc('}', stdout);")
     lines.append('    fputs("]}", stdout);')
     return lines

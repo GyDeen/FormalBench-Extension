@@ -82,6 +82,14 @@ and has a two-second timeout by default; use `--timeout SECONDS` to change it.
 If an EvoSuite class name differs from the selected source filename, the
 runner locates the unique source containing the called function.
 
+The C harness distinguishes null arrays (`{NULL, 0}`) from empty arrays
+(non-null storage, length zero), including matrix rows. JSON output uses
+`null` for null storage and `[]` for non-null, zero-length storage. Translated
+functions must follow the same convention for returned arrays; a returned
+`{NULL, 0}` is interpreted as null, not empty. This preserves nullness but
+does not introduce Java-style exceptions: reading a C wrapper's `length`
+still succeeds even when its storage pointer is null.
+
 Execution responsibilities are separated across:
 
 - `run_java_c.py`: command-line parsing and JSON file output.
