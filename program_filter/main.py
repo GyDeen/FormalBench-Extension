@@ -103,6 +103,8 @@ def main(argv: Sequence[str] | None = None) -> None:
         raise SystemExit("--evosuite-jar cannot be combined with --skip-compile")
 
     records = load_jsonl(args.input)
+    # Keep the full annotation set as the source for both eligible and rejected
+    # views so classification is performed exactly once.
     annotated = [classify(record, args.exclude_review) for record in records]
     eligible = [record for record in annotated if record["eligible"]]
     excluded = [record for record in annotated if not record["eligible"]]
@@ -124,6 +126,8 @@ def main(argv: Sequence[str] | None = None) -> None:
         "evosuite_log": None,
     }
     if sample:
+        # Compilation and EvoSuite generation are progressive: each stage adds
+        # artifact paths only when the preceding stage was requested and passed.
         java_dir, java_files, manifest_path = extract_selected_java(
             sample,
             args.output_dir,
@@ -165,6 +169,8 @@ def main(argv: Sequence[str] | None = None) -> None:
         reason for record in annotated for reason in record["review_reasons"]
     )
     summary = {
+        # Record both selection statistics and artifact locations so a run can
+        # be reproduced without inferring paths from console output.
         "input": str(args.input.resolve()),
         "seed": args.seed,
         "sample_per_category": args.sample_per_category,
