@@ -61,7 +61,35 @@ def _resolve_reference(
         binding = bindings[expression]
         if binding["kind"] == "constant":
             return {"type": binding["type"], "value": binding["value"]}
+        # Keep fixture and result references instead of copying their values.
+        # The execution harness can then reproduce Java array aliasing.
         return {"type": binding["type"], "ref": binding["id"]}
+
+    # An element expression such as values[0] is an input value, not an array
+    # fixture. Resolve it now because generated harnesses do not interpret Java.
+    array_access = re.fullmatch(
+        r"(?P<name>[A-Za-z_]\w*)(?P<indices>(?:\s*\[[^]]+\])+)", expression
+    )
+    if array_access and array_access.group("name") in bindings:
+        binding = bindings[array_access.group("name")]
+        if "value" not in binding:
+            raise ExtractionError(
+                f"Cannot statically resolve array access: {expression!r}"
+            )
+        value = binding["value"]
+        indices = re.findall(r"\[\s*([^]]+)\s*\]", array_access.group("indices"))
+        for index_expression in indices:
+            index = _constant_index(index_expression, bindings)
+            # A matrix row may alias another fixture rather than own a copy.
+            if isinstance(value, dict) and set(value) == {"ref"}:
+                value = bindings[value["ref"]]["value"]
+            value = value[index]
+        value_type = binding["type"]
+        for _ in indices:
+            value_type = value_type.removesuffix("[]")
+        if isinstance(value, dict) and set(value) == {"ref"}:
+            return {"type": value_type, "ref": value["ref"]}
+        return {"type": value_type, "value": value}
     raise ExtractionError(f"Unsupported test input expression: {expression!r}")
 
 
@@ -108,6 +136,7 @@ def _assign_array_element(
         {"ref": resolved["ref"]} if "ref" in resolved else resolved["value"]
     )
     container = fixture["value"]
+    # Walk to the owning nested array while following any aliased rows.
     for index in indices[:-1]:
         container = container[index]
         if isinstance(container, dict) and set(container) == {"ref"}:
@@ -154,6 +183,8 @@ def _extract_one_test(
 
             array_creation = parse_array_creation(right)
             if array_creation:
+                # Arrays remain named fixtures because later calls may mutate
+                # them or pass the same object through multiple references.
                 fixture = {
                     "id": variable,
                     "type": array_creation[0],
@@ -165,11 +196,28 @@ def _extract_one_test(
                     "kind": "fixture",
                     "id": variable,
                     "type": array_creation[0],
+                    "value": fixture["value"],
+                }
+                continue
+
+            if right == "null" and value_type.endswith("[]"):
+                # A named null array still needs a fixture so direct uses of
+                # that variable retain its declared array type.
+                fixture = {"id": variable, "type": value_type, "value": None}
+                fixtures[variable] = fixture
+                fixture_order.append(variable)
+                bindings[variable] = {
+                    "kind": "fixture",
+                    "id": variable,
+                    "type": value_type,
+                    "value": None,
                 }
                 continue
 
             call = find_target_call(right, target_class)
             if call:
+                # Store the result binding so later calls can consume the
+                # earlier return value without evaluating it during extraction.
                 step_id = f"call_{len(steps)}"
                 step = {
                     "id": step_id,
@@ -202,6 +250,8 @@ def _extract_one_test(
 
             if right in bindings:
                 original = bindings[right]
+                # Rebinding preserves the original identity for arrays and
+                # earlier call results rather than creating a second fixture.
                 bindings[variable] = {
                     "kind": original["kind"],
                     "id": original["id"],
@@ -255,6 +305,8 @@ def _extract_one_test(
     for step in steps:
         used_fixture_ids.update(_referenced_fixture_ids(step["arguments"]))
     pending = list(used_fixture_ids)
+    # Include the transitive fixture closure: a used matrix may reference a
+    # row fixture that never appears directly in a method argument.
     while pending:
         fixture_id = pending.pop()
         fixture = fixtures.get(fixture_id)
