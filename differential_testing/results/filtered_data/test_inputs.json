@@ -1,0 +1,8351 @@
+{
+  "schema_version": "1.0",
+  "kind": "evosuite_test_inputs",
+  "source": {
+    "directory": "/Users/deenzhou/Downloads/Unimelb/ResearchProject/FormalBench-Extension/FormalBench-data/FilteredData/evosuite/seed_726_per_category_10_653ade686f/evosuite-tests",
+    "test_file_count": 50
+  },
+  "tests": [
+    {
+      "id": "CombSort_ESTest.test0",
+      "source_file": "CombSort_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "CombSort",
+          "function": "combSort",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CombSort_ESTest.test1",
+      "source_file": "CombSort_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            1202,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "CombSort",
+          "function": "combSort",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            }
+          ],
+          "result": {
+            "id": "intArray1",
+            "type": "int32[]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CombSort_ESTest.test2",
+      "source_file": "CombSort_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": []
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "CombSort",
+          "function": "combSort",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            }
+          ],
+          "result": {
+            "id": "intArray1",
+            "type": "int32[]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CountIntgralPoints_ESTest.test0",
+      "source_file": "CountIntgralPoints_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "CountIntgralPoints",
+          "function": "countIntgralPoints",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 1
+            },
+            {
+              "type": "int32",
+              "value": 1
+            },
+            {
+              "type": "int32",
+              "value": -1264
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CountIntgralPoints_ESTest.test1",
+      "source_file": "CountIntgralPoints_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "CountIntgralPoints",
+          "function": "countIntgralPoints",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 2733
+            },
+            {
+              "type": "int32",
+              "value": 1471
+            },
+            {
+              "type": "int32",
+              "value": -1112
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CountIntgralPoints_ESTest.test3",
+      "source_file": "CountIntgralPoints_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "CountIntgralPoints",
+          "function": "countIntgralPoints",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 890
+            },
+            {
+              "type": "int32",
+              "value": 1845
+            },
+            {
+              "type": "int32",
+              "value": 890
+            },
+            {
+              "type": "int32",
+              "value": 1
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CountList_ESTest.test0",
+      "source_file": "CountList_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "CountList",
+          "function": "countList",
+          "arguments": [
+            {
+              "type": "int32[][]",
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CountList_ESTest.test1",
+      "source_file": "CountList_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[][]",
+          "value": [
+            []
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "CountList",
+          "function": "countList",
+          "arguments": [
+            {
+              "type": "int32[][]",
+              "ref": "intArray0"
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CountList_ESTest.test2",
+      "source_file": "CountList_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[][]",
+          "value": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "CountList",
+          "function": "countList",
+          "arguments": [
+            {
+              "type": "int32[][]",
+              "ref": "intArray0"
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CountOddSquares_ESTest.test0",
+      "source_file": "CountOddSquares_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "CountOddSquares",
+          "function": "countOddSquares",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": -1
+            },
+            {
+              "type": "int32",
+              "value": -347
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CountOddSquares_ESTest.test1",
+      "source_file": "CountOddSquares_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "CountOddSquares",
+          "function": "countOddSquares",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 3760
+            },
+            {
+              "type": "int32",
+              "value": 815892038
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CountOddSquares_ESTest.test2",
+      "source_file": "CountOddSquares_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "CountOddSquares",
+          "function": "countOddSquares",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": -3882
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CountUnsetBits_ESTest.test0",
+      "source_file": "CountUnsetBits_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "CountUnsetBits",
+          "function": "countUnsetBits",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 2125
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CountUnsetBits_ESTest.test1",
+      "source_file": "CountUnsetBits_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "CountUnsetBits",
+          "function": "countUnsetBits",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 55
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CountUnsetBits_ESTest.test2",
+      "source_file": "CountUnsetBits_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "CountUnsetBits",
+          "function": "countUnsetBits",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": -2117
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CountWays_ESTest.test0",
+      "source_file": "CountWays_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "CountWays",
+          "function": "countWays",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 1718
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CountWays_ESTest.test1",
+      "source_file": "CountWays_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "CountWays",
+          "function": "countWays",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 5241
+            }
+          ]
+        },
+        {
+          "id": "call_1",
+          "class": "CountWays",
+          "function": "countWays",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 5241
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CountWays_ESTest.test2",
+      "source_file": "CountWays_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "CountWays",
+          "function": "countWays",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": -1869585533
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CountWays_ESTest.test3",
+      "source_file": "CountWays_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "CountWays",
+          "function": "countWays",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CountWays_ESTest.test4",
+      "source_file": "CountWays_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "CountWays",
+          "function": "countWays",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 2428
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CountingSort_ESTest.test0",
+      "source_file": "CountingSort_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            -2455,
+            7610
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "CountingSort",
+          "function": "countingSort",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CountingSort_ESTest.test1",
+      "source_file": "CountingSort_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "CountingSort",
+          "function": "countingSort",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CountingSort_ESTest.test2",
+      "source_file": "CountingSort_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            1202,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "CountingSort",
+          "function": "countingSort",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            }
+          ],
+          "result": {
+            "id": "intArray1",
+            "type": "int32[]"
+          }
+        },
+        {
+          "id": "call_1",
+          "class": "CountingSort",
+          "function": "countingSort",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray1"
+            }
+          ],
+          "result": {
+            "id": "intArray2",
+            "type": "int32[]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CountingSort_ESTest.test3",
+      "source_file": "CountingSort_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": []
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "CountingSort",
+          "function": "countingSort",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            }
+          ],
+          "result": {
+            "id": "intArray1",
+            "type": "int32[]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DealnnoyNum_ESTest.test0",
+      "source_file": "DealnnoyNum_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "DealnnoyNum",
+          "function": "dealnnoyNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "call_1",
+          "class": "DealnnoyNum",
+          "function": "dealnnoyNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "int1",
+            "type": "int32"
+          }
+        },
+        {
+          "id": "call_2",
+          "class": "DealnnoyNum",
+          "function": "dealnnoyNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": -2549
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "int3",
+            "type": "int32"
+          }
+        },
+        {
+          "id": "call_3",
+          "class": "DealnnoyNum",
+          "function": "dealnnoyNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": -2981
+            }
+          ]
+        },
+        {
+          "id": "call_4",
+          "class": "DealnnoyNum",
+          "function": "dealnnoyNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 1
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "int5",
+            "type": "int32"
+          }
+        },
+        {
+          "id": "call_5",
+          "class": "DealnnoyNum",
+          "function": "dealnnoyNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "int6",
+            "type": "int32"
+          }
+        },
+        {
+          "id": "call_6",
+          "class": "DealnnoyNum",
+          "function": "dealnnoyNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 1153
+            },
+            {
+              "type": "int32",
+              "value": 1607
+            }
+          ]
+        },
+        {
+          "id": "call_7",
+          "class": "DealnnoyNum",
+          "function": "dealnnoyNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": -2732
+            },
+            {
+              "type": "int32",
+              "value": -1
+            }
+          ]
+        },
+        {
+          "id": "call_8",
+          "class": "DealnnoyNum",
+          "function": "dealnnoyNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "ref": "int3"
+            },
+            {
+              "type": "int32",
+              "value": -2549
+            }
+          ]
+        },
+        {
+          "id": "call_9",
+          "class": "DealnnoyNum",
+          "function": "dealnnoyNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "ref": "int5"
+            },
+            {
+              "type": "int32",
+              "value": -1691
+            }
+          ],
+          "result": {
+            "id": "int12",
+            "type": "int32"
+          }
+        },
+        {
+          "id": "call_10",
+          "class": "DealnnoyNum",
+          "function": "dealnnoyNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "ref": "int6"
+            },
+            {
+              "type": "int32",
+              "value": 1607
+            }
+          ]
+        },
+        {
+          "id": "call_11",
+          "class": "DealnnoyNum",
+          "function": "dealnnoyNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "ref": "int1"
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "call_12",
+          "class": "DealnnoyNum",
+          "function": "dealnnoyNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "ref": "int5"
+            },
+            {
+              "type": "int32",
+              "ref": "int5"
+            }
+          ]
+        },
+        {
+          "id": "call_13",
+          "class": "DealnnoyNum",
+          "function": "dealnnoyNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": -1
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "call_14",
+          "class": "DealnnoyNum",
+          "function": "dealnnoyNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "ref": "int6"
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "call_15",
+          "class": "DealnnoyNum",
+          "function": "dealnnoyNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": -1
+            }
+          ]
+        },
+        {
+          "id": "call_16",
+          "class": "DealnnoyNum",
+          "function": "dealnnoyNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "ref": "int3"
+            },
+            {
+              "type": "int32",
+              "value": 1021
+            }
+          ]
+        },
+        {
+          "id": "call_17",
+          "class": "DealnnoyNum",
+          "function": "dealnnoyNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "ref": "int12"
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "int16",
+            "type": "int32"
+          }
+        },
+        {
+          "id": "call_18",
+          "class": "DealnnoyNum",
+          "function": "dealnnoyNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": -1387
+            },
+            {
+              "type": "int32",
+              "value": -4092
+            }
+          ]
+        },
+        {
+          "id": "call_19",
+          "class": "DealnnoyNum",
+          "function": "dealnnoyNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "ref": "int16"
+            },
+            {
+              "type": "int32",
+              "value": -1691
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "DealnnoyNum_ESTest.test1",
+      "source_file": "DealnnoyNum_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "DealnnoyNum",
+          "function": "dealnnoyNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "call_1",
+          "class": "DealnnoyNum",
+          "function": "dealnnoyNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "call_2",
+          "class": "DealnnoyNum",
+          "function": "dealnnoyNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "call_3",
+          "class": "DealnnoyNum",
+          "function": "dealnnoyNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 1
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DealnnoyNum_ESTest.test2",
+      "source_file": "DealnnoyNum_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "DealnnoyNum",
+          "function": "dealnnoyNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 1
+            },
+            {
+              "type": "int32",
+              "value": -13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "DealnnoyNum_ESTest.test3",
+      "source_file": "DealnnoyNum_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "DealnnoyNum",
+          "function": "dealnnoyNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": -1
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DealnnoyNum_ESTest.test4",
+      "source_file": "DealnnoyNum_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "DealnnoyNum",
+          "function": "dealnnoyNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": -3882
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "int2",
+            "type": "int32"
+          }
+        },
+        {
+          "id": "call_1",
+          "class": "DealnnoyNum",
+          "function": "dealnnoyNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": -1
+            },
+            {
+              "type": "int32",
+              "value": -347
+            }
+          ],
+          "result": {
+            "id": "int5",
+            "type": "int32"
+          }
+        },
+        {
+          "id": "call_2",
+          "class": "DealnnoyNum",
+          "function": "dealnnoyNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 2115
+            },
+            {
+              "type": "int32",
+              "ref": "int5"
+            }
+          ]
+        },
+        {
+          "id": "call_3",
+          "class": "DealnnoyNum",
+          "function": "dealnnoyNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": -3882
+            }
+          ]
+        },
+        {
+          "id": "call_4",
+          "class": "DealnnoyNum",
+          "function": "dealnnoyNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 2115
+            }
+          ]
+        },
+        {
+          "id": "call_5",
+          "class": "DealnnoyNum",
+          "function": "dealnnoyNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": -2226
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "call_6",
+          "class": "DealnnoyNum",
+          "function": "dealnnoyNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": -2226
+            }
+          ]
+        },
+        {
+          "id": "call_7",
+          "class": "DealnnoyNum",
+          "function": "dealnnoyNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "ref": "int2"
+            },
+            {
+              "type": "int32",
+              "value": -131
+            }
+          ]
+        },
+        {
+          "id": "call_8",
+          "class": "DealnnoyNum",
+          "function": "dealnnoyNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": -316
+            },
+            {
+              "type": "int32",
+              "value": -1812
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "DealnnoyNum_ESTest.test5",
+      "source_file": "DealnnoyNum_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "DealnnoyNum",
+          "function": "dealnnoyNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 1
+            },
+            {
+              "type": "int32",
+              "value": 462
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DiameterCircle_ESTest.test0",
+      "source_file": "DiameterCircle_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "DiameterCircle",
+          "function": "diameterCircle",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DiameterCircle_ESTest.test1",
+      "source_file": "DiameterCircle_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "DiameterCircle",
+          "function": "diameterCircle",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 2125
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DiameterCircle_ESTest.test2",
+      "source_file": "DiameterCircle_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "DiameterCircle",
+          "function": "diameterCircle",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": -3882
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DiffEvenOdd_ESTest.test0",
+      "source_file": "DiffEvenOdd_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            1135,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "DiffEvenOdd",
+          "function": "diffEvenOdd",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DiffEvenOdd_ESTest.test1",
+      "source_file": "DiffEvenOdd_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": []
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "DiffEvenOdd",
+          "function": "diffEvenOdd",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DiffEvenOdd_ESTest.test2",
+      "source_file": "DiffEvenOdd_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            -2030,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "DiffEvenOdd",
+          "function": "diffEvenOdd",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DiffEvenOdd_ESTest.test3",
+      "source_file": "DiffEvenOdd_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "DiffEvenOdd",
+          "function": "diffEvenOdd",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "DiffEvenOdd_ESTest.test4",
+      "source_file": "DiffEvenOdd_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            -221,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "DiffEvenOdd",
+          "function": "diffEvenOdd",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DiffEvenOdd_ESTest.test5",
+      "source_file": "DiffEvenOdd_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "DiffEvenOdd",
+          "function": "diffEvenOdd",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DogAge_ESTest.test0",
+      "source_file": "DogAge_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "DogAge",
+          "function": "dogAge",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DogAge_ESTest.test1",
+      "source_file": "DogAge_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "DogAge",
+          "function": "dogAge",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 2125
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DogAge_ESTest.test2",
+      "source_file": "DogAge_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "DogAge",
+          "function": "dogAge",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": -3882
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Fibonacci_ESTest.test0",
+      "source_file": "Fibonacci_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "Fibonacci",
+          "function": "fibonacci",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Fibonacci_ESTest.test1",
+      "source_file": "Fibonacci_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "Fibonacci",
+          "function": "fibonacci",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 1
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Fibonacci_ESTest.test2",
+      "source_file": "Fibonacci_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "Fibonacci",
+          "function": "fibonacci",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Fibonacci_ESTest.test3",
+      "source_file": "Fibonacci_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "Fibonacci",
+          "function": "fibonacci",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 232
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "FindPeak_ESTest.test0",
+      "source_file": "FindPeak_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            0,
+            1539,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "FindPeak",
+          "function": "findPeak",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 8
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "FindPeak_ESTest.test1",
+      "source_file": "FindPeak_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "FindPeak",
+          "function": "findPeak",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "value": null
+            },
+            {
+              "type": "int32",
+              "value": 494
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "FindPeak_ESTest.test2",
+      "source_file": "FindPeak_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "FindPeak",
+          "function": "findPeak",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 1539
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "FindPeak_ESTest.test3",
+      "source_file": "FindPeak_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "FindPeak",
+          "function": "findPeak",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 8
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "FindPeak_ESTest.test4",
+      "source_file": "FindPeak_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "FindPeak",
+          "function": "findPeak",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "FindPoints_ESTest.test0",
+      "source_file": "FindPoints_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "FindPoints",
+          "function": "findPoints",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": -450
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "intArray0",
+            "type": "int32[]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "FindPoints_ESTest.test1",
+      "source_file": "FindPoints_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "FindPoints",
+          "function": "findPoints",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": -4430
+            },
+            {
+              "type": "int32",
+              "value": 2733
+            },
+            {
+              "type": "int32",
+              "value": -1679
+            },
+            {
+              "type": "int32",
+              "value": 2733
+            }
+          ],
+          "result": {
+            "id": "intArray0",
+            "type": "int32[]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "FindPoints_ESTest.test2",
+      "source_file": "FindPoints_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "FindPoints",
+          "function": "findPoints",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "intArray0",
+            "type": "int32[]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "FindPoints_ESTest.test3",
+      "source_file": "FindPoints_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "FindPoints",
+          "function": "findPoints",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": -1628
+            },
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": -2185
+            },
+            {
+              "type": "int32",
+              "value": 1471
+            }
+          ],
+          "result": {
+            "id": "intArray0",
+            "type": "int32[]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "FindPoints_ESTest.test4",
+      "source_file": "FindPoints_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "FindPoints",
+          "function": "findPoints",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": -1746
+            },
+            {
+              "type": "int32",
+              "value": 648
+            },
+            {
+              "type": "int32",
+              "value": 2433
+            }
+          ],
+          "result": {
+            "id": "intArray0",
+            "type": "int32[]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "FindPoints_ESTest.test5",
+      "source_file": "FindPoints_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "FindPoints",
+          "function": "findPoints",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 2733
+            },
+            {
+              "type": "int32",
+              "value": 1471
+            },
+            {
+              "type": "int32",
+              "value": -1112
+            }
+          ],
+          "result": {
+            "id": "intArray0",
+            "type": "int32[]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "FindPoints_ESTest.test6",
+      "source_file": "FindPoints_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "FindPoints",
+          "function": "findPoints",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 1471
+            },
+            {
+              "type": "int32",
+              "value": 1471
+            },
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "intArray0",
+            "type": "int32[]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "FindRectNum_ESTest.test0",
+      "source_file": "FindRectNum_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "FindRectNum",
+          "function": "findRectNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "FindRectNum_ESTest.test1",
+      "source_file": "FindRectNum_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "FindRectNum",
+          "function": "findRectNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 1446006
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "FindRectNum_ESTest.test2",
+      "source_file": "FindRectNum_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "FindRectNum",
+          "function": "findRectNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 1202
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "HexagonalNum_ESTest.test0",
+      "source_file": "HexagonalNum_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "HexagonalNum",
+          "function": "hexagonalNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "HexagonalNum_ESTest.test1",
+      "source_file": "HexagonalNum_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "HexagonalNum",
+          "function": "hexagonalNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 10032960
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "HexagonalNum_ESTest.test2",
+      "source_file": "HexagonalNum_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "HexagonalNum",
+          "function": "hexagonalNum",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": -3882
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "LeftInsertion_ESTest.test0",
+      "source_file": "LeftInsertion_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "LeftInsertion",
+          "function": "leftInsertion",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": -1
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "LeftInsertion_ESTest.test1",
+      "source_file": "LeftInsertion_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "LeftInsertion",
+          "function": "leftInsertion",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "value": null
+            },
+            {
+              "type": "int32",
+              "value": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "LeftInsertion_ESTest.test2",
+      "source_file": "LeftInsertion_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            582
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "LeftInsertion",
+          "function": "leftInsertion",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 1
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "LeftInsertion_ESTest.test3",
+      "source_file": "LeftInsertion_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "LeftInsertion",
+          "function": "leftInsertion",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MaxDifference_ESTest.test0",
+      "source_file": "MaxDifference_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[][]",
+          "value": [
+            {
+              "ref": "intArray1"
+            },
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "id": "intArray1",
+          "type": "int32[]",
+          "value": [
+            0,
+            -300,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaxDifference",
+          "function": "maxDifference",
+          "arguments": [
+            {
+              "type": "int32[][]",
+              "ref": "intArray0"
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MaxDifference_ESTest.test1",
+      "source_file": "MaxDifference_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaxDifference",
+          "function": "maxDifference",
+          "arguments": [
+            {
+              "type": "int32[][]",
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MaxDifference_ESTest.test2",
+      "source_file": "MaxDifference_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[][]",
+          "value": [
+            [
+              0
+            ]
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaxDifference",
+          "function": "maxDifference",
+          "arguments": [
+            {
+              "type": "int32[][]",
+              "ref": "intArray0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MaxDifference_ESTest.test3",
+      "source_file": "MaxDifference_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[][]",
+          "value": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaxDifference",
+          "function": "maxDifference",
+          "arguments": [
+            {
+              "type": "int32[][]",
+              "ref": "intArray0"
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MaxOfTwo_ESTest.test0",
+      "source_file": "MaxOfTwo_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaxOfTwo",
+          "function": "maxOfTwo",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MaxOfTwo_ESTest.test1",
+      "source_file": "MaxOfTwo_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaxOfTwo",
+          "function": "maxOfTwo",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": -1
+            },
+            {
+              "type": "int32",
+              "value": -347
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MaxOfTwo_ESTest.test2",
+      "source_file": "MaxOfTwo_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaxOfTwo",
+          "function": "maxOfTwo",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 1
+            },
+            {
+              "type": "int32",
+              "value": 462
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MaxProduct_ESTest.test0",
+      "source_file": "MaxProduct_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            -340,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaxProduct",
+          "function": "maxProduct",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 6
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MaxProduct_ESTest.test1",
+      "source_file": "MaxProduct_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            -1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaxProduct",
+          "function": "maxProduct",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 1
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MaxProduct_ESTest.test2",
+      "source_file": "MaxProduct_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaxProduct",
+          "function": "maxProduct",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 142
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MaxProduct_ESTest.test3",
+      "source_file": "MaxProduct_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaxProduct",
+          "function": "maxProduct",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "value": null
+            },
+            {
+              "type": "int32",
+              "value": 1278
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MaxProduct_ESTest.test4",
+      "source_file": "MaxProduct_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaxProduct",
+          "function": "maxProduct",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": -340
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MaxProduct_ESTest.test5",
+      "source_file": "MaxProduct_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaxProduct",
+          "function": "maxProduct",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MaxProduct_ESTest.test6",
+      "source_file": "MaxProduct_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            2,
+            1313
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaxProduct",
+          "function": "maxProduct",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 2
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MaxProduct_ESTest.test7",
+      "source_file": "MaxProduct_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            7,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaxProduct",
+          "function": "maxProduct",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 7
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MaxSubArraySum_ESTest.test0",
+      "source_file": "MaxSubArraySum_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            -1,
+            0,
+            0,
+            437,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaxSubArraySum",
+          "function": "maxSubArraySum",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 5
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MaxSubArraySum_ESTest.test1",
+      "source_file": "MaxSubArraySum_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaxSubArraySum",
+          "function": "maxSubArraySum",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": -1
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MaxSubArraySum_ESTest.test2",
+      "source_file": "MaxSubArraySum_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaxSubArraySum",
+          "function": "maxSubArraySum",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "value": null
+            },
+            {
+              "type": "int32",
+              "value": 507
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MaxSubArraySum_ESTest.test3",
+      "source_file": "MaxSubArraySum_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaxSubArraySum",
+          "function": "maxSubArraySum",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 437
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MaxSumOfThreeConsecutive_ESTest.test0",
+      "source_file": "MaxSumOfThreeConsecutive_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            0,
+            0,
+            714,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaxSumOfThreeConsecutive",
+          "function": "maxSumOfThreeConsecutive",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 2125
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MaxSumOfThreeConsecutive_ESTest.test1",
+      "source_file": "MaxSumOfThreeConsecutive_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            0,
+            -1,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaxSumOfThreeConsecutive",
+          "function": "maxSumOfThreeConsecutive",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 3
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MaxSumOfThreeConsecutive_ESTest.test2",
+      "source_file": "MaxSumOfThreeConsecutive_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaxSumOfThreeConsecutive",
+          "function": "maxSumOfThreeConsecutive",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 1
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MaxSumOfThreeConsecutive_ESTest.test3",
+      "source_file": "MaxSumOfThreeConsecutive_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaxSumOfThreeConsecutive",
+          "function": "maxSumOfThreeConsecutive",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 3
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MaxSumOfThreeConsecutive_ESTest.test4",
+      "source_file": "MaxSumOfThreeConsecutive_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            -340,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaxSumOfThreeConsecutive",
+          "function": "maxSumOfThreeConsecutive",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 2
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MaxSumOfThreeConsecutive_ESTest.test5",
+      "source_file": "MaxSumOfThreeConsecutive_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaxSumOfThreeConsecutive",
+          "function": "maxSumOfThreeConsecutive",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": -1082
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MaxSumOfThreeConsecutive_ESTest.test6",
+      "source_file": "MaxSumOfThreeConsecutive_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaxSumOfThreeConsecutive",
+          "function": "maxSumOfThreeConsecutive",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "value": null
+            },
+            {
+              "type": "int32",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MaxSumOfThreeConsecutive_ESTest.test7",
+      "source_file": "MaxSumOfThreeConsecutive_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": []
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaxSumOfThreeConsecutive",
+          "function": "maxSumOfThreeConsecutive",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MaxSumSubseq_ESTest.test0",
+      "source_file": "MaxSumSubseq_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            0,
+            1856,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaxSumSubseq",
+          "function": "maxSumSubseq",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MaxSumSubseq_ESTest.test1",
+      "source_file": "MaxSumSubseq_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            -937,
+            -1,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaxSumSubseq",
+          "function": "maxSumSubseq",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MaxSumSubseq_ESTest.test2",
+      "source_file": "MaxSumSubseq_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaxSumSubseq",
+          "function": "maxSumSubseq",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MaxSumSubseq_ESTest.test3",
+      "source_file": "MaxSumSubseq_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaxSumSubseq",
+          "function": "maxSumSubseq",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MaxSumSubseq_ESTest.test4",
+      "source_file": "MaxSumSubseq_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": []
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaxSumSubseq",
+          "function": "maxSumSubseq",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MaxVolume_ESTest.test0",
+      "source_file": "MaxVolume_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaxVolume",
+          "function": "maxVolume",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 2125
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MaxVolume_ESTest.test1",
+      "source_file": "MaxVolume_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaxVolume",
+          "function": "maxVolume",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 55
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MaxVolume_ESTest.test2",
+      "source_file": "MaxVolume_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaxVolume",
+          "function": "maxVolume",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": -2117
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MaximumSegments_ESTest.test0",
+      "source_file": "MaximumSegments_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaximumSegments",
+          "function": "maximumSegments",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 1578
+            },
+            {
+              "type": "int32",
+              "value": -1036
+            },
+            {
+              "type": "int32",
+              "value": -2265
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MaximumSegments_ESTest.test1",
+      "source_file": "MaximumSegments_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaximumSegments",
+          "function": "maximumSegments",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MaximumSegments_ESTest.test2",
+      "source_file": "MaximumSegments_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaximumSegments",
+          "function": "maximumSegments",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": -4430
+            },
+            {
+              "type": "int32",
+              "value": 2733
+            },
+            {
+              "type": "int32",
+              "value": -1679
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MaximumSegments_ESTest.test3",
+      "source_file": "MaximumSegments_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaximumSegments",
+          "function": "maximumSegments",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 1017
+            },
+            {
+              "type": "int32",
+              "value": 727
+            },
+            {
+              "type": "int32",
+              "value": 727
+            },
+            {
+              "type": "int32",
+              "value": 1017
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MaximumSegments_ESTest.test4",
+      "source_file": "MaximumSegments_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaximumSegments",
+          "function": "maximumSegments",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 3911
+            },
+            {
+              "type": "int32",
+              "value": 3937
+            },
+            {
+              "type": "int32",
+              "value": 3908
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MaximumSegments_ESTest.test5",
+      "source_file": "MaximumSegments_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MaximumSegments",
+          "function": "maximumSegments",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 3911
+            },
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 3911
+            },
+            {
+              "type": "int32",
+              "value": 3937
+            }
+          ]
+        },
+        {
+          "id": "call_1",
+          "class": "MaximumSegments",
+          "function": "maximumSegments",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 3911
+            },
+            {
+              "type": "int32",
+              "value": 3937
+            },
+            {
+              "type": "int32",
+              "value": 3908
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "call_2",
+          "class": "MaximumSegments",
+          "function": "maximumSegments",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 3937
+            },
+            {
+              "type": "int32",
+              "value": 3911
+            },
+            {
+              "type": "int32",
+              "value": 933
+            },
+            {
+              "type": "int32",
+              "value": 1874
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MinCoins_ESTest.test00",
+      "source_file": "MinCoins_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            1200,
+            0,
+            -1,
+            1306,
+            -333,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 1
+            },
+            {
+              "type": "int32",
+              "value": 1306
+            }
+          ]
+        },
+        {
+          "id": "call_1",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 2175
+            },
+            {
+              "type": "int32",
+              "value": -1
+            }
+          ]
+        },
+        {
+          "id": "call_2",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 1
+            },
+            {
+              "type": "int32",
+              "value": 138
+            }
+          ]
+        },
+        {
+          "id": "call_3",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": -333
+            },
+            {
+              "type": "int32",
+              "value": -158
+            }
+          ]
+        },
+        {
+          "id": "call_4",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 2147483647
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MinCoins_ESTest.test01",
+      "source_file": "MinCoins_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray1",
+          "type": "int32[]",
+          "value": [
+            2147483647,
+            2147483647,
+            2147483647,
+            -1,
+            2147483647,
+            2147483647,
+            -1
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "value": null
+            },
+            {
+              "type": "int32",
+              "value": -1
+            },
+            {
+              "type": "int32",
+              "value": -1
+            }
+          ]
+        },
+        {
+          "id": "call_1",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray1"
+            },
+            {
+              "type": "int32",
+              "value": -1
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "call_2",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "value": null
+            },
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": -700
+            }
+          ]
+        },
+        {
+          "id": "call_3",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray1"
+            },
+            {
+              "type": "int32",
+              "value": 2147483647
+            },
+            {
+              "type": "int32",
+              "value": 2147483647
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MinCoins_ESTest.test02",
+      "source_file": "MinCoins_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray1",
+          "type": "int32[]",
+          "value": [
+            2147483647,
+            2147483647,
+            2147483647,
+            -1,
+            2147483647,
+            2147483647,
+            -1
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "value": null
+            },
+            {
+              "type": "int32",
+              "value": -1
+            },
+            {
+              "type": "int32",
+              "value": -1
+            }
+          ]
+        },
+        {
+          "id": "call_1",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray1"
+            },
+            {
+              "type": "int32",
+              "value": 1
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "call_2",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "value": null
+            },
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": -700
+            }
+          ]
+        },
+        {
+          "id": "call_3",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray1"
+            },
+            {
+              "type": "int32",
+              "value": 2147483647
+            },
+            {
+              "type": "int32",
+              "value": 2147483647
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MinCoins_ESTest.test03",
+      "source_file": "MinCoins_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            2147483647,
+            923,
+            1450
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 1450
+            },
+            {
+              "type": "int32",
+              "value": 923
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MinCoins_ESTest.test04",
+      "source_file": "MinCoins_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            2147483647,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 1450
+            },
+            {
+              "type": "int32",
+              "value": 923
+            }
+          ]
+        },
+        {
+          "id": "call_1",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": -1123
+            }
+          ]
+        },
+        {
+          "id": "call_2",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 923
+            },
+            {
+              "type": "int32",
+              "value": -1123
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MinCoins_ESTest.test05",
+      "source_file": "MinCoins_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            1919,
+            0,
+            -1,
+            1306,
+            -333,
+            1200
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 1
+            },
+            {
+              "type": "int32",
+              "value": 1306
+            }
+          ]
+        },
+        {
+          "id": "call_1",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": -1
+            }
+          ]
+        },
+        {
+          "id": "call_2",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 1
+            },
+            {
+              "type": "int32",
+              "value": 606
+            }
+          ]
+        },
+        {
+          "id": "call_3",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "call_4",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MinCoins_ESTest.test06",
+      "source_file": "MinCoins_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": []
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "call_1",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "call_2",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 520
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MinCoins_ESTest.test07",
+      "source_file": "MinCoins_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "value": null
+            },
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": -385
+            }
+          ]
+        },
+        {
+          "id": "call_1",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "value": null
+            },
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 437
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MinCoins_ESTest.test08",
+      "source_file": "MinCoins_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": []
+        },
+        {
+          "id": "intArray1",
+          "type": "int32[]",
+          "value": [
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "call_1",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "call_2",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "call_3",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "call_4",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "call_5",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "call_6",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": -434
+            },
+            {
+              "type": "int32",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "call_7",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": -434
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "call_8",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 6776
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "call_9",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 77
+            },
+            {
+              "type": "int32",
+              "value": -3324
+            }
+          ]
+        },
+        {
+          "id": "call_10",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 2147483647
+            },
+            {
+              "type": "int32",
+              "value": -2205
+            }
+          ]
+        },
+        {
+          "id": "call_11",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 77
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "call_12",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 1
+            },
+            {
+              "type": "int32",
+              "value": -1
+            }
+          ]
+        },
+        {
+          "id": "call_13",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "call_14",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "call_15",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "call_16",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray1"
+            },
+            {
+              "type": "int32",
+              "value": -2026
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MinCoins_ESTest.test09",
+      "source_file": "MinCoins_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            1200,
+            0,
+            -1,
+            1306,
+            -333,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 1
+            },
+            {
+              "type": "int32",
+              "value": 1306
+            }
+          ]
+        },
+        {
+          "id": "call_1",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": -158
+            },
+            {
+              "type": "int32",
+              "value": 644
+            }
+          ]
+        },
+        {
+          "id": "call_2",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "call_3",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 1306
+            },
+            {
+              "type": "int32",
+              "value": -2374
+            }
+          ]
+        },
+        {
+          "id": "call_4",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 1
+            },
+            {
+              "type": "int32",
+              "value": -3035
+            }
+          ]
+        },
+        {
+          "id": "call_5",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": -3035
+            },
+            {
+              "type": "int32",
+              "value": 2147483647
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MinCoins_ESTest.test10",
+      "source_file": "MinCoins_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "value": null
+            },
+            {
+              "type": "int32",
+              "value": -1440
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MinCoins_ESTest.test11",
+      "source_file": "MinCoins_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 2147483647
+            },
+            {
+              "type": "int32",
+              "value": 1
+            }
+          ],
+          "result": {
+            "id": "int2",
+            "type": "int32"
+          }
+        },
+        {
+          "id": "call_1",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 2147483647
+            },
+            {
+              "type": "int32",
+              "ref": "int2"
+            }
+          ],
+          "result": {
+            "id": "int3",
+            "type": "int32"
+          }
+        },
+        {
+          "id": "call_2",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "ref": "int3"
+            },
+            {
+              "type": "int32",
+              "ref": "int2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MinCoins_ESTest.test12",
+      "source_file": "MinCoins_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            582
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 1947
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MinCoins_ESTest.test13",
+      "source_file": "MinCoins_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            -134,
+            -1249,
+            1856,
+            714,
+            815,
+            779,
+            2125,
+            1,
+            2643
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 2125
+            },
+            {
+              "type": "int32",
+              "value": 1856
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MinCoins_ESTest.test14",
+      "source_file": "MinCoins_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MinCoins",
+          "function": "minCoins",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "value": null
+            },
+            {
+              "type": "int32",
+              "value": 1177
+            },
+            {
+              "type": "int32",
+              "value": 1177
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MinCost_ESTest.test0",
+      "source_file": "MinCost_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[][]",
+          "value": [
+            {
+              "ref": "intArray1"
+            },
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "id": "intArray1",
+          "type": "int32[]",
+          "value": [
+            0,
+            -1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MinCost",
+          "function": "minCost",
+          "arguments": [
+            {
+              "type": "int32[][]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 4
+            },
+            {
+              "type": "int32",
+              "value": 4
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MinCost_ESTest.test1",
+      "source_file": "MinCost_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[][]",
+          "value": [
+            {
+              "ref": "intArray1"
+            },
+            {
+              "ref": "intArray1"
+            },
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "id": "intArray1",
+          "type": "int32[]",
+          "value": [
+            -1021,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MinCost",
+          "function": "minCost",
+          "arguments": [
+            {
+              "type": "int32[][]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 4
+            },
+            {
+              "type": "int32",
+              "value": 4
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MinCost_ESTest.test2",
+      "source_file": "MinCost_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[][]",
+          "value": [
+            {
+              "ref": "intArray1"
+            },
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "id": "intArray1",
+          "type": "int32[]",
+          "value": [
+            2363,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MinCost",
+          "function": "minCost",
+          "arguments": [
+            {
+              "type": "int32[][]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MinCost_ESTest.test3",
+      "source_file": "MinCost_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MinCost",
+          "function": "minCost",
+          "arguments": [
+            {
+              "type": "int32[][]",
+              "value": null
+            },
+            {
+              "type": "int32",
+              "value": 2
+            },
+            {
+              "type": "int32",
+              "value": 99
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MinCost_ESTest.test4",
+      "source_file": "MinCost_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[][]",
+          "value": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MinCost",
+          "function": "minCost",
+          "arguments": [
+            {
+              "type": "int32[][]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": -1106
+            },
+            {
+              "type": "int32",
+              "value": -1106
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MinCost_ESTest.test5",
+      "source_file": "MinCost_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[][]",
+          "value": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            {
+              "ref": "intArray1"
+            },
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "id": "intArray1",
+          "type": "int32[]",
+          "value": [
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MinCost",
+          "function": "minCost",
+          "arguments": [
+            {
+              "type": "int32[][]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 4
+            },
+            {
+              "type": "int32",
+              "value": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MinCost_ESTest.test6",
+      "source_file": "MinCost_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[][]",
+          "value": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MinCost",
+          "function": "minCost",
+          "arguments": [
+            {
+              "type": "int32[][]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 4
+            },
+            {
+              "type": "int32",
+              "value": 4
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MinJumps_ESTest.test0",
+      "source_file": "MinJumps_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MinJumps",
+          "function": "minJumps",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 9
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MinJumps_ESTest.test1",
+      "source_file": "MinJumps_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MinJumps",
+          "function": "minJumps",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "value": null
+            },
+            {
+              "type": "int32",
+              "value": 1
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MinJumps_ESTest.test2",
+      "source_file": "MinJumps_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            0,
+            0,
+            0,
+            15,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MinJumps",
+          "function": "minJumps",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 9
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MinJumps_ESTest.test3",
+      "source_file": "MinJumps_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MinJumps",
+          "function": "minJumps",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "value": null
+            },
+            {
+              "type": "int32",
+              "value": 1464
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MinJumps_ESTest.test4",
+      "source_file": "MinJumps_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MinJumps",
+          "function": "minJumps",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "value": null
+            },
+            {
+              "type": "int32",
+              "value": -969
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MinJumps_ESTest.test5",
+      "source_file": "MinJumps_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MinJumps",
+          "function": "minJumps",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 1307
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MoveFirst_ESTest.test0",
+      "source_file": "MoveFirst_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MoveFirst",
+          "function": "moveFirst",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            }
+          ],
+          "result": {
+            "id": "intArray1",
+            "type": "int32[]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MoveFirst_ESTest.test1",
+      "source_file": "MoveFirst_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": []
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MoveFirst",
+          "function": "moveFirst",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            }
+          ],
+          "result": {
+            "id": "intArray1",
+            "type": "int32[]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MoveFirst_ESTest.test2",
+      "source_file": "MoveFirst_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MoveFirst",
+          "function": "moveFirst",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "value": null
+            }
+          ],
+          "result": {
+            "id": "intArray0",
+            "type": "int32[]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MultiplyElements_ESTest.test0",
+      "source_file": "MultiplyElements_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            2,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MultiplyElements",
+          "function": "multiplyElements",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            }
+          ],
+          "result": {
+            "id": "intArray1",
+            "type": "int32[]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MultiplyElements_ESTest.test1",
+      "source_file": "MultiplyElements_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MultiplyElements",
+          "function": "multiplyElements",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MultiplyElements_ESTest.test2",
+      "source_file": "MultiplyElements_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": []
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MultiplyElements",
+          "function": "multiplyElements",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            }
+          ],
+          "result": {
+            "id": "intArray1",
+            "type": "int32[]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MultiplyElements_ESTest.test3",
+      "source_file": "MultiplyElements_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "MultiplyElements",
+          "function": "multiplyElements",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            }
+          ],
+          "result": {
+            "id": "intArray1",
+            "type": "int32[]"
+          }
+        },
+        {
+          "id": "call_1",
+          "class": "MultiplyElements",
+          "function": "multiplyElements",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray1"
+            }
+          ],
+          "result": {
+            "id": "intArray2",
+            "type": "int32[]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "NewmanPrime_ESTest.test0",
+      "source_file": "NewmanPrime_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "NewmanPrime",
+          "function": "newmanPrime",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NewmanPrime_ESTest.test1",
+      "source_file": "NewmanPrime_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "NewmanPrime",
+          "function": "newmanPrime",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "NewmanPrime_ESTest.test2",
+      "source_file": "NewmanPrime_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "NewmanPrime",
+          "function": "newmanPrime",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 1
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "NewmanPrime_ESTest.test3",
+      "source_file": "NewmanPrime_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "NewmanPrime",
+          "function": "newmanPrime",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 232
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NextPowerOf2_ESTest.test0",
+      "source_file": "NextPowerOf2_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "NextPowerOf2",
+          "function": "nextPowerOf2",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 4096
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "NextPowerOf2_ESTest.test1",
+      "source_file": "NextPowerOf2_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "NextPowerOf2",
+          "function": "nextPowerOf2",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 2125
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "NextPowerOf2_ESTest.test2",
+      "source_file": "NextPowerOf2_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "NextPowerOf2",
+          "function": "nextPowerOf2",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "NextPowerOf2_ESTest.test3",
+      "source_file": "NextPowerOf2_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "NextPowerOf2",
+          "function": "nextPowerOf2",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": -3882
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "NoOfCubes_ESTest.test0",
+      "source_file": "NoOfCubes_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "NoOfCubes",
+          "function": "noOfCubes",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 1
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "NoOfCubes_ESTest.test1",
+      "source_file": "NoOfCubes_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "NoOfCubes",
+          "function": "noOfCubes",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "NoOfCubes_ESTest.test2",
+      "source_file": "NoOfCubes_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "NoOfCubes",
+          "function": "noOfCubes",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 1
+            },
+            {
+              "type": "int32",
+              "value": 462
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "OddBitSetNumber_ESTest.test0",
+      "source_file": "OddBitSetNumber_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "OddBitSetNumber",
+          "function": "oddBitSetNumber",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "OddBitSetNumber_ESTest.test1",
+      "source_file": "OddBitSetNumber_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "OddBitSetNumber",
+          "function": "oddBitSetNumber",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 2125
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "OddBitSetNumber_ESTest.test2",
+      "source_file": "OddBitSetNumber_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "OddBitSetNumber",
+          "function": "oddBitSetNumber",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": -3882
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "OddLengthSum_ESTest.test0",
+      "source_file": "OddLengthSum_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            0,
+            1856,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "OddLengthSum",
+          "function": "oddLengthSum",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "OddLengthSum_ESTest.test1",
+      "source_file": "OddLengthSum_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            -2030,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "OddLengthSum",
+          "function": "oddLengthSum",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "OddLengthSum_ESTest.test2",
+      "source_file": "OddLengthSum_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "OddLengthSum",
+          "function": "oddLengthSum",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "OddLengthSum_ESTest.test3",
+      "source_file": "OddLengthSum_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "OddLengthSum",
+          "function": "oddLengthSum",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "PairWise_ESTest.test0",
+      "source_file": "PairWise_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "PairWise",
+          "function": "pairWise",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            }
+          ],
+          "result": {
+            "id": "intArray1",
+            "type": "int32[][]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "PairWise_ESTest.test1",
+      "source_file": "PairWise_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "PairWise",
+          "function": "pairWise",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PairWise_ESTest.test2",
+      "source_file": "PairWise_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": []
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "PairWise",
+          "function": "pairWise",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            }
+          ],
+          "result": {
+            "id": "intArray1",
+            "type": "int32[][]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "PairWise_ESTest.test3",
+      "source_file": "PairWise_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "PairWise",
+          "function": "pairWise",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            }
+          ],
+          "result": {
+            "id": "intArray1",
+            "type": "int32[][]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ParabolaVertex_ESTest.test1",
+      "source_file": "ParabolaVertex_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "ParabolaVertex",
+          "function": "parabolaVertex",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 3514
+            },
+            {
+              "type": "int32",
+              "value": 3514
+            },
+            {
+              "type": "int32",
+              "value": 3514
+            }
+          ],
+          "result": {
+            "id": "doubleArray0",
+            "type": "float64[]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ParallelogramPerimeter_ESTest.test0",
+      "source_file": "ParallelogramPerimeter_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "ParallelogramPerimeter",
+          "function": "parallelogramPerimeter",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 1
+            },
+            {
+              "type": "int32",
+              "value": -972
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ParallelogramPerimeter_ESTest.test1",
+      "source_file": "ParallelogramPerimeter_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "ParallelogramPerimeter",
+          "function": "parallelogramPerimeter",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": -741
+            },
+            {
+              "type": "int32",
+              "value": 1381865608
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ParallelogramPerimeter_ESTest.test2",
+      "source_file": "ParallelogramPerimeter_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "ParallelogramPerimeter",
+          "function": "parallelogramPerimeter",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 1709539028
+            },
+            {
+              "type": "int32",
+              "value": 1
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ParallelogramPerimeter_ESTest.test3",
+      "source_file": "ParallelogramPerimeter_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "ParallelogramPerimeter",
+          "function": "parallelogramPerimeter",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 1901
+            },
+            {
+              "type": "int32",
+              "value": 1901
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ParallelogramPerimeter_ESTest.test4",
+      "source_file": "ParallelogramPerimeter_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "ParallelogramPerimeter",
+          "function": "parallelogramPerimeter",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 2
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ParallelogramPerimeter_ESTest.test5",
+      "source_file": "ParallelogramPerimeter_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "ParallelogramPerimeter",
+          "function": "parallelogramPerimeter",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "RadixSort_ESTest.test0",
+      "source_file": "RadixSort_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            5428
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "RadixSort",
+          "function": "radixSort",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            }
+          ]
+        },
+        {
+          "id": "call_1",
+          "class": "RadixSort",
+          "function": "radixSort",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "RadixSort_ESTest.test1",
+      "source_file": "RadixSort_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "RadixSort",
+          "function": "radixSort",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "RadixSort_ESTest.test2",
+      "source_file": "RadixSort_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": []
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "RadixSort",
+          "function": "radixSort",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "RadixSort_ESTest.test3",
+      "source_file": "RadixSort_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            -1249,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "RadixSort",
+          "function": "radixSort",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            }
+          ],
+          "result": {
+            "id": "intArray1",
+            "type": "int32[]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SqrtRoot_ESTest.test0",
+      "source_file": "SqrtRoot_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "SqrtRoot",
+          "function": "sqrtRoot",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SqrtRoot_ESTest.test1",
+      "source_file": "SqrtRoot_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "SqrtRoot",
+          "function": "sqrtRoot",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": -3882
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SqrtRoot_ESTest.test2",
+      "source_file": "SqrtRoot_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "SqrtRoot",
+          "function": "sqrtRoot",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 2125
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SquarePerimeter_ESTest.test0",
+      "source_file": "SquarePerimeter_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "SquarePerimeter",
+          "function": "squarePerimeter",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SquarePerimeter_ESTest.test1",
+      "source_file": "SquarePerimeter_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "SquarePerimeter",
+          "function": "squarePerimeter",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 2125
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SquarePerimeter_ESTest.test2",
+      "source_file": "SquarePerimeter_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "SquarePerimeter",
+          "function": "squarePerimeter",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": -3882
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SumArray_ESTest.test0",
+      "source_file": "SumArray_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            -134,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "SumArray",
+          "function": "sumList",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            }
+          ],
+          "result": {
+            "id": "intArray1",
+            "type": "int32[]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SumArray_ESTest.test1",
+      "source_file": "SumArray_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "SumArray",
+          "function": "sumList",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "value": null
+            },
+            {
+              "type": "int32[]",
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SumArray_ESTest.test2",
+      "source_file": "SumArray_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": []
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "SumArray",
+          "function": "sumList",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            }
+          ],
+          "result": {
+            "id": "intArray1",
+            "type": "int32[]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SumNums_ESTest.test0",
+      "source_file": "SumNums_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "SumNums",
+          "function": "sumNums",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": -3882
+            },
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": -3882
+            },
+            {
+              "type": "int32",
+              "value": 20
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SumNums_ESTest.test1",
+      "source_file": "SumNums_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "SumNums",
+          "function": "sumNums",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 1
+            },
+            {
+              "type": "int32",
+              "value": -1
+            },
+            {
+              "type": "int32",
+              "value": -1537
+            },
+            {
+              "type": "int32",
+              "value": -3324
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SumNums_ESTest.test2",
+      "source_file": "SumNums_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "SumNums",
+          "function": "sumNums",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": -450
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SumNums_ESTest.test3",
+      "source_file": "SumNums_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "SumNums",
+          "function": "sumNums",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 20
+            },
+            {
+              "type": "int32",
+              "value": -450
+            },
+            {
+              "type": "int32",
+              "value": 748
+            },
+            {
+              "type": "int32",
+              "value": 20
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SumOfPrimes_ESTest.test0",
+      "source_file": "SumOfPrimes_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "SumOfPrimes",
+          "function": "sumOfPrimes",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": -1
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SumOfPrimes_ESTest.test1",
+      "source_file": "SumOfPrimes_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "SumOfPrimes",
+          "function": "sumOfPrimes",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 401188
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SumOfPrimes_ESTest.test2",
+      "source_file": "SumOfPrimes_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "SumOfPrimes",
+          "function": "sumOfPrimes",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": -532
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SumOfPrimes_ESTest.test3",
+      "source_file": "SumOfPrimes_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "SumOfPrimes",
+          "function": "sumOfPrimes",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 2422
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SumOfSubarrayProd_ESTest.test0",
+      "source_file": "SumOfSubarrayProd_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "SumOfSubarrayProd",
+          "function": "sumOfSubarrayProd",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": -1
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SumOfSubarrayProd_ESTest.test1",
+      "source_file": "SumOfSubarrayProd_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            1129,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "SumOfSubarrayProd",
+          "function": "sumOfSubarrayProd",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 1
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SumOfSubarrayProd_ESTest.test2",
+      "source_file": "SumOfSubarrayProd_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            -1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "SumOfSubarrayProd",
+          "function": "sumOfSubarrayProd",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 1
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SumOfSubarrayProd_ESTest.test3",
+      "source_file": "SumOfSubarrayProd_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "SumOfSubarrayProd",
+          "function": "sumOfSubarrayProd",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "value": null
+            },
+            {
+              "type": "int32",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SumOfSubarrayProd_ESTest.test4",
+      "source_file": "SumOfSubarrayProd_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "SumOfSubarrayProd",
+          "function": "sumOfSubarrayProd",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 2529
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SumRangeArray_ESTest.test0",
+      "source_file": "SumRangeArray_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            1084,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "SumRangeArray",
+          "function": "sumRangeArray",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SumRangeArray_ESTest.test1",
+      "source_file": "SumRangeArray_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            -2283
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "SumRangeArray",
+          "function": "sumRangeArray",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SumRangeArray_ESTest.test2",
+      "source_file": "SumRangeArray_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "SumRangeArray",
+          "function": "sumRangeArray",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "value": null
+            },
+            {
+              "type": "int32",
+              "value": 1177
+            },
+            {
+              "type": "int32",
+              "value": 1177
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SumRangeArray_ESTest.test3",
+      "source_file": "SumRangeArray_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "SumRangeArray",
+          "function": "sumRangeArray",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": -2283
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SumRangeArray_ESTest.test4",
+      "source_file": "SumRangeArray_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "SumRangeArray",
+          "function": "sumRangeArray",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            },
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "TestThreeEqual_ESTest.test0",
+      "source_file": "TestThreeEqual_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "TestThreeEqual",
+          "function": "testThreeEqual",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 665
+            },
+            {
+              "type": "int32",
+              "value": 2
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "TestThreeEqual_ESTest.test1",
+      "source_file": "TestThreeEqual_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "TestThreeEqual",
+          "function": "testThreeEqual",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 3
+            },
+            {
+              "type": "int32",
+              "value": 3
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "TestThreeEqual_ESTest.test2",
+      "source_file": "TestThreeEqual_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "TestThreeEqual",
+          "function": "testThreeEqual",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": -419
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "TestThreeEqual_ESTest.test3",
+      "source_file": "TestThreeEqual_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "TestThreeEqual",
+          "function": "testThreeEqual",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": -850
+            },
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "TestThreeEqual_ESTest.test4",
+      "source_file": "TestThreeEqual_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "TestThreeEqual",
+          "function": "testThreeEqual",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 0
+            },
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "TestThreeEqual_ESTest.test5",
+      "source_file": "TestThreeEqual_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "TestThreeEqual",
+          "function": "testThreeEqual",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": -1413
+            },
+            {
+              "type": "int32",
+              "value": -1413
+            },
+            {
+              "type": "int32",
+              "value": 3
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "TestThreeEqual_ESTest.test6",
+      "source_file": "TestThreeEqual_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "TestThreeEqual",
+          "function": "testThreeEqual",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": -1413
+            },
+            {
+              "type": "int32",
+              "value": 2
+            },
+            {
+              "type": "int32",
+              "value": -2487
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "TriangleArea_ESTest.test0",
+      "source_file": "TriangleArea_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "TriangleArea",
+          "function": "triangleArea",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "TriangleArea_ESTest.test1",
+      "source_file": "TriangleArea_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "TriangleArea",
+          "function": "triangleArea",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": -3882
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "TriangleArea_ESTest.test2",
+      "source_file": "TriangleArea_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "TriangleArea",
+          "function": "triangleArea",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 2125
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "TupleToInt_ESTest.test0",
+      "source_file": "TupleToInt_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            0,
+            1856,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "TupleToInt",
+          "function": "tupleToInt",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "TupleToInt_ESTest.test1",
+      "source_file": "TupleToInt_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            -2030,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "TupleToInt",
+          "function": "tupleToInt",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "TupleToInt_ESTest.test2",
+      "source_file": "TupleToInt_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "TupleToInt",
+          "function": "tupleToInt",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TupleToInt_ESTest.test3",
+      "source_file": "TupleToInt_ESTest.java",
+      "fixtures": [
+        {
+          "id": "intArray0",
+          "type": "int32[]",
+          "value": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "TupleToInt",
+          "function": "tupleToInt",
+          "arguments": [
+            {
+              "type": "int32[]",
+              "ref": "intArray0"
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "VolumeCube_ESTest.test0",
+      "source_file": "VolumeCube_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "VolumeCube",
+          "function": "volumeCube",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": -3882
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "VolumeCube_ESTest.test1",
+      "source_file": "VolumeCube_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "VolumeCube",
+          "function": "volumeCube",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": -347
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "VolumeCube_ESTest.test3",
+      "source_file": "VolumeCube_ESTest.java",
+      "fixtures": [],
+      "steps": [
+        {
+          "id": "call_0",
+          "class": "VolumeCube",
+          "function": "volumeCube",
+          "arguments": [
+            {
+              "type": "int32",
+              "value": 0
+            }
+          ],
+          "result": {
+            "id": "int0",
+            "type": "int32"
+          }
+        }
+      ]
+    }
+  ]
+}
