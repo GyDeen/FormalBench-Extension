@@ -159,16 +159,18 @@ python3 -m differential_testing.comparison.run_comparison \
   --inputs differential_testing/generation/test_inputs-653ade686f.json \
   --java-results differential_testing/results/653ade686f/java_results.json \
   --c-results differential_testing/results/653ade686f/c_results.json \
+  --comparison differential_testing/results/653ade686f/comparison.json \
   --c-dir FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f \
-  --output-dir differential_testing/results/653ade686f/comparison
+  --output-dir differential_testing/results/653ade686f
 ```
 
 The output directory contains:
 
-- `comparison_raw.json`: ordinary automatic comparison, preserved unchanged.
-- `sanitizer_report.json`: program name, input ID, Java and ordinary C outputs,
-  sanitizer settings and results, and manual assessment.
+- `sanitizer_report.csv`: one review row per mismatching Java-error call.
 - `comparison_final.json`: the comparison with any explicit manual assessments.
+
+`--comparison` reuses the existing `comparison.json` without modifying it.
+Omit this option to compute the ordinary comparison and save `comparison_raw.json`.
 
 The pipeline selects mismatching steps with Java `status: "error"`, without
 interpreting error kinds. It compiles selected C tests using Clang with
@@ -188,25 +190,29 @@ Earlier calls may mutate inputs or fail before the target is reached; sanitizer
 diagnostics may also originate in harness serialization. Review the test prefix
 and diagnostic locations before attributing a failure to the target call.
 
-Each case starts with `assessment: null`; unreviewed cases remain mismatches.
-After reviewing the evidence, edit only the case's assessment, for example:
+The CSV columns `program`, `input_id`, `java_output`, `c_output`, and `stderr`
+show the evidence to review. Java/C output cells contain JSON so their values,
+types, and post-call state survive export and import. Multiline diagnostics are
+quoted as a single CSV cell. Additional columns preserve sanitizer execution
+status, exit code, stdout, timeout, ASan/UBSan options, execution errors, and the
+raw comparison digest. Source files, harness code, compilation records, and
+commands are omitted.
 
-```json
-"assessment": {
-  "status": "exception_equivalent",
-  "reason": "Both failures originate from the same invalid array access."
-}
-```
+`status` and `reason` start empty. Fill these two cells after manual review;
+`sanitizer_status` is execution evidence and is separate from your decision.
+For example, enter `exception_equivalent` in `status` and
+`Both failures originate from the same invalid array access.` in `reason`.
 
-Allowed assessment statuses are `exception_equivalent`, `mismatch`, and `unclear`,
-each requiring a nonempty reason. Sanitizer text never automatically establishes
-equivalence. Apply the reviewed report without rerunning execution:
+Allowed review statuses are `exception_equivalent`, `mismatch`, and `unclear`,
+each requiring a nonempty reason. Blank statuses remain mismatches. Sanitizer
+text never automatically establishes equivalence. Save the reviewed CSV and
+merge it without rerunning execution:
 
 ```bash
 python3 -m differential_testing.comparison.merge_sanitizer_results \
-  --comparison differential_testing/results/653ade686f/comparison/comparison_raw.json \
-  --sanitizer-report differential_testing/results/653ade686f/comparison/sanitizer_report.json \
-  --output differential_testing/results/653ade686f/comparison/comparison_final.json
+  --comparison differential_testing/results/653ade686f/comparison.json \
+  --sanitizer-report differential_testing/results/653ade686f/sanitizer_report.csv \
+  --output differential_testing/results/653ade686f/comparison_final.json
 ```
 
 The final report retains original step differences and all three evidence
@@ -219,3 +225,7 @@ The commands exit with status 1 when mismatches or unclear cases remain.
 The pipeline refuses to overwrite existing audit files. Choose a new output
 directory for new execution evidence; use the merge command to update only the
 final report. A comparison digest rejects reports from a different raw comparison.
+
+The standalone `execution.run_c_sanitizer` command also writes review CSV:
+pass an extracted `--cases` JSON, the existing `--comparison` JSON, `--c-dir`,
+and `--output sanitizer_report.csv`.

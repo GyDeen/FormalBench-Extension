@@ -129,24 +129,27 @@ def run_sanitizer_checks(
 
 
 def main() -> None:
+    # Reporting only serializes evidence; semantic decisions remain in merge.
+    from ..comparison.sanitizer_report import build_sanitizer_report, write_sanitizer_csv
+
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--cases", type=Path, required=True)
+    parser.add_argument("--comparison", type=Path, required=True, help="Existing raw comparison.json")
     parser.add_argument("--c-dir", type=Path, required=True)
-    parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--output", type=Path, required=True, help="Review CSV output path")
     parser.add_argument("--timeout", type=float, default=2.0)
     parser.add_argument("--compiler", default="clang")
     args = parser.parse_args()
     if args.output.exists():
         parser.error("Output already exists; choose a new evidence file")
     cases = json.loads(args.cases.read_text(encoding="utf-8"))["cases"]
+    comparison = json.loads(args.comparison.read_text(encoding="utf-8"))
     with tempfile.TemporaryDirectory(prefix="formalbench-sanitizer-") as temporary:
         records = run_sanitizer_checks(
             cases, args.c_dir, Path(temporary), args.timeout, compiler=args.compiler,
         )
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    with args.output.open("x", encoding="utf-8") as stream:
-        json.dump({"schema_version": "1.0", "kind": "c_sanitizer_execution", "cases": records}, stream, indent=2)
-        stream.write("\n")
+    report = build_sanitizer_report(comparison, cases, records)
+    write_sanitizer_csv(args.output, report, exclusive=True)
 
 
 if __name__ == "__main__":
