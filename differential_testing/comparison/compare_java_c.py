@@ -15,13 +15,7 @@ else:
 
 
 def _read_json(path: Path) -> dict[str, Any]:
-    try:
-        document = json.loads(path.read_text(encoding="utf-8"))
-    except json.JSONDecodeError as error:
-        raise ValueError(f"Invalid JSON in {path}: {error}") from error
-    if not isinstance(document, dict):
-        raise ValueError(f"Expected a JSON object in {path}")
-    return document
+    return json.loads(path.read_text(encoding="utf-8"))
 
 
 def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:

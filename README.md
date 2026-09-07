@@ -1,9 +1,10 @@
 # Differential testing
 
-The package is divided into two stages:
+The package is divided into three stages:
 
 - `generation/` generates EvoSuite tests and extracts portable inputs.
-- `execution/` contains Java/C execution and comparison logic.
+- `execution/` generates harnesses, executes Java/C, and collects sanitizer evidence.
+- `comparison/` compares results and applies explicit manual assessments.
 
 ## EvoSuite input extraction
 
@@ -97,11 +98,11 @@ Execution responsibilities are separated across:
 - `java_harness.py` and `c_harness.py`: language-specific source generation.
 - `execution_orchestrator.py`: source discovery, compilation, and isolation.
 
-`execution/compare_java_c.py` compares normalized execution results produced
+`comparison/compare_java_c.py` compares normalized execution results produced
 by Java and C runners:
 
 ```bash
-python3 -m differential_testing.execution.compare_java_c \
+python3 -m differential_testing.comparison.compare_java_c \
   --inputs differential_testing/generation/test_inputs.json \
   --java-results differential_testing/results/java_results.json \
   --c-results differential_testing/results/c_results.json \
@@ -148,3 +149,73 @@ The comparison checks return values, canonical errors, and `state_after` so
 in-place array mutations are included. Diagnostic error messages are not
 compared. Floating-point values use configurable relative and absolute
 tolerances.
+
+## Sanitizer investigation and manual assessment
+
+Run the comparison pipeline after collecting ordinary execution results:
+
+```bash
+python3 -m differential_testing.comparison.run_comparison \
+  --inputs differential_testing/generation/test_inputs-653ade686f.json \
+  --java-results differential_testing/results/653ade686f/java_results.json \
+  --c-results differential_testing/results/653ade686f/c_results.json \
+  --c-dir FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f \
+  --output-dir differential_testing/results/653ade686f/comparison
+```
+
+The output directory contains:
+
+- `comparison_raw.json`: ordinary automatic comparison, preserved unchanged.
+- `sanitizer_report.json`: program name, input ID, Java and ordinary C outputs,
+  sanitizer settings and results, and manual assessment.
+- `comparison_final.json`: the comparison with any explicit manual assessments.
+
+The pipeline selects mismatching steps with Java `status: "error"`, without
+interpreting error kinds. It compiles selected C tests using Clang with
+`-fsanitize=address,undefined -fno-omit-frame-pointer -g` and replays each
+target's test prefix in an isolated process. Use `--timeout SECONDS`,
+`--compiler PATH`, or `--keep-build` as needed. Leak detection is disabled
+because the generated harness does not free all fixtures; memory-access and
+undefined-behavior diagnostics remain enabled. Stdout, exit codes, timeouts,
+and failure statuses are retained without semantic mapping. Report `stderr`
+contains only runtime-error messages and sanitizer error/summary lines, with
+duplicates removed; stack traces, symbolizer warnings, and memory dumps are omitted.
+
+`input_id` combines the test and call IDs, for example
+`FindPeak_ESTest.test2.call_0`. Use it to locate the inputs in the input manifest.
+The report omits source paths, harness code, compilation records, and commands.
+Earlier calls may mutate inputs or fail before the target is reached; sanitizer
+diagnostics may also originate in harness serialization. Review the test prefix
+and diagnostic locations before attributing a failure to the target call.
+
+Each case starts with `assessment: null`; unreviewed cases remain mismatches.
+After reviewing the evidence, edit only the case's assessment, for example:
+
+```json
+"assessment": {
+  "status": "exception_equivalent",
+  "reason": "Both failures originate from the same invalid array access."
+}
+```
+
+Allowed assessment statuses are `exception_equivalent`, `mismatch`, and `unclear`,
+each requiring a nonempty reason. Sanitizer text never automatically establishes
+equivalence. Apply the reviewed report without rerunning execution:
+
+```bash
+python3 -m differential_testing.comparison.merge_sanitizer_results \
+  --comparison differential_testing/results/653ade686f/comparison/comparison_raw.json \
+  --sanitizer-report differential_testing/results/653ade686f/comparison/sanitizer_report.json \
+  --output differential_testing/results/653ade686f/comparison/comparison_final.json
+```
+
+The final report retains original step differences and all three evidence
+records. Test status prioritizes remaining `mismatch`, then `unclear`, then
+`exception_equivalent`, then `match`. Missing or extra results remain mismatches.
+Summary counts keep exact matches separate from exception equivalence;
+`overall_equivalent` accepts both, while `overall_match` requires exact matches.
+The commands exit with status 1 when mismatches or unclear cases remain.
+
+The pipeline refuses to overwrite existing audit files. Choose a new output
+directory for new execution evidence; use the merge command to update only the
+final report. A comparison digest rejects reports from a different raw comparison.
