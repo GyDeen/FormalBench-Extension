@@ -13,7 +13,7 @@ from typing import Any
 REPORT_KIND = "java_exception_c_sanitizer_investigation"
 ASSESSMENT_STATUSES = {"exception_equivalent", "mismatch", "unclear"}
 CSV_FIELDS = (
-    "program", "input_id", "java_output", "c_output", "stderr", "status", "reason",
+    "program", "input_id", "java_error_type", "c_output", "stderr", "status", "reason",
     "sanitizer_status", "exit_code", "stdout", "timed_out",
     "ASAN_OPTIONS", "UBSAN_OPTIONS", "execution_error", "diagnostic",
     "comparison_sha256",
@@ -54,6 +54,18 @@ def document_digest(document: Any) -> str:
     ).encode("utf-8")).hexdigest()
 
 
+def java_error_type(outcome: dict[str, Any]) -> str:
+    """Display the reported exception class, or the runner's error kind."""
+    error = outcome["error"]
+    if "type" in error:
+        return error["type"]
+    diagnostic = error.get("raw") or error.get("message", "")
+    match = re.match(r"([\w$]+(?:\.[\w$]+)*)(?=:|\s|$)", diagnostic)
+    if match and match[1].endswith(("Exception", "Error")):
+        return match[1]
+    return error["kind"]
+
+
 def write_json(path: Path, document: Any, *, exclusive: bool = False) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("x" if exclusive else "w", encoding="utf-8") as stream:
@@ -75,7 +87,7 @@ def write_sanitizer_csv(
             environment = evidence.get("environment", {})
             writer.writerow({
                 "program": case["program"], "input_id": case["input_id"],
-                "java_output": json.dumps(case["java"], ensure_ascii=False),
+                "java_error_type": java_error_type(case["java"]),
                 "c_output": json.dumps(case["c_normal"], ensure_ascii=False),
                 "status": assessment.get("status", ""),
                 "reason": assessment.get("reason", ""),
@@ -111,14 +123,14 @@ def read_sanitizer_csv(path: Path) -> dict[str, Any]:
                 evidence[name] = row[name]
         cases.append({
             "program": row["program"], "input_id": row["input_id"],
-            "java": json.loads(row["java_output"]),
+            "java": {"status": "error", "error": {"type": row["java_error_type"]}},
             "c_normal": json.loads(row["c_output"]),
             "c_sanitized": evidence,
             "assessment": {"status": status, "reason": row["reason"].strip()} if status else None,
             "comparison_sha256": row["comparison_sha256"],
         })
     return {
-        "schema_version": "1.2", "kind": REPORT_KIND,
+        "schema_version": "1.3", "kind": REPORT_KIND,
         "comparison_sha256": rows[0]["comparison_sha256"] if rows else None,
         "cases": cases,
     }
