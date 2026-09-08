@@ -190,9 +190,12 @@ Earlier calls may mutate inputs or fail before the target is reached; sanitizer
 diagnostics may also originate in harness serialization. Review the test prefix
 and diagnostic locations before attributing a failure to the target call.
 
-The CSV columns `program`, `input_id`, `java_output`, `c_output`, and `stderr`
-show the evidence to review. Java/C output cells contain JSON so their values,
-types, and post-call state survive export and import. Multiline diagnostics are
+The CSV columns `program`, `input_id`, `java_error_type`, `c_output`, and `stderr`
+show the evidence to review. `java_error_type` contains the reported exception
+class (such as `java.lang.NullPointerException`) or the runner's error kind
+(such as `runner_protocol_error`). Full Java output remains in `java_results.json`.
+C output cells contain JSON so values, types, and post-call state survive export
+and import. Multiline diagnostics are
 quoted as a single CSV cell. Additional columns preserve sanitizer execution
 status, exit code, stdout, timeout, ASan/UBSan options, execution errors, and the
 raw comparison digest. Source files, harness code, compilation records, and

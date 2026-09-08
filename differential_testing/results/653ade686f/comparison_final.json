@@ -1,0 +1,6262 @@
+{
+  "schema_version": "1.0",
+  "kind": "java_c_comparison_final",
+  "summary": {
+    "overall_match": false,
+    "expected_tests": 221,
+    "matched_tests": 164,
+    "mismatched_tests": 25,
+    "matched_steps": 231,
+    "mismatched_steps": 25,
+    "missing_java_tests": [],
+    "missing_c_tests": [],
+    "extra_java_tests": [],
+    "extra_c_tests": [],
+    "exception_equivalent_steps": 30,
+    "unclear_steps": 13,
+    "exception_equivalent_tests": 27,
+    "unclear_tests": 5,
+    "overall_equivalent": false
+  },
+  "tests": [
+    {
+      "id": "CombSort_ESTest.test0",
+      "status": "mismatch",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.status",
+                "reason": "execution statuses differ",
+                "java": "error",
+                "c": "returned"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "CombSort",
+            "input_id": "CombSort_ESTest.test0.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.NullPointerException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "returned",
+              "return": {
+                "type": "int32[]",
+                "value": null
+              },
+              "state_after": []
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": 0,
+              "stdout": "{\"status\":\"returned\",\"return\":{\"type\":\"int32[]\",\"value\":null},\"state_after\":[]}",
+              "stderr": "",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "mismatch",
+            "reason": "Null input: Java reads nums.length and throws; C uses the wrapper length of zero, skips element accesses and returns null. The sanitized run returns normally."
+          }
+        }
+      ]
+    },
+    {
+      "id": "CombSort_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "CombSort_ESTest.test2",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "CountIntgralPoints_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "CountIntgralPoints_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "CountIntgralPoints_ESTest.test3",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "CountList_ESTest.test0",
+      "status": "mismatch",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.status",
+                "reason": "execution statuses differ",
+                "java": "error",
+                "c": "returned"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "CountList",
+            "input_id": "CountList_ESTest.test0.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.NullPointerException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "returned",
+              "return": {
+                "type": "int32",
+                "value": 0
+              },
+              "state_after": []
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": 0,
+              "stdout": "{\"status\":\"returned\",\"return\":{\"type\":\"int32\",\"value\":0},\"state_after\":[]}",
+              "stderr": "",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "mismatch",
+            "reason": "Null matrix: Java iteration reads the null matrix length; C iterates over the wrapper length of zero and returns 0 without dereferencing storage. No sanitizer failure."
+          }
+        }
+      ]
+    },
+    {
+      "id": "CountList_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "CountList_ESTest.test2",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "CountOddSquares_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "CountOddSquares_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "CountOddSquares_ESTest.test2",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "CountUnsetBits_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "CountUnsetBits_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "CountUnsetBits_ESTest.test2",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "CountWays_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "CountWays_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        },
+        {
+          "id": "call_1",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "CountWays_ESTest.test2",
+      "status": "exception_equivalent",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "exception_equivalent",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.status",
+                "reason": "execution statuses differ",
+                "java": "error",
+                "c": "returned"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "CountWays",
+            "input_id": "CountWays_ESTest.test2.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.NegativeArraySizeException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "returned",
+              "return": {
+                "type": "int32",
+                "value": 0
+              },
+              "state_after": []
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "ERROR: AddressSanitizer: calloc parameters overflow: count * size (-1869585532 * 4) cannot be represented in type size_t (thread T0)\nSUMMARY: AddressSanitizer: calloc-overflow (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0002/runner:arm64+0x100000864) in countWays+0x34",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "exception_equivalent",
+            "reason": "For n of -1869585533, Java rejects array length -1869585532. C converts that same invalid allocation count to size_t; ASan reports calloc parameter overflow at countWays. Both failures originate in the same negative requested array size."
+          }
+        }
+      ]
+    },
+    {
+      "id": "CountWays_ESTest.test3",
+      "status": "exception_equivalent",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "exception_equivalent",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.status",
+                "reason": "execution statuses differ",
+                "java": "error",
+                "c": "returned"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "CountWays",
+            "input_id": "CountWays_ESTest.test3.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.ArrayIndexOutOfBoundsException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "returned",
+              "return": {
+                "type": "int32",
+                "value": 1
+              },
+              "state_after": []
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "ERROR: AddressSanitizer: heap-buffer-overflow on address 0x602000000294 at pc 0x000104b28a60 bp 0x00016b2d6330 sp 0x00016b2d6328\nSUMMARY: AddressSanitizer: heap-buffer-overflow (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0003/runner:arm64+0x100000a5c) in countWays+0x22c",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "exception_equivalent",
+            "reason": "For n of 0, both allocate one-element A and then write A[1] (Java line 13, C line 14). Java bounds exception and ASan heap-buffer-overflow identify the same invalid write."
+          }
+        }
+      ]
+    },
+    {
+      "id": "CountWays_ESTest.test4",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "CountingSort_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "CountingSort_ESTest.test1",
+      "status": "mismatch",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.status",
+                "reason": "execution statuses differ",
+                "java": "error",
+                "c": "returned"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "CountingSort",
+            "input_id": "CountingSort_ESTest.test1.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.NullPointerException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "returned",
+              "return": {
+                "type": "int32[]",
+                "value": null
+              },
+              "state_after": []
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": 0,
+              "stdout": "{\"status\":\"returned\",\"return\":{\"type\":\"int32[]\",\"value\":null},\"state_after\":[]}",
+              "stderr": "",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "mismatch",
+            "reason": "Null input: Java throws when evaluating myArray.length. C treats wrapper length zero as empty and returns null at its early guard; sanitizer execution returns normally."
+          }
+        }
+      ]
+    },
+    {
+      "id": "CountingSort_ESTest.test2",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        },
+        {
+          "id": "call_1",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "CountingSort_ESTest.test3",
+      "status": "mismatch",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.return.value",
+              "reason": "values differ",
+              "java": [],
+              "c": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "DealnnoyNum_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        },
+        {
+          "id": "call_1",
+          "status": "match"
+        },
+        {
+          "id": "call_2",
+          "status": "match"
+        },
+        {
+          "id": "call_3",
+          "status": "match"
+        },
+        {
+          "id": "call_4",
+          "status": "match"
+        },
+        {
+          "id": "call_5",
+          "status": "match"
+        },
+        {
+          "id": "call_6",
+          "status": "match"
+        },
+        {
+          "id": "call_7",
+          "status": "match"
+        },
+        {
+          "id": "call_8",
+          "status": "match"
+        },
+        {
+          "id": "call_9",
+          "status": "match"
+        },
+        {
+          "id": "call_10",
+          "status": "match"
+        },
+        {
+          "id": "call_11",
+          "status": "match"
+        },
+        {
+          "id": "call_12",
+          "status": "match"
+        },
+        {
+          "id": "call_13",
+          "status": "match"
+        },
+        {
+          "id": "call_14",
+          "status": "match"
+        },
+        {
+          "id": "call_15",
+          "status": "match"
+        },
+        {
+          "id": "call_16",
+          "status": "match"
+        },
+        {
+          "id": "call_17",
+          "status": "match"
+        },
+        {
+          "id": "call_18",
+          "status": "match"
+        },
+        {
+          "id": "call_19",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "DealnnoyNum_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        },
+        {
+          "id": "call_1",
+          "status": "match"
+        },
+        {
+          "id": "call_2",
+          "status": "match"
+        },
+        {
+          "id": "call_3",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "DealnnoyNum_ESTest.test2",
+      "status": "exception_equivalent",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "exception_equivalent",
+          "differences": [
+            {
+              "path": "steps.call_0.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "stack_overflow",
+              "c": "process_crash"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.error.kind",
+                "reason": "canonical error kinds differ",
+                "java": "stack_overflow",
+                "c": "process_crash"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "DealnnoyNum",
+            "input_id": "DealnnoyNum_ESTest.test2.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.StackOverflowError"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "error",
+              "error": {
+                "kind": "process_crash",
+                "message": "Terminated by SIGSEGV"
+              }
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "AddressSanitizer:DEADLYSIGNAL\nERROR: AddressSanitizer: stack-overflow on address 0x00016cc73fe0 (pc 0x000102990834 bp 0x00016cc74050 sp 0x00016cc73f80 T0)\nSUMMARY: AddressSanitizer: stack-overflow (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0005/runner:arm64+0x100000834) in dealnnoyNum+0x4",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "exception_equivalent",
+            "reason": "Arguments 1 and -13 enter the same recursive recurrence in both sources without reaching a zero argument before stack exhaustion. Java StackOverflowError and ASan stack-overflow in dealnnoyNum have the same recursive cause."
+          }
+        }
+      ]
+    },
+    {
+      "id": "DealnnoyNum_ESTest.test3",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "DealnnoyNum_ESTest.test4",
+      "status": "unclear",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        },
+        {
+          "id": "call_1",
+          "status": "exception_equivalent",
+          "differences": [
+            {
+              "path": "steps.call_1.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "stack_overflow",
+              "c": "process_crash"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_1",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_1.error.kind",
+                "reason": "canonical error kinds differ",
+                "java": "stack_overflow",
+                "c": "process_crash"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "DealnnoyNum",
+            "input_id": "DealnnoyNum_ESTest.test4.call_1",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.StackOverflowError"
+              }
+            },
+            "c_normal": {
+              "id": "call_1",
+              "status": "error",
+              "error": {
+                "kind": "process_crash",
+                "message": "Terminated by SIGSEGV"
+              }
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "AddressSanitizer:DEADLYSIGNAL\nERROR: AddressSanitizer: stack-overflow on address 0x00016ae0ffe0 (pc 0x0001047f4834 bp 0x00016ae10050 sp 0x00016ae0ff80 T0)\nSUMMARY: AddressSanitizer: stack-overflow (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0006/runner:arm64+0x100000834) in dealnnoyNum+0x4",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "exception_equivalent",
+            "reason": "call_0 returns 1 in both languages. call_1 with -1 and -347 starts the same recursive descent and exhausts the stack. Instrumented prefix replay confirms call_1 is reached and fails in both languages."
+          }
+        },
+        {
+          "id": "call_2",
+          "status": "unclear",
+          "differences": [
+            {
+              "path": "steps.call_2.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "stack_overflow",
+              "c": "process_crash"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_2",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_2.error.kind",
+                "reason": "canonical error kinds differ",
+                "java": "stack_overflow",
+                "c": "process_crash"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "DealnnoyNum",
+            "input_id": "DealnnoyNum_ESTest.test4.call_2",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.StackOverflowError"
+              }
+            },
+            "c_normal": {
+              "id": "call_2",
+              "status": "error",
+              "error": {
+                "kind": "process_crash",
+                "message": "Terminated by SIGSEGV"
+              }
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "AddressSanitizer:DEADLYSIGNAL\nERROR: AddressSanitizer: stack-overflow on address 0x00016ea97fe0 (pc 0x000100b6c834 bp 0x00016ea98050 sp 0x00016ea97f80 T0)\nSUMMARY: AddressSanitizer: stack-overflow (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0007/runner:arm64+0x100000834) in dealnnoyNum+0x4",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "unclear",
+            "reason": "This target is not reached: instrumented Java and C prefix replays stop in call_1 with stack overflow. The recorded failure belongs to call_1, so it cannot establish this later call's exception equivalence."
+          }
+        },
+        {
+          "id": "call_3",
+          "status": "unclear",
+          "differences": [
+            {
+              "path": "steps.call_3.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "stack_overflow",
+              "c": "process_crash"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_3",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_3.error.kind",
+                "reason": "canonical error kinds differ",
+                "java": "stack_overflow",
+                "c": "process_crash"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "DealnnoyNum",
+            "input_id": "DealnnoyNum_ESTest.test4.call_3",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.StackOverflowError"
+              }
+            },
+            "c_normal": {
+              "id": "call_3",
+              "status": "error",
+              "error": {
+                "kind": "process_crash",
+                "message": "Terminated by SIGSEGV"
+              }
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "AddressSanitizer:DEADLYSIGNAL\nERROR: AddressSanitizer: stack-overflow on address 0x00016ac83fe0 (pc 0x000104980834 bp 0x00016ac84050 sp 0x00016ac83f80 T0)\nSUMMARY: AddressSanitizer: stack-overflow (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0008/runner:arm64+0x100000834) in dealnnoyNum+0x4",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "unclear",
+            "reason": "This target is not reached: instrumented Java and C prefix replays stop in call_1 with stack overflow. The recorded failure belongs to call_1, so it cannot establish this later call's exception equivalence."
+          }
+        },
+        {
+          "id": "call_4",
+          "status": "unclear",
+          "differences": [
+            {
+              "path": "steps.call_4.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "stack_overflow",
+              "c": "process_crash"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_4",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_4.error.kind",
+                "reason": "canonical error kinds differ",
+                "java": "stack_overflow",
+                "c": "process_crash"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "DealnnoyNum",
+            "input_id": "DealnnoyNum_ESTest.test4.call_4",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.StackOverflowError"
+              }
+            },
+            "c_normal": {
+              "id": "call_4",
+              "status": "error",
+              "error": {
+                "kind": "process_crash",
+                "message": "Terminated by SIGSEGV"
+              }
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "AddressSanitizer:DEADLYSIGNAL\nERROR: AddressSanitizer: stack-overflow on address 0x00016cffbfe0 (pc 0x000102608834 bp 0x00016cffc050 sp 0x00016cffbf80 T0)\nSUMMARY: AddressSanitizer: stack-overflow (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0009/runner:arm64+0x100000834) in dealnnoyNum+0x4",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "unclear",
+            "reason": "This target is not reached: instrumented Java and C prefix replays stop in call_1 with stack overflow. The recorded failure belongs to call_1, so it cannot establish this later call's exception equivalence."
+          }
+        },
+        {
+          "id": "call_5",
+          "status": "unclear",
+          "differences": [
+            {
+              "path": "steps.call_5.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "stack_overflow",
+              "c": "process_crash"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_5",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_5.error.kind",
+                "reason": "canonical error kinds differ",
+                "java": "stack_overflow",
+                "c": "process_crash"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "DealnnoyNum",
+            "input_id": "DealnnoyNum_ESTest.test4.call_5",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.StackOverflowError"
+              }
+            },
+            "c_normal": {
+              "id": "call_5",
+              "status": "error",
+              "error": {
+                "kind": "process_crash",
+                "message": "Terminated by SIGSEGV"
+              }
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "AddressSanitizer:DEADLYSIGNAL\nERROR: AddressSanitizer: stack-overflow on address 0x00016ec4ffe0 (pc 0x0001009b4834 bp 0x00016ec50050 sp 0x00016ec4ff80 T0)\nSUMMARY: AddressSanitizer: stack-overflow (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0010/runner:arm64+0x100000834) in dealnnoyNum+0x4",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "unclear",
+            "reason": "This target is not reached: instrumented Java and C prefix replays stop in call_1 with stack overflow. The recorded failure belongs to call_1, so it cannot establish this later call's exception equivalence."
+          }
+        },
+        {
+          "id": "call_6",
+          "status": "unclear",
+          "differences": [
+            {
+              "path": "steps.call_6.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "stack_overflow",
+              "c": "process_crash"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_6",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_6.error.kind",
+                "reason": "canonical error kinds differ",
+                "java": "stack_overflow",
+                "c": "process_crash"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "DealnnoyNum",
+            "input_id": "DealnnoyNum_ESTest.test4.call_6",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.StackOverflowError"
+              }
+            },
+            "c_normal": {
+              "id": "call_6",
+              "status": "error",
+              "error": {
+                "kind": "process_crash",
+                "message": "Terminated by SIGSEGV"
+              }
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "AddressSanitizer:DEADLYSIGNAL\nERROR: AddressSanitizer: stack-overflow on address 0x00016d07ffe0 (pc 0x000102584834 bp 0x00016d080050 sp 0x00016d07ff80 T0)\nSUMMARY: AddressSanitizer: stack-overflow (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0011/runner:arm64+0x100000834) in dealnnoyNum+0x4",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "unclear",
+            "reason": "This target is not reached: instrumented Java and C prefix replays stop in call_1 with stack overflow. The recorded failure belongs to call_1, so it cannot establish this later call's exception equivalence."
+          }
+        },
+        {
+          "id": "call_7",
+          "status": "unclear",
+          "differences": [
+            {
+              "path": "steps.call_7.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "stack_overflow",
+              "c": "process_crash"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_7",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_7.error.kind",
+                "reason": "canonical error kinds differ",
+                "java": "stack_overflow",
+                "c": "process_crash"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "DealnnoyNum",
+            "input_id": "DealnnoyNum_ESTest.test4.call_7",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.StackOverflowError"
+              }
+            },
+            "c_normal": {
+              "id": "call_7",
+              "status": "error",
+              "error": {
+                "kind": "process_crash",
+                "message": "Terminated by SIGSEGV"
+              }
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "AddressSanitizer:DEADLYSIGNAL\nERROR: AddressSanitizer: stack-overflow on address 0x00016ce73fe0 (pc 0x000102790834 bp 0x00016ce74050 sp 0x00016ce73f80 T0)\nSUMMARY: AddressSanitizer: stack-overflow (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0012/runner:arm64+0x100000834) in dealnnoyNum+0x4",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "unclear",
+            "reason": "This target is not reached: instrumented Java and C prefix replays stop in call_1 with stack overflow. The recorded failure belongs to call_1, so it cannot establish this later call's exception equivalence."
+          }
+        },
+        {
+          "id": "call_8",
+          "status": "unclear",
+          "differences": [
+            {
+              "path": "steps.call_8.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "stack_overflow",
+              "c": "process_crash"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_8",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_8.error.kind",
+                "reason": "canonical error kinds differ",
+                "java": "stack_overflow",
+                "c": "process_crash"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "DealnnoyNum",
+            "input_id": "DealnnoyNum_ESTest.test4.call_8",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.StackOverflowError"
+              }
+            },
+            "c_normal": {
+              "id": "call_8",
+              "status": "error",
+              "error": {
+                "kind": "process_crash",
+                "message": "Terminated by SIGSEGV"
+              }
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "AddressSanitizer:DEADLYSIGNAL\nERROR: AddressSanitizer: stack-overflow on address 0x00016b39ffe0 (pc 0x000104264834 bp 0x00016b3a0050 sp 0x00016b39ff80 T0)\nSUMMARY: AddressSanitizer: stack-overflow (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0013/runner:arm64+0x100000834) in dealnnoyNum+0x4",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "unclear",
+            "reason": "This target is not reached: instrumented Java and C prefix replays stop in call_1 with stack overflow. The recorded failure belongs to call_1, so it cannot establish this later call's exception equivalence."
+          }
+        }
+      ]
+    },
+    {
+      "id": "DealnnoyNum_ESTest.test5",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "DiameterCircle_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "DiameterCircle_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "DiameterCircle_ESTest.test2",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "DiffEvenOdd_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "DiffEvenOdd_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "DiffEvenOdd_ESTest.test2",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "DiffEvenOdd_ESTest.test3",
+      "status": "mismatch",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.status",
+                "reason": "execution statuses differ",
+                "java": "error",
+                "c": "returned"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "DiffEvenOdd",
+            "input_id": "DiffEvenOdd_ESTest.test3.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.NullPointerException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "returned",
+              "return": {
+                "type": "int32",
+                "value": 0
+              },
+              "state_after": []
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": 0,
+              "stdout": "{\"status\":\"returned\",\"return\":{\"type\":\"int32\",\"value\":0},\"state_after\":[]}",
+              "stderr": "",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "mismatch",
+            "reason": "Java iteration over a null array throws. C uses the zero wrapper length, skips the loop and returns 0 from its unchanged accumulators; the sanitized run returns normally."
+          }
+        }
+      ]
+    },
+    {
+      "id": "DiffEvenOdd_ESTest.test4",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "DiffEvenOdd_ESTest.test5",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "DogAge_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "DogAge_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "DogAge_ESTest.test2",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "Fibonacci_ESTest.test0",
+      "status": "exception_equivalent",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "exception_equivalent",
+          "differences": [
+            {
+              "path": "steps.call_0.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "stack_overflow",
+              "c": "process_crash"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.error.kind",
+                "reason": "canonical error kinds differ",
+                "java": "stack_overflow",
+                "c": "process_crash"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "Fibonacci",
+            "input_id": "Fibonacci_ESTest.test0.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.StackOverflowError"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "error",
+              "error": {
+                "kind": "process_crash",
+                "message": "Terminated by SIGSEGV"
+              }
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "AddressSanitizer:DEADLYSIGNAL\nERROR: AddressSanitizer: stack-overflow on address 0x00016f4a7ff0 (pc 0x00010015c834 bp 0x00016f4a8010 sp 0x00016f4a7fe0 T0)\nSUMMARY: AddressSanitizer: stack-overflow (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0015/runner:arm64+0x100000834) in fibonacci+0x4",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "exception_equivalent",
+            "reason": "Input -1 recurses toward smaller negative arguments instead of the zero/one base cases in both sources. Java StackOverflowError and ASan stack-overflow in fibonacci identify the same recursion."
+          }
+        }
+      ]
+    },
+    {
+      "id": "Fibonacci_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "Fibonacci_ESTest.test2",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "Fibonacci_ESTest.test3",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "FindPeak_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "FindPeak_ESTest.test1",
+      "status": "exception_equivalent",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "exception_equivalent",
+          "differences": [
+            {
+              "path": "steps.call_0.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "null_dereference",
+              "c": "process_crash"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.error.kind",
+                "reason": "canonical error kinds differ",
+                "java": "null_dereference",
+                "c": "process_crash"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "FindPeak",
+            "input_id": "FindPeak_ESTest.test1.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.NullPointerException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "error",
+              "error": {
+                "kind": "process_crash",
+                "message": "Terminated by SIGSEGV"
+              }
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "runtime error: applying non-zero offset 984 to null pointer\nSUMMARY: UndefinedBehaviorSanitizer: undefined-behavior /Users/deenzhou/Downloads/Unimelb/ResearchProject/FormalBench-Extension/FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/FindPeak.c:14:13\nAddressSanitizer:DEADLYSIGNAL\nERROR: AddressSanitizer: SEGV on unknown address 0x0000000003d8 (pc 0x0001048f8ae4 bp 0x00016b5066e0 sp 0x00016b5065c0 T0)\nSUMMARY: AddressSanitizer: SEGV (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0016/runner:arm64+0x100000ae4) in findPeak+0x2b4",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "exception_equivalent",
+            "reason": "Null array with requested size 494: both attempt the first midpoint access at index 246. Java throws on the null array; UBSan reports offset 984 applied to null and ASan reports the resulting SEGV in findPeak."
+          }
+        }
+      ]
+    },
+    {
+      "id": "FindPeak_ESTest.test2",
+      "status": "unclear",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "unclear",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.status",
+                "reason": "execution statuses differ",
+                "java": "error",
+                "c": "returned"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "FindPeak",
+            "input_id": "FindPeak_ESTest.test2.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.ArrayIndexOutOfBoundsException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "returned",
+              "return": {
+                "type": "int32",
+                "value": 61
+              },
+              "state_after": [
+                {
+                  "id": "intArray0",
+                  "type": "int32[]",
+                  "value": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              ]
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": 0,
+              "stdout": "{\"status\":\"returned\",\"return\":{\"type\":\"int32\",\"value\":1049},\"state_after\":[{\"id\":\"intArray0\",\"type\":\"int32[]\",\"value\":[0,0,0,0,0]}]}",
+              "stderr": "",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "unclear",
+            "reason": "Both sources attempt index 769 in a five-element array, explaining the Java bounds exception. However, this saved sanitized C run exits 0 with no diagnostic. The unsafe ordinary C return does not establish exception equivalence; current sanitizer evidence is insufficient."
+          }
+        }
+      ]
+    },
+    {
+      "id": "FindPeak_ESTest.test3",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "FindPeak_ESTest.test4",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "FindPoints_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "FindPoints_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "FindPoints_ESTest.test2",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "FindPoints_ESTest.test3",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "FindPoints_ESTest.test4",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "FindPoints_ESTest.test5",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "FindPoints_ESTest.test6",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "FindRectNum_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "FindRectNum_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "FindRectNum_ESTest.test2",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "HexagonalNum_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "HexagonalNum_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "HexagonalNum_ESTest.test2",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "LeftInsertion_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "LeftInsertion_ESTest.test1",
+      "status": "mismatch",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.status",
+                "reason": "execution statuses differ",
+                "java": "error",
+                "c": "returned"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "LeftInsertion",
+            "input_id": "LeftInsertion_ESTest.test1.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.NullPointerException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "returned",
+              "return": {
+                "type": "int32",
+                "value": 0
+              },
+              "state_after": []
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": 0,
+              "stdout": "{\"status\":\"returned\",\"return\":{\"type\":\"int32\",\"value\":0},\"state_after\":[]}",
+              "stderr": "",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "mismatch",
+            "reason": "Java reads the null array length and throws. C obtains length zero from the wrapper, skips the binary-search loop and returns 0; sanitizer execution returns normally."
+          }
+        }
+      ]
+    },
+    {
+      "id": "LeftInsertion_ESTest.test2",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "LeftInsertion_ESTest.test3",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MaxDifference_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MaxDifference_ESTest.test1",
+      "status": "mismatch",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.status",
+                "reason": "execution statuses differ",
+                "java": "error",
+                "c": "returned"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "MaxDifference",
+            "input_id": "MaxDifference_ESTest.test1.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.NullPointerException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "returned",
+              "return": {
+                "type": "int32",
+                "value": 0
+              },
+              "state_after": []
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": 0,
+              "stdout": "{\"status\":\"returned\",\"return\":{\"type\":\"int32\",\"value\":0},\"state_after\":[]}",
+              "stderr": "",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "mismatch",
+            "reason": "Java throws while reading the null matrix length. C sees a zero-length wrapper, skips all rows and returns 0 without invalid storage access; no sanitizer failure."
+          }
+        }
+      ]
+    },
+    {
+      "id": "MaxDifference_ESTest.test2",
+      "status": "exception_equivalent",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "exception_equivalent",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.status",
+                "reason": "execution statuses differ",
+                "java": "error",
+                "c": "returned"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "MaxDifference",
+            "input_id": "MaxDifference_ESTest.test2.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.ArrayIndexOutOfBoundsException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "returned",
+              "return": {
+                "type": "int32",
+                "value": 0
+              },
+              "state_after": [
+                {
+                  "id": "intArray0",
+                  "type": "int32[][]",
+                  "value": [
+                    [
+                      0
+                    ]
+                  ]
+                }
+              ]
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "ERROR: AddressSanitizer: stack-buffer-overflow on address 0x00016b52e5c4 at pc 0x0001048d0e10 bp 0x00016b52e350 sp 0x00016b52e348\nSUMMARY: AddressSanitizer: stack-buffer-overflow (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0020/runner:arm64+0x100000e0c) in maxDifference+0x5dc",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "exception_equivalent",
+            "reason": "The only matrix row has one element. Both implementations read column 1 of that row (Java line 16, C line 32); the Java bounds exception and ASan stack-buffer-overflow arise from that same read."
+          }
+        }
+      ]
+    },
+    {
+      "id": "MaxDifference_ESTest.test3",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MaxOfTwo_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MaxOfTwo_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MaxOfTwo_ESTest.test2",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MaxProduct_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MaxProduct_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MaxProduct_ESTest.test2",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MaxProduct_ESTest.test3",
+      "status": "exception_equivalent",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "exception_equivalent",
+          "differences": [
+            {
+              "path": "steps.call_0.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "null_dereference",
+              "c": "process_crash"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.error.kind",
+                "reason": "canonical error kinds differ",
+                "java": "null_dereference",
+                "c": "process_crash"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "MaxProduct",
+            "input_id": "MaxProduct_ESTest.test3.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.NullPointerException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "error",
+              "error": {
+                "kind": "process_crash",
+                "message": "Terminated by SIGSEGV"
+              }
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "runtime error: load of null pointer of type 'int32_t' (aka 'int')\nSUMMARY: UndefinedBehaviorSanitizer: undefined-behavior /Users/deenzhou/Downloads/Unimelb/ResearchProject/FormalBench-Extension/FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/MaxProduct.c:24:19\nAddressSanitizer:DEADLYSIGNAL\nERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x000102cc4a14 bp 0x00016d13a6f0 sp 0x00016d13a380 T0)\nSUMMARY: AddressSanitizer: SEGV (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0021/runner:arm64+0x100000a14) in maxProduct+0x1e4",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "exception_equivalent",
+            "reason": "Null input with n of 1278: both copy arr[0] into the working array. Java throws on the null load; UBSan identifies the null int32_t load at MaxProduct.c:24 and ASan reports SEGV."
+          }
+        }
+      ]
+    },
+    {
+      "id": "MaxProduct_ESTest.test4",
+      "status": "mismatch",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.status",
+                "reason": "execution statuses differ",
+                "java": "error",
+                "c": "returned"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "MaxProduct",
+            "input_id": "MaxProduct_ESTest.test4.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.NegativeArraySizeException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "returned",
+              "return": {
+                "type": "int32",
+                "value": 0
+              },
+              "state_after": [
+                {
+                  "id": "intArray0",
+                  "type": "int32[]",
+                  "value": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              ]
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": 0,
+              "stdout": "{\"status\":\"returned\",\"return\":{\"type\":\"int32\",\"value\":0},\"state_after\":[{\"id\":\"intArray0\",\"type\":\"int32[]\",\"value\":[0,0,0,0,0,0,0,0,0]}]}",
+              "stderr": "",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "mismatch",
+            "reason": "For n of -340, Java attempts a negative-sized working array and throws. C explicitly returns 0 for nonpositive n before allocating; the sanitizer run also returns 0."
+          }
+        }
+      ]
+    },
+    {
+      "id": "MaxProduct_ESTest.test5",
+      "status": "mismatch",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.status",
+                "reason": "execution statuses differ",
+                "java": "error",
+                "c": "returned"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "MaxProduct",
+            "input_id": "MaxProduct_ESTest.test5.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.ArrayIndexOutOfBoundsException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "returned",
+              "return": {
+                "type": "int32",
+                "value": 0
+              },
+              "state_after": [
+                {
+                  "id": "intArray0",
+                  "type": "int32[]",
+                  "value": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              ]
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": 0,
+              "stdout": "{\"status\":\"returned\",\"return\":{\"type\":\"int32\",\"value\":0},\"state_after\":[{\"id\":\"intArray0\",\"type\":\"int32[]\",\"value\":[0,0,0,0,0,0,0]}]}",
+              "stderr": "",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "mismatch",
+            "reason": "For n of 0, Java creates an empty working array and then reads mpis[0]. C returns 0 at its nonpositive-n guard and does not perform that access; no sanitizer failure."
+          }
+        }
+      ]
+    },
+    {
+      "id": "MaxProduct_ESTest.test6",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MaxProduct_ESTest.test7",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MaxSubArraySum_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MaxSubArraySum_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MaxSubArraySum_ESTest.test2",
+      "status": "exception_equivalent",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "exception_equivalent",
+          "differences": [
+            {
+              "path": "steps.call_0.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "null_dereference",
+              "c": "process_crash"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.error.kind",
+                "reason": "canonical error kinds differ",
+                "java": "null_dereference",
+                "c": "process_crash"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "MaxSubArraySum",
+            "input_id": "MaxSubArraySum_ESTest.test2.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.NullPointerException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "error",
+              "error": {
+                "kind": "process_crash",
+                "message": "Terminated by SIGSEGV"
+              }
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "runtime error: load of null pointer of type 'int32_t' (aka 'int')\nSUMMARY: UndefinedBehaviorSanitizer: undefined-behavior /Users/deenzhou/Downloads/Unimelb/ResearchProject/FormalBench-Extension/FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/MaxSubArraySum.c:21:53\nAddressSanitizer:DEADLYSIGNAL\nERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x000104a989e4 bp 0x00016b3666e0 sp 0x00016b366620 T0)\nSUMMARY: AddressSanitizer: SEGV (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0024/runner:arm64+0x1000009e4) in maxSubArraySum+0x1b4",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "exception_equivalent",
+            "reason": "Null input with size 507: both first read a[0] in the accumulation loop. Java throws; UBSan identifies the null load at MaxSubArraySum.c:21 and ASan reports SEGV."
+          }
+        }
+      ]
+    },
+    {
+      "id": "MaxSubArraySum_ESTest.test3",
+      "status": "exception_equivalent",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "exception_equivalent",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.status",
+                "reason": "execution statuses differ",
+                "java": "error",
+                "c": "returned"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "MaxSubArraySum",
+            "input_id": "MaxSubArraySum_ESTest.test3.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.ArrayIndexOutOfBoundsException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "returned",
+              "return": {
+                "type": "int32",
+                "value": 7
+              },
+              "state_after": [
+                {
+                  "id": "intArray0",
+                  "type": "int32[]",
+                  "value": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              ]
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "ERROR: AddressSanitizer: stack-buffer-overflow on address 0x00016f7c6638 at pc 0x0001006389d4 bp 0x00016f7c6520 sp 0x00016f7c6518\nSUMMARY: AddressSanitizer: stack-buffer-overflow (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0025/runner:arm64+0x1000009d0) in maxSubArraySum+0x1a0",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "exception_equivalent",
+            "reason": "Requested size 437 exceeds the six-element input. Both loops read beyond a at index 6; Java reports a bounds exception and ASan reports stack-buffer-overflow in maxSubArraySum."
+          }
+        }
+      ]
+    },
+    {
+      "id": "MaxSumOfThreeConsecutive_ESTest.test0",
+      "status": "exception_equivalent",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "exception_equivalent",
+          "differences": [
+            {
+              "path": "steps.call_0.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "bounds_error",
+              "c": "process_crash"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.error.kind",
+                "reason": "canonical error kinds differ",
+                "java": "bounds_error",
+                "c": "process_crash"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "MaxSumOfThreeConsecutive",
+            "input_id": "MaxSumOfThreeConsecutive_ESTest.test0.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.ArrayIndexOutOfBoundsException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "error",
+              "error": {
+                "kind": "process_crash",
+                "message": "Terminated by SIGSEGV"
+              }
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "ERROR: AddressSanitizer: stack-buffer-overflow on address 0x00016bbee604 at pc 0x000104211810 bp 0x00016bbedfb0 sp 0x00016bbedfa8\nSUMMARY: AddressSanitizer: stack-buffer-overflow (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0026/runner:arm64+0x10000180c) in maxSumOfThreeConsecutive+0xfdc",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "exception_equivalent",
+            "reason": "Requested size 2125 exceeds the nine-element input. Both recurrence loops access arr[9] after valid initial elements; the Java bounds exception and ASan stack-buffer-overflow concern this same input overrun."
+          }
+        }
+      ]
+    },
+    {
+      "id": "MaxSumOfThreeConsecutive_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MaxSumOfThreeConsecutive_ESTest.test2",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MaxSumOfThreeConsecutive_ESTest.test3",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MaxSumOfThreeConsecutive_ESTest.test4",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MaxSumOfThreeConsecutive_ESTest.test5",
+      "status": "mismatch",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.status",
+                "reason": "execution statuses differ",
+                "java": "error",
+                "c": "returned"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "MaxSumOfThreeConsecutive",
+            "input_id": "MaxSumOfThreeConsecutive_ESTest.test5.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.NegativeArraySizeException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "returned",
+              "return": {
+                "type": "int32",
+                "value": 0
+              },
+              "state_after": [
+                {
+                  "id": "intArray0",
+                  "type": "int32[]",
+                  "value": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              ]
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": 0,
+              "stdout": "{\"status\":\"returned\",\"return\":{\"type\":\"int32\",\"value\":0},\"state_after\":[{\"id\":\"intArray0\",\"type\":\"int32[]\",\"value\":[0,0,0,0]}]}",
+              "stderr": "",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "mismatch",
+            "reason": "Java attempts a working array of length -1082 and throws. C returns 0 at its nonpositive-n guard before allocation; the sanitizer run returns normally."
+          }
+        }
+      ]
+    },
+    {
+      "id": "MaxSumOfThreeConsecutive_ESTest.test6",
+      "status": "exception_equivalent",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "exception_equivalent",
+          "differences": [
+            {
+              "path": "steps.call_0.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "null_dereference",
+              "c": "process_crash"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.error.kind",
+                "reason": "canonical error kinds differ",
+                "java": "null_dereference",
+                "c": "process_crash"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "MaxSumOfThreeConsecutive",
+            "input_id": "MaxSumOfThreeConsecutive_ESTest.test6.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.NullPointerException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "error",
+              "error": {
+                "kind": "process_crash",
+                "message": "Terminated by SIGSEGV"
+              }
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "runtime error: load of null pointer of type 'int32_t' (aka 'int')\nSUMMARY: UndefinedBehaviorSanitizer: undefined-behavior /Users/deenzhou/Downloads/Unimelb/ResearchProject/FormalBench-Extension/FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/MaxSumOfThreeConsecutive.c:27:18\nAddressSanitizer:DEADLYSIGNAL\nERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x000104be4940 bp 0x00016b21a6f0 sp 0x00016b21a100 T0)\nSUMMARY: AddressSanitizer: SEGV (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0028/runner:arm64+0x100000940) in maxSumOfThreeConsecutive+0x110",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "exception_equivalent",
+            "reason": "Null array with n of 1: both initialize sum[0] from arr[0]. Java throws and UBSan identifies the same null load at MaxSumOfThreeConsecutive.c:27, followed by ASan SEGV."
+          }
+        }
+      ]
+    },
+    {
+      "id": "MaxSumOfThreeConsecutive_ESTest.test7",
+      "status": "mismatch",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.status",
+                "reason": "execution statuses differ",
+                "java": "error",
+                "c": "returned"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "MaxSumOfThreeConsecutive",
+            "input_id": "MaxSumOfThreeConsecutive_ESTest.test7.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.ArrayIndexOutOfBoundsException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "returned",
+              "return": {
+                "type": "int32",
+                "value": 0
+              },
+              "state_after": [
+                {
+                  "id": "intArray0",
+                  "type": "int32[]",
+                  "value": []
+                }
+              ]
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": 0,
+              "stdout": "{\"status\":\"returned\",\"return\":{\"type\":\"int32\",\"value\":0},\"state_after\":[{\"id\":\"intArray0\",\"type\":\"int32[]\",\"value\":[]}]}",
+              "stderr": "",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "mismatch",
+            "reason": "For n of 0, Java returns through an invalid read of sum[-1] in an empty working array. C returns 0 at its nonpositive-n guard instead; the sanitizer run has no failure."
+          }
+        }
+      ]
+    },
+    {
+      "id": "MaxSumSubseq_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MaxSumSubseq_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MaxSumSubseq_ESTest.test2",
+      "status": "mismatch",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.status",
+                "reason": "execution statuses differ",
+                "java": "error",
+                "c": "returned"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "MaxSumSubseq",
+            "input_id": "MaxSumSubseq_ESTest.test2.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.NullPointerException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "returned",
+              "return": {
+                "type": "int32",
+                "value": 0
+              },
+              "state_after": []
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": 0,
+              "stdout": "{\"status\":\"returned\",\"return\":{\"type\":\"int32\",\"value\":0},\"state_after\":[]}",
+              "stderr": "",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "mismatch",
+            "reason": "Java reads the null input length and throws. C treats the wrapper length as zero and returns 0 at its empty-input guard; the sanitized run returns normally."
+          }
+        }
+      ]
+    },
+    {
+      "id": "MaxSumSubseq_ESTest.test3",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MaxSumSubseq_ESTest.test4",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MaxVolume_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MaxVolume_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MaxVolume_ESTest.test2",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MaximumSegments_ESTest.test0",
+      "status": "exception_equivalent",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "exception_equivalent",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.status",
+                "reason": "execution statuses differ",
+                "java": "error",
+                "c": "returned"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "MaximumSegments",
+            "input_id": "MaximumSegments_ESTest.test0.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.ArrayIndexOutOfBoundsException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "returned",
+              "return": {
+                "type": "int32",
+                "value": 2
+              },
+              "state_after": []
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "ERROR: AddressSanitizer: heap-buffer-overflow on address 0x623000002468 at pc 0x000102e45290 bp 0x00016cfba1b0 sp 0x00016cfba1a8\nSUMMARY: AddressSanitizer: heap-buffer-overflow (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0031/runner:arm64+0x10000128c) in maximumSegments+0xa5c",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "exception_equivalent",
+            "reason": "With n of 1578 and b of -2265, the recurrence reads dp[2266] when the allocation has 1579 elements. Both sources use this unchecked negative-segment index; Java reports bounds failure and ASan reports heap-buffer-overflow in maximumSegments."
+          }
+        }
+      ]
+    },
+    {
+      "id": "MaximumSegments_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MaximumSegments_ESTest.test2",
+      "status": "mismatch",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.status",
+                "reason": "execution statuses differ",
+                "java": "error",
+                "c": "returned"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "MaximumSegments",
+            "input_id": "MaximumSegments_ESTest.test2.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.NegativeArraySizeException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "returned",
+              "return": {
+                "type": "int32",
+                "value": -1
+              },
+              "state_after": []
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": 0,
+              "stdout": "{\"status\":\"returned\",\"return\":{\"type\":\"int32\",\"value\":-1},\"state_after\":[]}",
+              "stderr": "",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "mismatch",
+            "reason": "For n of -4430, Java attempts a negative-sized dp array. C returns -1 at its negative-n guard before allocating; the sanitized run returns -1 without failure."
+          }
+        }
+      ]
+    },
+    {
+      "id": "MaximumSegments_ESTest.test3",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MaximumSegments_ESTest.test4",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MaximumSegments_ESTest.test5",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        },
+        {
+          "id": "call_1",
+          "status": "match"
+        },
+        {
+          "id": "call_2",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MinCoins_ESTest.test00",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        },
+        {
+          "id": "call_1",
+          "status": "match"
+        },
+        {
+          "id": "call_2",
+          "status": "match"
+        },
+        {
+          "id": "call_3",
+          "status": "match"
+        },
+        {
+          "id": "call_4",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MinCoins_ESTest.test01",
+      "status": "exception_equivalent",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        },
+        {
+          "id": "call_1",
+          "status": "match"
+        },
+        {
+          "id": "call_2",
+          "status": "match"
+        },
+        {
+          "id": "call_3",
+          "status": "exception_equivalent",
+          "differences": [
+            {
+              "path": "steps.call_3.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "bounds_error",
+              "c": "process_crash"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_3",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_3.error.kind",
+                "reason": "canonical error kinds differ",
+                "java": "bounds_error",
+                "c": "process_crash"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "MinCoins",
+            "input_id": "MinCoins_ESTest.test01.call_3",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.ArrayIndexOutOfBoundsException"
+              }
+            },
+            "c_normal": {
+              "id": "call_3",
+              "status": "error",
+              "error": {
+                "kind": "process_crash",
+                "message": "Terminated by SIGSEGV"
+              }
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "ERROR: AddressSanitizer: stack-buffer-overflow on address 0x00016b3125fc at pc 0x000104aec9f8 bp 0x00016b312510 sp 0x00016b312508\nSUMMARY: AddressSanitizer: stack-buffer-overflow (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0033/runner:arm64+0x1000009f4) in minCoins+0x1c4",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "exception_equivalent",
+            "reason": "The first three calls return in both languages. In call_3 the declared coin count is 2147483647 but storage contains seven coins. Both access coins[7]; Java reports that index and ASan reports stack-buffer-overflow in minCoins."
+          }
+        }
+      ]
+    },
+    {
+      "id": "MinCoins_ESTest.test02",
+      "status": "exception_equivalent",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        },
+        {
+          "id": "call_1",
+          "status": "match"
+        },
+        {
+          "id": "call_2",
+          "status": "match"
+        },
+        {
+          "id": "call_3",
+          "status": "exception_equivalent",
+          "differences": [
+            {
+              "path": "steps.call_3.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "bounds_error",
+              "c": "process_crash"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_3",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_3.error.kind",
+                "reason": "canonical error kinds differ",
+                "java": "bounds_error",
+                "c": "process_crash"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "MinCoins",
+            "input_id": "MinCoins_ESTest.test02.call_3",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.ArrayIndexOutOfBoundsException"
+              }
+            },
+            "c_normal": {
+              "id": "call_3",
+              "status": "error",
+              "error": {
+                "kind": "process_crash",
+                "message": "Terminated by SIGSEGV"
+              }
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "ERROR: AddressSanitizer: stack-buffer-overflow on address 0x00016f07e5fc at pc 0x000100d809f8 bp 0x00016f07e510 sp 0x00016f07e508\nSUMMARY: AddressSanitizer: stack-buffer-overflow (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0034/runner:arm64+0x1000009f4) in minCoins+0x1c4",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "exception_equivalent",
+            "reason": "The first three calls return in both languages. In call_3 the declared coin count is 2147483647 but storage contains seven coins. Both access coins[7]; Java reports that index and ASan reports stack-buffer-overflow in minCoins."
+          }
+        }
+      ]
+    },
+    {
+      "id": "MinCoins_ESTest.test03",
+      "status": "exception_equivalent",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "exception_equivalent",
+          "differences": [
+            {
+              "path": "steps.call_0.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "bounds_error",
+              "c": "process_crash"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.error.kind",
+                "reason": "canonical error kinds differ",
+                "java": "bounds_error",
+                "c": "process_crash"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "MinCoins",
+            "input_id": "MinCoins_ESTest.test03.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.ArrayIndexOutOfBoundsException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "error",
+              "error": {
+                "kind": "process_crash",
+                "message": "Terminated by SIGSEGV"
+              }
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "ERROR: AddressSanitizer: stack-buffer-overflow on address 0x00016fbfe62c at pc 0x0001002009f8 bp 0x00016fbfe550 sp 0x00016fbfe548\nSUMMARY: AddressSanitizer: stack-buffer-overflow (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0035/runner:arm64+0x1000009f4) in minCoins+0x1c4",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "exception_equivalent",
+            "reason": "The declared coin count is 1450 but storage has three elements. The recursion first returns from the valid zero-remaining-value case, then the loop reaches coins[3]. Java bounds failure and ASan stack-buffer-overflow have the same cause."
+          }
+        }
+      ]
+    },
+    {
+      "id": "MinCoins_ESTest.test04",
+      "status": "unclear",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "exception_equivalent",
+          "differences": [
+            {
+              "path": "steps.call_0.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "stack_overflow",
+              "c": "process_crash"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.error.kind",
+                "reason": "canonical error kinds differ",
+                "java": "stack_overflow",
+                "c": "process_crash"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "MinCoins",
+            "input_id": "MinCoins_ESTest.test04.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.StackOverflowError"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "error",
+              "error": {
+                "kind": "process_crash",
+                "message": "Terminated by SIGSEGV"
+              }
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "AddressSanitizer:DEADLYSIGNAL\nERROR: AddressSanitizer: stack-overflow on address 0x00016f52fffc (pc 0x0001000d48b4 bp 0x00016f530070 sp 0x00016f52ffe0 T0)\nSUMMARY: AddressSanitizer: stack-overflow (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0036/runner:arm64+0x1000008b4) in minCoins+0x84",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "exception_equivalent",
+            "reason": "The second coin is zero, so a recursive call retains remaining value 923. Both implementations repeat this call until stack exhaustion; instrumented prefix replay confirms failure in call_0 and ASan reports stack-overflow."
+          }
+        },
+        {
+          "id": "call_1",
+          "status": "unclear",
+          "differences": [
+            {
+              "path": "steps.call_1.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "stack_overflow",
+              "c": "process_crash"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_1",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_1.error.kind",
+                "reason": "canonical error kinds differ",
+                "java": "stack_overflow",
+                "c": "process_crash"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "MinCoins",
+            "input_id": "MinCoins_ESTest.test04.call_1",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.StackOverflowError"
+              }
+            },
+            "c_normal": {
+              "id": "call_1",
+              "status": "error",
+              "error": {
+                "kind": "process_crash",
+                "message": "Terminated by SIGSEGV"
+              }
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "AddressSanitizer:DEADLYSIGNAL\nERROR: AddressSanitizer: stack-overflow on address 0x00016ade7ffc (pc 0x00010481c8b4 bp 0x00016ade8070 sp 0x00016ade7fe0 T0)\nSUMMARY: AddressSanitizer: stack-overflow (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0037/runner:arm64+0x1000008b4) in minCoins+0x84",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "unclear",
+            "reason": "This target is not reached: instrumented Java and C replays both fail in call_0 on zero-coin recursion. Its recorded stack overflow is a prefix failure, not evidence about this later call."
+          }
+        },
+        {
+          "id": "call_2",
+          "status": "unclear",
+          "differences": [
+            {
+              "path": "steps.call_2.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "stack_overflow",
+              "c": "process_crash"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_2",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_2.error.kind",
+                "reason": "canonical error kinds differ",
+                "java": "stack_overflow",
+                "c": "process_crash"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "MinCoins",
+            "input_id": "MinCoins_ESTest.test04.call_2",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.StackOverflowError"
+              }
+            },
+            "c_normal": {
+              "id": "call_2",
+              "status": "error",
+              "error": {
+                "kind": "process_crash",
+                "message": "Terminated by SIGSEGV"
+              }
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "AddressSanitizer:DEADLYSIGNAL\nERROR: AddressSanitizer: stack-overflow on address 0x00016d2bfffc (pc 0x000102344ae8 bp 0x00016d2c0090 sp 0x00016d2bfff0 T0)\nSUMMARY: AddressSanitizer: stack-overflow (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0038/runner:arm64+0x100000ae8) in java_sub+0x4",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "unclear",
+            "reason": "This target is not reached: instrumented Java and C replays both fail in call_0 on zero-coin recursion. Its recorded stack overflow is a prefix failure, not evidence about this later call."
+          }
+        }
+      ]
+    },
+    {
+      "id": "MinCoins_ESTest.test05",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        },
+        {
+          "id": "call_1",
+          "status": "match"
+        },
+        {
+          "id": "call_2",
+          "status": "match"
+        },
+        {
+          "id": "call_3",
+          "status": "match"
+        },
+        {
+          "id": "call_4",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MinCoins_ESTest.test06",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        },
+        {
+          "id": "call_1",
+          "status": "match"
+        },
+        {
+          "id": "call_2",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MinCoins_ESTest.test07",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        },
+        {
+          "id": "call_1",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MinCoins_ESTest.test08",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        },
+        {
+          "id": "call_1",
+          "status": "match"
+        },
+        {
+          "id": "call_2",
+          "status": "match"
+        },
+        {
+          "id": "call_3",
+          "status": "match"
+        },
+        {
+          "id": "call_4",
+          "status": "match"
+        },
+        {
+          "id": "call_5",
+          "status": "match"
+        },
+        {
+          "id": "call_6",
+          "status": "match"
+        },
+        {
+          "id": "call_7",
+          "status": "match"
+        },
+        {
+          "id": "call_8",
+          "status": "match"
+        },
+        {
+          "id": "call_9",
+          "status": "match"
+        },
+        {
+          "id": "call_10",
+          "status": "match"
+        },
+        {
+          "id": "call_11",
+          "status": "match"
+        },
+        {
+          "id": "call_12",
+          "status": "match"
+        },
+        {
+          "id": "call_13",
+          "status": "match"
+        },
+        {
+          "id": "call_14",
+          "status": "match"
+        },
+        {
+          "id": "call_15",
+          "status": "match"
+        },
+        {
+          "id": "call_16",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MinCoins_ESTest.test09",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        },
+        {
+          "id": "call_1",
+          "status": "match"
+        },
+        {
+          "id": "call_2",
+          "status": "match"
+        },
+        {
+          "id": "call_3",
+          "status": "match"
+        },
+        {
+          "id": "call_4",
+          "status": "match"
+        },
+        {
+          "id": "call_5",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MinCoins_ESTest.test10",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MinCoins_ESTest.test11",
+      "status": "unclear",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "exception_equivalent",
+          "differences": [
+            {
+              "path": "steps.call_0.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "stack_overflow",
+              "c": "process_crash"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.error.kind",
+                "reason": "canonical error kinds differ",
+                "java": "stack_overflow",
+                "c": "process_crash"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "MinCoins",
+            "input_id": "MinCoins_ESTest.test11.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.StackOverflowError"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "error",
+              "error": {
+                "kind": "process_crash",
+                "message": "Terminated by SIGSEGV"
+              }
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "AddressSanitizer:DEADLYSIGNAL\nERROR: AddressSanitizer: stack-overflow on address 0x00016d3bfffc (pc 0x0001022448b4 bp 0x00016d3c0070 sp 0x00016d3bffe0 T0)\nSUMMARY: AddressSanitizer: stack-overflow (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0039/runner:arm64+0x1000008b4) in minCoins+0x84",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "exception_equivalent",
+            "reason": "The first coin is zero and remaining value is 1, so both implementations recursively repeat the same state. Java StackOverflowError and ASan stack-overflow occur in call_0, confirmed by instrumented prefix replay."
+          }
+        },
+        {
+          "id": "call_1",
+          "status": "unclear",
+          "differences": [
+            {
+              "path": "steps.call_1.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "stack_overflow",
+              "c": "process_crash"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_1",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_1.error.kind",
+                "reason": "canonical error kinds differ",
+                "java": "stack_overflow",
+                "c": "process_crash"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "MinCoins",
+            "input_id": "MinCoins_ESTest.test11.call_1",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.StackOverflowError"
+              }
+            },
+            "c_normal": {
+              "id": "call_1",
+              "status": "error",
+              "error": {
+                "kind": "process_crash",
+                "message": "Terminated by SIGSEGV"
+              }
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "AddressSanitizer:DEADLYSIGNAL\nERROR: AddressSanitizer: stack-overflow on address 0x00016d02bffc (pc 0x0001025d88b4 bp 0x00016d02c070 sp 0x00016d02bfe0 T0)\nSUMMARY: AddressSanitizer: stack-overflow (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0040/runner:arm64+0x1000008b4) in minCoins+0x84",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "unclear",
+            "reason": "This target is not reached: instrumented Java and C replays stop in call_0 on zero-coin recursion. Its result references are never produced, and the repeated stack failure cannot classify this later call."
+          }
+        },
+        {
+          "id": "call_2",
+          "status": "unclear",
+          "differences": [
+            {
+              "path": "steps.call_2.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "stack_overflow",
+              "c": "process_crash"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_2",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_2.error.kind",
+                "reason": "canonical error kinds differ",
+                "java": "stack_overflow",
+                "c": "process_crash"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "MinCoins",
+            "input_id": "MinCoins_ESTest.test11.call_2",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.StackOverflowError"
+              }
+            },
+            "c_normal": {
+              "id": "call_2",
+              "status": "error",
+              "error": {
+                "kind": "process_crash",
+                "message": "Terminated by SIGSEGV"
+              }
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "AddressSanitizer:DEADLYSIGNAL\nERROR: AddressSanitizer: stack-overflow on address 0x00016ceb7ffc (pc 0x00010274c8b4 bp 0x00016ceb8070 sp 0x00016ceb7fe0 T0)\nSUMMARY: AddressSanitizer: stack-overflow (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0041/runner:arm64+0x1000008b4) in minCoins+0x84",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "unclear",
+            "reason": "This target is not reached: instrumented Java and C replays stop in call_0 on zero-coin recursion. Its result references are never produced, and the repeated stack failure cannot classify this later call."
+          }
+        }
+      ]
+    },
+    {
+      "id": "MinCoins_ESTest.test12",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MinCoins_ESTest.test13",
+      "status": "exception_equivalent",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "exception_equivalent",
+          "differences": [
+            {
+              "path": "steps.call_0.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "stack_overflow",
+              "c": "process_crash"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.error.kind",
+                "reason": "canonical error kinds differ",
+                "java": "stack_overflow",
+                "c": "process_crash"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "MinCoins",
+            "input_id": "MinCoins_ESTest.test13.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.StackOverflowError"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "error",
+              "error": {
+                "kind": "process_crash",
+                "message": "Terminated by SIGSEGV"
+              }
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "AddressSanitizer:DEADLYSIGNAL\nERROR: AddressSanitizer: stack-overflow on address 0x00016ac1bfdc (pc 0x0001049e88b4 bp 0x00016ac1c050 sp 0x00016ac1bfc0 T0)\nSUMMARY: AddressSanitizer: stack-overflow (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0042/runner:arm64+0x1000008b4) in minCoins+0x84",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "exception_equivalent",
+            "reason": "The first coin is -134, so recursion repeatedly increases remaining value from 1856. Both sources follow this same branch until stack exhaustion; Java reports StackOverflowError and ASan reports stack-overflow in minCoins."
+          }
+        }
+      ]
+    },
+    {
+      "id": "MinCoins_ESTest.test14",
+      "status": "exception_equivalent",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "exception_equivalent",
+          "differences": [
+            {
+              "path": "steps.call_0.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "null_dereference",
+              "c": "process_crash"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.error.kind",
+                "reason": "canonical error kinds differ",
+                "java": "null_dereference",
+                "c": "process_crash"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "MinCoins",
+            "input_id": "MinCoins_ESTest.test14.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.NullPointerException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "error",
+              "error": {
+                "kind": "process_crash",
+                "message": "Terminated by SIGSEGV"
+              }
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "runtime error: load of null pointer of type 'int32_t' (aka 'int')\nSUMMARY: UndefinedBehaviorSanitizer: undefined-behavior /Users/deenzhou/Downloads/Unimelb/ResearchProject/FormalBench-Extension/FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/MinCoins.c:28:46\nAddressSanitizer:DEADLYSIGNAL\nERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x0001008c4a08 bp 0x00016f53a6e0 sp 0x00016f53a650 T0)\nSUMMARY: AddressSanitizer: SEGV (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0043/runner:arm64+0x100000a08) in minCoins+0x1d8",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "exception_equivalent",
+            "reason": "Null coins with positive count and remaining value 1177: both first access coins[0]. Java throws and UBSan reports the null int32_t load at MinCoins.c:28, followed by ASan SEGV."
+          }
+        }
+      ]
+    },
+    {
+      "id": "MinCost_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MinCost_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MinCost_ESTest.test2",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MinCost_ESTest.test3",
+      "status": "exception_equivalent",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "exception_equivalent",
+          "differences": [
+            {
+              "path": "steps.call_0.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "null_dereference",
+              "c": "process_crash"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.error.kind",
+                "reason": "canonical error kinds differ",
+                "java": "null_dereference",
+                "c": "process_crash"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "MinCost",
+            "input_id": "MinCost_ESTest.test3.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.NullPointerException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "error",
+              "error": {
+                "kind": "process_crash",
+                "message": "Terminated by SIGSEGV"
+              }
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "runtime error: member access within null pointer of type 'Int32Array'\nSUMMARY: UndefinedBehaviorSanitizer: undefined-behavior /Users/deenzhou/Downloads/Unimelb/ResearchProject/FormalBench-Extension/FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/MinCost.c:44:21\nruntime error: load of null pointer of type 'int32_t *' (aka 'int *')\nSUMMARY: UndefinedBehaviorSanitizer: undefined-behavior /Users/deenzhou/Downloads/Unimelb/ResearchProject/FormalBench-Extension/FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/MinCost.c:44:34\nAddressSanitizer:DEADLYSIGNAL\nERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x00010222cf90 bp 0x00016dbd26e0 sp 0x00016dbd1cd0 T0)\nSUMMARY: AddressSanitizer: SEGV (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0044/runner:arm64+0x100000f90) in minCost+0x760",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "exception_equivalent",
+            "reason": "Null cost matrix: both initialize the working matrix from cost[0][0]. Java throws; UBSan reports null row/member access at MinCost.c:44 and ASan reports the resulting SEGV."
+          }
+        }
+      ]
+    },
+    {
+      "id": "MinCost_ESTest.test4",
+      "status": "mismatch",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.status",
+                "reason": "execution statuses differ",
+                "java": "error",
+                "c": "returned"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "MinCost",
+            "input_id": "MinCost_ESTest.test4.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.NegativeArraySizeException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "returned",
+              "return": {
+                "type": "int32",
+                "value": 0
+              },
+              "state_after": [
+                {
+                  "id": "intArray0",
+                  "type": "int32[][]",
+                  "value": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      0
+                    ]
+                  ]
+                }
+              ]
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": 0,
+              "stdout": "{\"status\":\"returned\",\"return\":{\"type\":\"int32\",\"value\":0},\"state_after\":[{\"id\":\"intArray0\",\"type\":\"int32[][]\",\"value\":[[0,0],[0,0],[0,0]]}]}",
+              "stderr": "",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "mismatch",
+            "reason": "For dimensions -1106 and -1106, Java attempts a negative-sized working matrix and throws. C returns 0 at its negative-dimension guard before allocation; no sanitizer failure."
+          }
+        }
+      ]
+    },
+    {
+      "id": "MinCost_ESTest.test5",
+      "status": "exception_equivalent",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "exception_equivalent",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.status",
+                "reason": "execution statuses differ",
+                "java": "error",
+                "c": "returned"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "MinCost",
+            "input_id": "MinCost_ESTest.test5.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.ArrayIndexOutOfBoundsException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "returned",
+              "return": {
+                "type": "int32",
+                "value": 0
+              },
+              "state_after": [
+                {
+                  "id": "intArray0",
+                  "type": "int32[][]",
+                  "value": [
+                    [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ],
+                    [
+                      0
+                    ],
+                    [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  ]
+                },
+                {
+                  "id": "intArray1",
+                  "type": "int32[]",
+                  "value": [
+                    0
+                  ]
+                }
+              ]
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "ERROR: AddressSanitizer: stack-buffer-overflow on address 0x00016b7ee104 at pc 0x000104612b1c bp 0x00016b7ed6b0 sp 0x00016b7ed6a8\nSUMMARY: AddressSanitizer: stack-buffer-overflow (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0046/runner:arm64+0x100002b18) in minCost+0x22e8",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "exception_equivalent",
+            "reason": "The input aliases a one-element row at row 2 while requesting columns through 4. Both dynamic-programming loops read cost[2][1]; Java reports index 1 outside length 1 and ASan reports stack-buffer-overflow in minCost."
+          }
+        }
+      ]
+    },
+    {
+      "id": "MinCost_ESTest.test6",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MinJumps_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MinJumps_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MinJumps_ESTest.test2",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MinJumps_ESTest.test3",
+      "status": "exception_equivalent",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "exception_equivalent",
+          "differences": [
+            {
+              "path": "steps.call_0.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "null_dereference",
+              "c": "process_crash"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.error.kind",
+                "reason": "canonical error kinds differ",
+                "java": "null_dereference",
+                "c": "process_crash"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "MinJumps",
+            "input_id": "MinJumps_ESTest.test3.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.NullPointerException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "error",
+              "error": {
+                "kind": "process_crash",
+                "message": "Terminated by SIGSEGV"
+              }
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "runtime error: load of null pointer of type 'int32_t' (aka 'int')\nSUMMARY: UndefinedBehaviorSanitizer: undefined-behavior /Users/deenzhou/Downloads/Unimelb/ResearchProject/FormalBench-Extension/FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/MinJumps.c:27:38\nAddressSanitizer:DEADLYSIGNAL\nERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x000102118c98 bp 0x00016dce66f0 sp 0x00016dce6480 T0)\nSUMMARY: AddressSanitizer: SEGV (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0047/runner:arm64+0x100000c98) in minJumps+0x468",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "exception_equivalent",
+            "reason": "Null input with n of 1464: both reach the first arr[0] read in the nested loop. Java throws; UBSan reports the null load at MinJumps.c:27 and ASan reports SEGV."
+          }
+        }
+      ]
+    },
+    {
+      "id": "MinJumps_ESTest.test4",
+      "status": "mismatch",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.status",
+                "reason": "execution statuses differ",
+                "java": "error",
+                "c": "returned"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "MinJumps",
+            "input_id": "MinJumps_ESTest.test4.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.NegativeArraySizeException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "returned",
+              "return": {
+                "type": "int32",
+                "value": 0
+              },
+              "state_after": []
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": 0,
+              "stdout": "{\"status\":\"returned\",\"return\":{\"type\":\"int32\",\"value\":0},\"state_after\":[]}",
+              "stderr": "",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "mismatch",
+            "reason": "Java first allocates a working array of length -969 and throws, before touching the null input. C returns 0 at its nonpositive-n guard; the sanitizer run returns normally."
+          }
+        }
+      ]
+    },
+    {
+      "id": "MinJumps_ESTest.test5",
+      "status": "exception_equivalent",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "exception_equivalent",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.status",
+                "reason": "execution statuses differ",
+                "java": "error",
+                "c": "returned"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "MinJumps",
+            "input_id": "MinJumps_ESTest.test5.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.ArrayIndexOutOfBoundsException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "returned",
+              "return": {
+                "type": "int32",
+                "value": -2147483648
+              },
+              "state_after": [
+                {
+                  "id": "intArray0",
+                  "type": "int32[]",
+                  "value": [
+                    0
+                  ]
+                }
+              ]
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "ERROR: AddressSanitizer: stack-buffer-overflow on address 0x00016af5e624 at pc 0x000104ea0c8c bp 0x00016af5e370 sp 0x00016af5e368\nSUMMARY: AddressSanitizer: stack-buffer-overflow (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0049/runner:arm64+0x100000c88) in minJumps+0x458",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "exception_equivalent",
+            "reason": "Requested n of 1307 exceeds the one-element input. Both nested loops reach arr[1]; Java reports the out-of-bounds index and ASan reports stack-buffer-overflow in minJumps."
+          }
+        }
+      ]
+    },
+    {
+      "id": "MoveFirst_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MoveFirst_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MoveFirst_ESTest.test2",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MultiplyElements_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "MultiplyElements_ESTest.test1",
+      "status": "mismatch",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.status",
+                "reason": "execution statuses differ",
+                "java": "error",
+                "c": "returned"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "MultiplyElements",
+            "input_id": "MultiplyElements_ESTest.test1.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.NullPointerException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "returned",
+              "return": {
+                "type": "int32[]",
+                "value": null
+              },
+              "state_after": []
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": 0,
+              "stdout": "{\"status\":\"returned\",\"return\":{\"type\":\"int32[]\",\"value\":null},\"state_after\":[]}",
+              "stderr": "",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "mismatch",
+            "reason": "Java reads the null input length and throws. C treats its wrapper length as zero and returns null at the short-array guard; sanitizer execution returns normally."
+          }
+        }
+      ]
+    },
+    {
+      "id": "MultiplyElements_ESTest.test2",
+      "status": "mismatch",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.return.value",
+              "reason": "values differ",
+              "java": [],
+              "c": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MultiplyElements_ESTest.test3",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        },
+        {
+          "id": "call_1",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "NewmanPrime_ESTest.test0",
+      "status": "exception_equivalent",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "exception_equivalent",
+          "differences": [
+            {
+              "path": "steps.call_0.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "stack_overflow",
+              "c": "process_crash"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.error.kind",
+                "reason": "canonical error kinds differ",
+                "java": "stack_overflow",
+                "c": "process_crash"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "NewmanPrime",
+            "input_id": "NewmanPrime_ESTest.test0.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.StackOverflowError"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "error",
+              "error": {
+                "kind": "process_crash",
+                "message": "Terminated by SIGSEGV"
+              }
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "AddressSanitizer:DEADLYSIGNAL\nERROR: AddressSanitizer: stack-overflow on address 0x00016ee0bff8 (pc 0x0001007f883c bp 0x00016ee0c000 sp 0x00016ee0bff0 T0)\nSUMMARY: AddressSanitizer: stack-overflow (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0051/runner:arm64+0x10000083c) in newmanPrime+0xc",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "exception_equivalent",
+            "reason": "Input -1 follows decreasing negative recursive arguments before either zero/one base case can be reached. Both exhaust the stack; Java StackOverflowError agrees in cause with ASan stack-overflow in newmanPrime."
+          }
+        }
+      ]
+    },
+    {
+      "id": "NewmanPrime_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "NewmanPrime_ESTest.test2",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "NewmanPrime_ESTest.test3",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "NextPowerOf2_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "NextPowerOf2_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "NextPowerOf2_ESTest.test2",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "NextPowerOf2_ESTest.test3",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "NoOfCubes_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "NoOfCubes_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "NoOfCubes_ESTest.test2",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "OddBitSetNumber_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "OddBitSetNumber_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "OddBitSetNumber_ESTest.test2",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "OddLengthSum_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "OddLengthSum_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "OddLengthSum_ESTest.test2",
+      "status": "mismatch",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.status",
+                "reason": "execution statuses differ",
+                "java": "error",
+                "c": "returned"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "OddLengthSum",
+            "input_id": "OddLengthSum_ESTest.test2.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.NullPointerException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "returned",
+              "return": {
+                "type": "int32",
+                "value": 0
+              },
+              "state_after": []
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": 0,
+              "stdout": "{\"status\":\"returned\",\"return\":{\"type\":\"int32\",\"value\":0},\"state_after\":[]}",
+              "stderr": "",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "mismatch",
+            "reason": "Java reads the null input length and throws. C uses zero wrapper length, skips the summation and returns 0; the sanitizer run returns normally."
+          }
+        }
+      ]
+    },
+    {
+      "id": "OddLengthSum_ESTest.test3",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "PairWise_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "PairWise_ESTest.test1",
+      "status": "mismatch",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.status",
+                "reason": "execution statuses differ",
+                "java": "error",
+                "c": "returned"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "PairWise",
+            "input_id": "PairWise_ESTest.test1.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.NullPointerException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "returned",
+              "return": {
+                "type": "int32[][]",
+                "value": null
+              },
+              "state_after": []
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": 0,
+              "stdout": "{\"status\":\"returned\",\"return\":{\"type\":\"int32[][]\",\"value\":null},\"state_after\":[]}",
+              "stderr": "",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "mismatch",
+            "reason": "Java reads the null input length and throws. C uses zero wrapper length and returns a null matrix at the short-array guard; no sanitizer failure."
+          }
+        }
+      ]
+    },
+    {
+      "id": "PairWise_ESTest.test2",
+      "status": "mismatch",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.return.value",
+              "reason": "values differ",
+              "java": [],
+              "c": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PairWise_ESTest.test3",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "ParabolaVertex_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "ParallelogramPerimeter_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "ParallelogramPerimeter_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "ParallelogramPerimeter_ESTest.test2",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "ParallelogramPerimeter_ESTest.test3",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "ParallelogramPerimeter_ESTest.test4",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "ParallelogramPerimeter_ESTest.test5",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "RadixSort_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        },
+        {
+          "id": "call_1",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "RadixSort_ESTest.test1",
+      "status": "mismatch",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.status",
+                "reason": "execution statuses differ",
+                "java": "error",
+                "c": "returned"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "RadixSort",
+            "input_id": "RadixSort_ESTest.test1.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.NullPointerException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "returned",
+              "return": {
+                "type": "int32[]",
+                "value": null
+              },
+              "state_after": []
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": 0,
+              "stdout": "{\"status\":\"returned\",\"return\":{\"type\":\"int32[]\",\"value\":null},\"state_after\":[]}",
+              "stderr": "",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "mismatch",
+            "reason": "Java immediately reads nums[0] on null and throws. C first checks wrapper length zero and returns the input without accessing storage; sanitizer execution returns normally."
+          }
+        }
+      ]
+    },
+    {
+      "id": "RadixSort_ESTest.test2",
+      "status": "mismatch",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.status",
+                "reason": "execution statuses differ",
+                "java": "error",
+                "c": "returned"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "RadixSort",
+            "input_id": "RadixSort_ESTest.test2.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.ArrayIndexOutOfBoundsException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "returned",
+              "return": {
+                "type": "int32[]",
+                "value": []
+              },
+              "state_after": [
+                {
+                  "id": "intArray0",
+                  "type": "int32[]",
+                  "value": []
+                }
+              ]
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": 0,
+              "stdout": "{\"status\":\"returned\",\"return\":{\"type\":\"int32[]\",\"value\":[]},\"state_after\":[{\"id\":\"intArray0\",\"type\":\"int32[]\",\"value\":[]}]}",
+              "stderr": "",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "mismatch",
+            "reason": "Java immediately reads nums[0] from an empty array and throws. C has an explicit empty-array guard and returns the empty input; no sanitizer failure."
+          }
+        }
+      ]
+    },
+    {
+      "id": "RadixSort_ESTest.test3",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "SqrtRoot_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "SqrtRoot_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "SqrtRoot_ESTest.test2",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "SquarePerimeter_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "SquarePerimeter_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "SquarePerimeter_ESTest.test2",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "SumArray_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "SumArray_ESTest.test1",
+      "status": "mismatch",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.status",
+                "reason": "execution statuses differ",
+                "java": "error",
+                "c": "returned"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "SumArray",
+            "input_id": "SumArray_ESTest.test1.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.NullPointerException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "returned",
+              "return": {
+                "type": "int32[]",
+                "value": []
+              },
+              "state_after": []
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": 0,
+              "stdout": "{\"status\":\"returned\",\"return\":{\"type\":\"int32[]\",\"value\":[]},\"state_after\":[]}",
+              "stderr": "",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "mismatch",
+            "reason": "Both inputs are null. Java sumList reads their lengths and throws; C uses zero wrapper lengths, performs no element accesses and returns its zero-length result. The sanitized execution returns normally."
+          }
+        }
+      ]
+    },
+    {
+      "id": "SumArray_ESTest.test2",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "SumNums_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "SumNums_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "SumNums_ESTest.test2",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "SumNums_ESTest.test3",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "SumOfPrimes_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "SumOfPrimes_ESTest.test1",
+      "status": "exception_equivalent",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "exception_equivalent",
+          "differences": [
+            {
+              "path": "steps.call_0.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "runner_protocol_error",
+              "c": "process_crash"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.error.kind",
+                "reason": "canonical error kinds differ",
+                "java": "runner_protocol_error",
+                "c": "process_crash"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "SumOfPrimes",
+            "input_id": "SumOfPrimes_ESTest.test1.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "runner_protocol_error"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "error",
+              "error": {
+                "kind": "process_crash",
+                "message": "Terminated by SIGBUS"
+              }
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "AddressSanitizer:DEADLYSIGNAL\nERROR: AddressSanitizer: SEGV on unknown address 0x000082abaaa9 (pc 0x0001021b8cd4 bp 0x00016dc466f0 sp 0x00016dc465f0 T0)\nSUMMARY: AddressSanitizer: SEGV (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0057/runner:arm64+0x100000cd4) in sumOfPrimes+0x4a4",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "exception_equivalent",
+            "reason": "The reported protocol error masks a Java bounds exception in logged runner output. Isolated Java replay confirms index -2146737495 outside length 401189. A C probe confirms the identical index after squaring prime 46349 wraps, followed by ASan SEGV. Both fail at the same invalid sieve write."
+          }
+        }
+      ]
+    },
+    {
+      "id": "SumOfPrimes_ESTest.test2",
+      "status": "mismatch",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.status",
+                "reason": "execution statuses differ",
+                "java": "error",
+                "c": "returned"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "SumOfPrimes",
+            "input_id": "SumOfPrimes_ESTest.test2.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.NegativeArraySizeException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "returned",
+              "return": {
+                "type": "int32",
+                "value": 0
+              },
+              "state_after": []
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": 0,
+              "stdout": "{\"status\":\"returned\",\"return\":{\"type\":\"int32\",\"value\":0},\"state_after\":[]}",
+              "stderr": "",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "mismatch",
+            "reason": "For n of -532, Java allocates an array of length -531 and throws. C returns 0 at its negative-n guard before allocation; no sanitizer failure."
+          }
+        }
+      ]
+    },
+    {
+      "id": "SumOfPrimes_ESTest.test3",
+      "status": "unclear",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "unclear",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.status",
+                "reason": "execution statuses differ",
+                "java": "error",
+                "c": "returned"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "SumOfPrimes",
+            "input_id": "SumOfPrimes_ESTest.test3.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "runner_protocol_error"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "returned",
+              "return": {
+                "type": "int32",
+                "value": 401188
+              },
+              "state_after": []
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": 0,
+              "stdout": "{\"status\":\"returned\",\"return\":{\"type\":\"int32\",\"value\":401188},\"state_after\":[]}",
+              "stderr": "",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "unclear",
+            "reason": "This is a harness JSON parsing error, not a Java program exception. Isolated Java replay and the embedded runner output both return 401188, matching ordinary and sanitized C. The allowed exception-review statuses cannot record an ordinary match; correct the runner result and regenerate the raw comparison."
+          }
+        }
+      ]
+    },
+    {
+      "id": "SumOfSubarrayProd_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "SumOfSubarrayProd_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "SumOfSubarrayProd_ESTest.test2",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "SumOfSubarrayProd_ESTest.test3",
+      "status": "exception_equivalent",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "exception_equivalent",
+          "differences": [
+            {
+              "path": "steps.call_0.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "null_dereference",
+              "c": "process_crash"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.error.kind",
+                "reason": "canonical error kinds differ",
+                "java": "null_dereference",
+                "c": "process_crash"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "SumOfSubarrayProd",
+            "input_id": "SumOfSubarrayProd_ESTest.test3.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.NullPointerException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "error",
+              "error": {
+                "kind": "process_crash",
+                "message": "Terminated by SIGSEGV"
+              }
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "runtime error: load of null pointer of type 'int32_t' (aka 'int')\nSUMMARY: UndefinedBehaviorSanitizer: undefined-behavior /Users/deenzhou/Downloads/Unimelb/ResearchProject/FormalBench-Extension/FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/SumOfSubarrayProd.c:22:41\nAddressSanitizer:DEADLYSIGNAL\nERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x000102590a10 bp 0x00016d86e6e0 sp 0x00016d86e640 T0)\nSUMMARY: AddressSanitizer: SEGV (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0060/runner:arm64+0x100000a10) in sumOfSubarrayProd+0x1e0",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "exception_equivalent",
+            "reason": "Null array with n of 1: both first multiply by arr[0]. Java throws; UBSan reports the same null int32_t load at SumOfSubarrayProd.c:22 and ASan reports SEGV."
+          }
+        }
+      ]
+    },
+    {
+      "id": "SumOfSubarrayProd_ESTest.test4",
+      "status": "exception_equivalent",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "exception_equivalent",
+          "differences": [
+            {
+              "path": "steps.call_0.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "bounds_error",
+              "c": "process_crash"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.error.kind",
+                "reason": "canonical error kinds differ",
+                "java": "bounds_error",
+                "c": "process_crash"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "SumOfSubarrayProd",
+            "input_id": "SumOfSubarrayProd_ESTest.test4.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.ArrayIndexOutOfBoundsException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "error",
+              "error": {
+                "kind": "process_crash",
+                "message": "Terminated by SIGSEGV"
+              }
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "ERROR: AddressSanitizer: stack-buffer-overflow on address 0x00016dd4e638 at pc 0x0001020b0a00 bp 0x00016dd4e540 sp 0x00016dd4e538\nSUMMARY: AddressSanitizer: stack-buffer-overflow (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0061/runner:arm64+0x1000009fc) in sumOfSubarrayProd+0x1cc",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "exception_equivalent",
+            "reason": "Requested n of 2529 exceeds the six-element input. Both inner loops reach arr[6]; Java reports the bounds exception and ASan reports stack-buffer-overflow in sumOfSubarrayProd."
+          }
+        }
+      ]
+    },
+    {
+      "id": "SumRangeArray_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "SumRangeArray_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "SumRangeArray_ESTest.test2",
+      "status": "exception_equivalent",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "exception_equivalent",
+          "differences": [
+            {
+              "path": "steps.call_0.error.kind",
+              "reason": "canonical error kinds differ",
+              "java": "null_dereference",
+              "c": "process_crash"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.error.kind",
+                "reason": "canonical error kinds differ",
+                "java": "null_dereference",
+                "c": "process_crash"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "SumRangeArray",
+            "input_id": "SumRangeArray_ESTest.test2.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.NullPointerException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "error",
+              "error": {
+                "kind": "process_crash",
+                "message": "Terminated by SIGSEGV"
+              }
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "runtime error: applying non-zero offset 4708 to null pointer\nSUMMARY: UndefinedBehaviorSanitizer: undefined-behavior /Users/deenzhou/Downloads/Unimelb/ResearchProject/FormalBench-Extension/FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/SumRangeList.c:16:29\nAddressSanitizer:DEADLYSIGNAL\nERROR: AddressSanitizer: SEGV on unknown address 0x000000001264 (pc 0x000102eb49dc bp 0x00016cf4a6e0 sp 0x00016cf4a660 T0)\nSUMMARY: AddressSanitizer: SEGV (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0062/runner:arm64+0x1000009dc) in sumRangeArray+0x1ac",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "exception_equivalent",
+            "reason": "Null input with both endpoints 1177: both read nums[1177]. Java throws; UBSan reports offset 4708 applied to null at SumRangeList.c:16 and ASan reports the resulting SEGV."
+          }
+        }
+      ]
+    },
+    {
+      "id": "SumRangeArray_ESTest.test3",
+      "status": "exception_equivalent",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "exception_equivalent",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.status",
+                "reason": "execution statuses differ",
+                "java": "error",
+                "c": "returned"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "SumRangeArray",
+            "input_id": "SumRangeArray_ESTest.test3.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.ArrayIndexOutOfBoundsException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "returned",
+              "return": {
+                "type": "int32",
+                "value": -316378869
+              },
+              "state_after": [
+                {
+                  "id": "intArray0",
+                  "type": "int32[]",
+                  "value": [
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              ]
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": -6,
+              "stdout": "",
+              "stderr": "ERROR: AddressSanitizer: stack-buffer-underflow on address 0x00016b662600 at pc 0x00010479c9cc bp 0x00016b662560 sp 0x00016b662558\nSUMMARY: AddressSanitizer: stack-buffer-underflow (/private/var/folders/7l/6wn63x955w18sy4qjtl8x5km0000gn/T/formalbench-sanitizer-00csj23z/case_0063/runner:arm64+0x1000009c8) in sumRangeArray+0x198",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "exception_equivalent",
+            "reason": "The requested range starts at -2283 for a three-element array. Both sources iterate unchecked negative indices; Java stops at the first such read, while ASan reports stack-buffer-underflow from the same invalid range traversal in sumRangeArray."
+          }
+        }
+      ]
+    },
+    {
+      "id": "SumRangeArray_ESTest.test4",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "TestThreeEqual_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "TestThreeEqual_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "TestThreeEqual_ESTest.test2",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "TestThreeEqual_ESTest.test3",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "TestThreeEqual_ESTest.test4",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "TestThreeEqual_ESTest.test5",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "TestThreeEqual_ESTest.test6",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "TriangleArea_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "TriangleArea_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "TriangleArea_ESTest.test2",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "TupleToInt_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "TupleToInt_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "TupleToInt_ESTest.test2",
+      "status": "mismatch",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "mismatch",
+          "differences": [
+            {
+              "path": "steps.call_0.status",
+              "reason": "execution statuses differ",
+              "java": "error",
+              "c": "returned"
+            }
+          ],
+          "original_comparison": {
+            "id": "call_0",
+            "status": "mismatch",
+            "differences": [
+              {
+                "path": "steps.call_0.status",
+                "reason": "execution statuses differ",
+                "java": "error",
+                "c": "returned"
+              }
+            ]
+          },
+          "sanitizer_evidence": {
+            "program": "TupleToInt",
+            "input_id": "TupleToInt_ESTest.test2.call_0",
+            "java": {
+              "status": "error",
+              "error": {
+                "type": "java.lang.NullPointerException"
+              }
+            },
+            "c_normal": {
+              "id": "call_0",
+              "status": "returned",
+              "return": {
+                "type": "int32",
+                "value": 0
+              },
+              "state_after": []
+            },
+            "c_sanitized": {
+              "status": "executed",
+              "environment": {
+                "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                "UBSAN_OPTIONS": "print_stacktrace=1"
+              },
+              "exit_code": 0,
+              "stdout": "{\"status\":\"returned\",\"return\":{\"type\":\"int32\",\"value\":0},\"state_after\":[]}",
+              "stderr": "",
+              "timed_out": false
+            }
+          },
+          "assessment": {
+            "status": "mismatch",
+            "reason": "Java iteration over a null array throws. C iterates over wrapper length zero and returns the initial value 0 without storage access; no sanitizer failure."
+          }
+        }
+      ]
+    },
+    {
+      "id": "TupleToInt_ESTest.test3",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "VolumeCube_ESTest.test0",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "VolumeCube_ESTest.test1",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "id": "VolumeCube_ESTest.test3",
+      "status": "match",
+      "steps": [
+        {
+          "id": "call_0",
+          "status": "match"
+        }
+      ]
+    }
+  ],
+  "raw_comparison_sha256": "14bb168f0141c84fe154a19d12f0e0498a754a78adf84255e45630bde8dc3a8e",
+  "sanitizer_report_sha256": "a06f3b5a6dc57be12910136a5ae85db5dee251b28c36a6ccf0b64724fb86100e"
+}
