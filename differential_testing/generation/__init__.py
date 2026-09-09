@@ -1,1 +1,1 @@
-"""Generate EvoSuite tests and extract portable program inputs."""
+"""Materialize Java sources, generate original tests, and generate fault mutants."""
