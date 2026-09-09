@@ -50,8 +50,12 @@ def generate_one(source: Path, output: Path, major: Path, mml: Path,
     }
     with log.open("w", encoding="utf-8") as stream:
         try:
-            process = subprocess.run(command, cwd=output, env=env, stdout=stream,
-                                     stderr=subprocess.STDOUT, timeout=timeout, check=False)
+            # Major mutates during source compilation. Keep its instrumented
+            # bytecode out of both selected_java and the original compiled_classes.
+            with tempfile.TemporaryDirectory(prefix="major-classes-") as classes:
+                process = subprocess.run(command + ["-d", classes], cwd=output,
+                                         env=env, stdout=stream,
+                                         stderr=subprocess.STDOUT, timeout=timeout, check=False)
             result["status"] = "success" if process.returncode == 0 else "failed"
         except (OSError, subprocess.TimeoutExpired) as error:
             result["status"] = "failed"
