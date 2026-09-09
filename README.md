@@ -6,6 +6,45 @@ The package is divided into three stages:
 - `execution/` generates harnesses, executes Java/C, and collects sanitizer evidence.
 - `comparison/` compares results and applies explicit manual assessments.
 
+## Extract selected mutants without EvoSuite
+
+Run these commands from `FormalBench-Extension`. To extract the existing
+Formal-Diverse mutants for all classes in your saved pilot sample:
+
+```bash
+python3 -m program_filter.extract_mutants \
+  --selection FormalBench-data/FilteredData/pilot_sample.jsonl
+```
+
+To extract mutants for one specific original class:
+
+```bash
+python3 -m program_filter.extract_mutants \
+  --class-name Fibonacci
+```
+
+Repeat `--class-name` to select multiple classes, or use `--selection` for a
+JSONL file containing `class_name` and optional `category` fields. These two
+selection options are mutually exclusive. Use `--diverse-dir PATH` to change
+the dataset directory and `--output-dir PATH` to change the output directory.
+
+The script uses `diverse/natural.json` to identify all mapped variants,
+including names with `_llm_` suffixes, and reuses `extract_selected_java()`.
+It does not resample classes, compile Java, or generate EvoSuite tests; no
+`--skip-compile` flag is needed. Classes without mapped mutants are reported
+as skipped in the console and summary; if none of the selected classes have
+mapped mutants, the command fails. Missing mapped source files cause an error.
+
+Sources are written beneath
+`FormalBench-data/FilteredData/selected_mutants/<original-class>/<rule>/selected_java/<run-id>/`,
+with a `selection_manifest.json` for each group. Separating originals and rules
+prevents variants with the same class name from overwriting one another.
+`extraction_summary.json` lists the current extraction's counts and manifest
+paths. Run IDs use the shared extractor's content hash and zero sampling
+parameters, because this script performs no sampling. Repeated runs can reuse
+identical source directories; earlier directories remain, so use the summary
+to locate the current selection.
+
 ## EvoSuite input extraction
 
 `generation/extract_test_inputs.py` extracts only the inputs and ordered
