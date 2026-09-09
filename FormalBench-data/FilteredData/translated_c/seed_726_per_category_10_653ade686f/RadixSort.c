@@ -1,52 +1,46 @@
-#include <stddef.h>
+#include "java_arrays.h"
 #include <stdint.h>
-#include <stdlib.h>
-
-typedef struct {
-    int32_t *data;
-    size_t length;
-} Int32Array;
-
-static int32_t java_sub(int32_t left, int32_t right) {
-    return (int32_t)((uint32_t)left - (uint32_t)right);
-}
 
 static int32_t java_add(int32_t left, int32_t right) {
     return (int32_t)((uint32_t)left + (uint32_t)right);
 }
 
-Int32Array radixSort(Int32Array nums) {
-    if (nums.length == 0) {
-        return nums;
-    }
+static int32_t java_sub(int32_t left, int32_t right) {
+    return (int32_t)((uint32_t)left - (uint32_t)right);
+}
 
-    int32_t max = nums.data[0];
-    int32_t min = nums.data[0];
-    for (size_t i = 0; i < nums.length; i++) {
-        int32_t num = nums.data[i];
-        if (num > max) max = num;
-        if (num < min) min = num;
+static int32_t java_max(int32_t left, int32_t right) {
+    return left > right ? left : right;
+}
+
+static int32_t java_min(int32_t left, int32_t right) {
+    return left < right ? left : right;
+}
+
+JIntArray radixSort(JIntArray nums) {
+    int32_t length = jarray_length(nums);
+    int32_t max = jarray_get(nums, 0);
+    int32_t min = jarray_get(nums, 0);
+    for (int32_t i = 0; i < length; i = java_add(i, 1)) {
+        int32_t num = jarray_get(nums, i);
+        max = java_max(max, num);
+        min = java_min(min, num);
     }
 
     int32_t range = java_add(java_sub(max, min), 1);
-    if (range <= 0) {
-        return nums;
-    }
-    int32_t *bucket = calloc((size_t)range, sizeof(*bucket));
-    if (bucket == NULL) {
-        return nums;
-    }
-    for (size_t i = 0; i < nums.length; i++) {
-        int32_t index = java_sub(nums.data[i], min);
-        bucket[index] = java_add(bucket[index], 1);
+    JIntArray bucket = jarray_new(range);
+    for (int32_t i = 0; i < length; i = java_add(i, 1)) {
+        int32_t slot = java_sub(jarray_get(nums, i), min);
+        jarray_set(bucket, slot, java_add(jarray_get(bucket, slot), 1));
     }
 
-    size_t pos = 0;
-    for (int32_t i = 0; i < range; i++) {
-        for (int32_t j = 0; j < bucket[i]; j++) {
-            nums.data[pos++] = java_add(i, min);
+    int32_t pos = 0;
+    int32_t bucketLength = jarray_length(bucket);
+    for (int32_t i = 0; i < bucketLength; i = java_add(i, 1)) {
+        for (int32_t j = 0; j < jarray_get(bucket, i); j = java_add(j, 1)) {
+            jarray_set(nums, pos, java_add(i, min));
+            pos = java_add(pos, 1);
         }
     }
-    free(bucket);
     return nums;
 }

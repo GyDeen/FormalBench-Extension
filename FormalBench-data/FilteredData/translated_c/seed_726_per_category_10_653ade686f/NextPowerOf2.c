@@ -1,6 +1,7 @@
+#include "java_arrays.h"
 #include <stdint.h>
 
-static int32_t java_shl1(int32_t value) {
+static int32_t java_shl_one(int32_t value) {
     return (int32_t)((uint32_t)value << 1);
 }
 
@@ -10,7 +11,7 @@ int32_t nextPowerOf2(int32_t n) {
     }
     int32_t i = 1;
     while (i < n) {
-        i = java_shl1(i);
+        i = java_shl_one(i);
     }
     return i;
 }

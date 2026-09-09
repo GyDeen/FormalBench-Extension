@@ -89,12 +89,13 @@ static void *allocate(size_t count, size_t size) {
     }
 
 DEFINE_ARRAY(JIntArrayObject, JIntArray, int32_t, jarray, jarray_new, 0)
+DEFINE_ARRAY(JBoolArrayObject, JBoolArray, bool, jbool_array, jbool_array_new, false)
 DEFINE_ARRAY(JDoubleArrayObject, JDoubleArray, double, jdouble_array, jdouble_array_new, 0.0)
 DEFINE_ARRAY(JIntArray2Object, JIntArray2, JIntArray, jarray2, jarray2_new_rows, NULL)
 DEFINE_ARRAY(JDoubleArray2Object, JDoubleArray2, JDoubleArray, jdouble_array2, jdouble_array2_new_rows, NULL)
 #undef DEFINE_ARRAY
 
-JIntArray2 jint_array2_new(int32_t rows, int32_t columns) {
+JIntArray2 jarray2_new(int32_t rows, int32_t columns) {
     check_length(rows);
     check_length(columns);
     JIntArray2 array = jarray2_new_rows(rows);

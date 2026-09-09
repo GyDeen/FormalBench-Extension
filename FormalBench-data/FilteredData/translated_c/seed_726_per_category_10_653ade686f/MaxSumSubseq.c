@@ -1,33 +1,31 @@
-#include <stddef.h>
+#include "java_arrays.h"
 #include <stdint.h>
-#include <stdlib.h>
-
-typedef struct {
-    int32_t *data;
-    size_t length;
-} Int32Array;
 
 static int32_t java_add(int32_t left, int32_t right) {
     return (int32_t)((uint32_t)left + (uint32_t)right);
 }
 
-int32_t maxSumSubseq(Int32Array a) {
-    int32_t n = (int32_t)a.length;
+static int32_t java_sub(int32_t left, int32_t right) {
+    return (int32_t)((uint32_t)left - (uint32_t)right);
+}
+
+static int32_t java_max(int32_t left, int32_t right) {
+    return left > right ? left : right;
+}
+
+int32_t maxSumSubseq(JIntArray a) {
+    int32_t n = jarray_length(a);
     if (n == 0) return 0;
-    if (n == 1) return a.data[0];
+    if (n == 1) return jarray_get(a, 0);
 
-    int32_t *dp = calloc((size_t)n + 1, sizeof(*dp));
-    if (dp == NULL) {
-        return 0;
+    JIntArray dp = jarray_new(java_add(n, 1));
+    jarray_set(dp, 0, 0);
+    jarray_set(dp, 1, jarray_get(a, 0));
+    for (int32_t i = 2; i <= n; i = java_add(i, 1)) {
+        int32_t skip = jarray_get(dp, java_sub(i, 1));
+        int32_t take = java_add(jarray_get(dp, java_sub(i, 2)),
+                                jarray_get(a, java_sub(i, 1)));
+        jarray_set(dp, i, java_max(skip, take));
     }
-    dp[0] = 0;
-    dp[1] = a.data[0];
-
-    for (int32_t i = 2; i <= n; i++) {
-        int32_t candidate = java_add(dp[i - 2], a.data[i - 1]);
-        dp[i] = dp[i - 1] > candidate ? dp[i - 1] : candidate;
-    }
-    int32_t result = dp[n];
-    free(dp);
-    return result;
+    return jarray_get(dp, n);
 }

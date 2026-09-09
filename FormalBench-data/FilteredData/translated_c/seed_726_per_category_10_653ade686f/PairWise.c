@@ -1,37 +1,25 @@
-#include <stddef.h>
+#include "java_arrays.h"
 #include <stdint.h>
-#include <stdlib.h>
 
-typedef struct {
-    int32_t *data;
-    size_t length;
-} Int32Array;
+static int32_t java_add(int32_t left, int32_t right) {
+    return (int32_t)((uint32_t)left + (uint32_t)right);
+}
 
-typedef struct {
-    Int32Array *rows;
-    size_t length;
-} Int32Matrix;
+static int32_t java_sub(int32_t left, int32_t right) {
+    return (int32_t)((uint32_t)left - (uint32_t)right);
+}
 
-Int32Matrix pairWise(Int32Array l1) {
-    if (l1.length < 2) {
-        return (Int32Matrix){NULL, 0};
+JIntArray2 pairWise(JIntArray l1) {
+    int32_t length = jarray_length(l1);
+    if (length < 2) {
+        return jarray2_new(0, 0);
     }
-
-    size_t row_count = l1.length - 1;
-    Int32Array *rows = calloc(row_count, sizeof(*rows));
-    if (rows == NULL) {
-        return (Int32Matrix){NULL, 0};
+    JIntArray2 result = jarray2_new(java_sub(length, 1), 2);
+    int32_t limit = java_sub(length, 1);
+    for (int32_t i = 0; i < limit; i = java_add(i, 1)) {
+        JIntArray row = jarray2_get(result, i);
+        jarray_set(row, 0, jarray_get(l1, i));
+        jarray_set(row, 1, jarray_get(l1, java_add(i, 1)));
     }
-    for (size_t i = 0; i < row_count; i++) {
-        rows[i].data = calloc(2, sizeof(*rows[i].data));
-        rows[i].length = 2;
-        if (rows[i].data == NULL) {
-            for (size_t j = 0; j < i; j++) free(rows[j].data);
-            free(rows);
-            return (Int32Matrix){NULL, 0};
-        }
-        rows[i].data[0] = l1.data[i];
-        rows[i].data[1] = l1.data[i + 1];
-    }
-    return (Int32Matrix){rows, row_count};
+    return result;
 }

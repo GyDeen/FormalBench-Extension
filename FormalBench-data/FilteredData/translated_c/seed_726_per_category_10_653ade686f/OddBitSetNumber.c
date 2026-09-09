@@ -1,3 +1,4 @@
+#include "java_arrays.h"
 #include <stdint.h>
 
 int32_t oddBitSetNumber(int32_t n) {

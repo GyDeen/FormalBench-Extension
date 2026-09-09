@@ -1,26 +1,25 @@
-#include <stddef.h>
+#include "java_arrays.h"
 #include <stdint.h>
-#include <stdlib.h>
-#include <string.h>
 
-typedef struct {
-    int32_t *data;
-    size_t length;
-} Int32Array;
+static int32_t java_add(int32_t left, int32_t right) {
+    return (int32_t)((uint32_t)left + (uint32_t)right);
+}
 
-Int32Array moveFirst(Int32Array testArray) {
-    if (testArray.data == NULL || testArray.length == 0) {
+static int32_t java_sub(int32_t left, int32_t right) {
+    return (int32_t)((uint32_t)left - (uint32_t)right);
+}
+
+JIntArray moveFirst(JIntArray testArray) {
+    if (jarray_is_null(testArray) || jarray_length(testArray) == 0) {
         return testArray;
     }
 
-    int32_t *result = calloc(testArray.length, sizeof(*result));
-    if (result == NULL) {
-        return (Int32Array){NULL, 0};
+    int32_t length = jarray_length(testArray);
+    JIntArray res = jarray_new(length);
+    jarray_set(res, 0, jarray_get(testArray, java_sub(length, 1)));
+    int32_t copyLength = java_sub(length, 1);
+    for (int32_t i = 0; i < copyLength; i = java_add(i, 1)) {
+        jarray_set(res, java_add(i, 1), jarray_get(testArray, i));
     }
-    result[0] = testArray.data[testArray.length - 1];
-    if (testArray.length > 1) {
-        memcpy(result + 1, testArray.data,
-               (testArray.length - 1) * sizeof(*result));
-    }
-    return (Int32Array){result, testArray.length};
+    return res;
 }

@@ -1,3 +1,4 @@
+#include "java_arrays.h"
 #include <math.h>
 #include <stdint.h>
 
@@ -12,8 +13,8 @@ int32_t triangleArea(int32_t r) {
     } else if (r == 0) {
         area = 0;
     } else {
-        int32_t root = (int32_t)sqrt(3.0);
-        area = java_mul(java_mul(root, r), r);
+        int32_t coefficient = (int32_t)sqrt(3.0);
+        area = java_mul(java_mul(coefficient, r), r);
     }
     return area;
 }

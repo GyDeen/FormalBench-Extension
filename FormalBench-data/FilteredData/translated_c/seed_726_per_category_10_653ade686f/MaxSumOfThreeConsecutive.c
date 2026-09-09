@@ -1,47 +1,38 @@
+#include "java_arrays.h"
 #include <stdint.h>
-#include <stdlib.h>
-
-typedef struct {
-    int32_t *data;
-    size_t length;
-} Int32Array;
 
 static int32_t java_add(int32_t left, int32_t right) {
     return (int32_t)((uint32_t)left + (uint32_t)right);
 }
 
-static int32_t max2(int32_t left, int32_t right) {
+static int32_t java_sub(int32_t left, int32_t right) {
+    return (int32_t)((uint32_t)left - (uint32_t)right);
+}
+
+static int32_t java_max(int32_t left, int32_t right) {
     return left > right ? left : right;
 }
 
-int32_t maxSumOfThreeConsecutive(Int32Array arr, int32_t n) {
-    if (n <= 0) {
-        return 0;
-    }
-
-    int32_t *sum = calloc((size_t)n, sizeof(*sum));
-    if (sum == NULL) {
-        return 0;
-    }
+int32_t maxSumOfThreeConsecutive(JIntArray arr, int32_t n) {
+    JIntArray sum = jarray_new(n);
     if (n >= 1) {
-        sum[0] = arr.data[0];
+        jarray_set(sum, 0, jarray_get(arr, 0));
     }
     if (n >= 2) {
-        sum[1] = java_add(sum[0], arr.data[1]);
+        jarray_set(sum, 1, java_add(jarray_get(sum, 0), jarray_get(arr, 1)));
     }
     if (n > 2) {
-        int32_t first = sum[1];
-        int32_t second = java_add(arr.data[1], arr.data[2]);
-        int32_t third = java_add(arr.data[0], arr.data[2]);
-        sum[2] = max2(first, max2(second, third));
+        int32_t candidate1 = jarray_get(sum, 1);
+        int32_t candidate2 = java_add(jarray_get(arr, 1), jarray_get(arr, 2));
+        int32_t candidate3 = java_add(jarray_get(arr, 0), jarray_get(arr, 2));
+        jarray_set(sum, 2, java_max(candidate1, java_max(candidate2, candidate3)));
     }
-    for (int32_t i = 3; i < n; i++) {
-        int32_t first = sum[i - 1];
-        int32_t second = java_add(sum[i - 2], arr.data[i]);
-        int32_t third = java_add(java_add(arr.data[i], arr.data[i - 1]), sum[i - 3]);
-        sum[i] = max2(max2(first, second), third);
+    for (int32_t i = 3; i < n; i = java_add(i, 1)) {
+        int32_t first = jarray_get(sum, java_sub(i, 1));
+        int32_t second = java_add(jarray_get(sum, java_sub(i, 2)), jarray_get(arr, i));
+        int32_t third = java_add(java_add(jarray_get(arr, i), jarray_get(arr, java_sub(i, 1))),
+                                 jarray_get(sum, java_sub(i, 3)));
+        jarray_set(sum, i, java_max(java_max(first, second), third));
     }
-    int32_t result = sum[n - 1];
-    free(sum);
-    return result;
+    return jarray_get(sum, java_sub(n, 1));
 }

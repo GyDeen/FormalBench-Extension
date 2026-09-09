@@ -1,42 +1,34 @@
-#include <stddef.h>
+#include "java_arrays.h"
 #include <stdint.h>
-#include <stdlib.h>
 
-typedef struct {
-    int32_t *data;
-    size_t length;
-} Int32Array;
+static int32_t java_add(int32_t left, int32_t right) {
+    return (int32_t)((uint32_t)left + (uint32_t)right);
+}
 
 static int32_t java_mul(int32_t left, int32_t right) {
     return (int32_t)((uint32_t)left * (uint32_t)right);
 }
 
-int32_t maxProduct(Int32Array arr, int32_t n) {
-    if (n <= 0) {
-        return 0;
+int32_t maxProduct(JIntArray arr, int32_t n) {
+    JIntArray mpis = jarray_new(n);
+    for (int32_t i = 0; i < n; i = java_add(i, 1)) {
+        jarray_set(mpis, i, jarray_get(arr, i));
     }
-
-    int32_t *mpis = calloc((size_t)n, sizeof(*mpis));
-    if (mpis == NULL) {
-        return 0;
-    }
-    for (int32_t i = 0; i < n; i++) {
-        mpis[i] = arr.data[i];
-    }
-    for (int32_t i = 1; i < n; i++) {
-        for (int32_t j = 0; j < i; j++) {
-            int32_t product = java_mul(mpis[j], arr.data[i]);
-            if (arr.data[i] > arr.data[j] && mpis[i] < product) {
-                mpis[i] = product;
+    for (int32_t i = 1; i < n; i = java_add(i, 1)) {
+        for (int32_t j = 0; j < i; j = java_add(j, 1)) {
+            int32_t current = jarray_get(arr, i);
+            int32_t previous = jarray_get(arr, j);
+            int32_t product = java_mul(jarray_get(mpis, j), current);
+            if (current > previous && jarray_get(mpis, i) < product) {
+                jarray_set(mpis, i, product);
             }
         }
     }
-    int32_t max = mpis[0];
-    for (int32_t i = 1; i < n; i++) {
-        if (mpis[i] > max) {
-            max = mpis[i];
+    int32_t max = jarray_get(mpis, 0);
+    for (int32_t i = 1; i < n; i = java_add(i, 1)) {
+        if (jarray_get(mpis, i) > max) {
+            max = jarray_get(mpis, i);
         }
     }
-    free(mpis);
     return max;
 }

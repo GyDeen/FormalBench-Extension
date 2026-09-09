@@ -1,24 +1,22 @@
-#include <stddef.h>
+#include "java_arrays.h"
 #include <stdint.h>
-#include <stdlib.h>
-
-typedef struct {
-    int32_t *data;
-    size_t length;
-} Int32Array;
 
 static int32_t java_add(int32_t left, int32_t right) {
     return (int32_t)((uint32_t)left + (uint32_t)right);
 }
 
-Int32Array sumList(Int32Array arr1, Int32Array arr2) {
-    size_t minLength = arr1.length < arr2.length ? arr1.length : arr2.length;
-    int32_t *result = calloc(minLength, sizeof(*result));
-    if (minLength != 0 && result == NULL) {
-        return (Int32Array){NULL, 0};
+static int32_t java_min(int32_t left, int32_t right) {
+    return left < right ? left : right;
+}
+
+JIntArray sumList(JIntArray arr1, JIntArray arr2) {
+    int32_t length1 = jarray_length(arr1);
+    int32_t length2 = jarray_length(arr2);
+    int32_t minLength = java_min(length1, length2);
+    JIntArray result = jarray_new(minLength);
+    for (int32_t i = 0; i < minLength; i = java_add(i, 1)) {
+        int32_t value = java_add(jarray_get(arr1, i), jarray_get(arr2, i));
+        jarray_set(result, i, value);
     }
-    for (size_t i = 0; i < minLength; i++) {
-        result[i] = java_add(arr1.data[i], arr2.data[i]);
-    }
-    return (Int32Array){result, minLength};
+    return result;
 }

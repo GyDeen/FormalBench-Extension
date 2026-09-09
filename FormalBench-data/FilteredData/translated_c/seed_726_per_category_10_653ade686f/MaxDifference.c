@@ -1,46 +1,43 @@
-#include <stddef.h>
+#include "java_arrays.h"
 #include <stdint.h>
-
-typedef struct {
-    int32_t *data;
-    size_t length;
-} Int32Array;
-
-typedef struct {
-    Int32Array *rows;
-    size_t length;
-} Int32Matrix;
 
 static int32_t java_sub(int32_t left, int32_t right) {
     return (int32_t)((uint32_t)left - (uint32_t)right);
 }
 
-static int32_t java_abs(int32_t value) {
-    if (value == INT32_MIN) {
-        return INT32_MIN;
-    }
-    return value < 0 ? -value : value;
+static int32_t java_add(int32_t left, int32_t right) {
+    return (int32_t)((uint32_t)left + (uint32_t)right);
 }
 
-int32_t maxDifference(Int32Matrix testArray) {
+static int32_t java_abs(int32_t value) {
+    return value < 0 ? (int32_t)(0u - (uint32_t)value) : value;
+}
+
+static int32_t java_min(int32_t left, int32_t right) {
+    return left < right ? left : right;
+}
+
+static int32_t java_max(int32_t left, int32_t right) {
+    return left > right ? left : right;
+}
+
+int32_t maxDifference(JIntArray2 testArray) {
     int32_t maxDiff = 0;
     int32_t min = INT32_MAX;
     int32_t max = INT32_MIN;
+    int32_t length = jarray2_length(testArray);
 
-    for (size_t i = 0; i < testArray.length; i++) {
-        int32_t a = testArray.rows[i].data[0];
-        int32_t b = testArray.rows[i].data[1];
-
-        if (a < min) min = a;
-        if (b < min) min = b;
-        if (a > max) max = a;
-        if (b > max) max = b;
-
-        if (i != testArray.length - 1) {
-            int32_t difference = java_abs(java_sub(a, b));
-            if (difference > maxDiff) maxDiff = difference;
+    for (int32_t i = 0; i < length; i = java_add(i, 1)) {
+        JIntArray row = jarray2_get(testArray, i);
+        int32_t a = jarray_get(row, 0);
+        int32_t b = jarray_get(row, 1);
+        min = java_min(min, a);
+        min = java_min(min, b);
+        max = java_max(max, a);
+        max = java_max(max, b);
+        if (i != java_sub(length, 1)) {
+            maxDiff = java_max(maxDiff, java_abs(java_sub(a, b)));
         }
     }
-
     return maxDiff;
 }

@@ -1,3 +1,4 @@
+#include "java_arrays.h"
 #include <stdint.h>
 
 int32_t maxOfTwo(int32_t x, int32_t y) {

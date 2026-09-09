@@ -34,6 +34,7 @@ cc -std=c11 -Wall -Wextra -Werror -pedantic \
 | Java type | Handle | Operations |
 | --- | --- | --- |
 | `int[]` | `JIntArray` | `jarray_new`, `jarray_length`, `jarray_get`, `jarray_set`, `jarray_is_null`, `jarray_free` |
+| `boolean[]` | `JBoolArray` | Same suffixes with `jbool_array_` |
 | `double[]` | `JDoubleArray` | Same suffixes with `jdouble_array_` |
 | `int[][]` | `JIntArray2` | Same suffixes with `jarray2_`, plus `jarray2_new_rows` |
 

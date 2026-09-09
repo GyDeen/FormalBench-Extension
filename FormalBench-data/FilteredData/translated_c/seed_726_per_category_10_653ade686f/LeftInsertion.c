@@ -1,26 +1,33 @@
-#include <stddef.h>
+#include "java_arrays.h"
 #include <stdint.h>
-
-typedef struct {
-    int32_t *data;
-    size_t length;
-} Int32Array;
 
 static int32_t java_add(int32_t left, int32_t right) {
     return (int32_t)((uint32_t)left + (uint32_t)right);
 }
 
-int32_t leftInsertion(Int32Array a, int32_t x) {
+static int32_t java_sub(int32_t left, int32_t right) {
+    return (int32_t)((uint32_t)left - (uint32_t)right);
+}
+
+static int32_t java_div(int32_t dividend, int32_t divisor) {
+    if (dividend == INT32_MIN && divisor == -1) {
+        return INT32_MIN;
+    }
+    return dividend / divisor;
+}
+
+int32_t leftInsertion(JIntArray a, int32_t x) {
     int32_t left = 0;
-    int32_t right = (int32_t)a.length - 1;
+    int32_t right = java_sub(jarray_length(a), 1);
     while (left <= right) {
-        int32_t mid = java_add(left, right) / 2;
-        if (a.data[mid] == x) {
+        int32_t mid = java_div(java_add(left, right), 2);
+        int32_t value = jarray_get(a, mid);
+        if (value == x) {
             return mid;
-        } else if (a.data[mid] < x) {
-            left = mid + 1;
+        } else if (value < x) {
+            left = java_add(mid, 1);
         } else {
-            right = mid - 1;
+            right = java_sub(mid, 1);
         }
     }
     return left;

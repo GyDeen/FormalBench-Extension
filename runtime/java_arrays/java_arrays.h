@@ -9,6 +9,7 @@
  * Copying a handle aliases the same array. Use only these operations for access.
  */
 typedef struct JIntArrayObject *JIntArray;
+typedef struct JBoolArrayObject *JBoolArray;
 typedef struct JDoubleArrayObject *JDoubleArray;
 typedef struct JIntArray2Object *JIntArray2;
 typedef struct JDoubleArray2Object *JDoubleArray2;
@@ -35,6 +36,13 @@ int32_t jarray_get(JIntArray array, int32_t index);
 int32_t jarray_set(JIntArray array, int32_t index, int32_t value);
 void jarray_free(JIntArray array);
 
+JBoolArray jbool_array_new(int32_t length);
+bool jbool_array_is_null(JBoolArray array);
+int32_t jbool_array_length(JBoolArray array);
+bool jbool_array_get(JBoolArray array, int32_t index);
+bool jbool_array_set(JBoolArray array, int32_t index, bool value);
+void jbool_array_free(JBoolArray array);
+
 JDoubleArray jdouble_array_new(int32_t length);
 bool jdouble_array_is_null(JDoubleArray array);
 int32_t jdouble_array_length(JDoubleArray array);
@@ -59,6 +67,7 @@ void jarray2_free(JIntArray2 array);
 
 /* Like int[][] above: rows start null and outer cleanup does not free rows. */
 JDoubleArray2 jdouble_array2_new_rows(int32_t rows);
+JDoubleArray2 jdouble_array2_new(int32_t rows, int32_t columns);
 bool jdouble_array2_is_null(JDoubleArray2 array);
 int32_t jdouble_array2_length(JDoubleArray2 array);
 JDoubleArray jdouble_array2_get(JDoubleArray2 array, int32_t index);

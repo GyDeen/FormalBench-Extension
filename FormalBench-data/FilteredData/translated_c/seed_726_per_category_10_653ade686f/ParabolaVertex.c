@@ -1,19 +1,15 @@
-#include <stddef.h>
+#include "java_arrays.h"
+#include <math.h>
 #include <stdint.h>
-#include <stdlib.h>
 
-typedef struct {
-    double *data;
-    size_t length;
-} DoubleArray;
-
-DoubleArray parabolaVertex(int32_t a, int32_t b, int32_t c) {
-    double *vertex = calloc(2, sizeof(*vertex));
-    if (vertex == NULL) {
-        return (DoubleArray){NULL, 0};
-    }
-    vertex[0] = -(double)b / (2.0 * (double)a);
-    vertex[1] = (4.0 * (double)a * (double)c - (double)b * (double)b)
-              / (4.0 * (double)a);
-    return (DoubleArray){vertex, 2};
+JDoubleArray parabolaVertex(int32_t a, int32_t b, int32_t c) {
+    JDoubleArray vertex = jdouble_array_new(2);
+    double x = -(double)b / (2.0 * (double)a);
+    double four_a_c = 4.0 * (double)a;
+    four_a_c = four_a_c * (double)c;
+    double b_squared = (double)b * (double)b;
+    double y = (four_a_c - b_squared) / (4.0 * (double)a);
+    jdouble_array_set(vertex, 0, x);
+    jdouble_array_set(vertex, 1, y);
+    return vertex;
 }
