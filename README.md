@@ -22,7 +22,6 @@ differential_testing/generation/
 
 `program_filter` filters and samples programs. Its existing CLI still extracts
 original sources, optionally compiles them, and runs EvoSuite when requested.
-Both generation workflows reuse `java_sources.extract_selected_java()`.
 Run the commands below from `FormalBench-Extension`.
 
 ## Generate fault mutants without EvoSuite
@@ -31,48 +30,71 @@ Install [Major 3.0.1](https://mutation-testing.org/) and supply its `bin/major`
 executable. The script uses the same command and bundled compiled mutation
 configuration as FormalBench (`FormalBench/FormalBench/config/major.mml.bin`).
 It does not download Major or enforce its version; use a known 3.0.1 installation
-for reproducibility. Use the JDK required by your Major installation; the Major
-getting-started documentation specifies a Java 8 compiler. `--java-home` can
-select that JDK without changing your other generation commands.
+for reproducibility. 
 
 Generate fault mutants for every original program in the saved sample:
 
 ```bash
 python3 -m differential_testing.generation.mutants.generate_mutants \
-  --selection FormalBench-data/FilteredData/pilot_sample.jsonl \
-  --major-bin /path/to/major/bin/major
+  --java-dir FormalBench-data/FilteredData/selected_java/ \
+  --major-bin major/bin/major \
+  --java-home /Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home
 ```
 
 Optionally restrict the sample to one class and select a JDK:
 
 ```bash
 python3 -m differential_testing.generation.mutants.generate_mutants \
-  --selection FormalBench-data/FilteredData/pilot_sample.jsonl \
+  --java-dir FormalBench-data/FilteredData/selected_java/ \
   --class-name Fibonacci \
   --major-bin /path/to/major/bin/major \
-  --java-home /path/to/jdk8
+  --java-home /Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home
 ```
 
-The selection JSONL must contain `class_name` and `code`; `category` is optional.
-Repeat `--class-name` to select several classes from that file. No resampling
-is performed. Use `--mml PATH` for another compiled mutation configuration,
+Point `--java-dir` at the exact existing selection folder, not the parent
+containing multiple runs. All `.java` files are discovered recursively; duplicate
+class filenames are rejected. Repeat `--class-name` to select several classes
+from that directory. The generator no longer accepts `--selection`: it reads the
+source files directly without copying them or creating another `selected_java`
+folder or selection manifest. Use `--mml PATH` for another compiled mutation configuration,
 `--output-dir PATH` for another output location, and `--timeout SECONDS` for the
 per-class runtime limit (default: 300 seconds).
 
 Each invocation creates a fresh run directory beneath
 `FormalBench-data/FilteredData/fault_mutants/`, containing:
 
-- `selected_java/<run-id>/`: original sources and their selection manifest.
-- `<class>/mutants/<mutant-id>/`: Java source mutants exported by Major.
+- `<class>/mutants/<mutant-id>/java/<class>.java`: exported Java mutant.
+- `<class>/mutants/<mutant-id>/c/`: place that Java mutant's C translation here,
+  named `<class>.c`.
 - `<class>/major.log`: Major's output, with any additional Major artifacts
   retained alongside it.
-- `generation_summary.json`: commands, configuration hash, source paths,
-  exported mutant counts, and per-class status.
+- `mutant_generation_summary.json`: a list with only `class_name`, `status`,
+  `log`, and `mutant_count` for each original class.
 
 Failed classes are reported and cause exit status 1 after the remaining classes
 are processed. A successful Major command that exports no Java mutants is
 reported separately as `no_mutants`; inspect its log. Each class has its own
 working directory to keep identical mutant IDs separate.
+
+After translating the Java mutants to C, run all pairs against the saved inputs:
+
+```bash
+python3 -m differential_testing.execution.run_mutants \
+  --inputs differential_testing/generation/test_inputs.json \
+  --mutants-dir FormalBench-data/FilteredData/fault_mutants/run_<unique-id>
+```
+
+Use `--class-name Fibonacci` to run only that original class's mutants, or
+repeat the option for several classes. If EvoSuite uses different class names,
+pass `--java-dir` with the same original selected source directory to resolve
+those aliases. The runner selects the relevant class's
+tests from the input file and reuses the Java/C executor and comparator. Each
+mutant gets a `results/` folder alongside `java/` and `c/`, containing
+`test_inputs.json`, `java_results.json`, `c_results.json`, and `comparison.json`.
+Repeated comparisons overwrite those result files. Missing translations or
+inputs are reported, and the command exits with status 1 if any pair is missing
+or mismatches. It compares each C translation against its corresponding Java
+mutant, preserving the original class and function names.
 
 This command generates fault mutants only. It does not run EvoSuite or evaluate
 specification completeness. It replaces the previous `program_filter.extract_mutants`

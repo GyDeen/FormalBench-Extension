@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import argparse
-import hashlib
 import json
 import os
 import re
@@ -9,37 +8,34 @@ import subprocess
 import tempfile
 from pathlib import Path
 
-from ..java_sources import extract_selected_java
-
 DEFAULT_MML = (
     Path(__file__).resolve().parents[3]
     / "FormalBench/FormalBench/config/major.mml.bin"
 )
 
 
-def load_selection(path: Path, class_names: list[str] | None) -> list[dict]:
-    records = [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines()
-               if line.strip()]
+def find_java_sources(directory: Path, class_names: list[str] | None) -> list[Path]:
+    """Read the existing selection without copying or rewriting its sources."""
+    if not directory.is_dir():
+        raise ValueError(f"Java source directory not found: {directory}")
+    sources = sorted(directory.resolve().rglob("*.java"))
     if class_names:
         wanted = set(class_names)
-        records = [record for record in records if record.get("class_name") in wanted]
-        missing = wanted - {record["class_name"] for record in records}
+        sources = [source for source in sources if source.stem in wanted]
+        missing = wanted - {source.stem for source in sources}
         if missing:
-            raise ValueError("Classes absent from selection: " + ", ".join(sorted(missing)))
-    if not records:
-        raise ValueError("Selection contains no programs")
+            raise ValueError("Classes absent from Java directory: " + ", ".join(sorted(missing)))
+    if not sources:
+        raise ValueError(f"No Java sources found in {directory}")
     seen = set()
-    for record in records:
-        name = record.get("class_name")
-        if not isinstance(name, str) or not re.fullmatch(r"[A-Za-z_$][A-Za-z0-9_$]*", name):
-            raise ValueError(f"Invalid Java class name: {name!r}")
+    for source in sources:
+        name = source.stem
+        if not re.fullmatch(r"[A-Za-z_$][A-Za-z0-9_$]*", name):
+            raise ValueError(f"Invalid Java class filename: {source.name}")
         if name in seen:
-            raise ValueError(f"Duplicate class in selection: {name}")
+            raise ValueError(f"Duplicate class filename in Java directory: {name}")
         seen.add(name)
-        if not isinstance(record.get("code"), str) or not record["code"].strip():
-            raise ValueError(f"Missing Java source code for {name}")
-        record.setdefault("category", "unknown")
-    return records
+    return sources
 
 
 def generate_one(source: Path, output: Path, major: Path, mml: Path,
@@ -50,25 +46,26 @@ def generate_one(source: Path, output: Path, major: Path, mml: Path,
     log = output / "major.log"
     result = {
         "class_name": source.stem,
-        "source_file": str(source),
-        "command": command,
-        "working_directory": str(output),
         "log": str(log),
     }
     with log.open("w", encoding="utf-8") as stream:
         try:
             process = subprocess.run(command, cwd=output, env=env, stdout=stream,
                                      stderr=subprocess.STDOUT, timeout=timeout, check=False)
-            result["return_code"] = process.returncode
             result["status"] = "success" if process.returncode == 0 else "failed"
         except (OSError, subprocess.TimeoutExpired) as error:
             result["status"] = "failed"
-            result["error"] = str(error)
             stream.write(f"\n{error}\n")
     mutant_dir = output / "mutants"
     sources = sorted(mutant_dir.rglob("*.java"))
-    result["mutant_source_files"] = [str(path) for path in sources]
     result["mutant_count"] = len({path.relative_to(mutant_dir).parts[0] for path in sources})
+    for path in sources:
+        relative = path.relative_to(mutant_dir)
+        mutant = mutant_dir / relative.parts[0]
+        destination = mutant / "java" / Path(*relative.parts[1:])
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        path.rename(destination)
+        (mutant / "c").mkdir(exist_ok=True)
     if result["status"] == "success" and not sources:
         result["status"] = "no_mutants"
     return result
@@ -76,8 +73,8 @@ def generate_one(source: Path, output: Path, major: Path, mml: Path,
 
 def main(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--selection", type=Path, required=True,
-                        help="JSONL containing original class_name and code fields")
+    parser.add_argument("--java-dir", type=Path, required=True,
+                        help="Existing selected Java source directory; searched recursively")
     parser.add_argument("--class-name", action="append",
                         help="Restrict selection to this class; repeat for multiple classes")
     parser.add_argument("--major-bin", type=Path, required=True,
@@ -106,32 +103,23 @@ def main(argv: list[str] | None = None) -> None:
         env["JAVA_HOME"] = str(java_home)
         env["PATH"] = str(java_home / "bin") + os.pathsep + env.get("PATH", "")
     try:
-        records = load_selection(args.selection, args.class_name)
+        sources = find_java_sources(args.java_dir, args.class_name)
     except (OSError, ValueError) as error:
         parser.error(str(error))
 
     args.output_dir.mkdir(parents=True, exist_ok=True)
     # Fresh runs prevent failures or changed tool configurations from reusing
-    # stale mutants. Source IDs remain content-derived via the shared extractor.
+    # stale mutants. Major reads the original files directly.
     run_dir = Path(tempfile.mkdtemp(prefix="run_", dir=args.output_dir.resolve()))
-    _, sources, manifest = extract_selected_java(records, run_dir, seed=0, per_category=0)
-    summary = {
-        "selection": str(args.selection.resolve()),
-        "selection_manifest": str(manifest),
-        "major_executable": str(major),
-        "mml": str(mml),
-        "mml_sha256": hashlib.sha256(mml.read_bytes()).hexdigest(),
-        "java_home": env.get("JAVA_HOME"),
-        "programs": [],
-    }
+    summary = []
     summary_path = run_dir / "mutant_generation_summary.json"
     for source in sources:
         result = generate_one(source, run_dir / source.stem, major, mml, env, args.timeout)
-        summary["programs"].append(result)
+        summary.append(result)
         summary_path.write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
         print(f"{source.stem}: {result['status']} ({result['mutant_count']} mutants)", flush=True)
     print(f"Summary: {summary_path}")
-    if any(result["status"] == "failed" for result in summary["programs"]):
+    if any(result["status"] == "failed" for result in summary):
         raise SystemExit(1)
 
 
