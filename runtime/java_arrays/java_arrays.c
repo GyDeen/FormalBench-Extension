@@ -103,3 +103,13 @@ JIntArray2 jarray2_new(int32_t rows, int32_t columns) {
     }
     return array;
 }
+
+JDoubleArray2 jdouble_array2_new(int32_t rows, int32_t columns) {
+    check_length(rows);
+    check_length(columns);
+    JDoubleArray2 array = jdouble_array2_new_rows(rows);
+    for (int32_t i = 0; i < rows; ++i) {
+        jdouble_array2_set(array, i, jdouble_array_new(columns));
+    }
+    return array;
+}
