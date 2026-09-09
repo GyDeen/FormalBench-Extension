@@ -94,7 +94,7 @@ DEFINE_ARRAY(JIntArray2Object, JIntArray2, JIntArray, jarray2, jarray2_new_rows,
 DEFINE_ARRAY(JDoubleArray2Object, JDoubleArray2, JDoubleArray, jdouble_array2, jdouble_array2_new_rows, NULL)
 #undef DEFINE_ARRAY
 
-JIntArray2 jarray2_new(int32_t rows, int32_t columns) {
+JIntArray2 jint_array2_new(int32_t rows, int32_t columns) {
     check_length(rows);
     check_length(columns);
     JIntArray2 array = jarray2_new_rows(rows);
