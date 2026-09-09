@@ -1,5 +1,3 @@
-"""Compile original Java programs and generate EvoSuite tests."""
-
 from __future__ import annotations
 
 import shutil

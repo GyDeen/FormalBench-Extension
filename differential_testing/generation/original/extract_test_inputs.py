@@ -8,9 +8,9 @@ from collections.abc import Sequence
 from pathlib import Path
 
 if __package__:
-    from .input_extractor import extract_directory, extract_file
+    from .input_extractor import extract_directory
 else:
-    from input_extractor import extract_directory, extract_file  # type: ignore
+    from input_extractor import extract_directory
 
 
 def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:

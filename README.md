@@ -2,52 +2,87 @@
 
 The package is divided into three stages:
 
-- `generation/` generates EvoSuite tests and extracts portable inputs.
+- `generation/` generates original-program tests, portable inputs, and fault mutants.
 - `execution/` generates harnesses, executes Java/C, and collects sanitizer evidence.
 - `comparison/` compares results and applies explicit manual assessments.
 
-## Extract selected mutants without EvoSuite
+## Generation layout
 
-Run these commands from `FormalBench-Extension`. To extract the existing
-Formal-Diverse mutants for all classes in your saved pilot sample:
-
-```bash
-python3 -m program_filter.extract_mutants \
-  --selection FormalBench-data/FilteredData/pilot_sample.jsonl
+```text
+differential_testing/generation/
+├── java_sources.py                 # Shared source extraction and manifests
+├── original/
+│   ├── java_test_generation.py      # Compilation and EvoSuite
+│   ├── java_input_parser.py
+│   ├── input_extractor.py
+│   └── extract_test_inputs.py
+└── mutants/
+    └── generate_mutants.py          # Major fault mutant generation
 ```
 
-To extract mutants for one specific original class:
+`program_filter` filters and samples programs. Its existing CLI still extracts
+original sources, optionally compiles them, and runs EvoSuite when requested.
+Both generation workflows reuse `java_sources.extract_selected_java()`.
+Run the commands below from `FormalBench-Extension`.
+
+## Generate fault mutants without EvoSuite
+
+Install [Major 3.0.1](https://mutation-testing.org/) and supply its `bin/major`
+executable. The script uses the same command and bundled compiled mutation
+configuration as FormalBench (`FormalBench/FormalBench/config/major.mml.bin`).
+It does not download Major or enforce its version; use a known 3.0.1 installation
+for reproducibility. Use the JDK required by your Major installation; the Major
+getting-started documentation specifies a Java 8 compiler. `--java-home` can
+select that JDK without changing your other generation commands.
+
+Generate fault mutants for every original program in the saved sample:
 
 ```bash
-python3 -m program_filter.extract_mutants \
-  --class-name Fibonacci
+python3 -m differential_testing.generation.mutants.generate_mutants \
+  --selection FormalBench-data/FilteredData/pilot_sample.jsonl \
+  --major-bin /path/to/major/bin/major
 ```
 
-Repeat `--class-name` to select multiple classes, or use `--selection` for a
-JSONL file containing `class_name` and optional `category` fields. These two
-selection options are mutually exclusive. Use `--diverse-dir PATH` to change
-the dataset directory and `--output-dir PATH` to change the output directory.
+Optionally restrict the sample to one class and select a JDK:
 
-The script uses `diverse/natural.json` to identify all mapped variants,
-including names with `_llm_` suffixes, and reuses `extract_selected_java()`.
-It does not resample classes, compile Java, or generate EvoSuite tests; no
-`--skip-compile` flag is needed. Classes without mapped mutants are reported
-as skipped in the console and summary; if none of the selected classes have
-mapped mutants, the command fails. Missing mapped source files cause an error.
+```bash
+python3 -m differential_testing.generation.mutants.generate_mutants \
+  --selection FormalBench-data/FilteredData/pilot_sample.jsonl \
+  --class-name Fibonacci \
+  --major-bin /path/to/major/bin/major \
+  --java-home /path/to/jdk8
+```
 
-Sources are written beneath
-`FormalBench-data/FilteredData/selected_mutants/<original-class>/<rule>/selected_java/<run-id>/`,
-with a `selection_manifest.json` for each group. Separating originals and rules
-prevents variants with the same class name from overwriting one another.
-`extraction_summary.json` lists the current extraction's counts and manifest
-paths. Run IDs use the shared extractor's content hash and zero sampling
-parameters, because this script performs no sampling. Repeated runs can reuse
-identical source directories; earlier directories remain, so use the summary
-to locate the current selection.
+The selection JSONL must contain `class_name` and `code`; `category` is optional.
+Repeat `--class-name` to select several classes from that file. No resampling
+is performed. Use `--mml PATH` for another compiled mutation configuration,
+`--output-dir PATH` for another output location, and `--timeout SECONDS` for the
+per-class runtime limit (default: 300 seconds).
+
+Each invocation creates a fresh run directory beneath
+`FormalBench-data/FilteredData/fault_mutants/`, containing:
+
+- `selected_java/<run-id>/`: original sources and their selection manifest.
+- `<class>/mutants/<mutant-id>/`: Java source mutants exported by Major.
+- `<class>/major.log`: Major's output, with any additional Major artifacts
+  retained alongside it.
+- `generation_summary.json`: commands, configuration hash, source paths,
+  exported mutant counts, and per-class status.
+
+Failed classes are reported and cause exit status 1 after the remaining classes
+are processed. A successful Major command that exports no Java mutants is
+reported separately as `no_mutants`; inspect its log. Each class has its own
+working directory to keep identical mutant IDs separate.
+
+This command generates fault mutants only. It does not run EvoSuite or evaluate
+specification completeness. It replaces the previous `program_filter.extract_mutants`
+command, which extracted Formal-Diverse variants and has been removed. Existing
+`selected_mutants` outputs from that command are not fault mutants and are left
+untouched.
 
 ## EvoSuite input extraction
 
-`generation/extract_test_inputs.py` extracts only the inputs and ordered
+`generation/original/extract_test_inputs.py` extracts only the inputs and ordered
 target-program calls from EvoSuite `*_ESTest.java` files. It ignores
 scaffolding, constructors, JUnit assertions, and expected return values or
 exceptions.
@@ -61,7 +96,7 @@ The extraction implementation is separated by responsibility:
 Run it with:
 
 ```bash
-python3 -m differential_testing.generation.extract_test_inputs \
+python3 -m differential_testing.generation.original.extract_test_inputs \
   FormalBench-data/FilteredData/evosuite/<run-id>/evosuite-tests \
   --output differential_testing/generation/test_inputs.json
 ```
