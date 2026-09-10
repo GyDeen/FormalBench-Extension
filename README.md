@@ -183,13 +183,17 @@ and has a two-second timeout by default; use `--timeout SECONDS` to change it.
 If an EvoSuite class name differs from the selected source filename, the
 runner locates the unique source containing the called function.
 
-The C harness distinguishes null arrays (`{NULL, 0}`) from empty arrays
-(non-null storage, length zero), including matrix rows. JSON output uses
-`null` for null storage and `[]` for non-null, zero-length storage. Translated
-functions must follow the same convention for returned arrays; a returned
-`{NULL, 0}` is interpreted as null, not empty. This preserves nullness but
-does not introduce Java-style exceptions: reading a C wrapper's `length`
-still succeeds even when its storage pointer is null.
+The C harness uses `runtime/java_arrays/java_arrays.h` to construct inputs
+and serialize returned arrays and mutated state. Compilation automatically
+links `java_arrays.c`, including for sanitizer runs. Translated functions must
+use the library's `JIntArray`, `JDoubleArray`, and `JIntArray2` interfaces.
+JSON inputs and results retain the existing format: `null` and `[]` remain
+distinct, and shared matrix rows retain their aliases.
+
+Library error exits are recorded as `null_dereference`, `bounds_error`,
+`negative_array_size`, or `resource_exhausted`, matching the corresponding
+Java exceptions for comparison. These appear in the existing step `error`
+field; the result and comparison-summary schemas are unchanged.
 
 Execution responsibilities are separated across:
 

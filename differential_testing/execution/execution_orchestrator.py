@@ -15,6 +15,8 @@ from .c_harness import generate_c_harness
 from .input_manifest import RunnerError, group_tests_by_class
 from .java_harness import generate_java_harness
 
+JAVA_ARRAY_RUNTIME = Path(__file__).resolve().parents[2] / "runtime" / "java_arrays"
+
 
 @dataclass(frozen=True)
 class Toolchain:
@@ -152,7 +154,9 @@ def _build_c_runner(
             toolchain.cc,
             "-std=c11",
             "-O0",
+            "-I", str(JAVA_ARRAY_RUNTIME),
             str(runner_path),
+            str(JAVA_ARRAY_RUNTIME / "java_arrays.c"),
             "-lm",
             "-o",
             str(executable),
@@ -194,6 +198,18 @@ def _run_process(command: list[str], timeout: float) -> dict[str, Any]:
 
 
 def _process_failure(result: subprocess.CompletedProcess[str]) -> dict[str, Any]:
+    array_errors = {
+        71: ("NULL_REFERENCE_ERROR", "null_dereference"),
+        72: ("INDEX_OUT_OF_BOUNDS", "bounds_error"),
+        73: ("NEGATIVE_ARRAY_SIZE", "negative_array_size"),
+        74: ("OUT_OF_MEMORY", "resource_exhausted"),
+    }
+    expected = array_errors.get(result.returncode)
+    if expected and any(
+        line.startswith(f"JAVA_ARRAY_ERROR: {expected[0]} (")
+        for line in result.stderr.splitlines()
+    ):
+        return _failure(expected[1], result.stderr.strip())
     if result.returncode < 0:
         number = -result.returncode
         try:

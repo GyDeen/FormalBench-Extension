@@ -14,7 +14,7 @@ from pathlib import Path
 from typing import Any
 
 from .c_harness import generate_c_harness
-from .execution_orchestrator import _find_source
+from .execution_orchestrator import JAVA_ARRAY_RUNTIME, _find_source
 from .input_manifest import RunnerError
 
 SANITIZER_FLAGS = ["-fsanitize=address,undefined", "-fno-omit-frame-pointer", "-g"]
@@ -112,7 +112,8 @@ def run_sanitizer_checks(
         )
         compile_command = [
             cc, "-std=c11", "-O0", *SANITIZER_FLAGS,
-            str(harness), "-lm", "-o", str(binary),
+            "-I", str(JAVA_ARRAY_RUNTIME),
+            str(harness), str(JAVA_ARRAY_RUNTIME / "java_arrays.c"), "-lm", "-o", str(binary),
         ]
         compilation = run_sanitized_test(compile_command, 60.0)
         record["compilation"] = {"command": compile_command, **compilation}

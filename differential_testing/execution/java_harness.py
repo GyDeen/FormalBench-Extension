@@ -7,7 +7,6 @@ from typing import Any
 
 from .input_manifest import RunnerError, identifier
 
-
 JAVA_TYPES = {
     "int32": "int",
     "int32[]": "int[]",
@@ -75,6 +74,7 @@ JAVA_SUPPORT = r'''
   static String errorKind(Throwable error) {
     if (error instanceof NullPointerException) return "null_dereference";
     if (error instanceof IndexOutOfBoundsException) return "bounds_error";
+    if (error instanceof NegativeArraySizeException) return "negative_array_size";
     if (error instanceof ArithmeticException) return "arithmetic_error";
     if (error instanceof StackOverflowError) return "stack_overflow";
     if (error instanceof OutOfMemoryError) return "resource_exhausted";
