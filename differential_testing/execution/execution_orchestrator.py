@@ -182,8 +182,13 @@ def _run_process(command: list[str], timeout: float) -> dict[str, Any]:
         return _failure("timeout", f"Exceeded {timeout:g} seconds")
     if result.returncode != 0:
         return _process_failure(result)
+    # A translated benchmark may legitimately write to stdout (for example
+    # SumOfPrimes prints each prime).  The generated harness writes its
+    # protocol record as the final non-empty line, so parse that record without
+    # treating the program's observable output as malformed JSON.
+    stdout_lines = [line for line in result.stdout.splitlines() if line.strip()]
     try:
-        outcome = json.loads(result.stdout)
+        outcome = json.loads(stdout_lines[-1] if stdout_lines else result.stdout)
     except json.JSONDecodeError as error:
         message = f"Invalid runner JSON: {error}; stdout={result.stdout!r}"
         if result.stderr.strip():
@@ -203,13 +208,18 @@ def _process_failure(result: subprocess.CompletedProcess[str]) -> dict[str, Any]
         72: ("INDEX_OUT_OF_BOUNDS", "bounds_error"),
         73: ("NEGATIVE_ARRAY_SIZE", "negative_array_size"),
         74: ("OUT_OF_MEMORY", "resource_exhausted"),
+        75: ("DIVIDE_BY_ZERO", "arithmetic_error"),
     }
     expected = array_errors.get(result.returncode)
-    if expected and any(
-        line.startswith(f"JAVA_ARRAY_ERROR: {expected[0]} (")
-        for line in result.stderr.splitlines()
-    ):
-        return _failure(expected[1], result.stderr.strip())
+    if expected:
+        if result.returncode == 75:
+            marker = f"JAVA_ARITHMETIC_ERROR: {expected[0]}"
+            matches = any(line.startswith(marker) for line in result.stderr.splitlines())
+        else:
+            marker = f"JAVA_ARRAY_ERROR: {expected[0]} ("
+            matches = any(line.startswith(marker) for line in result.stderr.splitlines())
+        if matches:
+            return _failure(expected[1], result.stderr.strip())
     if result.returncode < 0:
         number = -result.returncode
         try:

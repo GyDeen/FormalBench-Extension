@@ -83,10 +83,18 @@ working directory to keep identical mutant IDs separate.
 After translating the Java mutants to C, run all pairs against the saved inputs:
 
 ```bash
+python3 -m differential_testing.generation.mutants.translate_mutants \
+  --mutants-dir FormalBench-data/FilteredData/fault_mutants/run_<unique-id>
+
 python3 -m differential_testing.execution.run_mutants \
   --inputs differential_testing/generation/test_inputs.json \
   --mutants-dir FormalBench-data/FilteredData/fault_mutants/run_<unique-id>
 ```
+
+The translation command reads every `java/<class>.java` mutant and writes its
+opaque-array C translation to the matching `c/<class>.c` directory. It reports
+the number of successful and failed translations and exits nonzero if any
+mutant cannot be translated.
 
 Use `--class-name Fibonacci` to run only that original class's mutants, or
 repeat the option for several classes. If EvoSuite uses different class names,
