@@ -1,0 +1,536 @@
+{
+  "kind": "final_mutant_equivalence_summary",
+  "schema_version": "1.0",
+  "dataset": {
+    "source_total_mutants": 1252,
+    "excluded_mutants": 140,
+    "eligible_mutants": 1112,
+    "programs": 50,
+    "final_sanitizer_report_rows": 1107
+  },
+  "raw_test_summary": {
+    "total_mutants": 1252,
+    "matched_mutants": 1112,
+    "mismatched_mutants": 140,
+    "matched_tests": 5634,
+    "mismatched_tests": 458,
+    "matched_steps": 7420,
+    "mismatched_steps": 1107,
+    "overall_match": false
+  },
+  "eligible_mutant_summary": {
+    "total_mutants": 1112,
+    "matched_mutants": 1112,
+    "mismatched_mutants": 0,
+    "expected_tests": 5185,
+    "matched_tests": 5185,
+    "mismatched_tests": 0,
+    "matched_steps": 5685,
+    "mismatched_steps": 0,
+    "overall_match": true
+  },
+  "exclusion_summary": {
+    "total_excluded_mutants": 140,
+    "total_excluded_raw_mismatched_steps": 1107,
+    "categories": {
+      "incomplete_sanitizer_evidence": {
+        "mutants": 1,
+        "raw_mismatched_steps": 24,
+        "sanitizer_report_rows": 24
+      },
+      "java_compile_error": {
+        "mutants": 38,
+        "raw_mismatched_steps": 248,
+        "sanitizer_report_rows": 248
+      },
+      "java_returned_c_c_timeout": {
+        "mutants": 8,
+        "raw_mismatched_steps": 8,
+        "sanitizer_report_rows": 8
+      },
+      "runtime_error_kind_mismatch": {
+        "mutants": 1,
+        "raw_mismatched_steps": 1,
+        "sanitizer_report_rows": 1
+      },
+      "sanitizer_confirmed_stack_overflow_equivalence": {
+        "mutants": 92,
+        "raw_mismatched_steps": 826,
+        "sanitizer_report_rows": 826
+      }
+    },
+    "error_pair_counts": {
+      "java:bounds_error -> c:null_dereference": 1,
+      "java:compile_error -> c:bounds_error": 42,
+      "java:compile_error -> c:negative_array_size": 13,
+      "java:compile_error -> c:null_dereference": 22,
+      "java:compile_error -> c:returned": 156,
+      "java:compile_error -> c:timeout": 15,
+      "java:returned -> c:timeout": 8,
+      "java:stack_overflow -> c:process_crash": 850
+    }
+  },
+  "eligible_mutant_statistics": {
+    "eligible_mutants_per_program": {
+      "CombSort": 36,
+      "CountIntgralPoints": 20,
+      "CountList": 3,
+      "CountOddSquares": 14,
+      "CountUnsetBits": 14,
+      "CountWays": 44,
+      "CountingSort": 33,
+      "DealnnoyNum": 3,
+      "DiameterCircle": 4,
+      "DiffEvenOdd": 45,
+      "DogAge": 27,
+      "Fibonacci": 2,
+      "FindPeak": 31,
+      "FindPoints": 26,
+      "FindRectNum": 8,
+      "HexagonalNum": 12,
+      "LeftInsertion": 31,
+      "MaxDifference": 17,
+      "MaxOfTwo": 3,
+      "MaxProduct": 32,
+      "MaxSubArraySum": 26,
+      "MaxSumOfThreeConsecutive": 59,
+      "MaxSumSubseq": 33,
+      "MaxVolume": 33,
+      "MaximumSegments": 77,
+      "MinCoins": 3,
+      "MinCost": 56,
+      "MinJumps": 22,
+      "MoveFirst": 18,
+      "MultiplyElements": 23,
+      "NewmanPrime": 3,
+      "NextPowerOf2": 9,
+      "NoOfCubes": 33,
+      "OddBitSetNumber": 27,
+      "OddLengthSum": 27,
+      "PairWise": 20,
+      "ParabolaVertex": 35,
+      "ParallelogramPerimeter": 19,
+      "RadixSort": 30,
+      "SqrtRoot": 43,
+      "SquarePerimeter": 4,
+      "SumList": 7,
+      "SumNums": 14,
+      "SumOfPrimes": 16,
+      "SumOfSubarrayProd": 6,
+      "SumRangeList": 3,
+      "TestThreeEqual": 27,
+      "TriangleArea": 17,
+      "TupleToInt": 9,
+      "VolumeCube": 8
+    },
+    "total_mutants_per_program": {
+      "CombSort": 38,
+      "CountIntgralPoints": 20,
+      "CountList": 3,
+      "CountOddSquares": 22,
+      "CountUnsetBits": 15,
+      "CountWays": 45,
+      "CountingSort": 36,
+      "DealnnoyNum": 35,
+      "DiameterCircle": 4,
+      "DiffEvenOdd": 45,
+      "DogAge": 27,
+      "Fibonacci": 18,
+      "FindPeak": 32,
+      "FindPoints": 26,
+      "FindRectNum": 8,
+      "HexagonalNum": 12,
+      "LeftInsertion": 32,
+      "MaxDifference": 18,
+      "MaxOfTwo": 3,
+      "MaxProduct": 36,
+      "MaxSubArraySum": 27,
+      "MaxSumOfThreeConsecutive": 60,
+      "MaxSumSubseq": 34,
+      "MaxVolume": 34,
+      "MaximumSegments": 78,
+      "MinCoins": 26,
+      "MinCost": 60,
+      "MinJumps": 24,
+      "MoveFirst": 18,
+      "MultiplyElements": 24,
+      "NewmanPrime": 26,
+      "NextPowerOf2": 10,
+      "NoOfCubes": 33,
+      "OddBitSetNumber": 27,
+      "OddLengthSum": 28,
+      "PairWise": 21,
+      "ParabolaVertex": 35,
+      "ParallelogramPerimeter": 19,
+      "RadixSort": 32,
+      "SqrtRoot": 44,
+      "SquarePerimeter": 4,
+      "SumList": 8,
+      "SumNums": 14,
+      "SumOfPrimes": 18,
+      "SumOfSubarrayProd": 8,
+      "SumRangeList": 4,
+      "TestThreeEqual": 27,
+      "TriangleArea": 17,
+      "TupleToInt": 9,
+      "VolumeCube": 8
+    },
+    "excluded_mutants_per_program": {
+      "CombSort": 2,
+      "CountOddSquares": 8,
+      "CountUnsetBits": 1,
+      "CountWays": 1,
+      "CountingSort": 3,
+      "DealnnoyNum": 32,
+      "Fibonacci": 16,
+      "FindPeak": 1,
+      "LeftInsertion": 1,
+      "MaxDifference": 1,
+      "MaxProduct": 4,
+      "MaxSubArraySum": 1,
+      "MaxSumOfThreeConsecutive": 1,
+      "MaxSumSubseq": 1,
+      "MaxVolume": 1,
+      "MaximumSegments": 1,
+      "MinCoins": 23,
+      "MinCost": 4,
+      "MinJumps": 2,
+      "MultiplyElements": 1,
+      "NewmanPrime": 23,
+      "NextPowerOf2": 1,
+      "OddLengthSum": 1,
+      "PairWise": 1,
+      "RadixSort": 2,
+      "SqrtRoot": 1,
+      "SumList": 1,
+      "SumOfPrimes": 2,
+      "SumOfSubarrayProd": 2,
+      "SumRangeList": 1
+    },
+    "eligible_distribution_across_programs": {
+      "program_count": 50,
+      "total": 1112,
+      "average": 22.24,
+      "median": 20.0,
+      "minimum": 2,
+      "maximum": 77,
+      "population_stddev": 16.2143
+    },
+    "excluded_distribution_across_programs": {
+      "program_count": 50,
+      "total": 140,
+      "average": 2.8,
+      "median": 1.0,
+      "minimum": 0,
+      "maximum": 32,
+      "population_stddev": 6.4622
+    },
+    "program_stats": {
+      "CombSort": {
+        "total_mutants": 38,
+        "eligible_mutants": 36,
+        "excluded_mutants": 2,
+        "excluded_raw_mismatched_steps": 6
+      },
+      "CountIntgralPoints": {
+        "total_mutants": 20,
+        "eligible_mutants": 20,
+        "excluded_mutants": 0,
+        "excluded_raw_mismatched_steps": 0
+      },
+      "CountList": {
+        "total_mutants": 3,
+        "eligible_mutants": 3,
+        "excluded_mutants": 0,
+        "excluded_raw_mismatched_steps": 0
+      },
+      "CountOddSquares": {
+        "total_mutants": 22,
+        "eligible_mutants": 14,
+        "excluded_mutants": 8,
+        "excluded_raw_mismatched_steps": 10
+      },
+      "CountUnsetBits": {
+        "total_mutants": 15,
+        "eligible_mutants": 14,
+        "excluded_mutants": 1,
+        "excluded_raw_mismatched_steps": 3
+      },
+      "CountWays": {
+        "total_mutants": 45,
+        "eligible_mutants": 44,
+        "excluded_mutants": 1,
+        "excluded_raw_mismatched_steps": 6
+      },
+      "CountingSort": {
+        "total_mutants": 36,
+        "eligible_mutants": 33,
+        "excluded_mutants": 3,
+        "excluded_raw_mismatched_steps": 15
+      },
+      "DealnnoyNum": {
+        "total_mutants": 35,
+        "eligible_mutants": 3,
+        "excluded_mutants": 32,
+        "excluded_raw_mismatched_steps": 568
+      },
+      "DiameterCircle": {
+        "total_mutants": 4,
+        "eligible_mutants": 4,
+        "excluded_mutants": 0,
+        "excluded_raw_mismatched_steps": 0
+      },
+      "DiffEvenOdd": {
+        "total_mutants": 45,
+        "eligible_mutants": 45,
+        "excluded_mutants": 0,
+        "excluded_raw_mismatched_steps": 0
+      },
+      "DogAge": {
+        "total_mutants": 27,
+        "eligible_mutants": 27,
+        "excluded_mutants": 0,
+        "excluded_raw_mismatched_steps": 0
+      },
+      "Fibonacci": {
+        "total_mutants": 18,
+        "eligible_mutants": 2,
+        "excluded_mutants": 16,
+        "excluded_raw_mismatched_steps": 25
+      },
+      "FindPeak": {
+        "total_mutants": 32,
+        "eligible_mutants": 31,
+        "excluded_mutants": 1,
+        "excluded_raw_mismatched_steps": 5
+      },
+      "FindPoints": {
+        "total_mutants": 26,
+        "eligible_mutants": 26,
+        "excluded_mutants": 0,
+        "excluded_raw_mismatched_steps": 0
+      },
+      "FindRectNum": {
+        "total_mutants": 8,
+        "eligible_mutants": 8,
+        "excluded_mutants": 0,
+        "excluded_raw_mismatched_steps": 0
+      },
+      "HexagonalNum": {
+        "total_mutants": 12,
+        "eligible_mutants": 12,
+        "excluded_mutants": 0,
+        "excluded_raw_mismatched_steps": 0
+      },
+      "LeftInsertion": {
+        "total_mutants": 32,
+        "eligible_mutants": 31,
+        "excluded_mutants": 1,
+        "excluded_raw_mismatched_steps": 4
+      },
+      "MaxDifference": {
+        "total_mutants": 18,
+        "eligible_mutants": 17,
+        "excluded_mutants": 1,
+        "excluded_raw_mismatched_steps": 4
+      },
+      "MaxOfTwo": {
+        "total_mutants": 3,
+        "eligible_mutants": 3,
+        "excluded_mutants": 0,
+        "excluded_raw_mismatched_steps": 0
+      },
+      "MaxProduct": {
+        "total_mutants": 36,
+        "eligible_mutants": 32,
+        "excluded_mutants": 4,
+        "excluded_raw_mismatched_steps": 32
+      },
+      "MaxSubArraySum": {
+        "total_mutants": 27,
+        "eligible_mutants": 26,
+        "excluded_mutants": 1,
+        "excluded_raw_mismatched_steps": 4
+      },
+      "MaxSumOfThreeConsecutive": {
+        "total_mutants": 60,
+        "eligible_mutants": 59,
+        "excluded_mutants": 1,
+        "excluded_raw_mismatched_steps": 8
+      },
+      "MaxSumSubseq": {
+        "total_mutants": 34,
+        "eligible_mutants": 33,
+        "excluded_mutants": 1,
+        "excluded_raw_mismatched_steps": 5
+      },
+      "MaxVolume": {
+        "total_mutants": 34,
+        "eligible_mutants": 33,
+        "excluded_mutants": 1,
+        "excluded_raw_mismatched_steps": 3
+      },
+      "MaximumSegments": {
+        "total_mutants": 78,
+        "eligible_mutants": 77,
+        "excluded_mutants": 1,
+        "excluded_raw_mismatched_steps": 8
+      },
+      "MinCoins": {
+        "total_mutants": 26,
+        "eligible_mutants": 3,
+        "excluded_mutants": 23,
+        "excluded_raw_mismatched_steps": 275
+      },
+      "MinCost": {
+        "total_mutants": 60,
+        "eligible_mutants": 56,
+        "excluded_mutants": 4,
+        "excluded_raw_mismatched_steps": 22
+      },
+      "MinJumps": {
+        "total_mutants": 24,
+        "eligible_mutants": 22,
+        "excluded_mutants": 2,
+        "excluded_raw_mismatched_steps": 12
+      },
+      "MoveFirst": {
+        "total_mutants": 18,
+        "eligible_mutants": 18,
+        "excluded_mutants": 0,
+        "excluded_raw_mismatched_steps": 0
+      },
+      "MultiplyElements": {
+        "total_mutants": 24,
+        "eligible_mutants": 23,
+        "excluded_mutants": 1,
+        "excluded_raw_mismatched_steps": 5
+      },
+      "NewmanPrime": {
+        "total_mutants": 26,
+        "eligible_mutants": 3,
+        "excluded_mutants": 23,
+        "excluded_raw_mismatched_steps": 39
+      },
+      "NextPowerOf2": {
+        "total_mutants": 10,
+        "eligible_mutants": 9,
+        "excluded_mutants": 1,
+        "excluded_raw_mismatched_steps": 4
+      },
+      "NoOfCubes": {
+        "total_mutants": 33,
+        "eligible_mutants": 33,
+        "excluded_mutants": 0,
+        "excluded_raw_mismatched_steps": 0
+      },
+      "OddBitSetNumber": {
+        "total_mutants": 27,
+        "eligible_mutants": 27,
+        "excluded_mutants": 0,
+        "excluded_raw_mismatched_steps": 0
+      },
+      "OddLengthSum": {
+        "total_mutants": 28,
+        "eligible_mutants": 27,
+        "excluded_mutants": 1,
+        "excluded_raw_mismatched_steps": 4
+      },
+      "PairWise": {
+        "total_mutants": 21,
+        "eligible_mutants": 20,
+        "excluded_mutants": 1,
+        "excluded_raw_mismatched_steps": 4
+      },
+      "ParabolaVertex": {
+        "total_mutants": 35,
+        "eligible_mutants": 35,
+        "excluded_mutants": 0,
+        "excluded_raw_mismatched_steps": 0
+      },
+      "ParallelogramPerimeter": {
+        "total_mutants": 19,
+        "eligible_mutants": 19,
+        "excluded_mutants": 0,
+        "excluded_raw_mismatched_steps": 0
+      },
+      "RadixSort": {
+        "total_mutants": 32,
+        "eligible_mutants": 30,
+        "excluded_mutants": 2,
+        "excluded_raw_mismatched_steps": 10
+      },
+      "SqrtRoot": {
+        "total_mutants": 44,
+        "eligible_mutants": 43,
+        "excluded_mutants": 1,
+        "excluded_raw_mismatched_steps": 3
+      },
+      "SquarePerimeter": {
+        "total_mutants": 4,
+        "eligible_mutants": 4,
+        "excluded_mutants": 0,
+        "excluded_raw_mismatched_steps": 0
+      },
+      "SumList": {
+        "total_mutants": 8,
+        "eligible_mutants": 7,
+        "excluded_mutants": 1,
+        "excluded_raw_mismatched_steps": 3
+      },
+      "SumNums": {
+        "total_mutants": 14,
+        "eligible_mutants": 14,
+        "excluded_mutants": 0,
+        "excluded_raw_mismatched_steps": 0
+      },
+      "SumOfPrimes": {
+        "total_mutants": 18,
+        "eligible_mutants": 16,
+        "excluded_mutants": 2,
+        "excluded_raw_mismatched_steps": 5
+      },
+      "SumOfSubarrayProd": {
+        "total_mutants": 8,
+        "eligible_mutants": 6,
+        "excluded_mutants": 2,
+        "excluded_raw_mismatched_steps": 10
+      },
+      "SumRangeList": {
+        "total_mutants": 4,
+        "eligible_mutants": 3,
+        "excluded_mutants": 1,
+        "excluded_raw_mismatched_steps": 5
+      },
+      "TestThreeEqual": {
+        "total_mutants": 27,
+        "eligible_mutants": 27,
+        "excluded_mutants": 0,
+        "excluded_raw_mismatched_steps": 0
+      },
+      "TriangleArea": {
+        "total_mutants": 17,
+        "eligible_mutants": 17,
+        "excluded_mutants": 0,
+        "excluded_raw_mismatched_steps": 0
+      },
+      "TupleToInt": {
+        "total_mutants": 9,
+        "eligible_mutants": 9,
+        "excluded_mutants": 0,
+        "excluded_raw_mismatched_steps": 0
+      },
+      "VolumeCube": {
+        "total_mutants": 8,
+        "eligible_mutants": 8,
+        "excluded_mutants": 0,
+        "excluded_raw_mismatched_steps": 0
+      }
+    }
+  },
+  "artifacts": {
+    "raw_test_summary": "raw_test_summary.json",
+    "final_sanitizer_report": "final_sanitizer_report.csv"
+  },
+  "method_note": "All raw-mismatching mutant pairs are excluded from the final equivalence population. The sanitizer CSV retains per-case evidence and records the exclusion category and reason."
+}

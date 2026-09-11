@@ -83,10 +83,18 @@ working directory to keep identical mutant IDs separate.
 After translating the Java mutants to C, run all pairs against the saved inputs:
 
 ```bash
+python3 -m differential_testing.generation.mutants.translate_mutants \
+  --mutants-dir FormalBench-data/FilteredData/fault_mutants/run_<unique-id>
+
 python3 -m differential_testing.execution.run_mutants \
   --inputs differential_testing/generation/test_inputs.json \
   --mutants-dir FormalBench-data/FilteredData/fault_mutants/run_<unique-id>
 ```
+
+The translation command reads every `java/<class>.java` mutant and writes its
+opaque-array C translation to the matching `c/<class>.c` directory. It reports
+the number of successful and failed translations and exits nonzero if any
+mutant cannot be translated.
 
 Use `--class-name Fibonacci` to run only that original class's mutants, or
 repeat the option for several classes. If EvoSuite uses different class names,
@@ -183,13 +191,17 @@ and has a two-second timeout by default; use `--timeout SECONDS` to change it.
 If an EvoSuite class name differs from the selected source filename, the
 runner locates the unique source containing the called function.
 
-The C harness distinguishes null arrays (`{NULL, 0}`) from empty arrays
-(non-null storage, length zero), including matrix rows. JSON output uses
-`null` for null storage and `[]` for non-null, zero-length storage. Translated
-functions must follow the same convention for returned arrays; a returned
-`{NULL, 0}` is interpreted as null, not empty. This preserves nullness but
-does not introduce Java-style exceptions: reading a C wrapper's `length`
-still succeeds even when its storage pointer is null.
+The C harness uses `runtime/java_arrays/java_arrays.h` to construct inputs
+and serialize returned arrays and mutated state. Compilation automatically
+links `java_arrays.c`, including for sanitizer runs. Translated functions must
+use the library's `JIntArray`, `JDoubleArray`, and `JIntArray2` interfaces.
+JSON inputs and results retain the existing format: `null` and `[]` remain
+distinct, and shared matrix rows retain their aliases.
+
+Library error exits are recorded as `null_dereference`, `bounds_error`,
+`negative_array_size`, or `resource_exhausted`, matching the corresponding
+Java exceptions for comparison. These appear in the existing step `error`
+field; the result and comparison-summary schemas are unchanged.
 
 Execution responsibilities are separated across:
 

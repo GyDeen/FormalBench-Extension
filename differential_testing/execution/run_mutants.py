@@ -7,9 +7,9 @@ import json
 import tempfile
 from pathlib import Path
 
+from ..comparison.result_comparator import compare_execution_results
 from .execution_orchestrator import _find_source, run_all
 from .input_manifest import group_tests_by_class, read_inputs
-from ..comparison.result_comparator import compare_execution_results
 
 
 def main(argv: list[str] | None = None) -> None:
@@ -20,10 +20,14 @@ def main(argv: list[str] | None = None) -> None:
     parser.add_argument("--class-name", action="append", help="Restrict to named original classes")
     parser.add_argument("--java-dir", type=Path,
                         help="Original selected Java directory for resolving EvoSuite class aliases")
+    parser.add_argument("--output-dir", type=Path,
+                        help="Root directory for per-mutant results (defaults beside each mutant)")
     parser.add_argument("--timeout", type=float, default=2.0)
     args = parser.parse_args(argv)
     if args.timeout <= 0:
         parser.error("--timeout must be positive")
+    if args.output_dir:
+        args.output_dir.mkdir(parents=True, exist_ok=True)
     document = read_inputs(args.inputs)
     grouped = group_tests_by_class(document)
     pairs = sorted(args.mutants_dir.glob("*/mutants/*/java"))
@@ -66,8 +70,9 @@ def main(argv: list[str] | None = None) -> None:
             failed = True
             continue
         inputs = {**document, "tests": tests}
-        results = pair / "results"
-        results.mkdir(exist_ok=True)
+        results = (args.output_dir / name / pair.name
+                   if args.output_dir else pair / "results")
+        results.mkdir(parents=True, exist_ok=True)
         with tempfile.TemporaryDirectory(prefix="mutant-runners-") as tmp:
             java, c = run_all(inputs, java_dir, pair / "c", Path(tmp), args.timeout)
         report = compare_execution_results(inputs, java, c)
