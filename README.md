@@ -24,6 +24,32 @@ differential_testing/generation/
 original sources, optionally compiles them, and runs EvoSuite when requested.
 Run the commands below from `FormalBench-Extension`.
 
+## Generate EvoSuite tests
+
+The final experiment generated EvoSuite tests for the selected original Java
+programs. It did not run EvoSuite independently for every mutant. The same
+language-neutral inputs were later replayed against the original Java/C pair
+and the Java/C mutant pairs.
+
+The final sample was created from `FormalBench-data/base/meta_data.jsonl` using
+five program categories and 10 eligible programs per category, for a total of
+50 programs. The sampling seed was 726, and manual-review exclusions were not
+enabled. The corresponding run identifier is
+`seed_726_per_category_10_653ade686f`.
+
+Recreate the selection, Java compilation, and EvoSuite generation with:
+
+```bash
+python3 -m program_filter.main \
+  FormalBench-data/base/meta_data.jsonl \
+  --output-dir FormalBench-data/FilteredData \
+  --sample-per-category 10 \
+  --seed 726 \
+  --evosuite-jar /path/to/evosuite.jar \
+  --search-budget 60 \
+  --java-release 8
+```
+
 ## Generate fault mutants without EvoSuite
 
 Install [Major 3.0.1](https://mutation-testing.org/) and supply its `bin/major`
@@ -113,6 +139,32 @@ specification completeness. It replaces the previous `program_filter.extract_mut
 command, which extracted Formal-Diverse variants and has been removed. Existing
 `selected_mutants` outputs from that command are not fault mutants and are left
 untouched.
+
+To run each Java mutant on the extracted inputs and compare its behavior with
+the original Java program, run:
+
+```bash
+python3 -m differential_testing.comparison.run_mutant_origin \
+  --inputs differential_testing/generation/test_inputs-653ade686f.json \
+  --mutants-dir FormalBench-data/FilteredData/fault_mutants/run_ukcw__uc \
+  --origin-results differential_testing/results/653ade686f/Origin/java_results.json \
+  --output differential_testing/results/653ade686f/Mutant/mutant_origin_summary.json
+```
+
+The script runs only the Java mutant, using a temporary harness and build
+directory for each mutant. It compares actual mutant Java outcomes with the
+corresponding original Java outcomes, including return values, post-call state,
+and canonical error kinds. Individual mutant outputs and generated build files
+are removed after each comparison. The JSON output records per-mutant status
+(`same_as_origin` or `different_from_origin`) and aggregate counts, without
+source paths or individual execution reports. Normal execution is quiet and
+writes the result only to the path passed with `--output`; add `--verbose` when
+per-mutant progress on stdout is useful. Use `--class-name NAME` to run a
+single program or repeat it for several programs.
+
+Use `Origin/java_results.json` as the baseline. `Origin/comparison_final.json`
+describes the original Java/C comparison and does not contain the original
+Java output values needed for mutant-versus-origin behavior comparison.
 
 ## EvoSuite input extraction
 
