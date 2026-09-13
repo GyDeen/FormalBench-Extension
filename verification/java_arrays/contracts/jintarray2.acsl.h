@@ -24,14 +24,14 @@
 */
 
 /*@
-  requires rows >= 0;
+  requires length >= 0;
   assigns \nothing;
   allocates \result, \result->data;
   ensures jintarray2_valid(\result);
-  ensures \result->length == rows;
-  ensures \forall integer k; 0 <= k < rows ==> \result->data[k] == \null;
+  ensures \result->length == length;
+  ensures \forall integer k; 0 <= k < length ==> \result->data[k] == \null;
 */
-JIntArray2 jarray2_new_rows(int32_t rows);
+JIntArray2 jarray2_new_rows(int32_t length);
 
 /*@
   requires rows >= 0;

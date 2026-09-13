@@ -23,14 +23,14 @@
 */
 
 /*@
-  requires rows >= 0;
+  requires length >= 0;
   assigns \nothing;
   allocates \result, \result->data;
-  ensures jdoublearray2_valid(\result);
-  ensures \result->length == rows;
-  ensures \forall integer k; 0 <= k < rows ==> \result->data[k] == \null;
+  ensures jdoublearray_valid(\result);
+  ensures \result->length == length;
+  ensures \forall integer k; 0 <= k < length ==> \result->data[k] == \null;
 */
-JDoubleArray2 jdouble_array2_new_rows(int32_t rows);
+JDoubleArray2 jdouble_array2_new_rows(int32_t length);
 
 /*@
   requires rows >= 0;
@@ -70,6 +70,7 @@ int32_t jdouble_array2_length(JDoubleArray2 array);
 */
 JDoubleArray jdouble_array2_get(JDoubleArray2 array, int32_t index);
 
+// Need inspect
 /*@
   requires jdoublearray2_valid(array);
   requires 0 <= index < array->length;
