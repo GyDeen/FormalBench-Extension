@@ -5,13 +5,21 @@
 
 /* The outer-array predicate permits null, shared, empty, and jagged rows. */
 /*@
+  predicate jintarray2_outer_valid{L}(JIntArray2 a) =
+    \valid_read(a) && a->length >= 0 && 
+    (
+      (a->length == 0 && a->data == \null) || (a->length > 0 && \valid(a->data + (0 .. a->length - 1)) &&
+      \separated(a, a->data + (0 .. a->length - 1)))
+    );
+*/
+
+/*@
   predicate jintarray2_valid{L}(JIntArray2 a) =
-    a != \null && \valid_read(a) &&
-    a->length >= 0 && (
-      (a->length == 0 && a->data == \null) ||
-      (a->length > 0 &&
-       \valid(a->data + (0 .. a->length - 1)) &&
-       \separated(a, a->data + (0 .. a->length - 1)))
+    jintarray2_outer_valid{L}(a) &&
+    (
+      \forall integer i;
+      0 <= i < a->length ==>
+        (a->data[i] == \null || jintarray_valid{L}(a->data[i]))
     );
 */
 

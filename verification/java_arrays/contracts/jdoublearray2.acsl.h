@@ -4,11 +4,21 @@
 #include "jdoublearray.acsl.h"
 
 /*@
-  predicate jdoublearray2_valid{L}(JDoubleArray2 a) =
+  predicate jdoublearray2_outer_valid{L}(JDoubleArray2 a) =
     \valid_read(a) && a->length >= 0 && 
     (
       (a->length == 0 && a->data == \null) || (a->length > 0 && \valid(a->data + (0 .. a->length - 1)) &&
-       \separated(a, a->data + (0 .. a->length - 1)))
+      \separated(a, a->data + (0 .. a->length - 1)))
+    );
+*/
+
+/*@
+  predicate jdoublearray2_valid{L}(JDoubleArray2 a) =
+    jdoublearray2_outer_valid{L}(a) &&
+    (
+      \forall integer i;
+      0 <= i < a->length ==>
+        (a->data[i] == \null || jdoublearray_valid{L}(a->data[i]))
     );
 */
 
