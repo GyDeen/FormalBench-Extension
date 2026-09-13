@@ -1,0 +1,47 @@
+{
+  "generated": {
+    "baseline": {
+      "path": "verification/java_arrays/generated/baseline.c",
+      "sha256": "76841812b8dde3eded528777343b19a863bb5a5b813a8d485f27c811065c048a"
+    },
+    "types": {
+      "path": "verification/java_arrays/generated/types.h",
+      "sha256": "484e5df1fa6f1a573bee0b8ea778cefb259659d6b419e0c94ecd92e490d88301"
+    }
+  },
+  "generator": "verification/java_arrays/scripts/prepare.py",
+  "mutants": [
+    {
+      "description": "Return zero instead of the selected integer-array element.",
+      "driver": {
+        "path": "verification/java_arrays/generated/drivers/mutant_0001.c",
+        "sha256": "75c36564ded5e735f877da1838a54ffca58fdd4c5ca0145dde79813616b62cb4"
+      },
+      "function": "jarray_get",
+      "id": "0001",
+      "plan": "verification/java_arrays/mutations.json",
+      "plan_sha256": "7ae43e0f8e8af0d5191a904394ab5920a0bf8f26d48994b79dea1653459e51aa",
+      "source": {
+        "path": "verification/java_arrays/generated/mutants/0001.c",
+        "sha256": "8ab8cef829659050c347cfa97d2a030a3adf34809e99b95fc3ba3adcd2504b6e"
+      }
+    }
+  ],
+  "schema_version": "1.0",
+  "settings": {
+    "macro": "DEFINE_ARRAY",
+    "macro_expansion": "deliberate_explicit_functions",
+    "structure_destination": "verification/java_arrays/generated/types.h",
+    "system_header_preprocessing": false
+  },
+  "sources": {
+    "header": {
+      "path": "runtime/java_arrays/java_arrays.h",
+      "sha256": "69d9ec135610c57268c3783abdfd49dd212faec0f2e0e8713fe567384f39810c"
+    },
+    "implementation": {
+      "path": "runtime/java_arrays/java_arrays.c",
+      "sha256": "2c8d8e3a8d3762fd21da75a41924bb2896edcaf3b1f15e94c11e4ec37210d078"
+    }
+  }
+}

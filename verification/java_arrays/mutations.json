@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "mutations": [
+    {
+      "id": "0001",
+      "function": "jarray_get",
+      "description": "Return zero instead of the selected integer-array element.",
+      "find": "return array->data[index];",
+      "replace": "return 0;"
+    }
+  ]
+}
