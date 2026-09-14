@@ -3,50 +3,85 @@
 
 #include "jintarray.acsl.h"
 
-/* The outer-array predicate permits null, shared, empty, and jagged rows. */
 /*@
-  predicate jintarray2_outer_valid{L}(JIntArray2 a) =
-    \valid_read(a) && a->length >= 0 && 
+  predicate jintarray2_valid{L}(JIntArray2 a) =
+    a == \null ||
     (
-      (a->length == 0 && a->data == \null) || (a->length > 0 && \valid(a->data + (0 .. a->length - 1)) &&
-      \separated(a, a->data + (0 .. a->length - 1)))
+      \valid_read(a) &&
+      a->length >= 0 &&
+      (
+        (a->length == 0 && a->data == \null) ||
+        (
+          a->length > 0 &&
+          \valid(a->data + (0 .. a->length - 1)) &&
+          \separated(a, a->data + (0 .. a->length - 1))
+        )
+      ) &&
+      (
+        \forall integer i;
+          0 <= i < a->length ==>
+            jintarray_valid{L}(a->data[i])
+      )
     );
 */
 
-/*@
-  predicate jintarray2_valid{L}(JIntArray2 a) =
-    jintarray2_outer_valid{L}(a) &&
-    (
-      \forall integer i;
-      0 <= i < a->length ==>
-        (a->data[i] == \null || jintarray_valid{L}(a->data[i]))
-    );
-*/
 
 /*@
   requires length >= 0;
+
   assigns \nothing;
   allocates \result, \result->data;
+
+  ensures \result != \null;
   ensures jintarray2_valid(\result);
   ensures \result->length == length;
-  ensures \forall integer k; 0 <= k < length ==> \result->data[k] == \null;
+
+  ensures \forall integer i;
+    0 <= i < length ==> \result->data[i] == \null;
 */
 JIntArray2 jarray2_new_rows(int32_t length);
+
 
 /*@
   requires rows >= 0;
   requires columns >= 0;
+
   assigns \nothing;
+
+  ensures \result != \null;
   ensures jintarray2_valid(\result);
   ensures \result->length == rows;
-  ensures \forall integer i; 0 <= i < rows ==>
-    jintarray_valid(\result->data[i]) && \result->data[i]->length == columns;
+
+  ensures \forall integer i;
+    0 <= i < rows ==>
+      \result->data[i] != \null &&
+      \result->data[i]->length == columns;
+
   ensures \forall integer i, j;
-    0 <= i && i < j && j < rows ==> \separated(\result->data[i], \result->data[j]);
+    0 <= i < rows &&
+    0 <= j < columns ==>
+      \result->data[i]->data[j] == 0;
+
   ensures \forall integer i, j;
-    0 <= i < rows && 0 <= j < columns ==> \result->data[i]->data[j] == 0;
+    0 <= i && i < j && j < rows ==>
+      \separated(
+        \result->data[i],
+        \result->data[j]
+      );
+
+  ensures \forall integer i, j;
+    0 <= i && i < j && j < rows &&
+    columns > 0 ==>
+      \separated(
+        \result->data[i]->data + (0 .. columns - 1),
+        \result->data[j]->data + (0 .. columns - 1)
+      );
 */
-JIntArray2 jarray2_new(int32_t rows, int32_t columns);
+JIntArray2 jarray2_new(
+    int32_t rows,
+    int32_t columns
+);
+
 
 /*@
   assigns \nothing;
@@ -56,14 +91,18 @@ JIntArray2 jarray2_new(int32_t rows, int32_t columns);
 */
 bool jarray2_is_null(JIntArray2 array);
 
+
 /*@
+  requires array != \null;
   requires jintarray2_valid(array);
   assigns \nothing;
   ensures \result == array->length;
 */
 int32_t jarray2_length(JIntArray2 array);
 
+
 /*@
+  requires array != \null;
   requires jintarray2_valid(array);
   requires 0 <= index < array->length;
   assigns \nothing;
@@ -72,20 +111,37 @@ int32_t jarray2_length(JIntArray2 array);
 JIntArray jarray2_get(JIntArray2 array, int32_t index);
 
 /*@
+  requires array != \null;
   requires jintarray2_valid(array);
   requires 0 <= index < array->length;
+  requires jintarray_valid(row);
+
   assigns array->data[index];
+
   ensures jintarray2_valid(array);
   ensures array->data[index] == row;
   ensures \result == row;
 */
-JIntArray jarray2_set(JIntArray2 array, int32_t index, JIntArray row);
+JIntArray jarray2_set(JIntArray2 array,int32_t index,JIntArray row);
 
-/* Frees the outer storage only; row ownership remains with the caller. */
+
 /*@
-  requires array == \null || jintarray2_valid(array);
-  assigns \nothing;
-  frees array, array->data;
+  requires jintarray2_valid(array);
+
+  behavior null_array:
+    assumes array == \null;
+    assigns \nothing;
+    allocates \nothing;
+    frees \nothing;
+
+  behavior non_null_array:
+    assumes array != \null;
+    assigns \nothing;
+    allocates \nothing;
+    frees array, array->data;
+
+  complete behaviors;
+  disjoint behaviors;
 */
 void jarray2_free(JIntArray2 array);
 
