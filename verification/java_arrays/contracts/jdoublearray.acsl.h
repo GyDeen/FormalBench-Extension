@@ -5,10 +5,21 @@
 
 /*@
   predicate jdoublearray_valid{L}(JDoubleArray a) =
-    \valid_read(a) && a->length >= 0 && 
+    a == \null ||
     (
-      (a->length == 0 && a->data == \null) || (a->length > 0 && \valid(a->data + (0 .. a->length - 1)) &&
-      \separated(a, a->data + (0 .. a->length - 1)))
+      \valid_read(a) &&
+      \initialized(&a->length) &&
+      \initialized(&a->data) &&
+      a->length >= 0 &&
+      (
+        (a->length == 0 && a->data == \null) ||
+        (
+          a->length > 0 &&
+          \valid(a->data + (0 .. a->length - 1)) &&
+          \initialized(a->data + (0 .. a->length - 1)) &&
+          \separated(a, a->data + (0 .. a->length - 1))
+        )
+      )
     );
 */
 
@@ -16,6 +27,7 @@
   requires length >= 0;
   assigns \nothing;
   allocates \result, \result->data;
+  ensures \result != \null;
   ensures jdoublearray_valid(\result);
   ensures \result->length == length;
   ensures \forall integer k; 0 <= k < length ==> \result->data[k] == 0.0;
@@ -31,6 +43,7 @@ JDoubleArray jdouble_array_new(int32_t length);
 bool jdouble_array_is_null(JDoubleArray array);
 
 /*@
+  requires array != \null;
   requires jdoublearray_valid(array);
   assigns \nothing;
   ensures \result == array->length;
@@ -38,6 +51,7 @@ bool jdouble_array_is_null(JDoubleArray array);
 int32_t jdouble_array_length(JDoubleArray array);
 
 /*@
+  requires array != \null;
   requires jdoublearray_valid(array);
   requires 0 <= index < array->length;
   assigns \nothing;
@@ -46,6 +60,7 @@ int32_t jdouble_array_length(JDoubleArray array);
 double jdouble_array_get(JDoubleArray array, int32_t index);
 
 /*@
+  requires array != \null;
   requires jdoublearray_valid(array);
   requires 0 <= index < array->length;
   assigns array->data[index];
@@ -56,9 +71,22 @@ double jdouble_array_get(JDoubleArray array, int32_t index);
 double jdouble_array_set(JDoubleArray array, int32_t index, double value);
 
 /*@
-  requires array == \null || jdoublearray_valid(array);
-  assigns \nothing;
-  frees array, array->data;
+  requires jdoublearray_valid(array);
+
+  behavior null_array:
+    assumes array == \null;
+    assigns \nothing;
+    allocates \nothing;
+    frees \nothing;
+
+  behavior non_null_array:
+    assumes array != \null;
+    assigns \nothing;
+    allocates \nothing;
+    frees array, array->data;
+
+  complete behaviors;
+  disjoint behaviors;
 */
 void jdouble_array_free(JDoubleArray array);
 

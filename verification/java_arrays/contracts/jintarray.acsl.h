@@ -5,10 +5,19 @@
 
 /*@
   predicate jintarray_valid{L}(JIntArray a) =
-    \valid_read(a) && a->length >= 0 && 
+    a == \null ||
     (
-      (a->length == 0 && a->data == \null) || (a->length > 0 && \valid(a->data + (0 .. a->length - 1)) &&
-      \separated(a, a->data + (0 .. a->length - 1)))
+      \valid_read(a) &&
+      \initialized(&a->length) &&
+      \initialized(&a->data) &&
+      a->length >= 0 &&
+      (
+        (a->length == 0 && a->data == \null) ||
+        (a->length > 0 &&
+         \valid(a->data + (0 .. a->length - 1)) &&
+         \initialized(a->data + (0 .. a->length - 1)) &&
+         \separated(a, a->data + (0 .. a->length - 1)))
+      )
     );
 */
 
@@ -16,6 +25,7 @@
   requires length >= 0;
   assigns \nothing;
   allocates \result, \result->data;
+  ensures \result != \null;
   ensures jintarray_valid(\result);
   ensures \result->length == length;
   ensures \forall integer k; 0 <= k < length ==> \result->data[k] == 0;
@@ -31,6 +41,7 @@ JIntArray jarray_new(int32_t length);
 bool jarray_is_null(JIntArray array);
 
 /*@
+  requires array != \null;
   requires jintarray_valid(array);
   assigns \nothing;
   ensures \result == array->length;
@@ -38,6 +49,7 @@ bool jarray_is_null(JIntArray array);
 int32_t jarray_length(JIntArray array);
 
 /*@
+  requires array != \null;
   requires jintarray_valid(array);
   requires 0 <= index < array->length;
   assigns \nothing;
@@ -46,6 +58,7 @@ int32_t jarray_length(JIntArray array);
 int32_t jarray_get(JIntArray array, int32_t index);
 
 /*@
+  requires array != \null;
   requires jintarray_valid(array);
   requires 0 <= index < array->length;
   assigns array->data[index];
@@ -56,9 +69,22 @@ int32_t jarray_get(JIntArray array, int32_t index);
 int32_t jarray_set(JIntArray array, int32_t index, int32_t value);
 
 /*@
-  requires array == \null || jintarray_valid(array);
-  assigns \nothing;
-  frees array, array->data;
+  requires jintarray_valid(array);
+
+  behavior null_array:
+    assumes array == \null;
+    assigns \nothing;
+    allocates \nothing;
+    frees \nothing;
+
+  behavior non_null_array:
+    assumes array != \null;
+    assigns \nothing;
+    allocates \nothing;
+    frees array, array->data;
+
+  complete behaviors;
+  disjoint behaviors;
 */
 void jarray_free(JIntArray array);
 
