@@ -1,12 +1,8 @@
-#!/usr/bin/env python3
-"""Run the production runtime cases against the generated expanded baseline."""
-
 from __future__ import annotations
 
 import subprocess
 import tempfile
 from pathlib import Path
-
 
 WORKSPACE = Path(__file__).resolve().parents[1]
 PROJECT = WORKSPACE.parents[1]

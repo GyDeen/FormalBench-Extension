@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-"""Deterministically expand the production Java-array macro for verification."""
-
 from __future__ import annotations
 
 import argparse
@@ -8,7 +5,6 @@ import hashlib
 import json
 import re
 from pathlib import Path
-
 
 WORKSPACE = Path(__file__).resolve().parents[1]
 PROJECT = WORKSPACE.parents[1]
@@ -162,6 +158,10 @@ def render_outputs(header: str, implementation: str) -> tuple[str, str, str]:
     driver = """/* Generated verification driver: fixed contracts + one implementation. */
 #include "../../contracts/helpers.acsl.h"
 #include "../../contracts/jintarray.acsl.h"
+#include "../../contracts/jboolarray.acsl.h"
+#include "../../contracts/jdoublearray.acsl.h"
+#include "../../contracts/jintarray2.acsl.h"
+#include "../../contracts/jdoublearray2.acsl.h"
 #include "../baseline.c"
 """
     return types, baseline, driver
