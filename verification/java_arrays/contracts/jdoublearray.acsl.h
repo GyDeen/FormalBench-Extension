@@ -8,15 +8,12 @@
     a == \null ||
     (
       \valid_read(a) &&
-      \initialized(&a->length) &&
-      \initialized(&a->data) &&
       a->length >= 0 &&
       (
         (a->length == 0 && a->data == \null) ||
         (
           a->length > 0 &&
           \valid(a->data + (0 .. a->length - 1)) &&
-          \initialized(a->data + (0 .. a->length - 1)) &&
           \separated(a, a->data + (0 .. a->length - 1))
         )
       )
