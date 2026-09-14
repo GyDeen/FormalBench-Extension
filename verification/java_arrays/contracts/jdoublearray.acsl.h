@@ -8,23 +8,32 @@
     a == \null ||
     (
       \valid_read(a) &&
+      \initialized(&a->length) &&
+      \initialized(&a->data) &&
       a->length >= 0 &&
       (
         (a->length == 0 && a->data == \null) ||
         (
           a->length > 0 &&
           \valid(a->data + (0 .. a->length - 1)) &&
+          \initialized(a->data + (0 .. a->length - 1)) &&
           \separated(a, a->data + (0 .. a->length - 1))
         )
       )
     );
 */
 
+
 /*@
   requires length >= 0;
+  requires length <= SIZE_MAX / sizeof(double);
   assigns \nothing;
   allocates \result, \result->data;
+  exits \false;
   ensures \result != \null;
+  ensures \fresh(\result, sizeof(*\result));
+  ensures length > 0 ==>
+    \fresh(\result->data, length * sizeof(double));
   ensures jdoublearray_valid(\result);
   ensures \result->length == length;
   ensures \forall integer k; 0 <= k < length ==> \result->data[k] == 0.0;
@@ -69,6 +78,9 @@ double jdouble_array_set(JDoubleArray array, int32_t index, double value);
 
 /*@
   requires jdoublearray_valid(array);
+
+  requires array != \null ==> \freeable(array);
+  requires array != \null && array->data != \null ==> \freeable(array->data);
 
   behavior null_array:
     assumes array == \null;

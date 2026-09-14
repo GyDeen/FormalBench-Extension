@@ -8,21 +8,30 @@
     a == \null ||
     (
       \valid_read(a) &&
+      \initialized(&a->length) &&
+      \initialized(&a->data) &&
       a->length >= 0 &&
       (
         (a->length == 0 && a->data == \null) ||
         (a->length > 0 &&
          \valid(a->data + (0 .. a->length - 1)) &&
+         \initialized(a->data + (0 .. a->length - 1)) &&
          \separated(a, a->data + (0 .. a->length - 1)))
       )
     );
 */
 
+
 /*@
   requires length >= 0;
+  requires length <= SIZE_MAX / sizeof(bool);
   assigns \nothing;
   allocates \result, \result->data;
+  exits \false;
   ensures \result != \null;
+  ensures \fresh(\result, sizeof(*\result));
+  ensures length > 0 ==>
+    \fresh(\result->data, length * sizeof(bool));
   ensures jboolarray_valid(\result);
   ensures \result->length == length;
   ensures \forall integer k; 0 <= k < length ==> \result->data[k] == \false;
@@ -67,6 +76,9 @@ bool jbool_array_set(JBoolArray array, int32_t index, bool value);
 
 /*@
   requires jboolarray_valid(array);
+
+  requires array != \null ==> \freeable(array);
+  requires array != \null && array->data != \null ==> \freeable(array->data);
 
   behavior null_array:
     assumes array == \null;

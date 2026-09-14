@@ -8,21 +8,31 @@
     a == \null ||
     (
       \valid_read(a) &&
+      \initialized(&a->length) &&
+      \initialized(&a->data) &&
       a->length >= 0 &&
       (
         (a->length == 0 && a->data == \null) ||
         (a->length > 0 &&
          \valid(a->data + (0 .. a->length - 1)) &&
+         \initialized(a->data + (0 .. a->length - 1)) &&
          \separated(a, a->data + (0 .. a->length - 1)))
       )
     );
 */
 
+/* TRUSTED constructor summary: successful allocation for representable sizes.
+ * Its implementation is outside the selected accessor/row-operation proofs. */
 /*@
   requires length >= 0;
+  requires length <= SIZE_MAX / sizeof(int32_t);
   assigns \nothing;
   allocates \result, \result->data;
+  exits \false;
   ensures \result != \null;
+  ensures \fresh(\result, sizeof(*\result));
+  ensures length > 0 ==>
+    \fresh(\result->data, length * sizeof(int32_t));
   ensures jintarray_valid(\result);
   ensures \result->length == length;
   ensures \forall integer k; 0 <= k < length ==> \result->data[k] == 0;
@@ -67,6 +77,9 @@ int32_t jarray_set(JIntArray array, int32_t index, int32_t value);
 
 /*@
   requires jintarray_valid(array);
+
+  requires array != \null ==> \freeable(array);
+  requires array != \null && array->data != \null ==> \freeable(array->data);
 
   behavior null_array:
     assumes array == \null;
