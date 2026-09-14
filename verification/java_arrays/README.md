@@ -14,7 +14,7 @@ Nothing under `verification/java_arrays/` is a production dependency.
 | --- | --- | --- |
 | Preparation | Production `java_arrays.h` and `java_arrays.c` | `generated/types.h`, `generated/baseline.c`, the baseline driver, and manifest |
 | Mutation generation | Generated baseline and `mutations.json` | Generated mutant implementations, mutant drivers, and manifest entries |
-| Future Frama-C runner | Generated drivers and fixed contracts | `results/` only |
+| Frama-C runner | Generated drivers and fixed contracts | `results/` only |
 | Contract refinement | Files under `contracts/` | Contract files only |
 
 The production runtime is an input to this workspace and is never rewritten by
@@ -81,7 +81,7 @@ python3 verification/java_arrays/scripts/check_baseline.py
 This is a regression check for the deterministic transformation, not a proof of
 semantic equivalence.
 
-## Contracts and future verification
+## Contracts and verification
 
 The include order in every generated driver is:
 
@@ -90,17 +90,66 @@ The include order in every generated driver is:
 3. annotated public declarations;
 4. exactly one implementation body.
 
-`contracts/jintarray.acsl.h` currently scopes public verification to the
-one-dimensional integer-array API. `contracts/helpers.acsl.h` supplies matching
-`static` helper declarations. Other array families can receive separate fixed
-contract headers without changing production code or the mutation format.
+Fixed public contracts are split by array family:
 
-No Frama-C runner is implemented yet. Future proof collection belongs in
-`scripts/verify.py` and must write only to `results/`. It must distinguish
-proved obligations, demonstrated violations, and inconclusive results. A loop
-annotation failure alone is not a demonstrated public-contract violation.
+- `contracts/jintarray.acsl.h` for `int[]`;
+- `contracts/jboolarray.acsl.h` for `boolean[]`;
+- `contracts/jdoublearray.acsl.h` for `double[]`;
+- `contracts/jintarray2.acsl.h` for `int[][]`;
+- `contracts/jdoublearray2.acsl.h` for `double[][]`.
 
-Assumptions to make explicit when the runner is added include the allocation
-model, `exit`/non-returning error paths, integer and `size_t` bounds, and the
-Frama-C/WP versions and options. Verification of translated benchmark programs
-against these contracts is a separate integration step.
+`contracts/helpers.acsl.h` supplies matching `static` helper declarations. The
+two-dimensional predicates validate outer storage while deliberately allowing
+null, shared, empty, and jagged rows. Full two-dimensional constructors add the
+stronger guarantees that their newly allocated rows are non-null, distinct,
+correctly sized, and zero-initialized.
+
+Run the baseline first and, only if it is proved, verify every manifest mutant:
+
+```bash
+python3 verification/java_arrays/scripts/verify.py
+```
+
+The default prover is Frama-C's internal `qed` prover. Select installed external
+provers when stronger automation is needed:
+
+```bash
+python3 verification/java_arrays/scripts/verify.py \
+  --provers qed,alt-ergo \
+  --wp-timeout 30
+```
+
+Useful selection and inspection modes are:
+
+```bash
+# Validate inputs and print commands without running Frama-C.
+python3 verification/java_arrays/scripts/verify.py --dry-run
+
+# Verify only the baseline.
+python3 verification/java_arrays/scripts/verify.py --baseline-only
+
+# Verify selected mutants after the baseline.
+python3 verification/java_arrays/scripts/verify.py --mutant 0001
+
+# Collect raw mutant results even when the baseline is inconclusive.
+python3 verification/java_arrays/scripts/verify.py --allow-inconclusive-baseline
+```
+
+Each invocation creates a new `results/run_<UTC timestamp>/` directory. Every
+target receives its own command metadata, stdout/stderr logs, raw WP JSON report,
+and normalized outcome. `summary.json` records tool/version settings, all input
+hashes, the baseline gate, and separate lists for proved satisfaction,
+demonstrated violations, inconclusive outcomes, and skipped mutants.
+
+The classification is deliberately conservative. A WP timeout, unknown result,
+prover failure, or candidate counterexample is **inconclusive**, not a contract
+violation. A run is classified as a demonstrated violation only when report
+data contains an explicit `invalid` verdict or a validated counterexample flag.
+A loop-support obligation can prevent an overall proof, but its failure is
+recorded separately and is never relabelled as a demonstrated public-contract
+violation.
+
+The run metadata makes the allocation model, `exit`/non-returning error paths,
+integer and `size_t` bounds, and Frama-C/WP versions and options auditable.
+Verification of translated benchmark programs against these contracts remains
+a separate integration step.
