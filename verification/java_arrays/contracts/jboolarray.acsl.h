@@ -5,10 +5,13 @@
 
 /*@
   predicate jboolarray_valid{L}(JBoolArray a) =
-    \valid_read(a) && a->length >= 0 && 
+    a == \null || 
     (
-      (a->length == 0 && a->data == \null) || (a->length > 0 && \valid(a->data + (0 .. a->length - 1)) &&
-      \separated(a, a->data + (0 .. a->length - 1)))
+      \valid_read(a) && a->length >= 0 && 
+      (
+        (a->length == 0 && a->data == \null) || (a->length > 0 && \valid(a->data + (0 .. a->length - 1)) &&
+        \separated(a, a->data + (0 .. a->length - 1)))
+      )
     );
 */
 
@@ -32,6 +35,7 @@ bool jbool_array_is_null(JBoolArray array);
 
 /*@
   requires jboolarray_valid(array);
+  requires array != \null;
   assigns \nothing;
   ensures \result == array->length;
 */
@@ -39,6 +43,7 @@ int32_t jbool_array_length(JBoolArray array);
 
 /*@
   requires jboolarray_valid(array);
+  requires array != \null;
   requires 0 <= index < array->length;
   assigns \nothing;
   ensures \result == array->data[index];
@@ -47,6 +52,7 @@ bool jbool_array_get(JBoolArray array, int32_t index);
 
 /*@
   requires jboolarray_valid(array);
+  requires array != \null
   requires 0 <= index < array->length;
   assigns array->data[index];
   ensures jboolarray_valid(array);
