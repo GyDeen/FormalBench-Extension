@@ -5,20 +5,25 @@
 
 /*@
   predicate jdoublearray2_outer_valid{L}(JDoubleArray2 a) =
-    \valid_read(a) && a->length >= 0 && 
+    a == \null || 
     (
-      (a->length == 0 && a->data == \null) || (a->length > 0 && \valid(a->data + (0 .. a->length - 1)) &&
-      \separated(a, a->data + (0 .. a->length - 1)))
+      \valid_read(a) && a->length >= 0 && 
+      (
+        (a->length == 0 && a->data == \null) || (a->length > 0 && \valid(a->data + (0 .. a->length - 1)) &&
+        \separated(a, a->data + (0 .. a->length - 1)))
+      )
     );
 */
 
 /*@
   predicate jdoublearray2_valid{L}(JDoubleArray2 a) =
     jdoublearray2_outer_valid{L}(a) &&
-    (
-      \forall integer i;
-      0 <= i < a->length ==>
-        (a->data[i] == \null || jdoublearray_valid{L}(a->data[i]))
+    ( a != \null ==>
+      (
+        \forall integer i;
+        0 <= i < a->length ==>
+          (a->data[i] == \null || jdoublearray_valid{L}(a->data[i]))
+      )
     );
 */
 
@@ -26,7 +31,11 @@
   requires length >= 0;
   assigns \nothing;
   allocates \result, \result->data;
-  ensures jdoublearray_valid(\result);
+
+  ensure \result != \null;
+  ensures length > 0 ==> 
+    \fresh(\result->data, length * sizeof(*\result->data));
+  ensures jdoublearray2_valid(\result);
   ensures \result->length == length;
   ensures \forall integer k; 0 <= k < length ==> \result->data[k] == \null;
 */
@@ -36,6 +45,8 @@ JDoubleArray2 jdouble_array2_new_rows(int32_t length);
   requires rows >= 0;
   requires columns >= 0;
   assigns \nothing;
+  allocate 
+
   ensures jdoublearray2_valid(\result);
   ensures \result->length == rows;
   ensures \forall integer i; 0 <= i < rows ==>
@@ -56,6 +67,7 @@ JDoubleArray2 jdouble_array2_new(int32_t rows, int32_t columns);
 bool jdouble_array2_is_null(JDoubleArray2 array);
 
 /*@
+  requires array != \null;
   requires jdoublearray2_valid(array);
   assigns \nothing;
   ensures \result == array->length;
@@ -63,6 +75,7 @@ bool jdouble_array2_is_null(JDoubleArray2 array);
 int32_t jdouble_array2_length(JDoubleArray2 array);
 
 /*@
+  requires array != \null;
   requires jdoublearray2_valid(array);
   requires 0 <= index < array->length;
   assigns \nothing;
@@ -74,7 +87,10 @@ JDoubleArray jdouble_array2_get(JDoubleArray2 array, int32_t index);
 /*@
   requires jdoublearray2_valid(array);
   requires 0 <= index < array->length;
+  requires row == \null || jdoublearray_valid(row);
+
   assigns array->data[index];
+
   ensures jdoublearray2_valid(array);
   ensures array->data[index] == row;
   ensures \result == row;
