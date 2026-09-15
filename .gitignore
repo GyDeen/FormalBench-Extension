@@ -22,3 +22,14 @@ test/
 tests/
 # Generated mutant directories removed from tracking but retained locally.
 /FormalBench-data/FilteredData/fault_mutants/run_ukcw__uc/*/mutants/*/
+
+
+# Keep only source-controlled verification inputs and scripts. The leading
+# slash is relative to this repository root; do not repeat the repository name.
+/verification/java_arrays/*
+!/verification/java_arrays/clients/
+!/verification/java_arrays/clients/**
+!/verification/java_arrays/contracts/
+!/verification/java_arrays/contracts/**
+!/verification/java_arrays/scripts/
+!/verification/java_arrays/scripts/**
