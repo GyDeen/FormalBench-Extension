@@ -24,9 +24,10 @@ tests/
 /FormalBench-data/FilteredData/fault_mutants/run_ukcw__uc/*/mutants/*/
 
 
-# Keep only source-controlled verification inputs and scripts. The leading
+# Keep only source-controlled verification inputs, scripts, and summaries. The leading
 # slash is relative to this repository root; do not repeat the repository name.
 /verification/java_arrays/*
+!/verification/java_arrays/README.md
 !/verification/java_arrays/clients/
 !/verification/java_arrays/clients/**
 !/verification/java_arrays/contracts/
@@ -34,3 +35,6 @@ tests/
 !/verification/java_arrays/scripts/
 !/verification/java_arrays/scripts/**
 !/verification/java_arrays/results/
+# Keep curated top-level Markdown summaries; raw runs and diagnostic files stay local.
+/verification/java_arrays/results/*
+!/verification/java_arrays/results/*.md
