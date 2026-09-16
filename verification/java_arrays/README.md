@@ -153,17 +153,58 @@ FormalBench experiment/evaluation defaults and Frama-C command, respectively.
 They do not reproduce its entire verifier configuration or toolchain. The
 low-level FormalBench verifier API has a separate 1800-second default.
 
-`scripts/check_support.py` still defaults to the historical , 
-30-second goal limit, and 180-second target limit. It runs the selected
-implementation plus five positive clients and one negative control by default;
-`check_int_row_components` is an optional diagnostic target. Its current CLI
-does not expose a Why3 extra-configuration file, solver memory limit, or prover
-parallelism. Use the direct commands below for the corrected local driver.
+`scripts/check_support.py` now defaults to this local WSL configuration:
+`x86_64`, `Typed+ref`, the checked-in Why3 compatibility file, and explicit
+`Alt-Ergo:2.4.3,Z3:4.8.12` selection. It uses a 10-second goal limit, 300-second
+target limit, 1000 MB solver memory limit, four concurrent prover processes,
+and no proof cache. Qed simplification remains enabled. These defaults apply
+to new runs; they do not change the configuration of previously recorded runs.
 
-The runner records input hashes, versions, commands, stdout/stderr, and per-goal
-WP reports in `results/support_<UTC timestamp>/`. A zero exit code means the
-process completed; it does not mean all obligations proved. Constructor
-freshness warnings and unresolved call preconditions still matter.
+Override resources with `--timeout`, `--run-timeout`, `--memlimit`, and `--wp-par`.
+Use `--why3-extra-config PATH` for another configuration, or
+`--no-why3-extra-config --provers ...` for a different installed toolchain.
+The runner checks the configuration file and uses it for both prover discovery
+and verification. The default path is resolved from the script location, not
+the shell's working directory.
+
+It runs the selected implementation plus five positive clients and one negative
+control by default; repeat `--target` to select a subset.
+`check_int_row_components` is an optional diagnostic target.
+
+The runner records input and Why3-configuration hashes, versions, commands,
+stdout/stderr, and per-goal WP reports in `results/support_<UTC timestamp>/`.
+Failed toolchain or generation prechecks stop the run before any proof targets
+start. A zero exit code means the processes completed; it does not mean all
+obligations proved. Constructor freshness warnings and unresolved call
+preconditions still matter.
+
+### Recommended runner commands
+
+From PowerShell, this command runs just the small predicate-equivalence client
+using the existing WSL distribution and opam switch:
+
+```powershell
+wsl.exe -d ResearchUbuntuNoble -u root -- bash -lc 'cd /mnt/d/ResearchProject && opam exec --switch=default -- python3 verification/java_arrays/scripts/check_support.py --target check_predicate_equivalence'
+```
+
+Inside the activated WSL Bash session described above, use:
+
+```bash
+# Selected implementation plus all six standard clients, 10 seconds per goal.
+python3 verification/java_arrays/scripts/check_support.py
+
+# Only the two row clients, 60 seconds per goal and 300 seconds per target.
+python3 verification/java_arrays/scripts/check_support.py \
+  --target check_int_rows --target check_double_rows --timeout 60
+
+# Fast runner tests only; these do not launch proof attempts.
+python3 -m unittest discover -s verification/java_arrays/scripts -p 'test_check_support.py' -v
+```
+
+The per-goal and per-target limits are independent: raising `--timeout` does
+not raise `--run-timeout`. Increase the latter explicitly for a longer target
+run. Memory limits are per prover process; account for `--wp-par` when raising
+them. These examples do not imply that unresolved obligations will prove.
 
 ### Direct commands
 

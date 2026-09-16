@@ -1,6 +1,12 @@
 # Frama-C support-contract validation — 2026-09-15 (Melbourne)
 
-The current contracts parse and support the scalar client patterns, but the
+This is a historical macOS study record, not the current machine's setup or
+results. Use the [WSL verification instructions](../README.md) and
+[AMD Ryzen 7 7700 run summary](local-verification-summary-2026-09-16.md) for
+the current environment. The versions, paths, and counts below are retained
+as historical evidence.
+
+The contracts at the time of these runs parse and support the scalar client patterns, but the
 support layer is **not ready to freeze**. Row-client and implementation proofs
 remain unresolved. No confirmed implementation–contract violation was found.
 Contracts and production sources were not edited during these proof runs.
@@ -113,11 +119,15 @@ removed after the summary tables were retained. They can be regenerated from
 the repository root with the commands below; each fresh run writes a new
 timestamped directory under `verification/java_arrays/results/`.
 
-From `FormalBench-Extension/`:
+On the original macOS toolchain, from the repository root, pass the historical
+settings explicitly (the runner now defaults to the local WSL configuration):
 
 ```bash
-python3 verification/java_arrays/scripts/check_support.py
 python3 verification/java_arrays/scripts/check_support.py \
+  --machdep macos_arm --model Typed --provers qed,z3 --no-why3-extra-config \
+  --timeout 30 --run-timeout 180
+python3 verification/java_arrays/scripts/check_support.py \
+  --machdep macos_arm --model Typed --provers qed,z3 --no-why3-extra-config \
   --target implementation \
   --functions check_length,check_reference,check_index,jarray_is_null,jbool_array_is_null,jdouble_array_is_null,jarray2_is_null,jdouble_array2_is_null \
   --timeout 5 --run-timeout 45

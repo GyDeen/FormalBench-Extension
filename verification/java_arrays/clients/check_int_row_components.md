@@ -1,5 +1,9 @@
 # Isolated integer-row diagnostics (2026-09-16)
 
+The counts below are historical macOS diagnostics, not results from the current
+AMD/WSL environment. See the [current setup](../README.md) and
+[local run summary](../results/local-verification-summary-2026-09-16.md).
+
 `check_int_row_components.c` reproduces rectangular construction, fetches both
 row handles, updates the first row, and checks one component per function. It
 stops before later getters can contribute preconditions. Original clients and
@@ -7,12 +11,22 @@ library contracts are unchanged. The last function is a separate guided
 experiment: later assertions depend on earlier assertions and do not establish
 success unless all obligations prove.
 
-From the repository root:
+For new local diagnostics, enter the WSL/opam environment in the README and
+run from `/mnt/d/ResearchProject`. These commands use the current `x86_64`,
+`Typed+ref`, corrected Alt-Ergo/Z3 defaults and a 300-second target limit:
 
-```sh
-python3 verification/java_arrays/scripts/check_support.py --target check_int_row_components --timeout 30 --run-timeout 240
-python3 verification/java_arrays/scripts/check_support.py --target check_int_row_components --no-filter-init --timeout 30 --run-timeout 240
+```bash
+python3 verification/java_arrays/scripts/check_support.py --target check_int_row_components --timeout 60
+python3 verification/java_arrays/scripts/check_support.py --target check_int_row_components --no-filter-init --timeout 60
 ```
+
+These are new-run instructions, not reproductions of the historical counts.
+The original commands used `--machdep macos_arm --model Typed --provers qed,z3`,
+30 seconds per goal, and 240 seconds per target, without the local extra Why3
+configuration. With the updated runner, reproducing that configuration also
+requires `--no-why3-extra-config` and the original macOS toolchain.
+
+## Historical results
 
 The initial 14-function comparison used identical 30-second per-goal limits.
 Default filtering proved 215/224 obligations; disabling initialization filtering
