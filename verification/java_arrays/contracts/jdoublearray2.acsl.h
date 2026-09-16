@@ -25,30 +25,47 @@
     );
 */
 
+/* Component predicates describe non-null storage; use them together through
+ * valid_nonnull. The public valid wrapper retains nullable-array semantics. */
 /*@
+  predicate jdoublearray2_metadata_valid{L}(JDoubleArray2 a) =
+    \valid_read(a) && a->length >= 0;
+
+  predicate jdoublearray2_metadata_initialized{L}(JDoubleArray2 a) =
+    \initialized(&a->length) && \initialized(&a->data);
+
+  predicate jdoublearray2_buffer_valid{L}(JDoubleArray2 a) =
+    (a->length == 0 && a->data == \null) ||
+    (a->length > 0 && \valid(a->data + (0 .. a->length - 1)));
+
+  predicate jdoublearray2_buffer_initialized{L}(JDoubleArray2 a) =
+    a->length > 0 ==>
+      \initialized(a->data + (0 .. a->length - 1));
+
+  predicate jdoublearray2_storage_separated{L}(JDoubleArray2 a) =
+    a->length > 0 ==>
+      \separated(a, a->data + (0 .. a->length - 1));
+
+  predicate jdoublearray2_rows_valid{L}(JDoubleArray2 a) =
+    \forall integer i; 0 <= i < a->length ==>
+      jdoublearray_valid{L}(a->data[i]);
+
+  predicate jdoublearray2_rows_compatible{L}(JDoubleArray2 a) =
+    \forall integer i; 0 <= i < a->length ==>
+      jdoublearray2_row_compatible{L}(a, a->data[i]);
+
+  predicate jdoublearray2_valid_nonnull{L}(JDoubleArray2 a) =
+    a != \null &&
+    jdoublearray2_metadata_valid{L}(a) &&
+    jdoublearray2_metadata_initialized{L}(a) &&
+    jdoublearray2_buffer_valid{L}(a) &&
+    jdoublearray2_buffer_initialized{L}(a) &&
+    jdoublearray2_storage_separated{L}(a) &&
+    jdoublearray2_rows_valid{L}(a) &&
+    jdoublearray2_rows_compatible{L}(a);
+
   predicate jdoublearray2_valid{L}(JDoubleArray2 a) =
-    a == \null ||
-    (
-      \valid_read(a) &&
-      \initialized(&a->length) &&
-      \initialized(&a->data) &&
-      a->length >= 0 &&
-      (
-        (a->length == 0 && a->data == \null) ||
-        (
-          a->length > 0 &&
-          \valid(a->data + (0 .. a->length - 1)) &&
-          \initialized(a->data + (0 .. a->length - 1)) &&
-          \separated(a, a->data + (0 .. a->length - 1))
-        )
-      ) &&
-      (
-        \forall integer i;
-          0 <= i < a->length ==>
-            jdoublearray_valid{L}(a->data[i]) &&
-            jdoublearray2_row_compatible{L}(a, a->data[i])
-      )
-    );
+    a == \null || jdoublearray2_valid_nonnull{L}(a);
 */
 
 /* TRUSTED constructor summary; allocation succeeds for representable sizes. */

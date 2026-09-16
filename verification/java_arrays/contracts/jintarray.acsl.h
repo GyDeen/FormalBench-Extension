@@ -3,22 +3,37 @@
 
 #include "../generated/types.h"
 
+/* Component predicates describe non-null storage; use them together through
+ * valid_nonnull. The public valid wrapper retains nullable-array semantics. */
 /*@
+  predicate jintarray_metadata_valid{L}(JIntArray a) =
+    \valid_read(a) && a->length >= 0;
+
+  predicate jintarray_metadata_initialized{L}(JIntArray a) =
+    \initialized(&a->length) && \initialized(&a->data);
+
+  predicate jintarray_buffer_valid{L}(JIntArray a) =
+    (a->length == 0 && a->data == \null) ||
+    (a->length > 0 && \valid(a->data + (0 .. a->length - 1)));
+
+  predicate jintarray_buffer_initialized{L}(JIntArray a) =
+    a->length > 0 ==>
+      \initialized(a->data + (0 .. a->length - 1));
+
+  predicate jintarray_storage_separated{L}(JIntArray a) =
+    a->length > 0 ==>
+      \separated(a, a->data + (0 .. a->length - 1));
+
+  predicate jintarray_valid_nonnull{L}(JIntArray a) =
+    a != \null &&
+    jintarray_metadata_valid{L}(a) &&
+    jintarray_metadata_initialized{L}(a) &&
+    jintarray_buffer_valid{L}(a) &&
+    jintarray_buffer_initialized{L}(a) &&
+    jintarray_storage_separated{L}(a);
+
   predicate jintarray_valid{L}(JIntArray a) =
-    a == \null ||
-    (
-      \valid_read(a) &&
-      \initialized(&a->length) &&
-      \initialized(&a->data) &&
-      a->length >= 0 &&
-      (
-        (a->length == 0 && a->data == \null) ||
-        (a->length > 0 &&
-         \valid(a->data + (0 .. a->length - 1)) &&
-         \initialized(a->data + (0 .. a->length - 1)) &&
-         \separated(a, a->data + (0 .. a->length - 1)))
-      )
-    );
+    a == \null || jintarray_valid_nonnull{L}(a);
 */
 
 /* TRUSTED constructor summary: successful allocation for representable sizes.

@@ -17,7 +17,7 @@ METHODS = ["check_length", "check_reference", "check_index"] + [
     for prefix in ("jarray", "jbool_array", "jdouble_array", "jarray2", "jdouble_array2")
     for method in ("is_null", "length", "get", "set")
 ]
-CLIENTS = ["check_set_get", "check_scalar_families", "check_int_rows",
+CLIENTS = ["check_predicate_equivalence", "check_set_get", "check_scalar_families", "check_int_rows",
            "check_double_rows", "negative_set_get"]
 
 

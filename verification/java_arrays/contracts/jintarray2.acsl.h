@@ -27,30 +27,47 @@
     );
 */
 
+/* Component predicates describe non-null storage; use them together through
+ * valid_nonnull. The public valid wrapper retains nullable-array semantics. */
 /*@
+  predicate jintarray2_metadata_valid{L}(JIntArray2 a) =
+    \valid_read(a) && a->length >= 0;
+
+  predicate jintarray2_metadata_initialized{L}(JIntArray2 a) =
+    \initialized(&a->length) && \initialized(&a->data);
+
+  predicate jintarray2_buffer_valid{L}(JIntArray2 a) =
+    (a->length == 0 && a->data == \null) ||
+    (a->length > 0 && \valid(a->data + (0 .. a->length - 1)));
+
+  predicate jintarray2_buffer_initialized{L}(JIntArray2 a) =
+    a->length > 0 ==>
+      \initialized(a->data + (0 .. a->length - 1));
+
+  predicate jintarray2_storage_separated{L}(JIntArray2 a) =
+    a->length > 0 ==>
+      \separated(a, a->data + (0 .. a->length - 1));
+
+  predicate jintarray2_rows_valid{L}(JIntArray2 a) =
+    \forall integer i; 0 <= i < a->length ==>
+      jintarray_valid{L}(a->data[i]);
+
+  predicate jintarray2_rows_compatible{L}(JIntArray2 a) =
+    \forall integer i; 0 <= i < a->length ==>
+      jintarray2_row_compatible{L}(a, a->data[i]);
+
+  predicate jintarray2_valid_nonnull{L}(JIntArray2 a) =
+    a != \null &&
+    jintarray2_metadata_valid{L}(a) &&
+    jintarray2_metadata_initialized{L}(a) &&
+    jintarray2_buffer_valid{L}(a) &&
+    jintarray2_buffer_initialized{L}(a) &&
+    jintarray2_storage_separated{L}(a) &&
+    jintarray2_rows_valid{L}(a) &&
+    jintarray2_rows_compatible{L}(a);
+
   predicate jintarray2_valid{L}(JIntArray2 a) =
-    a == \null ||
-    (
-      \valid_read(a) &&
-      \initialized(&a->length) &&
-      \initialized(&a->data) &&
-      a->length >= 0 &&
-      (
-        (a->length == 0 && a->data == \null) ||
-        (
-          a->length > 0 &&
-          \valid(a->data + (0 .. a->length - 1)) &&
-          \initialized(a->data + (0 .. a->length - 1)) &&
-          \separated(a, a->data + (0 .. a->length - 1))
-        )
-      ) &&
-      (
-        \forall integer i;
-          0 <= i < a->length ==>
-            jintarray_valid{L}(a->data[i]) &&
-            jintarray2_row_compatible{L}(a, a->data[i])
-      )
-    );
+    a == \null || jintarray2_valid_nonnull{L}(a);
 */
 
 

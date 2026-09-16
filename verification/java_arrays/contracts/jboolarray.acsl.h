@@ -3,22 +3,37 @@
 
 #include "../generated/types.h"
 
+/* Component predicates describe non-null storage; use them together through
+ * valid_nonnull. The public valid wrapper retains nullable-array semantics. */
 /*@
+  predicate jboolarray_metadata_valid{L}(JBoolArray a) =
+    \valid_read(a) && a->length >= 0;
+
+  predicate jboolarray_metadata_initialized{L}(JBoolArray a) =
+    \initialized(&a->length) && \initialized(&a->data);
+
+  predicate jboolarray_buffer_valid{L}(JBoolArray a) =
+    (a->length == 0 && a->data == \null) ||
+    (a->length > 0 && \valid(a->data + (0 .. a->length - 1)));
+
+  predicate jboolarray_buffer_initialized{L}(JBoolArray a) =
+    a->length > 0 ==>
+      \initialized(a->data + (0 .. a->length - 1));
+
+  predicate jboolarray_storage_separated{L}(JBoolArray a) =
+    a->length > 0 ==>
+      \separated(a, a->data + (0 .. a->length - 1));
+
+  predicate jboolarray_valid_nonnull{L}(JBoolArray a) =
+    a != \null &&
+    jboolarray_metadata_valid{L}(a) &&
+    jboolarray_metadata_initialized{L}(a) &&
+    jboolarray_buffer_valid{L}(a) &&
+    jboolarray_buffer_initialized{L}(a) &&
+    jboolarray_storage_separated{L}(a);
+
   predicate jboolarray_valid{L}(JBoolArray a) =
-    a == \null ||
-    (
-      \valid_read(a) &&
-      \initialized(&a->length) &&
-      \initialized(&a->data) &&
-      a->length >= 0 &&
-      (
-        (a->length == 0 && a->data == \null) ||
-        (a->length > 0 &&
-         \valid(a->data + (0 .. a->length - 1)) &&
-         \initialized(a->data + (0 .. a->length - 1)) &&
-         \separated(a, a->data + (0 .. a->length - 1)))
-      )
-    );
+    a == \null || jboolarray_valid_nonnull{L}(a);
 */
 
 

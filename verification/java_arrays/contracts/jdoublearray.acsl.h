@@ -3,24 +3,37 @@
 
 #include "../generated/types.h"
 
+/* Component predicates describe non-null storage; use them together through
+ * valid_nonnull. The public valid wrapper retains nullable-array semantics. */
 /*@
+  predicate jdoublearray_metadata_valid{L}(JDoubleArray a) =
+    \valid_read(a) && a->length >= 0;
+
+  predicate jdoublearray_metadata_initialized{L}(JDoubleArray a) =
+    \initialized(&a->length) && \initialized(&a->data);
+
+  predicate jdoublearray_buffer_valid{L}(JDoubleArray a) =
+    (a->length == 0 && a->data == \null) ||
+    (a->length > 0 && \valid(a->data + (0 .. a->length - 1)));
+
+  predicate jdoublearray_buffer_initialized{L}(JDoubleArray a) =
+    a->length > 0 ==>
+      \initialized(a->data + (0 .. a->length - 1));
+
+  predicate jdoublearray_storage_separated{L}(JDoubleArray a) =
+    a->length > 0 ==>
+      \separated(a, a->data + (0 .. a->length - 1));
+
+  predicate jdoublearray_valid_nonnull{L}(JDoubleArray a) =
+    a != \null &&
+    jdoublearray_metadata_valid{L}(a) &&
+    jdoublearray_metadata_initialized{L}(a) &&
+    jdoublearray_buffer_valid{L}(a) &&
+    jdoublearray_buffer_initialized{L}(a) &&
+    jdoublearray_storage_separated{L}(a);
+
   predicate jdoublearray_valid{L}(JDoubleArray a) =
-    a == \null ||
-    (
-      \valid_read(a) &&
-      \initialized(&a->length) &&
-      \initialized(&a->data) &&
-      a->length >= 0 &&
-      (
-        (a->length == 0 && a->data == \null) ||
-        (
-          a->length > 0 &&
-          \valid(a->data + (0 .. a->length - 1)) &&
-          \initialized(a->data + (0 .. a->length - 1)) &&
-          \separated(a, a->data + (0 .. a->length - 1))
-        )
-      )
-    );
+    a == \null || jdoublearray_valid_nonnull{L}(a);
 */
 
 
