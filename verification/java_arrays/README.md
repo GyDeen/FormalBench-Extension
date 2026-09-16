@@ -8,7 +8,11 @@ files and include paths under `runtime/java_arrays/` stay unchanged.
 | `contracts/` | Handwritten ACSL declarations and representation predicates |
 | `generated/` | Reproducibly expanded production types, bodies, and implementation driver |
 | `clients/` | Small clients including contracts without implementation bodies |
-| `results/` | Proof logs, assumptions, versions, and status summaries |
+| `scripts/` | Preparation/check runners and the compatible Why3 prover configuration |
+| `results/` | Tracked Markdown summaries; ignored local proof logs and diagnostic runs |
+
+The [latest local run summary](results/local-verification-summary-2026-09-16.md)
+records the AMD Ryzen 7 7700 results and the corrected solver diagnostics.
 
 ## Scope and trust boundary
 
@@ -72,7 +76,8 @@ distinctions.
 
 ## Reproducible preparation
 
-Run commands from `FormalBench-Extension/`:
+Run commands from the repository root (`/mnt/d/ResearchProject` in the local
+WSL environment):
 
 ```bash
 python3 verification/java_arrays/scripts/prepare.py --check
@@ -88,47 +93,100 @@ the generated baseline; it is not a proof of transformation equivalence.
 
 ## Implementation–contract agreement
 
-### Installed macOS setup and recorded workflow
+### Verified local toolchain (2026-09-16)
 
-Frama-C 33.0 (Arsenic) and Z3 5.1.0 are now installed on this Apple Silicon Mac.
-Frama-C came from the official macOS ARM package; Z3 was installed with Homebrew.
-The package's default launcher could not find its bundled data. The installed
-`/usr/local/bin/frama-c` launcher was corrected to execute
-`/Applications/Frama-C.app/Contents/Resources/bin/frama-c`. A future reinstall
-may overwrite that launcher.
+The current local environment is Windows with WSL 2, Ubuntu 24.04.5 LTS
+(`ResearchUbuntuNoble`), and an AMD Ryzen 7 7700. No Docker image is required.
 
-```bash
-frama-c -version
-frama-c -wp-list-provers
-python3 verification/java_arrays/scripts/check_support.py
+| Tool | Installed version used for the recorded full runs |
+| --- | --- |
+| Frama-C | 33.0 (Arsenic), installed through opam |
+| Why3 | 1.8.2 |
+| Alt-Ergo | 2.4.3-free; explicitly configure the `alt_ergo` driver as version 2.4.3 |
+| Z3 | 4.8.12 (`/usr/bin/z3`) |
+| OCaml | 4.14.1, opam switch `default` |
+| Python | 3.12.3 |
+
+Z3 5.1.0 is also installed separately, but it was used only for a focused
+exported-task diagnostic, not the completed implementation/client suite.
+Do not label those full results as Z3 5.1.0 runs. The earlier Apple M3 setup
+used Frama-C 33.0, Z3 5.1.0, `macos_arm`, and `Typed`; its findings are retained
+in the [historical macOS summary](results/contract-update-status.md).
+
+From PowerShell, enter the existing WSL environment:
+
+```powershell
+wsl.exe -d ResearchUbuntuNoble -u root
 ```
 
-The runner selects the documented implementation methods and runs all five
-contract-only client files, with Z3, the `Typed` memory model, the `macos_arm`
-machine model, a 30-second per-goal prover timeout, and a 180-second per-target
-wall-clock limit. It records source hashes, versions, commands, stdout/stderr,
-and raw per-goal WP reports in a fresh `results/support_<UTC timestamp>/` folder.
-It never runs library mutants or changes contracts. Its exit code reports
-execution errors/timeouts, not complete proof success; inspect the reports.
+Then run the remaining commands in Bash:
 
-Why3 launches a local solver service using a Unix socket. In the Codex sandbox
-the first external-prover run failed to connect to this service. The successful
-Z3 runs used approved execution outside that sandbox. This is unrelated to the
-ACSL's validity. Ordinary Terminal runs do not use that Codex sandbox.
+```bash
+cd /mnt/d/ResearchProject
+eval "$(opam env --switch=default)"
+frama-c -version
+why3 --version
+alt-ergo --version
+z3 --version
+python3 --version
+frama-c -wp-why3-extra-config verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf \
+  -wp-list-provers
+```
 
-See `results/contract-update-status.md` for the findings and remaining limits.
+Why3's automatic detection does not correctly identify the `2.4.3-free`
+version string. The original `Alt-Ergo:` entry had an empty version and used
+an incompatible driver, producing parser errors. Use the source-controlled
+[compatibility configuration](scripts/why3-alt-ergo-2.4.3.conf) and explicitly
+select `Alt-Ergo:2.4.3,Z3:4.8.12`. With the opam switch on `PATH`, the configuration
+uses its `alt-ergo` executable without a machine-specific absolute path.
+The unversioned automatic entry may still be listed; do not select that entry.
+
+### Limits and runner behavior
+
+The local FormalBench-style runs used `x86_64`, `Typed+ref`, four concurrent
+prover processes, no proof cache, 10 seconds per prover goal, and a 300-second
+wall-clock limit per target. Later row-client experiments used 60 seconds per
+goal. WP's default solver memory limit was 1000 MB per process.
+
+The 300-second process and 10-second goal limits match the checked-in
+FormalBench experiment/evaluation defaults and Frama-C command, respectively.
+They do not reproduce its entire verifier configuration or toolchain. The
+low-level FormalBench verifier API has a separate 1800-second default.
+
+`scripts/check_support.py` still defaults to the historical , 
+30-second goal limit, and 180-second target limit. It runs the selected
+implementation plus five positive clients and one negative control by default;
+`check_int_row_components` is an optional diagnostic target. Its current CLI
+does not expose a Why3 extra-configuration file, solver memory limit, or prover
+parallelism. Use the direct commands below for the corrected local driver.
+
+The runner records input hashes, versions, commands, stdout/stderr, and per-goal
+WP reports in `results/support_<UTC timestamp>/`. A zero exit code means the
+process completed; it does not mean all obligations proved. Constructor
+freshness warnings and unresolved call preconditions still matter.
 
 ### Direct commands
 
-Verify selected actual bodies using the baseline driver. For example, with an
-installed, configured Z3 prover:
+After activating the opam switch and preparing the generated files, define the
+shared options in the same Bash session. The examples use the tested corrected
+driver with a 10-second per-goal budget; change it to 60 for a longer experiment.
 
 ```bash
+wp_common=(
+  -machdep x86_64 -wp -wp-rte -wp-model Typed+ref
+  -wp-why3-extra-config verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf
+  -wp-prover Alt-Ergo:2.4.3,Z3:4.8.12
+  -wp-timeout 10 -wp-memlimit 1000 -wp-par 4 -wp-cache none
+)
 jarray_methods='check_length,check_reference,check_index,jarray_is_null,jarray_length,jarray_get,jarray_set,jbool_array_is_null,jbool_array_length,jbool_array_get,jbool_array_set,jdouble_array_is_null,jdouble_array_length,jdouble_array_get,jdouble_array_set,jarray2_is_null,jarray2_length,jarray2_get,jarray2_set,jdouble_array2_is_null,jdouble_array2_length,jdouble_array2_get,jdouble_array2_set'
-frama-c -machdep macos_arm -wp -wp-rte -wp-model Typed -wp-prover qed,z3 -wp-timeout 30 \
+timeout 300 frama-c "${wp_common[@]}" \
   -wp-fct "$jarray_methods" \
   verification/java_arrays/generated/drivers/baseline.c
 ```
+
+This is the command for a future corrected-driver implementation run. The
+latest recorded implementation result used the earlier automatic solver
+selection; it has not been rerun with this configuration.
 
 The selected list excludes constructors, allocation, error handling, and cleanup.
 Their bodies remain mechanically generated; they are not reported as proved.
@@ -138,17 +196,18 @@ hashes, warnings, and individual obligations under `results/`.
 ## Contract-interface clients
 
 Each client includes contracted declarations and generated types only. Do not
-include `generated/baseline.c` or the baseline driver in these runs.
+include `generated/baseline.c` or the baseline driver in these runs. Reuse
+`wp_common` from the same Bash session above:
 
 ```bash
-for client in check_set_get check_scalar_families check_int_rows check_double_rows
+for client in check_predicate_equivalence check_set_get check_scalar_families check_int_rows check_double_rows
 do
-  frama-c -machdep macos_arm -wp -wp-rte -wp-model Typed -wp-prover qed,z3 -wp-timeout 30 \
+  timeout 300 frama-c "${wp_common[@]}" \
     "verification/java_arrays/clients/$client.c"
 done
 
 # Run separately: the two named negative assertions must not be proved.
-frama-c -machdep macos_arm -wp -wp-rte -wp-model Typed -wp-prover qed,z3 -wp-timeout 30 \
+timeout 300 frama-c "${wp_common[@]}" \
   verification/java_arrays/clients/negative_set_get.c
 ```
 
@@ -170,11 +229,15 @@ check, not a completeness measurement.
 | Status | Meaning |
 | --- | --- |
 | Proved | Selected obligations discharged under recorded assumptions |
-| Unknown | Not run or unresolved, including unsupported annotations and timeouts |
+| Unresolved | Umbrella term for any obligation without an established proof |
+| Unknown | Solver could not determine a result; unrun obligations must also be identified separately |
+| Timeout | Per-goal solver budget expired, or the overall target process was stopped at its limit |
+| Failed | Prover/translation/execution error, such as parser failure or out of memory; not a counterexample |
 | Trusted | Summary used without proving its implementation |
 | Violation confirmed | Implementation contradicts the contract, with validated evidence |
 
-See `results/contract-update-status.md` for the current validation record.
+See the [latest local summary](results/local-verification-summary-2026-09-16.md)
+for the current validation record and the configuration differences between runs.
 Do not infer either a bug or success from an unresolved obligation.
 
 After the clients pass, check a few translated programs with known handwritten
