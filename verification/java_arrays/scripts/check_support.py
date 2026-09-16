@@ -29,7 +29,10 @@ def main() -> int:
     parser.add_argument("--machdep", default="macos_arm")
     parser.add_argument("--timeout", type=int, default=30)
     parser.add_argument("--run-timeout", type=int, default=180)
-    parser.add_argument("--target", action="append", choices=["implementation", *CLIENTS])
+    parser.add_argument("--target", action="append",
+                        choices=["implementation", *CLIENTS, "check_int_row_components"])
+    parser.add_argument("--no-filter-init", action="store_true",
+                        help="Retain initialization hypotheses in WP diagnostics")
     parser.add_argument("--functions", help="Override selected implementation functions (comma separated)")
     args = parser.parse_args()
     executable = shutil.which(args.frama_c)
@@ -74,6 +77,8 @@ def main() -> int:
                    "-wp-deprecated-report-json", str(target_dir / "goals.json")]
         if target == "implementation":
             command += ["-wp-fct", args.functions or ",".join(METHODS)]
+        if args.no_filter_init:
+            command += ["-wp-no-filter-init"]
         command += [str(source.relative_to(PROJECT))]
         (target_dir / "command.json").write_text(json.dumps(command, indent=2) + "\n")
         print(f"Running {target}...", flush=True)
