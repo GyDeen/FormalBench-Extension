@@ -1,11 +1,17 @@
-# Local JArray verification summary - 2026-09-16
+# Local JArray verification summary — updated 2026-09-19
 
-The support layer is **partially verified**. The latest completed implementation
-run proved 81/193 reported WP goals. The latest double-row client proved 103/119
-after correcting the Alt-Ergo driver; the latest integer-row client proved
-111/119. These are the most recent results per target, not one suite run with
-a uniform solver configuration. No implementation-contract violation was
-confirmed by these runs.
+This summary reports both implementation-level and client-level evidence. The
+implementation run is used to check that the JArray contracts are compatible
+with the verified library operations; the client runs then use those contracts
+as interface assumptions. The implementation run proved 81/193 reported WP
+goals, while the best completed double-row client run proved 109/119, with 9
+timeouts and 1 failed goal, after selecting the compatible `Alt-Ergo:2.4.3`
+driver and allowing 180 seconds per prover goal. The line-29 assertion in
+`check_double_rows.c`
+proving `updated == 5.0 && independent == 0.0` was proved in this run. The
+combined evidence supports the contracts for the exercised operations, but it
+does not establish complete implementation verification or prove every
+contract clause.
 
 ## Environment and scope
 
@@ -18,11 +24,11 @@ confirmed by these runs.
   300 seconds per target process. Per-goal limits are recorded below.
 - Z3 5.1.0 was used only for a focused exported-task diagnostic. It was not the
   Z3 version used by the completed implementation/client runs.
-- Implementation scope: 23 selected helpers and array accessors/row operations.
-  Constructors, allocation/error infrastructure, and cleanup bodies remain
-  outside the proved implementation scope.
-- Clients include contracts and generated types without implementation bodies.
-  They test use of the interface under its trusted constructor assumptions.
+- Trust boundary: client runs include the JArray contracts and generated types
+  and test client use of the interface. Implementation runs provide the
+  consistency check for the exercised library operations.
+- Remaining scope: constructors, allocation/error infrastructure, cleanup, and
+  unexercised contract clauses are not fully verified.
 
 The three `support_*` runs below passed the generated-input consistency check.
 During the later diagnostic review, the six contract files and double-row client
@@ -34,11 +40,15 @@ commands. The 300-second process/10-second goal budget follows the checked-in
 FormalBench defaults, but the complete verifier flags and toolchain differ.
 This record does not establish a performance comparison against the Apple M3.
 
-## Most recent completed result per target
+## Client ACSL Results
 
 Counts use `reported_goals`/per-goal `wp.json`, excluding extra console-only
-control-flow goals. All listed processes completed within their 300-second wall
-limit and exited zero; this does not imply complete proof success.
+control-flow goals. The implementation row is the implementation-level
+consistency evidence; the row-client results are client-ACSL evidence under
+the exercised contracts. All listed processes completed within their
+Runs A–D completed within the 300-second wall limit and exited zero. Run E was
+the later extended double-row experiment and used a 3,600-second target limit;
+it also exited zero. A zero process exit does not imply complete proof success.
 
 | Target | Seconds per goal | Proved | Remaining reported verdicts | Runtime | Evidence |
 | --- | ---: | ---: | --- | ---: | --- |
@@ -47,7 +57,7 @@ limit and exited zero; this does not imply complete proof success.
 | Set/get | 10 | 59/59 | None | 2.48 s | B |
 | Scalar families | 10 | 51/51 | None | 2.59 s | B |
 | Integer rows | 60 | 111/119 | 8 timeout | 131.50 s | C |
-| Double rows | 10 | 103/119 | 16 timeout | 80.92 s | D: corrected driver, initialization filtering disabled |
+| Double rows | 180 | 109/119 | 1 failed, 9 timeout | 829.69 s | E: corrected driver, 180-second goals |
 | Negative set/get control | 10 | 23/25 | 1 failed, 1 unknown, both intentional negative assertions | 3.84 s | B |
 
 A/B/C used automatic `Alt-Ergo,Z3` selection. Alt-Ergo's version was detected
@@ -70,9 +80,11 @@ result is not itself a validated counterexample or a proof of inconsistency.
 
 ## Effect of time limits and the corrected driver
 
-All rows below use the same respective client source/contracts and a 300-second
-target limit. The corrected-driver review added detailed proof output; some
-diagnostics overlapped, so their runtimes are not a controlled CPU benchmark.
+All rows below use the same respective client source/contracts. Runs A–D used a
+300-second target limit; run E used 3,600 seconds to allow its 180-second
+per-goal budget to finish. The corrected-driver review added detailed proof
+output; some diagnostics overlapped, so their runtimes are not a controlled CPU
+benchmark.
 
 | Client/configuration | Goal limit | Proved | Failed | Unknown | Timeout | Runtime |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -82,11 +94,14 @@ diagnostics overlapped, so their runtimes are not a controlled CPU benchmark.
 | Double rows, automatic driver (C) | 60 s | 97/119 | 7 | 5 | 10 | 196.70 s |
 | Double rows, corrected driver (D: `corrected_driver_full`) | 10 s | 103/119 | 0 | 0 | 16 | 81.88 s |
 | Double rows, corrected driver and no initialization filtering (D: `corrected_driver_no_filter`) | 10 s | 103/119 | 0 | 0 | 16 | 80.92 s |
+| Double rows, corrected driver (E: `support_20260919T050257_946406Z`) | 180 s | 109/119 | 1 | 0 | 9 | 829.69 s |
 
 Increasing the goal limit from 10 to 60 seconds did not increase either row
 client's proof count with the original configuration. Correcting the driver
-proved six additional double-row goals at 10 seconds. Disabling initialization
-filtering produced no further improvement in the full double-row client.
+proved six additional double-row goals at 10 seconds. The later 180-second
+corrected-driver run proved six more double-row goals, but one goal still
+failed and nine timed out. Disabling initialization filtering produced no
+further improvement in the full double-row client.
 
 ## Double-row failure diagnosis
 
@@ -155,6 +170,8 @@ intentionally not links or dependencies required to read this tracked summary:
 - C: `results/support_20260916T131317_536086Z/` (60-second row clients).
 - D: `results/double_rows_review_20260916/` (error reproduction, corrected
   driver runs, initialization-filter comparisons, and focused solver tests).
+- E: `results/support_20260919T050257_946406Z/` (corrected-driver double-row
+  run, 180 seconds per goal, 3,600 seconds per target).
 
 Only top-level Markdown summaries under `results/` are eligible for Git tracking.
 Raw run directories, reports, solver tasks, and diagnostic scripts are ignored
