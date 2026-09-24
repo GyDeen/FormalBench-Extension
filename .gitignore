@@ -20,8 +20,10 @@ reading/*
 /major
 test/
 tests/
-# Generated mutant directories removed from tracking but retained locally.
+# Ignore generated mutant directories by default; selected Java/C pairs are tracked explicitly.
 /FormalBench-data/FilteredData/fault_mutants/run_ukcw__uc/*/mutants/*/
+# Local archive of mutant sources excluded from the paired completeness evaluation.
+/FormalBench-data/FilteredData/fault_mutants/excluded_from_paired_completeness/
 
 
 # Keep only source-controlled verification inputs, scripts, and summaries. The leading
