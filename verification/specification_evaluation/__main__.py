@@ -54,11 +54,14 @@ def arguments() -> argparse.Namespace:
     run.add_argument("--java-prover", default="cvc4")
     run.add_argument("--c-provers", default="Alt-Ergo:2.4.3,Z3:4.8.12")
     run.add_argument("--timeout", type=positive, default=300, help="process limit in seconds")
-    run.add_argument("--goal-timeout", type=positive, default=10, help="Frama-C WP goal limit")
+    run.add_argument("--goal-timeout", type=positive, default=10,
+                     help="per-goal solver timeout for OpenJML and Frama-C WP")
     run.add_argument("--memory-model", default="Typed+ref")
     run.add_argument("--machdep", default="x86_64")
     run.add_argument("--wp-memlimit", type=positive, default=1000)
     run.add_argument("--wp-par", type=positive, default=4)
+    run.add_argument("--parallel-languages", action="store_true",
+                     help="run Java and C verifiers together for each program")
     run.add_argument("--why3-extra-config", type=Path)
     return parser.parse_args()
 
@@ -100,7 +103,7 @@ def main() -> int:
                                  args.java_specs.resolve() if args.java_specs else None,
                                  args.c_specs.resolve() if args.c_specs else None,
                                  args.java_generator, args.c_generator, settings,
-                                 args.max_pairs, args.stage)
+                                 args.max_pairs, args.stage, args.parallel_languages)
         print(json.dumps({key: summary[key] for key in
                           ("eligible_pair_count", "originals", "mutants", "pairs", "complete")},
                          indent=2))

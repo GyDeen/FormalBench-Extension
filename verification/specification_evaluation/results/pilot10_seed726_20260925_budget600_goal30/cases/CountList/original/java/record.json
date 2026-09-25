@@ -1,0 +1,163 @@
+{
+  "annotated_source": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/CountList/original/java/CountList.java",
+  "annotated_source_sha256": "48b5df4429ed5f51d84e1b3c44dde262cf20e04c990af6ebc9574e8c449e04f6",
+  "command": [
+    "/root/tools/openjml/openjml",
+    "--esc",
+    "--nullable-by-default",
+    "--prover=z3-4.3.X",
+    "--timeout",
+    "30",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/CountList/original/java/CountList.java"
+  ],
+  "elapsed_seconds": 4.383,
+  "exit_code": 6,
+  "frozen_spec": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/frozen_specs/java/CountList.json",
+  "frozen_spec_sha256": "336065550b37f1750493d52fe1f69de1fd1438920f4137c2ac69d5ab52daf121",
+  "goals": [
+    {
+      "category": "unclassified",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/CountList/original/java/CountList.java",
+      "line": "22",
+      "message": "Not implemented for static checking: Not yet supported feature in converting BasicPrograms to SMTLIB: JML Quantified expression using \\num_of",
+      "state": "unknown"
+    },
+    {
+      "category": "unclassified",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/CountList/original/java/CountList.java",
+      "line": "22",
+      "message": "Not implemented for static checking: Not yet supported feature in converting BasicPrograms to SMTLIB: JML Quantified expression using \\num_of",
+      "state": "unknown"
+    },
+    {
+      "category": "unclassified",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/CountList/original/java/CountList.java",
+      "line": "22",
+      "message": "Not implemented for static checking: Not yet supported feature in converting BasicPrograms to SMTLIB: JML Quantified expression using \\num_of",
+      "state": "unknown"
+    },
+    {
+      "category": "unclassified",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/CountList/original/java/CountList.java",
+      "line": "22",
+      "message": "Not implemented for static checking: Not yet supported feature in converting BasicPrograms to SMTLIB: JML Quantified expression using \\num_of",
+      "state": "unknown"
+    },
+    {
+      "category": "unclassified",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/CountList/original/java/CountList.java",
+      "line": "11",
+      "message": "Not implemented for static checking: Not yet supported feature in converting BasicPrograms to SMTLIB: JML Quantified expression using \\num_of",
+      "state": "unknown"
+    },
+    {
+      "category": "precondition/RTE",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/CountList/original/java/CountList.java",
+      "line": "21",
+      "message": "The prover cannot establish an assertion (UndefinedNullDeReference) in method countList",
+      "state": "violated"
+    },
+    {
+      "category": "specification",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/CountList/original/java/CountList.java",
+      "line": "22",
+      "message": "The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method countList",
+      "state": "violated"
+    },
+    {
+      "category": "specification",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/CountList/original/java/CountList.java",
+      "line": "22",
+      "message": "The prover cannot establish an assertion (LoopInvariant) in method countList",
+      "state": "violated"
+    },
+    {
+      "category": "specification",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/CountList/original/java/CountList.java",
+      "line": "31",
+      "message": "The prover cannot establish an assertion (Postcondition: /mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/CountList/original/java/CountList.java:13:) in method countList",
+      "state": "violated"
+    },
+    {
+      "category": "specification",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/CountList/original/java/CountList.java",
+      "line": "31",
+      "message": "The prover cannot establish an assertion (Postcondition: /mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/CountList/original/java/CountList.java:11:) in method countList",
+      "state": "violated"
+    }
+  ],
+  "input_fingerprint": "9531832520c1bca59837944d512a8b42e1dfba354bda9ed019636144da27a53b",
+  "language": "java",
+  "logs": {
+    "stderr": "stderr.log",
+    "stdout": "stdout.log",
+    "wp_report": null
+  },
+  "mutant_id": null,
+  "outcome": "precondition/RTE failure",
+  "program": "CountList",
+  "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/CountList.java",
+  "raw_source_sha256": "39756b820ea6fe9fd2e09c425388a1cdfab3a3e6387b9281d91beb844fe34b76",
+  "reason": "OpenJML reported an unproved precondition or runtime-safety obligation",
+  "role": "original",
+  "selection": null,
+  "selection_manifest_sha256": "92fa1533eafe32fdc60b119b0c6abc8a4f3c0b372d66ac21f39e54a3b5d7433d",
+  "settings": {
+    "c_provers": "Alt-Ergo:2.4.3,Z3:4.8.12",
+    "goal_timeout": 30,
+    "java_prover": "z3-4.3.X",
+    "machdep": "x86_64",
+    "memory_model": "Typed+ref",
+    "timeout": 600,
+    "why3_extra_config": "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+    "why3_extra_config_sha256": "97cc443d7439274ad732814842ae77a7b461d43c8d2099eb8994fb97e739049b",
+    "wp_memlimit": 1000,
+    "wp_par": 4
+  },
+  "support_sha256": {},
+  "timed_out": false,
+  "transfer": {
+    "annotation_count": 3,
+    "executable_token_sha256": "5be0b4b857b7f208d7103d0214af133c457a75ce37048b81f3d77db525504a58",
+    "method": "frozen structured JSON",
+    "placements": [
+      {
+        "boundary_token": 24,
+        "function": "countList",
+        "id": "annotation_1",
+        "loop_id": null,
+        "mutant_offset": 87,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 24,
+        "function": "countList",
+        "id": "annotation_2",
+        "loop_id": null,
+        "mutant_offset": 87,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 42,
+        "function": "countList",
+        "id": "annotation_3",
+        "loop_id": "loop_1",
+        "mutant_offset": 168,
+        "next_token": "for",
+        "target": "loop"
+      }
+    ]
+  },
+  "verifier": {
+    "path": "/root/tools/openjml/openjml",
+    "sha256": "077efb88a059a09c43ccf5171031bdc0c70816765b8abf3cb7f0aeb151847adf",
+    "version_command": [
+      "/root/tools/openjml/openjml",
+      "--version"
+    ],
+    "version_exit_code": 0,
+    "version_output": "openjml 21.0.27"
+  }
+}

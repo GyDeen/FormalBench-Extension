@@ -1,0 +1,83 @@
+{
+  "annotated_source": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/CountIntgralPoints/original/java/CountIntgralPoints.java",
+  "annotated_source_sha256": "cbbe85bde352df94b2b098255a092ef0a567f21e917af1855699ba53e99400b3",
+  "command": [
+    "/root/tools/openjml/openjml",
+    "--esc",
+    "--nullable-by-default",
+    "--prover=z3-4.3.X",
+    "--timeout",
+    "30",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/CountIntgralPoints/original/java/CountIntgralPoints.java"
+  ],
+  "elapsed_seconds": 5.187,
+  "exit_code": 0,
+  "frozen_spec": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/frozen_specs/java/CountIntgralPoints.json",
+  "frozen_spec_sha256": "b01f14befc19ccc37e3ebf8b6f3e91765c8fb4a4304dccad182e6773593de69f",
+  "goals": [],
+  "input_fingerprint": "42e5e5bd8329bdf9a93bfd3249197b43c398cfb137050e37ce5a7c4da1d77bd4",
+  "language": "java",
+  "logs": {
+    "stderr": "stderr.log",
+    "stdout": "stdout.log",
+    "wp_report": null
+  },
+  "mutant_id": null,
+  "outcome": "proved",
+  "program": "CountIntgralPoints",
+  "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/CountIntgralPoints.java",
+  "raw_source_sha256": "f38fb84404908eb4cd7b47b7a7f4eac04e9d5519303a57aa9093f25dfcb3838d",
+  "reason": "OpenJML ESC completed without errors or warnings",
+  "role": "original",
+  "selection": null,
+  "selection_manifest_sha256": "92fa1533eafe32fdc60b119b0c6abc8a4f3c0b372d66ac21f39e54a3b5d7433d",
+  "settings": {
+    "c_provers": "Alt-Ergo:2.4.3,Z3:4.8.12",
+    "goal_timeout": 30,
+    "java_prover": "z3-4.3.X",
+    "machdep": "x86_64",
+    "memory_model": "Typed+ref",
+    "timeout": 600,
+    "why3_extra_config": "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+    "why3_extra_config_sha256": "97cc443d7439274ad732814842ae77a7b461d43c8d2099eb8994fb97e739049b",
+    "wp_memlimit": 1000,
+    "wp_par": 4
+  },
+  "support_sha256": {},
+  "timed_out": false,
+  "transfer": {
+    "annotation_count": 2,
+    "executable_token_sha256": "0384071e6de0bd8b54fe6d811252989adc2a745f3aabe40298baa2adabb8614c",
+    "method": "frozen structured JSON",
+    "placements": [
+      {
+        "boundary_token": 31,
+        "function": "countIntgralPoints",
+        "id": "annotation_1",
+        "loop_id": null,
+        "mutant_offset": 116,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 31,
+        "function": "countIntgralPoints",
+        "id": "annotation_2",
+        "loop_id": null,
+        "mutant_offset": 116,
+        "next_token": "public",
+        "target": "function"
+      }
+    ]
+  },
+  "verifier": {
+    "path": "/root/tools/openjml/openjml",
+    "sha256": "077efb88a059a09c43ccf5171031bdc0c70816765b8abf3cb7f0aeb151847adf",
+    "version_command": [
+      "/root/tools/openjml/openjml",
+      "--version"
+    ],
+    "version_exit_code": 0,
+    "version_output": "openjml 21.0.27"
+  }
+}

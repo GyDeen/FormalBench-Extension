@@ -24,7 +24,9 @@ tests/
 /FormalBench-data/FilteredData/fault_mutants/run_ukcw__uc/*/mutants/*/
 # Local archive of mutant sources excluded from the paired completeness evaluation.
 /FormalBench-data/FilteredData/fault_mutants/excluded_from_paired_completeness/
-
+# Formal Specification Syntax Report
+/FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/checks/
+/FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/syntax-checks-*.json
 
 # Keep only source-controlled verification inputs, scripts, and summaries. The leading
 # slash is relative to this repository root; do not repeat the repository name.
@@ -43,3 +45,11 @@ tests/
 # Keep curated top-level Markdown summaries; raw runs and diagnostic files stay local.
 /verification/java_arrays/results/*
 !/verification/java_arrays/results/*.md
+
+# In specification-evaluation runs, retain only original-program results:
+# Java's classified record and C's per-goal WP report. Ignore raw logs,
+# staged/generated sources, mutant results, and other run metadata.
+/verification/specification_evaluation/results/**
+!/verification/specification_evaluation/results/**/
+!/verification/specification_evaluation/results/**/cases/*/original/java/record.json
+!/verification/specification_evaluation/results/**/cases/*/original/c/wp-report.json

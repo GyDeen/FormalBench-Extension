@@ -7,6 +7,7 @@ import json
 import shlex
 import subprocess
 from collections import Counter
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from typing import Any
 
@@ -336,7 +337,7 @@ def run_population(population: Population, programs: tuple[str, ...], output: Pa
                    java_specs: Path | None, c_specs: Path | None,
                    java_generator: str | None, c_generator: str | None,
                    settings: Settings, max_pairs: int | None = None,
-                   stage: str = "all") -> dict[str, Any]:
+                   stage: str = "all", parallel_languages: bool = False) -> dict[str, Any]:
     """Execute the report's ordered stages against FormalBench-data targets.
 
     ``prepare`` only freezes independently produced original specifications;
@@ -344,6 +345,14 @@ def run_population(population: Population, programs: tuple[str, ...], output: Pa
     """
     if stage not in {"prepare", "originals", "mutants", "all"}:
         raise InputError(f"Unknown evaluation stage: {stage}")
+
+    def run_language_tasks(tasks: list[Any]) -> list[Any]:
+        if parallel_languages and len(tasks) > 1:
+            with ThreadPoolExecutor(max_workers=2) as executor:
+                futures = [executor.submit(task) for task in tasks]
+                return [future.result() for future in futures]
+        return [task() for task in tasks]
+
     output = output.resolve()
     if output.exists() and not (output / "run.json").is_file():
         unexpected = {path.name for path in output.iterdir()} - {"frozen_specs", "generated_specs", "summary.json"}
@@ -362,6 +371,7 @@ def run_population(population: Population, programs: tuple[str, ...], output: Pa
            "selection_manifest_sha256": population.manifest_sha256,
            "java_originals": str(population.java_originals), "c_originals": str(population.c_originals),
            "settings": _settings_record(settings), "verifiers": executables,
+           "parallel_languages": parallel_languages,
            "jarray_support_sha256": support,
            "evaluation_targets": "FormalBench-data original programs and retained Java/C mutant pairs",
            "c_support_role": "Fixed trusted JArray declarations/contracts; not scored as benchmark targets"}
@@ -373,20 +383,28 @@ def run_population(population: Population, programs: tuple[str, ...], output: Pa
     # Originals are the consistency stage. In mutant-only mode, their prior
     # records must exist and still match the current inputs/fingerprint.
     for program in programs:
+        tasks = []
         for language in ("java", "c"):
             if stage in {"originals", "all"}:
-                original_records[(program, language)] = evaluate_case(
-                    output, population, program, "original", None, None, language,
-                    population.original(program, language), frozen[(program, language)],
-                    settings, executables, support)
+                def run_original(language: str = language) -> tuple[str, dict[str, Any]]:
+                    record = evaluate_case(
+                        output, population, program, "original", None, None, language,
+                        population.original(program, language), frozen[(program, language)],
+                        settings, executables, support)
+                    return language, record
             else:
-                path = _case_dir(output, program, "original", None, language) / "record.json"
-                if not path.is_file():
-                    raise InputError(f"Verify the {language} original before its mutants: {program}")
-                original_records[(program, language)] = evaluate_case(
-                    output, population, program, "original", None, None, language,
-                    population.original(program, language), frozen[(program, language)],
-                    settings, executables, support)
+                def run_original(language: str = language) -> tuple[str, dict[str, Any]]:
+                    path = _case_dir(output, program, "original", None, language) / "record.json"
+                    if not path.is_file():
+                        raise InputError(f"Verify the {language} original before its mutants: {program}")
+                    record = evaluate_case(
+                        output, population, program, "original", None, None, language,
+                        population.original(program, language), frozen[(program, language)],
+                        settings, executables, support)
+                    return language, record
+            tasks.append(run_original)
+        for language, record in run_language_tasks(tasks):
+            original_records[(program, language)] = record
     if stage == "originals":
         return summarize(output, population)
     # The manifest supplies the eligible pair IDs. --max-pairs only truncates
@@ -395,9 +413,14 @@ def run_population(population: Population, programs: tuple[str, ...], output: Pa
     if max_pairs is not None:
         pairs = pairs[:max_pairs]
     for pair in pairs:
+        tasks = []
         for language, source in (("java", pair.java), ("c", pair.c)):
-            evaluate_case(output, population, pair.program, "mutant", pair.mutant_id,
-                          pair.selection, language, source, frozen[(pair.program, language)],
-                          settings, executables, support,
-                          original_records[(pair.program, language)]["outcome"] == "proved")
+            original_proved = original_records[(pair.program, language)]["outcome"] == "proved"
+            def run_mutant(language: str = language, source: Path = source,
+                           original_proved: bool = original_proved) -> dict[str, Any]:
+                return evaluate_case(output, population, pair.program, "mutant", pair.mutant_id,
+                                     pair.selection, language, source, frozen[(pair.program, language)],
+                                     settings, executables, support, original_proved)
+            tasks.append(run_mutant)
+        run_language_tasks(tasks)
     return summarize(output, population)

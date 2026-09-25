@@ -1,0 +1,26 @@
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+import java.math.*;
+
+
+class TriangleArea {
+    
+    /*@ public normal_behavior
+      @ assignable \nothing;
+      @ ensures \result == (r < 0 ? -1 : \java_math(r * r));
+      @*/
+    //@ code_java_math
+    public static int triangleArea(int r) {
+        int area = 0;
+        if (r < 0) {
+            return -1;
+        } else if (r == 0) {
+            area = 0;
+        } else {
+            area = (int) Math.sqrt(3) * r * r;
+        }
+        return area;
+    }
+}
+

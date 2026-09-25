@@ -1,0 +1,1290 @@
+{
+  "run": "seed_726_per_category_10_653ade686f",
+  "skill": "FormalBench-data/FilteredData/Prompt/FormalSpecification/SKILL.md",
+  "skill_sha256": "333d330d50d2a9a78f481a6391ff7e2b3d36a9b4539e9edb7ea8b017a3f3d0f0",
+  "original_program_count": 50,
+  "generated_program_count": 50,
+  "generated_file_count": 100,
+  "pending_programs": [],
+  "library_contract_hashes": {
+    "verification/java_arrays/contracts/helpers.acsl.h": "37d683d91eb44cd98b6daa2984e93a296bbca187916781519d29dea8ce77ca8c",
+    "verification/java_arrays/contracts/jboolarray.acsl.h": "ae0173e8ce64f3102e2e57b14c0509eeb9315974b553558b846a4ac879421460",
+    "verification/java_arrays/contracts/jdoublearray.acsl.h": "bb472fd0bcd8757b89fb4f5a58f09134f92f145c147d4271d61b73c7232cf0ea",
+    "verification/java_arrays/contracts/jdoublearray2.acsl.h": "3603fd8d9aeb9fb3b17424f2b258250c3dda9793d0822af5bb35e3a2754cedd8",
+    "verification/java_arrays/contracts/jintarray.acsl.h": "83cfffb114f3cad5e5553951b0a239298a8e52e47bfbe783d4bceedead0983bb",
+    "verification/java_arrays/contracts/jintarray2.acsl.h": "976047a31f67f24008deec58da879eddf81f37b2ab09e83da3978cd269773696"
+  },
+  "policy": "Original sources only; no mutant sources or evaluation results used.",
+  "records": [
+    {
+      "program": "CombSort",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/CombSort.java",
+      "original_sha256": "5e52d2141b31e3886bf730ee3c0678243b025ede31bba51913e7f0ce003a7715",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/CombSort.java",
+      "annotated_sha256": "2b21996878ed3ef75a13e87130ba74432ad85a53b1fb3e5f4774dc7780c0c4b5",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "syntax_status": "passed",
+      "notes": [
+        "Models every comparison and swap at the actual floating-point gap sequence. The implementation makes only one gap-1 pass and may return an array that is not fully sorted.",
+        "The final gap-0 pass is an identity; a spec-only pass counter relates loop state to the original array. The return value aliases the input and only its elements may change."
+      ]
+    },
+    {
+      "program": "CombSort",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/CombSort.c",
+      "original_sha256": "9092a2f3575d7994aebbc72554afe91e05592fe24f1fc5d5366dae6350640cfc",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/CombSort.c",
+      "annotated_sha256": "c67779753e0c00b2ae03298bc43f5fa91c5314b09458092f7996f4bd619a5f86",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "syntax_status": "passed",
+      "notes": [
+        "Models every comparison and swap at the actual floating-point gap sequence. The implementation makes only one gap-1 pass and may return an array that is not fully sorted.",
+        "The final gap-0 pass is an identity; a spec-only pass counter relates loop state to the original array. The return value aliases the input and only its elements may change."
+      ]
+    },
+    {
+      "program": "CountIntgralPoints",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/CountIntgralPoints.java",
+      "original_sha256": "f38fb84404908eb4cd7b47b7a7f4eac04e9d5519303a57aa9093f25dfcb3838d",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/CountIntgralPoints.java",
+      "annotated_sha256": "cbbe85bde352df94b2b098255a092ef0a567f21e917af1855699ba53e99400b3",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": []
+    },
+    {
+      "program": "CountIntgralPoints",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/CountIntgralPoints.c",
+      "original_sha256": "86cf256b5cef686de28906e146da5cd305ed8d594678d661e6cdaf7834ad5160",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/CountIntgralPoints.c",
+      "annotated_sha256": "2bc16b016cae70ca6ea90681e132118be277619ec8ffa7bc58a51fb523232986",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": []
+    },
+    {
+      "program": "CountList",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/CountList.java",
+      "original_sha256": "39756b820ea6fe9fd2e09c425388a1cdfab3a3e6387b9281d91beb844fe34b76",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/CountList.java",
+      "annotated_sha256": "48b5df4429ed5f51d84e1b3c44dde262cf20e04c990af6ebc9574e8c449e04f6",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "Null, empty, jagged, and shared rows are distinguished. Null rows throw in Java and are outside the supplied C accessor contracts."
+      ]
+    },
+    {
+      "program": "CountList",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/CountList.c",
+      "original_sha256": "98129690e7e83ddb32ad5decd4665f5534cee132181ff5a36b6ae0bdb866f113",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/CountList.c",
+      "annotated_sha256": "d84e9573e4400f2041e2056fde1a501dae7324699b53f51f3015b3601ec2a3ef",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "Null, empty, jagged, and shared rows are distinguished. Null rows throw in Java and are outside the supplied C accessor contracts."
+      ]
+    },
+    {
+      "program": "CountOddSquares",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/CountOddSquares.java",
+      "original_sha256": "1bcd209e75a981e18b38509890fdc3c24996ecb60b8aee617bc2ca5d0d124154",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/CountOddSquares.java",
+      "annotated_sha256": "6b239b1cab975e68676ea05021f8ccc6a6552ee217cc5ea531cd2907c0468dc5",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "syntax_status": "passed",
+      "notes": [
+        "Counts every perfect square, including zero and even squares; the test i % 1 never filters parity.",
+        "An upper endpoint of INT_MAX makes the counter wrap and the loop fail to terminate. Negative sqrt arguments can set C errno to EDOM."
+      ]
+    },
+    {
+      "program": "CountOddSquares",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/CountOddSquares.c",
+      "original_sha256": "8905b2a7157211518a86ee99794a293f5903a533a301c3b3908dffe2dd87e34a",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/CountOddSquares.c",
+      "annotated_sha256": "6b56245fd91867155f5a4976b14911acabcbc0f04b309bb065186051483ba7e3",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "syntax_status": "passed",
+      "notes": [
+        "Counts every perfect square, including zero and even squares; the test i % 1 never filters parity.",
+        "An upper endpoint of INT_MAX makes the counter wrap and the loop fail to terminate. Negative sqrt arguments can set C errno to EDOM."
+      ]
+    },
+    {
+      "program": "CountUnsetBits",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/CountUnsetBits.java",
+      "original_sha256": "3a490d3f98e4fda22cdd853eb57590a2e839b081f92e56bca0bc3f9882341a85",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/CountUnsetBits.java",
+      "annotated_sha256": "5389bba8a1e0797ea03c735d37824b55a15bf011e82169b20f06710e230c8541",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "syntax_status": "passed",
+      "notes": [
+        "Counts zero bits in the minimal positive binary representations from 1 through n. The accumulated count wraps modulo 2^32.",
+        "n <= 0 returns zero; n == INT_MAX does not terminate after counter overflow and arithmetic right shifting a negative value."
+      ]
+    },
+    {
+      "program": "CountUnsetBits",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/CountUnsetBits.c",
+      "original_sha256": "bb1bed0255d51cb2de4f1122b7d8947419ff4f33198c2b2aa46be65b404cfb86",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/CountUnsetBits.c",
+      "annotated_sha256": "26475eb21ef0767c5f46fc45f60b5039529159282819c77967256ebd1d7f90d4",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "syntax_status": "passed",
+      "notes": [
+        "Counts zero bits in the minimal positive binary representations from 1 through n. The accumulated count wraps modulo 2^32.",
+        "n <= 0 returns zero; n == INT_MAX does not terminate after counter overflow and arithmetic right shifting a negative value."
+      ]
+    },
+    {
+      "program": "CountWays",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/CountWays.java",
+      "original_sha256": "3b4b0b65b211049a2dc0fb96c7b0c58e51ace36a8c1c5e2e686e726935f044d5",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/CountWays.java",
+      "annotated_sha256": "a0e2db4744fdf58870ededf7cd133d3938f8e6c8f079f39ae40d8b3128e6500c",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": []
+    },
+    {
+      "program": "CountWays",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/CountWays.c",
+      "original_sha256": "c83a039d84b50c823637f0b57dbf1d1657b200bec8d39aae144992e054ea8c09",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/CountWays.c",
+      "annotated_sha256": "b99a2ffdc204a141d4b987cf2f862f15705495b4cbee7aeb295c35e49ad3b380",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": []
+    },
+    {
+      "program": "CountingSort",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/CountingSort.java",
+      "original_sha256": "cf43f501967b62dd6b209d32c46315ecb519a66596a635c6516a20805e4a7c44",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/CountingSort.java",
+      "annotated_sha256": "1ced4931ce4a052725d7e43255059b2a5f5d60e0691f5c555baf913e1cb544a2",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "Sortedness and preservation of every value's multiplicity determine the complete returned sequence. Negative elements are allowed; only representability of the allocated value range is needed on normal paths. Java range-overflow exceptions are explicit."
+      ]
+    },
+    {
+      "program": "CountingSort",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/CountingSort.c",
+      "original_sha256": "188344b24f81b170f6579556be894130a159294037fb69d6801bf20f5b169fec",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/CountingSort.c",
+      "annotated_sha256": "2598ead2e06a8a8483d3d4a10ff7a7bde58ef462f34ed1e7bffd4494a1743522",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "Sortedness and preservation of every value's multiplicity determine the complete returned sequence. Negative elements are allowed; only representability of the allocated value range is needed on normal paths. Java range-overflow exceptions are explicit."
+      ]
+    },
+    {
+      "program": "DealnnoyNum",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/DealnnoyNum.java",
+      "original_sha256": "c13f0778f002aeaddd47f537c1dfd9a6a4bcf7f0bf038edb1f287a50ad969fa8",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/DealnnoyNum.java",
+      "annotated_sha256": "78fb8aa106b97959832ed1ee56411ad2cf950711c52d3ccae196769ec9bb9180",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "Preserves the implementation's swapped recursive arguments. Grid sizes are nonnegative on recursive paths; either zero input returns 1 even when the other input is negative."
+      ]
+    },
+    {
+      "program": "DealnnoyNum",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/DealnnoyNum.c",
+      "original_sha256": "d3dd454791fbdf0c7caab20ffdf326dbe1c0055364684cf8f2f2c0c38b01bbe5",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/DealnnoyNum.c",
+      "annotated_sha256": "a72c864cf1d24bddd1e5473f0767a788de28dea3f62e67a8b2754830bf44acee",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "Preserves the implementation's swapped recursive arguments. Grid sizes are nonnegative on recursive paths; either zero input returns 1 even when the other input is negative."
+      ]
+    },
+    {
+      "program": "DiameterCircle",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/DiameterCircle.java",
+      "original_sha256": "c0cde72d975b6fc1162057b92829c7ae0f2e6633ab08031e1f9ba362c9c9a8b2",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/DiameterCircle.java",
+      "annotated_sha256": "f421d0b4952e9c59ce6d7e82f04b2544607cecc652c1548ce387b6924c28a405",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": []
+    },
+    {
+      "program": "DiameterCircle",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/DiameterCircle.c",
+      "original_sha256": "a7cfb4be781c9de78eeb4fac58991e2676694a8e7ad8b7d6a1a6b4e3a633edef",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/DiameterCircle.c",
+      "annotated_sha256": "b5633212ae4abfd9983d5a70fa9d8ee591af5a8a60cca93894b04d6d9d5e464a",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": []
+    },
+    {
+      "program": "DiffEvenOdd",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/DiffEvenOdd.java",
+      "original_sha256": "6d06c5b5b51010b568709e88c729d2a09b988560421fab5443086b5a14c75882",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/DiffEvenOdd.java",
+      "annotated_sha256": "5ef1edc6704889c76aa5469408a3c679f74e6c82c18576f25481acede0181656",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "The value -1 doubles as the not-found sentinel; it is skipped when selecting the first effective odd value."
+      ]
+    },
+    {
+      "program": "DiffEvenOdd",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/DiffEvenOdd.c",
+      "original_sha256": "40c5ffa25b83cd69165e782539f028c5944d8d2f371ad0c6da7c6249789abc3f",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/DiffEvenOdd.c",
+      "annotated_sha256": "ef2427f435f61f60f924f2a1bbb2f7780d35a6ad8799b7ffd32c198ce06b7d68",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "The value -1 doubles as the not-found sentinel; it is skipped when selecting the first effective odd value."
+      ]
+    },
+    {
+      "program": "DogAge",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/DogAge.java",
+      "original_sha256": "56df05250e9c8b61fa7c599ed2622991bd0def646f290716d00ee46b106bdcfb",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/DogAge.java",
+      "annotated_sha256": "8185132f40c88658562ec7bb374050fdef7e41c78d52db2ce87a28a6f499f672",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": []
+    },
+    {
+      "program": "DogAge",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/DogAge.c",
+      "original_sha256": "e4cc3ceaed715bf348926aa9f540a388d32196b5d805e6f86f3b90ec55208ebd",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/DogAge.c",
+      "annotated_sha256": "84b46027494e24610e008f01dd7c11ddfef2dfd9e4e785d759db92f0d62d2f9f",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": []
+    },
+    {
+      "program": "Fibonacci",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/Fibonacci.java",
+      "original_sha256": "f17d0412f63ca59f004847e76e54a7dfdcb7490ff808ac832a791b9d802af0e7",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/Fibonacci.java",
+      "annotated_sha256": "2cbaa3936b32dc5300d572424ca0992e0a8bc01b1208bb49746aefb1ac74f658",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "Nonnegative sequence index is the intended domain. Values wrap rather than being restricted to non-overflowing terms. Finite stack/heap exhaustion is not modeled as a proof of successful execution."
+      ]
+    },
+    {
+      "program": "Fibonacci",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/Fibonacci.c",
+      "original_sha256": "e7560865fcc0c1937fd0965fc8607d707ae1ea367b2633f6ade2b0a421ec4ac6",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/Fibonacci.c",
+      "annotated_sha256": "7eff0da3b45e1f2aae970038f11be9f598f9835b2a5a7622449832952379643f",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "Nonnegative sequence index is the intended domain. Values wrap rather than being restricted to non-overflowing terms. Finite stack/heap exhaustion is not modeled as a proof of successful execution."
+      ]
+    },
+    {
+      "program": "FindPeak",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/FindPeak.java",
+      "original_sha256": "9c2de36f9bf0922bf55e46f32d41135998eebfe89e07a8183734157cc360681b",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/FindPeak.java",
+      "annotated_sha256": "c118330c4d504415701367a2a8bcbd80e7bfd390591b6df9c4cd7cec25380605",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "n is a nonnegative prefix length. n=0 and n=1 return 0 without touching arr; the particular chosen peak follows the specified binary-search recurrence."
+      ]
+    },
+    {
+      "program": "FindPeak",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/FindPeak.c",
+      "original_sha256": "64141f2b51df8f78cda81daff4525a58e977390d0080e205e58676837e5f1169",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/FindPeak.c",
+      "annotated_sha256": "5dea41a49900e963563b7901821a547ab82152db3e0a5f91adcf71f3f9c8fcab",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "n is a nonnegative prefix length. n=0 and n=1 return 0 without touching arr; the particular chosen peak follows the specified binary-search recurrence."
+      ]
+    },
+    {
+      "program": "FindPoints",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/FindPoints.java",
+      "original_sha256": "e7b75ab83b2a44446542d345030c2d25f059c2274a92faea1fc3f5b79a53972f",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/FindPoints.java",
+      "annotated_sha256": "c2e6c134d2ee37d3581011949705268a5938429a5f65aa99fba521340227ea55",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": []
+    },
+    {
+      "program": "FindPoints",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/FindPoints.c",
+      "original_sha256": "7d5ebe4350a8a0113700e62d0af77412ee205898e5c2322e9d946bd0ef834998",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/FindPoints.c",
+      "annotated_sha256": "a3ba28b1859f536e1fd00fe57d3f7648b92d579b9f15dcc29b770eb6f2d98508",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": []
+    },
+    {
+      "program": "FindRectNum",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/FindRectNum.java",
+      "original_sha256": "f5c60a338f5e5c586509434b76e6643d0b24ad0dac06d5b9147075c2c223b2ce",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/FindRectNum.java",
+      "annotated_sha256": "5d4dab994064607bb8d0abbe815f8fa6317194f250e68e4666cff203e14403c9",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": []
+    },
+    {
+      "program": "FindRectNum",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/FindRectNum.c",
+      "original_sha256": "283bfc52e67727d868558f92141c8dd9d20d2fd5609562cc16547bd294bbc3cc",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/FindRectNum.c",
+      "annotated_sha256": "8d95326f72a8f42528d4aec8680ffbc767507e0c27987a6f65c1703be1d05996",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": []
+    },
+    {
+      "program": "HexagonalNum",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/HexagonalNum.java",
+      "original_sha256": "b1f94d7a728f7997782668deea99a930c9d0a2bf5313657960c49f53262006c6",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/HexagonalNum.java",
+      "annotated_sha256": "6db42ddd679357aeeebe106cf8c066f1ad892a9d7412a825d081ba9143269e24",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": []
+    },
+    {
+      "program": "HexagonalNum",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/HexagonalNum.c",
+      "original_sha256": "8937ab1bac17c2b47c7fc23ccc3a78f242f45d803275c8818ef1bf5ef6d8af94",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/HexagonalNum.c",
+      "annotated_sha256": "f7e9cd441d41057faf9b44abb411f1a884e1c8ed09ec05599d50a437f29f6683",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": []
+    },
+    {
+      "program": "LeftInsertion",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/LeftInsertion.java",
+      "original_sha256": "63429a744d91df09fd8fb2aa0fa9aca7c877f756d744881f53b44883c78496c3",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/LeftInsertion.java",
+      "annotated_sha256": "b7a86ecf1f653c9ff946803f61cbdf4899dc571601a2dad33f2356c8283db0b3",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "syntax_status": "passed",
+      "notes": [
+        "Specifies the actual binary-search path on arbitrary arrays; sorted input gives the additional partition guarantee. A duplicate match need not be the leftmost one.",
+        "The model detects the negative midpoint caused by left + right overflow. Java specifies the resulting bounds exception; C excludes precisely the paths that violate the accessor contract."
+      ]
+    },
+    {
+      "program": "LeftInsertion",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/LeftInsertion.c",
+      "original_sha256": "53eea8e8aa21e80bc9446653adf26e48eea381e679f2684a00e6bf82b9c38fe8",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/LeftInsertion.c",
+      "annotated_sha256": "9a2562d05aefd2fb0092fd667fbf31a3d85bfeecb14fa8b892ac4bc4b628c687",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "syntax_status": "passed",
+      "notes": [
+        "Specifies the actual binary-search path on arbitrary arrays; sorted input gives the additional partition guarantee. A duplicate match need not be the leftmost one.",
+        "The model detects the negative midpoint caused by left + right overflow. Java specifies the resulting bounds exception; C excludes precisely the paths that violate the accessor contract."
+      ]
+    },
+    {
+      "program": "MaxDifference",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/MaxDifference.java",
+      "original_sha256": "b045d491da8cec00ab021daf01dee0cfd60edbe25590a33f3a619d98536d0cf9",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/MaxDifference.java",
+      "annotated_sha256": "a50b9c964aad554af1bba9cb96226743d1b3b573e745edb8af0a9612a114a3a9",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "Only within-row differences before the final row affect the result. abs(INT_MIN) remains INT_MIN; min/max accumulators do not affect the return value."
+      ]
+    },
+    {
+      "program": "MaxDifference",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/MaxDifference.c",
+      "original_sha256": "e25b670ac54433fc99a24f59f002e654e34d9a7806dfd6da13c2270196854602",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/MaxDifference.c",
+      "annotated_sha256": "709e6594645ef04839ee390d511e78b7e2746830849aa3423c21ab49c1da86ab",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "Only within-row differences before the final row affect the result. abs(INT_MIN) remains INT_MIN; min/max accumulators do not affect the return value."
+      ]
+    },
+    {
+      "program": "MaxOfTwo",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/MaxOfTwo.java",
+      "original_sha256": "ab13d2fe9731165c3cd61b86cd97e9d07489254e5e242ecaa01eb72ca46f2214",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/MaxOfTwo.java",
+      "annotated_sha256": "5c8b10473b773ac193936f63b04c0b09adce269cc4691b4b0c1cea436a5e8eab",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": []
+    },
+    {
+      "program": "MaxOfTwo",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/MaxOfTwo.c",
+      "original_sha256": "f1e5ee12822778efade5d6dfe1dd64756537673ad0fa21cdd89e5a0a547cf06e",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/MaxOfTwo.c",
+      "annotated_sha256": "6a8c4997a0db69bee170a2e2507a37fec0b5670b3ad759b7b91184e3f616354f",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": []
+    },
+    {
+      "program": "MaxProduct",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/MaxProduct.java",
+      "original_sha256": "cde9d504693169edac77a1b442a9f126b6501a4a6d9154e88672979d1bc72461",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/MaxProduct.java",
+      "annotated_sha256": "5a8eabc9a26349210b1d0932ce4a4e45cf3ddc9157fc1e1fc8baa58036c9e93a",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "The maximum-product recurrence compares signed, wrapped products; no positivity or no-overflow restriction is imposed on elements."
+      ]
+    },
+    {
+      "program": "MaxProduct",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/MaxProduct.c",
+      "original_sha256": "3f4e903d6823728b0a3255b535d6ab476716eb309bbec6c5fc2f5b8d0fdcc4b1",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/MaxProduct.c",
+      "annotated_sha256": "b7229c9b9ec8fec3531039acf73bdfbfd4375ad01d9cb23c1cdf40d69fdaba30",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "The maximum-product recurrence compares signed, wrapped products; no positivity or no-overflow restriction is imposed on elements."
+      ]
+    },
+    {
+      "program": "MaxSubArraySum",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/MaxSubArraySum.java",
+      "original_sha256": "540c62b49d010614cd0d559dd141ddb09d1d0f615be640c789088666160f0c82",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/MaxSubArraySum.java",
+      "annotated_sha256": "ecd66140a2d7da50111e3c6c720d7a4cefdb6aea88cc260959a785574a7c6c75",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "syntax_status": "passed",
+      "notes": [
+        "Returns a length, including 1 for size <= 0 or no strictly positive improvement. The recurrence retains the first strict maximum and models signed wrapped additions.",
+        "Only the first size elements are read. Java null and out-of-bounds exceptions are specified; the C domain follows the supplied accessor preconditions."
+      ]
+    },
+    {
+      "program": "MaxSubArraySum",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/MaxSubArraySum.c",
+      "original_sha256": "15dc2ad0e679dd9ac2fc637c76742f73fc2f978b90b958fe8d8a064899cb88c7",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/MaxSubArraySum.c",
+      "annotated_sha256": "b6dc51cf8f5896eeed4e8f291ad492c4a9da255fc1516cdf4a411270fd4068b9",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "syntax_status": "passed",
+      "notes": [
+        "Returns a length, including 1 for size <= 0 or no strictly positive improvement. The recurrence retains the first strict maximum and models signed wrapped additions.",
+        "Only the first size elements are read. Java null and out-of-bounds exceptions are specified; the C domain follows the supplied accessor preconditions."
+      ]
+    },
+    {
+      "program": "MaxSumOfThreeConsecutive",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/MaxSumOfThreeConsecutive.java",
+      "original_sha256": "09f7b7e5481ca437b23edbf705c7cf65105a59d508584d16766376dfa568f02e",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/MaxSumOfThreeConsecutive.java",
+      "annotated_sha256": "9821e653a95f78f7d657a70bf76779d26267b929f92ed547a64198c4c1226316",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "Specifies the actual DP, including forced one/two-element base cases and wrapped candidate sums; does not claim an unrestricted mathematical optimum."
+      ]
+    },
+    {
+      "program": "MaxSumOfThreeConsecutive",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/MaxSumOfThreeConsecutive.c",
+      "original_sha256": "b0810b60ddf0cfe7691542f0baf7d89112630b8527c6b722863430652eadd360",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/MaxSumOfThreeConsecutive.c",
+      "annotated_sha256": "6df21b27b7b1ba834dd2b5161078a8260cb1e9042706ef1270448326a647191d",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "Specifies the actual DP, including forced one/two-element base cases and wrapped candidate sums; does not claim an unrestricted mathematical optimum."
+      ]
+    },
+    {
+      "program": "MaxSumSubseq",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/MaxSumSubseq.java",
+      "original_sha256": "5036d04df643be0f41e6571c99e60c0cb91f5c20bedae867a79bef40c425ee2e",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/MaxSumSubseq.java",
+      "annotated_sha256": "b142fe157095f661a0d2ccd4f01a9764ee7938829c83b4e53c967316c5daa175",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "A one-element negative array returns its negative element. The contract preserves this base case and the overflow-sensitive recurrence."
+      ]
+    },
+    {
+      "program": "MaxSumSubseq",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/MaxSumSubseq.c",
+      "original_sha256": "fc948c3266e810ff82c22eb76d867eef6854cea729256346ea1b7e3e056b5c2c",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/MaxSumSubseq.c",
+      "annotated_sha256": "bfbcc14b29cef5dc5956d64e52cebbcfca082d7e2738ee963a9fb4945d50d1c7",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "A one-element negative array returns its negative element. The contract preserves this base case and the overflow-sensitive recurrence."
+      ]
+    },
+    {
+      "program": "MaxVolume",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/MaxVolume.java",
+      "original_sha256": "23615a67e1f0a1d037596b21cf6344f95874a28d51c8ee450d3643c717453e65",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/MaxVolume.java",
+      "annotated_sha256": "fdf0af889911fc157845bfa34fe3556c0e4474d9a2f613525705d6e3da1e5bf5",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "syntax_status": "passed",
+      "notes": [
+        "The actual bounds include h = -1 and h = 0. The result is the maximum of zero and the signed wrapped products over those bounds, not an unbounded mathematical cuboid volume.",
+        "s <= 0 returns zero; s == INT_MAX does not terminate because the first inner-loop counter wraps."
+      ]
+    },
+    {
+      "program": "MaxVolume",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/MaxVolume.c",
+      "original_sha256": "eb76a8c653c9443c1aa1f3aff7e951d836d14bb5a376de3703035e205f2072b6",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/MaxVolume.c",
+      "annotated_sha256": "359bcb789b7d85e263384ff425ec6bcdf76bfd71fb87270dc9e8bef487d7c1c0",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "syntax_status": "passed",
+      "notes": [
+        "The actual bounds include h = -1 and h = 0. The result is the maximum of zero and the signed wrapped products over those bounds, not an unbounded mathematical cuboid volume.",
+        "s <= 0 returns zero; s == INT_MAX does not terminate because the first inner-loop counter wraps."
+      ]
+    },
+    {
+      "program": "MaximumSegments",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/MaximumSegments.java",
+      "original_sha256": "9587b089492f9555f81595452bd47241e921db7ae1d9b5bc3a9ea38daac3569e",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/MaximumSegments.java",
+      "annotated_sha256": "9e85e870e811a5c27ac0a6da2f025f79dc8d7c95253af417e9cf73ecdfa40d47",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "Intended domain: nonnegative total and strictly positive segment lengths. n+1 must be a representable array length. Returns -1 exactly for an unreachable total under the stated recurrence."
+      ]
+    },
+    {
+      "program": "MaximumSegments",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/MaximumSegments.c",
+      "original_sha256": "f38e983a44b011fe07c3b87d396ab34d2ae63e772da3a06a2f0d86a3ebd599ad",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/MaximumSegments.c",
+      "annotated_sha256": "efc8869d9d6f38a6f7ba670f756addf95b467923218cb2aee8a531dc1f34fb2d",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "Intended domain: nonnegative total and strictly positive segment lengths. n+1 must be a representable array length. Returns -1 exactly for an unreachable total under the stated recurrence."
+      ]
+    },
+    {
+      "program": "MinCoins",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/MinCoins.java",
+      "original_sha256": "2443e28f97090d8546cffa4ddacd17bc1f95a51e9a4fbe219351660f12aa5126",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/MinCoins.java",
+      "annotated_sha256": "4ae881b808ffd1afa1ba9165b70afff8ea9426dff2264aebac955b668a2a5424",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "syntax_status": "passed",
+      "notes": [
+        "Positive coin denominations are the intended domain and ensure decreasing recursive values; zero coins can cause recursion without progress.",
+        "v == 0 returns zero, negative v or positive v with m <= 0 returns INT_MAX without reading the array. INT_MAX is retained as the implementation sentinel."
+      ]
+    },
+    {
+      "program": "MinCoins",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/MinCoins.c",
+      "original_sha256": "6ca67d1308985aedfe3c4c4bc0fbd67220294ca649f105989d09d36a697155cf",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/MinCoins.c",
+      "annotated_sha256": "1440b2a7be3ec03cdc1b85211041979ebfc7583abc2b08db7d259e66784550af",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "syntax_status": "passed",
+      "notes": [
+        "Positive coin denominations are the intended domain and ensure decreasing recursive values; zero coins can cause recursion without progress.",
+        "v == 0 returns zero, negative v or positive v with m <= 0 returns INT_MAX without reading the array. INT_MAX is retained as the implementation sentinel."
+      ]
+    },
+    {
+      "program": "MinCost",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/MinCost.java",
+      "original_sha256": "9a789c990368cdab8f85b48d371476eb92faae329c8be40bc70a970145bf52b9",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/MinCost.java",
+      "annotated_sha256": "304738c95d40dadaa0aee289e0a66492f7873283d6c37c4bfb5d06bde382606c",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "Normal domain includes arbitrary signed costs and shared/jagged input rows whenever the requested rectangle exists. The minimum is selected before the wrapped addition at each DP cell."
+      ]
+    },
+    {
+      "program": "MinCost",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/MinCost.c",
+      "original_sha256": "fcfd74a478670ff6bdb20ef3cbf3f0a712f670dea7f73b4ffe8ba9774ea684bc",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/MinCost.c",
+      "annotated_sha256": "a532718a12bfc75751760b1fa0282db878eab6cb08ed70019f5216351a6fa146",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "Normal domain includes arbitrary signed costs and shared/jagged input rows whenever the requested rectangle exists. The minimum is selected before the wrapped addition at each DP cell."
+      ]
+    },
+    {
+      "program": "MinJumps",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/MinJumps.java",
+      "original_sha256": "6394b62e8e7b1329df08591720994da8be34a78a2ada248f3a032d97806269ee",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/MinJumps.java",
+      "annotated_sha256": "4c99e4d7489ebfdeb9509065988beefcb95217eed342d23d373227a8e5c67995",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "Unreachable predecessors are not filtered: INT_MAX+1 wraps to INT_MIN. The recurrence preserves this behavior. n=1 returns 0 without reading arr; only n-1 input elements are accessed."
+      ]
+    },
+    {
+      "program": "MinJumps",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/MinJumps.c",
+      "original_sha256": "a3ce1bfc4239383dc65e9ad4d6ca7f2fbf0efecb788a88f8ea30c3ed1a16e174",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/MinJumps.c",
+      "annotated_sha256": "51942bb1a3abca712024a499485b95224dc0f271bbb6e54e71e00f3232d2dea6",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "Unreachable predecessors are not filtered: INT_MAX+1 wraps to INT_MIN. The recurrence preserves this behavior. n=1 returns 0 without reading arr; only n-1 input elements are accessed."
+      ]
+    },
+    {
+      "program": "MoveFirst",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/MoveFirst.java",
+      "original_sha256": "68b68d1621d803b44ba171f2b12be6cc9bbbdf12ba06495c40a1de1aef59668b",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/MoveFirst.java",
+      "annotated_sha256": "0a56003f08e5a388a60ed1a9f08dff6a1825f73d3e5bfcbb5b078e0de4ffc82b",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": []
+    },
+    {
+      "program": "MoveFirst",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/MoveFirst.c",
+      "original_sha256": "7d0f37d2521cb9c801292870b4875266de3afdcfb020411423e8d9c71660c8d3",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/MoveFirst.c",
+      "annotated_sha256": "9830adf69a061edbab497c5905ed71e1c72d5c0ae1ee834c10f3e4da2ac93f61",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": []
+    },
+    {
+      "program": "MultiplyElements",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/MultiplyElements.java",
+      "original_sha256": "0cbb17607354bf9d58d5274c0a14574d2fc17fe41e6070c4a2794c3d8130017e",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/MultiplyElements.java",
+      "annotated_sha256": "d1022c0a699663d098361369d1fe5c1de9b537d7083dd237ff32e59eadffddd5",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": []
+    },
+    {
+      "program": "MultiplyElements",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/MultiplyElements.c",
+      "original_sha256": "3ca27d63134bf52a0c92783149df4fef35193cc71645b5238b3802ceabb1b712",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/MultiplyElements.c",
+      "annotated_sha256": "0018ce96593fef23efe1273b63691d4296eadd05276ef5d4253c867e5d24f676",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": []
+    },
+    {
+      "program": "NewmanPrime",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/NewmanPrime.java",
+      "original_sha256": "66f2c5c37487e4be8f7c2eefdd1648382afa491b722702829024f202cd5b6037",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/NewmanPrime.java",
+      "annotated_sha256": "16eaa9e90218063c06c1a7594580c3cd6ffbdf56091c47fc03a52017197f5e6e",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "Nonnegative sequence index is the intended domain. Values wrap rather than being restricted to non-overflowing terms. Finite stack/heap exhaustion is not modeled as a proof of successful execution."
+      ]
+    },
+    {
+      "program": "NewmanPrime",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/NewmanPrime.c",
+      "original_sha256": "47b09e5a5321fda6071df5a89254f6476632bd06a642142d9347341f528872e1",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/NewmanPrime.c",
+      "annotated_sha256": "50d1e62be33e46014679ccd08d8959266f7d0b4bea3c99eb5ecd98001faf9d99",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "Nonnegative sequence index is the intended domain. Values wrap rather than being restricted to non-overflowing terms. Finite stack/heap exhaustion is not modeled as a proof of successful execution."
+      ]
+    },
+    {
+      "program": "NextPowerOf2",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/NextPowerOf2.java",
+      "original_sha256": "a483d6161e0481d88efc1d4b3ea4ff6c35620a7a501e2552cf5797f73c7d1ed3",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/NextPowerOf2.java",
+      "annotated_sha256": "f0d34ccf6d95fdad265177e9c143f278e2f55311a24f3aabda8c603dc3feac1f",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "For n>2^30 the shift eventually reaches 0 and loops forever. This domain is preserved with conditional termination and no normal return; an unconditional decreasing loop variant would be false."
+      ]
+    },
+    {
+      "program": "NextPowerOf2",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/NextPowerOf2.c",
+      "original_sha256": "09b1a5d7334da786c07b846b02d2ab4d58f5bb1bda985b850e01b90c062b4cb3",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/NextPowerOf2.c",
+      "annotated_sha256": "c1c1d9826a4235ace2b08836573b4a10d0a313fac36208ebc92ccdf602a6a534",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "For n>2^30 the shift eventually reaches 0 and loops forever. This domain is preserved with conditional termination and no normal return; an unconditional decreasing loop variant would be false."
+      ]
+    },
+    {
+      "program": "NoOfCubes",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/NoOfCubes.java",
+      "original_sha256": "d5d7f69544de2c01754c93c5a202e31069bdc40eb0b7859f39307185a8300c4b",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/NoOfCubes.java",
+      "annotated_sha256": "4181b1ac50efcd3daee15d0d00e820cc74f4135f65d4706983e1ba719cc28c23",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": []
+    },
+    {
+      "program": "NoOfCubes",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/NoOfCubes.c",
+      "original_sha256": "5020956c2f154d9948807bba1162d31de19a4e3ee4db05407cf153ee2822d4d4",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/NoOfCubes.c",
+      "annotated_sha256": "1adb07d047595b5021143862c3b86c0c1a3dad786cea2cdc45e060521c715f93",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": []
+    },
+    {
+      "program": "OddBitSetNumber",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/OddBitSetNumber.java",
+      "original_sha256": "fa3cb8fc4989eb1ac8b8b9c163eda2e1d76f8ad4f8ceb1008e4bd9e210406792",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/OddBitSetNumber.java",
+      "annotated_sha256": "57fb64d96d708c39dfe93a57b7d1a33dede269deaf47db1dcdd6c9afc5e4c997",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": []
+    },
+    {
+      "program": "OddBitSetNumber",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/OddBitSetNumber.c",
+      "original_sha256": "ff8bc5cba728357f91f77e3c110a972804775febba845dd84af09396b4452b06",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/OddBitSetNumber.c",
+      "annotated_sha256": "c4365550b5e162e38fbdf34351f1488e62a1dc3b0cf21c2252ddbc4447ac4303",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": []
+    },
+    {
+      "program": "OddLengthSum",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/OddLengthSum.java",
+      "original_sha256": "a015fc3a3b4c2d3d65da738d2aadcc68b6833a6099a7ad1e0819a7f8e8079cf6",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/OddLengthSum.java",
+      "annotated_sha256": "819dfef1c4836c29324a1b5d9a692ac26df5ddd0cc121e9d6fe62789e74af972",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "Occurrence-count multiplication and addition wrap before division by 2; a mathematical odd-subarray sum would be incorrect for large arrays."
+      ]
+    },
+    {
+      "program": "OddLengthSum",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/OddLengthSum.c",
+      "original_sha256": "5ea07b8cad7282bebe768d78cf608a761299fc294ee33800e4cd86c904d7c0ab",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/OddLengthSum.c",
+      "annotated_sha256": "eae4886608f060181a09e5ce53409111a446485de007d62934a45a1d549918a9",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "Occurrence-count multiplication and addition wrap before division by 2; a mathematical odd-subarray sum would be incorrect for large arrays."
+      ]
+    },
+    {
+      "program": "PairWise",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/PairWise.java",
+      "original_sha256": "3ff34c9a58abd302212c61b287ead4264c9f2f9f5fff54d2883665b0ad6d895f",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/PairWise.java",
+      "annotated_sha256": "a416475bfe8938b807c4b44e13f384ecd9e9ed20f9d8a85ed8563e96f9570f2d",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": []
+    },
+    {
+      "program": "PairWise",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/PairWise.c",
+      "original_sha256": "75c6ccc88b6c558dbb42ee417c5442b5dae7930b6f8683f777d094da476cd21f",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/PairWise.c",
+      "annotated_sha256": "fd3db5e6dcf0c23368e65eea97266392a4a386956d2a53d95c8fc8a09a5a4739",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": []
+    },
+    {
+      "program": "ParabolaVertex",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/ParabolaVertex.java",
+      "original_sha256": "6623e0b825426d52a20e4721237bd840dbc2ba0260a12d19c4af733f7c5bca37",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/ParabolaVertex.java",
+      "annotated_sha256": "a902f224fa81db9b40527031f8571124553e080b399b82b6fbed2235eab030d1",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "syntax_status": "passed",
+      "notes": [
+        "Preserves the floating-point operation order and rounding rather than replacing the formula with real-number algebra.",
+        "Java a == 0 returns the specified NaN/infinity coordinates. The C contract requires a nonzero quadratic coefficient for defined floating division and compatibility with the supplied double-array contracts."
+      ]
+    },
+    {
+      "program": "ParabolaVertex",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/ParabolaVertex.c",
+      "original_sha256": "481efaec152762b79b2b1fb6aff83bca3ce71db2fe3bde073dcfa51666420794",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/ParabolaVertex.c",
+      "annotated_sha256": "edb6520e809309f5acb4354e19accee09701e5d27191e97de4ea1033fe68ee5a",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "syntax_status": "passed",
+      "notes": [
+        "Preserves the floating-point operation order and rounding rather than replacing the formula with real-number algebra.",
+        "Java a == 0 returns the specified NaN/infinity coordinates. The C contract requires a nonzero quadratic coefficient for defined floating division and compatibility with the supplied double-array contracts."
+      ]
+    },
+    {
+      "program": "ParallelogramPerimeter",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/ParallelogramPerimeter.java",
+      "original_sha256": "d1a2a4d6bb13af15290a92e022e23f31ea06ea8a4ea0d49da9dcdabeffd723cf",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/ParallelogramPerimeter.java",
+      "annotated_sha256": "94d62fe25ae11a4454ca25cdd68de7dc9b00d60eb0a18c69f1b777374f7eb543",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "Actual positive-argument formula is twice the product, not twice the sum."
+      ]
+    },
+    {
+      "program": "ParallelogramPerimeter",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/ParallelogramPerimeter.c",
+      "original_sha256": "06584268f4ca09a2168c524aeababa2832fd468e78fa5099fcba3a59610057f6",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/ParallelogramPerimeter.c",
+      "annotated_sha256": "82f8704d39b0c7ef2dda0d4af168c16fa5b46842322c78fae58e3ca1e3648a71",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "Actual positive-argument formula is twice the product, not twice the sum."
+      ]
+    },
+    {
+      "program": "RadixSort",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/RadixSort.java",
+      "original_sha256": "ac5df75b5abfcbabe4f08df78b166f75349a48401221f53e2b76daa7d92f4805",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/RadixSort.java",
+      "annotated_sha256": "2d68c4cbd3cec129db35d5d519a2e8e395f3e8eb6249847636243b5ced4799f9",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "Sortedness and preservation of every value's multiplicity determine the complete returned sequence. Negative elements are allowed; only representability of the allocated value range is needed on normal paths. Java range-overflow exceptions are explicit."
+      ]
+    },
+    {
+      "program": "RadixSort",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/RadixSort.c",
+      "original_sha256": "f5d7fb2b04056820a7afd4e9cd9ee3eaef43ce5c9669830b39daf6b19eff0c93",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/RadixSort.c",
+      "annotated_sha256": "3ac6166aa6f8a9255468baac0aa32d1531e5e4532f35dcf5e55936672ed272be",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "Sortedness and preservation of every value's multiplicity determine the complete returned sequence. Negative elements are allowed; only representability of the allocated value range is needed on normal paths. Java range-overflow exceptions are explicit."
+      ]
+    },
+    {
+      "program": "SqrtRoot",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/SqrtRoot.java",
+      "original_sha256": "00c3cd24e9712f6680eb9ae224af1fce5197ef0f538874a2b137042b02958c4c",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/SqrtRoot.java",
+      "annotated_sha256": "995df82519dd9f90e0adc1f1dba17cbe5394c735d0cbb5cc2607206d4a52de1a",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "syntax_status": "passed",
+      "notes": [
+        "The model uses signed wrapped mid * mid comparisons. A mathematical floor-square-root guarantee is added only on a safe small-input range; larger terminating inputs keep the exact operational result.",
+        "Negative input returns -1. INT_MAX causes a nonterminating wrapped search; all smaller nonnegative bounds shrink finitely."
+      ]
+    },
+    {
+      "program": "SqrtRoot",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/SqrtRoot.c",
+      "original_sha256": "2882fc72de203688d9618a88f74cc79fdf8503a31be1d958e0f04c44ded798f6",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/SqrtRoot.c",
+      "annotated_sha256": "26ab5d8968acedcac3a687a4f8618930bdebdf4873840495996ce47f575642c2",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "syntax_status": "passed",
+      "notes": [
+        "The model uses signed wrapped mid * mid comparisons. A mathematical floor-square-root guarantee is added only on a safe small-input range; larger terminating inputs keep the exact operational result.",
+        "Negative input returns -1. INT_MAX causes a nonterminating wrapped search; all smaller nonnegative bounds shrink finitely."
+      ]
+    },
+    {
+      "program": "SquarePerimeter",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/SquarePerimeter.java",
+      "original_sha256": "6c047b2064a41676fa00bf868fd355e7d1a6d01dfa802a40369b957f2979eff2",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/SquarePerimeter.java",
+      "annotated_sha256": "c68cc4f932d0c3a2e0bbd0150d9e133406f7fba188bc0108e12ef8707d01add8",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": []
+    },
+    {
+      "program": "SquarePerimeter",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/SquarePerimeter.c",
+      "original_sha256": "26f0a318036347fca69a27941c02c90afe93426b2f24133b73e4090033bff25f",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/SquarePerimeter.c",
+      "annotated_sha256": "9a707ccb6b9e7bfc7737aead97dcf27e837df276ba7c54dcb0e21b1edf82cafc",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": []
+    },
+    {
+      "program": "SumList",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/SumList.java",
+      "original_sha256": "6df055f972876be2364ea53e114db83b9fe20312e101ac55926ffa922941e37a",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/SumList.java",
+      "annotated_sha256": "725927f913652ec80969d1d7d8f16d663ead245d9cbe166e40dafdc2c1a15f87",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "Original Java filename SumList.java declares class SumArray; preserved exactly. Aliased input arrays are allowed."
+      ]
+    },
+    {
+      "program": "SumList",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/SumList.c",
+      "original_sha256": "a9932af65610edf252ee36384ef48263e90174bc212c85ef3b5d851e339f1940",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/SumList.c",
+      "annotated_sha256": "077ba1a5b163a3acf46b4fc88660311abfb80c87c2e0a3a6f4145d93c1734b76",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "Original Java filename SumList.java declares class SumArray; preserved exactly. Aliased input arrays are allowed."
+      ]
+    },
+    {
+      "program": "SumNums",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/SumNums.java",
+      "original_sha256": "2d0c25eb81c6cc2c8b3ccb6071df96d40745abf24d01adf3ac6451fd1bf87976",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/SumNums.java",
+      "annotated_sha256": "8f1cd636bb72e3c05c1c577b885bbdb7174723ca2c0624e7b2da8b51218cced7",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": []
+    },
+    {
+      "program": "SumNums",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/SumNums.c",
+      "original_sha256": "15ff87cb9c9c83583df2bd805bd587b9f39c3c637d5a41c3fed090a350dc117e",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/SumNums.c",
+      "annotated_sha256": "7a9f7de7c3da0632826a7353a203d350f4e15b0d3f75dd64a0a99a3330320a47",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": []
+    },
+    {
+      "program": "SumOfPrimes",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/SumOfPrimes.java",
+      "original_sha256": "4496fe47848e65dabbde7304e7175ce8f9ee4bb0d022847b58ec97ad5a68cef7",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/SumOfPrimes.java",
+      "annotated_sha256": "306b62093a55519e21e2142b460019f3469c6351f577e4b1a314b4c811417182",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "syntax_status": "passed",
+      "notes": [
+        "Successful sieve execution includes -1 through 46348. 46349 is the first prime with an overflowing signed square; larger Java inputs fail at array access (INT_MAX instead overflows the allocation length).",
+        "The routine prints prime values. The Java frame uses the supplied PrintStream outputText/endsInNewLine contract; C allows the stdout state to change. No stronger library output-text guarantee was added.",
+        "The C input domain is the range supported by the supplied constructor/accessor contracts, which do not model failing accesses."
+      ]
+    },
+    {
+      "program": "SumOfPrimes",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/SumOfPrimes.c",
+      "original_sha256": "565ebebca8d0c3f7da5c05207dcefc3d387f780bb68b4585dd446d9faade73bd",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/SumOfPrimes.c",
+      "annotated_sha256": "daffc06fbf47310d499c400adf10f61033bacd44a4678f32b554812b06b4b018",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "syntax_status": "passed",
+      "notes": [
+        "Successful sieve execution includes -1 through 46348. 46349 is the first prime with an overflowing signed square; larger Java inputs fail at array access (INT_MAX instead overflows the allocation length).",
+        "The routine prints prime values. The Java frame uses the supplied PrintStream outputText/endsInNewLine contract; C allows the stdout state to change. No stronger library output-text guarantee was added.",
+        "The C input domain is the range supported by the supplied constructor/accessor contracts, which do not model failing accesses."
+      ]
+    },
+    {
+      "program": "SumOfSubarrayProd",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/SumOfSubarrayProd.java",
+      "original_sha256": "aacc4f114373b988738bb297f4745e607847a43c9b665ba63d3c7a1d9c021436",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/SumOfSubarrayProd.java",
+      "annotated_sha256": "3a706e6cbe2444d21b25a4af5d0bc5f2aadc40fb36cee2dba9d76d1bf93e7603",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": []
+    },
+    {
+      "program": "SumOfSubarrayProd",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/SumOfSubarrayProd.c",
+      "original_sha256": "d9bac8117874c3070519cde91dbc801631e95124dd2393d471260a6da90b7213",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/SumOfSubarrayProd.c",
+      "annotated_sha256": "22a0a1bb54df1125d3bac0c9c5bf40ab38812c4cb8a880516538c05fda8f12b7",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": []
+    },
+    {
+      "program": "SumRangeList",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/SumRangeList.java",
+      "original_sha256": "7c2609c759e0fcf335f6f56f292088a7b4df07b2425ed49904c668e49286f12b",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/SumRangeList.java",
+      "annotated_sha256": "67317928da1d288b1f2e48cd46452eb49343075ce7477bb8ac6047ff79f29302",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "Empty range returns 0 even for a null array. Original Java filename declares class SumRangeArray."
+      ]
+    },
+    {
+      "program": "SumRangeList",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/SumRangeList.c",
+      "original_sha256": "a931a4b8f18ab1a79ed22164e600f68382c81355a6bca164b4b6346ff1000c37",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/SumRangeList.c",
+      "annotated_sha256": "a300b8aee81af9d704d2195e123a83503cd61e0b2129a6bb0f8690e0d4a0488d",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "Empty range returns 0 even for a null array. Original Java filename declares class SumRangeArray."
+      ]
+    },
+    {
+      "program": "TestThreeEqual",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/TestThreeEqual.java",
+      "original_sha256": "8b059b1e1a1a3e0c4f280c6c31a0a741518a9bec1251448f31183fee5845093c",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/TestThreeEqual.java",
+      "annotated_sha256": "abd3a97fccacfd159db9e2be00712deddc868e39cafbcbecad18b3f79f526ccc",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": []
+    },
+    {
+      "program": "TestThreeEqual",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/TestThreeEqual.c",
+      "original_sha256": "758d2254b40a65ff81bb88871e626091729fdde35533758d1ff896c55ac8acb0",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/TestThreeEqual.c",
+      "annotated_sha256": "495f459aabcad6f24cbb62ea48cf14340d13130c8ba1e52aa7cea3e3dca034c5",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": []
+    },
+    {
+      "program": "TriangleArea",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/TriangleArea.java",
+      "original_sha256": "0af1a649e941da25caea3ae082a4aba160f0dd969cf45929e4571f2e7c04b416",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/TriangleArea.java",
+      "annotated_sha256": "3fde56ca800c8990d79835174c46a8ea2a6e159016e1a4a7e1c8ee498aaf73dc",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "The implementation converts sqrt(3) to integer 1 before multiplying. C proof depends on the supplied math-library sqrt contract."
+      ]
+    },
+    {
+      "program": "TriangleArea",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/TriangleArea.c",
+      "original_sha256": "085a8c4455b940ac8bd1d9853c7d23ecf6db5b851d0a0a0c261e37ea089f9027",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/TriangleArea.c",
+      "annotated_sha256": "b8578b4928d51ecf2b6d99ca09b4095845c7e9074624a0781f40bc2f2a5de737",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "The implementation converts sqrt(3) to integer 1 before multiplying. C proof depends on the supplied math-library sqrt contract."
+      ]
+    },
+    {
+      "program": "TupleToInt",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/TupleToInt.java",
+      "original_sha256": "adc608deb27dcc7c4083f2b2e37aa9676f31df8918603ad59c830b5ff9c1b993",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/TupleToInt.java",
+      "annotated_sha256": "b164aad23b226aacdb637a85229d78297637ea6f6e36f135995faf07146c12df",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "Elements are arbitrary signed integers, not restricted to decimal digits; accumulation wraps modulo 2^32."
+      ]
+    },
+    {
+      "program": "TupleToInt",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/TupleToInt.c",
+      "original_sha256": "dff7a8ce17106e69464d6075a4d2ecaf0d968cb8979c8c70b213f1f827746db9",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/TupleToInt.c",
+      "annotated_sha256": "0513e5dfb4ca0bc892766162b3654078536c95c285bc942ecfe669fd706434b7",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": [
+        "Elements are arbitrary signed integers, not restricted to decimal digits; accumulation wraps modulo 2^32."
+      ]
+    },
+    {
+      "program": "VolumeCube",
+      "language": "java",
+      "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/VolumeCube.java",
+      "original_sha256": "459ef13bc91d864d7454eab2a4053d47da3b9f490fd7ecf25ada2037e00cf532",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/VolumeCube.java",
+      "annotated_sha256": "4a8d654d78fa7c7667b45c2370dadc6c7c62a984064369b999b8e4b3afdd9f21",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": []
+    },
+    {
+      "program": "VolumeCube",
+      "language": "c",
+      "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/VolumeCube.c",
+      "original_sha256": "a8e4ca7fbfd4d776b4c1b2d1ba022d4f203b9766049ee4613c095a16e46f151f",
+      "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/VolumeCube.c",
+      "annotated_sha256": "44da81f5d8d181ac1228bcd573ca2b45ab51f5b7619f1adef398dd0bbecc8ca3",
+      "executable_tokens_unchanged": true,
+      "status": "generated_not_proof_checked",
+      "notes": []
+    }
+  ]
+}

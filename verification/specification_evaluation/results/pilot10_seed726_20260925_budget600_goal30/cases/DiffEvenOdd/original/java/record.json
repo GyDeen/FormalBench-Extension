@@ -1,0 +1,116 @@
+{
+  "annotated_source": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/DiffEvenOdd/original/java/DiffEvenOdd.java",
+  "annotated_source_sha256": "5ef1edc6704889c76aa5469408a3c679f74e6c82c18576f25481acede0181656",
+  "command": [
+    "/root/tools/openjml/openjml",
+    "--esc",
+    "--nullable-by-default",
+    "--prover=z3-4.3.X",
+    "--timeout",
+    "30",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/DiffEvenOdd/original/java/DiffEvenOdd.java"
+  ],
+  "elapsed_seconds": 46.676,
+  "exit_code": 6,
+  "frozen_spec": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/frozen_specs/java/DiffEvenOdd.json",
+  "frozen_spec_sha256": "ec95b5102a24d4b0bf826a527d5aaf63d249747e68f256d832cddc128e8d9668",
+  "goals": [
+    {
+      "category": "precondition/RTE",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/DiffEvenOdd/original/java/DiffEvenOdd.java",
+      "line": "31",
+      "message": "The prover cannot establish an assertion (UndefinedNullDeReference) in method diffEvenOdd",
+      "state": "violated"
+    },
+    {
+      "category": "unclassified",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/DiffEvenOdd/original/java/DiffEvenOdd.java",
+      "line": "27",
+      "message": "Validity is unknown - time or memory limit reached: : Aborted proof: timeout",
+      "state": "unknown"
+    }
+  ],
+  "input_fingerprint": "96e2c32e94166f93c102279d7ea5e6e152afbaee278d365787e62ca81a4ea71a",
+  "language": "java",
+  "logs": {
+    "stderr": "stderr.log",
+    "stdout": "stdout.log",
+    "wp_report": null
+  },
+  "mutant_id": null,
+  "outcome": "precondition/RTE failure",
+  "program": "DiffEvenOdd",
+  "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/DiffEvenOdd.java",
+  "raw_source_sha256": "6d06c5b5b51010b568709e88c729d2a09b988560421fab5443086b5a14c75882",
+  "reason": "OpenJML reported an unproved precondition or runtime-safety obligation",
+  "role": "original",
+  "selection": null,
+  "selection_manifest_sha256": "92fa1533eafe32fdc60b119b0c6abc8a4f3c0b372d66ac21f39e54a3b5d7433d",
+  "settings": {
+    "c_provers": "Alt-Ergo:2.4.3,Z3:4.8.12",
+    "goal_timeout": 30,
+    "java_prover": "z3-4.3.X",
+    "machdep": "x86_64",
+    "memory_model": "Typed+ref",
+    "timeout": 600,
+    "why3_extra_config": "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+    "why3_extra_config_sha256": "97cc443d7439274ad732814842ae77a7b461d43c8d2099eb8994fb97e739049b",
+    "wp_memlimit": 1000,
+    "wp_par": 4
+  },
+  "support_sha256": {},
+  "timed_out": false,
+  "transfer": {
+    "annotation_count": 4,
+    "executable_token_sha256": "6f87f5ab72bc5dd075a4642be39bc27a99eb1b85e6442758e5004072abbeaa8c",
+    "method": "frozen structured JSON",
+    "placements": [
+      {
+        "boundary_token": 24,
+        "function": "diffEvenOdd",
+        "id": "annotation_1",
+        "loop_id": null,
+        "mutant_offset": 89,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 24,
+        "function": "diffEvenOdd",
+        "id": "annotation_2",
+        "loop_id": null,
+        "mutant_offset": 89,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 24,
+        "function": "diffEvenOdd",
+        "id": "annotation_3",
+        "loop_id": null,
+        "mutant_offset": 89,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 47,
+        "function": "diffEvenOdd",
+        "id": "annotation_4",
+        "loop_id": "loop_1",
+        "mutant_offset": 198,
+        "next_token": "for",
+        "target": "loop"
+      }
+    ]
+  },
+  "verifier": {
+    "path": "/root/tools/openjml/openjml",
+    "sha256": "077efb88a059a09c43ccf5171031bdc0c70816765b8abf3cb7f0aeb151847adf",
+    "version_command": [
+      "/root/tools/openjml/openjml",
+      "--version"
+    ],
+    "version_exit_code": 0,
+    "version_output": "openjml 21.0.27"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "annotated_source": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/DogAge/original/java/DogAge.java",
+  "annotated_source_sha256": "8185132f40c88658562ec7bb374050fdef7e41c78d52db2ce87a28a6f499f672",
+  "command": [
+    "/root/tools/openjml/openjml",
+    "--esc",
+    "--nullable-by-default",
+    "--prover=z3-4.3.X",
+    "--timeout",
+    "30",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/DogAge/original/java/DogAge.java"
+  ],
+  "elapsed_seconds": 4.02,
+  "exit_code": 0,
+  "frozen_spec": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/frozen_specs/java/DogAge.json",
+  "frozen_spec_sha256": "d7be50b7a6fea46da6c858af858c9618d7eff9f1d0895bd12758fc56265cc033",
+  "goals": [],
+  "input_fingerprint": "4bfeb2dd6778f5f852117d8b857aec6027704e282dc5032415d092543d14e5b5",
+  "language": "java",
+  "logs": {
+    "stderr": "stderr.log",
+    "stdout": "stdout.log",
+    "wp_report": null
+  },
+  "mutant_id": null,
+  "outcome": "proved",
+  "program": "DogAge",
+  "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/DogAge.java",
+  "raw_source_sha256": "56df05250e9c8b61fa7c599ed2622991bd0def646f290716d00ee46b106bdcfb",
+  "reason": "OpenJML ESC completed without errors or warnings",
+  "role": "original",
+  "selection": null,
+  "selection_manifest_sha256": "92fa1533eafe32fdc60b119b0c6abc8a4f3c0b372d66ac21f39e54a3b5d7433d",
+  "settings": {
+    "c_provers": "Alt-Ergo:2.4.3,Z3:4.8.12",
+    "goal_timeout": 30,
+    "java_prover": "z3-4.3.X",
+    "machdep": "x86_64",
+    "memory_model": "Typed+ref",
+    "timeout": 600,
+    "why3_extra_config": "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+    "why3_extra_config_sha256": "97cc443d7439274ad732814842ae77a7b461d43c8d2099eb8994fb97e739049b",
+    "wp_memlimit": 1000,
+    "wp_par": 4
+  },
+  "support_sha256": {},
+  "timed_out": false,
+  "transfer": {
+    "annotation_count": 2,
+    "executable_token_sha256": "47a3de724714f9dfc15934b153600eec725b9077d954ce4a966d55745580b2b4",
+    "method": "frozen structured JSON",
+    "placements": [
+      {
+        "boundary_token": 31,
+        "function": "dogAge",
+        "id": "annotation_1",
+        "loop_id": null,
+        "mutant_offset": 104,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 31,
+        "function": "dogAge",
+        "id": "annotation_2",
+        "loop_id": null,
+        "mutant_offset": 104,
+        "next_token": "public",
+        "target": "function"
+      }
+    ]
+  },
+  "verifier": {
+    "path": "/root/tools/openjml/openjml",
+    "sha256": "077efb88a059a09c43ccf5171031bdc0c70816765b8abf3cb7f0aeb151847adf",
+    "version_command": [
+      "/root/tools/openjml/openjml",
+      "--version"
+    ],
+    "version_exit_code": 0,
+    "version_output": "openjml 21.0.27"
+  }
+}

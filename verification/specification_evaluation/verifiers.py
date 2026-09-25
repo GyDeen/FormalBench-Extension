@@ -25,9 +25,12 @@ OUTCOMES = (
     "syntax/tool failure", "unknown/timeout", "not run",
 )
 SUPPORT_GOAL = re.compile(r"requires|precondition|\brte\b|runtime|division_by_zero|overflow|out_of_bounds|valid_access", re.I)
-TOOL_FAILURE = re.compile(r"(?:error:|\bsyntax error\b|\bparse error\b|\baborted\b|unsupported|internal jml bug|unknown option)", re.I)
+TOOL_FAILURE = re.compile(r"(?:error:|\bsyntax error\b|\bparse error\b|unsupported|internal jml bug|unknown option)", re.I)
 PROVER_FAILURE = re.compile(r"(?:\bwhy3 error\b|\brunning prover\b[^\n]*\bfailed\b|\bunknown prover\b|\bno prover\b)", re.I)
-JAVA_WARNING = re.compile(r"^(?:(?P<file>.*?):(?P<line>\d+):\s*)?warning:\s*(?P<message>.+)$", re.M)
+JAVA_WARNING = re.compile(
+    r"^(?:(?P<file>.*?):(?P<line>\d+):\s*)?(?:warning|verify):\s*(?P<message>.+)$",
+    re.M | re.I,
+)
 
 
 @dataclass(frozen=True)
@@ -113,16 +116,19 @@ def build_command(language: str, source: Path, case_dir: Path, settings: Setting
     if language == "java":
         # OpenJML checks the annotated FormalBench Java program.
         return [executables["java"]["path"], "--esc", "--nullable-by-default",
-                f"--prover={settings.java_prover}", str(source)]
+                f"--prover={settings.java_prover}",
+                "--timeout", str(settings.goal_timeout), str(source)]
     # WP checks the translated program; RTE and callee requires remain
     # enabled, including calls into fixed JArray contracts.
     command = [executables["c"]["path"], "-machdep", settings.machdep,
-               "-wp", "-wp-rte", "-wp-no-filter-init", "-wp-model", settings.memory_model,
-               "-wp-prover", settings.c_provers, "-wp-timeout", str(settings.goal_timeout),
-               "-wp-memlimit", str(settings.wp_memlimit), "-wp-par", str(settings.wp_par),
-               "-wp-cache", "none", "-wp-report-json", str(case_dir / "wp-report.json")]
+               "-wp", "-wp-rte", "-wp-no-filter-init", "-wp-model", settings.memory_model]
     if settings.why3_extra_config is not None:
         command.extend(["-wp-why3-extra-config", str(settings.why3_extra_config)])
+    command.extend(["-wp-prover", settings.c_provers,
+                    "-wp-timeout", str(settings.goal_timeout),
+                    "-wp-memlimit", str(settings.wp_memlimit),
+                    "-wp-par", str(settings.wp_par), "-wp-cache", "none",
+                    "-wp-report-json", str(case_dir / "wp-report.json")])
     command.append(str(source))
     return command
 
@@ -196,33 +202,38 @@ def classify_c(returncode: int | None, timed_out: bool, stdout: str, stderr: str
 
 def classify_java(returncode: int | None, timed_out: bool, stdout: str,
                   stderr: str) -> tuple[str, list[dict[str, Any]], str]:
-    """Separate OpenJML proof warnings from syntax errors and timeouts."""
+    """Separate OpenJML proof diagnostics from tool errors and timeouts."""
     if timed_out:
         return "unknown/timeout", [], "OpenJML process exceeded its time budget"
     output = stdout + "\n" + stderr
-    if re.search(r"\b(?:timeout|timed out|unknown)\b", output, re.I):
-        return "unknown/timeout", [], "OpenJML reported timeout or unknown"
+    if TOOL_FAILURE.search(output):
+        return "syntax/tool failure", [], "OpenJML reported a syntax or tool error"
     warnings = [match.groupdict() for match in JAVA_WARNING.finditer(output)]
     goals: list[dict[str, Any]] = []
     for warning in warnings:
         # Keep precondition/runtime warnings outside the specification-
         # rejection count; other ESC proof-failure warnings are recorded.
         message = warning["message"]
+        if message.lower().startswith("associated declaration:"):
+            continue
         if "prover cannot establish" not in message.lower() and "assertion is false" not in message.lower():
             goals.append({"state": "unknown", "category": "unclassified", **warning})
             continue
         category = "precondition/RTE" if SUPPORT_GOAL.search(message) or re.search(
-            r"PossiblyNull|PossiblyNegative|PossiblyTooLarge|ArithmeticOperationRange|Undefined", message, re.I
+            r"PossiblyNull|PossiblyNegative|PossiblyTooLarge|PossiblyDivideByZero|ArithmeticOperationRange|Undefined",
+            message, re.I
         ) else "specification"
         goals.append({"state": "violated", "category": category, **warning})
-    if re.search(r"\berror:", output, re.I) or "Internal JML bug" in output:
-        return "syntax/tool failure", goals, "OpenJML reported a syntax or tool error"
     if any(goal["state"] == "violated" and goal["category"] == "precondition/RTE" for goal in goals):
         return "precondition/RTE failure", goals, "OpenJML reported an unproved precondition or runtime-safety obligation"
     if any(goal["state"] == "violated" for goal in goals):
         return "specification violation", goals, "OpenJML reported an unproved specification obligation"
     if goals:
+        if re.search(r"\b(?:timeout|timed out|unknown)\b", output, re.I):
+            return "unknown/timeout", goals, "OpenJML reported unknown validity or a timeout"
         return "unknown/timeout", goals, "OpenJML warnings were not classified as proof failures"
+    if re.search(r"\b(?:timeout|timed out|unknown)\b", output, re.I):
+        return "unknown/timeout", [], "OpenJML reported timeout or unknown"
     if returncode == 0:
         return "proved", [], "OpenJML ESC completed without errors or warnings"
     return "syntax/tool failure", [], "OpenJML exited unsuccessfully without a proof-failure report"

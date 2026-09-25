@@ -1,0 +1,109 @@
+{
+  "annotated_source": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/FindPeak/original/java/FindPeak.java",
+  "annotated_source_sha256": "c118330c4d504415701367a2a8bcbd80e7bfd390591b6df9c4cd7cec25380605",
+  "command": [
+    "/root/tools/openjml/openjml",
+    "--esc",
+    "--nullable-by-default",
+    "--prover=z3-4.3.X",
+    "--timeout",
+    "30",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/FindPeak/original/java/FindPeak.java"
+  ],
+  "elapsed_seconds": 42.41,
+  "exit_code": 6,
+  "frozen_spec": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/frozen_specs/java/FindPeak.json",
+  "frozen_spec_sha256": "14976d8615c643f541efbc10bb85ab514bcd72bab96c3f012bfb1c9fda975c7b",
+  "goals": [
+    {
+      "category": "unclassified",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/FindPeak/original/java/FindPeak.java",
+      "line": "25",
+      "message": "Validity is unknown - time or memory limit reached: : Aborted proof: timeout",
+      "state": "unknown"
+    }
+  ],
+  "input_fingerprint": "e27cdb807d0ada14e624cdab44d272015cf88444fcba91b7c3dc58efb71b639e",
+  "language": "java",
+  "logs": {
+    "stderr": "stderr.log",
+    "stdout": "stdout.log",
+    "wp_report": null
+  },
+  "mutant_id": null,
+  "outcome": "unknown/timeout",
+  "program": "FindPeak",
+  "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/FindPeak.java",
+  "raw_source_sha256": "9c2de36f9bf0922bf55e46f32d41135998eebfe89e07a8183734157cc360681b",
+  "reason": "OpenJML reported unknown validity or a timeout",
+  "role": "original",
+  "selection": null,
+  "selection_manifest_sha256": "92fa1533eafe32fdc60b119b0c6abc8a4f3c0b372d66ac21f39e54a3b5d7433d",
+  "settings": {
+    "c_provers": "Alt-Ergo:2.4.3,Z3:4.8.12",
+    "goal_timeout": 30,
+    "java_prover": "z3-4.3.X",
+    "machdep": "x86_64",
+    "memory_model": "Typed+ref",
+    "timeout": 600,
+    "why3_extra_config": "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+    "why3_extra_config_sha256": "97cc443d7439274ad732814842ae77a7b461d43c8d2099eb8994fb97e739049b",
+    "wp_memlimit": 1000,
+    "wp_par": 4
+  },
+  "support_sha256": {},
+  "timed_out": false,
+  "transfer": {
+    "annotation_count": 4,
+    "executable_token_sha256": "ab3515f657f332ba747055f1e52c8c66bf6d3520d560890e25390282316d86ca",
+    "method": "frozen structured JSON",
+    "placements": [
+      {
+        "boundary_token": 24,
+        "function": "findPeak",
+        "id": "annotation_1",
+        "loop_id": null,
+        "mutant_offset": 86,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 24,
+        "function": "findPeak",
+        "id": "annotation_2",
+        "loop_id": null,
+        "mutant_offset": 86,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 24,
+        "function": "findPeak",
+        "id": "annotation_3",
+        "loop_id": null,
+        "mutant_offset": 86,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 49,
+        "function": "findPeak",
+        "id": "annotation_4",
+        "loop_id": "loop_1",
+        "mutant_offset": 178,
+        "next_token": "while",
+        "target": "loop"
+      }
+    ]
+  },
+  "verifier": {
+    "path": "/root/tools/openjml/openjml",
+    "sha256": "077efb88a059a09c43ccf5171031bdc0c70816765b8abf3cb7f0aeb151847adf",
+    "version_command": [
+      "/root/tools/openjml/openjml",
+      "--version"
+    ],
+    "version_exit_code": 0,
+    "version_output": "openjml 21.0.27"
+  }
+}
