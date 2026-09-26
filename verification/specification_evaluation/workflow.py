@@ -198,8 +198,7 @@ def _store_record(case_dir: Path, record: dict[str, Any]) -> dict[str, Any]:
 def evaluate_case(output: Path, population: Population, program: str, role: str,
                   mutant_id: str | None, selection: str | None, language: str,
                   raw: Path, frozen_spec: Path, settings: Settings,
-                  executables: dict[str, dict[str, Any]], support: dict[str, str],
-                  original_proved: bool = True) -> dict[str, Any]:
+                  executables: dict[str, dict[str, Any]], support: dict[str, str]) -> dict[str, Any]:
     """Verify one FormalBench source and keep its complete result."""
     case_dir = _case_dir(output, program, role, mutant_id, language)
     case_dir.mkdir(parents=True, exist_ok=True)
@@ -218,13 +217,9 @@ def evaluate_case(output: Path, population: Population, program: str, role: str,
         record = read_json(prior)
         if record.get("input_fingerprint") != fingerprint:
             raise InputError(f"Existing case has different inputs: {case_dir}")
-        return record
+        if record.get("outcome") != "not run":
+            return record
     record = {**base, "input_fingerprint": fingerprint}
-    if not original_proved:
-        # Completeness is assessed only for specifications that proved on the
-        # corresponding original in the same language.
-        return _store_record(case_dir, {**record, "outcome": "not run",
-                                         "reason": "Annotated original did not prove", "goals": []})
     raw_original = population.original(program, language).read_text(encoding="utf-8")
     specification = read_frozen_spec(frozen_spec, program, language)
     try:
@@ -261,20 +256,28 @@ def evaluate_case(output: Path, population: Population, program: str, role: str,
 def summarize(output: Path, population: Population) -> dict[str, Any]:
     """Count proof outcomes over the manifest's eligible paired population."""
     originals = Counter()
+    original_outcomes: dict[tuple[str, str], str] = {}
     mutants = {"java": Counter(), "c": Counter()}
+    mutants_by_original: dict[str, dict[str, Counter]] = {"java": {}, "c": {}}
     pair_states = Counter()
     detail: list[dict[str, Any]] = []
     for program in population.programs:
         for language in ("java", "c"):
             path = _case_dir(output, program, "original", None, language) / "record.json"
-            originals[(language, read_json(path)["outcome"] if path.is_file() else "not run")] += 1
+            outcome = read_json(path)["outcome"] if path.is_file() else "not run"
+            original_outcomes[(program, language)] = outcome
+            originals[(language, outcome)] += 1
     for pair in population.pairs:
         outcomes: dict[str, str] = {}
+        pair_originals: dict[str, str] = {}
         for language in ("java", "c"):
+            original_outcome = original_outcomes.get((pair.program, language), "not run")
+            pair_originals[language] = original_outcome
             path = _case_dir(output, pair.program, "mutant", pair.mutant_id, language) / "record.json"
             outcome = read_json(path)["outcome"] if path.is_file() else "not run"
             outcomes[language] = outcome
             mutants[language][outcome] += 1
+            mutants_by_original[language].setdefault(original_outcome, Counter())[outcome] += 1
         values = set(outcomes.values())
         # A pair is decisive only when both tools produced a proof or a
         # specification-rejection outcome. Unknown/support/tool cases stay out
@@ -295,15 +298,37 @@ def summarize(output: Path, population: Population) -> dict[str, Any]:
             state = "Java/C disagreement"
         pair_states[state] += 1
         detail.append({"mutant": pair.key, "selection": pair.selection,
+                       "java_original": pair_originals["java"],
+                       "c_original": pair_originals["c"],
                        "java": outcomes["java"], "c": outcomes["c"], "pair_state": state})
     summary = {"eligible_pair_count": len(population.pairs),
                "originals": {language: dict(sorted((status, count) for (lang, status), count
                                                    in originals.items() if lang == language))
                              for language in ("java", "c")},
                "mutants": {language: dict(sorted(counts.items())) for language, counts in mutants.items()},
+               "mutants_by_original_outcome": {
+                   language: {
+                       original_outcome: {
+                           "outcomes": dict(sorted(counts.items())),
+                           "eligible": sum(counts.values()),
+                           "resolved": counts["proved"] + counts["specification violation"],
+                           "rejected": counts["specification violation"],
+                           "rejection_rate_on_resolved": (
+                               counts["specification violation"] /
+                               (counts["proved"] + counts["specification violation"])
+                               if counts["proved"] + counts["specification violation"] else None),
+                       }
+                       for original_outcome, counts in sorted(groups.items())
+                   }
+                   for language, groups in mutants_by_original.items()
+               },
                "pairs": dict(sorted(pair_states.items())), "pair_records": detail,
                "complete": pair_states["not run"] == 0,
-               "interpretation": "Only specification violations count as mutant rejection; precondition/RTE, tool, and unknown outcomes are reported separately."}
+               "interpretation": (
+                   "Every eligible mutant is evaluated when annotation transfer succeeds, "
+                   "regardless of its original's outcome. Original outcomes are retained "
+                   "as strata. Only specification violations count as mutant rejection; "
+                   "precondition/RTE, tool, and unknown outcomes are reported separately.")}
     decisive_pairs = (pair_states["both rejected"] + pair_states["both proved"]
                       + pair_states["Java/C disagreement"])
     summary["paired_comparison"] = {
@@ -379,9 +404,8 @@ def run_population(population: Population, programs: tuple[str, ...], output: Pa
     if run_path.is_file() and read_json(run_path) != run:
         raise InputError("Existing output was created with different inputs, tools, or settings")
     write_json(run_path, run)
-    original_records: dict[tuple[str, str], dict[str, Any]] = {}
-    # Originals are the consistency stage. In mutant-only mode, their prior
-    # records must exist and still match the current inputs/fingerprint.
+    # Originals are verified first to report consistency independently. In
+    # mutant-only mode, their prior records must exist and still match inputs.
     for program in programs:
         tasks = []
         for language in ("java", "c"):
@@ -403,8 +427,7 @@ def run_population(population: Population, programs: tuple[str, ...], output: Pa
                         settings, executables, support)
                     return language, record
             tasks.append(run_original)
-        for language, record in run_language_tasks(tasks):
-            original_records[(program, language)] = record
+        run_language_tasks(tasks)
     if stage == "originals":
         return summarize(output, population)
     # The manifest supplies the eligible pair IDs. --max-pairs only truncates
@@ -415,12 +438,10 @@ def run_population(population: Population, programs: tuple[str, ...], output: Pa
     for pair in pairs:
         tasks = []
         for language, source in (("java", pair.java), ("c", pair.c)):
-            original_proved = original_records[(pair.program, language)]["outcome"] == "proved"
-            def run_mutant(language: str = language, source: Path = source,
-                           original_proved: bool = original_proved) -> dict[str, Any]:
+            def run_mutant(language: str = language, source: Path = source) -> dict[str, Any]:
                 return evaluate_case(output, population, pair.program, "mutant", pair.mutant_id,
                                      pair.selection, language, source, frozen[(pair.program, language)],
-                                     settings, executables, support, original_proved)
+                                     settings, executables, support)
             tasks.append(run_mutant)
         run_language_tasks(tasks)
     return summarize(output, population)

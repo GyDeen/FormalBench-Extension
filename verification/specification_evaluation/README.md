@@ -128,9 +128,13 @@ verification failures, with precondition and runtime-safety warnings separated.
 The run directory contains frozen JSON specs, an exact command and logs per case,
 source/contract/tool hashes, per-goal WP results, one `record.json` for every
 processed original and mutant language, and `summary.json`. Originals are
-verified first. A mutant is marked `not run` when its corresponding original
-did not prove. Existing records are reused only when their input fingerprints
-still match. The summary compares Java and C for the documented eligible IDs;
+verified first to measure consistency. Every selected mutant is then evaluated
+whether or not its corresponding original proved, provided the frozen
+annotations can be transferred safely. Original outcomes are retained as
+strata in the summary so mutant detection rates can be compared across
+consistency outcomes. Existing completed records are reused only when their
+input fingerprints still match; prior `not run` records are retried. The
+summary compares Java and C for the documented eligible IDs;
 tool failures, support failures, unknowns, and unfinished pairs never inflate
 the mutant-rejection numerator. It reports the detected fraction of all 977
 eligible pairs separately from the conditional fraction of resolved cases;
