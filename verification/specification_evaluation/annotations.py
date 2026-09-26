@@ -15,7 +15,8 @@ LEX = re.compile(
     r'\s+|[A-Za-z_$][A-Za-z_0-9$]*|0[xX][0-9A-Fa-f]+|\d+(?:\.\d+)?|.',
     re.DOTALL,
 )
-LOOP_CLAUSE = re.compile(r"\b(?:loop[_\s]+(?:invariant|variant|assigns)|maintaining|decreases)\b", re.I)
+LOOP_CLAUSE = re.compile(r"\b(?:loop[_\s]+(?:invariant|variant|assigns|decreases)|maintaining)\b", re.I)
+DECREASES_CLAUSE = re.compile(r"\bdecreases\b", re.I)
 
 
 @dataclass(frozen=True)
@@ -147,7 +148,14 @@ def extract_specification(raw_original: str, annotated_original: str,
         if boundary >= len(tokens):
             raise InputError("Trailing annotations have no safe statement anchor")
         function = _owner(spans, boundary)
-        target = "loop" if annotation.is_loop else "function" if any(
+        # A bare ``decreases`` clause can specify a recursive function's
+        # termination measure as well as a loop's. Treat it as a loop clause
+        # only when the annotation is anchored immediately before a loop.
+        is_loop_annotation = annotation.is_loop or (
+            bool(DECREASES_CLAUSE.search(annotation.text))
+            and tokens[boundary].text in {"for", "while", "do"}
+        )
+        target = "loop" if is_loop_annotation else "function" if any(
             span[0] == function and span[1] == boundary for span in spans
         ) else "statement"
         loop_id = None
