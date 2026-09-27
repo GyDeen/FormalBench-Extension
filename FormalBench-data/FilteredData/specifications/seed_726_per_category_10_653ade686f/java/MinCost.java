@@ -34,7 +34,8 @@ class MinCost {
         tc[0][0] = cost[0][0];
         /*@ loop_invariant 1 <= i <= m + 1;
           @ loop_invariant (\forall int r; 0 <= r < i; tc[r][0] == fb_cost(cost, r, 0));
-          @ loop_writes i, tc[*][0];
+          @ loop_invariant (\forall int r, c; 0 <= r <= m && 1 <= c <= n; tc[r][c] == 0);
+          @ loop_writes i, tc[*][*];
           @ decreases (\bigint)m - i + 1;
           @*/
         for (int i = 1; i <= m; i++) {
@@ -67,4 +68,3 @@ class MinCost {
         return tc[m][n];
     }
 }
-

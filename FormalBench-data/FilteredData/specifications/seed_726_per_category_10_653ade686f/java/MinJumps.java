@@ -17,7 +17,7 @@ class MinJumps {
       @*/
     /*@ public normal_behavior
       @ requires a != null && 0 <= j <= i <= a.length;
-      @ ensures \result == (i == 0 ? 0 : j == 0 ? Integer.MAX_VALUE : fb_min(fb_jumps(a, i, j - 1), \java_math(a[j - 1] + (j - 1)) >= i ? fb_wrap(fb_jumps(a, j - 1, j - 1) + 1) : Integer.MAX_VALUE));
+      @ ensures \result == (i == 0 ? 0 : j == 0 ? Integer.MAX_VALUE : fb_min(fb_jumps(a, i, j - 1), \java_math(a[j - 1] + (j - 1)) >= i ? fb_wrap(fb_jumps(a, j - 1, j - 1) + 1) : (\bigint)Integer.MAX_VALUE));
       @ measured_by (\bigint)i * (a.length + 1) + j;
       @ model public static pure \bigint fb_jumps(int[] a, int i, int j);
       @*/
@@ -53,4 +53,3 @@ class MinJumps {
         return dp[n - 1];
     }
 }
-

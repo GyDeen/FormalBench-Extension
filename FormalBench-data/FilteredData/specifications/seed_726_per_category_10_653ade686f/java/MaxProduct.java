@@ -16,7 +16,7 @@ class MaxProduct {
       @*/
     /*@ public normal_behavior
       @ requires a != null && 0 <= j <= i < a.length;
-      @ ensures \result == (j == 0 ? a[i] : fb_max(fb_product_end(a, i, j - 1), a[i] > a[j - 1] ? fb_wrap(fb_product_end(a, j - 1, j - 1) * a[i]) : a[i]));
+      @ ensures \result == (j == 0 ? a[i] : fb_max(fb_product_end(a, i, j - 1), a[i] > a[j - 1] ? fb_wrap(fb_product_end(a, j - 1, j - 1) * a[i]) : (\bigint)a[i]));
       @ measured_by (\bigint)i * (a.length + 1) + j;
       @ model public static pure \bigint fb_product_end(int[] a, int i, int j);
       @*/
@@ -74,4 +74,3 @@ class MaxProduct {
         return max;
     }
 }
-
