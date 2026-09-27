@@ -4,8 +4,10 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import re
 import shlex
+import signal
 import shutil
 import subprocess
 import time
@@ -31,6 +33,7 @@ JAVA_WARNING = re.compile(
     r"^(?:(?P<file>.*?):(?P<line>\d+):\s*)?(?:warning|verify):\s*(?P<message>.+)$",
     re.M | re.I,
 )
+JAVA_UNSUPPORTED = re.compile(r"(?:Not implemented for static checking|Not yet supported feature)[^\n]*", re.I)
 
 
 @dataclass(frozen=True)
@@ -62,8 +65,39 @@ def executable_info(name: str, version_flag: str) -> dict[str, Any]:
     except (OSError, subprocess.TimeoutExpired) as error:
         version = str(error)
         version_exit = None
-    return {"path": str(path), "sha256": sha256(path), "version_command": [str(path), version_flag],
+    info = {"path": str(path), "sha256": sha256(path), "version_command": [str(path), version_flag],
             "version_exit_code": version_exit, "version_output": version}
+    if version_flag == "-version" and re.match(r"^33\.0(?:\s|$)", version):
+        info["compatibility"] = _float_negation_compatibility(info)
+    if version_flag == "--version" and version == "openjml 21.0.27":
+        from .java_compat import compatibility
+        info["compatibility"] = compatibility(info)
+    return info
+
+
+def _float_negation_compatibility(verifier: dict[str, Any]) -> dict[str, str]:
+    """Build a version-specific RTE repair without changing the installed tool."""
+    source = Path(__file__).parent / "framac/float_negation_33.ml"
+    source_hash = sha256(source)
+    key = hashlib.sha256((source_hash + verifier["sha256"]).encode()).hexdigest()[:20]
+    directory = REPO / ".tools/frama-c-compat" / key
+    module = directory / "float_negation_33.cmxs"
+    if not module.is_file():
+        directory.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(source, directory / source.name)
+        compiler = shutil.which("ocamlfind")
+        if compiler is None:
+            raise InputError("Frama-C 33.0 compatibility fix needs ocamlfind on PATH (load the opam environment)")
+        command = [compiler, "ocamlopt", "-shared", "-linkall", "-thread",
+                   "-package", "frama-c.kernel,frama-c-rtegen.core", "-open", "Frama_c_kernel",
+                   "-o", module.name, source.name]
+        built = subprocess.run(command, cwd=directory, capture_output=True, text=True,
+                               timeout=120, check=False)
+        if built.returncode:
+            raise InputError(f"Cannot build Frama-C 33.0 compatibility fix: {built.stdout}{built.stderr}")
+    return {"name": "Frama-C 33.0 implicit floating-negation coercion repair",
+            "source": str(source), "source_sha256": source_hash,
+            "module": str(module), "module_sha256": sha256(module)}
 
 
 def support_hashes() -> dict[str, str]:
@@ -115,13 +149,25 @@ def build_command(language: str, source: Path, case_dir: Path, settings: Setting
     """Build commands for program sources, never JArray validation clients."""
     if language == "java":
         # OpenJML checks the annotated FormalBench Java program.
-        return [executables["java"]["path"], "--esc", "--nullable-by-default",
+        from .java_compat import command_options
+        return [executables["java"]["path"],
+                *command_options(executables["java"], source, settings.java_prover),
+                "--esc", "--progress", "--nullable-by-default",
                 f"--prover={settings.java_prover}",
                 "--timeout", str(settings.goal_timeout), str(source)]
     # WP checks the translated program; RTE and callee requires remain
     # enabled, including calls into fixed JArray contracts.
-    command = [executables["c"]["path"], "-machdep", settings.machdep,
-               "-wp", "-wp-rte", "-wp-no-filter-init", "-wp-model", settings.memory_model]
+    command = [executables["c"]["path"], "-machdep", settings.machdep]
+    # Removing printf can remove the mutant's stdio include, while the frozen
+    # contract still refers to Frama-C's stdout model. Supply declarations via
+    # the verification environment without editing executable mutant tokens.
+    if source.is_file() and re.search(r"\b__fc_stdout\b", source.read_text(encoding="utf-8")):
+        command.append("-cpp-extra-args=-include stdio.h")
+    compatibility = executables["c"].get("compatibility")
+    if compatibility:
+        command.extend(["-load-module", compatibility["module"], "-paired-c-prepare",
+                        str(source), "-then"])
+    command.extend(["-wp", "-wp-rte", "-wp-no-filter-init", "-wp-model", settings.memory_model])
     if settings.why3_extra_config is not None:
         command.extend(["-wp-why3-extra-config", str(settings.why3_extra_config)])
     command.extend(["-wp-prover", settings.c_provers,
@@ -129,7 +175,8 @@ def build_command(language: str, source: Path, case_dir: Path, settings: Setting
                     "-wp-memlimit", str(settings.wp_memlimit),
                     "-wp-par", str(settings.wp_par), "-wp-cache", "none",
                     "-wp-report-json", str(case_dir / "wp-report.json")])
-    command.append(str(source))
+    if not compatibility:
+        command.append(str(source))
     return command
 
 
@@ -200,14 +247,22 @@ def classify_c(returncode: int | None, timed_out: bool, stdout: str, stderr: str
     return "unknown/timeout", goals, "At least one WP goal remains unresolved"
 
 
+def java_tool_error(output: str) -> bool:
+    """OpenJML's progress summary reports 'Error: 0' even on successful runs."""
+    diagnostics = re.sub(r"(?m)^  Error:[ \t]*0[ \t]*\r?$", "", output)
+    return bool(TOOL_FAILURE.search(diagnostics) or JAVA_UNSUPPORTED.search(diagnostics))
+
+
 def classify_java(returncode: int | None, timed_out: bool, stdout: str,
                   stderr: str) -> tuple[str, list[dict[str, Any]], str]:
     """Separate OpenJML proof diagnostics from tool errors and timeouts."""
+    output = stdout + "\n" + stderr
+    if JAVA_UNSUPPORTED.search(output):
+        return "syntax/tool failure", [], "OpenJML cannot translate one or more specification constructs"
+    if java_tool_error(output):
+        return "syntax/tool failure", [], "OpenJML reported a syntax or tool error"
     if timed_out:
         return "unknown/timeout", [], "OpenJML process exceeded its time budget"
-    output = stdout + "\n" + stderr
-    if TOOL_FAILURE.search(output):
-        return "syntax/tool failure", [], "OpenJML reported a syntax or tool error"
     warnings = [match.groupdict() for match in JAVA_WARNING.finditer(output)]
     goals: list[dict[str, Any]] = []
     for warning in warnings:
@@ -224,6 +279,13 @@ def classify_java(returncode: int | None, timed_out: bool, stdout: str,
             message, re.I
         ) else "specification"
         goals.append({"state": "violated", "category": category, **warning})
+    if re.search(r"Validity is unknown", output, re.I):
+        # OpenJML can print an unproved assertion before discovering that no
+        # solver model is available. Do not score this as a rejection.
+        for goal in goals:
+            if goal["state"] == "violated":
+                goal["state"] = "unknown"
+        return "unknown/timeout", goals, "OpenJML reported unknown validity; warnings are not confirmed rejections"
     if any(goal["state"] == "violated" and goal["category"] == "precondition/RTE" for goal in goals):
         return "precondition/RTE failure", goals, "OpenJML reported an unproved precondition or runtime-safety obligation"
     if any(goal["state"] == "violated" for goal in goals):
@@ -237,6 +299,21 @@ def classify_java(returncode: int | None, timed_out: bool, stdout: str,
     if returncode == 0:
         return "proved", [], "OpenJML ESC completed without errors or warnings"
     return "syntax/tool failure", [], "OpenJML exited unsuccessfully without a proof-failure report"
+
+
+def _stop_process_group(process):
+    if process is None:
+        return "", ""
+    try:
+        if os.name == "posix":
+            os.killpg(process.pid, signal.SIGKILL)
+        else:
+            process.kill()
+    except ProcessLookupError:
+        pass
+    except OSError:
+        process.kill()
+    return process.communicate()
 
 
 def run_verifier(language: str, source: Path, case_dir: Path, settings: Settings,
@@ -253,16 +330,23 @@ def run_verifier(language: str, source: Path, case_dir: Path, settings: Settings
     }, indent=2) + "\n", encoding="utf-8")
     start = time.monotonic()
     timed_out = False
+    process: subprocess.Popen[str] | None = None
     try:
         # The process limit is separate from Frama-C's per-goal timeout.
-        completed = subprocess.run(command, cwd=case_dir, capture_output=True, text=True,
-                                   timeout=settings.timeout, check=False)
-        returncode, stdout, stderr = completed.returncode, completed.stdout, completed.stderr
-    except subprocess.TimeoutExpired as error:
+        process = subprocess.Popen(
+            command, cwd=case_dir, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True,
+            start_new_session=(os.name == "posix"))
+        stdout, stderr = process.communicate(timeout=settings.timeout)
+        returncode = process.returncode
+    except subprocess.TimeoutExpired:
         timed_out = True
         returncode = None
-        stdout = error.stdout.decode(errors="replace") if isinstance(error.stdout, bytes) else error.stdout or ""
-        stderr = error.stderr.decode(errors="replace") if isinstance(error.stderr, bytes) else error.stderr or ""
+        stdout, stderr = _stop_process_group(process)
+    except KeyboardInterrupt:
+        stdout, stderr = _stop_process_group(process)
+        (case_dir / "stdout.log").write_text(stdout, encoding="utf-8")
+        (case_dir / "stderr.log").write_text(stderr, encoding="utf-8")
+        raise
     except OSError as error:
         returncode, stdout, stderr = None, "", str(error)
     elapsed = round(time.monotonic() - start, 3)
@@ -282,7 +366,19 @@ def run_verifier(language: str, source: Path, case_dir: Path, settings: Settings
         outcome, goals, reason = classify_c(returncode, timed_out, stdout, stderr, report)
     else:
         outcome, goals, reason = classify_java(returncode, timed_out, stdout, stderr)
+    failure_stage = None
+    if outcome == "syntax/tool failure":
+        output = stdout + "\n" + stderr
+        failure_stage = ("unsupported_specification" if language == "java" and JAVA_UNSUPPORTED.search(output)
+                         else "report" if report_error else "prover" if PROVER_FAILURE.search(output)
+                         else "parse/typecheck" if re.search(r"annot-error|parse error|syntax error|invalid user input", output, re.I)
+                         else "verifier")
     return {"outcome": outcome, "reason": reason, "goals": goals, "exit_code": returncode,
+            "verification_started": process is not None, "failure_stage": failure_stage,
+            **({"compiler_normalizations": [line for line in stdout.splitlines()
+                                             if line.startswith("[NumericBitPredicates]")],
+                "unsupported_features": sorted(set(JAVA_UNSUPPORTED.findall(stdout + "\n" + stderr)))}
+               if language == "java" else {}),
             "timed_out": timed_out, "elapsed_seconds": elapsed, "command": command,
             "logs": {"stdout": "stdout.log", "stderr": "stderr.log",
                      "wp_report": "wp-report.json" if report_path.is_file() else None}}
