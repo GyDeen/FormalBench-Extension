@@ -37,6 +37,7 @@ class Transfer:
     source: str
     annotations: tuple[dict, ...]
     executable_token_sha256: str
+    omitted_annotations: tuple[dict, ...] = ()
 
 
 def scan(source: str) -> tuple[list[Token], list[Annotation]]:
@@ -217,6 +218,8 @@ def apply_specification(raw_original: str, specification: dict[str, Any],
     original_spans = _function_spans(original_tokens, raw_original)
     target_spans = _function_spans(mutant_tokens, raw_target)
     placements: list[tuple[int, dict[str, Any], str, bool]] = []
+    omitted: list[dict[str, Any]] = []
+    c_loop_maps = {}
     seen_ids: set[str] = set()
     for record in records:
         if not isinstance(record, dict) or record.get("target") not in {"function", "loop", "statement"}:
@@ -238,15 +241,34 @@ def apply_specification(raw_original: str, specification: dict[str, Any],
             raise InputError("Structured annotation does not match its original anchor")
         if record["target"] == "loop":
             ordinal = next((n for n, (position, _) in enumerate(original_loops) if position == index), None)
-            if ordinal is None or len(original_loops) != len(mutant_loops):
+            if ordinal is None:
                 raise InputError("Loop annotation is not directly before a preserved loop")
             same_function = [position for position, _ in original_loops
                              if _owner(original_spans, position) == record["function"]]
             if record.get("loop_id") != f"loop_{same_function.index(index) + 1}":
                 raise InputError("Structured loop ID does not match the original")
-            if [kind for _, kind in original_loops] != [kind for _, kind in mutant_loops]:
-                raise InputError("Mutant changes the loop structure needed by an annotation")
-            target_index = mutant_loops[ordinal][0]
+            if specification.get("language") == "c":
+                from .c_structure import loop_correspondence
+                owner = record["function"]
+                if owner not in c_loop_maps:
+                    old = [s for s in original_spans if s[0] == owner]
+                    new = [s for s in target_spans if s[0] == owner]
+                    if len(old) != 1 or len(new) != 1:
+                        raise InputError("C loop annotation has no unique function")
+                    c_loop_maps[owner] = loop_correspondence(before, after, old[0], new[0])
+                loop_mapping, deleted = c_loop_maps[owner]
+                if index in deleted:
+                    omitted.append({"id": annotation_id, "function": owner,
+                                    "target": "loop", "loop_id": record["loop_id"],
+                                    "reason": "loop deleted and replaced by empty statement",
+                                    "mutant_offset": mutant_tokens[deleted[index]].start})
+                    continue
+                target_index = loop_mapping[index]
+            else:
+                if (len(original_loops) != len(mutant_loops)
+                        or [kind for _, kind in original_loops] != [kind for _, kind in mutant_loops]):
+                    raise InputError("Mutant changes the loop structure needed by an annotation")
+                target_index = mutant_loops[ordinal][0]
         else:
             if record.get("loop_id") is not None:
                 raise InputError("Non-loop annotation has a loop ID")
@@ -254,11 +276,41 @@ def apply_specification(raw_original: str, specification: dict[str, Any],
                 span[0] == record["function"] and span[1] == index for span in original_spans
             ):
                 raise InputError("Function annotation does not precede its declared function")
-            target_index = mapping.get(index)
+            # C translations may insert/remove arithmetic helpers. A whole-file
+            # token diff can then align one helper's header with another one.
+            # The unique named declaration is the function contract's anchor.
+            named_target = [span for span in target_spans
+                            if span[0] == record["function"]]
+            if specification.get("language") == "c" and record["target"] == "function":
+                if (not named_target
+                        and record["function"] in {"java_add", "java_sub", "java_mul", "java_div", "java_mod", "java_neg"}
+                        and record["function"] not in after
+                        and not re.search(r"\b(?:logic|predicate|axiomatic|lemma|inductive|ghost)\b", record["text"])):
+                    # A translation emits arithmetic helpers only when used.
+                    # A removed, unreferenced helper has no declaration or
+                    # call to specify; never attach its contract elsewhere.
+                    omitted.append({"id": annotation_id, "function": record["function"],
+                                    "reason": "unused arithmetic helper absent from target"})
+                    continue
+                if len(named_target) != 1:
+                    raise InputError("C function annotation has no unique named declaration")
+                target_index = named_target[0][1]
+            else:
+                target_index = mapping.get(index)
+            reanchored_empty = False
+            if (specification.get("language") in {"c", "java"} and record["target"] == "statement"
+                    and re.fullmatch(r"(?:/\*@\s*assert\b[\s\S]*\*/|//@\s*assert\b[^\n]*)", record["text"])):
+                from .c_structure import empty_statement_anchor
+                empty_index = empty_statement_anchor(before, after, index, mapping)
+                if empty_index is not None:
+                    target_index, reanchored_empty = empty_index, True
+                    record = {**record, "anchor_change": "call replaced by empty statement; assertion retained"}
             if target_index is None:
                 raise InputError("Annotation's following statement cannot be aligned to mutant")
             context = before[index:index + 2]
-            if after[target_index:target_index + len(context)] != context:
+            if (after[target_index:target_index + len(context)] != context
+                    and not reanchored_empty
+                    and not (specification.get("language") == "c" and record["target"] == "function")):
                 raise InputError("Annotation statement context changed in mutant")
         if record["function"] is not None and _owner(target_spans, target_index) != record["function"]:
             raise InputError("Annotation moved to a different function")
@@ -266,6 +318,20 @@ def apply_specification(raw_original: str, specification: dict[str, Any],
             span[0] == record["function"] and span[1] == target_index for span in target_spans
         ):
             raise InputError("Function annotation moved away from its declaration")
+        if specification.get("language") == "c" and before != after and record["function"]:
+            from .c_bindings import rebind_annotation
+            old = [span for span in original_spans if span[0] == record["function"]]
+            new = [span for span in target_spans if span[0] == record["function"]]
+            if len(old) != 1 or len(new) != 1:
+                raise InputError("C rebinding requires unique function definitions")
+            loop_mapping = c_loop_maps.get(record["function"], (None, None))[0]
+            text, bindings = rebind_annotation(before, after, old[0], new[0], record, target_index,
+                                               loop_mapping)
+            record = {**record, "text": text, "c_bindings": bindings}
+        if specification.get("language") == "java":
+            from .java_compat import normalize_annotation
+            text, repairs = normalize_annotation(record["text"])
+            record = {**record, "text": text, "java_compatibility": repairs}
         position = mutant_tokens[target_index].start
         indentation = raw_target[raw_target.rfind("\n", 0, position) + 1:position]
         # A compact source may put a declaration after a class-opening brace
@@ -287,15 +353,19 @@ def apply_specification(raw_original: str, specification: dict[str, Any],
         result = result[:position] + insertion + result[position:]
     result_tokens, result_annotations = scan(result)
     # This final check guards the study's "same executable mutant" rule.
-    if [token.text for token in result_tokens] != after or len(result_annotations) != len(records):
+    if ([token.text for token in result_tokens] != after
+            or len(result_annotations) + len(omitted) != len(records)):
         raise InputError("Transferred annotations changed executable mutant tokens")
     placement_records = tuple({"id": record["id"], "target": record["target"],
                      "function": record["function"], "loop_id": record["loop_id"],
                      "boundary_token": record["boundary_token"],
                      "mutant_offset": position,
-                     "next_token": record["next_token"]}
+                     "next_token": record["next_token"],
+                     **({"anchor_change": record["anchor_change"]} if record.get("anchor_change") else {}),
+                     **({"java_compatibility": record["java_compatibility"]} if record.get("java_compatibility") else {}),
+                     **({"c_bindings": record["c_bindings"]} if record.get("c_bindings") else {})}
                     for position, record, _, _ in placements)
-    return Transfer(result, placement_records, token_digest(mutant_tokens))
+    return Transfer(result, placement_records, token_digest(mutant_tokens), tuple(omitted))
 
 
 def transfer(raw_original: str, annotated_original: str, raw_mutant: str) -> Transfer:

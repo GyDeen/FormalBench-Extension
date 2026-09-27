@@ -62,6 +62,10 @@ def arguments() -> argparse.Namespace:
     run.add_argument("--wp-par", type=positive, default=4)
     run.add_argument("--parallel-languages", action="store_true",
                      help="run Java and C verifiers together for each program")
+    run.add_argument("--language", action="append", choices=("java", "c"),
+                     help="evaluate only this language; repeat for both")
+    run.add_argument("--retry-tool-failures", action="store_true",
+                     help="archive and retry only existing tool failures with unchanged frozen study inputs")
     run.add_argument("--why3-extra-config", type=Path)
     return parser.parse_args()
 
@@ -103,7 +107,9 @@ def main() -> int:
                                  args.java_specs.resolve() if args.java_specs else None,
                                  args.c_specs.resolve() if args.c_specs else None,
                                  args.java_generator, args.c_generator, settings,
-                                 args.max_pairs, args.stage, args.parallel_languages)
+                                 args.max_pairs, args.stage, args.parallel_languages,
+                                 tuple(dict.fromkeys(args.language or ("java", "c"))),
+                                 args.retry_tool_failures)
         print(json.dumps({key: summary[key] for key in
                           ("eligible_pair_count", "originals", "mutants", "pairs", "complete")},
                          indent=2))
