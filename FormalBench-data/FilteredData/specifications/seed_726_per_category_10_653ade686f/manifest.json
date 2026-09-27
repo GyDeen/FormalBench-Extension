@@ -14,7 +14,7 @@
     "verification/java_arrays/contracts/jintarray.acsl.h": "83cfffb114f3cad5e5553951b0a239298a8e52e47bfbe783d4bceedead0983bb",
     "verification/java_arrays/contracts/jintarray2.acsl.h": "976047a31f67f24008deec58da879eddf81f37b2ab09e83da3978cd269773696"
   },
-  "policy": "Original sources only; no mutant sources or evaluation results used.",
+  "policy": "Initial generation used original sources only, without mutant sources or evaluation results. The 2026-09-27 compatibility revisions use original-only syntax/tool diagnostics; no mutant sources or outcomes used.",
   "records": [
     {
       "program": "CombSort",
@@ -74,12 +74,22 @@
       "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/CountList.java",
       "original_sha256": "39756b820ea6fe9fd2e09c425388a1cdfab3a3e6387b9281d91beb844fe34b76",
       "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/CountList.java",
-      "annotated_sha256": "48b5df4429ed5f51d84e1b3c44dde262cf20e04c990af6ebc9574e8c449e04f6",
+      "annotated_sha256": "d0c982ee0b34a923d4a0f4b8b7f8577e76eb3cb4c3935ee3edd9e18f6bb0e644",
       "executable_tokens_unchanged": true,
-      "status": "generated_not_proof_checked",
+      "status": "verification_attempted_unknown",
       "notes": [
-        "Null, empty, jagged, and shared rows are distinguished. Null rows throw in Java and are outside the supplied C accessor contracts."
-      ]
+        "Null, empty, jagged, and shared rows are distinguished. Null rows throw in Java and are outside the supplied C accessor contracts.",
+        "2026-09-27 compatibility revision: Recursive prefix count replaces unsupported num_of."
+      ],
+      "syntax_status": "passed",
+      "compatibility_check": {
+        "date": "2026-09-27",
+        "syntax_check_exit_code": 0,
+        "failure_stage": null,
+        "unsupported_features": [],
+        "outcome": "unknown/timeout",
+        "record": "verification/specification_evaluation/results/original_repairs_20260927_goal10_case300/CountList/attempt_1/cases/CountList/original/java/record.json"
+      }
     },
     {
       "program": "CountList",
@@ -182,12 +192,22 @@
       "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/CountingSort.java",
       "original_sha256": "cf43f501967b62dd6b209d32c46315ecb519a66596a635c6516a20805e4a7c44",
       "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/CountingSort.java",
-      "annotated_sha256": "1ced4931ce4a052725d7e43255059b2a5f5d60e0691f5c555baf913e1cb544a2",
+      "annotated_sha256": "bb9dfc403bcaf4a6632bac50b43981d4792fbb4d5516e87c02b09d87e40f809b",
       "executable_tokens_unchanged": true,
-      "status": "generated_not_proof_checked",
+      "status": "verification_attempted_unknown",
       "notes": [
-        "Sortedness and preservation of every value's multiplicity determine the complete returned sequence. Negative elements are allowed; only representability of the allocated value range is needed on normal paths. Java range-overflow exceptions are explicit."
-      ]
+        "Sortedness and preservation of every value's multiplicity determine the complete returned sequence. Negative elements are allowed; only representability of the allocated value range is needed on normal paths. Java range-overflow exceptions are explicit.",
+        "2026-09-27 compatibility revision: Recursive prefix counts replace unsupported num_of; normalize enhanced-for count expressions."
+      ],
+      "syntax_status": "passed",
+      "compatibility_check": {
+        "date": "2026-09-27",
+        "syntax_check_exit_code": 0,
+        "failure_stage": null,
+        "unsupported_features": [],
+        "outcome": "unknown/timeout",
+        "record": "verification/specification_evaluation/results/original_repairs_20260927_goal10_case300/CountingSort/attempt_1/cases/CountingSort/original/java/record.json"
+      }
     },
     {
       "program": "CountingSort",
@@ -500,12 +520,22 @@
       "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/MaxProduct.java",
       "original_sha256": "cde9d504693169edac77a1b442a9f126b6501a4a6d9154e88672979d1bc72461",
       "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/MaxProduct.java",
-      "annotated_sha256": "5a8eabc9a26349210b1d0932ce4a4e45cf3ddc9157fc1e1fc8baa58036c9e93a",
+      "annotated_sha256": "2560d1ca99bd1dde5f6d46204430736441000bf4aa97537130d7b8ff9e0e2ea2",
       "executable_tokens_unchanged": true,
-      "status": "generated_not_proof_checked",
+      "status": "verification_attempted_unknown",
       "notes": [
-        "The maximum-product recurrence compares signed, wrapped products; no positivity or no-overflow restriction is imposed on elements."
-      ]
+        "The maximum-product recurrence compares signed, wrapped products; no positivity or no-overflow restriction is imposed on elements.",
+        "2026-09-27 compatibility revision: Explicit bigint conditional arm avoids OpenJML DEFERRED type assertion."
+      ],
+      "syntax_status": "passed",
+      "compatibility_check": {
+        "date": "2026-09-27",
+        "syntax_check_exit_code": 0,
+        "failure_stage": null,
+        "unsupported_features": [],
+        "outcome": "unknown/timeout",
+        "record": "verification/specification_evaluation/results/original_repairs_20260927_goal10_case300/MaxProduct/attempt_1/cases/MaxProduct/original/java/record.json"
+      }
     },
     {
       "program": "MaxProduct",
@@ -694,12 +724,22 @@
       "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/MinCost.java",
       "original_sha256": "9a789c990368cdab8f85b48d371476eb92faae329c8be40bc70a970145bf52b9",
       "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/MinCost.java",
-      "annotated_sha256": "304738c95d40dadaa0aee289e0a66492f7873283d6c37c4bfb5d06bde382606c",
+      "annotated_sha256": "b80004f245335a770cde66158f871ac603aff276370444222c6e6622128f3c89",
       "executable_tokens_unchanged": true,
-      "status": "generated_not_proof_checked",
+      "status": "verification_attempted_unknown",
       "notes": [
-        "Normal domain includes arbitrary signed costs and shared/jagged input rows whenever the requested rectangle exists. The minimum is selected before the wrapped addition at each DP cell."
-      ]
+        "Normal domain includes arbitrary signed costs and shared/jagged input rows whenever the requested rectangle exists. The minimum is selected before the wrapped addition at each DP cell.",
+        "2026-09-27 compatibility revision: Supported full matrix loop frame replaces unsupported column slice; invariant preserves zero values in other columns."
+      ],
+      "syntax_status": "passed",
+      "compatibility_check": {
+        "date": "2026-09-27",
+        "syntax_check_exit_code": 0,
+        "failure_stage": null,
+        "unsupported_features": [],
+        "outcome": "unknown/timeout",
+        "record": "verification/specification_evaluation/results/original_repairs_20260927_goal10_case300/MinCost/attempt_1/cases/MinCost/original/java/record.json"
+      }
     },
     {
       "program": "MinCost",
@@ -720,12 +760,22 @@
       "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/MinJumps.java",
       "original_sha256": "6394b62e8e7b1329df08591720994da8be34a78a2ada248f3a032d97806269ee",
       "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/MinJumps.java",
-      "annotated_sha256": "4c99e4d7489ebfdeb9509065988beefcb95217eed342d23d373227a8e5c67995",
+      "annotated_sha256": "55a95a77b94dfd43ce87da41a6587bf49dd3127756607b316bc002d4e875d422",
       "executable_tokens_unchanged": true,
-      "status": "generated_not_proof_checked",
+      "status": "verification_attempted_unknown",
       "notes": [
-        "Unreachable predecessors are not filtered: INT_MAX+1 wraps to INT_MIN. The recurrence preserves this behavior. n=1 returns 0 without reading arr; only n-1 input elements are accessed."
-      ]
+        "Unreachable predecessors are not filtered: INT_MAX+1 wraps to INT_MIN. The recurrence preserves this behavior. n=1 returns 0 without reading arr; only n-1 input elements are accessed.",
+        "2026-09-27 compatibility revision: Explicit bigint conditional arm avoids OpenJML DEFERRED type assertion."
+      ],
+      "syntax_status": "passed",
+      "compatibility_check": {
+        "date": "2026-09-27",
+        "syntax_check_exit_code": 0,
+        "failure_stage": null,
+        "unsupported_features": [],
+        "outcome": "unknown/timeout",
+        "record": "verification/specification_evaluation/results/original_repairs_20260927_goal10_case300/MinJumps/attempt_1/cases/MinJumps/original/java/record.json"
+      }
     },
     {
       "program": "MinJumps",
@@ -886,12 +936,22 @@
       "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/OddLengthSum.java",
       "original_sha256": "a015fc3a3b4c2d3d65da738d2aadcc68b6833a6099a7ad1e0819a7f8e8079cf6",
       "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/OddLengthSum.java",
-      "annotated_sha256": "819dfef1c4836c29324a1b5d9a692ac26df5ddd0cc121e9d6fe62789e74af972",
+      "annotated_sha256": "f5747605d61bab9f4c9b484a790ac338b375ba820142e501d089ce87c8c29c59",
       "executable_tokens_unchanged": true,
-      "status": "generated_not_proof_checked",
+      "status": "verification_attempted_unknown",
       "notes": [
-        "Occurrence-count multiplication and addition wrap before division by 2; a mathematical odd-subarray sum would be incorrect for large arrays."
-      ]
+        "Occurrence-count multiplication and addition wrap before division by 2; a mathematical odd-subarray sum would be incorrect for large arrays.",
+        "2026-09-27 compatibility revision: Recursive prefix sum replaces unsupported sum and preserves Java arithmetic in each term."
+      ],
+      "syntax_status": "passed",
+      "compatibility_check": {
+        "date": "2026-09-27",
+        "syntax_check_exit_code": 0,
+        "failure_stage": null,
+        "unsupported_features": [],
+        "outcome": "unknown/timeout",
+        "record": "verification/specification_evaluation/results/original_repairs_20260927_goal10_case300/OddLengthSum/attempt_1/cases/OddLengthSum/original/java/record.json"
+      }
     },
     {
       "program": "OddLengthSum",
@@ -990,12 +1050,22 @@
       "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/RadixSort.java",
       "original_sha256": "ac5df75b5abfcbabe4f08df78b166f75349a48401221f53e2b76daa7d92f4805",
       "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/RadixSort.java",
-      "annotated_sha256": "2d68c4cbd3cec129db35d5d519a2e8e395f3e8eb6249847636243b5ced4799f9",
+      "annotated_sha256": "b15fa49842bed47c5d940ac256ce176d88c7fa4e68b01b68fad4ce0942778839",
       "executable_tokens_unchanged": true,
-      "status": "generated_not_proof_checked",
+      "status": "verification_attempted_unknown",
       "notes": [
-        "Sortedness and preservation of every value's multiplicity determine the complete returned sequence. Negative elements are allowed; only representability of the allocated value range is needed on normal paths. Java range-overflow exceptions are explicit."
-      ]
+        "Sortedness and preservation of every value's multiplicity determine the complete returned sequence. Negative elements are allowed; only representability of the allocated value range is needed on normal paths. Java range-overflow exceptions are explicit.",
+        "2026-09-27 compatibility revision: Recursive prefix counts replace unsupported num_of; normalize enhanced-for count expressions."
+      ],
+      "syntax_status": "passed",
+      "compatibility_check": {
+        "date": "2026-09-27",
+        "syntax_check_exit_code": 0,
+        "failure_stage": null,
+        "unsupported_features": [],
+        "outcome": "unknown/timeout",
+        "record": "verification/specification_evaluation/results/original_repairs_20260927_goal10_case300/RadixSort/attempt_1/cases/RadixSort/original/java/record.json"
+      }
     },
     {
       "program": "RadixSort",
@@ -1148,10 +1218,21 @@
       "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/SumOfSubarrayProd.java",
       "original_sha256": "aacc4f114373b988738bb297f4745e607847a43c9b665ba63d3c7a1d9c021436",
       "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/SumOfSubarrayProd.java",
-      "annotated_sha256": "3a706e6cbe2444d21b25a4af5d0bc5f2aadc40fb36cee2dba9d76d1bf93e7603",
+      "annotated_sha256": "fa0e078c2198c31d9592fec8356ec4dd7f8420b41d53b657dc41d9e9a4c46896",
       "executable_tokens_unchanged": true,
-      "status": "generated_not_proof_checked",
-      "notes": []
+      "status": "verification_attempted_unknown",
+      "notes": [
+        "2026-09-27 compatibility revision: Recursive products and nested sums replace unsupported product and sum."
+      ],
+      "syntax_status": "passed",
+      "compatibility_check": {
+        "date": "2026-09-27",
+        "syntax_check_exit_code": 0,
+        "failure_stage": null,
+        "unsupported_features": [],
+        "outcome": "unknown/timeout",
+        "record": "verification/specification_evaluation/results/original_repairs_20260927_goal10_case300/SumOfSubarrayProd/attempt_1/cases/SumOfSubarrayProd/original/java/record.json"
+      }
     },
     {
       "program": "SumOfSubarrayProd",
@@ -1170,12 +1251,22 @@
       "original": "FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/SumRangeList.java",
       "original_sha256": "7c2609c759e0fcf335f6f56f292088a7b4df07b2425ed49904c668e49286f12b",
       "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/java/SumRangeList.java",
-      "annotated_sha256": "67317928da1d288b1f2e48cd46452eb49343075ce7477bb8ac6047ff79f29302",
+      "annotated_sha256": "ab0b763fb7727abd6781a106d6331a672cd4dbe2b3af01dee00b70971658e2f2",
       "executable_tokens_unchanged": true,
-      "status": "generated_not_proof_checked",
+      "status": "verification_attempted_unknown",
       "notes": [
-        "Empty range returns 0 even for a null array. Original Java filename declares class SumRangeArray."
-      ]
+        "Empty range returns 0 even for a null array. Original Java filename declares class SumRangeArray.",
+        "2026-09-27 compatibility revision: Recursive half-open range sum replaces unsupported sum, including empty ranges."
+      ],
+      "syntax_status": "passed",
+      "compatibility_check": {
+        "date": "2026-09-27",
+        "syntax_check_exit_code": 0,
+        "failure_stage": null,
+        "unsupported_features": [],
+        "outcome": "unknown/timeout",
+        "record": "verification/specification_evaluation/results/original_repairs_20260927_goal10_case300/SumRangeList/attempt_1/cases/SumRangeList/original/java/record.json"
+      }
     },
     {
       "program": "SumRangeList",
@@ -1285,6 +1376,77 @@
       "executable_tokens_unchanged": true,
       "status": "generated_not_proof_checked",
       "notes": []
+    }
+  ],
+  "compatibility_revisions": [
+    {
+      "date": "2026-09-27",
+      "scope": "nine original Java programs",
+      "openjml_version": "21.0.27",
+      "solver": "Z3 4.10.2 via z3-4.3.X driver",
+      "goal_timeout_seconds": 10,
+      "program_timeout_seconds": 300,
+      "syntax_passed": 9,
+      "esc_without_tool_or_syntax_failure": 9,
+      "proved_programs": 0,
+      "unknown_or_timeout": 9,
+      "summary": "verification/specification_evaluation/results/original_repairs_20260927_goal10_case300/summary.json",
+      "changes": [
+        {
+          "program": "CountList",
+          "previous_annotated_sha256": "48b5df4429ed5f51d84e1b3c44dde262cf20e04c990af6ebc9574e8c449e04f6",
+          "annotated_sha256": "d0c982ee0b34a923d4a0f4b8b7f8577e76eb3cb4c3935ee3edd9e18f6bb0e644",
+          "reason": "Recursive prefix count replaces unsupported num_of."
+        },
+        {
+          "program": "CountingSort",
+          "previous_annotated_sha256": "1ced4931ce4a052725d7e43255059b2a5f5d60e0691f5c555baf913e1cb544a2",
+          "annotated_sha256": "bb9dfc403bcaf4a6632bac50b43981d4792fbb4d5516e87c02b09d87e40f809b",
+          "reason": "Recursive prefix counts replace unsupported num_of; normalize enhanced-for count expressions."
+        },
+        {
+          "program": "MaxProduct",
+          "previous_annotated_sha256": "5a8eabc9a26349210b1d0932ce4a4e45cf3ddc9157fc1e1fc8baa58036c9e93a",
+          "annotated_sha256": "2560d1ca99bd1dde5f6d46204430736441000bf4aa97537130d7b8ff9e0e2ea2",
+          "reason": "Explicit bigint conditional arm avoids OpenJML DEFERRED type assertion."
+        },
+        {
+          "program": "MinCost",
+          "previous_annotated_sha256": "304738c95d40dadaa0aee289e0a66492f7873283d6c37c4bfb5d06bde382606c",
+          "annotated_sha256": "b80004f245335a770cde66158f871ac603aff276370444222c6e6622128f3c89",
+          "reason": "Supported full matrix loop frame replaces unsupported column slice; invariant preserves zero values in other columns."
+        },
+        {
+          "program": "MinJumps",
+          "previous_annotated_sha256": "4c99e4d7489ebfdeb9509065988beefcb95217eed342d23d373227a8e5c67995",
+          "annotated_sha256": "55a95a77b94dfd43ce87da41a6587bf49dd3127756607b316bc002d4e875d422",
+          "reason": "Explicit bigint conditional arm avoids OpenJML DEFERRED type assertion."
+        },
+        {
+          "program": "OddLengthSum",
+          "previous_annotated_sha256": "819dfef1c4836c29324a1b5d9a692ac26df5ddd0cc121e9d6fe62789e74af972",
+          "annotated_sha256": "f5747605d61bab9f4c9b484a790ac338b375ba820142e501d089ce87c8c29c59",
+          "reason": "Recursive prefix sum replaces unsupported sum and preserves Java arithmetic in each term."
+        },
+        {
+          "program": "RadixSort",
+          "previous_annotated_sha256": "2d68c4cbd3cec129db35d5d519a2e8e395f3e8eb6249847636243b5ced4799f9",
+          "annotated_sha256": "b15fa49842bed47c5d940ac256ce176d88c7fa4e68b01b68fad4ce0942778839",
+          "reason": "Recursive prefix counts replace unsupported num_of; normalize enhanced-for count expressions."
+        },
+        {
+          "program": "SumOfSubarrayProd",
+          "previous_annotated_sha256": "3a706e6cbe2444d21b25a4af5d0bc5f2aadc40fb36cee2dba9d76d1bf93e7603",
+          "annotated_sha256": "fa0e078c2198c31d9592fec8356ec4dd7f8420b41d53b657dc41d9e9a4c46896",
+          "reason": "Recursive products and nested sums replace unsupported product and sum."
+        },
+        {
+          "program": "SumRangeList",
+          "previous_annotated_sha256": "67317928da1d288b1f2e48cd46452eb49343075ce7477bb8ac6047ff79f29302",
+          "annotated_sha256": "ab0b763fb7727abd6781a106d6331a672cd4dbe2b3af01dee00b70971658e2f2",
+          "reason": "Recursive half-open range sum replaces unsupported sum, including empty ranges."
+        }
+      ]
     }
   ]
 }

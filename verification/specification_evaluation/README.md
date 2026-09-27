@@ -219,9 +219,12 @@ plugin source/archive, adapter code, and selected solver.
 
 Progress summaries containing `Error: 0` are not tool errors. Conversely,
 `Not implemented for static checking` is an `unsupported_specification`
-failure even if the tool later times out. `CountingSort` currently reaches
-this limitation for `\num_of` after its compiler crash is repaired. Such
-results cannot contribute to specification-rejection scores. An explicit
+failure even if the tool later times out. Historical frozen `CountingSort`
+specifications reach this limitation for `\num_of`. The supplied Java
+specifications were revised on 2026-09-27 to use recursive aggregate models;
+new runs must freeze the revised specifications to use those changes.
+Historical unsupported-feature results cannot contribute to
+specification-rejection scores. An explicit
 unknown-validity/no-model diagnostic also takes precedence over preceding
 unproved-assertion warnings.
 
