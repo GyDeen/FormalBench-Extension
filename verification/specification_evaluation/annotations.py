@@ -296,10 +296,12 @@ def apply_specification(raw_original: str, specification: dict[str, Any],
                             after[i] == "do" for i in new_loops
                         ):
                             raise InputError("Deleted Java do loop has no safe correspondence")
-                        from .c_structure import loop_correspondence
-                        from .c_bindings import Function
-                        loop_mapping, deleted = loop_correspondence(before, after, old[0], new[0])
-                        old_function = Function(before, old[0])
+                        # Java needs only shared token/loop structure matching;
+                        # declaration rebinding remains specific to C/ACSL.
+                        from .loop_structure import match_loop_structure
+                        from .token_structure import FunctionStructure
+                        loop_mapping, deleted = match_loop_structure(before, after, old[0], new[0])
+                        old_function = FunctionStructure(before, old[0])
                         for removed, null in deleted.items():
                             preceding = mapping.get(removed - 1)
                             if (preceding is None or before[removed - 1] not in {"{", ";", "}"}
@@ -368,7 +370,7 @@ def apply_specification(raw_original: str, specification: dict[str, Any],
             reanchored_empty = False
             if (specification.get("language") in {"c", "java"} and record["target"] == "statement"
                     and re.fullmatch(r"(?:/\*@\s*assert\b[\s\S]*\*/|//@\s*assert\b[^\n]*)", record["text"])):
-                from .c_structure import empty_statement_anchor
+                from .loop_structure import empty_statement_anchor
                 empty_index = empty_statement_anchor(before, after, index, mapping)
                 if empty_index is not None:
                     target_index, reanchored_empty = empty_index, True

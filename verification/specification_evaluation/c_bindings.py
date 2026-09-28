@@ -10,6 +10,7 @@ import re
 from dataclasses import dataclass
 
 from .manifest import InputError
+from .token_structure import FunctionStructure, pairs
 
 IDENT = re.compile(r"[A-Za-z_][A-Za-z_0-9]*\Z")
 TYPES = {"int32_t", "uint32_t", "int64_t", "uint64_t", "int", "double", "float",
@@ -17,31 +18,8 @@ TYPES = {"int32_t", "uint32_t", "int64_t", "uint64_t", "int", "double", "float",
          "JIntArray2", "JDoubleArray2"}
 
 
-def pairs(tokens):
-    result, stack = {}, []
-    for i, t in enumerate(tokens):
-        if t in {"(", "{", "["}:
-            stack.append(i)
-        elif t in {")", "}", "]"} and stack:
-            opening = stack.pop()
-            result[opening] = i
-    return result
-
-
-def statement_end(tokens, brackets, start):
-    if tokens[start] == "{":
-        return brackets[start]
-    if tokens[start] in {"for", "while", "if"}:
-        return statement_end(tokens, brackets, brackets[start + 1] + 1)
-    i = start
-    while i < len(tokens):
-        if tokens[i] == ";":
-            return i
-        i = brackets.get(i, i) + 1
-    raise InputError("Cannot determine C statement scope")
-
-
 def normalize(tokens):
+    """Equate translated INT32_C decimal literals with plain decimal tokens."""
     # INT32_C(1) and 1 have the same int32_t value in these translations.
     result, i = [], 0
     while i < len(tokens):
@@ -65,15 +43,10 @@ class Declaration:
     parameter: bool = False
 
 
-class Function:
+class Function(FunctionStructure):
     def __init__(self, tokens, span):
-        self.tokens = tokens
-        self.name, self.header, self.body, self.end = span
-        self.brackets = pairs(tokens)
-        self.loops = [i for i in range(self.body, self.end)
-                      if tokens[i] in {"for", "while", "do"}]
-        self.loop_ends = {i: statement_end(tokens, self.brackets, i) for i in self.loops
-                          if tokens[i] != "do"}
+        """Index C function declarations and scopes on top of shared structure."""
+        super().__init__(tokens, span)
         self.declarations = []
         # Only ordinary, named scalar/pointer-typedef parameters are supported.
         name_index = next(i for i in range(self.header, self.body)
@@ -101,6 +74,7 @@ class Function:
                                                  scope_end, scope, init))
 
     def visible(self, boundary):
+        """Return declarations visible at an annotation's token boundary."""
         # A for-loop annotation can refer to its initializer's variable.
         limit = boundary
         if self.tokens[boundary] == "for":
@@ -113,6 +87,7 @@ class Function:
 
 
 def replace_names(text, bindings):
+    """Replace free ACSL identifiers while rejecting binder capture."""
     if not bindings:
         return text
     # Do not guess around a binder: capture would change the frozen predicate.
@@ -127,6 +102,7 @@ def replace_names(text, bindings):
             raise InputError(f"C annotation rebinding would capture a logic variable: {old}")
 
     def substitute(match):
+        """Keep strings, fields, and function names; replace other identifiers."""
         name = match.group()
         prefix = text[:match.start()].rstrip()
         suffix = text[match.end():].lstrip()
@@ -158,16 +134,19 @@ def _pure_expression(tokens, bindings):
             left, right = (_pure_expression(arg, bindings) for arg in args)
             op = {"java_add": "+", "java_sub": "-", "java_mul": "*"}[name]
             return f"((int32_t)((integer)({left}) {op} ({right})))"
-        if name in {"jarray_length", "jbool_array_length", "jdouble_array_length"} and len(args) == 1:
+        if name in {"jarray_length", "jbool_array_length", "jdouble_array_length",
+                    "jarray2_length", "jdouble_array2_length"} and len(args) == 1:
             return f"({_pure_expression(args[0], bindings)}->length)"
     raise InputError("Removed C temporary does not have a supported pure initializer")
 
 
 def rebind_annotation(before, after, original_span, target_span, record, target_index,
                       loop_mapping=None):
+    """Map referenced C declarations to unique equivalents in a mutant."""
     original, target = Function(before, original_span), Function(after, target_span)
     if record["target"] == "loop" and loop_mapping is None:
         def loop_shape(function):
+            """Describe each loop's kind and enclosing-loop ordinal path."""
             return [(function.tokens[i], tuple(n for n, parent in enumerate(function.loops)
                      if parent < i < function.loop_ends.get(parent, parent)))
                     for i in function.loops]
@@ -260,7 +239,9 @@ def rebind_annotation(before, after, original_span, target_span, record, target_
                     # accesses, frees, and escapes to any other call.
                     allowed = {"jarray_length", "jarray_get", "jarray_set",
                                "jbool_array_length", "jbool_array_get", "jbool_array_set",
-                               "jdouble_array_length", "jdouble_array_get", "jdouble_array_set"}
+                               "jdouble_array_length", "jdouble_array_get", "jdouble_array_set",
+                               "jarray2_length", "jarray2_get", "jarray2_set",
+                               "jdouble_array2_length", "jdouble_array2_get", "jdouble_array2_set"}
                     if i < 2 or after[i - 1] != "(" or after[i - 2] not in allowed:
                         raise InputError(f"Array dependency of {name} may escape or change: {dependency}")
         bindings[name] = expression
