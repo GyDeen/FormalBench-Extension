@@ -112,23 +112,35 @@ tokens as its raw original, then extracts the comments once into JSON. For
 each original or mutant, it attaches annotations derived from those frozen comments to untouched source,
 uses token and function/loop anchors rather than line numbers, and checks that
 the resulting file retains every executable source token. An
-ambiguous transfer produces a `syntax/tool failure` record; it is never counted
-as a rejected mutant.
+ambiguous transfer produces a `syntax/tool failure` record with
+`failure_stage: annotation_transfer`; it is never counted as a rejected mutant.
 
 C declaration renames are recorded as explicit bindings. A removed adjacent
 scalar loop-bound temporary may be expanded using its **original** pure
 initializer, with Java wrapping arithmetic preserved. Its dependencies must
 remain in scope, stable throughout the loop, and free of pointer escapes. The
-mutant's changed bound is never substituted into the specification.
+mutant's changed bound is never substituted into the specification. This
+includes an original `jarray2_length` or `jdouble_array2_length` temporary
+only when the array's length remains stable. Rename the declaration and its
+uses when the mapping is unique; do not rewrite a mutation that changes one
+variable use to a different variable. Ambiguous scope, capture, snapshot, or
+dependency mappings remain transfer failures.
 
-When a leaf loop is deleted, retained loop headers must match uniquely, in
-order and with the same nesting, and the deleted loop must have an identifiable
-empty-statement replacement. Only that loop's annotations are omitted, with an
-audit entry and `internal_annotation_coverage: partial_due_to_deleted_loop`.
-Function contracts and surviving assertions remain attached. This case does
-not claim verification of every original internal annotation. An assertion
-before a deleted call is retained before its unambiguous empty-statement
-replacement. Ambiguous structural changes still fail transfer.
+For either language, when a `for` or `while` leaf loop is unambiguously deleted, retained loop
+headers must map uniquely with the same nesting and the deleted loop must
+have an identifiable empty-statement replacement before a preserved following
+sibling. Only that loop's annotations
+are omitted, with an audit entry and
+`internal_annotation_coverage: partial_due_to_deleted_loop`. Function
+contracts and surviving assertions remain attached and are verified. An
+assertion before a deleted call is retained before its unambiguous
+empty-statement replacement. If another annotation lies in the deleted loop
+body or at the removed loop anchor and cannot be retained, transfer fails.
+Ambiguous structural changes still fail transfer.
+Deleted `do` loops remain transfer failures until they have a separately
+audited correspondence rule.
+The omitted loop annotation is a structural attachment-loss **candidate**; it
+is not itself evidence that the retained specification rejected the mutant.
 
 A frozen contract referring to `__fc_stdout` retains the Frama-C stdio model
 through `-cpp-extra-args=-include stdio.h`, including mutants that remove printf
@@ -144,106 +156,17 @@ An explicit invalid precondition or RTE goal is recorded separately from a
 specification violation. OpenJML proof-failure warnings are recorded as Java
 verification failures, with precondition and runtime-safety warnings separated.
 
-The run directory contains frozen JSON specs, an exact command and logs per case,
-source/contract/tool hashes, per-goal WP results, one `record.json` for every
-processed original and mutant language, and `summary.json`. Originals are
-verified first to measure consistency. Every selected mutant is then evaluated
-whether or not its corresponding original proved, provided the frozen
-annotations can be transferred safely. Original outcomes are retained as
-strata in the summary so mutant detection rates can be compared across
-consistency outcomes. Existing completed records are reused only when their
-input fingerprints still match; prior `not run` records are retried. The
-summary compares Java and C for the documented eligible IDs;
-tool failures, support failures, unknowns, and unfinished pairs never inflate
-the mutant-rejection numerator. It reports the detected fraction of all 977
-eligible pairs separately from the conditional fraction of resolved cases;
-unknowns remain visible in the eligible denominator. The 275 excluded pairs in the selection
-manifest are never scheduled: 48 failed cross-language agreement and 227 had
-no observed difference from their originals (including 21 sanitizer-supported
-stack-overflow pairs).
+## Evidence categories and scores
 
-## Retrying failures and short diagnostics
+The unit of scoring is one selected mutant in one language, paired with that
+language's original. A parser or annotation-placement failure is never a
+behavioral rejection. Use these evidence categories:
 
-`run --retry-tool-failures --language c` retries each selected failure once,
-including annotation-transfer failures and interrupted attempts. Prior
-attempts are archived and source/specification/support/settings hashes must
-still match. Missing current records from older interrupted retries are
-recovered using their archived records. New attempts have an explicit running,
-interrupted, or complete status; an interruption refreshes the summary.
-`failure_stage` distinguishes annotation transfer, parsing/typechecking,
-prover invocation, report errors, and other verifier errors.
-
-Use a fresh diagnostic directory for changed budgets; do not mix shorter runs
-into the study's 30-second goal / 600-second case results:
-
-```bash
-python3 -m verification.specification_evaluation.diagnose_c_repairs \
-  --study verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30 \
-  --output verification/specification_evaluation/results/c_repair_diagnostic \
-  --case MaxVolume/5 --case MaxVolume/14 \
-  --case SumOfPrimes/5 --case SumOfPrimes/9 --case ParabolaVertex/2 \
-  --goal-timeout 5 --timeout 60
-```
-
-This checks transfer across the current 10-program C population, generates WP
-tasks without proving them for the selected cases, then runs those cases with
-the shorter budgets. It saves provenance and a progressive diagnostic summary.
-Passing task generation or eliminating tool errors is not a mutant rejection;
-unresolved proof goals remain `unknown/timeout`.
-
-## Java compatibility repairs
-
-For OpenJML **21.0.27**, verifier discovery builds a separate compiler plugin
-under `.tools/openjml-compat`. The installed tool, raw programs, and frozen
-JSON specifications are not edited. Case records fingerprint the compiler,
-plugin source/archive, adapter code, and selected solver.
-
-- Numeric `\count` occurrences in staged JML comments are rendered as
-  `(\count + 0)` to avoid the compiler crash on conditional-expression arms.
-  Every replacement is recorded in `transfer.json` and `record.json`.
-- An assertion preceding a qualified call replaced by a single empty
-  statement is retained at that statement, using both neighboring anchors.
-  Ambiguous replacements are rejected.
-- When using the `z3-4.3.X` driver, the command explicitly selects the bundled
-  **Z3 4.10.2** executable to avoid the observed broken-pipe failures. This is
-  a solver configuration change and is recorded in verifier provenance.
-- After Java type and flow checking, the plugin simplifies only primitive
-  `int` local/parameter predicates `(x ^ 1) == 0` to `x == 1` and
-  `(x | 1) == 0` to `1 == 0`. This avoids the broken combination of bitvectors
-  and mathematical integers for these cases. Fields, calls, boxed values,
-  arrays, other constants, and JML clauses are excluded. Source files retain
-  every executable token; applied compiler rules are recorded in each result.
-  `openjml/predicate_equivalence.smt2` proves both identities for all 32-bit
-  inputs and retains a witness distinguishing the mutants from the original
-  AND predicate. This is not a general repair for mixed bitvector/bigint proofs.
-
-Progress summaries containing `Error: 0` are not tool errors. Conversely,
-`Not implemented for static checking` is an `unsupported_specification`
-failure even if the tool later times out. Historical frozen `CountingSort`
-specifications reach this limitation for `\num_of`. The supplied Java
-specifications were revised on 2026-09-27 to use recursive aggregate models;
-new runs must freeze the revised specifications to use those changes.
-Historical unsupported-feature results cannot contribute to
-specification-rejection scores. An explicit
-unknown-validity/no-model diagnostic also takes precedence over preceding
-unproved-assertion warnings.
-
-Recheck the study's recorded Java tool failures with short budgets:
-
-```bash
-python3 -m verification.specification_evaluation.diagnose_java_repairs \
-  --study verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30 \
-  --output verification/specification_evaluation/results/java_repair_diagnostic \
-  --goal-timeout 5 --timeout 60
-```
-
-Use a fresh output directory. The main study's records and 30-second goal /
-600-second case budgets remain separate from these diagnostics. Regression
-checks, including the compiler plugin integration checks in WSL, are:
-
-```bash
-python3 -B -m unittest \
-  verification.specification_evaluation.test_java_repairs \
-  verification.specification_evaluation.test_java_plugin \
-  verification.specification_evaluation.test_c_repairs -v
-```
+| Evidence | Record and treatment |
+| --- | --- |
+| Specification rejection | A valid transfer reaches the verifier, which rejects an applicable generated specification obligation. `outcome: specification violation`; count in the **primary** rate only if the original proved. |
+| Structural rejection | Audited, unambiguous removal of an annotated loop's attachment point, after ruling out renaming/translation differences. Count separately from specification rejection; both may apply to one mutant. Reduced internal coverage is recorded. |
+| Safety rejection | A runtime-safety or callee-precondition obligation fails under the original input assumptions. `outcome: precondition/RTE failure`; count separately. |
+| Transfer/tool failure | Annotation mapping, unsupported specification syntax, configuration, solver invocation, or verifier implementation prevents meaningful checking. Use `failure_stage` to separate transfer, unsupported specification, and other tool failures; never count as detection. |
+| Unknown/timeout | Neither acceptance nor rejection is established within the budget. Keep unresolved in the eligible denominator. |
+| Invalid mutant | Ordinary compilation/typechecking of the **unannotated** mutant fails independently of the annotation transfer. Report/exclude it; a verifier parse failure alone does not establish this category. |
