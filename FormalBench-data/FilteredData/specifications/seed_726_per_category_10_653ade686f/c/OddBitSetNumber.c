@@ -1,0 +1,16 @@
+#include "java_arrays.h"
+#include <stdint.h>
+
+/*@
+  assigns \nothing;
+  ensures \result == (int32_t)((uint32_t)n | (((uint32_t)n & 0xAAAAAAAA) >> 1) | (((uint32_t)n & 0xCCCCCCCC) >> 2) | (((uint32_t)n & 0xF0F0F0F0) >> 4) | (((uint32_t)n & 0xFF00FF00) >> 8) | (((uint32_t)n & 0xFFFF0000) >> 16));
+*/
+int32_t oddBitSetNumber(int32_t n) {
+    uint32_t value = (uint32_t)n;
+    value |= ((uint32_t)n & UINT32_C(0xAAAAAAAA)) >> 1;
+    value |= ((uint32_t)n & UINT32_C(0xCCCCCCCC)) >> 2;
+    value |= ((uint32_t)n & UINT32_C(0xF0F0F0F0)) >> 4;
+    value |= ((uint32_t)n & UINT32_C(0xFF00FF00)) >> 8;
+    value |= ((uint32_t)n & UINT32_C(0xFFFF0000)) >> 16;
+    return (int32_t)value;
+}

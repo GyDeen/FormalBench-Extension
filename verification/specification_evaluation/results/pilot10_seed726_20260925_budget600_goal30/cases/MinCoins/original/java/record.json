@@ -1,0 +1,100 @@
+{
+  "annotated_source": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/MinCoins/original/java/MinCoins.java",
+  "annotated_source_sha256": "4ae881b808ffd1afa1ba9165b70afff8ea9426dff2264aebac955b668a2a5424",
+  "command": [
+    "/root/tools/openjml/openjml",
+    "--esc",
+    "--nullable-by-default",
+    "--prover=z3-4.3.X",
+    "--timeout",
+    "30",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/MinCoins/original/java/MinCoins.java"
+  ],
+  "elapsed_seconds": 11.682,
+  "exit_code": 6,
+  "frozen_spec": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/frozen_specs/java/MinCoins.json",
+  "frozen_spec_sha256": "7e45e3430dc9455583aa2f1fa15ba8d27002c27f01df2fbbd5aab2ea9f37ae80",
+  "goals": [
+    {
+      "category": "specification",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/MinCoins/original/java/MinCoins.java",
+      "line": "25",
+      "message": "The prover cannot establish an assertion (TerminationDecreases: /mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/MinCoins/original/java/MinCoins.java:50:) in method minCoins",
+      "state": "violated"
+    }
+  ],
+  "input_fingerprint": "52d9cc84540a8d922e38a065b246b5be42615b78a5d6ee1c07242ce2321b4db8",
+  "language": "java",
+  "logs": {
+    "stderr": "stderr.log",
+    "stdout": "stdout.log",
+    "wp_report": null
+  },
+  "mutant_id": null,
+  "outcome": "specification violation",
+  "program": "MinCoins",
+  "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/MinCoins.java",
+  "raw_source_sha256": "2443e28f97090d8546cffa4ddacd17bc1f95a51e9a4fbe219351660f12aa5126",
+  "reason": "OpenJML reported an unproved specification obligation",
+  "role": "original",
+  "selection": null,
+  "selection_manifest_sha256": "92fa1533eafe32fdc60b119b0c6abc8a4f3c0b372d66ac21f39e54a3b5d7433d",
+  "settings": {
+    "c_provers": "Alt-Ergo:2.4.3,Z3:4.8.12",
+    "goal_timeout": 30,
+    "java_prover": "z3-4.3.X",
+    "machdep": "x86_64",
+    "memory_model": "Typed+ref",
+    "timeout": 600,
+    "why3_extra_config": "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+    "why3_extra_config_sha256": "97cc443d7439274ad732814842ae77a7b461d43c8d2099eb8994fb97e739049b",
+    "wp_memlimit": 1000,
+    "wp_par": 4
+  },
+  "support_sha256": {},
+  "timed_out": false,
+  "transfer": {
+    "annotation_count": 3,
+    "executable_token_sha256": "ad7c9e924d5bc1b112358fd5635d02272ffcdbe489117d915207777bc4068775",
+    "method": "frozen structured JSON",
+    "placements": [
+      {
+        "boundary_token": 31,
+        "function": "minCoins",
+        "id": "annotation_1",
+        "loop_id": null,
+        "mutant_offset": 106,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 31,
+        "function": "minCoins",
+        "id": "annotation_2",
+        "loop_id": null,
+        "mutant_offset": 106,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 80,
+        "function": "minCoins",
+        "id": "annotation_3",
+        "loop_id": "loop_1",
+        "mutant_offset": 338,
+        "next_token": "for",
+        "target": "loop"
+      }
+    ]
+  },
+  "verifier": {
+    "path": "/root/tools/openjml/openjml",
+    "sha256": "077efb88a059a09c43ccf5171031bdc0c70816765b8abf3cb7f0aeb151847adf",
+    "version_command": [
+      "/root/tools/openjml/openjml",
+      "--version"
+    ],
+    "version_exit_code": 0,
+    "version_output": "openjml 21.0.27"
+  }
+}

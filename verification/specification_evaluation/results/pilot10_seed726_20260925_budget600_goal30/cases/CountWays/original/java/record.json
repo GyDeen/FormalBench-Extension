@@ -1,0 +1,127 @@
+{
+  "annotated_source": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/CountWays/original/java/CountWays.java",
+  "annotated_source_sha256": "a0e2db4744fdf58870ededf7cd133d3938f8e6c8f079f39ae40d8b3128e6500c",
+  "command": [
+    "/root/tools/openjml/openjml",
+    "--esc",
+    "--nullable-by-default",
+    "--prover=z3-4.3.X",
+    "--timeout",
+    "30",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/CountWays/original/java/CountWays.java"
+  ],
+  "elapsed_seconds": 44.457,
+  "exit_code": 6,
+  "frozen_spec": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/frozen_specs/java/CountWays.json",
+  "frozen_spec_sha256": "aa8d29289e0ccb556cc4e04e53e7602a995e4ef0ee9f1134119f64c04aadaa6e",
+  "goals": [
+    {
+      "category": "unclassified",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/CountWays/original/java/CountWays.java",
+      "line": "41",
+      "message": "Validity is unknown - time or memory limit reached: : Aborted proof: timeout",
+      "state": "unknown"
+    }
+  ],
+  "input_fingerprint": "777705a07b0d48c5a39f98a902eb873e63d08a8c5b6d7c897b0d3b68a1d87a14",
+  "language": "java",
+  "logs": {
+    "stderr": "stderr.log",
+    "stdout": "stdout.log",
+    "wp_report": null
+  },
+  "mutant_id": null,
+  "outcome": "unknown/timeout",
+  "program": "CountWays",
+  "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/CountWays.java",
+  "raw_source_sha256": "3b4b0b65b211049a2dc0fb96c7b0c58e51ace36a8c1c5e2e686e726935f044d5",
+  "reason": "OpenJML reported unknown validity or a timeout",
+  "role": "original",
+  "selection": null,
+  "selection_manifest_sha256": "92fa1533eafe32fdc60b119b0c6abc8a4f3c0b372d66ac21f39e54a3b5d7433d",
+  "settings": {
+    "c_provers": "Alt-Ergo:2.4.3,Z3:4.8.12",
+    "goal_timeout": 30,
+    "java_prover": "z3-4.3.X",
+    "machdep": "x86_64",
+    "memory_model": "Typed+ref",
+    "timeout": 600,
+    "why3_extra_config": "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+    "why3_extra_config_sha256": "97cc443d7439274ad732814842ae77a7b461d43c8d2099eb8994fb97e739049b",
+    "wp_memlimit": 1000,
+    "wp_par": 4
+  },
+  "support_sha256": {},
+  "timed_out": false,
+  "transfer": {
+    "annotation_count": 6,
+    "executable_token_sha256": "f71dd39757fdb2dd1c71e52a5b5264dc9249b2a9d8681460826b367f01c3eaf5",
+    "method": "frozen structured JSON",
+    "placements": [
+      {
+        "boundary_token": 31,
+        "function": "countWays",
+        "id": "annotation_1",
+        "loop_id": null,
+        "mutant_offset": 107,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 31,
+        "function": "countWays",
+        "id": "annotation_2",
+        "loop_id": null,
+        "mutant_offset": 107,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 31,
+        "function": "countWays",
+        "id": "annotation_3",
+        "loop_id": null,
+        "mutant_offset": 107,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 31,
+        "function": "countWays",
+        "id": "annotation_4",
+        "loop_id": null,
+        "mutant_offset": 107,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 31,
+        "function": "countWays",
+        "id": "annotation_5",
+        "loop_id": null,
+        "mutant_offset": 107,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 94,
+        "function": "countWays",
+        "id": "annotation_6",
+        "loop_id": "loop_1",
+        "mutant_offset": 288,
+        "next_token": "for",
+        "target": "loop"
+      }
+    ]
+  },
+  "verifier": {
+    "path": "/root/tools/openjml/openjml",
+    "sha256": "077efb88a059a09c43ccf5171031bdc0c70816765b8abf3cb7f0aeb151847adf",
+    "version_command": [
+      "/root/tools/openjml/openjml",
+      "--version"
+    ],
+    "version_exit_code": 0,
+    "version_output": "openjml 21.0.27"
+  }
+}

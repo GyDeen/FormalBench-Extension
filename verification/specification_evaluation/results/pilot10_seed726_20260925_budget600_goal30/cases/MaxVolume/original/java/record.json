@@ -1,0 +1,109 @@
+{
+  "annotated_source": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/MaxVolume/original/java/MaxVolume.java",
+  "annotated_source_sha256": "fdf0af889911fc157845bfa34fe3556c0e4474d9a2f613525705d6e3da1e5bf5",
+  "command": [
+    "/root/tools/openjml/openjml",
+    "--esc",
+    "--nullable-by-default",
+    "--prover=z3-4.3.X",
+    "--timeout",
+    "30",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/MaxVolume/original/java/MaxVolume.java"
+  ],
+  "elapsed_seconds": 60.739,
+  "exit_code": 6,
+  "frozen_spec": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/frozen_specs/java/MaxVolume.json",
+  "frozen_spec_sha256": "81b07d2320e8a53da782bbdddc6a7fa38dda08c562eb30de0bfb88fd23cd894f",
+  "goals": [
+    {
+      "category": "unclassified",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/MaxVolume/original/java/MaxVolume.java",
+      "line": "25",
+      "message": "Validity is unknown - time or memory limit reached: : Aborted proof: timeout",
+      "state": "unknown"
+    }
+  ],
+  "input_fingerprint": "6c932b1d3ec43243bb5fadbcd2c9250fb224e7dbfb1233f8656599e58949bd93",
+  "language": "java",
+  "logs": {
+    "stderr": "stderr.log",
+    "stdout": "stdout.log",
+    "wp_report": null
+  },
+  "mutant_id": null,
+  "outcome": "unknown/timeout",
+  "program": "MaxVolume",
+  "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/MaxVolume.java",
+  "raw_source_sha256": "23615a67e1f0a1d037596b21cf6344f95874a28d51c8ee450d3643c717453e65",
+  "reason": "OpenJML reported unknown validity or a timeout",
+  "role": "original",
+  "selection": null,
+  "selection_manifest_sha256": "92fa1533eafe32fdc60b119b0c6abc8a4f3c0b372d66ac21f39e54a3b5d7433d",
+  "settings": {
+    "c_provers": "Alt-Ergo:2.4.3,Z3:4.8.12",
+    "goal_timeout": 30,
+    "java_prover": "z3-4.3.X",
+    "machdep": "x86_64",
+    "memory_model": "Typed+ref",
+    "timeout": 600,
+    "why3_extra_config": "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+    "why3_extra_config_sha256": "97cc443d7439274ad732814842ae77a7b461d43c8d2099eb8994fb97e739049b",
+    "wp_memlimit": 1000,
+    "wp_par": 4
+  },
+  "support_sha256": {},
+  "timed_out": false,
+  "transfer": {
+    "annotation_count": 4,
+    "executable_token_sha256": "9880f3480707bf9f141860d40a4920d03de9166357c95db8c2b1ed3bf484501f",
+    "method": "frozen structured JSON",
+    "placements": [
+      {
+        "boundary_token": 31,
+        "function": "maxVolume",
+        "id": "annotation_1",
+        "loop_id": null,
+        "mutant_offset": 107,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 31,
+        "function": "maxVolume",
+        "id": "annotation_2",
+        "loop_id": null,
+        "mutant_offset": 107,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 45,
+        "function": "maxVolume",
+        "id": "annotation_3",
+        "loop_id": "loop_1",
+        "mutant_offset": 180,
+        "next_token": "for",
+        "target": "loop"
+      },
+      {
+        "boundary_token": 62,
+        "function": "maxVolume",
+        "id": "annotation_4",
+        "loop_id": "loop_2",
+        "mutant_offset": 223,
+        "next_token": "for",
+        "target": "loop"
+      }
+    ]
+  },
+  "verifier": {
+    "path": "/root/tools/openjml/openjml",
+    "sha256": "077efb88a059a09c43ccf5171031bdc0c70816765b8abf3cb7f0aeb151847adf",
+    "version_command": [
+      "/root/tools/openjml/openjml",
+      "--version"
+    ],
+    "version_exit_code": 0,
+    "version_output": "openjml 21.0.27"
+  }
+}

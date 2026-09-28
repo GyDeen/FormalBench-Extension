@@ -1,0 +1,109 @@
+{
+  "annotated_source": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/CountUnsetBits/original/java/CountUnsetBits.java",
+  "annotated_source_sha256": "5389bba8a1e0797ea03c735d37824b55a15bf011e82169b20f06710e230c8541",
+  "command": [
+    "/root/tools/openjml/openjml",
+    "--esc",
+    "--nullable-by-default",
+    "--prover=z3-4.3.X",
+    "--timeout",
+    "30",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/CountUnsetBits/original/java/CountUnsetBits.java"
+  ],
+  "elapsed_seconds": 40.483,
+  "exit_code": 6,
+  "frozen_spec": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/frozen_specs/java/CountUnsetBits.json",
+  "frozen_spec_sha256": "506c9bfc30d8a83cd2197f1090393b5ccffdab5e68dad297c38d8942e4e0f504",
+  "goals": [
+    {
+      "category": "unclassified",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/CountUnsetBits/original/java/CountUnsetBits.java",
+      "line": "31",
+      "message": "Validity is unknown - time or memory limit reached: : Aborted proof: timeout",
+      "state": "unknown"
+    }
+  ],
+  "input_fingerprint": "76ccac93d1ca54d8cadf684ef466de88b2ade23147dbfe775ebb1bd08df2196e",
+  "language": "java",
+  "logs": {
+    "stderr": "stderr.log",
+    "stdout": "stdout.log",
+    "wp_report": null
+  },
+  "mutant_id": null,
+  "outcome": "unknown/timeout",
+  "program": "CountUnsetBits",
+  "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/CountUnsetBits.java",
+  "raw_source_sha256": "3a490d3f98e4fda22cdd853eb57590a2e839b081f92e56bca0bc3f9882341a85",
+  "reason": "OpenJML reported unknown validity or a timeout",
+  "role": "original",
+  "selection": null,
+  "selection_manifest_sha256": "92fa1533eafe32fdc60b119b0c6abc8a4f3c0b372d66ac21f39e54a3b5d7433d",
+  "settings": {
+    "c_provers": "Alt-Ergo:2.4.3,Z3:4.8.12",
+    "goal_timeout": 30,
+    "java_prover": "z3-4.3.X",
+    "machdep": "x86_64",
+    "memory_model": "Typed+ref",
+    "timeout": 600,
+    "why3_extra_config": "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+    "why3_extra_config_sha256": "97cc443d7439274ad732814842ae77a7b461d43c8d2099eb8994fb97e739049b",
+    "wp_memlimit": 1000,
+    "wp_par": 4
+  },
+  "support_sha256": {},
+  "timed_out": false,
+  "transfer": {
+    "annotation_count": 4,
+    "executable_token_sha256": "a274cbcf2a07154869b5d8288495b59b022a6eff3823e435ed15438bb8ecbefc",
+    "method": "frozen structured JSON",
+    "placements": [
+      {
+        "boundary_token": 31,
+        "function": "countUnsetBits",
+        "id": "annotation_1",
+        "loop_id": null,
+        "mutant_offset": 112,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 31,
+        "function": "countUnsetBits",
+        "id": "annotation_2",
+        "loop_id": null,
+        "mutant_offset": 112,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 45,
+        "function": "countUnsetBits",
+        "id": "annotation_3",
+        "loop_id": "loop_1",
+        "mutant_offset": 183,
+        "next_token": "for",
+        "target": "loop"
+      },
+      {
+        "boundary_token": 67,
+        "function": "countUnsetBits",
+        "id": "annotation_4",
+        "loop_id": "loop_2",
+        "mutant_offset": 252,
+        "next_token": "while",
+        "target": "loop"
+      }
+    ]
+  },
+  "verifier": {
+    "path": "/root/tools/openjml/openjml",
+    "sha256": "077efb88a059a09c43ccf5171031bdc0c70816765b8abf3cb7f0aeb151847adf",
+    "version_command": [
+      "/root/tools/openjml/openjml",
+      "--version"
+    ],
+    "version_exit_code": 0,
+    "version_output": "openjml 21.0.27"
+  }
+}

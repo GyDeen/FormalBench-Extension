@@ -1,0 +1,148 @@
+{
+  "annotated_source": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/CombSort/original/java/CombSort.java",
+  "annotated_source_sha256": "2ff4bc58696a7553014343c2b5a3f27fb68a5a9378303fb7c2e4db2012e84aee",
+  "command": [
+    "/root/tools/openjml/openjml",
+    "--esc",
+    "--nullable-by-default",
+    "--prover=z3-4.3.X",
+    "--timeout",
+    "30",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/CombSort/original/java/CombSort.java"
+  ],
+  "elapsed_seconds": 40.984,
+  "exit_code": 6,
+  "frozen_spec": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/frozen_specs/java/CombSort.json",
+  "frozen_spec_sha256": "d6b13aa66f219365c3bb44377531c5de6e85ed5c8f29f8ba966fc3f305882a21",
+  "goals": [
+    {
+      "category": "specification",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/CombSort/original/java/CombSort.java",
+      "line": "70",
+      "message": "The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method combSort",
+      "state": "violated"
+    },
+    {
+      "category": "specification",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/CombSort/original/java/CombSort.java",
+      "line": "71",
+      "message": "The prover cannot establish an assertion (LoopInvariant) in method combSort",
+      "state": "violated"
+    },
+    {
+      "category": "specification",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/CombSort/original/java/CombSort.java",
+      "line": "61",
+      "message": "The prover cannot establish an assertion (LoopDecreases) in method combSort",
+      "state": "violated"
+    },
+    {
+      "category": "unclassified",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/CombSort/original/java/CombSort.java",
+      "line": "51",
+      "message": "Validity is unknown - time or memory limit reached: : Aborted proof: timeout",
+      "state": "unknown"
+    }
+  ],
+  "input_fingerprint": "e393ff14c5e8dbcd2e1da6988b9408ea3b155046a7182230977a0816f8c55e95",
+  "language": "java",
+  "logs": {
+    "stderr": "stderr.log",
+    "stdout": "stdout.log",
+    "wp_report": null
+  },
+  "mutant_id": null,
+  "outcome": "specification violation",
+  "program": "CombSort",
+  "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/CombSort.java",
+  "raw_source_sha256": "5e52d2141b31e3886bf730ee3c0678243b025ede31bba51913e7f0ce003a7715",
+  "reason": "OpenJML reported an unproved specification obligation",
+  "role": "original",
+  "selection": null,
+  "selection_manifest_sha256": "92fa1533eafe32fdc60b119b0c6abc8a4f3c0b372d66ac21f39e54a3b5d7433d",
+  "settings": {
+    "c_provers": "Alt-Ergo:2.4.3,Z3:4.8.12",
+    "goal_timeout": 30,
+    "java_prover": "z3-4.3.X",
+    "machdep": "x86_64",
+    "memory_model": "Typed+ref",
+    "timeout": 600,
+    "why3_extra_config": "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+    "why3_extra_config_sha256": "97cc443d7439274ad732814842ae77a7b461d43c8d2099eb8994fb97e739049b",
+    "wp_memlimit": 1000,
+    "wp_par": 4
+  },
+  "support_sha256": {},
+  "timed_out": false,
+  "transfer": {
+    "annotation_count": 6,
+    "executable_token_sha256": "27b5437838f30e67baa3c26f4970d7af10be3be3d5fbf675cebaf122358ae857",
+    "method": "frozen structured JSON",
+    "placements": [
+      {
+        "boundary_token": 31,
+        "function": "combSort",
+        "id": "annotation_1",
+        "loop_id": null,
+        "mutant_offset": 106,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 31,
+        "function": "combSort",
+        "id": "annotation_2",
+        "loop_id": null,
+        "mutant_offset": 106,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 61,
+        "function": "combSort",
+        "id": "annotation_3",
+        "loop_id": null,
+        "mutant_offset": 248,
+        "next_token": "while",
+        "target": "statement"
+      },
+      {
+        "boundary_token": 61,
+        "function": "combSort",
+        "id": "annotation_4",
+        "loop_id": "loop_1",
+        "mutant_offset": 248,
+        "next_token": "while",
+        "target": "loop"
+      },
+      {
+        "boundary_token": 86,
+        "function": "combSort",
+        "id": "annotation_5",
+        "loop_id": null,
+        "mutant_offset": 368,
+        "next_token": "for",
+        "target": "statement"
+      },
+      {
+        "boundary_token": 86,
+        "function": "combSort",
+        "id": "annotation_6",
+        "loop_id": "loop_2",
+        "mutant_offset": 368,
+        "next_token": "for",
+        "target": "loop"
+      }
+    ]
+  },
+  "verifier": {
+    "path": "/root/tools/openjml/openjml",
+    "sha256": "077efb88a059a09c43ccf5171031bdc0c70816765b8abf3cb7f0aeb151847adf",
+    "version_command": [
+      "/root/tools/openjml/openjml",
+      "--version"
+    ],
+    "version_exit_code": 0,
+    "version_output": "openjml 21.0.27"
+  }
+}

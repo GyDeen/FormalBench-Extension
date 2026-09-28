@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-"""Generate body-only verification mutants from an exact JSON mutation plan."""
-
 from __future__ import annotations
 
 import argparse
@@ -8,7 +5,6 @@ import hashlib
 import json
 import re
 from pathlib import Path
-
 
 WORKSPACE = Path(__file__).resolve().parents[1]
 PROJECT = WORKSPACE.parents[1]
@@ -111,6 +107,10 @@ def driver(mutant_id: str) -> str:
     return f"""/* Generated verification driver: fixed contracts + one mutant. */
 #include "../../contracts/helpers.acsl.h"
 #include "../../contracts/jintarray.acsl.h"
+#include "../../contracts/jboolarray.acsl.h"
+#include "../../contracts/jdoublearray.acsl.h"
+#include "../../contracts/jintarray2.acsl.h"
+#include "../../contracts/jdoublearray2.acsl.h"
 #include "../mutants/{mutant_id}.c"
 """
 

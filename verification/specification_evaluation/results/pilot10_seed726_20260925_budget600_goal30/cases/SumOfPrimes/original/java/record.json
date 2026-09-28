@@ -1,0 +1,118 @@
+{
+  "annotated_source": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/SumOfPrimes/original/java/SumOfPrimes.java",
+  "annotated_source_sha256": "306b62093a55519e21e2142b460019f3469c6351f577e4b1a314b4c811417182",
+  "command": [
+    "/root/tools/openjml/openjml",
+    "--esc",
+    "--nullable-by-default",
+    "--prover=z3-4.3.X",
+    "--timeout",
+    "30",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/SumOfPrimes/original/java/SumOfPrimes.java"
+  ],
+  "elapsed_seconds": 39.121,
+  "exit_code": 6,
+  "frozen_spec": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/frozen_specs/java/SumOfPrimes.json",
+  "frozen_spec_sha256": "8c24f07dae80e2c6fb9574eb67f58d45eb03e9613aead0da887831ca875d9394",
+  "goals": [
+    {
+      "category": "unclassified",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/SumOfPrimes/original/java/SumOfPrimes.java",
+      "line": "49",
+      "message": "Validity is unknown - time or memory limit reached: : Aborted proof: timeout",
+      "state": "unknown"
+    }
+  ],
+  "input_fingerprint": "4238ebf5085499f5907c01fd2e894341c4e1730fa50ac8db6032f506f2d81eb7",
+  "language": "java",
+  "logs": {
+    "stderr": "stderr.log",
+    "stdout": "stdout.log",
+    "wp_report": null
+  },
+  "mutant_id": null,
+  "outcome": "unknown/timeout",
+  "program": "SumOfPrimes",
+  "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/SumOfPrimes.java",
+  "raw_source_sha256": "4496fe47848e65dabbde7304e7175ce8f9ee4bb0d022847b58ec97ad5a68cef7",
+  "reason": "OpenJML reported unknown validity or a timeout",
+  "role": "original",
+  "selection": null,
+  "selection_manifest_sha256": "92fa1533eafe32fdc60b119b0c6abc8a4f3c0b372d66ac21f39e54a3b5d7433d",
+  "settings": {
+    "c_provers": "Alt-Ergo:2.4.3,Z3:4.8.12",
+    "goal_timeout": 30,
+    "java_prover": "z3-4.3.X",
+    "machdep": "x86_64",
+    "memory_model": "Typed+ref",
+    "timeout": 600,
+    "why3_extra_config": "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+    "why3_extra_config_sha256": "97cc443d7439274ad732814842ae77a7b461d43c8d2099eb8994fb97e739049b",
+    "wp_memlimit": 1000,
+    "wp_par": 4
+  },
+  "support_sha256": {},
+  "timed_out": false,
+  "transfer": {
+    "annotation_count": 5,
+    "executable_token_sha256": "18defc65605799b665c67bceea5537045d1d80ae0306bd3dcc406f7889eeb72e",
+    "method": "frozen structured JSON",
+    "placements": [
+      {
+        "boundary_token": 31,
+        "function": "sumOfPrimes",
+        "id": "annotation_1",
+        "loop_id": null,
+        "mutant_offset": 109,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 31,
+        "function": "sumOfPrimes",
+        "id": "annotation_2",
+        "loop_id": null,
+        "mutant_offset": 109,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 67,
+        "function": "sumOfPrimes",
+        "id": "annotation_3",
+        "loop_id": "loop_1",
+        "mutant_offset": 261,
+        "next_token": "for",
+        "target": "loop"
+      },
+      {
+        "boundary_token": 92,
+        "function": "sumOfPrimes",
+        "id": "annotation_4",
+        "loop_id": null,
+        "mutant_offset": 338,
+        "next_token": "System",
+        "target": "statement"
+      },
+      {
+        "boundary_token": 106,
+        "function": "sumOfPrimes",
+        "id": "annotation_5",
+        "loop_id": "loop_2",
+        "mutant_offset": 403,
+        "next_token": "for",
+        "target": "loop"
+      }
+    ]
+  },
+  "verifier": {
+    "path": "/root/tools/openjml/openjml",
+    "sha256": "077efb88a059a09c43ccf5171031bdc0c70816765b8abf3cb7f0aeb151847adf",
+    "version_command": [
+      "/root/tools/openjml/openjml",
+      "--version"
+    ],
+    "version_exit_code": 0,
+    "version_output": "openjml 21.0.27"
+  }
+}

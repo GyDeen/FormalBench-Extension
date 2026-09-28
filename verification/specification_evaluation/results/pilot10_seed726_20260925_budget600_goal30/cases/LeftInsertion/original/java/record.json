@@ -1,0 +1,100 @@
+{
+  "annotated_source": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/LeftInsertion/original/java/LeftInsertion.java",
+  "annotated_source_sha256": "b7a86ecf1f653c9ff946803f61cbdf4899dc571601a2dad33f2356c8283db0b3",
+  "command": [
+    "/root/tools/openjml/openjml",
+    "--esc",
+    "--nullable-by-default",
+    "--prover=z3-4.3.X",
+    "--timeout",
+    "30",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/LeftInsertion/original/java/LeftInsertion.java"
+  ],
+  "elapsed_seconds": 46.101,
+  "exit_code": 6,
+  "frozen_spec": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/frozen_specs/java/LeftInsertion.json",
+  "frozen_spec_sha256": "349de1ab867e0f190cd87b7d1195912eecd2d6a0b35f09a124ef98da9c6337ab",
+  "goals": [
+    {
+      "category": "unclassified",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/LeftInsertion/original/java/LeftInsertion.java",
+      "line": "44",
+      "message": "Validity is unknown - time or memory limit reached: : Aborted proof: timeout",
+      "state": "unknown"
+    }
+  ],
+  "input_fingerprint": "8a24d3ace45fadb4f0938309396fb0b450af3b761ec61ab402b0d1fdb272866e",
+  "language": "java",
+  "logs": {
+    "stderr": "stderr.log",
+    "stdout": "stdout.log",
+    "wp_report": null
+  },
+  "mutant_id": null,
+  "outcome": "unknown/timeout",
+  "program": "LeftInsertion",
+  "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/LeftInsertion.java",
+  "raw_source_sha256": "63429a744d91df09fd8fb2aa0fa9aca7c877f756d744881f53b44883c78496c3",
+  "reason": "OpenJML reported unknown validity or a timeout",
+  "role": "original",
+  "selection": null,
+  "selection_manifest_sha256": "92fa1533eafe32fdc60b119b0c6abc8a4f3c0b372d66ac21f39e54a3b5d7433d",
+  "settings": {
+    "c_provers": "Alt-Ergo:2.4.3,Z3:4.8.12",
+    "goal_timeout": 30,
+    "java_prover": "z3-4.3.X",
+    "machdep": "x86_64",
+    "memory_model": "Typed+ref",
+    "timeout": 600,
+    "why3_extra_config": "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+    "why3_extra_config_sha256": "97cc443d7439274ad732814842ae77a7b461d43c8d2099eb8994fb97e739049b",
+    "wp_memlimit": 1000,
+    "wp_par": 4
+  },
+  "support_sha256": {},
+  "timed_out": false,
+  "transfer": {
+    "annotation_count": 3,
+    "executable_token_sha256": "6659e1a76a4830f1a26fc18341cb43cb2d367c1fa18f0ff7cc6d6fb0e6c85a3d",
+    "method": "frozen structured JSON",
+    "placements": [
+      {
+        "boundary_token": 31,
+        "function": "leftInsertion",
+        "id": "annotation_1",
+        "loop_id": null,
+        "mutant_offset": 111,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 31,
+        "function": "leftInsertion",
+        "id": "annotation_2",
+        "loop_id": null,
+        "mutant_offset": 111,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 59,
+        "function": "leftInsertion",
+        "id": "annotation_3",
+        "loop_id": "loop_1",
+        "mutant_offset": 225,
+        "next_token": "while",
+        "target": "loop"
+      }
+    ]
+  },
+  "verifier": {
+    "path": "/root/tools/openjml/openjml",
+    "sha256": "077efb88a059a09c43ccf5171031bdc0c70816765b8abf3cb7f0aeb151847adf",
+    "version_command": [
+      "/root/tools/openjml/openjml",
+      "--version"
+    ],
+    "version_exit_code": 0,
+    "version_output": "openjml 21.0.27"
+  }
+}
