@@ -46,10 +46,27 @@ tests/
 /verification/java_arrays/results/*
 !/verification/java_arrays/results/*.md
 
-# In specification-evaluation runs, retain only original-program results:
-# Java's classified record and C's per-goal WP report. Ignore raw logs,
-# staged/generated sources, mutant results, and other run metadata.
-/verification/specification_evaluation/results/**
-!/verification/specification_evaluation/results/**/
-!/verification/specification_evaluation/results/**/cases/*/original/java/record.json
-!/verification/specification_evaluation/results/**/cases/*/original/c/wp-report.json
+# Only the main 30-second goal / 600-second program run is eligible for tracking.
+# Smoke, repair, and fast diagnostic run directories remain entirely local.
+/verification/specification_evaluation/results/*
+!/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/
+# Within the main run, retain its summary and original-program results only:
+# Java's classified record and C's per-goal WP report.
+/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/**
+!/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/**/
+!/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/summary.json
+!/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/*/original/java/record.json
+!/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/*/original/c/wp-report.json
+
+# Generated compiler output (after allowlists so it cannot be re-included).
+/FormalBench-data/FilteredData/compiled_classes/
+__pycache__/
+*.pyc
+*.pyo
+*.class
+*.o
+*.obj
+*.cmx
+*.cmi
+*.cmo
+*.cmxs

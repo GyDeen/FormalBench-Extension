@@ -17,6 +17,7 @@ from .workflow import run_population, validate_transfers
 
 
 def positive(value: str) -> int:
+    """Parse a CLI integer and reject zero or negative budgets and limits."""
     number = int(value)
     if number <= 0:
         raise argparse.ArgumentTypeError("must be positive")
@@ -111,7 +112,8 @@ def main() -> int:
                                  tuple(dict.fromkeys(args.language or ("java", "c"))),
                                  args.retry_tool_failures)
         print(json.dumps({key: summary[key] for key in
-                          ("eligible_pair_count", "originals", "mutants", "pairs", "complete")},
+                          ("eligible_pair_count", "originals", "mutants", "primary_detection",
+                           "supplementary_evidence", "pairs", "complete")},
                          indent=2))
         return 0
     except (InputError, OSError, ValueError) as error:
