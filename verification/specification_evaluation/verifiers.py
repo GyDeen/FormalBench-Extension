@@ -24,7 +24,7 @@ CONTRACTS = (
 )
 OUTCOMES = (
     "proved", "specification violation", "precondition/RTE failure",
-    "syntax/tool failure", "unknown/timeout", "not run",
+    "syntax/tool failure", "unknown/timeout", "invalid mutant", "not run",
 )
 SUPPORT_GOAL = re.compile(r"requires|precondition|\brte\b|runtime|division_by_zero|overflow|out_of_bounds|valid_access", re.I)
 TOOL_FAILURE = re.compile(r"(?:error:|\bsyntax error\b|\bparse error\b|unsupported|internal jml bug|unknown option)", re.I)
@@ -38,6 +38,8 @@ JAVA_UNSUPPORTED = re.compile(r"(?:Not implemented for static checking|Not yet s
 
 @dataclass(frozen=True)
 class Settings:
+    """Hold the verifier paths, prover choices, and per-run resource limits."""
+
     openjml: str
     frama_c: str
     java_prover: str
@@ -101,7 +103,7 @@ def _float_negation_compatibility(verifier: dict[str, Any]) -> dict[str, str]:
 
 
 def support_hashes() -> dict[str, str]:
-    """Fixed JArray declarations assumed by C target proofs."""
+    """Hash the fixed JArray declarations and generated include shim used by C proofs."""
     sources = [CONTRACT_ROOT / "generated/types.h"]
     sources.extend(CONTRACT_ROOT / "contracts" / name for name in CONTRACTS)
     for source in sources:
@@ -120,7 +122,7 @@ def _shim_text() -> str:
 
 
 def stage_c_support(case_dir: Path) -> dict[str, str]:
-    """Copy read-only JArray interfaces next to one translated C program."""
+    """Stage fixed JArray interfaces beside a C case and reject changed copies."""
     hashes = support_hashes()
     for relative, expected in hashes.items():
         if relative == "java_arrays.h":
@@ -146,7 +148,7 @@ def stage_c_support(case_dir: Path) -> dict[str, str]:
 
 def build_command(language: str, source: Path, case_dir: Path, settings: Settings,
                   executables: dict[str, dict[str, Any]]) -> list[str]:
-    """Build commands for program sources, never JArray validation clients."""
+    """Build the configured OpenJML or Frama-C command for one annotated program."""
     if language == "java":
         # OpenJML checks the annotated FormalBench Java program.
         from .java_compat import command_options
@@ -196,7 +198,7 @@ def _goal_records(report: Any) -> list[dict[str, Any]]:
 
 def classify_c(returncode: int | None, timed_out: bool, stdout: str, stderr: str,
                report: Any | None) -> tuple[str, list[dict[str, Any]], str]:
-    """Require all WP goals to pass; never count unresolved goals as rejection."""
+    """Classify WP goals using explicit invalidity, proof, and tool-failure evidence."""
     if timed_out:
         return "unknown/timeout", [], "Frama-C process exceeded its time budget"
     output = stdout + "\n" + stderr
@@ -248,14 +250,14 @@ def classify_c(returncode: int | None, timed_out: bool, stdout: str, stderr: str
 
 
 def java_tool_error(output: str) -> bool:
-    """OpenJML's progress summary reports 'Error: 0' even on successful runs."""
+    """Find OpenJML tool errors while ignoring a successful 'Error: 0' summary."""
     diagnostics = re.sub(r"(?m)^  Error:[ \t]*0[ \t]*\r?$", "", output)
     return bool(TOOL_FAILURE.search(diagnostics) or JAVA_UNSUPPORTED.search(diagnostics))
 
 
 def classify_java(returncode: int | None, timed_out: bool, stdout: str,
                   stderr: str) -> tuple[str, list[dict[str, Any]], str]:
-    """Separate OpenJML proof diagnostics from tool errors and timeouts."""
+    """Classify OpenJML warnings as proof, safety, unknown, or tool outcomes."""
     output = stdout + "\n" + stderr
     if JAVA_UNSUPPORTED.search(output):
         return "syntax/tool failure", [], "OpenJML cannot translate one or more specification constructs"
@@ -294,7 +296,11 @@ def classify_java(returncode: int | None, timed_out: bool, stdout: str,
         if re.search(r"\b(?:timeout|timed out|unknown)\b", output, re.I):
             return "unknown/timeout", goals, "OpenJML reported unknown validity or a timeout"
         return "unknown/timeout", goals, "OpenJML warnings were not classified as proof failures"
-    if re.search(r"\b(?:timeout|timed out|unknown)\b", output, re.I):
+    # OpenJML's --progress summary always contains a ``Timeout: N`` count.
+    # A zero count is not evidence of a timeout; remove only that summary
+    # line before looking for timeout/unknown diagnostics.
+    proof_diagnostics = re.sub(r"(?im)^[ \t]*Timeout:[ \t]*0[ \t]*$", "", output)
+    if re.search(r"\b(?:timeout|timed out|unknown)\b", proof_diagnostics, re.I):
         return "unknown/timeout", [], "OpenJML reported timeout or unknown"
     if returncode == 0:
         return "proved", [], "OpenJML ESC completed without errors or warnings"
@@ -302,6 +308,8 @@ def classify_java(returncode: int | None, timed_out: bool, stdout: str,
 
 
 def _stop_process_group(process):
+    """Stop a verifier process group and collect any remaining output."""
+
     if process is None:
         return "", ""
     try:
@@ -318,7 +326,7 @@ def _stop_process_group(process):
 
 def run_verifier(language: str, source: Path, case_dir: Path, settings: Settings,
                  executables: dict[str, dict[str, Any]]) -> dict[str, Any]:
-    """Run one verifier and retain its command, logs, report and verdict."""
+    """Run one verifier with a process timeout and save evidence plus verdict."""
     command = build_command(language, source, case_dir, settings, executables)
     report_path = case_dir / "wp-report.json"
     if language == "c":
