@@ -60,6 +60,7 @@ def scan(source: str) -> tuple[list[Token], list[Annotation]]:
 
 
 def token_digest(tokens: list[Token]) -> str:
+    """Hash executable token text without depending on source whitespace."""
     payload = "\0".join(token.text for token in tokens).encode("utf-8")
     return hashlib.sha256(payload).hexdigest()
 
@@ -129,6 +130,7 @@ def _function_spans(tokens: list[Token], source: str) -> list[tuple[str, int, in
 
 
 def _owner(spans: list[tuple[str, int, int, int]], boundary: int) -> str | None:
+    """Find the innermost function containing or beginning at an anchor."""
     inside = [span for span in spans if span[2] < boundary < span[3]]
     if inside:
         return max(inside, key=lambda span: span[2])[0]
@@ -213,13 +215,15 @@ def apply_specification(raw_original: str, specification: dict[str, Any],
                       if token.text in {"for", "while", "do"}]
     mutant_loops = [(index, token.text) for index, token in enumerate(mutant_tokens)
                     if token.text in {"for", "while", "do"}]
-    # Loop annotations need their loop, not just a nearby matching token; a
-    # changed loop structure is therefore rejected rather than guessed at.
+    # Loop annotations need their loop, not just a nearby matching token.
+    # A confirmed deletion may omit only that loop's annotations; all other
+    # changes still require an unambiguous attachment point.
     original_spans = _function_spans(original_tokens, raw_original)
     target_spans = _function_spans(mutant_tokens, raw_target)
     placements: list[tuple[int, dict[str, Any], str, bool]] = []
     omitted: list[dict[str, Any]] = []
     c_loop_maps = {}
+    java_loop_maps = {}
     seen_ids: set[str] = set()
     for record in records:
         if not isinstance(record, dict) or record.get("target") not in {"function", "loop", "statement"}:
@@ -255,8 +259,72 @@ def apply_specification(raw_original: str, specification: dict[str, Any],
                     new = [s for s in target_spans if s[0] == owner]
                     if len(old) != 1 or len(new) != 1:
                         raise InputError("C loop annotation has no unique function")
-                    c_loop_maps[owner] = loop_correspondence(before, after, old[0], new[0])
+                    loop_mapping, deleted = loop_correspondence(before, after, old[0], new[0])
+                    if deleted:
+                        from .c_bindings import Function
+                        old_function = Function(before, old[0])
+                        for removed in deleted:
+                            end = old_function.loop_ends[removed]
+                            if any((other.get("boundary_token") == removed
+                                    and other.get("target") != "loop")
+                                   or (isinstance(other.get("boundary_token"), int)
+                                       and removed < other["boundary_token"] <= end)
+                                   for other in records if isinstance(other, dict)):
+                                raise InputError("Deleted C loop contains other annotations")
+                    c_loop_maps[owner] = (loop_mapping, deleted)
                 loop_mapping, deleted = c_loop_maps[owner]
+                if index in deleted:
+                    omitted.append({"id": annotation_id, "function": owner,
+                                    "target": "loop", "loop_id": record["loop_id"],
+                                    "reason": "loop deleted and replaced by empty statement",
+                                    "mutant_offset": mutant_tokens[deleted[index]].start})
+                    continue
+                target_index = loop_mapping[index]
+            elif specification.get("language") == "java":
+                owner = record["function"]
+                if owner not in java_loop_maps:
+                    old = [span for span in original_spans if span[0] == owner]
+                    new = [span for span in target_spans if span[0] == owner]
+                    if len(old) != 1 or len(new) != 1:
+                        raise InputError("Java loop annotation has no unique method")
+                    old_loops = [position for position, _ in original_loops
+                                 if _owner(original_spans, position) == owner]
+                    new_loops = [position for position, _ in mutant_loops
+                                 if _owner(target_spans, position) == owner]
+                    if len(old_loops) > len(new_loops):
+                        if any(before[i] == "do" for i in old_loops) or any(
+                            after[i] == "do" for i in new_loops
+                        ):
+                            raise InputError("Deleted Java do loop has no safe correspondence")
+                        from .c_structure import loop_correspondence
+                        from .c_bindings import Function
+                        loop_mapping, deleted = loop_correspondence(before, after, old[0], new[0])
+                        old_function = Function(before, old[0])
+                        for removed, null in deleted.items():
+                            preceding = mapping.get(removed - 1)
+                            if (preceding is None or before[removed - 1] not in {"{", ";", "}"}
+                                    or after[preceding] != before[removed - 1]
+                                    or preceding + 1 != null):
+                                raise InputError("Deleted Java loop has no distinct empty-statement replacement")
+                            # An assertion or contract inside the removed body
+                            # is still an applicable obligation. We cannot
+                            # silently omit it along with the loop clauses.
+                            end = old_function.loop_ends[removed]
+                            if any((other.get("boundary_token") == removed
+                                    and other.get("target") != "loop")
+                                   or (isinstance(other.get("boundary_token"), int)
+                                       and removed < other["boundary_token"] <= end)
+                                   for other in records if isinstance(other, dict)):
+                                raise InputError("Deleted Java loop contains other annotations")
+                    elif len(old_loops) == len(new_loops):
+                        if [before[i] for i in old_loops] != [after[i] for i in new_loops]:
+                            raise InputError("Mutant changes the loop structure needed by an annotation")
+                        loop_mapping = dict(zip(old_loops, new_loops))
+                        deleted = {}
+                    else:
+                        raise InputError("Mutant introduces loops without annotation correspondence")
+                    java_loop_maps[owner] = (loop_mapping, deleted)
+                loop_mapping, deleted = java_loop_maps[owner]
                 if index in deleted:
                     omitted.append({"id": annotation_id, "function": owner,
                                     "target": "loop", "loop_id": record["loop_id"],
