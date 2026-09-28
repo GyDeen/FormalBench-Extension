@@ -40,6 +40,7 @@ class Pair:
 
     @property
     def key(self) -> str:
+        """Return the manifest's program/mutant identifier for this pair."""
         return f"{self.program}/{self.mutant_id}"
 
 

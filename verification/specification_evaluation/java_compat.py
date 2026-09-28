@@ -14,12 +14,16 @@ EXPORTS = ["--add-exports=jdk.compiler/com.sun.tools.javac." + part + "=ALL-UNNA
 
 
 def normalize_annotation(text: str) -> tuple[str, list[str]]:
+    """Rewrite standalone JML loop counters to a numeric identity and log edits."""
+
     # A standalone JmlSingleton in a ?: arm crashes JmlAttr. Adding zero
     # retains its numeric value, including at zero and Integer.MAX_VALUE.
     # Do not change string/character literals or longer JML identifiers.
     pattern = r'''"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|\\count\b'''
     count = 0
     def replace(match):
+        """Preserve literals and expand only a matched standalone loop counter."""
+
         nonlocal count
         if match.group() != r"\count":
             return match.group()
@@ -31,7 +35,7 @@ def normalize_annotation(text: str) -> tuple[str, list[str]]:
 
 
 def compatibility(verifier: dict) -> dict:
-    """Build a separate plugin; never edit the installed OpenJML or input files."""
+    """Build and fingerprint the OpenJML 21.0.27 plugin and bundled solver."""
     home = Path(verifier["path"]).parent
     source = Path(__file__).parent / "openjml/NumericBitPredicates.java"
     compiler = home / "jdk/bin/javac"
@@ -77,6 +81,8 @@ def compatibility(verifier: dict) -> dict:
 
 
 def command_options(verifier: dict, source: Path, prover: str) -> list[str]:
+    """Return JVM plugin and solver arguments when a compatibility build exists."""
+
     compat = verifier.get("compatibility", {})
     if "plugin" not in compat:
         return []
