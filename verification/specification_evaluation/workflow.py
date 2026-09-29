@@ -8,8 +8,10 @@ import shlex
 import subprocess
 from datetime import datetime, timezone
 from collections import Counter
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from queue import Queue, Empty
 from pathlib import Path
+from threading import Event
 from typing import Any
 
 from .annotations import Transfer, apply_specification, extract_specification
@@ -37,6 +39,40 @@ def write_json(path: Path, value: Any) -> None:
 
 def read_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def run_case_queues(tasks: dict[str, list[Any]], workers: dict[str, int]) -> None:
+    """Drain independent language queues with bounded workers and graceful stop."""
+    stop = Event()
+    queues = {language: Queue() for language in tasks}
+    for language, items in tasks.items():
+        for task in items:
+            queues[language].put(task)
+
+    def worker(language):
+        while not stop.is_set():
+            try:
+                task = queues[language].get_nowait()
+            except Empty:
+                return
+            try:
+                task()
+            except BaseException:
+                stop.set()
+                raise
+
+    executor = ThreadPoolExecutor(max_workers=sum(workers[lang] for lang in tasks))
+    futures = [executor.submit(worker, lang) for lang in tasks for _ in range(workers[lang])]
+    try:
+        for future in as_completed(futures):
+            future.result()
+    except BaseException:
+        stop.set()
+        for future in futures:
+            future.cancel()
+        raise
+    finally:
+        executor.shutdown(wait=True, cancel_futures=True)
 
 
 def read_frozen_spec(path: Path, program: str, language: str) -> dict[str, Any]:
@@ -135,7 +171,12 @@ def freeze_specs(population: Population, programs: tuple[str, ...], output: Path
                             for entry in previous.get("specifications", [])}
         for entry in entries:
             old = previous_entries.get((entry["program"], entry["language"]))
-            if old is not None and old != entry:
+            # Allow the output folder to be renamed between stages. The
+            # frozen-spec path changes with that folder, but the source and
+            # specification contents must remain identical.
+            if (old is not None
+                    and {key: value for key, value in old.items() if key != "frozen_spec"}
+                    != {key: value for key, value in entry.items() if key != "frozen_spec"}):
                 raise InputError(f"Frozen specification or original changed: {entry['program']} {entry['language']}")
         previous_entries.update({(entry["program"], entry["language"]): entry for entry in entries})
         entries = list(previous_entries.values())
@@ -214,11 +255,53 @@ def _latest_archive(output: Path, program: str, case_dir: Path, language: str):
     return next(iter(sorted(root.glob("*/record.json"), reverse=True)), None)
 
 
+def _reuse_original_for_mutants(output: Path, population: Population, program: str,
+                                language: str, frozen_spec: Path, settings: Settings,
+                                executables: dict[str, dict[str, Any]],
+                                support: dict[str, str]) -> dict[str, Any]:
+    """Validate and reuse an original record without invoking its verifier again."""
+    case_dir = _case_dir(output, program, "original", None, language)
+    record_path = case_dir / "record.json"
+    if not record_path.is_file():
+        raise InputError(f"Verify the {language} original before its mutants: {program}")
+    record = read_json(record_path)
+    raw = population.original(program, language)
+    expected = {
+        "raw_source": str(raw),
+        "raw_source_sha256": sha256(raw),
+        "frozen_spec_sha256": sha256(frozen_spec),
+        "selection_manifest_sha256": population.manifest_sha256,
+        "support_sha256": support if language == "c" else {},
+        "verifier": executables[language],
+        "settings": _settings_record(settings),
+    }
+    for key, value in expected.items():
+        if record.get(key) != value:
+            raise InputError(f"Saved {language} original no longer matches {key}: {program}")
+    if record.get("outcome") in {None, "not run"}:
+        raise InputError(f"Saved {language} original has no completed outcome: {program}")
+
+    # Refactored adapters can be reused only if their attachment to this
+    # original is byte-for-byte identical to the source already verified.
+    staged_source = case_dir / raw.name
+    if not staged_source.is_file():
+        raise InputError(f"Saved annotated original is missing: {staged_source}")
+    raw_text = raw.read_text(encoding="utf-8")
+    specification = read_frozen_spec(frozen_spec, program, language)
+    expected_source = apply_specification(raw_text, specification, raw_text).source
+    if staged_source.read_text(encoding="utf-8") != expected_source:
+        raise InputError(f"Current annotation transfer changes the saved original: {program} {language}")
+    if record.get("annotated_source_sha256") != sha256(staged_source):
+        raise InputError(f"Saved annotated original hash does not match its record: {program} {language}")
+    return record
+
+
 def evaluate_case(output: Path, population: Population, program: str, role: str,
                   mutant_id: str | None, selection: str | None, language: str,
                   raw: Path, frozen_spec: Path, settings: Settings,
                   executables: dict[str, dict[str, Any]], support: dict[str, str],
-                  retry_tool_failure: bool = False) -> dict[str, Any]:
+                  retry_tool_failure: bool = False,
+                  capture_java_workload: bool = False) -> dict[str, Any]:
     """Verify one FormalBench source and keep its complete result."""
     case_dir = _case_dir(output, program, role, mutant_id, language)
     case_dir.mkdir(parents=True, exist_ok=True)
@@ -235,6 +318,10 @@ def evaluate_case(output: Path, population: Population, program: str, role: str,
     else:
         base["adapter_sha256"] = {name: sha256(Path(__file__).parent / name)
                                   for name in ("annotations.py", "c_bindings.py", "c_structure.py", "java_compat.py", "verifiers.py")}
+    if language == "java" and capture_java_workload:
+        base["java_workload_capture"] = {
+            name: sha256(Path(__file__).parent / name)
+            for name in ("java_workload.py", "java_solver_trace.py")}
     fingerprint = digest(base)
     prior = case_dir / "record.json"
     recovery = (_latest_archive(output, program, case_dir, language)
@@ -303,7 +390,11 @@ def evaluate_case(output: Path, population: Population, program: str, role: str,
         if staged_support != support:
             raise InputError("Staged C contracts differ from the fixed support hashes")
     try:
-        verification = run_verifier(language, source, case_dir, settings, executables)
+        if language == "java" and capture_java_workload:
+            from .java_workload import run_java_workload
+            verification = run_java_workload(source, case_dir, settings, executables)
+        else:
+            verification = run_verifier(language, source, case_dir, settings, executables)
     except KeyboardInterrupt:
         _store_record(case_dir, {**record, "transfer": transfer_record, "outcome": "not run",
                                  "attempt_status": "interrupted", "reason": "Verification interrupted",
@@ -425,7 +516,8 @@ def run_population(population: Population, programs: tuple[str, ...], output: Pa
                    settings: Settings, max_pairs: int | None = None,
                    stage: str = "all", parallel_languages: bool = False,
                    languages: tuple[str, ...] = ("java", "c"),
-                   retry_tool_failures: bool = False) -> dict[str, Any]:
+                   retry_tool_failures: bool = False, c_workers: int = 1,
+                   java_workers: int = 1, capture_java_workload: bool = False) -> dict[str, Any]:
     """Execute the report's ordered stages against FormalBench-data targets.
 
     ``prepare`` only freezes independently produced original specifications;
@@ -433,6 +525,8 @@ def run_population(population: Population, programs: tuple[str, ...], output: Pa
     """
     if stage not in {"prepare", "originals", "mutants", "all"}:
         raise InputError(f"Unknown evaluation stage: {stage}")
+    if c_workers < 1 or java_workers < 1:
+        raise InputError("worker counts must be positive")
 
     def run_language_tasks(tasks: list[Any]) -> list[Any]:
         try:
@@ -465,10 +559,15 @@ def run_population(population: Population, programs: tuple[str, ...], output: Pa
            "java_originals": str(population.java_originals), "c_originals": str(population.c_originals),
            "settings": _settings_record(settings), "verifiers": executables,
            "parallel_languages": parallel_languages,
+           "c_workers": c_workers,
+           "java_workers": java_workers,
            "jarray_support_sha256": support,
            "evaluation_targets": "FormalBench-data original programs and retained Java/C mutant pairs",
            "c_support_role": "Fixed trusted JArray declarations/contracts; not scored as benchmark targets"}
     run_path = output / "run.json"
+    if capture_java_workload:
+        run["capture_java_workload"] = True
+    migrate_legacy_run_metadata = False
     if retry_tool_failures:
         if not run_path.is_file():
             raise InputError("Tool-failure retry requires an existing run")
@@ -482,9 +581,46 @@ def run_population(population: Population, programs: tuple[str, ...], output: Pa
                    {**run, "retry_tool_failures": True, "languages": languages,
                     "programs": programs, "stage": stage})
     else:
-        if run_path.is_file() and read_json(run_path) != run:
-            raise InputError("Existing output was created with different inputs, tools, or settings")
-        write_json(run_path, run)
+        if run_path.is_file():
+            previous = read_json(run_path)
+            if previous != run:
+                previous_without_schedule = {
+                    key: value for key, value in previous.items() if key not in {"parallel_languages", "c_workers", "java_workers"}
+                }
+                current_without_schedule = {
+                    key: value for key, value in run.items() if key not in {"parallel_languages", "c_workers", "java_workers"}
+                }
+                independent_resume = (
+                    previous_without_schedule == current_without_schedule
+                )
+                if independent_resume:
+                    stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
+                    write_json(output / "history" / f"schedule_before_{stamp}.json", previous)
+                    write_json(run_path, run)
+                else:
+                    # Older originals-only runs recorded the selected population
+                    # and stop policy, but not the manifest and source-folder
+                    # fingerprints at run level. Permit that schema only for a
+                    # mutant continuation with identical programs, tools, support
+                    # files, and limits. Per-original hashes are checked below
+                    # before the updated metadata is written.
+                    legacy_match = (
+                        stage == "mutants"
+                        and previous.get("programs") == list(programs)
+                        and set(previous.get("languages", [])) == set(languages)
+                        and previous.get("stop_condition") == "first syntax/tool failure or not-run outcome"
+                        and previous.get("parallel_languages") == parallel_languages
+                        and previous.get("settings") == run["settings"]
+                        and previous.get("verifiers") == run["verifiers"]
+                        and previous.get("jarray_support_sha256") == run["jarray_support_sha256"]
+                    )
+                    if not legacy_match:
+                        raise InputError("Existing output was created with different inputs, tools, or settings")
+                    migrate_legacy_run_metadata = True
+            else:
+                write_json(run_path, run)
+        else:
+            write_json(run_path, run)
 
     def selected_retry(program, role, mutant_id, language):
         if not retry_tool_failures:
@@ -494,22 +630,42 @@ def run_population(population: Population, programs: tuple[str, ...], output: Pa
         if not path.is_file():
             return _latest_archive(output, program, case_dir, language) is not None
         return _retryable_tool_failure(read_json(path))
+    if stage == "mutants" and not retry_tool_failures:
+        # Check every saved original before starting any mutant, so a transfer
+        # mismatch cannot leave the mutant population only partly evaluated.
+        for program in programs:
+            for language in languages:
+                _reuse_original_for_mutants(
+                    output, population, program, language, frozen[(program, language)],
+                    settings, executables, support)
+        if migrate_legacy_run_metadata:
+            write_json(run_path, run)
     # Originals are verified first to report consistency independently. In
     # mutant-only mode, their prior records must exist and still match inputs.
+    worker_counts = {"java": java_workers, "c": c_workers}
+    concurrent_originals = any(worker_counts[language] > 1 for language in languages)
+    original_queues = {language: [] for language in languages}
     for program in programs:
         tasks = []
         for language in languages:
             if retry_tool_failures and (stage == "mutants" or not selected_retry(program, "original", None, language)):
                 continue
             if stage in {"originals", "all"}:
-                def run_original(language: str = language) -> tuple[str, dict[str, Any]]:
+                def run_original(language: str = language, program: str = program) -> tuple[str, dict[str, Any]]:
                     record = evaluate_case(
                         output, population, program, "original", None, None, language,
                         population.original(program, language), frozen[(program, language)],
-                        settings, executables, support, retry_tool_failures)
+                        settings, executables, support, retry_tool_failures, capture_java_workload)
+                    return language, record
+            elif stage == "mutants":
+                def run_original(language: str = language, program: str = program) -> tuple[str, dict[str, Any]]:
+                    """Validate and reuse the completed original for this mutant stage."""
+                    record = _reuse_original_for_mutants(
+                        output, population, program, language, frozen[(program, language)],
+                        settings, executables, support)
                     return language, record
             else:
-                def run_original(language: str = language) -> tuple[str, dict[str, Any]]:
+                def run_original(language: str = language, program: str = program) -> tuple[str, dict[str, Any]]:
                     path = _case_dir(output, program, "original", None, language) / "record.json"
                     if not path.is_file():
                         raise InputError(f"Verify the {language} original before its mutants: {program}")
@@ -518,8 +674,17 @@ def run_population(population: Population, programs: tuple[str, ...], output: Pa
                         population.original(program, language), frozen[(program, language)],
                         settings, executables, support)
                     return language, record
-            tasks.append(run_original)
+            if concurrent_originals:
+                original_queues[language].append(run_original)
+            else:
+                tasks.append(run_original)
         run_language_tasks(tasks)
+    if concurrent_originals:
+        try:
+            run_case_queues(original_queues, worker_counts)
+        except KeyboardInterrupt:
+            summarize(output, population)
+            raise
     if stage == "originals":
         return summarize(output, population)
     # The manifest supplies the eligible pair IDs. --max-pairs only truncates
@@ -527,15 +692,55 @@ def run_population(population: Population, programs: tuple[str, ...], output: Pa
     pairs = [pair for pair in population.pairs if pair.program in programs]
     if max_pairs is not None:
         pairs = pairs[:max_pairs]
-    for pair in pairs:
-        tasks = []
-        for language, source in (("java", pair.java), ("c", pair.c)):
-            if language not in languages or not selected_retry(pair.program, "mutant", pair.mutant_id, language):
-                continue
-            def run_mutant(language: str = language, source: Path = source) -> dict[str, Any]:
-                return evaluate_case(output, population, pair.program, "mutant", pair.mutant_id,
-                                     pair.selection, language, source, frozen[(pair.program, language)],
-                                     settings, executables, support, retry_tool_failures)
-            tasks.append(run_mutant)
-        run_language_tasks(tasks)
+    if ((parallel_languages and len(languages) > 1) or ("c" in languages and c_workers > 1)
+            or ("java" in languages and java_workers > 1)):
+        stop_language_queues = Event()
+        queues = {language: Queue() for language in languages}
+        for language in languages:
+            for pair in pairs:
+                queues[language].put(pair)
+
+        def run_language_queue(language: str) -> None:
+            """Claim each case once; workers advance without a per-case barrier."""
+            while not stop_language_queues.is_set():
+                try:
+                    pair = queues[language].get_nowait()
+                except Empty:
+                    return
+                if not selected_retry(pair.program, "mutant", pair.mutant_id, language):
+                    continue
+                source = pair.java if language == "java" else pair.c
+                evaluate_case(output, population, pair.program, "mutant", pair.mutant_id,
+                              pair.selection, language, source, frozen[(pair.program, language)],
+                              settings, executables, support, retry_tool_failures, capture_java_workload)
+
+        workers = [language for language in languages
+                   for _ in range(c_workers if language == "c" else java_workers)]
+        executor = ThreadPoolExecutor(max_workers=len(workers))
+        futures = [executor.submit(run_language_queue, language) for language in workers]
+        try:
+            for future in as_completed(futures):
+                future.result()
+        except BaseException as error:
+            stop_language_queues.set()
+            for future in futures:
+                future.cancel()
+            executor.shutdown(wait=True, cancel_futures=True)
+            if isinstance(error, KeyboardInterrupt):
+                summarize(output, population)
+            raise
+        else:
+            executor.shutdown(wait=True)
+    else:
+        for pair in pairs:
+            tasks = []
+            for language, source in (("java", pair.java), ("c", pair.c)):
+                if language not in languages or not selected_retry(pair.program, "mutant", pair.mutant_id, language):
+                    continue
+                def run_mutant(language: str = language, source: Path = source) -> dict[str, Any]:
+                    return evaluate_case(output, population, pair.program, "mutant", pair.mutant_id,
+                                         pair.selection, language, source, frozen[(pair.program, language)],
+                                         settings, executables, support, retry_tool_failures, capture_java_workload)
+                tasks.append(run_mutant)
+            run_language_tasks(tasks)
     return summarize(output, population)
