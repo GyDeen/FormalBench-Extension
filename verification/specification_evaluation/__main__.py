@@ -61,8 +61,15 @@ def arguments() -> argparse.Namespace:
     run.add_argument("--machdep", default="x86_64")
     run.add_argument("--wp-memlimit", type=positive, default=1000)
     run.add_argument("--wp-par", type=positive, default=4)
-    run.add_argument("--parallel-languages", action="store_true",
-                     help="run Java and C verifiers together for each program")
+    run.add_argument("--c-workers", type=positive, default=1,
+                     help="concurrent C mutant cases sharing a queue; each retains --wp-par proof jobs")
+    run.add_argument("--java-workers", type=positive, default=1,
+                     help="concurrent Java mutant cases sharing a queue")
+    run.add_argument("--capture-java-workload", action="store_true",
+                     help="save generated assertions and solver input traces (use a new run directory)")
+    run.add_argument("--parallel-languages", "--independent-languages",
+                     dest="parallel_languages", action="store_true",
+                     help="run independent Java and C mutant queues; each advances when its own case finishes")
     run.add_argument("--language", action="append", choices=("java", "c"),
                      help="evaluate only this language; repeat for both")
     run.add_argument("--retry-tool-failures", action="store_true",
@@ -110,10 +117,11 @@ def main() -> int:
                                  args.java_generator, args.c_generator, settings,
                                  args.max_pairs, args.stage, args.parallel_languages,
                                  tuple(dict.fromkeys(args.language or ("java", "c"))),
-                                 args.retry_tool_failures)
+                                 args.retry_tool_failures, args.c_workers, args.java_workers,
+                                 args.capture_java_workload)
         print(json.dumps({key: summary[key] for key in
-                          ("eligible_pair_count", "originals", "mutants", "primary_detection",
-                           "supplementary_evidence", "pairs", "complete")},
+                          ("eligible_pair_count", "originals", "mutants", "language_rejection",
+                           "pairs", "paired_comparison", "complete")},
                          indent=2))
         return 0
     except (InputError, OSError, ValueError) as error:
