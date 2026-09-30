@@ -1,0 +1,51 @@
+{
+  "annotation_count": 4,
+  "executable_token_sha256": "9a99b16b1e2191c12e8e4d4672ef3c5b12be716fe4bd24e43b337fb642739a17",
+  "internal_annotation_coverage": "complete",
+  "method": "frozen structured JSON with audited C declaration bindings",
+  "omitted_annotations": [],
+  "placements": [
+    {
+      "boundary_token": 10,
+      "function": "java_add",
+      "id": "annotation_1",
+      "loop_id": null,
+      "mutant_offset": 46,
+      "next_token": "static",
+      "target": "function"
+    },
+    {
+      "boundary_token": 38,
+      "function": "countList",
+      "id": "annotation_2",
+      "loop_id": null,
+      "mutant_offset": 156,
+      "next_token": "int32_t",
+      "target": "function"
+    },
+    {
+      "boundary_token": 38,
+      "function": "countList",
+      "id": "annotation_3",
+      "loop_id": null,
+      "mutant_offset": 156,
+      "next_token": "int32_t",
+      "target": "function"
+    },
+    {
+      "boundary_token": 58,
+      "c_bindings": {
+        "i": "__index_1",
+        "length": "(inputArray->length)"
+      },
+      "function": "countList",
+      "id": "annotation_4",
+      "loop_id": "loop_1",
+      "mutant_offset": 235,
+      "next_token": "for",
+      "target": "loop"
+    }
+  ],
+  "removed_loop_annotations": 0,
+  "removed_temporary_policy": "original pure initializer with stable dependencies"
+}

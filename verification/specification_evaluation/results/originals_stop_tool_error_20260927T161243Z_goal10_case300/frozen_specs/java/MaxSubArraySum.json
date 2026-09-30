@@ -1,0 +1,47 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "maxSubArraySum",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@\n    public normal_behavior\n      ensures \\result == ((x % 4294967296L + 6442450944L) % 4294967296L) - 2147483648L;\n    model public static pure \\bigint fb_wrap(\\bigint x);\n\n        public normal_behavior\n          requires a != null && 0 <= k <= a.length;\n          ensures \\result == (k == 0 ? 0 : fb_wrap(fb_tail(a, k - 1) + a[k - 1]) < 0 ? 0 : fb_wrap(fb_tail(a, k - 1) + a[k - 1]));\n          measured_by k;\n        model public static pure \\bigint fb_tail(int[] a, int k);\n        public normal_behavior\n          requires a != null && 0 <= k <= a.length;\n          ensures \\result == (k == 0 ? 0 : fb_best(a, k - 1) >= fb_wrap(fb_tail(a, k - 1) + a[k - 1]) ? fb_best(a, k - 1) : fb_wrap(fb_tail(a, k - 1) + a[k - 1]));\n          measured_by k;\n        model public static pure \\bigint fb_best(int[] a, int k);\n        public normal_behavior\n          requires a != null && 0 <= k <= a.length;\n          ensures \\result == (k == 0 ? 0 : fb_wrap(fb_tail(a, k - 1) + a[k - 1]) < 0 ? k : fb_start(a, k - 1));\n          measured_by k;\n        model public static pure int fb_start(int[] a, int k);\n        public normal_behavior\n          requires a != null && 0 <= k <= a.length;\n          ensures \\result == (k == 0 ? 1 : fb_best(a, k - 1) < fb_wrap(fb_tail(a, k - 1) + a[k - 1]) ? k - fb_start(a, k - 1) : fb_length(a, k - 1));\n          measured_by k;\n        model public static pure int fb_length(int[] a, int k);\n\n        public normal_behavior\n          requires size <= 0 || (a != null && size <= a.length);\n          assignable \\nothing;\n          ensures \\result == (size <= 0 ? 1 : fb_length(a, size));\n          also\n        public exceptional_behavior\n          requires size > 0 && a == null;\n          assignable \\nothing;\n          signals_only NullPointerException;\n          also\n        public exceptional_behavior\n          requires a != null && size > a.length;\n          assignable \\nothing;\n          signals_only ArrayIndexOutOfBoundsException;\n    @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "maxSubArraySum",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "//@ code_java_math"
+    },
+    {
+      "boundary_token": 70,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "maxSubArraySum",
+      "id": "annotation_3",
+      "loop_id": "loop_1",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@\n        loop_invariant 0 <= i <= (size < 0 ? 0 : size);\n        loop_invariant 0 <= s <= i;\n        loop_invariant 0 <= start <= end && end <= (i == 0 ? 0 : i - 1);\n        loop_invariant a != null && i <= a.length ==> max_ending_here == fb_tail(a, i) && max_so_far == fb_best(a, i) && s == fb_start(a, i) && end - start + 1 == fb_length(a, i);\n        loop_writes i, max_so_far, max_ending_here, start, end, s;\n        decreases size <= 0 ? 0 : (\\bigint)size - i;\n        @*/"
+    }
+  ],
+  "language": "java",
+  "original_executable_token_sha256": "87242aa94849e68d02c4925ecf1810cc0296a89d227709385dbf196603d3b78e",
+  "program": "MaxSubArraySum",
+  "schema_version": "1.0"
+}

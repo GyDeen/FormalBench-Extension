@@ -1,0 +1,34 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 10,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_add",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\n  assigns \\nothing;\n  ensures \\result == (int32_t)((integer)left + right);\n*/"
+    },
+    {
+      "boundary_token": 38,
+      "following_tokens": [
+        "int32_t",
+        "sumNums"
+      ],
+      "function": "sumNums",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "int32_t",
+      "target": "function",
+      "text": "/*@\n  assigns \\nothing;\n  ensures \\result == (m <= (int32_t)((integer)x + y) && (int32_t)((integer)x + y) <= n ? 20 : (int32_t)((integer)x + y));\n*/"
+    }
+  ],
+  "language": "c",
+  "original_executable_token_sha256": "929408454353d36c32101bb954faca8c8876e0961fd51f000e84828ac8577c38",
+  "program": "SumNums",
+  "schema_version": "1.0"
+}

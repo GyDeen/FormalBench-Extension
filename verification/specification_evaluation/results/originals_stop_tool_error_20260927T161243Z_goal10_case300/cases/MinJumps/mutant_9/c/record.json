@@ -1,0 +1,2652 @@
+{
+  "adapter_sha256": {
+    "annotations.py": "7f730d0275c185de8199e16b487819eb823acaba46195f4e73152471bb1097e8",
+    "c_bindings.py": "fc8f9d74f58723d57562bc5f21087a9ce9e959986a9edd53b26d07b9c9fca1e1",
+    "c_structure.py": "efcea8872a653827d977ef2e9c102acc70a44952a6e316a52cef4779a738a0d5",
+    "verifiers.py": "0a9f1dd8a08eb33d35451283f3e0e3f4d272a24d7ada1aad48c5cbf39246bfcf"
+  },
+  "annotated_source": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+  "annotated_source_sha256": "969d1445eb4fc1a8bdbeca9389a2e6e197fec0f10ea08b652039bfb73d7a0ac6",
+  "attempt_status": "complete",
+  "command": [
+    "/root/.opam/default/bin/frama-c",
+    "-machdep",
+    "x86_64",
+    "-load-module",
+    "/mnt/d/ResearchProject/.tools/frama-c-compat/1e5af7b10d6dd41df377/float_negation_33.cmxs",
+    "-paired-c-prepare",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+    "-then",
+    "-wp",
+    "-wp-rte",
+    "-wp-no-filter-init",
+    "-wp-model",
+    "Typed+ref",
+    "-wp-why3-extra-config",
+    "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+    "-wp-prover",
+    "Alt-Ergo:2.4.3,Z3:4.8.12",
+    "-wp-timeout",
+    "10",
+    "-wp-memlimit",
+    "1000",
+    "-wp-par",
+    "4",
+    "-wp-cache",
+    "none",
+    "-wp-report-json",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/wp-report.json"
+  ],
+  "elapsed_seconds": 127.794,
+  "exit_code": 0,
+  "failure_stage": null,
+  "frozen_spec": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/frozen_specs/c/MinJumps.json",
+  "frozen_spec_sha256": "c563ed29c5c19a3b94eb0ff50e9b1b90e7ddee3be3c96cca98462f9c8debd433",
+  "goals": [
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "java_add",
+      "goal": "typed_ref_java_add_ensures",
+      "line": 8,
+      "property": "java_add_ensures",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00287
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.114
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "java_add",
+      "goal": "typed_ref_java_add_assigns",
+      "line": 10,
+      "property": "java_add_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "java_min",
+      "goal": "typed_ref_java_min_ensures",
+      "line": 19,
+      "property": "java_min_ensures",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "java_min",
+      "goal": "typed_ref_java_min_assigns_part1",
+      "line": 21,
+      "property": "java_min_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "java_min",
+      "goal": "typed_ref_java_min_assigns_part2",
+      "line": 21,
+      "property": "java_min_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "java_mod",
+      "goal": "typed_ref_java_mod_terminates_part1",
+      "line": 16,
+      "property": "java_mod_terminates",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "java_mod",
+      "goal": "typed_ref_java_mod_terminates_part2",
+      "line": 16,
+      "property": "java_mod_terminates",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00297
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "java_mod",
+      "goal": "typed_ref_java_mod_exits",
+      "line": 16,
+      "property": "java_mod_exits",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00303
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "java_mod",
+      "goal": "typed_ref_java_mod_assert_rte_division_by_zero",
+      "line": 16,
+      "property": "java_mod_assert_rte_division_by_zero",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "java_mod",
+      "goal": "typed_ref_java_mod_assert_rte_signed_overflow",
+      "line": 16,
+      "property": "java_mod_assert_rte_signed_overflow",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0189
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0263
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "java_mod",
+      "goal": "typed_ref_java_mod_call_fputs_requires_valid_string_s",
+      "line": 16,
+      "property": "fputs_requires_valid_string_s",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00217
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0403
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "java_sub",
+      "goal": "typed_ref_java_sub_ensures",
+      "line": 13,
+      "property": "java_sub_ensures",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00249
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.028
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "java_sub",
+      "goal": "typed_ref_java_sub_assigns",
+      "line": 15,
+      "property": "java_sub_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_terminates",
+      "line": 33,
+      "property": "minJumps_terminates",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_ensures",
+      "line": 31,
+      "property": "minJumps_ensures",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.097
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0606
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_exits",
+      "line": 33,
+      "property": "minJumps_exits",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_invariant_established",
+      "line": 36,
+      "property": "minJumps_loop_invariant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_invariant_preserved",
+      "line": 36,
+      "property": "minJumps_loop_invariant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0447
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.073
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_invariant_2_established",
+      "line": 37,
+      "property": "minJumps_loop_invariant_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0179
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0205
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_invariant_2_preserved",
+      "line": 37,
+      "property": "minJumps_loop_invariant_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0506
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0313
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_invariant_3_established",
+      "line": 38,
+      "property": "minJumps_loop_invariant_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_invariant_3_preserved",
+      "line": 38,
+      "property": "minJumps_loop_invariant_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0483
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0636
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_invariant_4_established",
+      "line": 48,
+      "property": "minJumps_loop_invariant_4",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_invariant_4_preserved",
+      "line": 48,
+      "property": "minJumps_loop_invariant_4",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.155
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0608
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_invariant_5_established",
+      "line": 49,
+      "property": "minJumps_loop_invariant_5",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0469
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0303
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_invariant_5_preserved",
+      "line": 49,
+      "property": "minJumps_loop_invariant_5",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_invariant_6_established",
+      "line": 50,
+      "property": "minJumps_loop_invariant_6",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_invariant_6_preserved",
+      "line": 50,
+      "property": "minJumps_loop_invariant_6",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.139
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_invariant_7_established",
+      "line": 51,
+      "property": "minJumps_loop_invariant_7",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0897
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0345
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_invariant_7_preserved",
+      "line": 51,
+      "property": "minJumps_loop_invariant_7",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.173
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0639
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_invariant_8_established",
+      "line": 57,
+      "property": "minJumps_loop_invariant_8",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_invariant_8_preserved",
+      "line": 57,
+      "property": "minJumps_loop_invariant_8",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.502
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.149
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_invariant_9_established",
+      "line": 58,
+      "property": "minJumps_loop_invariant_9",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_invariant_9_preserved",
+      "line": 58,
+      "property": "minJumps_loop_invariant_9",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.589
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_invariant_10_established",
+      "line": 59,
+      "property": "minJumps_loop_invariant_10",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.174
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0386
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_invariant_10_preserved",
+      "line": 59,
+      "property": "minJumps_loop_invariant_10",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.51
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_assigns_part1",
+      "line": 39,
+      "property": "minJumps_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_assigns_part2",
+      "line": 39,
+      "property": "minJumps_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_assigns_part3",
+      "line": 39,
+      "property": "minJumps_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_assigns_part4",
+      "line": 39,
+      "property": "minJumps_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0588
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0637
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_assigns_2_part1",
+      "line": 52,
+      "property": "minJumps_loop_assigns_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_assigns_2_part2",
+      "line": 52,
+      "property": "minJumps_loop_assigns_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_assigns_2_part3",
+      "line": 52,
+      "property": "minJumps_loop_assigns_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.22
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.101
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_assigns_3_part1",
+      "line": 60,
+      "property": "minJumps_loop_assigns_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_assigns_3_part2",
+      "line": 60,
+      "property": "minJumps_loop_assigns_3",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.465
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_assigns_3_part3",
+      "line": 60,
+      "property": "minJumps_loop_assigns_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_assigns_3_part4",
+      "line": 60,
+      "property": "minJumps_loop_assigns_3",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.214
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_assigns_3_part5",
+      "line": 60,
+      "property": "minJumps_loop_assigns_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_assigns_3_part6",
+      "line": 60,
+      "property": "minJumps_loop_assigns_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_assigns_3_part7",
+      "line": 60,
+      "property": "minJumps_loop_assigns_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_assigns_3_part8",
+      "line": 60,
+      "property": "minJumps_loop_assigns_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_assigns_normal_part1",
+      "line": 33,
+      "property": "minJumps_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_assigns_normal_part2",
+      "line": 33,
+      "property": "minJumps_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_assigns_normal_part3",
+      "line": 33,
+      "property": "minJumps_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.027
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_assigns_normal_part4",
+      "line": 33,
+      "property": "minJumps_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_assigns_normal_part5",
+      "line": 33,
+      "property": "minJumps_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.102
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_assigns_normal_part6",
+      "line": 33,
+      "property": "minJumps_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.143
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_assigns_normal_part7",
+      "line": 33,
+      "property": "minJumps_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_assigns_normal_part8",
+      "line": 33,
+      "property": "minJumps_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_assigns_exit_part01",
+      "line": 33,
+      "property": "minJumps_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_assigns_exit_part02",
+      "line": 33,
+      "property": "minJumps_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_assigns_exit_part03",
+      "line": 33,
+      "property": "minJumps_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0246
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_assigns_exit_part04",
+      "line": 33,
+      "property": "minJumps_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_assigns_exit_part05",
+      "line": 33,
+      "property": "minJumps_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0657
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_assigns_exit_part06",
+      "line": 33,
+      "property": "minJumps_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0604
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_assigns_exit_part07",
+      "line": 33,
+      "property": "minJumps_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.111
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_assigns_exit_part08",
+      "line": 33,
+      "property": "minJumps_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.145
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_assigns_exit_part09",
+      "line": 33,
+      "property": "minJumps_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_assigns_exit_part10",
+      "line": 33,
+      "property": "minJumps_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.162
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_assigns_exit_part11",
+      "line": 33,
+      "property": "minJumps_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_assigns_exit_part12",
+      "line": 33,
+      "property": "minJumps_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_assigns_exit_part13",
+      "line": 33,
+      "property": "minJumps_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_assigns_exit_part14",
+      "line": 33,
+      "property": "minJumps_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_assigns_exit_part15",
+      "line": 33,
+      "property": "minJumps_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.172
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_assigns_exit_part16",
+      "line": 33,
+      "property": "minJumps_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_variant_positive",
+      "line": 40,
+      "property": "minJumps_loop_variant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0589
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.016
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_variant_decrease",
+      "line": 40,
+      "property": "minJumps_loop_variant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.045
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0471
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_variant_2_positive",
+      "line": 53,
+      "property": "minJumps_loop_variant_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_variant_2_decrease",
+      "line": 53,
+      "property": "minJumps_loop_variant_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.17
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0281
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_variant_3_positive",
+      "line": 61,
+      "property": "minJumps_loop_variant_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_loop_variant_3_decrease",
+      "line": 61,
+      "property": "minJumps_loop_variant_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.468
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.052
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_call_jarray_new_requires",
+      "line": 34,
+      "property": "jarray_new_requires",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_call_jarray_new_requires_2",
+      "line": 34,
+      "property": "jarray_new_requires_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_call_jarray_length_requires",
+      "line": 42,
+      "property": "jarray_length_requires",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_call_jarray_length_requires_2",
+      "line": 42,
+      "property": "jarray_length_requires_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0289
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0363
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_call_jarray_set_requires",
+      "line": 43,
+      "property": "jarray_set_requires",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_call_jarray_set_requires_2",
+      "line": 43,
+      "property": "jarray_set_requires_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_call_jarray_set_requires_3",
+      "line": 43,
+      "property": "jarray_set_requires_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_call_jarray_set_2_requires",
+      "line": 46,
+      "property": "jarray_set_requires_4",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_call_jarray_set_2_requires_2",
+      "line": 46,
+      "property": "jarray_set_requires_5",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_call_jarray_set_2_requires_3",
+      "line": 46,
+      "property": "jarray_set_requires_6",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_call_jarray_get_requires",
+      "line": 64,
+      "property": "jarray_get_requires",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.173
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0578
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_call_jarray_get_requires_2",
+      "line": 64,
+      "property": "jarray_get_requires_2",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.149
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_call_jarray_get_requires_3",
+      "line": 64,
+      "property": "jarray_get_requires_3",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.154
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_call_jarray_get_2_requires",
+      "line": 65,
+      "property": "jarray_get_requires_4",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_call_jarray_get_2_requires_2",
+      "line": 65,
+      "property": "jarray_get_requires_5",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.163
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_call_jarray_get_2_requires_3",
+      "line": 65,
+      "property": "jarray_get_requires_6",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.129
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_call_jarray_get_3_requires",
+      "line": 65,
+      "property": "jarray_get_requires_7",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_call_jarray_get_3_requires_2",
+      "line": 65,
+      "property": "jarray_get_requires_8",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_call_jarray_get_3_requires_3",
+      "line": 65,
+      "property": "jarray_get_requires_9",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.161
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_call_jarray_set_3_requires",
+      "line": 66,
+      "property": "jarray_set_requires_7",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_call_jarray_set_3_requires_2",
+      "line": 66,
+      "property": "jarray_set_requires_8",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_call_jarray_set_3_requires_3",
+      "line": 66,
+      "property": "jarray_set_requires_9",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_call_jarray_get_4_requires",
+      "line": 70,
+      "property": "jarray_get_requires_10",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_call_jarray_get_4_requires_2",
+      "line": 70,
+      "property": "jarray_get_requires_11",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0922
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0357
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinJumps/mutant_9/c/MinJumps.c",
+      "function": "minJumps",
+      "goal": "typed_ref_minJumps_call_jarray_get_4_requires_3",
+      "line": 70,
+      "property": "jarray_get_requires_12",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.116
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0597
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    }
+  ],
+  "input_fingerprint": "b39fbcce4be167004f9141769e95a5806785cc0a0d9a46dbbdd34c40a0ea5981",
+  "language": "c",
+  "logs": {
+    "stderr": "stderr.log",
+    "stdout": "stdout.log",
+    "wp_report": "wp-report.json"
+  },
+  "mutant_id": "9",
+  "outcome": "unknown/timeout",
+  "program": "MinJumps",
+  "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/fault_mutants/run_ukcw__uc/MinJumps/mutants/9/c/MinJumps.c",
+  "raw_source_sha256": "65f85ae47816331cf01936b9c48f1502f5426058d34be3a7bedd066a7781ad19",
+  "reason": "At least one WP goal remains unresolved",
+  "role": "mutant",
+  "selection": "direct_match",
+  "selection_manifest_sha256": "92fa1533eafe32fdc60b119b0c6abc8a4f3c0b372d66ac21f39e54a3b5d7433d",
+  "settings": {
+    "c_provers": "Alt-Ergo:2.4.3,Z3:4.8.12",
+    "goal_timeout": 10,
+    "java_prover": "z3-4.3.X",
+    "machdep": "x86_64",
+    "memory_model": "Typed+ref",
+    "timeout": 300,
+    "why3_extra_config": "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+    "why3_extra_config_sha256": "97cc443d7439274ad732814842ae77a7b461d43c8d2099eb8994fb97e739049b",
+    "wp_memlimit": 1000,
+    "wp_par": 4
+  },
+  "support_sha256": {
+    "contracts/helpers.acsl.h": "37d683d91eb44cd98b6daa2984e93a296bbca187916781519d29dea8ce77ca8c",
+    "contracts/jboolarray.acsl.h": "ae0173e8ce64f3102e2e57b14c0509eeb9315974b553558b846a4ac879421460",
+    "contracts/jdoublearray.acsl.h": "bb472fd0bcd8757b89fb4f5a58f09134f92f145c147d4271d61b73c7232cf0ea",
+    "contracts/jdoublearray2.acsl.h": "3603fd8d9aeb9fb3b17424f2b258250c3dda9793d0822af5bb35e3a2754cedd8",
+    "contracts/jintarray.acsl.h": "83cfffb114f3cad5e5553951b0a239298a8e52e47bfbe783d4bceedead0983bb",
+    "contracts/jintarray2.acsl.h": "976047a31f67f24008deec58da879eddf81f37b2ab09e83da3978cd269773696",
+    "generated/types.h": "484e5df1fa6f1a573bee0b8ea778cefb259659d6b419e0c94ecd92e490d88301",
+    "java_arrays.h": "71446403075d5c68ce8ab8f85d63f98f3727133700a879b4e43c5ae59d7f0101"
+  },
+  "timed_out": false,
+  "transfer": {
+    "annotation_count": 8,
+    "executable_token_sha256": "23b30b10ea37114578638f27165556c6bf0a3d4ec6b87123b81865b398491b62",
+    "internal_annotation_coverage": "complete",
+    "method": "frozen structured JSON with audited C declaration bindings",
+    "omitted_annotations": [],
+    "placements": [
+      {
+        "boundary_token": 10,
+        "function": "java_add",
+        "id": "annotation_1",
+        "loop_id": null,
+        "mutant_offset": 85,
+        "next_token": "static",
+        "target": "function"
+      },
+      {
+        "boundary_token": 38,
+        "function": "java_sub",
+        "id": "annotation_2",
+        "loop_id": null,
+        "mutant_offset": 194,
+        "next_token": "static",
+        "target": "function"
+      },
+      {
+        "boundary_token": 66,
+        "function": "java_min",
+        "id": "annotation_3",
+        "loop_id": null,
+        "mutant_offset": 517,
+        "next_token": "static",
+        "target": "function"
+      },
+      {
+        "boundary_token": 87,
+        "function": "minJumps",
+        "id": "annotation_4",
+        "loop_id": null,
+        "mutant_offset": 611,
+        "next_token": "int32_t",
+        "target": "function"
+      },
+      {
+        "boundary_token": 87,
+        "function": "minJumps",
+        "id": "annotation_5",
+        "loop_id": null,
+        "mutant_offset": 611,
+        "next_token": "int32_t",
+        "target": "function"
+      },
+      {
+        "boundary_token": 113,
+        "c_bindings": {
+          "i": "__fill_index_1",
+          "length": "(dp->length)"
+        },
+        "function": "minJumps",
+        "id": "annotation_6",
+        "loop_id": "loop_1",
+        "mutant_offset": 694,
+        "next_token": "for",
+        "target": "loop"
+      },
+      {
+        "boundary_token": 153,
+        "function": "minJumps",
+        "id": "annotation_7",
+        "loop_id": "loop_2",
+        "mutant_offset": 960,
+        "next_token": "for",
+        "target": "loop"
+      },
+      {
+        "boundary_token": 174,
+        "function": "minJumps",
+        "id": "annotation_8",
+        "loop_id": "loop_3",
+        "mutant_offset": 1037,
+        "next_token": "for",
+        "target": "loop"
+      }
+    ],
+    "removed_loop_annotations": 0,
+    "removed_temporary_policy": "original pure initializer with stable dependencies"
+  },
+  "verification_started": true,
+  "verifier": {
+    "compatibility": {
+      "module": "/mnt/d/ResearchProject/.tools/frama-c-compat/1e5af7b10d6dd41df377/float_negation_33.cmxs",
+      "module_sha256": "1db37c95f71be52efae9dccb88c510a543ef611378c9e6438d65ec35880d70a8",
+      "name": "Frama-C 33.0 implicit floating-negation coercion repair",
+      "source": "/mnt/d/ResearchProject/verification/specification_evaluation/framac/float_negation_33.ml",
+      "source_sha256": "4ff87e29b00ac2eff69fd600225636521287641211fb362c1121246754c3870a"
+    },
+    "path": "/root/.opam/default/bin/frama-c",
+    "sha256": "9e49b5c48b5ca47a377a1b845f580bfbfb095fb18d51788c05cb42572201f116",
+    "version_command": [
+      "/root/.opam/default/bin/frama-c",
+      "-version"
+    ],
+    "version_exit_code": 0,
+    "version_output": "33.0 (Arsenic)"
+  }
+}

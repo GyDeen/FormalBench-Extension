@@ -1,0 +1,34 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "maxOfTwo",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ assignable \\nothing;\n      @ ensures \\result == (x > y ? x : y);\n      @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "maxOfTwo",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "//@ code_java_math"
+    }
+  ],
+  "language": "java",
+  "original_executable_token_sha256": "e237f9259e7caaa192d2c16d2980f358782baedb6730c6e8d3e83081217fd81c",
+  "program": "MaxOfTwo",
+  "schema_version": "1.0"
+}

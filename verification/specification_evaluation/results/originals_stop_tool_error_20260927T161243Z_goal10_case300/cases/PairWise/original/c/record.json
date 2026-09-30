@@ -1,0 +1,1922 @@
+{
+  "adapter_sha256": {
+    "annotations.py": "c971d29b176cd45810857db756883638e9551bb950d5cb1426e5bcf57f9e497e",
+    "c_bindings.py": "2f21fdaa46151906b048409a92d784b801ecdf78191436c2976999a4c36d3cf6",
+    "c_structure.py": "772364a38abaceacb66e98c0aee01b26a188bbb883e4ee8135d80b5fa8b50540",
+    "verifiers.py": "9977eb05f2cb524e9647ef1578aad446fe92c2b4f2ae3faae8bc880063c56975"
+  },
+  "annotated_source": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+  "annotated_source_sha256": "fd3db5e6dcf0c23368e65eea97266392a4a386956d2a53d95c8fc8a09a5a4739",
+  "attempt_status": "complete",
+  "command": [
+    "/root/.opam/default/bin/frama-c",
+    "-machdep",
+    "x86_64",
+    "-load-module",
+    "/mnt/d/ResearchProject/.tools/frama-c-compat/1e5af7b10d6dd41df377/float_negation_33.cmxs",
+    "-paired-c-prepare",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+    "-then",
+    "-wp",
+    "-wp-rte",
+    "-wp-no-filter-init",
+    "-wp-model",
+    "Typed+ref",
+    "-wp-why3-extra-config",
+    "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+    "-wp-prover",
+    "Alt-Ergo:2.4.3,Z3:4.8.12",
+    "-wp-timeout",
+    "10",
+    "-wp-memlimit",
+    "1000",
+    "-wp-par",
+    "4",
+    "-wp-cache",
+    "none",
+    "-wp-report-json",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/wp-report.json"
+  ],
+  "elapsed_seconds": 54.939,
+  "exit_code": 0,
+  "failure_stage": null,
+  "frozen_spec": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/frozen_specs/c/PairWise.json",
+  "frozen_spec_sha256": "c21a9b4df17af2cadfc364fbf2c6cb9b26d18f0e1917482a40db961471b7ad5b",
+  "goals": [
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "java_add",
+      "goal": "typed_ref_java_add_ensures",
+      "line": 6,
+      "property": "java_add_ensures",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00138
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0121
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "java_add",
+      "goal": "typed_ref_java_add_assigns",
+      "line": 8,
+      "property": "java_add_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "java_sub",
+      "goal": "typed_ref_java_sub_ensures",
+      "line": 14,
+      "property": "java_sub_ensures",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00134
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0117
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "java_sub",
+      "goal": "typed_ref_java_sub_assigns",
+      "line": 16,
+      "property": "java_sub_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_terminates",
+      "line": 37,
+      "property": "pairWise_terminates",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_ensures",
+      "line": 24,
+      "property": "pairWise_ensures",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.04
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.00779
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_ensures_2",
+      "line": 25,
+      "property": "pairWise_ensures_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0484
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0162
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_ensures_3",
+      "line": 26,
+      "property": "pairWise_ensures_3",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0495
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_ensures_4",
+      "line": 27,
+      "property": "pairWise_ensures_4",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0495
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_ensures_5",
+      "line": 28,
+      "property": "pairWise_ensures_5",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0452
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_ensures_6",
+      "line": 33,
+      "property": "pairWise_ensures_6",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0612
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0348
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_exits",
+      "line": 37,
+      "property": "pairWise_exits",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_loop_invariant_established",
+      "line": 45,
+      "property": "pairWise_loop_invariant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0165
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.00858
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_loop_invariant_preserved",
+      "line": 45,
+      "property": "pairWise_loop_invariant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0541
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0417
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_loop_invariant_2_established",
+      "line": 46,
+      "property": "pairWise_loop_invariant_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0114
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0123
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_loop_invariant_2_preserved",
+      "line": 46,
+      "property": "pairWise_loop_invariant_2",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0425
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_loop_invariant_3_established",
+      "line": 47,
+      "property": "pairWise_loop_invariant_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0161
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0171
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_loop_invariant_3_preserved",
+      "line": 47,
+      "property": "pairWise_loop_invariant_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0532
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0536
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_loop_invariant_4_established",
+      "line": 48,
+      "property": "pairWise_loop_invariant_4",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_loop_invariant_4_preserved",
+      "line": 48,
+      "property": "pairWise_loop_invariant_4",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0544
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_loop_assigns_part1",
+      "line": 49,
+      "property": "pairWise_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_loop_assigns_part2",
+      "line": 49,
+      "property": "pairWise_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0687
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.118
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_loop_assigns_part3",
+      "line": 49,
+      "property": "pairWise_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_loop_assigns_part4",
+      "line": 49,
+      "property": "pairWise_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_loop_assigns_part5",
+      "line": 49,
+      "property": "pairWise_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0447
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0249
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_loop_assigns_part6",
+      "line": 49,
+      "property": "pairWise_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_loop_assigns_part7",
+      "line": 49,
+      "property": "pairWise_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_loop_assigns_part8",
+      "line": 49,
+      "property": "pairWise_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0675
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0186
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_normal_part1",
+      "line": 37,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_normal_part2",
+      "line": 37,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_normal_part3",
+      "line": 37,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_normal_part4",
+      "line": 37,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_normal_part5",
+      "line": 37,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_normal_part6",
+      "line": 37,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_normal_part7",
+      "line": 37,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_normal_part8",
+      "line": 37,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0182
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_normal_part9",
+      "line": 37,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_exit_part01",
+      "line": 37,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_exit_part02",
+      "line": 37,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_exit_part03",
+      "line": 37,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_exit_part04",
+      "line": 37,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_exit_part05",
+      "line": 37,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_exit_part06",
+      "line": 37,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0266
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_exit_part07",
+      "line": 37,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_exit_part08",
+      "line": 37,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_exit_part09",
+      "line": 37,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0338
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_exit_part10",
+      "line": 37,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_exit_part11",
+      "line": 37,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_exit_part12",
+      "line": 37,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0326
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_loop_variant_positive",
+      "line": 50,
+      "property": "pairWise_loop_variant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_loop_variant_decrease",
+      "line": 50,
+      "property": "pairWise_loop_variant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0476
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0375
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_call_jarray_length_requires",
+      "line": 38,
+      "property": "jarray_length_requires",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00391
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.00392
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_call_jarray_length_requires_2",
+      "line": 38,
+      "property": "jarray_length_requires_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00305
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.00787
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_call_jarray2_new_requires",
+      "line": 40,
+      "property": "jarray2_new_requires",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_call_jarray2_new_requires_2",
+      "line": 40,
+      "property": "jarray2_new_requires_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_call_jarray2_new_requires_3",
+      "line": 40,
+      "property": "jarray2_new_requires_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_call_jarray2_new_requires_4",
+      "line": 40,
+      "property": "jarray2_new_requires_4",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_call_jarray2_new_2_requires",
+      "line": 42,
+      "property": "jarray2_new_requires_5",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0124
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0203
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_call_jarray2_new_2_requires_2",
+      "line": 42,
+      "property": "jarray2_new_requires_6",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_call_jarray2_new_2_requires_3",
+      "line": 42,
+      "property": "jarray2_new_requires_7",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_call_jarray2_new_2_requires_4",
+      "line": 42,
+      "property": "jarray2_new_requires_8",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_call_jarray2_get_requires",
+      "line": 53,
+      "property": "jarray2_get_requires",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_call_jarray2_get_requires_2",
+      "line": 53,
+      "property": "jarray2_get_requires_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0189
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0113
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_call_jarray2_get_requires_3",
+      "line": 53,
+      "property": "jarray2_get_requires_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_call_jarray_get_requires",
+      "line": 54,
+      "property": "jarray_get_requires",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_call_jarray_get_requires_2",
+      "line": 54,
+      "property": "jarray_get_requires_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0162
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 1
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_call_jarray_get_requires_3",
+      "line": 54,
+      "property": "jarray_get_requires_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0132
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.00792
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_call_jarray_set_requires",
+      "line": 54,
+      "property": "jarray_set_requires",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0226
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0167
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_call_jarray_set_requires_2",
+      "line": 54,
+      "property": "jarray_set_requires_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0244
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0537
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_call_jarray_set_requires_3",
+      "line": 54,
+      "property": "jarray_set_requires_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0229
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.00977
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_call_jarray_get_2_requires",
+      "line": 55,
+      "property": "jarray_get_requires_4",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_call_jarray_get_2_requires_2",
+      "line": 55,
+      "property": "jarray_get_requires_5",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0315
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 6.14
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_call_jarray_get_2_requires_3",
+      "line": 55,
+      "property": "jarray_get_requires_6",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0389
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.036
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_call_jarray_set_2_requires",
+      "line": 55,
+      "property": "jarray_set_requires_4",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_call_jarray_set_2_requires_2",
+      "line": 55,
+      "property": "jarray_set_requires_5",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_call_jarray_set_2_requires_3",
+      "line": 55,
+      "property": "jarray_set_requires_6",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0322
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0244
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    }
+  ],
+  "input_fingerprint": "6217715bef5d8984e07b437c44199aa98177b021490d32c6044af96f90d921de",
+  "language": "c",
+  "logs": {
+    "stderr": "stderr.log",
+    "stdout": "stdout.log",
+    "wp_report": "wp-report.json"
+  },
+  "mutant_id": null,
+  "outcome": "unknown/timeout",
+  "program": "PairWise",
+  "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/PairWise.c",
+  "raw_source_sha256": "75c6ccc88b6c558dbb42ee417c5442b5dae7930b6f8683f777d094da476cd21f",
+  "reason": "At least one WP goal remains unresolved",
+  "role": "original",
+  "selection": null,
+  "selection_manifest_sha256": "92fa1533eafe32fdc60b119b0c6abc8a4f3c0b372d66ac21f39e54a3b5d7433d",
+  "settings": {
+    "c_provers": "Alt-Ergo:2.4.3,Z3:4.8.12",
+    "goal_timeout": 10,
+    "java_prover": "z3-4.3.X",
+    "machdep": "x86_64",
+    "memory_model": "Typed+ref",
+    "timeout": 300,
+    "why3_extra_config": "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+    "why3_extra_config_sha256": "97cc443d7439274ad732814842ae77a7b461d43c8d2099eb8994fb97e739049b",
+    "wp_memlimit": 1000,
+    "wp_par": 4
+  },
+  "support_sha256": {
+    "contracts/helpers.acsl.h": "37d683d91eb44cd98b6daa2984e93a296bbca187916781519d29dea8ce77ca8c",
+    "contracts/jboolarray.acsl.h": "ae0173e8ce64f3102e2e57b14c0509eeb9315974b553558b846a4ac879421460",
+    "contracts/jdoublearray.acsl.h": "bb472fd0bcd8757b89fb4f5a58f09134f92f145c147d4271d61b73c7232cf0ea",
+    "contracts/jdoublearray2.acsl.h": "3603fd8d9aeb9fb3b17424f2b258250c3dda9793d0822af5bb35e3a2754cedd8",
+    "contracts/jintarray.acsl.h": "83cfffb114f3cad5e5553951b0a239298a8e52e47bfbe783d4bceedead0983bb",
+    "contracts/jintarray2.acsl.h": "976047a31f67f24008deec58da879eddf81f37b2ab09e83da3978cd269773696",
+    "generated/types.h": "484e5df1fa6f1a573bee0b8ea778cefb259659d6b419e0c94ecd92e490d88301",
+    "java_arrays.h": "71446403075d5c68ce8ab8f85d63f98f3727133700a879b4e43c5ae59d7f0101"
+  },
+  "timed_out": false,
+  "transfer": {
+    "annotation_count": 4,
+    "executable_token_sha256": "e8cee512f4c9358af87ccab1e870b90b357db6189128c657593200753fe16971",
+    "internal_annotation_coverage": "complete",
+    "method": "frozen structured JSON with audited C declaration bindings",
+    "omitted_annotations": [],
+    "placements": [
+      {
+        "boundary_token": 10,
+        "function": "java_add",
+        "id": "annotation_1",
+        "loop_id": null,
+        "mutant_offset": 46,
+        "next_token": "static",
+        "target": "function"
+      },
+      {
+        "boundary_token": 38,
+        "function": "java_sub",
+        "id": "annotation_2",
+        "loop_id": null,
+        "mutant_offset": 160,
+        "next_token": "static",
+        "target": "function"
+      },
+      {
+        "boundary_token": 66,
+        "function": "pairWise",
+        "id": "annotation_3",
+        "loop_id": null,
+        "mutant_offset": 274,
+        "next_token": "JIntArray2",
+        "target": "function"
+      },
+      {
+        "boundary_token": 122,
+        "function": "pairWise",
+        "id": "annotation_4",
+        "loop_id": "loop_1",
+        "mutant_offset": 518,
+        "next_token": "for",
+        "target": "loop"
+      }
+    ],
+    "removed_loop_annotations": 0,
+    "removed_temporary_policy": "original pure initializer with stable dependencies"
+  },
+  "verification_started": true,
+  "verifier": {
+    "compatibility": {
+      "module": "/mnt/d/ResearchProject/.tools/frama-c-compat/1e5af7b10d6dd41df377/float_negation_33.cmxs",
+      "module_sha256": "1db37c95f71be52efae9dccb88c510a543ef611378c9e6438d65ec35880d70a8",
+      "name": "Frama-C 33.0 implicit floating-negation coercion repair",
+      "source": "/mnt/d/ResearchProject/verification/specification_evaluation/framac/float_negation_33.ml",
+      "source_sha256": "4ff87e29b00ac2eff69fd600225636521287641211fb362c1121246754c3870a"
+    },
+    "path": "/root/.opam/default/bin/frama-c",
+    "sha256": "9e49b5c48b5ca47a377a1b845f580bfbfb095fb18d51788c05cb42572201f116",
+    "version_command": [
+      "/root/.opam/default/bin/frama-c",
+      "-version"
+    ],
+    "version_exit_code": 0,
+    "version_output": "33.0 (Arsenic)"
+  }
+}

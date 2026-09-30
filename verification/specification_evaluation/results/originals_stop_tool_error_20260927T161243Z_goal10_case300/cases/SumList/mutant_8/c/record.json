@@ -1,0 +1,1076 @@
+{
+  "adapter_sha256": {
+    "annotations.py": "7f730d0275c185de8199e16b487819eb823acaba46195f4e73152471bb1097e8",
+    "c_bindings.py": "fc8f9d74f58723d57562bc5f21087a9ce9e959986a9edd53b26d07b9c9fca1e1",
+    "c_structure.py": "efcea8872a653827d977ef2e9c102acc70a44952a6e316a52cef4779a738a0d5",
+    "verifiers.py": "0a9f1dd8a08eb33d35451283f3e0e3f4d272a24d7ada1aad48c5cbf39246bfcf"
+  },
+  "annotated_source": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+  "annotated_source_sha256": "bbc016d81cbfab4410908699378ceabe792c6af8961b5a3eda1e9c26586d4dd1",
+  "attempt_status": "complete",
+  "command": [
+    "/root/.opam/default/bin/frama-c",
+    "-machdep",
+    "x86_64",
+    "-load-module",
+    "/mnt/d/ResearchProject/.tools/frama-c-compat/1e5af7b10d6dd41df377/float_negation_33.cmxs",
+    "-paired-c-prepare",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+    "-then",
+    "-wp",
+    "-wp-rte",
+    "-wp-no-filter-init",
+    "-wp-model",
+    "Typed+ref",
+    "-wp-why3-extra-config",
+    "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+    "-wp-prover",
+    "Alt-Ergo:2.4.3,Z3:4.8.12",
+    "-wp-timeout",
+    "10",
+    "-wp-memlimit",
+    "1000",
+    "-wp-par",
+    "4",
+    "-wp-cache",
+    "none",
+    "-wp-report-json",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/wp-report.json"
+  ],
+  "elapsed_seconds": 33.265,
+  "exit_code": 0,
+  "failure_stage": null,
+  "frozen_spec": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/frozen_specs/c/SumList.json",
+  "frozen_spec_sha256": "c2b5e06d29a2c2b181c3837ee510b4547496aacc209b87cfaeb30b4a7a27569a",
+  "goals": [
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "java_add",
+      "goal": "typed_ref_java_add_ensures",
+      "line": 6,
+      "property": "java_add_ensures",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00211
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0665
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "java_add",
+      "goal": "typed_ref_java_add_assigns",
+      "line": 8,
+      "property": "java_add_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "java_min",
+      "goal": "typed_ref_java_min_ensures",
+      "line": 11,
+      "property": "java_min_ensures",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "java_min",
+      "goal": "typed_ref_java_min_assigns_part1",
+      "line": 13,
+      "property": "java_min_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "java_min",
+      "goal": "typed_ref_java_min_assigns_part2",
+      "line": 13,
+      "property": "java_min_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "sumList",
+      "goal": "typed_ref_sumList_terminates",
+      "line": 27,
+      "property": "sumList_terminates",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "sumList",
+      "goal": "typed_ref_sumList_ensures",
+      "line": 20,
+      "property": "sumList_ensures",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "sumList",
+      "goal": "typed_ref_sumList_ensures_2",
+      "line": 21,
+      "property": "sumList_ensures_2",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00919
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "sumList",
+      "goal": "typed_ref_sumList_ensures_3",
+      "line": 22,
+      "property": "sumList_ensures_3",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00845
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "sumList",
+      "goal": "typed_ref_sumList_ensures_4",
+      "line": 23,
+      "property": "sumList_ensures_4",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0108
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "sumList",
+      "goal": "typed_ref_sumList_ensures_5",
+      "line": 25,
+      "property": "sumList_ensures_5",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00722
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0286
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "sumList",
+      "goal": "typed_ref_sumList_exits",
+      "line": 27,
+      "property": "sumList_exits",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "sumList",
+      "goal": "typed_ref_sumList_loop_invariant_established",
+      "line": 31,
+      "property": "sumList_loop_invariant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "sumList",
+      "goal": "typed_ref_sumList_loop_invariant_preserved",
+      "line": 31,
+      "property": "sumList_loop_invariant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0151
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0322
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "sumList",
+      "goal": "typed_ref_sumList_loop_invariant_2_established",
+      "line": 32,
+      "property": "sumList_loop_invariant_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00748
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.00908
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "sumList",
+      "goal": "typed_ref_sumList_loop_invariant_2_preserved",
+      "line": 32,
+      "property": "sumList_loop_invariant_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "sumList",
+      "goal": "typed_ref_sumList_loop_invariant_3_established",
+      "line": 33,
+      "property": "sumList_loop_invariant_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "sumList",
+      "goal": "typed_ref_sumList_loop_invariant_3_preserved",
+      "line": 33,
+      "property": "sumList_loop_invariant_3",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0116
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "sumList",
+      "goal": "typed_ref_sumList_loop_assigns_part1",
+      "line": 34,
+      "property": "sumList_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "sumList",
+      "goal": "typed_ref_sumList_loop_assigns_part2",
+      "line": 34,
+      "property": "sumList_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "sumList",
+      "goal": "typed_ref_sumList_assigns_normal_part1",
+      "line": 27,
+      "property": "sumList_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "sumList",
+      "goal": "typed_ref_sumList_assigns_normal_part2",
+      "line": 27,
+      "property": "sumList_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "sumList",
+      "goal": "typed_ref_sumList_assigns_normal_part3",
+      "line": 27,
+      "property": "sumList_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "sumList",
+      "goal": "typed_ref_sumList_assigns_normal_part4",
+      "line": 27,
+      "property": "sumList_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "sumList",
+      "goal": "typed_ref_sumList_assigns_normal_part5",
+      "line": 27,
+      "property": "sumList_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "sumList",
+      "goal": "typed_ref_sumList_assigns_normal_part6",
+      "line": 27,
+      "property": "sumList_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00735
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "sumList",
+      "goal": "typed_ref_sumList_assigns_exit_part1",
+      "line": 27,
+      "property": "sumList_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "sumList",
+      "goal": "typed_ref_sumList_assigns_exit_part2",
+      "line": 27,
+      "property": "sumList_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "sumList",
+      "goal": "typed_ref_sumList_assigns_exit_part3",
+      "line": 27,
+      "property": "sumList_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "sumList",
+      "goal": "typed_ref_sumList_assigns_exit_part4",
+      "line": 27,
+      "property": "sumList_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "sumList",
+      "goal": "typed_ref_sumList_assigns_exit_part5",
+      "line": 27,
+      "property": "sumList_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "sumList",
+      "goal": "typed_ref_sumList_assigns_exit_part6",
+      "line": 27,
+      "property": "sumList_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00668
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "sumList",
+      "goal": "typed_ref_sumList_loop_variant_positive",
+      "line": 35,
+      "property": "sumList_loop_variant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "sumList",
+      "goal": "typed_ref_sumList_loop_variant_decrease",
+      "line": 35,
+      "property": "sumList_loop_variant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0128
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0235
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "sumList",
+      "goal": "typed_ref_sumList_call_jarray_length_requires",
+      "line": 28,
+      "property": "jarray_length_requires",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00303
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0188
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "sumList",
+      "goal": "typed_ref_sumList_call_jarray_length_requires_2",
+      "line": 28,
+      "property": "jarray_length_requires_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00322
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0133
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "sumList",
+      "goal": "typed_ref_sumList_call_jarray_length_2_requires",
+      "line": 28,
+      "property": "jarray_length_requires_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00552
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0129
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "sumList",
+      "goal": "typed_ref_sumList_call_jarray_length_2_requires_2",
+      "line": 28,
+      "property": "jarray_length_requires_4",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00354
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0141
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "sumList",
+      "goal": "typed_ref_sumList_call_jarray_new_requires",
+      "line": 29,
+      "property": "jarray_new_requires",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00441
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0209
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumList/mutant_8/c/SumList.c",
+      "function": "sumList",
+      "goal": "typed_ref_sumList_call_jarray_new_requires_2",
+      "line": 29,
+      "property": "jarray_new_requires_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0088
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0194
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    }
+  ],
+  "input_fingerprint": "72f1e0d0941ec8331737e150f4e23c019ae1e0a84cd3a7bdecc09cb83239bebc",
+  "language": "c",
+  "logs": {
+    "stderr": "stderr.log",
+    "stdout": "stdout.log",
+    "wp_report": "wp-report.json"
+  },
+  "mutant_id": "8",
+  "outcome": "unknown/timeout",
+  "program": "SumList",
+  "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/fault_mutants/run_ukcw__uc/SumList/mutants/8/c/SumList.c",
+  "raw_source_sha256": "2ea77c89c98f9b2ad5bf3a2c4ed41391a5c1b3b1946f50d0eaa9fc1d85f745a3",
+  "reason": "At least one WP goal remains unresolved",
+  "role": "mutant",
+  "selection": "direct_match",
+  "selection_manifest_sha256": "92fa1533eafe32fdc60b119b0c6abc8a4f3c0b372d66ac21f39e54a3b5d7433d",
+  "settings": {
+    "c_provers": "Alt-Ergo:2.4.3,Z3:4.8.12",
+    "goal_timeout": 10,
+    "java_prover": "z3-4.3.X",
+    "machdep": "x86_64",
+    "memory_model": "Typed+ref",
+    "timeout": 300,
+    "why3_extra_config": "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+    "why3_extra_config_sha256": "97cc443d7439274ad732814842ae77a7b461d43c8d2099eb8994fb97e739049b",
+    "wp_memlimit": 1000,
+    "wp_par": 4
+  },
+  "support_sha256": {
+    "contracts/helpers.acsl.h": "37d683d91eb44cd98b6daa2984e93a296bbca187916781519d29dea8ce77ca8c",
+    "contracts/jboolarray.acsl.h": "ae0173e8ce64f3102e2e57b14c0509eeb9315974b553558b846a4ac879421460",
+    "contracts/jdoublearray.acsl.h": "bb472fd0bcd8757b89fb4f5a58f09134f92f145c147d4271d61b73c7232cf0ea",
+    "contracts/jdoublearray2.acsl.h": "3603fd8d9aeb9fb3b17424f2b258250c3dda9793d0822af5bb35e3a2754cedd8",
+    "contracts/jintarray.acsl.h": "83cfffb114f3cad5e5553951b0a239298a8e52e47bfbe783d4bceedead0983bb",
+    "contracts/jintarray2.acsl.h": "976047a31f67f24008deec58da879eddf81f37b2ab09e83da3978cd269773696",
+    "generated/types.h": "484e5df1fa6f1a573bee0b8ea778cefb259659d6b419e0c94ecd92e490d88301",
+    "java_arrays.h": "71446403075d5c68ce8ab8f85d63f98f3727133700a879b4e43c5ae59d7f0101"
+  },
+  "timed_out": false,
+  "transfer": {
+    "annotation_count": 4,
+    "executable_token_sha256": "5f9836428ea84614db667b062f17c65e45f22429860bdbedee58c2f6ac4d9c81",
+    "internal_annotation_coverage": "complete",
+    "method": "frozen structured JSON with audited C declaration bindings",
+    "omitted_annotations": [],
+    "placements": [
+      {
+        "boundary_token": 10,
+        "function": "java_add",
+        "id": "annotation_1",
+        "loop_id": null,
+        "mutant_offset": 46,
+        "next_token": "static",
+        "target": "function"
+      },
+      {
+        "boundary_token": 38,
+        "function": "java_min",
+        "id": "annotation_2",
+        "loop_id": null,
+        "mutant_offset": 155,
+        "next_token": "static",
+        "target": "function"
+      },
+      {
+        "boundary_token": 59,
+        "function": "sumList",
+        "id": "annotation_3",
+        "loop_id": null,
+        "mutant_offset": 249,
+        "next_token": "JIntArray",
+        "target": "function"
+      },
+      {
+        "boundary_token": 103,
+        "function": "sumList",
+        "id": "annotation_4",
+        "loop_id": "loop_1",
+        "mutant_offset": 427,
+        "next_token": "for",
+        "target": "loop"
+      }
+    ],
+    "removed_loop_annotations": 0,
+    "removed_temporary_policy": "original pure initializer with stable dependencies"
+  },
+  "verification_started": true,
+  "verifier": {
+    "compatibility": {
+      "module": "/mnt/d/ResearchProject/.tools/frama-c-compat/1e5af7b10d6dd41df377/float_negation_33.cmxs",
+      "module_sha256": "1db37c95f71be52efae9dccb88c510a543ef611378c9e6438d65ec35880d70a8",
+      "name": "Frama-C 33.0 implicit floating-negation coercion repair",
+      "source": "/mnt/d/ResearchProject/verification/specification_evaluation/framac/float_negation_33.ml",
+      "source_sha256": "4ff87e29b00ac2eff69fd600225636521287641211fb362c1121246754c3870a"
+    },
+    "path": "/root/.opam/default/bin/frama-c",
+    "sha256": "9e49b5c48b5ca47a377a1b845f580bfbfb095fb18d51788c05cb42572201f116",
+    "version_command": [
+      "/root/.opam/default/bin/frama-c",
+      "-version"
+    ],
+    "version_exit_code": 0,
+    "version_output": "33.0 (Arsenic)"
+  }
+}

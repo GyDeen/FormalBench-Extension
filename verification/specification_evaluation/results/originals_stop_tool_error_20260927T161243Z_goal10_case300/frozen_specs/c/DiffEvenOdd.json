@@ -1,0 +1,73 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 10,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_sub",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\n  assigns \\nothing;\n  ensures \\result == (int32_t)((integer)left - right);\n*/"
+    },
+    {
+      "boundary_token": 38,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_add",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\n  assigns \\nothing;\n  ensures \\result == (int32_t)((integer)left + right);\n*/"
+    },
+    {
+      "boundary_token": 66,
+      "following_tokens": [
+        "int32_t",
+        "diffEvenOdd"
+      ],
+      "function": "diffEvenOdd",
+      "id": "annotation_3",
+      "loop_id": null,
+      "next_token": "int32_t",
+      "target": "function",
+      "text": "/*@\n  logic integer fb_first{L}(JIntArray a, integer k, integer odd) =\n    k <= 0 ? -1 : fb_first(a, k - 1, odd) != -1 ? fb_first(a, k - 1, odd) :\n    ((odd != 0 ? a->data[k - 1] % 2 != 0 && a->data[k - 1] != -1 : a->data[k - 1] % 2 == 0) ? a->data[k - 1] : -1);\n*/"
+    },
+    {
+      "boundary_token": 66,
+      "following_tokens": [
+        "int32_t",
+        "diffEvenOdd"
+      ],
+      "function": "diffEvenOdd",
+      "id": "annotation_4",
+      "loop_id": null,
+      "next_token": "int32_t",
+      "target": "function",
+      "text": "/*@\n  requires jintarray_valid_nonnull(array);\n  assigns \\nothing;\n  ensures \\result == (int32_t)(fb_first(array, array->length, 0) - fb_first(array, array->length, 1));\n*/"
+    },
+    {
+      "boundary_token": 93,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "diffEvenOdd",
+      "id": "annotation_5",
+      "loop_id": "loop_1",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@\n      loop invariant 0 <= i <= length && length == array->length;\n      loop invariant firstEven == fb_first(array, i, 0) && firstOdd == fb_first(array, i, 1);\n      loop assigns i, firstEven, firstOdd;\n      loop variant length - i;\n    */"
+    }
+  ],
+  "language": "c",
+  "original_executable_token_sha256": "950da6ced22a73acc9d720a38c324f1f42bc1f9d140a96da24a47aaf4dd512c9",
+  "program": "DiffEvenOdd",
+  "schema_version": "1.0"
+}

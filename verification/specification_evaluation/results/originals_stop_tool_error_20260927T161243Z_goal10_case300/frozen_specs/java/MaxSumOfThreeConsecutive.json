@@ -1,0 +1,86 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "maxSumOfThreeConsecutive",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ ensures \\result == ((x % 4294967296L + 6442450944L) % 4294967296L) - 2147483648L;\n      @ model public static pure \\bigint fb_wrap(\\bigint x);\n      @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "maxSumOfThreeConsecutive",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ ensures \\result == (a >= b ? a : b);\n      @ model public static pure \\bigint fb_max(\\bigint a, \\bigint b);\n      @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "maxSumOfThreeConsecutive",
+      "id": "annotation_3",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ requires a != null && 0 <= k < a.length;\n      @ ensures \\result == (k == 0 ? a[0] : k == 1 ? fb_wrap((\\bigint)a[0] + a[1]) : k == 2 ? fb_max(fb_three(a, 1), fb_max(fb_wrap((\\bigint)a[1] + a[2]), fb_wrap((\\bigint)a[0] + a[2]))) : fb_max(fb_max(fb_three(a, k - 1), fb_wrap(fb_three(a, k - 2) + a[k])), fb_wrap((\\bigint)a[k] + a[k - 1] + fb_three(a, k - 3))));\n      @ measured_by k;\n      @ model public static pure \\bigint fb_three(int[] a, int k);\n      @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "maxSumOfThreeConsecutive",
+      "id": "annotation_4",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ requires arr != null && 1 <= n <= arr.length;\n      @ assignable \\nothing;\n      @ ensures \\result == fb_three(arr, n - 1);\n      @ also\n      @ public exceptional_behavior\n      @ requires n < 0;\n      @ assignable \\nothing;\n      @ signals_only NegativeArraySizeException;\n      @ also\n      @ public exceptional_behavior\n      @ requires n == 0 || (n > 0 && arr != null && n > arr.length);\n      @ assignable \\nothing;\n      @ signals_only ArrayIndexOutOfBoundsException;\n      @ also\n      @ public exceptional_behavior\n      @ requires n > 0 && arr == null;\n      @ assignable \\nothing;\n      @ signals_only NullPointerException;\n      @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "maxSumOfThreeConsecutive",
+      "id": "annotation_5",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "//@ code_java_math"
+    },
+    {
+      "boundary_token": 147,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "maxSumOfThreeConsecutive",
+      "id": "annotation_6",
+      "loop_id": "loop_1",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@ loop_invariant 3 <= i && (n < 3 ? i == 3 : i <= n);\n          @ loop_invariant (\\forall int k; 0 <= k < i && k < n; sum[k] == fb_three(arr, k));\n          @ loop_writes i, sum[*];\n          @ decreases (\\bigint)n - i;\n          @*/"
+    }
+  ],
+  "language": "java",
+  "original_executable_token_sha256": "6e9b4b1dc9977de54c9f8cf2db021f89a78234538ba9219da6834edbe735ce3f",
+  "program": "MaxSumOfThreeConsecutive",
+  "schema_version": "1.0"
+}

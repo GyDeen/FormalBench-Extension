@@ -1,0 +1,35 @@
+{
+  "annotation_count": 2,
+  "executable_token_sha256": "d35ffa379e017f948936526bddfed10f8b420e2e439a462d3faa184e895d9cc9",
+  "internal_annotation_coverage": "complete",
+  "method": "frozen structured JSON with audited C declaration bindings",
+  "omitted_annotations": [
+    {
+      "function": "java_sub",
+      "id": "annotation_1",
+      "reason": "unused arithmetic helper absent from target"
+    }
+  ],
+  "placements": [
+    {
+      "boundary_token": 38,
+      "function": "java_mul",
+      "id": "annotation_2",
+      "loop_id": null,
+      "mutant_offset": 85,
+      "next_token": "static",
+      "target": "function"
+    },
+    {
+      "boundary_token": 66,
+      "function": "hexagonalNum",
+      "id": "annotation_3",
+      "loop_id": null,
+      "mutant_offset": 417,
+      "next_token": "int32_t",
+      "target": "function"
+    }
+  ],
+  "removed_loop_annotations": 0,
+  "removed_temporary_policy": "original pure initializer with stable dependencies"
+}

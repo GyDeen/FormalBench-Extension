@@ -1,0 +1,986 @@
+{
+  "adapter_sha256": {
+    "annotations.py": "c971d29b176cd45810857db756883638e9551bb950d5cb1426e5bcf57f9e497e",
+    "c_bindings.py": "2f21fdaa46151906b048409a92d784b801ecdf78191436c2976999a4c36d3cf6",
+    "c_structure.py": "772364a38abaceacb66e98c0aee01b26a188bbb883e4ee8135d80b5fa8b50540",
+    "verifiers.py": "9977eb05f2cb524e9647ef1578aad446fe92c2b4f2ae3faae8bc880063c56975"
+  },
+  "annotated_source": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/original/c/MaxSubArraySum.c",
+  "annotated_source_sha256": "b6dc51cf8f5896eeed4e8f291ad492c4a9da255fc1516cdf4a411270fd4068b9",
+  "attempt_status": "complete",
+  "command": [
+    "/root/.opam/default/bin/frama-c",
+    "-machdep",
+    "x86_64",
+    "-load-module",
+    "/mnt/d/ResearchProject/.tools/frama-c-compat/1e5af7b10d6dd41df377/float_negation_33.cmxs",
+    "-paired-c-prepare",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/original/c/MaxSubArraySum.c",
+    "-then",
+    "-wp",
+    "-wp-rte",
+    "-wp-no-filter-init",
+    "-wp-model",
+    "Typed+ref",
+    "-wp-why3-extra-config",
+    "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+    "-wp-prover",
+    "Alt-Ergo:2.4.3,Z3:4.8.12",
+    "-wp-timeout",
+    "10",
+    "-wp-memlimit",
+    "1000",
+    "-wp-par",
+    "4",
+    "-wp-cache",
+    "none",
+    "-wp-report-json",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/original/c/wp-report.json"
+  ],
+  "elapsed_seconds": 3.968,
+  "exit_code": 0,
+  "failure_stage": null,
+  "frozen_spec": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/frozen_specs/c/MaxSubArraySum.json",
+  "frozen_spec_sha256": "a58d9bd62440187a778ac6be58f8e72136ad1f9adf1db09e495a2274cc092df6",
+  "goals": [
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/original/c/MaxSubArraySum.c",
+      "function": "java_add",
+      "goal": "typed_ref_java_add_ensures",
+      "line": 6,
+      "property": "java_add_ensures",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00173
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0238
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/original/c/MaxSubArraySum.c",
+      "function": "java_add",
+      "goal": "typed_ref_java_add_assigns",
+      "line": 8,
+      "property": "java_add_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/original/c/MaxSubArraySum.c",
+      "function": "java_sub",
+      "goal": "typed_ref_java_sub_ensures",
+      "line": 14,
+      "property": "java_sub_ensures",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0014
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0172
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/original/c/MaxSubArraySum.c",
+      "function": "java_sub",
+      "goal": "typed_ref_java_sub_assigns",
+      "line": 16,
+      "property": "java_sub_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/original/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_terminates",
+      "line": 31,
+      "property": "maxSubArraySum_terminates",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/original/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_ensures",
+      "line": 29,
+      "property": "maxSubArraySum_ensures",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00999
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.02
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/original/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_exits",
+      "line": 31,
+      "property": "maxSubArraySum_exits",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/original/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_loop_invariant_established",
+      "line": 39,
+      "property": "maxSubArraySum_loop_invariant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0038
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0101
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/original/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_loop_invariant_preserved",
+      "line": 39,
+      "property": "maxSubArraySum_loop_invariant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0463
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0131
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/original/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_loop_invariant_2_established",
+      "line": 40,
+      "property": "maxSubArraySum_loop_invariant_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/original/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_loop_invariant_2_preserved",
+      "line": 40,
+      "property": "maxSubArraySum_loop_invariant_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0988
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0179
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/original/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_loop_invariant_3_established",
+      "line": 41,
+      "property": "maxSubArraySum_loop_invariant_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00307
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0123
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/original/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_loop_invariant_3_preserved",
+      "line": 41,
+      "property": "maxSubArraySum_loop_invariant_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0992
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0345
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/original/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_loop_invariant_4_established",
+      "line": 42,
+      "property": "maxSubArraySum_loop_invariant_4",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00367
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0442
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/original/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_loop_invariant_4_preserved",
+      "line": 42,
+      "property": "maxSubArraySum_loop_invariant_4",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.195
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.179
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/original/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_loop_assigns_part1",
+      "line": 43,
+      "property": "maxSubArraySum_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/original/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_loop_assigns_part2",
+      "line": 43,
+      "property": "maxSubArraySum_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/original/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_assigns_normal_part1",
+      "line": 31,
+      "property": "maxSubArraySum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/original/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_assigns_normal_part2",
+      "line": 31,
+      "property": "maxSubArraySum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/original/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_assigns_normal_part3",
+      "line": 31,
+      "property": "maxSubArraySum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/original/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_assigns_normal_part4",
+      "line": 31,
+      "property": "maxSubArraySum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/original/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_assigns_exit_part01",
+      "line": 31,
+      "property": "maxSubArraySum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/original/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_assigns_exit_part02",
+      "line": 31,
+      "property": "maxSubArraySum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/original/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_assigns_exit_part03",
+      "line": 31,
+      "property": "maxSubArraySum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/original/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_assigns_exit_part04",
+      "line": 31,
+      "property": "maxSubArraySum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/original/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_assigns_exit_part05",
+      "line": 31,
+      "property": "maxSubArraySum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/original/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_assigns_exit_part06",
+      "line": 31,
+      "property": "maxSubArraySum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/original/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_assigns_exit_part07",
+      "line": 31,
+      "property": "maxSubArraySum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/original/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_assigns_exit_part08",
+      "line": 31,
+      "property": "maxSubArraySum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/original/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_assigns_exit_part09",
+      "line": 31,
+      "property": "maxSubArraySum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/original/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_assigns_exit_part10",
+      "line": 31,
+      "property": "maxSubArraySum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/original/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_loop_variant_positive",
+      "line": 44,
+      "property": "maxSubArraySum_loop_variant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/original/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_loop_variant_decrease",
+      "line": 44,
+      "property": "maxSubArraySum_loop_variant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0983
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0276
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/original/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_call_jarray_get_requires",
+      "line": 47,
+      "property": "jarray_get_requires",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00623
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0176
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/original/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_call_jarray_get_requires_2",
+      "line": 47,
+      "property": "jarray_get_requires_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00742
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0175
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/original/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_call_jarray_get_requires_3",
+      "line": 47,
+      "property": "jarray_get_requires_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00673
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0115
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    }
+  ],
+  "input_fingerprint": "5a385b8a3cd68c6b5e5d628f4f1c15f3525111371621f99cd616ed726330c7ac",
+  "language": "c",
+  "logs": {
+    "stderr": "stderr.log",
+    "stdout": "stdout.log",
+    "wp_report": "wp-report.json"
+  },
+  "mutant_id": null,
+  "outcome": "proved",
+  "program": "MaxSubArraySum",
+  "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/MaxSubArraySum.c",
+  "raw_source_sha256": "15dc2ad0e679dd9ac2fc637c76742f73fc2f978b90b958fe8d8a064899cb88c7",
+  "reason": "Every reported WP goal was proved",
+  "role": "original",
+  "selection": null,
+  "selection_manifest_sha256": "92fa1533eafe32fdc60b119b0c6abc8a4f3c0b372d66ac21f39e54a3b5d7433d",
+  "settings": {
+    "c_provers": "Alt-Ergo:2.4.3,Z3:4.8.12",
+    "goal_timeout": 10,
+    "java_prover": "z3-4.3.X",
+    "machdep": "x86_64",
+    "memory_model": "Typed+ref",
+    "timeout": 300,
+    "why3_extra_config": "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+    "why3_extra_config_sha256": "97cc443d7439274ad732814842ae77a7b461d43c8d2099eb8994fb97e739049b",
+    "wp_memlimit": 1000,
+    "wp_par": 4
+  },
+  "support_sha256": {
+    "contracts/helpers.acsl.h": "37d683d91eb44cd98b6daa2984e93a296bbca187916781519d29dea8ce77ca8c",
+    "contracts/jboolarray.acsl.h": "ae0173e8ce64f3102e2e57b14c0509eeb9315974b553558b846a4ac879421460",
+    "contracts/jdoublearray.acsl.h": "bb472fd0bcd8757b89fb4f5a58f09134f92f145c147d4271d61b73c7232cf0ea",
+    "contracts/jdoublearray2.acsl.h": "3603fd8d9aeb9fb3b17424f2b258250c3dda9793d0822af5bb35e3a2754cedd8",
+    "contracts/jintarray.acsl.h": "83cfffb114f3cad5e5553951b0a239298a8e52e47bfbe783d4bceedead0983bb",
+    "contracts/jintarray2.acsl.h": "976047a31f67f24008deec58da879eddf81f37b2ab09e83da3978cd269773696",
+    "generated/types.h": "484e5df1fa6f1a573bee0b8ea778cefb259659d6b419e0c94ecd92e490d88301",
+    "java_arrays.h": "71446403075d5c68ce8ab8f85d63f98f3727133700a879b4e43c5ae59d7f0101"
+  },
+  "timed_out": false,
+  "transfer": {
+    "annotation_count": 5,
+    "executable_token_sha256": "785dd2a972a6272bd6ac1501e7a23391b8cb4d006cf9f4e063c5d1bcd688138d",
+    "internal_annotation_coverage": "complete",
+    "method": "frozen structured JSON with audited C declaration bindings",
+    "omitted_annotations": [],
+    "placements": [
+      {
+        "boundary_token": 10,
+        "function": "java_add",
+        "id": "annotation_1",
+        "loop_id": null,
+        "mutant_offset": 46,
+        "next_token": "static",
+        "target": "function"
+      },
+      {
+        "boundary_token": 38,
+        "function": "java_sub",
+        "id": "annotation_2",
+        "loop_id": null,
+        "mutant_offset": 160,
+        "next_token": "static",
+        "target": "function"
+      },
+      {
+        "boundary_token": 66,
+        "function": "maxSubArraySum",
+        "id": "annotation_3",
+        "loop_id": null,
+        "mutant_offset": 274,
+        "next_token": "int32_t",
+        "target": "function"
+      },
+      {
+        "boundary_token": 66,
+        "function": "maxSubArraySum",
+        "id": "annotation_4",
+        "loop_id": null,
+        "mutant_offset": 274,
+        "next_token": "int32_t",
+        "target": "function"
+      },
+      {
+        "boundary_token": 101,
+        "function": "maxSubArraySum",
+        "id": "annotation_5",
+        "loop_id": "loop_1",
+        "mutant_offset": 455,
+        "next_token": "for",
+        "target": "loop"
+      }
+    ],
+    "removed_loop_annotations": 0,
+    "removed_temporary_policy": "original pure initializer with stable dependencies"
+  },
+  "verification_started": true,
+  "verifier": {
+    "compatibility": {
+      "module": "/mnt/d/ResearchProject/.tools/frama-c-compat/1e5af7b10d6dd41df377/float_negation_33.cmxs",
+      "module_sha256": "1db37c95f71be52efae9dccb88c510a543ef611378c9e6438d65ec35880d70a8",
+      "name": "Frama-C 33.0 implicit floating-negation coercion repair",
+      "source": "/mnt/d/ResearchProject/verification/specification_evaluation/framac/float_negation_33.ml",
+      "source_sha256": "4ff87e29b00ac2eff69fd600225636521287641211fb362c1121246754c3870a"
+    },
+    "path": "/root/.opam/default/bin/frama-c",
+    "sha256": "9e49b5c48b5ca47a377a1b845f580bfbfb095fb18d51788c05cb42572201f116",
+    "version_command": [
+      "/root/.opam/default/bin/frama-c",
+      "-version"
+    ],
+    "version_exit_code": 0,
+    "version_output": "33.0 (Arsenic)"
+  }
+}

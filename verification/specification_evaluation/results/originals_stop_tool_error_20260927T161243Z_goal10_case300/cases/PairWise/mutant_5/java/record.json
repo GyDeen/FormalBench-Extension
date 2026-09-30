@@ -1,0 +1,138 @@
+{
+  "adapter_sha256": {
+    "annotations.py": "7f730d0275c185de8199e16b487819eb823acaba46195f4e73152471bb1097e8",
+    "c_bindings.py": "fc8f9d74f58723d57562bc5f21087a9ce9e959986a9edd53b26d07b9c9fca1e1",
+    "c_structure.py": "efcea8872a653827d977ef2e9c102acc70a44952a6e316a52cef4779a738a0d5",
+    "java_compat.py": "3eef914d390217d7cabe4637d900e1e1010045b90665d03802b7ac602149e139",
+    "verifiers.py": "0a9f1dd8a08eb33d35451283f3e0e3f4d272a24d7ada1aad48c5cbf39246bfcf"
+  },
+  "annotated_source": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/mutant_5/java/PairWise.java",
+  "annotated_source_sha256": "78f70834de973de1499c82fd86115b204ff006e22e33502097621637fa841262",
+  "attempt_status": "complete",
+  "command": [
+    "/root/tools/openjml/openjml",
+    "-J--add-exports=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED",
+    "-J--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED",
+    "-processorpath",
+    "/mnt/d/ResearchProject/.tools/openjml-compat/47613dac9ce1473c6ada/numeric-bit-predicates.jar",
+    "-Xplugin:NumericBitPredicates file:///mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/mutant_5/java/PairWise.java",
+    "--exec=/root/tools/openjml/Solvers-linux/z3-4.10.2",
+    "--esc",
+    "--progress",
+    "--nullable-by-default",
+    "--prover=z3-4.3.X",
+    "--timeout",
+    "10",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/mutant_5/java/PairWise.java"
+  ],
+  "compiler_normalizations": [],
+  "elapsed_seconds": 5.016,
+  "exit_code": 6,
+  "failure_stage": null,
+  "frozen_spec": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/frozen_specs/java/PairWise.json",
+  "frozen_spec_sha256": "e28b91d8e00cbc312e4ecd553f4141ff84e508df0bb79413a2e9db6939f25b78",
+  "goals": [
+    {
+      "category": "unclassified",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/mutant_5/java/PairWise.java",
+      "line": "25",
+      "message": "Validity is unknown - no model available method PairWise.pairWise -  (possible timeout): (error \"line 6785 column 18: model is not available\")",
+      "state": "unknown"
+    }
+  ],
+  "input_fingerprint": "4927fe87191297eecc2d4261f031733936ea8404fcd4d015972b07590904d188",
+  "language": "java",
+  "logs": {
+    "stderr": "stderr.log",
+    "stdout": "stdout.log",
+    "wp_report": null
+  },
+  "mutant_id": "5",
+  "outcome": "unknown/timeout",
+  "program": "PairWise",
+  "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/fault_mutants/run_ukcw__uc/PairWise/mutants/5/java/PairWise.java",
+  "raw_source_sha256": "4267893bf5190ee6a62a8dd077a936e4a98848e3f30543972e8867b9e88b08be",
+  "reason": "OpenJML reported unknown validity; warnings are not confirmed rejections",
+  "role": "mutant",
+  "selection": "direct_match",
+  "selection_manifest_sha256": "92fa1533eafe32fdc60b119b0c6abc8a4f3c0b372d66ac21f39e54a3b5d7433d",
+  "settings": {
+    "c_provers": "Alt-Ergo:2.4.3,Z3:4.8.12",
+    "goal_timeout": 10,
+    "java_prover": "z3-4.3.X",
+    "machdep": "x86_64",
+    "memory_model": "Typed+ref",
+    "timeout": 300,
+    "why3_extra_config": "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+    "why3_extra_config_sha256": "97cc443d7439274ad732814842ae77a7b461d43c8d2099eb8994fb97e739049b",
+    "wp_memlimit": 1000,
+    "wp_par": 4
+  },
+  "support_sha256": {},
+  "timed_out": false,
+  "transfer": {
+    "annotation_count": 3,
+    "executable_token_sha256": "052750b2f8247f743d1fafa6c272b87351bfdbfbe0e75912c267ed752c6c9b56",
+    "internal_annotation_coverage": "complete",
+    "method": "frozen structured JSON",
+    "omitted_annotations": [],
+    "placements": [
+      {
+        "boundary_token": 31,
+        "function": "pairWise",
+        "id": "annotation_1",
+        "loop_id": null,
+        "mutant_offset": 106,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 31,
+        "function": "pairWise",
+        "id": "annotation_2",
+        "loop_id": null,
+        "mutant_offset": 106,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 86,
+        "function": "pairWise",
+        "id": "annotation_3",
+        "loop_id": "loop_1",
+        "mutant_offset": 350,
+        "next_token": "for",
+        "target": "loop"
+      }
+    ],
+    "removed_loop_annotations": 0,
+    "removed_temporary_policy": "original pure initializer with stable dependencies"
+  },
+  "unsupported_features": [],
+  "verification_started": true,
+  "verifier": {
+    "compatibility": {
+      "compiler_sha256": "03ccef52f8ee2258bb69cfb8974a5eb609787349490390ce68e1e24de2f3fae0",
+      "equivalence_obligations_sha256": "b63fb7bfa0b474ed71c3a7217d6195363a8a14bafc1e7d0360af3ace1f5f357b",
+      "name": "OpenJML 21.0.27 numeric bit predicates and bundled Z3 repair",
+      "plugin": "/mnt/d/ResearchProject/.tools/openjml-compat/47613dac9ce1473c6ada/numeric-bit-predicates.jar",
+      "plugin_sha256": "632836c0a1f1dfa2e7bc132cce4f5d1a095241b571d4535730850d7183bbac92",
+      "scope": "primitive int local/parameter predicates (x ^ 1) == 0 and (x | 1) == 0",
+      "solver": {
+        "path": "/root/tools/openjml/Solvers-linux/z3-4.10.2",
+        "sha256": "79f7ced8a9f2156a4337ed89485faa65b905af17241f82bbeac69cbfdb518520",
+        "version": "Z3 version 4.10.2 - 64 bit"
+      },
+      "source": "/mnt/d/ResearchProject/verification/specification_evaluation/openjml/NumericBitPredicates.java",
+      "source_sha256": "9db3f96088894fa7c47bede5e97303beec13125a647fe60be0c0847eaa74571d"
+    },
+    "path": "/root/tools/openjml/openjml",
+    "sha256": "077efb88a059a09c43ccf5171031bdc0c70816765b8abf3cb7f0aeb151847adf",
+    "version_command": [
+      "/root/tools/openjml/openjml",
+      "--version"
+    ],
+    "version_exit_code": 0,
+    "version_output": "openjml 21.0.27"
+  }
+}

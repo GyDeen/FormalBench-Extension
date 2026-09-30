@@ -46,17 +46,25 @@ tests/
 /verification/java_arrays/results/*
 !/verification/java_arrays/results/*.md
 
-# Only the main 30-second goal / 600-second program run is eligible for tracking.
-# Smoke, repair, and fast diagnostic run directories remain entirely local.
+# Final experiment: 10-second goals / 300-second cases, including the integrated C sorts.
+# Pilot, smoke, repair, and separate diagnostic runs remain local.
 /verification/specification_evaluation/results/*
-!/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/
-# Within the main run, retain its summary and original-program results only:
-# Java's classified record and C's per-goal WP report.
-/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/**
-!/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/**/
-!/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/summary.json
-!/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/*/original/java/record.json
-!/verification/specification_evaluation/results/pilot10_seed726_20260925_budget600_goal30/cases/*/original/c/wp-report.json
+!/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/
+# Retain the experiment metadata, frozen inputs, and original/mutant case evidence.
+/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/**
+!/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/**/
+!/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/run.json
+!/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/summary.json
+!/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/sort_c_integration.json
+!/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/frozen_specs/**
+!/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/*/*/*/record.json
+!/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/*/*/*/transfer.json
+!/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/*/*/*/command.json
+!/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/*/*/c/wp-report.json
+!/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/*/*/c/*.c
+!/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/*/*/java/*.java
+# Keep archived attempts and duplicated trusted support headers local.
+/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/history/
 
 # Generated compiler output (after allowlists so it cannot be re-included).
 /FormalBench-data/FilteredData/compiled_classes/
@@ -70,3 +78,6 @@ __pycache__/
 *.cmi
 *.cmo
 *.cmxs
+/tmp/
+# Local sort integration evidence and generated runtime harnesses.
+/output/sort_integration_*/

@@ -1,0 +1,1371 @@
+{
+  "adapter_sha256": {
+    "annotations.py": "7f730d0275c185de8199e16b487819eb823acaba46195f4e73152471bb1097e8",
+    "c_bindings.py": "fc8f9d74f58723d57562bc5f21087a9ce9e959986a9edd53b26d07b9c9fca1e1",
+    "c_structure.py": "efcea8872a653827d977ef2e9c102acc70a44952a6e316a52cef4779a738a0d5",
+    "verifiers.py": "0a9f1dd8a08eb33d35451283f3e0e3f4d272a24d7ada1aad48c5cbf39246bfcf"
+  },
+  "annotated_source": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+  "annotated_source_sha256": "fbc6d46270ad2e19fa49daa3bfb584150ed3fd5e006441a8f65be19d48ff7a2c",
+  "attempt_status": "complete",
+  "command": [
+    "/root/.opam/default/bin/frama-c",
+    "-machdep",
+    "x86_64",
+    "-load-module",
+    "/mnt/d/ResearchProject/.tools/frama-c-compat/1e5af7b10d6dd41df377/float_negation_33.cmxs",
+    "-paired-c-prepare",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+    "-then",
+    "-wp",
+    "-wp-rte",
+    "-wp-no-filter-init",
+    "-wp-model",
+    "Typed+ref",
+    "-wp-why3-extra-config",
+    "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+    "-wp-prover",
+    "Alt-Ergo:2.4.3,Z3:4.8.12",
+    "-wp-timeout",
+    "10",
+    "-wp-memlimit",
+    "1000",
+    "-wp-par",
+    "4",
+    "-wp-cache",
+    "none",
+    "-wp-report-json",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/wp-report.json"
+  ],
+  "elapsed_seconds": 14.526,
+  "exit_code": 0,
+  "failure_stage": null,
+  "frozen_spec": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/frozen_specs/c/OddLengthSum.json",
+  "frozen_spec_sha256": "7ad58348ad4dc5e62b9f32a472a33b1530b36b945aea3589ed389512fba5c5e2",
+  "goals": [
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "java_add",
+      "goal": "typed_ref_java_add_ensures",
+      "line": 8,
+      "property": "java_add_ensures",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00145
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.021
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "java_add",
+      "goal": "typed_ref_java_add_assigns",
+      "line": 10,
+      "property": "java_add_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "java_div",
+      "goal": "typed_ref_java_div_terminates_part1",
+      "line": 26,
+      "property": "java_div_terminates",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "java_div",
+      "goal": "typed_ref_java_div_terminates_part2",
+      "line": 26,
+      "property": "java_div_terminates",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "java_div",
+      "goal": "typed_ref_java_div_ensures",
+      "line": 24,
+      "property": "java_div_ensures",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "java_div",
+      "goal": "typed_ref_java_div_exits",
+      "line": 26,
+      "property": "java_div_exits",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "java_div",
+      "goal": "typed_ref_java_div_assert_rte_division_by_zero",
+      "line": 26,
+      "property": "java_div_assert_rte_division_by_zero",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "java_div",
+      "goal": "typed_ref_java_div_assert_rte_signed_overflow",
+      "line": 26,
+      "property": "java_div_assert_rte_signed_overflow",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00785
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0121
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "java_div",
+      "goal": "typed_ref_java_div_assigns_normal_part1",
+      "line": 26,
+      "property": "java_div_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "java_div",
+      "goal": "typed_ref_java_div_assigns_normal_part2",
+      "line": 26,
+      "property": "java_div_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "java_div",
+      "goal": "typed_ref_java_div_assigns_exit_part1",
+      "line": 26,
+      "property": "java_div_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "java_div",
+      "goal": "typed_ref_java_div_assigns_exit_part2",
+      "line": 26,
+      "property": "java_div_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "java_div",
+      "goal": "typed_ref_java_div_call_fputs_requires_valid_string_s",
+      "line": 26,
+      "property": "fputs_requires_valid_string_s",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "java_mul",
+      "goal": "typed_ref_java_mul_ensures",
+      "line": 18,
+      "property": "java_mul_ensures",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0012
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "java_mul",
+      "goal": "typed_ref_java_mul_assigns",
+      "line": 20,
+      "property": "java_mul_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "java_sub",
+      "goal": "typed_ref_java_sub_ensures",
+      "line": 13,
+      "property": "java_sub_ensures",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00154
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0168
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "java_sub",
+      "goal": "typed_ref_java_sub_assigns",
+      "line": 15,
+      "property": "java_sub_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_terminates",
+      "line": 38,
+      "property": "oddLengthSum_terminates",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_ensures",
+      "line": 36,
+      "property": "oddLengthSum_ensures",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_exits",
+      "line": 38,
+      "property": "oddLengthSum_exits",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_loop_invariant_established",
+      "line": 42,
+      "property": "oddLengthSum_loop_invariant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00533
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0126
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_loop_invariant_preserved",
+      "line": 42,
+      "property": "oddLengthSum_loop_invariant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0153
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0176
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_loop_invariant_2_established",
+      "line": 43,
+      "property": "oddLengthSum_loop_invariant_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00473
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0252
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_loop_invariant_2_preserved",
+      "line": 43,
+      "property": "oddLengthSum_loop_invariant_2",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0124
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_loop_assigns_part1",
+      "line": 44,
+      "property": "oddLengthSum_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_loop_assigns_part2",
+      "line": 44,
+      "property": "oddLengthSum_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_loop_assigns_part3",
+      "line": 44,
+      "property": "oddLengthSum_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_loop_assigns_part4",
+      "line": 44,
+      "property": "oddLengthSum_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_loop_assigns_part5",
+      "line": 44,
+      "property": "oddLengthSum_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_loop_assigns_part6",
+      "line": 44,
+      "property": "oddLengthSum_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_loop_assigns_part7",
+      "line": 44,
+      "property": "oddLengthSum_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_loop_assigns_part8",
+      "line": 44,
+      "property": "oddLengthSum_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_assigns_normal_part1",
+      "line": 38,
+      "property": "oddLengthSum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_assigns_normal_part2",
+      "line": 38,
+      "property": "oddLengthSum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_assigns_normal_part3",
+      "line": 38,
+      "property": "oddLengthSum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_assigns_exit_part01",
+      "line": 38,
+      "property": "oddLengthSum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_assigns_exit_part02",
+      "line": 38,
+      "property": "oddLengthSum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_assigns_exit_part03",
+      "line": 38,
+      "property": "oddLengthSum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_assigns_exit_part04",
+      "line": 38,
+      "property": "oddLengthSum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_assigns_exit_part05",
+      "line": 38,
+      "property": "oddLengthSum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_assigns_exit_part06",
+      "line": 38,
+      "property": "oddLengthSum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_assigns_exit_part07",
+      "line": 38,
+      "property": "oddLengthSum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_assigns_exit_part08",
+      "line": 38,
+      "property": "oddLengthSum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_assigns_exit_part09",
+      "line": 38,
+      "property": "oddLengthSum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_assigns_exit_part10",
+      "line": 38,
+      "property": "oddLengthSum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_assigns_exit_part11",
+      "line": 38,
+      "property": "oddLengthSum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_loop_variant_positive",
+      "line": 45,
+      "property": "oddLengthSum_loop_variant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_loop_variant_decrease",
+      "line": 45,
+      "property": "oddLengthSum_loop_variant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0127
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.02
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_call_jarray_length_requires",
+      "line": 40,
+      "property": "jarray_length_requires",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00329
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.00388
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_call_jarray_length_requires_2",
+      "line": 40,
+      "property": "jarray_length_requires_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00388
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0147
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_call_jarray_get_requires",
+      "line": 48,
+      "property": "jarray_get_requires",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_call_jarray_get_requires_2",
+      "line": 48,
+      "property": "jarray_get_requires_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_call_jarray_get_requires_3",
+      "line": 48,
+      "property": "jarray_get_requires_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_5/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_call_java_div_requires",
+      "line": 48,
+      "property": "java_div_requires",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    }
+  ],
+  "input_fingerprint": "d1a5e776e7de61d2d212195708952e90c9d2ef2ee4afc5d737c98e85daaa3436",
+  "language": "c",
+  "logs": {
+    "stderr": "stderr.log",
+    "stdout": "stdout.log",
+    "wp_report": "wp-report.json"
+  },
+  "mutant_id": "5",
+  "outcome": "unknown/timeout",
+  "program": "OddLengthSum",
+  "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/fault_mutants/run_ukcw__uc/OddLengthSum/mutants/5/c/OddLengthSum.c",
+  "raw_source_sha256": "5fd18a4faeba8fa923fdfb0c1c52be6a9d8ba276b73f8be99bae0121adb78f8c",
+  "reason": "At least one WP goal remains unresolved",
+  "role": "mutant",
+  "selection": "direct_match",
+  "selection_manifest_sha256": "92fa1533eafe32fdc60b119b0c6abc8a4f3c0b372d66ac21f39e54a3b5d7433d",
+  "settings": {
+    "c_provers": "Alt-Ergo:2.4.3,Z3:4.8.12",
+    "goal_timeout": 10,
+    "java_prover": "z3-4.3.X",
+    "machdep": "x86_64",
+    "memory_model": "Typed+ref",
+    "timeout": 300,
+    "why3_extra_config": "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+    "why3_extra_config_sha256": "97cc443d7439274ad732814842ae77a7b461d43c8d2099eb8994fb97e739049b",
+    "wp_memlimit": 1000,
+    "wp_par": 4
+  },
+  "support_sha256": {
+    "contracts/helpers.acsl.h": "37d683d91eb44cd98b6daa2984e93a296bbca187916781519d29dea8ce77ca8c",
+    "contracts/jboolarray.acsl.h": "ae0173e8ce64f3102e2e57b14c0509eeb9315974b553558b846a4ac879421460",
+    "contracts/jdoublearray.acsl.h": "bb472fd0bcd8757b89fb4f5a58f09134f92f145c147d4271d61b73c7232cf0ea",
+    "contracts/jdoublearray2.acsl.h": "3603fd8d9aeb9fb3b17424f2b258250c3dda9793d0822af5bb35e3a2754cedd8",
+    "contracts/jintarray.acsl.h": "83cfffb114f3cad5e5553951b0a239298a8e52e47bfbe783d4bceedead0983bb",
+    "contracts/jintarray2.acsl.h": "976047a31f67f24008deec58da879eddf81f37b2ab09e83da3978cd269773696",
+    "generated/types.h": "484e5df1fa6f1a573bee0b8ea778cefb259659d6b419e0c94ecd92e490d88301",
+    "java_arrays.h": "71446403075d5c68ce8ab8f85d63f98f3727133700a879b4e43c5ae59d7f0101"
+  },
+  "timed_out": false,
+  "transfer": {
+    "annotation_count": 7,
+    "executable_token_sha256": "a766bf9dfb6dbd30728079295e43c20e2ff8729101d76fef03fd49992a7bda9d",
+    "internal_annotation_coverage": "complete",
+    "method": "frozen structured JSON with audited C declaration bindings",
+    "omitted_annotations": [],
+    "placements": [
+      {
+        "boundary_token": 10,
+        "function": "java_add",
+        "id": "annotation_1",
+        "loop_id": null,
+        "mutant_offset": 85,
+        "next_token": "static",
+        "target": "function"
+      },
+      {
+        "boundary_token": 38,
+        "function": "java_sub",
+        "id": "annotation_2",
+        "loop_id": null,
+        "mutant_offset": 194,
+        "next_token": "static",
+        "target": "function"
+      },
+      {
+        "boundary_token": 66,
+        "function": "java_mul",
+        "id": "annotation_3",
+        "loop_id": null,
+        "mutant_offset": 303,
+        "next_token": "static",
+        "target": "function"
+      },
+      {
+        "boundary_token": 94,
+        "c_bindings": {
+          "dividend": "left",
+          "divisor": "right"
+        },
+        "function": "java_div",
+        "id": "annotation_4",
+        "loop_id": null,
+        "mutant_offset": 412,
+        "next_token": "static",
+        "target": "function"
+      },
+      {
+        "boundary_token": 130,
+        "function": "oddLengthSum",
+        "id": "annotation_5",
+        "loop_id": null,
+        "mutant_offset": 635,
+        "next_token": "int32_t",
+        "target": "function"
+      },
+      {
+        "boundary_token": 130,
+        "function": "oddLengthSum",
+        "id": "annotation_6",
+        "loop_id": null,
+        "mutant_offset": 635,
+        "next_token": "int32_t",
+        "target": "function"
+      },
+      {
+        "boundary_token": 150,
+        "function": "oddLengthSum",
+        "id": "annotation_7",
+        "loop_id": "loop_1",
+        "mutant_offset": 743,
+        "next_token": "for",
+        "target": "loop"
+      }
+    ],
+    "removed_loop_annotations": 0,
+    "removed_temporary_policy": "original pure initializer with stable dependencies"
+  },
+  "verification_started": true,
+  "verifier": {
+    "compatibility": {
+      "module": "/mnt/d/ResearchProject/.tools/frama-c-compat/1e5af7b10d6dd41df377/float_negation_33.cmxs",
+      "module_sha256": "1db37c95f71be52efae9dccb88c510a543ef611378c9e6438d65ec35880d70a8",
+      "name": "Frama-C 33.0 implicit floating-negation coercion repair",
+      "source": "/mnt/d/ResearchProject/verification/specification_evaluation/framac/float_negation_33.ml",
+      "source_sha256": "4ff87e29b00ac2eff69fd600225636521287641211fb362c1121246754c3870a"
+    },
+    "path": "/root/.opam/default/bin/frama-c",
+    "sha256": "9e49b5c48b5ca47a377a1b845f580bfbfb095fb18d51788c05cb42572201f116",
+    "version_command": [
+      "/root/.opam/default/bin/frama-c",
+      "-version"
+    ],
+    "version_exit_code": 0,
+    "version_output": "33.0 (Arsenic)"
+  }
+}

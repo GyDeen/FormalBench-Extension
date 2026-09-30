@@ -1,0 +1,87 @@
+{
+  "annotation_count": 8,
+  "executable_token_sha256": "cb54dd9a097bbae728645c47c1cf7a5dd87fc01f3b70f5dc9ebbadd873e690f1",
+  "internal_annotation_coverage": "complete",
+  "method": "frozen structured JSON with audited C declaration bindings",
+  "omitted_annotations": [],
+  "placements": [
+    {
+      "boundary_token": 10,
+      "function": "java_add",
+      "id": "annotation_1",
+      "loop_id": null,
+      "mutant_offset": 46,
+      "next_token": "static",
+      "target": "function"
+    },
+    {
+      "boundary_token": 38,
+      "function": "java_sub",
+      "id": "annotation_2",
+      "loop_id": null,
+      "mutant_offset": 155,
+      "next_token": "static",
+      "target": "function"
+    },
+    {
+      "boundary_token": 66,
+      "function": "java_min",
+      "id": "annotation_3",
+      "loop_id": null,
+      "mutant_offset": 264,
+      "next_token": "static",
+      "target": "function"
+    },
+    {
+      "boundary_token": 87,
+      "function": "minJumps",
+      "id": "annotation_4",
+      "loop_id": null,
+      "mutant_offset": 358,
+      "next_token": "int32_t",
+      "target": "function"
+    },
+    {
+      "boundary_token": 87,
+      "function": "minJumps",
+      "id": "annotation_5",
+      "loop_id": null,
+      "mutant_offset": 358,
+      "next_token": "int32_t",
+      "target": "function"
+    },
+    {
+      "boundary_token": 113,
+      "c_bindings": {
+        "i": "__fill_index_1",
+        "length": "(dp->length)"
+      },
+      "function": "minJumps",
+      "id": "annotation_6",
+      "loop_id": "loop_1",
+      "mutant_offset": 441,
+      "next_token": "for",
+      "target": "loop"
+    },
+    {
+      "boundary_token": 153,
+      "function": "minJumps",
+      "id": "annotation_7",
+      "loop_id": "loop_2",
+      "mutant_offset": 707,
+      "next_token": "for",
+      "target": "loop"
+    },
+    {
+      "boundary_token": 174,
+      "function": "minJumps",
+      "id": "annotation_8",
+      "loop_id": "loop_3",
+      "mutant_offset": 784,
+      "next_token": "for",
+      "target": "loop"
+    }
+  ],
+  "removed_loop_annotations": 0,
+  "removed_temporary_policy": "original pure initializer with stable dependencies"
+}

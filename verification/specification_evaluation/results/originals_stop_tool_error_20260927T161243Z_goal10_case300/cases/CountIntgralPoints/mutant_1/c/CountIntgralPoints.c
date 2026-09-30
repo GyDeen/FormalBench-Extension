@@ -1,0 +1,24 @@
+#include "java_arrays.h"
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+/*@
+  assigns \nothing;
+  ensures \result == (int32_t)((integer)left - right);
+*/
+static int32_t java_sub(int32_t left, int32_t right) { return (int32_t)((uint32_t)left - (uint32_t)right); }
+/*@
+  assigns \nothing;
+  ensures \result == (int32_t)((integer)left * right);
+*/
+static int32_t java_mul(int32_t left, int32_t right) { return (int32_t)((uint32_t)left * (uint32_t)right); }
+static int32_t java_mod(int32_t left, int32_t right) { if (right == 0) { fputs("JAVA_ARITHMETIC_ERROR: DIVIDE_BY_ZERO\n", stderr); exit(75); } if (left == INT32_MIN && right == -1) return 0; return left % right; }
+
+/*@
+  assigns \nothing;
+  ensures \result == (int32_t)(((integer)y2 - y1 - 1) * ((integer)x2 - x1 - 1));
+*/
+int32_t countIntgralPoints(int32_t x1, int32_t y1, int32_t x2, int32_t y2) {
+    return java_mul(java_sub(java_mod(y2, y1), INT32_C(1)), java_sub(java_sub(x2, x1), INT32_C(1)));
+}

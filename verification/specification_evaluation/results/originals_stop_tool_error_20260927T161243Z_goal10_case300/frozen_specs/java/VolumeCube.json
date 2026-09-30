@@ -1,0 +1,34 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "volumeCube",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ assignable \\nothing;\n      @ ensures \\result == \\java_math(l * l * l);\n      @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "volumeCube",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "//@ code_java_math"
+    }
+  ],
+  "language": "java",
+  "original_executable_token_sha256": "2040400521bf701c8beb18637e7a45f0e11be208f0331c24bbeeb02a4e8309b4",
+  "program": "VolumeCube",
+  "schema_version": "1.0"
+}

@@ -1,0 +1,47 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "pairWise",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ requires l1 != null;\n      @ assignable \\nothing;\n      @ \n      @ ensures \\result != null && \\fresh(\\result);\n      @ ensures \\result.length == (l1.length < 2 ? 0 : l1.length - 1);\n      @ ensures (\\forall int k; 0 <= k < \\result.length; \\result[k] != null && \\fresh(\\result[k]) && \\result[k].length == 2 && \\result[k][0] == l1[k] && \\result[k][1] == l1[k + 1]);\n      @ ensures (\\forall int p, q; 0 <= p < q < \\result.length; \\result[p] != \\result[q]);\n      @ \n      @ also\n      @ public exceptional_behavior\n      @ requires l1 == null;\n      @ assignable \\nothing;\n      @ signals_only NullPointerException;\n      @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "pairWise",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "//@ code_java_math"
+    },
+    {
+      "boundary_token": 86,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "pairWise",
+      "id": "annotation_3",
+      "loop_id": "loop_1",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@ loop_invariant 0 <= i <= result.length && result.length == l1.length - 1;\n          @ loop_invariant (\\forall int k; 0 <= k < i; result[k][0] == l1[k] && result[k][1] == l1[k + 1]);\n          @ loop_writes i, result[*][*];\n          @ decreases result.length - i;\n          @*/"
+    }
+  ],
+  "language": "java",
+  "original_executable_token_sha256": "a468ba5b35a339670a63d817dfc2ffda9a644fc405e2f495a4bcc239531e9d85",
+  "program": "PairWise",
+  "schema_version": "1.0"
+}

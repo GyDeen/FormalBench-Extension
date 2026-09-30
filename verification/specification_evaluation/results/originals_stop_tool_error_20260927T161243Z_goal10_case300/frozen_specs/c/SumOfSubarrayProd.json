@@ -1,0 +1,86 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 10,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_add",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\n  assigns \\nothing;\n  ensures \\result == (int32_t)((integer)left + right);\n*/"
+    },
+    {
+      "boundary_token": 38,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_mul",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\n  assigns \\nothing;\n  ensures \\result == (int32_t)((integer)left * right);\n*/"
+    },
+    {
+      "boundary_token": 66,
+      "following_tokens": [
+        "int32_t",
+        "sumOfSubarrayProd"
+      ],
+      "function": "sumOfSubarrayProd",
+      "id": "annotation_3",
+      "loop_id": null,
+      "next_token": "int32_t",
+      "target": "function",
+      "text": "/*@\n  logic integer fb_product{L}(JIntArray a, integer lo, integer hi) =\n    hi <= lo ? 1 : fb_product(a, lo, hi - 1) * a->data[hi - 1];\n  logic integer fb_products_from{L}(JIntArray a, integer lo, integer hi) =\n    hi <= lo ? 0 : fb_products_from(a, lo, hi - 1) + fb_product(a, lo, hi);\n  logic integer fb_all_products{L}(JIntArray a, integer n, integer starts) =\n    starts <= 0 ? 0 : fb_all_products(a, n, starts - 1) + fb_products_from(a, starts - 1, n);\n*/"
+    },
+    {
+      "boundary_token": 66,
+      "following_tokens": [
+        "int32_t",
+        "sumOfSubarrayProd"
+      ],
+      "function": "sumOfSubarrayProd",
+      "id": "annotation_4",
+      "loop_id": null,
+      "next_token": "int32_t",
+      "target": "function",
+      "text": "/*@\n  requires n <= 0 || (jintarray_valid_nonnull(arr) && n <= arr->length);\n  assigns \\nothing;\n  ensures \\result == (int32_t)fb_all_products(arr, n, n);\n*/"
+    },
+    {
+      "boundary_token": 81,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "sumOfSubarrayProd",
+      "id": "annotation_5",
+      "loop_id": "loop_1",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@\n      loop invariant 0 <= i <= (n > 0 ? n : 0);\n      loop invariant sum == (int32_t)fb_all_products(arr, n, i);\n      loop assigns i, sum;\n      loop variant (integer)n - i;\n    */"
+    },
+    {
+      "boundary_token": 107,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "sumOfSubarrayProd",
+      "id": "annotation_6",
+      "loop_id": "loop_2",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@\n          loop invariant i <= j <= n;\n          loop invariant product == (int32_t)fb_product(arr, i, j);\n          loop invariant sum == (int32_t)(fb_all_products(arr, n, i) + fb_products_from(arr, i, j));\n          loop assigns j, product, sum;\n          loop variant n - j;\n        */"
+    }
+  ],
+  "language": "c",
+  "original_executable_token_sha256": "77105c1416315c716f3bb5e72da78020645f961f10aeda4964069a5ded8b98d0",
+  "program": "SumOfSubarrayProd",
+  "schema_version": "1.0"
+}

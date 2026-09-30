@@ -1,0 +1,34 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "dogAge",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ assignable \\nothing;\n      @ ensures \\result == (hAge >= 0 ? \\java_math((hAge - 2) * 4 + 21) : \\java_math((hAge + 2) * 4 + 21));\n      @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "dogAge",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "//@ code_java_math"
+    }
+  ],
+  "language": "java",
+  "original_executable_token_sha256": "47a3de724714f9dfc15934b153600eec725b9077d954ce4a966d55745580b2b4",
+  "program": "DogAge",
+  "schema_version": "1.0"
+}

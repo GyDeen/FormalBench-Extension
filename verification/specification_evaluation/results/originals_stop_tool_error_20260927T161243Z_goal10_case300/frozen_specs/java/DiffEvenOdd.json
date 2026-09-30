@@ -1,0 +1,60 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 24,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "diffEvenOdd",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ requires a != null && 0 <= k <= a.length;\n      @ ensures \\result == (k == 0 ? -1 : fb_first(a, k - 1, odd) != -1 ? fb_first(a, k - 1, odd) : ((odd ? a[k - 1] % 2 != 0 && a[k - 1] != -1 : a[k - 1] % 2 == 0) ? a[k - 1] : -1));\n      @ measured_by k;\n      @ model public static pure int fb_first(int[] a, int k, boolean odd);\n      @*/"
+    },
+    {
+      "boundary_token": 24,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "diffEvenOdd",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ requires array != null;\n      @ assignable \\nothing;\n      @ \n      @ ensures \\result == \\java_math(fb_first(array, array.length, false) - fb_first(array, array.length, true));\n      @ \n      @ also\n      @ public exceptional_behavior\n      @ requires array == null;\n      @ assignable \\nothing;\n      @ signals_only NullPointerException;\n      @*/"
+    },
+    {
+      "boundary_token": 24,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "diffEvenOdd",
+      "id": "annotation_3",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "//@ code_java_math"
+    },
+    {
+      "boundary_token": 47,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "diffEvenOdd",
+      "id": "annotation_4",
+      "loop_id": "loop_1",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@ loop_invariant 0 <= \\count <= array.length;\n          @ loop_invariant firstEven == fb_first(array, \\count, false) && firstOdd == fb_first(array, \\count, true);\n          @ loop_writes firstEven, firstOdd;\n          @ decreases array.length - \\count;\n          @*/"
+    }
+  ],
+  "language": "java",
+  "original_executable_token_sha256": "6f87f5ab72bc5dd075a4642be39bc27a99eb1b85e6442758e5004072abbeaa8c",
+  "program": "DiffEvenOdd",
+  "schema_version": "1.0"
+}

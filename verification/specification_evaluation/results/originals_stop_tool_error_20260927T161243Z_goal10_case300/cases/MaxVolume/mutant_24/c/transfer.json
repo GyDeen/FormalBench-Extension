@@ -1,0 +1,72 @@
+{
+  "annotation_count": 6,
+  "executable_token_sha256": "fa661653caf3563a7b3680ad8d96b5c437285ed542f0d0d570dd6cef19515e8a",
+  "internal_annotation_coverage": "complete",
+  "method": "frozen structured JSON with audited C declaration bindings",
+  "omitted_annotations": [],
+  "placements": [
+    {
+      "boundary_token": 10,
+      "function": "java_add",
+      "id": "annotation_1",
+      "loop_id": null,
+      "mutant_offset": 46,
+      "next_token": "static",
+      "target": "function"
+    },
+    {
+      "boundary_token": 38,
+      "function": "java_sub",
+      "id": "annotation_2",
+      "loop_id": null,
+      "mutant_offset": 155,
+      "next_token": "static",
+      "target": "function"
+    },
+    {
+      "boundary_token": 66,
+      "function": "java_mul",
+      "id": "annotation_3",
+      "loop_id": null,
+      "mutant_offset": 264,
+      "next_token": "static",
+      "target": "function"
+    },
+    {
+      "boundary_token": 94,
+      "function": "maxVolume",
+      "id": "annotation_4",
+      "loop_id": null,
+      "mutant_offset": 374,
+      "next_token": "int32_t",
+      "target": "function"
+    },
+    {
+      "boundary_token": 106,
+      "c_bindings": {
+        "maxVolume": "maxVolumeValue"
+      },
+      "function": "maxVolume",
+      "id": "annotation_5",
+      "loop_id": "loop_1",
+      "mutant_offset": 450,
+      "next_token": "for",
+      "target": "loop"
+    },
+    {
+      "boundary_token": 143,
+      "c_bindings": {
+        "maxVolume": "maxVolumeValue",
+        "upper": "((int32_t)((integer)(((int32_t)((integer)(s) - (l)))) + (1)))"
+      },
+      "function": "maxVolume",
+      "id": "annotation_6",
+      "loop_id": "loop_2",
+      "mutant_offset": 528,
+      "next_token": "for",
+      "target": "loop"
+    }
+  ],
+  "removed_loop_annotations": 0,
+  "removed_temporary_policy": "original pure initializer with stable dependencies"
+}

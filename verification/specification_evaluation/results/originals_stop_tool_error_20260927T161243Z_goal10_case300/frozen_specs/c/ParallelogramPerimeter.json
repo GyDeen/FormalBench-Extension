@@ -1,0 +1,34 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 10,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_mul",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\n  assigns \\nothing;\n  ensures \\result == (int32_t)((integer)left * right);\n*/"
+    },
+    {
+      "boundary_token": 38,
+      "following_tokens": [
+        "int32_t",
+        "parallelogramPerimeter"
+      ],
+      "function": "parallelogramPerimeter",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "int32_t",
+      "target": "function",
+      "text": "/*@\n  assigns \\nothing;\n  ensures \\result == (b <= 0 || h <= 0 ? 0 : (int32_t)(2 * (integer)b * h));\n*/"
+    }
+  ],
+  "language": "c",
+  "original_executable_token_sha256": "cd95c834f57364bd652e674e8637fab611392510954b2b55501d8187c44a9f61",
+  "program": "ParallelogramPerimeter",
+  "schema_version": "1.0"
+}

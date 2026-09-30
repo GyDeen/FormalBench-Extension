@@ -1,0 +1,60 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 17,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_add",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\nassigns \\nothing;\nensures \\result == (int32_t)((integer)left + right);\n*/"
+    },
+    {
+      "boundary_token": 45,
+      "following_tokens": [
+        "int32_t",
+        "countOddSquares"
+      ],
+      "function": "countOddSquares",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "int32_t",
+      "target": "function",
+      "text": "/*@\nlogic integer fb_floor_root(integer x, integer lo, integer hi) =\n  lo > hi ? hi :\n  ((lo + hi) / 2) * ((lo + hi) / 2) <= x ? fb_floor_root(x, (lo + hi) / 2 + 1, hi) : fb_floor_root(x, lo, (lo + hi) / 2 - 1);\nlogic integer fb_squares_through(integer x) = x < 0 ? 0 : fb_floor_root(x, 0, 46340) + 1;\n*/"
+    },
+    {
+      "boundary_token": 45,
+      "following_tokens": [
+        "int32_t",
+        "countOddSquares"
+      ],
+      "function": "countOddSquares",
+      "id": "annotation_3",
+      "loop_id": null,
+      "next_token": "int32_t",
+      "target": "function",
+      "text": "/*@\nterminates m < INT32_MAX;\nassigns errno;\nensures m < INT32_MAX;\nensures \\result == (n > m ? 0 : fb_squares_through(m) - fb_squares_through((integer)n - 1));\nensures 0 <= \\result <= 46341;\nensures n < 0 && n <= m ==> errno == EDOM;\nensures n >= 0 || n > m ==> errno == \\old(errno);\n*/"
+    },
+    {
+      "boundary_token": 60,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "countOddSquares",
+      "id": "annotation_4",
+      "loop_id": "loop_1",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@\n    loop invariant m < INT32_MAX ==> n <= i <= (n > m ? n : (integer)m + 1);\n    loop invariant m < INT32_MAX ==> count == fb_squares_through((integer)i - 1) - fb_squares_through((integer)n - 1);\n    loop assigns i, count, errno;\n    */"
+    }
+  ],
+  "language": "c",
+  "original_executable_token_sha256": "e8ab80e1279cd6f8a828cbb6219d542ba720bf818ea3011ca9f4f39ec20060e8",
+  "program": "CountOddSquares",
+  "schema_version": "1.0"
+}

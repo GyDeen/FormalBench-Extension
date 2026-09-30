@@ -1,0 +1,4012 @@
+{
+  "adapter_sha256": {
+    "annotations.py": "7f730d0275c185de8199e16b487819eb823acaba46195f4e73152471bb1097e8",
+    "c_bindings.py": "fc8f9d74f58723d57562bc5f21087a9ce9e959986a9edd53b26d07b9c9fca1e1",
+    "c_structure.py": "efcea8872a653827d977ef2e9c102acc70a44952a6e316a52cef4779a738a0d5",
+    "verifiers.py": "0a9f1dd8a08eb33d35451283f3e0e3f4d272a24d7ada1aad48c5cbf39246bfcf"
+  },
+  "annotated_source": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+  "annotated_source_sha256": "179a2f7fd4c8e45176767b41db10d168235932e81ab41721ff37b6b140cc3067",
+  "attempt_status": "complete",
+  "command": [
+    "/root/.opam/default/bin/frama-c",
+    "-machdep",
+    "x86_64",
+    "-load-module",
+    "/mnt/d/ResearchProject/.tools/frama-c-compat/1e5af7b10d6dd41df377/float_negation_33.cmxs",
+    "-paired-c-prepare",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+    "-then",
+    "-wp",
+    "-wp-rte",
+    "-wp-no-filter-init",
+    "-wp-model",
+    "Typed+ref",
+    "-wp-why3-extra-config",
+    "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+    "-wp-prover",
+    "Alt-Ergo:2.4.3,Z3:4.8.12",
+    "-wp-timeout",
+    "10",
+    "-wp-memlimit",
+    "1000",
+    "-wp-par",
+    "4",
+    "-wp-cache",
+    "none",
+    "-wp-report-json",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/wp-report.json"
+  ],
+  "elapsed_seconds": 175.179,
+  "exit_code": 0,
+  "failure_stage": null,
+  "frozen_spec": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/frozen_specs/c/CountingSort.json",
+  "frozen_spec_sha256": "1ff4f79ded72133414dd68c0bc762c505c4a0ae3ca4d598593c6753158081816",
+  "goals": [
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_terminates",
+      "line": 35,
+      "property": "countingSort_terminates",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_ensures",
+      "line": 26,
+      "property": "countingSort_ensures",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.533
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0209
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_ensures_2",
+      "line": 27,
+      "property": "countingSort_ensures_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_ensures_3",
+      "line": 28,
+      "property": "countingSort_ensures_3",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.706
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_ensures_4",
+      "line": 29,
+      "property": "countingSort_ensures_4",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.733
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_ensures_5",
+      "line": 31,
+      "property": "countingSort_ensures_5",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.671
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0164
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_ensures_6",
+      "line": 32,
+      "property": "countingSort_ensures_6",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.693
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_ensures_7",
+      "line": 33,
+      "property": "countingSort_ensures_7",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.683
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_exits",
+      "line": 35,
+      "property": "countingSort_exits",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_invariant_established",
+      "line": 42,
+      "property": "countingSort_loop_invariant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_invariant_preserved",
+      "line": 42,
+      "property": "countingSort_loop_invariant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.337
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0548
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_invariant_2_established",
+      "line": 43,
+      "property": "countingSort_loop_invariant_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0664
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.052
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_invariant_2_preserved",
+      "line": 43,
+      "property": "countingSort_loop_invariant_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.231
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.056
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_invariant_3_established",
+      "line": 44,
+      "property": "countingSort_loop_invariant_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0657
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0572
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_invariant_3_preserved",
+      "line": 44,
+      "property": "countingSort_loop_invariant_3",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.21
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_invariant_4_established",
+      "line": 60,
+      "property": "countingSort_loop_invariant_4",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_invariant_4_preserved",
+      "line": 60,
+      "property": "countingSort_loop_invariant_4",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.193
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.154
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_invariant_5_established",
+      "line": 61,
+      "property": "countingSort_loop_invariant_5",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.105
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0423
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_invariant_5_preserved",
+      "line": 61,
+      "property": "countingSort_loop_invariant_5",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.23
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.1
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_invariant_6_established",
+      "line": 62,
+      "property": "countingSort_loop_invariant_6",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.15
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0236
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_invariant_6_preserved",
+      "line": 62,
+      "property": "countingSort_loop_invariant_6",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.193
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_invariant_7_established",
+      "line": 72,
+      "property": "countingSort_loop_invariant_7",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_invariant_7_preserved",
+      "line": 72,
+      "property": "countingSort_loop_invariant_7",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.342
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_invariant_8_established",
+      "line": 73,
+      "property": "countingSort_loop_invariant_8",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.118
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.032
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_invariant_8_preserved",
+      "line": 73,
+      "property": "countingSort_loop_invariant_8",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_invariant_9_established",
+      "line": 74,
+      "property": "countingSort_loop_invariant_9",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.159
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_invariant_9_preserved",
+      "line": 74,
+      "property": "countingSort_loop_invariant_9",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.314
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_invariant_10_established",
+      "line": 75,
+      "property": "countingSort_loop_invariant_10",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_invariant_10_preserved",
+      "line": 75,
+      "property": "countingSort_loop_invariant_10",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.3
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0629
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_invariant_11_established",
+      "line": 76,
+      "property": "countingSort_loop_invariant_11",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.258
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_invariant_11_preserved",
+      "line": 76,
+      "property": "countingSort_loop_invariant_11",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.225
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_invariant_12_established",
+      "line": 82,
+      "property": "countingSort_loop_invariant_12",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.27
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_invariant_12_preserved",
+      "line": 82,
+      "property": "countingSort_loop_invariant_12",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.358
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_invariant_13_established",
+      "line": 83,
+      "property": "countingSort_loop_invariant_13",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_invariant_13_preserved",
+      "line": 83,
+      "property": "countingSort_loop_invariant_13",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.396
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 1.55
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_invariant_14_established",
+      "line": 84,
+      "property": "countingSort_loop_invariant_14",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_invariant_14_preserved",
+      "line": 84,
+      "property": "countingSort_loop_invariant_14",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.195
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 1.56
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_invariant_15_established",
+      "line": 85,
+      "property": "countingSort_loop_invariant_15",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.268
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0546
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_invariant_15_preserved",
+      "line": 85,
+      "property": "countingSort_loop_invariant_15",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.325
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_invariant_16_established",
+      "line": 86,
+      "property": "countingSort_loop_invariant_16",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.243
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0488
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_invariant_16_preserved",
+      "line": 86,
+      "property": "countingSort_loop_invariant_16",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.34
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_assigns_part1",
+      "line": 45,
+      "property": "countingSort_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_assigns_part2",
+      "line": 45,
+      "property": "countingSort_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_assigns_part3",
+      "line": 45,
+      "property": "countingSort_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_assigns_2_part01",
+      "line": 63,
+      "property": "countingSort_loop_assigns_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_assigns_2_part02",
+      "line": 63,
+      "property": "countingSort_loop_assigns_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_assigns_2_part03",
+      "line": 63,
+      "property": "countingSort_loop_assigns_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_assigns_2_part04",
+      "line": 63,
+      "property": "countingSort_loop_assigns_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_assigns_2_part05",
+      "line": 63,
+      "property": "countingSort_loop_assigns_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_assigns_2_part06",
+      "line": 63,
+      "property": "countingSort_loop_assigns_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_assigns_2_part07",
+      "line": 63,
+      "property": "countingSort_loop_assigns_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_assigns_2_part08",
+      "line": 63,
+      "property": "countingSort_loop_assigns_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_assigns_2_part09",
+      "line": 63,
+      "property": "countingSort_loop_assigns_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_assigns_2_part10",
+      "line": 63,
+      "property": "countingSort_loop_assigns_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.215
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.133
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_assigns_3_part1",
+      "line": 77,
+      "property": "countingSort_loop_assigns_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_assigns_3_part2",
+      "line": 77,
+      "property": "countingSort_loop_assigns_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.357
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.195
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_assigns_3_part3",
+      "line": 77,
+      "property": "countingSort_loop_assigns_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_assigns_3_part4",
+      "line": 77,
+      "property": "countingSort_loop_assigns_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_assigns_3_part5",
+      "line": 77,
+      "property": "countingSort_loop_assigns_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_assigns_4_part1",
+      "line": 87,
+      "property": "countingSort_loop_assigns_4",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_assigns_4_part2",
+      "line": 87,
+      "property": "countingSort_loop_assigns_4",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.364
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.811
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_assigns_4_part3",
+      "line": 87,
+      "property": "countingSort_loop_assigns_4",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_assigns_4_part4",
+      "line": 87,
+      "property": "countingSort_loop_assigns_4",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_assigns_4_part5",
+      "line": 87,
+      "property": "countingSort_loop_assigns_4",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.376
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.221
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_normal_part01",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_normal_part02",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_normal_part03",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_normal_part04",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_normal_part05",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_normal_part06",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_normal_part07",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_normal_part08",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_normal_part09",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_normal_part10",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_normal_part11",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_normal_part12",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0846
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_normal_part13",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_normal_part14",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_normal_part15",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_normal_part16",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.212
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_normal_part17",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_normal_part18",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_exit_part01",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_exit_part02",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_exit_part03",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_exit_part04",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_exit_part05",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_exit_part06",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_exit_part07",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_exit_part08",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_exit_part09",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_exit_part10",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_exit_part11",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_exit_part12",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.073
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_exit_part13",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_exit_part14",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_exit_part15",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_exit_part16",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_exit_part17",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_exit_part18",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_exit_part19",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_exit_part20",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.142
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_exit_part21",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_exit_part22",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_exit_part23",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.263
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_exit_part24",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_exit_part25",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.228
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_exit_part26",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_exit_part27",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_exit_part28",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_assigns_exit_part29",
+      "line": 35,
+      "property": "countingSort_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.349
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_variant_positive",
+      "line": 46,
+      "property": "countingSort_loop_variant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_variant_decrease",
+      "line": 46,
+      "property": "countingSort_loop_variant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.209
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0421
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_variant_2_positive",
+      "line": 64,
+      "property": "countingSort_loop_variant_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_variant_2_decrease",
+      "line": 64,
+      "property": "countingSort_loop_variant_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.18
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.07
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_variant_3_positive",
+      "line": 78,
+      "property": "countingSort_loop_variant_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_variant_3_decrease",
+      "line": 78,
+      "property": "countingSort_loop_variant_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.177
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0589
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_variant_4_positive",
+      "line": 88,
+      "property": "countingSort_loop_variant_4",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_loop_variant_4_decrease",
+      "line": 88,
+      "property": "countingSort_loop_variant_4",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.4
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_length_requires",
+      "line": 36,
+      "property": "jarray_length_requires",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0214
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0245
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_length_requires_2",
+      "line": 36,
+      "property": "jarray_length_requires_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0157
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0211
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_new_requires",
+      "line": 37,
+      "property": "jarray_new_requires",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_new_requires_2",
+      "line": 37,
+      "property": "jarray_new_requires_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_get_requires",
+      "line": 39,
+      "property": "jarray_get_requires",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_get_requires_2",
+      "line": 39,
+      "property": "jarray_get_requires_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_get_requires_3",
+      "line": 39,
+      "property": "jarray_get_requires_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0204
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0169
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_get_2_requires",
+      "line": 40,
+      "property": "jarray_get_requires_4",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_get_2_requires_2",
+      "line": 40,
+      "property": "jarray_get_requires_5",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_get_2_requires_3",
+      "line": 40,
+      "property": "jarray_get_requires_6",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_length_2_requires",
+      "line": 48,
+      "property": "jarray_length_requires_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_length_2_requires_2",
+      "line": 48,
+      "property": "jarray_length_requires_4",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_get_3_requires",
+      "line": 49,
+      "property": "jarray_get_requires_7",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_get_3_requires_2",
+      "line": 49,
+      "property": "jarray_get_requires_8",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_get_3_requires_3",
+      "line": 49,
+      "property": "jarray_get_requires_9",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_new_2_requires",
+      "line": 58,
+      "property": "jarray_new_requires_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0673
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0417
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_new_2_requires_2",
+      "line": 58,
+      "property": "jarray_new_requires_4",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_length_3_requires",
+      "line": 66,
+      "property": "jarray_length_requires_5",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_length_3_requires_2",
+      "line": 66,
+      "property": "jarray_length_requires_6",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.113
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_get_4_requires",
+      "line": 67,
+      "property": "jarray_get_requires_10",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_get_4_requires_2",
+      "line": 67,
+      "property": "jarray_get_requires_11",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_get_4_requires_3",
+      "line": 67,
+      "property": "jarray_get_requires_12",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_get_5_requires",
+      "line": 67,
+      "property": "jarray_get_requires_13",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_get_5_requires_2",
+      "line": 67,
+      "property": "jarray_get_requires_14",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0823
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0304
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_get_5_requires_3",
+      "line": 67,
+      "property": "jarray_get_requires_15",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.106
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_get_6_requires",
+      "line": 67,
+      "property": "jarray_get_requires_16",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_get_6_requires_2",
+      "line": 67,
+      "property": "jarray_get_requires_17",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_get_6_requires_3",
+      "line": 67,
+      "property": "jarray_get_requires_18",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_set_requires",
+      "line": 67,
+      "property": "jarray_set_requires",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_set_requires_2",
+      "line": 67,
+      "property": "jarray_set_requires_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_set_requires_3",
+      "line": 67,
+      "property": "jarray_set_requires_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_length_4_requires",
+      "line": 70,
+      "property": "jarray_length_requires_7",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_length_4_requires_2",
+      "line": 70,
+      "property": "jarray_length_requires_8",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_new_3_requires",
+      "line": 70,
+      "property": "jarray_new_requires_5",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_new_3_requires_2",
+      "line": 70,
+      "property": "jarray_new_requires_6",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_length_5_requires",
+      "line": 80,
+      "property": "jarray_length_requires_9",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_length_5_requires_2",
+      "line": 80,
+      "property": "jarray_length_requires_10",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.24
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_get_7_requires",
+      "line": 90,
+      "property": "jarray_get_requires_19",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_get_7_requires_2",
+      "line": 90,
+      "property": "jarray_get_requires_20",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.28
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_get_7_requires_3",
+      "line": 90,
+      "property": "jarray_get_requires_21",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.367
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_set_2_requires",
+      "line": 94,
+      "property": "jarray_set_requires_4",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_set_2_requires_2",
+      "line": 94,
+      "property": "jarray_set_requires_5",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.373
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.06
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "countingSort",
+      "goal": "typed_ref_countingSort_call_jarray_set_2_requires_3",
+      "line": 94,
+      "property": "jarray_set_requires_6",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.315
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "java_add",
+      "goal": "typed_ref_java_add_ensures",
+      "line": 6,
+      "property": "java_add_ensures",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00575
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0177
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "java_add",
+      "goal": "typed_ref_java_add_assigns",
+      "line": 8,
+      "property": "java_add_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "java_sub",
+      "goal": "typed_ref_java_sub_ensures",
+      "line": 11,
+      "property": "java_sub_ensures",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00253
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0283
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "function": "java_sub",
+      "goal": "typed_ref_java_sub_assigns",
+      "line": 13,
+      "property": "java_sub_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    }
+  ],
+  "input_fingerprint": "8de79f09f540460541f4b5fe8844581a746112df562a856d99b9536f286f841c",
+  "integration_provenance": {
+    "audit": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/history/c_sort_integration_20260930T143839526661Z/integration.json",
+    "executed_command": [
+      "/root/.opam/default/bin/frama-c",
+      "-machdep",
+      "x86_64",
+      "-load-module",
+      "/mnt/d/ResearchProject/.tools/frama-c-compat/1e5af7b10d6dd41df377/float_negation_33.cmxs",
+      "-paired-c-prepare",
+      "/mnt/d/ResearchProject/verification/specification_evaluation/results/sort_c_mutants_20260930T124225Z_goal10_case300/cases/CountingSort/mutant_6/c/CountingSort.c",
+      "-then",
+      "-wp",
+      "-wp-rte",
+      "-wp-no-filter-init",
+      "-wp-model",
+      "Typed+ref",
+      "-wp-why3-extra-config",
+      "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+      "-wp-prover",
+      "Alt-Ergo:2.4.3,Z3:4.8.12",
+      "-wp-timeout",
+      "10",
+      "-wp-memlimit",
+      "1000",
+      "-wp-par",
+      "4",
+      "-wp-cache",
+      "none",
+      "-wp-report-json",
+      "/mnt/d/ResearchProject/verification/specification_evaluation/results/sort_c_mutants_20260930T124225Z_goal10_case300/cases/CountingSort/mutant_6/c/wp-report.json"
+    ],
+    "integration_utc": "20260930T143839526661Z",
+    "relocation": "Structured paths and cache fingerprint rebased; raw logs and proof outcomes preserved",
+    "source_case": "/mnt/d/ResearchProject/verification/specification_evaluation/results/sort_c_mutants_20260930T124225Z_goal10_case300/cases/CountingSort/mutant_6/c",
+    "source_record_sha256": "cf7acfde71201a3ff0602cb0fdfef1d48229ec414ddfee686f6c113cf406b39e"
+  },
+  "language": "c",
+  "logs": {
+    "stderr": "stderr.log",
+    "stdout": "stdout.log",
+    "wp_report": "wp-report.json"
+  },
+  "mutant_id": "6",
+  "outcome": "unknown/timeout",
+  "program": "CountingSort",
+  "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/fault_mutants/run_ukcw__uc/CountingSort/mutants/6/c/CountingSort.c",
+  "raw_source_sha256": "49ebdd8760503d5dbef42af13cebfa1dfba51db9af0fb0c78328ba6ee12c167e",
+  "reason": "At least one WP goal remains unresolved",
+  "role": "mutant",
+  "selection": "direct_match",
+  "selection_manifest_sha256": "92fa1533eafe32fdc60b119b0c6abc8a4f3c0b372d66ac21f39e54a3b5d7433d",
+  "settings": {
+    "c_provers": "Alt-Ergo:2.4.3,Z3:4.8.12",
+    "goal_timeout": 10,
+    "java_prover": "z3-4.3.X",
+    "machdep": "x86_64",
+    "memory_model": "Typed+ref",
+    "timeout": 300,
+    "why3_extra_config": "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+    "why3_extra_config_sha256": "97cc443d7439274ad732814842ae77a7b461d43c8d2099eb8994fb97e739049b",
+    "wp_memlimit": 1000,
+    "wp_par": 4
+  },
+  "support_sha256": {
+    "contracts/helpers.acsl.h": "37d683d91eb44cd98b6daa2984e93a296bbca187916781519d29dea8ce77ca8c",
+    "contracts/jboolarray.acsl.h": "ae0173e8ce64f3102e2e57b14c0509eeb9315974b553558b846a4ac879421460",
+    "contracts/jdoublearray.acsl.h": "bb472fd0bcd8757b89fb4f5a58f09134f92f145c147d4271d61b73c7232cf0ea",
+    "contracts/jdoublearray2.acsl.h": "3603fd8d9aeb9fb3b17424f2b258250c3dda9793d0822af5bb35e3a2754cedd8",
+    "contracts/jintarray.acsl.h": "83cfffb114f3cad5e5553951b0a239298a8e52e47bfbe783d4bceedead0983bb",
+    "contracts/jintarray2.acsl.h": "976047a31f67f24008deec58da879eddf81f37b2ab09e83da3978cd269773696",
+    "generated/types.h": "484e5df1fa6f1a573bee0b8ea778cefb259659d6b419e0c94ecd92e490d88301",
+    "java_arrays.h": "71446403075d5c68ce8ab8f85d63f98f3727133700a879b4e43c5ae59d7f0101"
+  },
+  "timed_out": false,
+  "transfer": {
+    "annotation_count": 8,
+    "executable_token_sha256": "0a92a4197399e0bce3afe9be2739190b4cc11ced59badfac1fb193f613b3e4ee",
+    "internal_annotation_coverage": "complete",
+    "method": "frozen structured JSON with audited C declaration bindings",
+    "omitted_annotations": [],
+    "placements": [
+      {
+        "boundary_token": 10,
+        "function": "java_add",
+        "id": "annotation_1",
+        "loop_id": null,
+        "mutant_offset": 46,
+        "next_token": "static",
+        "target": "function"
+      },
+      {
+        "boundary_token": 38,
+        "function": "java_sub",
+        "id": "annotation_2",
+        "loop_id": null,
+        "mutant_offset": 155,
+        "next_token": "static",
+        "target": "function"
+      },
+      {
+        "boundary_token": 66,
+        "function": "countingSort",
+        "id": "annotation_3",
+        "loop_id": null,
+        "mutant_offset": 265,
+        "next_token": "JIntArray",
+        "target": "function"
+      },
+      {
+        "boundary_token": 66,
+        "function": "countingSort",
+        "id": "annotation_4",
+        "loop_id": null,
+        "mutant_offset": 265,
+        "next_token": "JIntArray",
+        "target": "function"
+      },
+      {
+        "boundary_token": 116,
+        "c_bindings": {
+          "i": "__index_1"
+        },
+        "function": "countingSort",
+        "id": "annotation_5",
+        "loop_id": "loop_1",
+        "mutant_offset": 510,
+        "next_token": "for",
+        "target": "loop"
+      },
+      {
+        "boundary_token": 195,
+        "function": "countingSort",
+        "id": "annotation_6",
+        "loop_id": "loop_2",
+        "mutant_offset": 907,
+        "next_token": "for",
+        "target": "loop"
+      },
+      {
+        "boundary_token": 277,
+        "function": "countingSort",
+        "id": "annotation_7",
+        "loop_id": "loop_3",
+        "mutant_offset": 1254,
+        "next_token": "for",
+        "target": "loop"
+      },
+      {
+        "boundary_token": 298,
+        "function": "countingSort",
+        "id": "annotation_8",
+        "loop_id": "loop_4",
+        "mutant_offset": 1355,
+        "next_token": "for",
+        "target": "loop"
+      }
+    ],
+    "removed_loop_annotations": 0,
+    "removed_temporary_policy": "original pure initializer with stable dependencies"
+  },
+  "verification_started": true,
+  "verifier": {
+    "compatibility": {
+      "module": "/mnt/d/ResearchProject/.tools/frama-c-compat/1e5af7b10d6dd41df377/float_negation_33.cmxs",
+      "module_sha256": "1db37c95f71be52efae9dccb88c510a543ef611378c9e6438d65ec35880d70a8",
+      "name": "Frama-C 33.0 implicit floating-negation coercion repair",
+      "source": "/mnt/d/ResearchProject/verification/specification_evaluation/framac/float_negation_33.ml",
+      "source_sha256": "4ff87e29b00ac2eff69fd600225636521287641211fb362c1121246754c3870a"
+    },
+    "path": "/root/.opam/default/bin/frama-c",
+    "sha256": "9e49b5c48b5ca47a377a1b845f580bfbfb095fb18d51788c05cb42572201f116",
+    "version_command": [
+      "/root/.opam/default/bin/frama-c",
+      "-version"
+    ],
+    "version_exit_code": 0,
+    "version_output": "33.0 (Arsenic)"
+  }
+}

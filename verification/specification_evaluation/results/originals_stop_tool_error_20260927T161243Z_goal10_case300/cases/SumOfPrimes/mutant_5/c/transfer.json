@@ -1,0 +1,83 @@
+{
+  "annotation_count": 7,
+  "executable_token_sha256": "c97a1817dc2a49b17f46442fa311a0a7a860e573e5f95eac9240028a8b3b8c9c",
+  "internal_annotation_coverage": "partial_due_to_deleted_loop",
+  "method": "frozen structured JSON with audited C declaration bindings",
+  "omitted_annotations": [
+    {
+      "function": "sumOfPrimes",
+      "id": "annotation_5",
+      "loop_id": "loop_1",
+      "mutant_offset": 440,
+      "reason": "loop deleted and replaced by empty statement",
+      "target": "loop"
+    }
+  ],
+  "placements": [
+    {
+      "boundary_token": 24,
+      "function": "java_add",
+      "id": "annotation_1",
+      "loop_id": null,
+      "mutant_offset": 87,
+      "next_token": "static",
+      "target": "function"
+    },
+    {
+      "boundary_token": 52,
+      "function": "java_mul",
+      "id": "annotation_2",
+      "loop_id": null,
+      "mutant_offset": 196,
+      "next_token": "static",
+      "target": "function"
+    },
+    {
+      "boundary_token": 80,
+      "function": "sumOfPrimes",
+      "id": "annotation_3",
+      "loop_id": null,
+      "mutant_offset": 306,
+      "next_token": "int32_t",
+      "target": "function"
+    },
+    {
+      "boundary_token": 80,
+      "function": "sumOfPrimes",
+      "id": "annotation_4",
+      "loop_id": null,
+      "mutant_offset": 306,
+      "next_token": "int32_t",
+      "target": "function"
+    },
+    {
+      "boundary_token": 149,
+      "function": "sumOfPrimes",
+      "id": "annotation_6",
+      "loop_id": "loop_2",
+      "mutant_offset": 446,
+      "next_token": "for",
+      "target": "loop"
+    },
+    {
+      "boundary_token": 181,
+      "function": "sumOfPrimes",
+      "id": "annotation_7",
+      "loop_id": null,
+      "mutant_offset": 571,
+      "next_token": "printf",
+      "target": "statement"
+    },
+    {
+      "boundary_token": 199,
+      "function": "sumOfPrimes",
+      "id": "annotation_8",
+      "loop_id": "loop_3",
+      "mutant_offset": 647,
+      "next_token": "for",
+      "target": "loop"
+    }
+  ],
+  "removed_loop_annotations": 1,
+  "removed_temporary_policy": "original pure initializer with stable dependencies"
+}

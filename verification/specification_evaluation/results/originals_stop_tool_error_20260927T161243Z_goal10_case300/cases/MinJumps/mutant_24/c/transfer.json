@@ -1,0 +1,84 @@
+{
+  "annotation_count": 7,
+  "executable_token_sha256": "fa3af657ac1f77ca9887afac64cb502802ec114c90f700d8a134676d17edb334",
+  "internal_annotation_coverage": "complete",
+  "method": "frozen structured JSON with audited C declaration bindings",
+  "omitted_annotations": [
+    {
+      "function": "java_sub",
+      "id": "annotation_2",
+      "reason": "unused arithmetic helper absent from target"
+    }
+  ],
+  "placements": [
+    {
+      "boundary_token": 10,
+      "function": "java_add",
+      "id": "annotation_1",
+      "loop_id": null,
+      "mutant_offset": 85,
+      "next_token": "static",
+      "target": "function"
+    },
+    {
+      "boundary_token": 66,
+      "function": "java_min",
+      "id": "annotation_3",
+      "loop_id": null,
+      "mutant_offset": 416,
+      "next_token": "static",
+      "target": "function"
+    },
+    {
+      "boundary_token": 87,
+      "function": "minJumps",
+      "id": "annotation_4",
+      "loop_id": null,
+      "mutant_offset": 510,
+      "next_token": "int32_t",
+      "target": "function"
+    },
+    {
+      "boundary_token": 87,
+      "function": "minJumps",
+      "id": "annotation_5",
+      "loop_id": null,
+      "mutant_offset": 510,
+      "next_token": "int32_t",
+      "target": "function"
+    },
+    {
+      "boundary_token": 113,
+      "c_bindings": {
+        "i": "__fill_index_1",
+        "length": "(dp->length)"
+      },
+      "function": "minJumps",
+      "id": "annotation_6",
+      "loop_id": "loop_1",
+      "mutant_offset": 593,
+      "next_token": "for",
+      "target": "loop"
+    },
+    {
+      "boundary_token": 153,
+      "function": "minJumps",
+      "id": "annotation_7",
+      "loop_id": "loop_2",
+      "mutant_offset": 859,
+      "next_token": "for",
+      "target": "loop"
+    },
+    {
+      "boundary_token": 174,
+      "function": "minJumps",
+      "id": "annotation_8",
+      "loop_id": "loop_3",
+      "mutant_offset": 936,
+      "next_token": "for",
+      "target": "loop"
+    }
+  ],
+  "removed_loop_annotations": 0,
+  "removed_temporary_policy": "original pure initializer with stable dependencies"
+}

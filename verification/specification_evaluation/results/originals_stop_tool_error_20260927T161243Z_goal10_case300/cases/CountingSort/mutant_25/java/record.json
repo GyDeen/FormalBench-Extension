@@ -1,0 +1,222 @@
+{
+  "adapter_sha256": {
+    "annotations.py": "7f730d0275c185de8199e16b487819eb823acaba46195f4e73152471bb1097e8",
+    "c_bindings.py": "fc8f9d74f58723d57562bc5f21087a9ce9e959986a9edd53b26d07b9c9fca1e1",
+    "c_structure.py": "efcea8872a653827d977ef2e9c102acc70a44952a6e316a52cef4779a738a0d5",
+    "java_compat.py": "3eef914d390217d7cabe4637d900e1e1010045b90665d03802b7ac602149e139",
+    "verifiers.py": "0a9f1dd8a08eb33d35451283f3e0e3f4d272a24d7ada1aad48c5cbf39246bfcf"
+  },
+  "annotated_source": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_25/java/CountingSort.java",
+  "annotated_source_sha256": "2f69135766135ea643ac8a0a25787a8a0eb45b7d27e8104f2d2ca099654e5831",
+  "attempt_status": "complete",
+  "command": [
+    "/root/tools/openjml/openjml",
+    "-J--add-exports=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED",
+    "-J--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED",
+    "-processorpath",
+    "/mnt/d/ResearchProject/.tools/openjml-compat/47613dac9ce1473c6ada/numeric-bit-predicates.jar",
+    "-Xplugin:NumericBitPredicates file:///mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_25/java/CountingSort.java",
+    "--exec=/root/tools/openjml/Solvers-linux/z3-4.10.2",
+    "--esc",
+    "--progress",
+    "--nullable-by-default",
+    "--prover=z3-4.3.X",
+    "--timeout",
+    "10",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_25/java/CountingSort.java"
+  ],
+  "compiler_normalizations": [],
+  "elapsed_seconds": 7.221,
+  "exit_code": 6,
+  "failure_stage": null,
+  "frozen_spec": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/frozen_specs/java/CountingSort.json",
+  "frozen_spec_sha256": "b2b4c72a62b88492aaee1ebf9384f1a8b62a8c4b0698d7fd34fdf0bcd7c0e936",
+  "goals": [
+    {
+      "category": "unclassified",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_25/java/CountingSort.java",
+      "line": "64",
+      "message": "Validity is unknown - time or memory limit reached: : Aborted proof: \"timeout\"",
+      "state": "unknown"
+    }
+  ],
+  "input_fingerprint": "5604ecf29aae8f541509d021bccecd1f55b29683c2731ff7d36b355e7c224af3",
+  "language": "java",
+  "logs": {
+    "stderr": "stderr.log",
+    "stdout": "stdout.log",
+    "wp_report": null
+  },
+  "mutant_id": "25",
+  "outcome": "unknown/timeout",
+  "program": "CountingSort",
+  "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/fault_mutants/run_ukcw__uc/CountingSort/mutants/25/java/CountingSort.java",
+  "raw_source_sha256": "5a73e3f65de5b8883930ea036ab8c21b5ee0188d4a9f96c1fdd9dae439ffc72a",
+  "reason": "OpenJML reported unknown validity; warnings are not confirmed rejections",
+  "role": "mutant",
+  "selection": "direct_match",
+  "selection_manifest_sha256": "92fa1533eafe32fdc60b119b0c6abc8a4f3c0b372d66ac21f39e54a3b5d7433d",
+  "settings": {
+    "c_provers": "Alt-Ergo:2.4.3,Z3:4.8.12",
+    "goal_timeout": 10,
+    "java_prover": "z3-4.3.X",
+    "machdep": "x86_64",
+    "memory_model": "Typed+ref",
+    "timeout": 300,
+    "why3_extra_config": "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+    "why3_extra_config_sha256": "97cc443d7439274ad732814842ae77a7b461d43c8d2099eb8994fb97e739049b",
+    "wp_memlimit": 1000,
+    "wp_par": 4
+  },
+  "support_sha256": {},
+  "timed_out": false,
+  "transfer": {
+    "annotation_count": 12,
+    "executable_token_sha256": "8fb2196edb52015502f0ae9e16e920e8a767ba15770bd11d5453787b358031fe",
+    "internal_annotation_coverage": "complete",
+    "method": "frozen structured JSON",
+    "omitted_annotations": [],
+    "placements": [
+      {
+        "boundary_token": 31,
+        "function": "countingSort",
+        "id": "annotation_1",
+        "loop_id": null,
+        "mutant_offset": 110,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 31,
+        "function": "countingSort",
+        "id": "annotation_2",
+        "loop_id": null,
+        "mutant_offset": 110,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 31,
+        "function": "countingSort",
+        "id": "annotation_3",
+        "loop_id": null,
+        "mutant_offset": 110,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 31,
+        "function": "countingSort",
+        "id": "annotation_4",
+        "loop_id": null,
+        "mutant_offset": 110,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 31,
+        "function": "countingSort",
+        "id": "annotation_5",
+        "loop_id": null,
+        "mutant_offset": 110,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 31,
+        "function": "countingSort",
+        "id": "annotation_6",
+        "loop_id": null,
+        "mutant_offset": 110,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 31,
+        "function": "countingSort",
+        "id": "annotation_7",
+        "loop_id": null,
+        "mutant_offset": 110,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 31,
+        "function": "countingSort",
+        "id": "annotation_8",
+        "loop_id": null,
+        "mutant_offset": 110,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 78,
+        "function": "countingSort",
+        "id": "annotation_9",
+        "java_compatibility": [
+          "numeric loop counter identity: \\count -> (\\count + 0), occurrences=6"
+        ],
+        "loop_id": "loop_1",
+        "mutant_offset": 357,
+        "next_token": "for",
+        "target": "loop"
+      },
+      {
+        "boundary_token": 127,
+        "function": "countingSort",
+        "id": "annotation_10",
+        "loop_id": "loop_2",
+        "mutant_offset": 557,
+        "next_token": "for",
+        "target": "loop"
+      },
+      {
+        "boundary_token": 176,
+        "function": "countingSort",
+        "id": "annotation_11",
+        "loop_id": "loop_3",
+        "mutant_offset": 735,
+        "next_token": "for",
+        "target": "loop"
+      },
+      {
+        "boundary_token": 194,
+        "function": "countingSort",
+        "id": "annotation_12",
+        "loop_id": "loop_4",
+        "mutant_offset": 793,
+        "next_token": "for",
+        "target": "loop"
+      }
+    ],
+    "removed_loop_annotations": 0,
+    "removed_temporary_policy": "original pure initializer with stable dependencies"
+  },
+  "unsupported_features": [],
+  "verification_started": true,
+  "verifier": {
+    "compatibility": {
+      "compiler_sha256": "03ccef52f8ee2258bb69cfb8974a5eb609787349490390ce68e1e24de2f3fae0",
+      "equivalence_obligations_sha256": "b63fb7bfa0b474ed71c3a7217d6195363a8a14bafc1e7d0360af3ace1f5f357b",
+      "name": "OpenJML 21.0.27 numeric bit predicates and bundled Z3 repair",
+      "plugin": "/mnt/d/ResearchProject/.tools/openjml-compat/47613dac9ce1473c6ada/numeric-bit-predicates.jar",
+      "plugin_sha256": "632836c0a1f1dfa2e7bc132cce4f5d1a095241b571d4535730850d7183bbac92",
+      "scope": "primitive int local/parameter predicates (x ^ 1) == 0 and (x | 1) == 0",
+      "solver": {
+        "path": "/root/tools/openjml/Solvers-linux/z3-4.10.2",
+        "sha256": "79f7ced8a9f2156a4337ed89485faa65b905af17241f82bbeac69cbfdb518520",
+        "version": "Z3 version 4.10.2 - 64 bit"
+      },
+      "source": "/mnt/d/ResearchProject/verification/specification_evaluation/openjml/NumericBitPredicates.java",
+      "source_sha256": "9db3f96088894fa7c47bede5e97303beec13125a647fe60be0c0847eaa74571d"
+    },
+    "path": "/root/tools/openjml/openjml",
+    "sha256": "077efb88a059a09c43ccf5171031bdc0c70816765b8abf3cb7f0aeb151847adf",
+    "version_command": [
+      "/root/tools/openjml/openjml",
+      "--version"
+    ],
+    "version_exit_code": 0,
+    "version_output": "openjml 21.0.27"
+  }
+}

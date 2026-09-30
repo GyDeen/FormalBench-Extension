@@ -1,0 +1,166 @@
+{
+  "adapter_sha256": {
+    "annotations.py": "c971d29b176cd45810857db756883638e9551bb950d5cb1426e5bcf57f9e497e",
+    "c_bindings.py": "2f21fdaa46151906b048409a92d784b801ecdf78191436c2976999a4c36d3cf6",
+    "c_structure.py": "772364a38abaceacb66e98c0aee01b26a188bbb883e4ee8135d80b5fa8b50540",
+    "java_compat.py": "7f6dcd7de982187c9720adbbb03489acc8986a41dda6132dde2c17e8bc4795ab",
+    "verifiers.py": "9977eb05f2cb524e9647ef1578aad446fe92c2b4f2ae3faae8bc880063c56975"
+  },
+  "annotated_source": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSumOfThreeConsecutive/original/java/MaxSumOfThreeConsecutive.java",
+  "annotated_source_sha256": "9821e653a95f78f7d657a70bf76779d26267b929f92ed547a64198c4c1226316",
+  "attempt_status": "complete",
+  "classification_correction": "Reclassified from saved OpenJML logs after ignoring the progress counter Timeout: 0.",
+  "command": [
+    "/root/tools/openjml/openjml",
+    "-J--add-exports=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED",
+    "-J--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED",
+    "-processorpath",
+    "/mnt/d/ResearchProject/.tools/openjml-compat/47613dac9ce1473c6ada/numeric-bit-predicates.jar",
+    "-Xplugin:NumericBitPredicates file:///mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSumOfThreeConsecutive/original/java/MaxSumOfThreeConsecutive.java",
+    "--exec=/root/tools/openjml/Solvers-linux/z3-4.10.2",
+    "--esc",
+    "--progress",
+    "--nullable-by-default",
+    "--prover=z3-4.3.X",
+    "--timeout",
+    "10",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSumOfThreeConsecutive/original/java/MaxSumOfThreeConsecutive.java"
+  ],
+  "compiler_normalizations": [],
+  "elapsed_seconds": 10.132,
+  "exit_code": 6,
+  "failure_stage": null,
+  "frozen_spec": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/frozen_specs/java/MaxSumOfThreeConsecutive.json",
+  "frozen_spec_sha256": "11b97ad0ebbc28b651ddff94ee065accb5d8600e93f64b51d336be3122171584",
+  "goals": [
+    {
+      "category": "unclassified",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSumOfThreeConsecutive/original/java/MaxSumOfThreeConsecutive.java",
+      "line": "44",
+      "message": "Validity is unknown - time or memory limit reached: : Aborted proof: \"timeout\"",
+      "state": "unknown"
+    }
+  ],
+  "input_fingerprint": "19a6150a9250fc37114230f08eac6563d4d79124494aac9a906aaefeefbe18e5",
+  "language": "java",
+  "logs": {
+    "stderr": "stderr.log",
+    "stdout": "stdout.log",
+    "wp_report": null
+  },
+  "mutant_id": null,
+  "outcome": "unknown/timeout",
+  "program": "MaxSumOfThreeConsecutive",
+  "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/MaxSumOfThreeConsecutive.java",
+  "raw_source_sha256": "09f7b7e5481ca437b23edbf705c7cf65105a59d508584d16766376dfa568f02e",
+  "reason": "OpenJML reported unknown validity; warnings are not confirmed rejections",
+  "role": "original",
+  "selection": null,
+  "selection_manifest_sha256": "92fa1533eafe32fdc60b119b0c6abc8a4f3c0b372d66ac21f39e54a3b5d7433d",
+  "settings": {
+    "c_provers": "Alt-Ergo:2.4.3,Z3:4.8.12",
+    "goal_timeout": 10,
+    "java_prover": "z3-4.3.X",
+    "machdep": "x86_64",
+    "memory_model": "Typed+ref",
+    "timeout": 300,
+    "why3_extra_config": "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+    "why3_extra_config_sha256": "97cc443d7439274ad732814842ae77a7b461d43c8d2099eb8994fb97e739049b",
+    "wp_memlimit": 1000,
+    "wp_par": 4
+  },
+  "support_sha256": {},
+  "timed_out": false,
+  "transfer": {
+    "annotation_count": 6,
+    "executable_token_sha256": "6e9b4b1dc9977de54c9f8cf2db021f89a78234538ba9219da6834edbe735ce3f",
+    "internal_annotation_coverage": "complete",
+    "method": "frozen structured JSON",
+    "omitted_annotations": [],
+    "placements": [
+      {
+        "boundary_token": 31,
+        "function": "maxSumOfThreeConsecutive",
+        "id": "annotation_1",
+        "loop_id": null,
+        "mutant_offset": 122,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 31,
+        "function": "maxSumOfThreeConsecutive",
+        "id": "annotation_2",
+        "loop_id": null,
+        "mutant_offset": 122,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 31,
+        "function": "maxSumOfThreeConsecutive",
+        "id": "annotation_3",
+        "loop_id": null,
+        "mutant_offset": 122,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 31,
+        "function": "maxSumOfThreeConsecutive",
+        "id": "annotation_4",
+        "loop_id": null,
+        "mutant_offset": 122,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 31,
+        "function": "maxSumOfThreeConsecutive",
+        "id": "annotation_5",
+        "loop_id": null,
+        "mutant_offset": 122,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 147,
+        "function": "maxSumOfThreeConsecutive",
+        "id": "annotation_6",
+        "loop_id": "loop_1",
+        "mutant_offset": 470,
+        "next_token": "for",
+        "target": "loop"
+      }
+    ],
+    "removed_loop_annotations": 0,
+    "removed_temporary_policy": "original pure initializer with stable dependencies"
+  },
+  "unsupported_features": [],
+  "verification_started": true,
+  "verifier": {
+    "compatibility": {
+      "compiler_sha256": "03ccef52f8ee2258bb69cfb8974a5eb609787349490390ce68e1e24de2f3fae0",
+      "equivalence_obligations_sha256": "b63fb7bfa0b474ed71c3a7217d6195363a8a14bafc1e7d0360af3ace1f5f357b",
+      "name": "OpenJML 21.0.27 numeric bit predicates and bundled Z3 repair",
+      "plugin": "/mnt/d/ResearchProject/.tools/openjml-compat/47613dac9ce1473c6ada/numeric-bit-predicates.jar",
+      "plugin_sha256": "632836c0a1f1dfa2e7bc132cce4f5d1a095241b571d4535730850d7183bbac92",
+      "scope": "primitive int local/parameter predicates (x ^ 1) == 0 and (x | 1) == 0",
+      "solver": {
+        "path": "/root/tools/openjml/Solvers-linux/z3-4.10.2",
+        "sha256": "79f7ced8a9f2156a4337ed89485faa65b905af17241f82bbeac69cbfdb518520",
+        "version": "Z3 version 4.10.2 - 64 bit"
+      },
+      "source": "/mnt/d/ResearchProject/verification/specification_evaluation/openjml/NumericBitPredicates.java",
+      "source_sha256": "9db3f96088894fa7c47bede5e97303beec13125a647fe60be0c0847eaa74571d"
+    },
+    "path": "/root/tools/openjml/openjml",
+    "sha256": "077efb88a059a09c43ccf5171031bdc0c70816765b8abf3cb7f0aeb151847adf",
+    "version_command": [
+      "/root/tools/openjml/openjml",
+      "--version"
+    ],
+    "version_exit_code": 0,
+    "version_output": "openjml 21.0.27"
+  }
+}

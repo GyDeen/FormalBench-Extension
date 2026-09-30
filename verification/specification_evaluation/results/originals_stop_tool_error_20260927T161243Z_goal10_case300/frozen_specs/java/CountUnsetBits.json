@@ -1,0 +1,60 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "countUnsetBits",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@\n    public normal_behavior\n      ensures \\result == ((x % 4294967296L + 6442450944L) % 4294967296L) - 2147483648L;\n    model public static pure \\bigint fb_wrap(\\bigint x);\n\n        public normal_behavior\n          requires x >= 0;\n          ensures \\result == (x == 0 ? 0 : fb_zeroBits(x / 2) + (x % 2 == 0 ? 1 : 0));\n          measured_by x;\n        model public static pure \\bigint fb_zeroBits(int x);\n        public normal_behavior\n          ensures \\result == (n <= 0 ? 0 : fb_totalZeros(n - 1) + fb_zeroBits(n));\n          measured_by n > 0 ? n : 0;\n        model public static pure \\bigint fb_totalZeros(int n);\n\n        public normal_behavior\n          assignable \\nothing;\n          diverges n == Integer.MAX_VALUE;\n          ensures n < Integer.MAX_VALUE;\n          ensures \\result == fb_wrap(fb_totalZeros(n));\n    @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "countUnsetBits",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "//@ code_java_math"
+    },
+    {
+      "boundary_token": 45,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "countUnsetBits",
+      "id": "annotation_3",
+      "loop_id": "loop_1",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@\n        loop_invariant n < Integer.MAX_VALUE ==> 1 <= i && (\\bigint)i <= (n < 1 ? 1 : (\\bigint)n + 1);\n        loop_invariant n < Integer.MAX_VALUE ==> cnt == fb_wrap(fb_totalZeros(i - 1));\n        loop_writes i, cnt;\n        @*/"
+    },
+    {
+      "boundary_token": 67,
+      "following_tokens": [
+        "while",
+        "("
+      ],
+      "function": "countUnsetBits",
+      "id": "annotation_4",
+      "loop_id": "loop_2",
+      "next_token": "while",
+      "target": "loop",
+      "text": "/*@\n            loop_invariant n < Integer.MAX_VALUE ==> 0 <= temp <= i;\n            loop_invariant n < Integer.MAX_VALUE ==> cnt == fb_wrap(fb_totalZeros(i) - fb_zeroBits(temp));\n            loop_writes temp, cnt;\n            @*/"
+    }
+  ],
+  "language": "java",
+  "original_executable_token_sha256": "a274cbcf2a07154869b5d8288495b59b022a6eff3823e435ed15438bb8ecbefc",
+  "program": "CountUnsetBits",
+  "schema_version": "1.0"
+}

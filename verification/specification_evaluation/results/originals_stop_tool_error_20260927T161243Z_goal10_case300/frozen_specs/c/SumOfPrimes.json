@@ -1,0 +1,112 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 24,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_add",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\nassigns \\nothing;\nensures \\result == (int32_t)((integer)left + right);\n*/"
+    },
+    {
+      "boundary_token": 52,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_mul",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\nassigns \\nothing;\nensures \\result == (int32_t)((integer)left * right);\n*/"
+    },
+    {
+      "boundary_token": 80,
+      "following_tokens": [
+        "int32_t",
+        "sumOfPrimes"
+      ],
+      "function": "sumOfPrimes",
+      "id": "annotation_3",
+      "loop_id": null,
+      "next_token": "int32_t",
+      "target": "function",
+      "text": "/*@\npredicate fb_prime(integer k) = k >= 2 && (\\forall integer d; 2 <= d && d * d <= k ==> k % d != 0);\nlogic integer fb_prime_sum(integer n) = n < 2 ? 0 : fb_prime_sum(n - 1) + (fb_prime(n) ? n : 0);\npredicate fb_unmarked(integer k, integer limit) = \\forall integer d; 2 <= d < limit && d * d <= k ==> k % d != 0;\n*/"
+    },
+    {
+      "boundary_token": 80,
+      "following_tokens": [
+        "int32_t",
+        "sumOfPrimes"
+      ],
+      "function": "sumOfPrimes",
+      "id": "annotation_4",
+      "loop_id": null,
+      "next_token": "int32_t",
+      "target": "function",
+      "text": "/*@\nrequires -1 <= n < 46349;\nensures \\result == fb_prime_sum(n);\nbehavior silent:\n  assumes n < 2;\n  assigns \\nothing;\nbehavior printing:\n  assumes n >= 2;\n  assigns *__fc_stdout;\ncomplete behaviors;\ndisjoint behaviors;\n*/"
+    },
+    {
+      "boundary_token": 113,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "sumOfPrimes",
+      "id": "annotation_5",
+      "loop_id": "loop_1",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@\n    loop invariant 0 <= i <= arrayLength;\n    loop invariant jboolarray_valid_nonnull(isPrime) && isPrime->length == arrayLength && arrayLength == n + 1;\n    loop invariant \\forall integer k; 0 <= k < i ==> isPrime->data[k];\n    loop assigns i, isPrime->data[0 .. arrayLength - 1];\n    loop variant arrayLength - i;\n    */"
+    },
+    {
+      "boundary_token": 149,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "sumOfPrimes",
+      "id": "annotation_6",
+      "loop_id": "loop_2",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@\n    loop invariant 2 <= i <= \\max(2, n + 1);\n    loop invariant jboolarray_valid_nonnull(isPrime) && isPrime->length == n + 1;\n    loop invariant sum == fb_prime_sum(i - 1);\n    loop invariant \\forall integer k; 2 <= k <= n ==> (isPrime->data[k] <==> fb_unmarked(k, i));\n    loop assigns i, sum, isPrime->data[0 .. n], *__fc_stdout;\n    loop variant \\max(0, n - i + 1);\n    */"
+    },
+    {
+      "boundary_token": 181,
+      "following_tokens": [
+        "printf",
+        "("
+      ],
+      "function": "sumOfPrimes",
+      "id": "annotation_7",
+      "loop_id": null,
+      "next_token": "printf",
+      "target": "statement",
+      "text": "/*@ assert fb_prime(i); */"
+    },
+    {
+      "boundary_token": 199,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "sumOfPrimes",
+      "id": "annotation_8",
+      "loop_id": "loop_3",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@\n            loop invariant (integer)i * i <= j <= \\max((integer)i * i, (integer)n + i);\n            loop invariant j % i == 0;\n            loop invariant jboolarray_valid_nonnull(isPrime) && isPrime->length == n + 1;\n            loop invariant \\forall integer k; 2 <= k <= n ==> (isPrime->data[k] <==> (fb_unmarked(k, i) && !((integer)i * i <= k < j && k % i == 0)));\n            loop assigns j, isPrime->data[0 .. n];\n            loop variant \\max(0, n - j + 1);\n            */"
+    }
+  ],
+  "language": "c",
+  "original_executable_token_sha256": "d7059f12306408b61808d5696fe2aad5335c76c91be4c8d48b3e4cb9db034108",
+  "program": "SumOfPrimes",
+  "schema_version": "1.0"
+}

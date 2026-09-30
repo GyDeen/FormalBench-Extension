@@ -1,0 +1,21 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 10,
+      "following_tokens": [
+        "JIntArray",
+        "findPoints"
+      ],
+      "function": "findPoints",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "JIntArray",
+      "target": "function",
+      "text": "/*@\n  assigns \\nothing;\n  allocates \\result, \\result->data;\n  frees \\nothing;\n  ensures jintarray_valid_nonnull(\\result) && \\result->length == 2;\n  ensures \\fresh(\\result, sizeof(*\\result));\n  ensures \\fresh(\\result->data, 2 * sizeof(int32_t));\n  ensures l1 < l2 && r1 < r2 ==> \\result->data[0] == (l1 < r1 ? l1 : r1) && \\result->data[1] == (r2 > l2 ? r2 : l2);\n  ensures l1 > l2 && r1 > r2 ==> \\result->data[0] == (l2 < r2 ? l2 : r2) && \\result->data[1] == (l1 > r1 ? l1 : r1);\n  ensures !(l1 < l2 && r1 < r2) && !(l1 > l2 && r1 > r2) ==> \\result->data[0] == l1 && \\result->data[1] == r1;\n*/"
+    }
+  ],
+  "language": "c",
+  "original_executable_token_sha256": "59b2f52193164bd7080df0338ba733e29408b8f3747c6e5324638148a110bf94",
+  "program": "FindPoints",
+  "schema_version": "1.0"
+}
