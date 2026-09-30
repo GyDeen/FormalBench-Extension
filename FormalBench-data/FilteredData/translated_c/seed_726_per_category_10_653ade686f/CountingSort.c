@@ -9,14 +9,6 @@ static int32_t java_sub(int32_t left, int32_t right) {
     return (int32_t)((uint32_t)left - (uint32_t)right);
 }
 
-static int32_t java_max(int32_t left, int32_t right) {
-    return left > right ? left : right;
-}
-
-static int32_t java_min(int32_t left, int32_t right) {
-    return left < right ? left : right;
-}
-
 JIntArray countingSort(JIntArray myArray) {
     int32_t length = jarray_length(myArray);
     if (length == 0) {
@@ -27,8 +19,12 @@ JIntArray countingSort(JIntArray myArray) {
     int32_t min = jarray_get(myArray, 0);
     for (int32_t i = 0; i < length; i = java_add(i, 1)) {
         int32_t num = jarray_get(myArray, i);
-        max = java_max(max, num);
-        min = java_min(min, num);
+        if (num > max) {
+            max = num;
+        }
+        if (num < min) {
+            min = num;
+        }
     }
 
     int32_t range = java_add(java_sub(max, min), 1);
