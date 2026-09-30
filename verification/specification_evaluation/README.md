@@ -97,12 +97,97 @@ python3 -m verification.specification_evaluation run --stage mutants \
 
 `--stage all` combines the three phases. Use `--program CombSort --max-pairs 2`
 for a pilot, then rerun with the same output directory to complete the population.
+Use `--independent-languages` to give Java and C separate mutant queues; each
+language starts its next pair as soon as its own verifier finishes. This runs
+one C case and one Java case at a time, concurrently. Frama-C's `--wp-par`
+continues to control parallel proof goals within that C case.
+Add `--c-workers 2` to run two C mutant cases concurrently from a shared queue.
+Workers claim distinct cases and immediately take the next case when finished;
+Java retains its own worker. This also works for a C-only run. The default is
+one C worker. With `--wp-par 4`, two C workers allow up to eight concurrent
+proof jobs. Worker counts may change on resume without changing verifier
+budgets or frozen inputs; prior scheduling metadata is archived. Stop the old
+runner before resuming into the same output directory. Completed case records
+are validated and reused. `--java-workers 2` similarly gives Java two workers,
+including in a Java-only run. Worker limits also apply to original verification;
+all selected originals finish before the mutant stage starts.
 Missing OpenJML, Frama-C, or
 provers must be installed/configured before a real run. Defaults use OpenJML
 with CVC4 and Frama-C WP with the JArray study's `x86_64`, `Typed+ref`,
 Alt-Ergo/Z3, per-goal time, and memory settings. Pass the compatible Why3
 configuration with `--why3-extra-config` when required by the installed
 Frama-C/Why3 versions.
+
+## Java proof workload capture
+
+Use `--language java --java-workers 2 --capture-java-workload` with a **new**
+output directory containing a copy of the study's `frozen_specs` directory.
+Run `--stage all` to measure both originals and mutants. This keeps historical
+results and timings intact, and can run alongside C in its existing directory.
+The installed OpenJML compatibility setup must provide an explicit solver binary.
+
+Each executed Java case saves `java-workload.json`, also embedded as
+`java_workload` in `record.json`, with separate units:
+
+* `generated_assertion_count`: generated basic-block `assert` statements,
+  including implicit safety checks and constructor checks, grouped by kind
+  and method. These are checks inside method VCs, not individually proved goals.
+* `generated_method_vc_count`: emitted basic-block method verification conditions.
+* `solver_check_sat_count`: actual solver queries recorded by the input/output
+  proxy, including follow-up counterexample and feasibility queries. Solver
+  responses and invocation counts are recorded separately.
+* `reported_warning_count`: classified warning diagnostics (the legacy `goals`
+  list). This is **not** the number of generated proof obligations.
+
+`capture_complete` requires completed method reporting and matching query/reply
+counts. Interrupted/error cases retain observed counts with incomplete coverage;
+unavailable counts are `null`, not zero. Raw basic-block output stays in
+`stdout.log`; solver inputs and replies are in `solver-traces/`. Frama-C WP
+report entries are a different unit, so these counts must not be equated across
+tools. Diagnostic logging, proxying, and concurrent load can affect timings.
+See the [OpenJML proof splitting documentation](https://www.openjml.org/tutorial/SplittingProofs)
+and [user guide](https://www.openjml.org/documentation/OpenJMLUserGuide.pdf).
+
+## Targeted diagnostic runs
+
+Both `diagnose_c_repairs` and `diagnose_java_repairs` accept these repeatable
+selectors. Multiple selectors are combined, with duplicate cases run once:
+
+| Selector | Target |
+| --- | --- |
+| `--program CountingSort` | The original CountingSort program in that language |
+| `--case CountingSort/1` | Retained mutant 1 of CountingSort |
+| `--case CountingSort/original` | The original CountingSort program |
+| `--source /path/to/CountingSort.c` | That raw source file (use `.java` for Java) |
+
+Run from the repository root inside the verifier's Linux environment, for example:
+
+```bash
+python3 -m verification.specification_evaluation.diagnose_c_repairs \
+  --study verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300 \
+  --output verification/specification_evaluation/results/diagnose_countingsort_c \
+  --program CountingSort --goal-timeout 5 --timeout 60
+
+python3 -m verification.specification_evaluation.diagnose_java_repairs \
+  --study verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300 \
+  --output verification/specification_evaluation/results/diagnose_countingsort_java \
+  --source FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/CountingSort.java
+```
+
+The output directory must be new. Defaults are 5 seconds per goal and 60 seconds
+per verifier invocation. Explicit selections run regardless of prior outcome.
+Java retains its previous default of rerunning all recorded syntax/tool failures
+when no selector is supplied; C requires at least one selector. C's annotation
+preflight now covers only the selected cases, followed by task generation and
+verification for those cases.
+
+`--source` expects an **unannotated** source file. Known study source paths retain
+their original or mutant identity. An external raw file must have the original
+program's filename, such as `CountingSort.c`, so its frozen specification can be
+found. It is recorded under a distinct `mutant_external_<content hash>` directory
+with `selection: external_diagnostic_source`; it is not added to the study's
+eligible population. Use Linux paths in WSL, such as `/mnt/d/...` for `D:\...`.
+Diagnostics reuse the study's frozen specifications and do not resume its batch.
 
 ## Transfer and verification rules
 
