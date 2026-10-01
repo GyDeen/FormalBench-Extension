@@ -295,6 +295,17 @@ python3 -m verification.specification_evaluation.integrate_c_counterexamples \
   --output verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300
 ```
 
+The committed experiment contains result information only: per-case verification
+records and WP reports, replay records and witnesses, audits, frozen contracts,
+and summaries. Canonical sources remain under `FormalBench-data/`. Generated
+source snapshots, harnesses, compiler metadata and binaries stay in ignored
+local output storage. Commands and transfer results are embedded in the case
+records, so their separate copies are excluded as well.
+
+README/statistics regeneration uses the retained results and Java workload
+snapshot. The integration commands below require the complete local working
+artifacts of the input run; a results-only checkout does not include those files.
+
 The integration preserves the original proof-only summary in
 `summary_verification.json`, archives completed case evidence under
 `counterexamples/`, and adds `c_counterexample_evidence` to `summary.json`.
@@ -325,8 +336,10 @@ and statistics generator includes deferred `not run` cases explicitly.
 
 Corrected C translation reports and completed C search outputs have been
 consolidated inside the final experiment. `c_run_archive.json` records their
-former and current locations and copy/move hash checks. The counterexample
-integrator also accepts the archived final search as its default input.
+former and current result locations and historical copy/move hash checks.
+The committed archive retains result information. Raw-run integration requires
+the complete local generated input artifacts; report regeneration reads the
+retained JSON results and workload snapshot.
 
 The unit of scoring is one selected mutant in one language, paired with that
 language's original. A parser or annotation-placement failure is never a

@@ -48,5 +48,31 @@
       "source_removed": true
     }
   ],
-  "interpretation": "Only corrected C original reports and C counterexample runs were consolidated. Historical execution paths are retained in immutable reports; these mappings locate the current archives. Other project output directories were left alone."
+  "interpretation": "Only corrected C original reports and C counterexample runs were consolidated. Historical execution paths are retained in immutable reports; these mappings locate the current archives. Other project output directories were left alone.",
+  "current_artifact_retention": {
+    "kind": "results_only",
+    "updated_utc": "2026-10-01T14:52:26.535Z",
+    "canonical_sources": "FormalBench-data/",
+    "retained": [
+      "verification record.json",
+      "WP goal reports",
+      "replay results and witnesses",
+      "independent audit results",
+      "frozen contract JSON",
+      "statistical summaries and source/provenance hashes"
+    ],
+    "excluded": [
+      "generated annotated source snapshots",
+      "replay harnesses",
+      "native compiler reports",
+      "binary and solver artifacts",
+      "duplicated command.json and transfer.json"
+    ],
+    "embedded_provenance": "Verification record.json already contains commands, transfer results, source hashes, settings, goals, outcomes and timings; replay records include witnesses and independent audit results.",
+    "local_work_artifacts": "output/experiment_work_artifacts_20261002/originals_stop_tool_error_20260927T161243Z_goal10_case300",
+    "local_relocation_manifest": "output/experiment_work_artifacts_20261002/relocation_manifest.json",
+    "local_work_files_moved": 33934,
+    "canonical_sources_hash_checked": 2054,
+    "interpretation": "Historical execution and annotated-source paths in immutable reports identify files used at run time. Generated working files are stored outside verification results and excluded from Git. No result or witness was changed."
+  }
 }

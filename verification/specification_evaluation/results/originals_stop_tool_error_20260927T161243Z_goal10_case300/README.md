@@ -349,3 +349,9 @@ python3 -m verification.specification_evaluation.summarize_experiment \
 ## Archived C run reports
 
 Corrected C translation/original verification reports and completed sibling C counterexample runs are archived inside this experiment. See [c_run_archive.json](c_run_archive.json) for source-to-archive mappings and hash checks. Final outcome counts are unchanged; historical execution paths remain recorded as originally used.
+
+## Result artifact layout
+
+This directory retains verification records, WP goal reports, replay results and witnesses, independent audit results, frozen contracts, and statistical summaries. Canonical program sources remain under `FormalBench-data/`; each case record identifies its original `raw_source` and source hash. Generated annotated source copies, replay harnesses, native compiler reports, binaries and duplicated command/transfer files are excluded from Git and kept in ignored local output storage. Commands and annotation-transfer results are already embedded in the verification records. Historical annotated-source and execution paths identify the files used at run time; they are not additional committed source files.
+
+README and statistics regeneration requires the retained result JSON, frozen contracts, canonical repository support contracts, and Java workload count snapshot. Replaying witnesses or reintegrating raw runs requires the local generated working artifacts, or regeneration from canonical inputs; the result-only archive does not include those working files.

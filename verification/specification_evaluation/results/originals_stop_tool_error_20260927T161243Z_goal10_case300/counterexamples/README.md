@@ -934,3 +934,7 @@ See [summary.json](summary.json) for full-precision timing distributions and per
 ## Earlier full C search
 
 The [973-case earlier search](c_counterexamples_all_c_20261001_workers4/README.md) is retained as historical evidence. The final 1027-case search supersedes it; its counts are not added to the final totals. See [the archive index](../c_run_archive.json).
+
+## Result-only storage
+
+Only result records, replay results and witnesses, audit results and summaries are committed. Canonical sources remain under `FormalBench-data/`. Generated source copies, harnesses and compiler reports are stored in ignored local `output/experiment_work_artifacts_20261002/` storage. Their source hashes and successful independent audit results remain in the per-case result records. Historical execution paths describe the run-time files.
