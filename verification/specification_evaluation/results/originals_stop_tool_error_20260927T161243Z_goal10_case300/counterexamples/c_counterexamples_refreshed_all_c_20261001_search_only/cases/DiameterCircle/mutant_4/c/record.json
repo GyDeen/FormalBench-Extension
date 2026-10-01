@@ -1,0 +1,89 @@
+{
+  "attempt_status": "complete",
+  "frozen_spec_sha256": "a3849e1517a68ebb23ae1200795d7a633322da1ea15f3e59ac090d90567a964a",
+  "language": "c",
+  "mutant_id": "4",
+  "outcome": "specification violation",
+  "program": "DiameterCircle",
+  "replay": {
+    "audit_compilation_failed": false,
+    "checked": 2,
+    "independent_audit": {
+      "baseline_execution": {
+        "elapsed_seconds": 0.016502487000252586,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {},
+          "errno": 0,
+          "result": 4250,
+          "rows_separate": true,
+          "state": {}
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":4250,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "baseline_failed_clauses": [],
+      "baseline_passed": true,
+      "execution": {
+        "elapsed_seconds": 0.019788548999713385,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {},
+          "errno": 0,
+          "result": 0,
+          "rows_separate": true,
+          "state": {}
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":0,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "passed": true
+    },
+    "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+    "rejected_candidates": {},
+    "search_exhausted": false,
+    "status": "validated_violation",
+    "timeouts": 0,
+    "witness": {
+      "elapsed_seconds": 0.009362666000015452,
+      "exit_code": 0,
+      "expected": 4250,
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "inputs": {
+        "r": 2125
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": 0,
+        "rows_separate": true,
+        "state": {}
+      },
+      "origin": "saved_test:DiameterCircle_ESTest.test1",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":0,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+      "validated": true
+    }
+  },
+  "replay_source_kind": "frozen_annotated_source",
+  "replay_source_sha256": "a405c40408bcadf56f51c8c650ede1787611ab51b4dd98f84cd8b217ee5ebd0b",
+  "role": "mutant",
+  "search_elapsed_seconds": 1.4872262959997897,
+  "source_record": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/DiameterCircle/mutant_4/c/record.json",
+  "source_record_sha256": "a7fb57ba24c9de2af4def8e8e5e01c390d4e4fd5eef8808ff06081d6506ff75b",
+  "verification_outcome": "unknown/timeout",
+  "verification_rerun": false,
+  "verification_reused": true
+}

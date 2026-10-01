@@ -1,0 +1,89 @@
+{
+  "attempt_status": "complete",
+  "frozen_spec_sha256": "f3cafa84cd689f135507e418becdbfc476c110145e95f873312763bd4cfb5607",
+  "language": "c",
+  "mutant_id": "7",
+  "outcome": "specification violation",
+  "program": "Fibonacci",
+  "replay": {
+    "audit_compilation_failed": false,
+    "checked": 3,
+    "independent_audit": {
+      "baseline_execution": {
+        "elapsed_seconds": 0.007573296999908052,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {},
+          "errno": 0,
+          "result": 1,
+          "rows_separate": true,
+          "state": {}
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":1,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "baseline_failed_clauses": [],
+      "baseline_passed": true,
+      "execution": {
+        "elapsed_seconds": 0.00767182299932756,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {},
+          "errno": 0,
+          "result": 0,
+          "rows_separate": true,
+          "state": {}
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":0,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "passed": true
+    },
+    "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+    "rejected_candidates": {},
+    "search_exhausted": false,
+    "status": "validated_violation",
+    "timeouts": 0,
+    "witness": {
+      "elapsed_seconds": 0.0044964799999434035,
+      "exit_code": 0,
+      "expected": 1,
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "inputs": {
+        "n": 2
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": 0,
+        "rows_separate": true,
+        "state": {}
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":0,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+      "validated": true
+    }
+  },
+  "replay_source_kind": "frozen_annotated_source",
+  "replay_source_sha256": "a78364655c022659fa40b589a1dd6685787ad91220805fffc316902c60abb498",
+  "role": "mutant",
+  "search_elapsed_seconds": 1.0000081569996837,
+  "source_record": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/Fibonacci/mutant_7/c/record.json",
+  "source_record_sha256": "011b047a78564233d629ca89184ad900ef24b62ca0e471e1b69a1a579f688bee",
+  "verification_outcome": "unknown/timeout",
+  "verification_rerun": false,
+  "verification_reused": true
+}

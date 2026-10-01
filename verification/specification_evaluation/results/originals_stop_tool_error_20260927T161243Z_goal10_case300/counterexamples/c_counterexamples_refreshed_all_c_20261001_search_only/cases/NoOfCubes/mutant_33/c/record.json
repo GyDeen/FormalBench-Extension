@@ -1,0 +1,90 @@
+{
+  "attempt_status": "complete",
+  "frozen_spec_sha256": "e4dd945cb2fef1679f47394b01ee8b80613c39d19a1aa9d4f36a4a6b0c96509b",
+  "language": "c",
+  "mutant_id": "33",
+  "outcome": "specification violation",
+  "program": "NoOfCubes",
+  "replay": {
+    "audit_compilation_failed": false,
+    "checked": 2,
+    "independent_audit": {
+      "baseline_execution": {
+        "elapsed_seconds": 0.008265713000582764,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {},
+          "errno": 0,
+          "result": 1,
+          "rows_separate": true,
+          "state": {}
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":1,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "baseline_failed_clauses": [],
+      "baseline_passed": true,
+      "execution": {
+        "elapsed_seconds": 0.010085036999953445,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {},
+          "errno": 0,
+          "result": 0,
+          "rows_separate": true,
+          "state": {}
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":0,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "passed": true
+    },
+    "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+    "rejected_candidates": {},
+    "search_exhausted": false,
+    "status": "validated_violation",
+    "timeouts": 0,
+    "witness": {
+      "elapsed_seconds": 0.005885333001060644,
+      "exit_code": 0,
+      "expected": 1,
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "inputs": {
+        "k": 0,
+        "n": 0
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": 0,
+        "rows_separate": true,
+        "state": {}
+      },
+      "origin": "saved_test:NoOfCubes_ESTest.test1",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":0,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+      "validated": true
+    }
+  },
+  "replay_source_kind": "frozen_annotated_source",
+  "replay_source_sha256": "4be7326b0fbc9c3391253eedf93449a04c72bb95ea09df2fb270e17470a81a52",
+  "role": "mutant",
+  "search_elapsed_seconds": 0.9034852329987189,
+  "source_record": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/NoOfCubes/mutant_33/c/record.json",
+  "source_record_sha256": "61cf8f8ef889ea0bfe047f81abdde09aaabdecae5e9fb564d8c3793c2c19ebe9",
+  "verification_outcome": "unknown/timeout",
+  "verification_rerun": false,
+  "verification_reused": true
+}

@@ -1,0 +1,92 @@
+{
+  "attempt_status": "complete",
+  "frozen_spec_sha256": "c5578ae8a1bc6553f4042363ca9294bcf18c64dd480872444f5e463149ad5746",
+  "language": "c",
+  "mutant_id": "4",
+  "outcome": "specification violation",
+  "program": "SumNums",
+  "replay": {
+    "audit_compilation_failed": false,
+    "checked": 2,
+    "independent_audit": {
+      "baseline_execution": {
+        "elapsed_seconds": 0.006759782998415176,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {},
+          "errno": 0,
+          "result": 0,
+          "rows_separate": true,
+          "state": {}
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":0,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "baseline_failed_clauses": [],
+      "baseline_passed": true,
+      "execution": {
+        "elapsed_seconds": 0.006572708000021521,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {},
+          "errno": 0,
+          "result": -1,
+          "rows_separate": true,
+          "state": {}
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":-1,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "passed": true
+    },
+    "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+    "rejected_candidates": {},
+    "search_exhausted": false,
+    "status": "validated_violation",
+    "timeouts": 0,
+    "witness": {
+      "elapsed_seconds": 0.005158378999112756,
+      "exit_code": 0,
+      "expected": 0,
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "inputs": {
+        "m": -1537,
+        "n": -3324,
+        "x": 1,
+        "y": -1
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": -1,
+        "rows_separate": true,
+        "state": {}
+      },
+      "origin": "saved_test:SumNums_ESTest.test1",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":-1,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+      "validated": true
+    }
+  },
+  "replay_source_kind": "frozen_annotated_source",
+  "replay_source_sha256": "2722d7ef8af9aa41aadcb71c3f98a4d36f2e03f18c4c3d912bc6c86714251aca",
+  "role": "mutant",
+  "search_elapsed_seconds": 1.0133455719987978,
+  "source_record": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/SumNums/mutant_4/c/record.json",
+  "source_record_sha256": "98fc6c1dc043936fcfa04bd24b6e491023b549bb9d100db861df13356c4c0627",
+  "verification_outcome": "unknown/timeout",
+  "verification_rerun": false,
+  "verification_reused": true
+}

@@ -1,0 +1,52 @@
+{
+  "complete": true,
+  "passed": true,
+  "generated_utc": "2026-10-01T13:47:02.398Z",
+  "final_outcomes_unchanged": true,
+  "source_summary_sha256": "5c4b53403411c035d6e0c6a5f2767f1c844e360a870c3a8e2eaf837cfcd3fdef",
+  "entries": [
+    {
+      "source": "verification/specification_evaluation/results/c_corrected_originals_verification_20261001",
+      "archive": "original_verification/c_corrected_originals_verification_20261001",
+      "purpose": "Four corrected C original Frama-C invocations; final proof records already integrated.",
+      "mode": "verified_report_merge",
+      "report_files": 74,
+      "generated_files_removed": 0,
+      "manifest": "c_run_archives/c_corrected_originals_verification_20261001_copy_audit.json",
+      "manifest_sha256": "a65573609e40b96d26cf912f1293092b338d2c03578cb0799b86e35ec63c434b",
+      "source_removed": true
+    },
+    {
+      "source": "verification/specification_evaluation/results/c_counterexamples_refreshed_all_c_20261001_search_only",
+      "archive": "counterexamples/c_counterexamples_refreshed_all_c_20261001_search_only",
+      "purpose": "Final 1027-case C counterexample search; audited 900 mutant failures retained.",
+      "mode": "verified_report_merge",
+      "report_files": 7680,
+      "generated_files_removed": 1996,
+      "manifest": "c_run_archives/c_counterexamples_refreshed_all_c_20261001_search_only_copy_audit.json",
+      "manifest_sha256": "8148312c7b264c70636fa5af6ba1b6bb7a2911ba6d0de73f56c8341f3a0144b9",
+      "source_removed": true
+    },
+    {
+      "source": "verification/specification_evaluation/results/c_counterexamples_all_c_20261001_workers4",
+      "archive": "counterexamples/c_counterexamples_all_c_20261001_workers4",
+      "purpose": "Earlier 973-case C counterexample search; superseded historical evidence, not pooled into final counts.",
+      "mode": "same_volume_directory_move",
+      "files": 8653,
+      "report_files": 6761,
+      "inventory_preserved": true,
+      "source_removed": true
+    },
+    {
+      "source": "output/c_translation_repairs_20261001",
+      "archive": "original_verification/translation_repairs_20261001",
+      "purpose": "Fixed translated C originals: source/specification hashes, Java agreement, preflight and verification reports.",
+      "mode": "same_volume_directory_move",
+      "files": 638,
+      "report_files": 636,
+      "inventory_preserved": true,
+      "source_removed": true
+    }
+  ],
+  "interpretation": "Only corrected C original reports and C counterexample runs were consolidated. Historical execution paths are retained in immutable reports; these mappings locate the current archives. Other project output directories were left alone."
+}

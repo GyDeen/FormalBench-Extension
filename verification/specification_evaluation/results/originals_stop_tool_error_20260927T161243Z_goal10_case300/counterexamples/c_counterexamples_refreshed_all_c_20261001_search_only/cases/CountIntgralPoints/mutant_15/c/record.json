@@ -1,0 +1,92 @@
+{
+  "attempt_status": "complete",
+  "frozen_spec_sha256": "1e08a521d81304390fb63b1beb3b34f5e41d417419a607367f2ac2e2ec1f1cc0",
+  "language": "c",
+  "mutant_id": "15",
+  "outcome": "specification violation",
+  "program": "CountIntgralPoints",
+  "replay": {
+    "audit_compilation_failed": false,
+    "checked": 1,
+    "independent_audit": {
+      "baseline_execution": {
+        "elapsed_seconds": 0.008712188999197679,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {},
+          "errno": 0,
+          "result": 0,
+          "rows_separate": true,
+          "state": {}
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":0,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "baseline_failed_clauses": [],
+      "baseline_passed": true,
+      "execution": {
+        "elapsed_seconds": 0.008181553999747848,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {},
+          "errno": 0,
+          "result": -2532,
+          "rows_separate": true,
+          "state": {}
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":-2532,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "passed": true
+    },
+    "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+    "rejected_candidates": {},
+    "search_exhausted": false,
+    "status": "validated_violation",
+    "timeouts": 0,
+    "witness": {
+      "elapsed_seconds": 0.005769412000518059,
+      "exit_code": 0,
+      "expected": 0,
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "inputs": {
+        "x1": 0,
+        "x2": 1,
+        "y1": 1,
+        "y2": -1264
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": -2532,
+        "rows_separate": true,
+        "state": {}
+      },
+      "origin": "saved_test:CountIntgralPoints_ESTest.test0",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":-2532,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+      "validated": true
+    }
+  },
+  "replay_source_kind": "frozen_annotated_source",
+  "replay_source_sha256": "e27366828e032a13eccc6591b6efbe3eead85366d47ad480dcc0a0164262337a",
+  "role": "mutant",
+  "search_elapsed_seconds": 0.9567895679992944,
+  "source_record": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountIntgralPoints/mutant_15/c/record.json",
+  "source_record_sha256": "a2ad977b2b016a7d944d8d65c3686896bb04eb14ac4aac255dd0c7257699e0ee",
+  "verification_outcome": "unknown/timeout",
+  "verification_rerun": false,
+  "verification_reused": true
+}

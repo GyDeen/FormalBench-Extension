@@ -1,0 +1,247 @@
+{
+  "attempts": [
+    {
+      "elapsed_seconds": 0.005438627000330598,
+      "exit_code": 0,
+      "expected": [
+        0,
+        0
+      ],
+      "failed_clauses": [],
+      "inputs": {
+        "l1": 0,
+        "l2": -450,
+        "r1": 0,
+        "r2": 0
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": [
+          0,
+          0
+        ],
+        "rows_separate": true,
+        "state": {}
+      },
+      "origin": "saved_test:FindPoints_ESTest.test0",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":[0,0],\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.005522273999304161,
+      "exit_code": 0,
+      "expected": [
+        -4430,
+        2733
+      ],
+      "failed_clauses": [],
+      "inputs": {
+        "l1": -4430,
+        "l2": -1679,
+        "r1": 2733,
+        "r2": 2733
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": [
+          -4430,
+          2733
+        ],
+        "rows_separate": true,
+        "state": {}
+      },
+      "origin": "saved_test:FindPoints_ESTest.test1",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":[-4430,2733],\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.004267066000466002,
+      "exit_code": 0,
+      "expected": [
+        0,
+        0
+      ],
+      "failed_clauses": [],
+      "inputs": {
+        "l1": 0,
+        "l2": 0,
+        "r1": 0,
+        "r2": 0
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": [
+          0,
+          0
+        ],
+        "rows_separate": true,
+        "state": {}
+      },
+      "origin": "saved_test:FindPoints_ESTest.test2",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":[0,0],\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.02687257499928819,
+      "exit_code": 0,
+      "expected": [
+        -1628,
+        0
+      ],
+      "failed_clauses": [],
+      "inputs": {
+        "l1": -1628,
+        "l2": -2185,
+        "r1": 0,
+        "r2": 1471
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": [
+          -1628,
+          0
+        ],
+        "rows_separate": true,
+        "state": {}
+      },
+      "origin": "saved_test:FindPoints_ESTest.test3",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":[-1628,0],\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.005113813000207301,
+      "exit_code": 0,
+      "expected": [
+        -1746,
+        2433
+      ],
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "inputs": {
+        "l1": 0,
+        "l2": 648,
+        "r1": -1746,
+        "r2": 2433
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": [
+          0,
+          -1746
+        ],
+        "rows_separate": true,
+        "state": {}
+      },
+      "origin": "saved_test:FindPoints_ESTest.test4",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":[0,-1746],\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+      "validated": true
+    }
+  ],
+  "audit_compilation_failed": false,
+  "checked": 5,
+  "independent_audit": {
+    "baseline_execution": {
+      "elapsed_seconds": 0.009529652001219802,
+      "exit_code": 0,
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": [
+          -1746,
+          2433
+        ],
+        "rows_separate": true,
+        "state": {}
+      },
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":[-1746,2433],\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    "baseline_failed_clauses": [],
+    "baseline_passed": true,
+    "execution": {
+      "elapsed_seconds": 0.007422933000270859,
+      "exit_code": 0,
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": [
+          0,
+          -1746
+        ],
+        "rows_separate": true,
+        "state": {}
+      },
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":[0,-1746],\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    "failed_clauses": [
+      "frozen_return_value_or_array_contents"
+    ],
+    "passed": true
+  },
+  "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+  "rejected_candidates": {},
+  "search_exhausted": false,
+  "status": "validated_violation",
+  "timeouts": 0,
+  "witness": {
+    "elapsed_seconds": 0.005113813000207301,
+    "exit_code": 0,
+    "expected": [
+      -1746,
+      2433
+    ],
+    "failed_clauses": [
+      "frozen_return_value_or_array_contents"
+    ],
+    "inputs": {
+      "l1": 0,
+      "l2": 648,
+      "r1": -1746,
+      "r2": 2433
+    },
+    "observation": {
+      "EDOM": 33,
+      "aliases": {},
+      "errno": 0,
+      "result": [
+        0,
+        -1746
+      ],
+      "rows_separate": true,
+      "state": {}
+    },
+    "origin": "saved_test:FindPoints_ESTest.test4",
+    "preconditions_satisfied": true,
+    "status": "returned",
+    "stderr": "",
+    "stdout": "\n@@REPLAY {\"result\":[0,-1746],\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+    "validated": true
+  }
+}

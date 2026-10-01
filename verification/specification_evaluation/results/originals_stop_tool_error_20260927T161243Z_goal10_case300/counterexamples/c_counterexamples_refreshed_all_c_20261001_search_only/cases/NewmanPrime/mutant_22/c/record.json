@@ -1,0 +1,89 @@
+{
+  "attempt_status": "complete",
+  "frozen_spec_sha256": "353ed806934f83d0059e3415dd11c9329a56e2b6bbe759831058cc5856811059",
+  "language": "c",
+  "mutant_id": "22",
+  "outcome": "specification violation",
+  "program": "NewmanPrime",
+  "replay": {
+    "audit_compilation_failed": false,
+    "checked": 6,
+    "independent_audit": {
+      "baseline_execution": {
+        "elapsed_seconds": 0.008103746000415413,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {},
+          "errno": 0,
+          "result": 239,
+          "rows_separate": true,
+          "state": {}
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":239,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "baseline_failed_clauses": [],
+      "baseline_passed": true,
+      "execution": {
+        "elapsed_seconds": 0.007841479000489926,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {},
+          "errno": 0,
+          "result": 169,
+          "rows_separate": true,
+          "state": {}
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":169,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "passed": true
+    },
+    "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+    "rejected_candidates": {},
+    "search_exhausted": false,
+    "status": "validated_violation",
+    "timeouts": 0,
+    "witness": {
+      "elapsed_seconds": 0.00442707500042161,
+      "exit_code": 0,
+      "expected": 239,
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "inputs": {
+        "n": 7
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": 169,
+        "rows_separate": true,
+        "state": {}
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":169,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+      "validated": true
+    }
+  },
+  "replay_source_kind": "frozen_annotated_source",
+  "replay_source_sha256": "275b60976a7d4a8dc00ca3fd8ec4ecc83b94ce798d0802bacdabbbc87a868990",
+  "role": "mutant",
+  "search_elapsed_seconds": 0.9441912050006067,
+  "source_record": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/NewmanPrime/mutant_22/c/record.json",
+  "source_record_sha256": "b3a193cf32e4c73d7672191df85c7840c2a7da4671a2ce8569bbcb5e1998535b",
+  "verification_outcome": "unknown/timeout",
+  "verification_rerun": false,
+  "verification_reused": true
+}

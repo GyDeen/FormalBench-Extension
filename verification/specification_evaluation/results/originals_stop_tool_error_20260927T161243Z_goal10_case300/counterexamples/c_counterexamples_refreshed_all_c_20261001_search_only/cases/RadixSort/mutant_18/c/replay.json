@@ -1,0 +1,242 @@
+{
+  "attempts": [
+    {
+      "elapsed_seconds": 0.0075336579993745545,
+      "exit_code": 0,
+      "expected": [
+        0
+      ],
+      "failed_clauses": [],
+      "inputs": {
+        "nums": [
+          0
+        ]
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "nums": true
+        },
+        "errno": 0,
+        "result": [
+          0
+        ],
+        "rows_separate": true,
+        "state": {
+          "nums": [
+            0
+          ]
+        }
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":[0],\"state\":{\"nums\":[0]},\"aliases\":{\"nums\":true},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.005459577001602156,
+      "exit_code": 72,
+      "expected": [
+        -1
+      ],
+      "failed_clauses": [],
+      "inputs": {
+        "nums": [
+          -1
+        ]
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "runtime_safety",
+      "stderr": "JAVA_ARRAY_ERROR: INDEX_OUT_OF_BOUNDS (java.lang.ArrayIndexOutOfBoundsException)\n",
+      "stdout": "",
+      "validated": true
+    },
+    {
+      "elapsed_seconds": 0.00697765199947753,
+      "exit_code": 72,
+      "expected": [
+        1
+      ],
+      "failed_clauses": [],
+      "inputs": {
+        "nums": [
+          1
+        ]
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "runtime_safety",
+      "stderr": "JAVA_ARRAY_ERROR: INDEX_OUT_OF_BOUNDS (java.lang.ArrayIndexOutOfBoundsException)\n",
+      "stdout": "",
+      "validated": true
+    },
+    {
+      "elapsed_seconds": 0.004437707000761293,
+      "exit_code": 72,
+      "expected": [
+        2
+      ],
+      "failed_clauses": [],
+      "inputs": {
+        "nums": [
+          2
+        ]
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "runtime_safety",
+      "stderr": "JAVA_ARRAY_ERROR: INDEX_OUT_OF_BOUNDS (java.lang.ArrayIndexOutOfBoundsException)\n",
+      "stdout": "",
+      "validated": true
+    },
+    {
+      "elapsed_seconds": 0.005495108000104665,
+      "exit_code": 0,
+      "expected": [
+        0,
+        1
+      ],
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "inputs": {
+        "nums": [
+          1,
+          0
+        ]
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "nums": true
+        },
+        "errno": 0,
+        "result": [
+          0,
+          0
+        ],
+        "rows_separate": true,
+        "state": {
+          "nums": [
+            0,
+            0
+          ]
+        }
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":[0,0],\"state\":{\"nums\":[0,0]},\"aliases\":{\"nums\":true},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+      "validated": true
+    }
+  ],
+  "audit_compilation_failed": false,
+  "checked": 5,
+  "independent_audit": {
+    "baseline_execution": {
+      "elapsed_seconds": 0.00825945100041281,
+      "exit_code": 0,
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "nums": true
+        },
+        "errno": 0,
+        "result": [
+          0,
+          1
+        ],
+        "rows_separate": true,
+        "state": {
+          "nums": [
+            0,
+            1
+          ]
+        }
+      },
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":[0,1],\"state\":{\"nums\":[0,1]},\"aliases\":{\"nums\":true},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    "baseline_failed_clauses": [],
+    "baseline_passed": true,
+    "execution": {
+      "elapsed_seconds": 0.008563207999031874,
+      "exit_code": 0,
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "nums": true
+        },
+        "errno": 0,
+        "result": [
+          0,
+          0
+        ],
+        "rows_separate": true,
+        "state": {
+          "nums": [
+            0,
+            0
+          ]
+        }
+      },
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":[0,0],\"state\":{\"nums\":[0,0]},\"aliases\":{\"nums\":true},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    "failed_clauses": [
+      "frozen_return_value_or_array_contents"
+    ],
+    "passed": true
+  },
+  "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+  "rejected_candidates": {},
+  "search_exhausted": false,
+  "status": "validated_violation",
+  "timeouts": 0,
+  "witness": {
+    "elapsed_seconds": 0.005495108000104665,
+    "exit_code": 0,
+    "expected": [
+      0,
+      1
+    ],
+    "failed_clauses": [
+      "frozen_return_value_or_array_contents"
+    ],
+    "inputs": {
+      "nums": [
+        1,
+        0
+      ]
+    },
+    "observation": {
+      "EDOM": 33,
+      "aliases": {
+        "nums": true
+      },
+      "errno": 0,
+      "result": [
+        0,
+        0
+      ],
+      "rows_separate": true,
+      "state": {
+        "nums": [
+          0,
+          0
+        ]
+      }
+    },
+    "origin": "bounded_search_seed726",
+    "preconditions_satisfied": true,
+    "status": "returned",
+    "stderr": "",
+    "stdout": "\n@@REPLAY {\"result\":[0,0],\"state\":{\"nums\":[0,0]},\"aliases\":{\"nums\":true},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+    "validated": true
+  }
+}

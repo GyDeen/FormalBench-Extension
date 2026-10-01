@@ -1,0 +1,143 @@
+{
+  "attempts": [
+    {
+      "elapsed_seconds": 0.004559422000966151,
+      "exit_code": 0,
+      "expected": 13,
+      "failed_clauses": [],
+      "inputs": {
+        "hAge": 0
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": 13,
+        "rows_separate": true,
+        "state": {}
+      },
+      "origin": "saved_test:DogAge_ESTest.test0",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":13,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.004411690000779345,
+      "exit_code": 0,
+      "expected": 8513,
+      "failed_clauses": [],
+      "inputs": {
+        "hAge": 2125
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": 8513,
+        "rows_separate": true,
+        "state": {}
+      },
+      "origin": "saved_test:DogAge_ESTest.test1",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":8513,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.004283227000996703,
+      "exit_code": 0,
+      "expected": -15499,
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "inputs": {
+        "hAge": -3882
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": -15515,
+        "rows_separate": true,
+        "state": {}
+      },
+      "origin": "saved_test:DogAge_ESTest.test2",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":-15515,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+      "validated": true
+    }
+  ],
+  "audit_compilation_failed": false,
+  "checked": 3,
+  "independent_audit": {
+    "baseline_execution": {
+      "elapsed_seconds": 0.009769792999577476,
+      "exit_code": 0,
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": -15499,
+        "rows_separate": true,
+        "state": {}
+      },
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":-15499,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    "baseline_failed_clauses": [],
+    "baseline_passed": true,
+    "execution": {
+      "elapsed_seconds": 0.008453849999568774,
+      "exit_code": 0,
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": -15515,
+        "rows_separate": true,
+        "state": {}
+      },
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":-15515,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    "failed_clauses": [
+      "frozen_return_value_or_array_contents"
+    ],
+    "passed": true
+  },
+  "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+  "rejected_candidates": {},
+  "search_exhausted": false,
+  "status": "validated_violation",
+  "timeouts": 0,
+  "witness": {
+    "elapsed_seconds": 0.004283227000996703,
+    "exit_code": 0,
+    "expected": -15499,
+    "failed_clauses": [
+      "frozen_return_value_or_array_contents"
+    ],
+    "inputs": {
+      "hAge": -3882
+    },
+    "observation": {
+      "EDOM": 33,
+      "aliases": {},
+      "errno": 0,
+      "result": -15515,
+      "rows_separate": true,
+      "state": {}
+    },
+    "origin": "saved_test:DogAge_ESTest.test2",
+    "preconditions_satisfied": true,
+    "status": "returned",
+    "stderr": "",
+    "stdout": "\n@@REPLAY {\"result\":-15515,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+    "validated": true
+  }
+}

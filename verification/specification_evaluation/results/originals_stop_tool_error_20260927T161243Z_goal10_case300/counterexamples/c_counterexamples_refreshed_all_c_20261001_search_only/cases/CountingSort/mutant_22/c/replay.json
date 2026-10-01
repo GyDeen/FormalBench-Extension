@@ -1,0 +1,337 @@
+{
+  "attempts": [
+    {
+      "elapsed_seconds": 0.0043147120013600215,
+      "exit_code": 0,
+      "expected": [],
+      "failed_clauses": [],
+      "inputs": {
+        "myArray": []
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "myArray": false
+        },
+        "errno": 0,
+        "result": [],
+        "rows_separate": true,
+        "state": {
+          "myArray": []
+        }
+      },
+      "origin": "saved_test:CountingSort_ESTest.test3",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":[],\"state\":{\"myArray\":[]},\"aliases\":{\"myArray\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.004467923999982304,
+      "exit_code": 75,
+      "expected": [
+        0
+      ],
+      "failed_clauses": [],
+      "inputs": {
+        "myArray": [
+          0
+        ]
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "abnormal_exit",
+      "stderr": "JAVA_ARITHMETIC_ERROR: DIVIDE_BY_ZERO\n",
+      "stdout": ""
+    },
+    {
+      "elapsed_seconds": 0.006897002000187058,
+      "exit_code": 0,
+      "expected": [
+        -1
+      ],
+      "failed_clauses": [],
+      "inputs": {
+        "myArray": [
+          -1
+        ]
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "myArray": false
+        },
+        "errno": 0,
+        "result": [
+          -1
+        ],
+        "rows_separate": true,
+        "state": {
+          "myArray": [
+            -1
+          ]
+        }
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":[-1],\"state\":{\"myArray\":[-1]},\"aliases\":{\"myArray\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.004429237000294961,
+      "exit_code": 0,
+      "expected": [
+        1
+      ],
+      "failed_clauses": [],
+      "inputs": {
+        "myArray": [
+          1
+        ]
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "myArray": false
+        },
+        "errno": 0,
+        "result": [
+          1
+        ],
+        "rows_separate": true,
+        "state": {
+          "myArray": [
+            1
+          ]
+        }
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":[1],\"state\":{\"myArray\":[1]},\"aliases\":{\"myArray\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.004219307000312256,
+      "exit_code": 0,
+      "expected": [
+        2
+      ],
+      "failed_clauses": [],
+      "inputs": {
+        "myArray": [
+          2
+        ]
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "myArray": false
+        },
+        "errno": 0,
+        "result": [
+          2
+        ],
+        "rows_separate": true,
+        "state": {
+          "myArray": [
+            2
+          ]
+        }
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":[2],\"state\":{\"myArray\":[2]},\"aliases\":{\"myArray\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.004209946000628406,
+      "exit_code": 75,
+      "expected": [
+        0,
+        1
+      ],
+      "failed_clauses": [],
+      "inputs": {
+        "myArray": [
+          1,
+          0
+        ]
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "abnormal_exit",
+      "stderr": "JAVA_ARITHMETIC_ERROR: DIVIDE_BY_ZERO\n",
+      "stdout": ""
+    },
+    {
+      "elapsed_seconds": 0.004594698000801145,
+      "exit_code": 75,
+      "expected": [
+        0,
+        1
+      ],
+      "failed_clauses": [],
+      "inputs": {
+        "myArray": [
+          0,
+          1
+        ]
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "abnormal_exit",
+      "stderr": "JAVA_ARITHMETIC_ERROR: DIVIDE_BY_ZERO\n",
+      "stdout": ""
+    },
+    {
+      "elapsed_seconds": 0.004619250001269393,
+      "exit_code": 0,
+      "expected": [
+        1,
+        2
+      ],
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "inputs": {
+        "myArray": [
+          2,
+          1
+        ]
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "myArray": false
+        },
+        "errno": 0,
+        "result": [
+          1,
+          1
+        ],
+        "rows_separate": true,
+        "state": {
+          "myArray": [
+            2,
+            1
+          ]
+        }
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":[1,1],\"state\":{\"myArray\":[2,1]},\"aliases\":{\"myArray\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+      "validated": true
+    }
+  ],
+  "audit_compilation_failed": false,
+  "checked": 8,
+  "independent_audit": {
+    "baseline_execution": {
+      "elapsed_seconds": 0.0065287810011795955,
+      "exit_code": 0,
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "myArray": false
+        },
+        "errno": 0,
+        "result": [
+          1,
+          2
+        ],
+        "rows_separate": true,
+        "state": {
+          "myArray": [
+            2,
+            1
+          ]
+        }
+      },
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":[1,2],\"state\":{\"myArray\":[2,1]},\"aliases\":{\"myArray\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    "baseline_failed_clauses": [],
+    "baseline_passed": true,
+    "execution": {
+      "elapsed_seconds": 0.007071179999911692,
+      "exit_code": 0,
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "myArray": false
+        },
+        "errno": 0,
+        "result": [
+          1,
+          1
+        ],
+        "rows_separate": true,
+        "state": {
+          "myArray": [
+            2,
+            1
+          ]
+        }
+      },
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":[1,1],\"state\":{\"myArray\":[2,1]},\"aliases\":{\"myArray\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    "failed_clauses": [
+      "frozen_return_value_or_array_contents"
+    ],
+    "passed": true
+  },
+  "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+  "rejected_candidates": {},
+  "search_exhausted": false,
+  "status": "validated_violation",
+  "timeouts": 0,
+  "witness": {
+    "elapsed_seconds": 0.004619250001269393,
+    "exit_code": 0,
+    "expected": [
+      1,
+      2
+    ],
+    "failed_clauses": [
+      "frozen_return_value_or_array_contents"
+    ],
+    "inputs": {
+      "myArray": [
+        2,
+        1
+      ]
+    },
+    "observation": {
+      "EDOM": 33,
+      "aliases": {
+        "myArray": false
+      },
+      "errno": 0,
+      "result": [
+        1,
+        1
+      ],
+      "rows_separate": true,
+      "state": {
+        "myArray": [
+          2,
+          1
+        ]
+      }
+    },
+    "origin": "bounded_search_seed726",
+    "preconditions_satisfied": true,
+    "status": "returned",
+    "stderr": "",
+    "stdout": "\n@@REPLAY {\"result\":[1,1],\"state\":{\"myArray\":[2,1]},\"aliases\":{\"myArray\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+    "validated": true
+  }
+}

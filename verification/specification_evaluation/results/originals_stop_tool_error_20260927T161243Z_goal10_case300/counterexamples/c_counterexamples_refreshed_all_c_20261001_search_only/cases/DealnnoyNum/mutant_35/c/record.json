@@ -1,0 +1,90 @@
+{
+  "attempt_status": "complete",
+  "frozen_spec_sha256": "be6f5de22be5a3719bc225116d50a304db5756d2870a6a8476a903321dccda1d",
+  "language": "c",
+  "mutant_id": "35",
+  "outcome": "specification violation",
+  "program": "DealnnoyNum",
+  "replay": {
+    "audit_compilation_failed": false,
+    "checked": 13,
+    "independent_audit": {
+      "baseline_execution": {
+        "elapsed_seconds": 0.008082242999080336,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {},
+          "errno": 0,
+          "result": 3,
+          "rows_separate": true,
+          "state": {}
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":3,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "baseline_failed_clauses": [],
+      "baseline_passed": true,
+      "execution": {
+        "elapsed_seconds": 0.010195094999289722,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {},
+          "errno": 0,
+          "result": 2,
+          "rows_separate": true,
+          "state": {}
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":2,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "passed": true
+    },
+    "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+    "rejected_candidates": {},
+    "search_exhausted": false,
+    "status": "validated_violation",
+    "timeouts": 0,
+    "witness": {
+      "elapsed_seconds": 0.004369516000224394,
+      "exit_code": 0,
+      "expected": 3,
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "inputs": {
+        "m": 1,
+        "n": 1
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": 2,
+        "rows_separate": true,
+        "state": {}
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":2,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+      "validated": true
+    }
+  },
+  "replay_source_kind": "frozen_annotated_source",
+  "replay_source_sha256": "2f07cb1694d840e957d3654bda82fb8ba0ae6f65f4b38d538124250288f69c3a",
+  "role": "mutant",
+  "search_elapsed_seconds": 1.0212189619996934,
+  "source_record": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/DealnnoyNum/mutant_35/c/record.json",
+  "source_record_sha256": "7c99036fdc356c60e0bc55c9937352474f33a55fde03bd715f3feae76fe63c9e",
+  "verification_outcome": "unknown/timeout",
+  "verification_rerun": false,
+  "verification_reused": true
+}

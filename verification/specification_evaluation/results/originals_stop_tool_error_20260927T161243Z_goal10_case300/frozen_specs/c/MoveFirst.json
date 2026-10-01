@@ -40,7 +40,7 @@
       "text": "/*@\n  requires jintarray_valid(testArray);\n  assigns \\nothing;\n  frees \\nothing;\n  ensures testArray == \\null ==> \\result == \\null;\n  ensures testArray != \\null && testArray->length == 0 ==> \\result == testArray;\n  ensures testArray != \\null && testArray->length > 0 ==> jintarray_valid_nonnull(\\result) && \\result->length == testArray->length;\n  ensures testArray != \\null && testArray->length > 0 ==> \\fresh(\\result, sizeof(*\\result)) && \\fresh(\\result->data, \\result->length * sizeof(int32_t));\n  ensures testArray != \\null && testArray->length > 0 ==> \\result->data[0] == testArray->data[testArray->length - 1];\n  ensures testArray != \\null && testArray->length > 0 ==> (\\forall integer k; 1 <= k < testArray->length ==> \\result->data[k] == testArray->data[k - 1]);\n*/"
     },
     {
-      "boundary_token": 139,
+      "boundary_token": 145,
       "following_tokens": [
         "for",
         "("
@@ -50,11 +50,11 @@
       "loop_id": "loop_1",
       "next_token": "for",
       "target": "loop",
-      "text": "/*@\n      loop invariant 0 <= i <= copyLength;\n      loop invariant copyLength == length - 1 && length == testArray->length;\n      loop invariant jintarray_valid_nonnull(res) && res->length == length;\n      loop invariant res->data[0] == testArray->data[length - 1];\n      loop invariant \\forall integer k; 1 <= k <= i ==> res->data[k] == testArray->data[k - 1];\n      loop assigns i, res->data[1 .. length - 1];\n      loop variant copyLength - i;\n    */"
+      "text": "/*@\n      loop invariant 0 <= __copy_index_2 <= testArray->length - 1;\n      loop invariant jintarray_valid_nonnull(res) && res->length == testArray->length;\n      loop invariant res->data[0] == testArray->data[testArray->length - 1];\n      loop invariant \\forall integer k; 1 <= k <= __copy_index_2 ==> res->data[k] == testArray->data[k - 1];\n      loop assigns __copy_index_2, res->data[1 .. testArray->length - 1];\n      loop variant testArray->length - 1 - __copy_index_2;\n    */"
     }
   ],
   "language": "c",
-  "original_executable_token_sha256": "ccd72eca52a756c14ccfc559ceafd7d5278136a0228ba35126bc8740ec1ebbd9",
+  "original_executable_token_sha256": "0b1409081364f6230a7b088d5f45d1d1758c84434798c52357017cf3aab72f96",
   "program": "MoveFirst",
   "schema_version": "1.0"
 }

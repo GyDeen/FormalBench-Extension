@@ -1,0 +1,153 @@
+{
+  "attempt_status": "complete",
+  "frozen_spec_sha256": "b2f831bdde4f4a798d461f799193cdda129f6dcefa212e782139bd8aeabdcd06",
+  "language": "c",
+  "mutant_id": "7",
+  "outcome": "specification violation",
+  "program": "MaxDifference",
+  "replay": {
+    "audit_compilation_failed": false,
+    "checked": 6,
+    "independent_audit": {
+      "baseline_execution": {
+        "elapsed_seconds": 0.0071193570001923945,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {
+            "testArray": false
+          },
+          "errno": 0,
+          "result": 3,
+          "rows_separate": true,
+          "state": {
+            "testArray": [
+              [
+                2,
+                -1
+              ],
+              [
+                4,
+                3
+              ],
+              [
+                0,
+                0
+              ]
+            ]
+          }
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":3,\"state\":{\"testArray\":[[2,-1],[4,3],[0,0]]},\"aliases\":{\"testArray\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "baseline_failed_clauses": [],
+      "baseline_passed": true,
+      "execution": {
+        "elapsed_seconds": 0.007224106000649044,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {
+            "testArray": false
+          },
+          "errno": 0,
+          "result": 1,
+          "rows_separate": true,
+          "state": {
+            "testArray": [
+              [
+                2,
+                -1
+              ],
+              [
+                4,
+                3
+              ],
+              [
+                0,
+                0
+              ]
+            ]
+          }
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":1,\"state\":{\"testArray\":[[2,-1],[4,3],[0,0]]},\"aliases\":{\"testArray\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "passed": true
+    },
+    "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+    "rejected_candidates": {},
+    "search_exhausted": false,
+    "status": "validated_violation",
+    "timeouts": 0,
+    "witness": {
+      "elapsed_seconds": 0.006497115000456688,
+      "exit_code": 0,
+      "expected": 3,
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "inputs": {
+        "testArray": [
+          [
+            2,
+            -1
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "testArray": false
+        },
+        "errno": 0,
+        "result": 1,
+        "rows_separate": true,
+        "state": {
+          "testArray": [
+            [
+              2,
+              -1
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":1,\"state\":{\"testArray\":[[2,-1],[4,3],[0,0]]},\"aliases\":{\"testArray\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+      "validated": true
+    }
+  },
+  "replay_source_kind": "frozen_annotated_source",
+  "replay_source_sha256": "83e9bfc142e469653e8d81188264d806c54cd76e460a7d805bfdd2b884b01bd5",
+  "role": "mutant",
+  "search_elapsed_seconds": 1.0438018400000146,
+  "source_record": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxDifference/mutant_7/c/record.json",
+  "source_record_sha256": "c508a41b6b6fb225bbc430de0978cac4fc74f7eebbc28dacac72e1bf66daf9c1",
+  "verification_outcome": "unknown/timeout",
+  "verification_rerun": false,
+  "verification_reused": true
+}

@@ -1,0 +1,146 @@
+{
+  "attempt_status": "complete",
+  "frozen_spec_sha256": "7f5adbc06cea13c3414523d1ce49773a449feb4076c6af40141df7f9bbf1229a",
+  "language": "c",
+  "mutant_id": "33",
+  "outcome": "specification violation",
+  "program": "MaxProduct",
+  "replay": {
+    "audit_compilation_failed": false,
+    "checked": 4,
+    "independent_audit": {
+      "baseline_execution": {
+        "elapsed_seconds": 0.007526067998696817,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {
+            "arr": false
+          },
+          "errno": 0,
+          "result": 7,
+          "rows_separate": true,
+          "state": {
+            "arr": [
+              0,
+              7,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":7,\"state\":{\"arr\":[0,7,0,0,0,0,0,0,0,0]},\"aliases\":{\"arr\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "baseline_failed_clauses": [],
+      "baseline_passed": true,
+      "execution": {
+        "elapsed_seconds": 0.007562814000266371,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {
+            "arr": false
+          },
+          "errno": 0,
+          "result": 0,
+          "rows_separate": true,
+          "state": {
+            "arr": [
+              0,
+              7,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":0,\"state\":{\"arr\":[0,7,0,0,0,0,0,0,0,0]},\"aliases\":{\"arr\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "passed": true
+    },
+    "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+    "rejected_candidates": {},
+    "search_exhausted": false,
+    "status": "validated_violation",
+    "timeouts": 0,
+    "witness": {
+      "elapsed_seconds": 0.0038350710001395782,
+      "exit_code": 0,
+      "expected": 7,
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "inputs": {
+        "arr": [
+          0,
+          7,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "n": 7
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "arr": false
+        },
+        "errno": 0,
+        "result": 0,
+        "rows_separate": true,
+        "state": {
+          "arr": [
+            0,
+            7,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "origin": "saved_test:MaxProduct_ESTest.test7",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":0,\"state\":{\"arr\":[0,7,0,0,0,0,0,0,0,0]},\"aliases\":{\"arr\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+      "validated": true
+    }
+  },
+  "replay_source_kind": "frozen_annotated_source",
+  "replay_source_sha256": "04a18c120a537c15b472ce5ea218d4aea57d0fbefacdd83ed904fdf5791d0faf",
+  "role": "mutant",
+  "search_elapsed_seconds": 0.9475027160005993,
+  "source_record": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxProduct/mutant_33/c/record.json",
+  "source_record_sha256": "7c133df38c7c60906181a6fb831343e1f5fdc56e065a7bed1803e7c800e8b31a",
+  "verification_outcome": "unknown/timeout",
+  "verification_rerun": false,
+  "verification_reused": true
+}

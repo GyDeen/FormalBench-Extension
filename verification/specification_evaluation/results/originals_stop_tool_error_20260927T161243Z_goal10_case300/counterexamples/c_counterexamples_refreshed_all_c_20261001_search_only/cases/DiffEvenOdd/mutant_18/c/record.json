@@ -1,0 +1,113 @@
+{
+  "attempt_status": "complete",
+  "frozen_spec_sha256": "212675ca77a9e47ddaa84f16eaa959240ab2ca3dbf90c519117cad9a7dcbedd7",
+  "language": "c",
+  "mutant_id": "18",
+  "outcome": "specification violation",
+  "program": "DiffEvenOdd",
+  "replay": {
+    "audit_compilation_failed": false,
+    "checked": 1,
+    "independent_audit": {
+      "baseline_execution": {
+        "elapsed_seconds": 0.0126057720008248,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {
+            "array": false
+          },
+          "errno": 0,
+          "result": -1135,
+          "rows_separate": true,
+          "state": {
+            "array": [
+              1135,
+              0
+            ]
+          }
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":-1135,\"state\":{\"array\":[1135,0]},\"aliases\":{\"array\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "baseline_failed_clauses": [],
+      "baseline_passed": true,
+      "execution": {
+        "elapsed_seconds": 0.012396751999403932,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {
+            "array": false
+          },
+          "errno": 0,
+          "result": 1,
+          "rows_separate": true,
+          "state": {
+            "array": [
+              1135,
+              0
+            ]
+          }
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":1,\"state\":{\"array\":[1135,0]},\"aliases\":{\"array\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "passed": true
+    },
+    "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+    "rejected_candidates": {},
+    "search_exhausted": false,
+    "status": "validated_violation",
+    "timeouts": 0,
+    "witness": {
+      "elapsed_seconds": 0.009599376999176457,
+      "exit_code": 0,
+      "expected": -1135,
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "inputs": {
+        "array": [
+          1135,
+          0
+        ]
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "array": false
+        },
+        "errno": 0,
+        "result": 1,
+        "rows_separate": true,
+        "state": {
+          "array": [
+            1135,
+            0
+          ]
+        }
+      },
+      "origin": "saved_test:DiffEvenOdd_ESTest.test0",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":1,\"state\":{\"array\":[1135,0]},\"aliases\":{\"array\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+      "validated": true
+    }
+  },
+  "replay_source_kind": "frozen_annotated_source",
+  "replay_source_sha256": "33b74cd7d7e85b8c2d98eb715b549a9489917f46f632d1f22e81fdc793bc1edf",
+  "role": "mutant",
+  "search_elapsed_seconds": 1.3182127719992422,
+  "source_record": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/DiffEvenOdd/mutant_18/c/record.json",
+  "source_record_sha256": "0a3c7a764cdcb629e118a6cef526799b96c6c98365be5fcb50df98edb4d9a321",
+  "verification_outcome": "unknown/timeout",
+  "verification_rerun": false,
+  "verification_reused": true
+}

@@ -1,0 +1,141 @@
+{
+  "attempt_status": "complete",
+  "frozen_spec_sha256": "7ad58348ad4dc5e62b9f32a472a33b1530b36b945aea3589ed389512fba5c5e2",
+  "language": "c",
+  "mutant_id": "15",
+  "outcome": "specification violation",
+  "program": "OddLengthSum",
+  "replay": {
+    "audit_compilation_failed": false,
+    "checked": 1,
+    "independent_audit": {
+      "baseline_execution": {
+        "elapsed_seconds": 0.007311162000405602,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {
+            "arr": false
+          },
+          "errno": 0,
+          "result": 20416,
+          "rows_separate": true,
+          "state": {
+            "arr": [
+              0,
+              0,
+              1856,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":20416,\"state\":{\"arr\":[0,0,1856,0,0,0,0,0,0]},\"aliases\":{\"arr\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "baseline_failed_clauses": [],
+      "baseline_passed": true,
+      "execution": {
+        "elapsed_seconds": 0.006964758998947218,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {
+            "arr": false
+          },
+          "errno": 0,
+          "result": 0,
+          "rows_separate": true,
+          "state": {
+            "arr": [
+              0,
+              0,
+              1856,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":0,\"state\":{\"arr\":[0,0,1856,0,0,0,0,0,0]},\"aliases\":{\"arr\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "passed": true
+    },
+    "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+    "rejected_candidates": {},
+    "search_exhausted": false,
+    "status": "validated_violation",
+    "timeouts": 0,
+    "witness": {
+      "elapsed_seconds": 0.006607610999708413,
+      "exit_code": 0,
+      "expected": 20416,
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "inputs": {
+        "arr": [
+          0,
+          0,
+          1856,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "arr": false
+        },
+        "errno": 0,
+        "result": 0,
+        "rows_separate": true,
+        "state": {
+          "arr": [
+            0,
+            0,
+            1856,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "origin": "saved_test:OddLengthSum_ESTest.test0",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":0,\"state\":{\"arr\":[0,0,1856,0,0,0,0,0,0]},\"aliases\":{\"arr\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+      "validated": true
+    }
+  },
+  "replay_source_kind": "frozen_annotated_source",
+  "replay_source_sha256": "5310871557f2172e6dbfc05351a163445f87b6196c053852e1a2f479ca49451b",
+  "role": "mutant",
+  "search_elapsed_seconds": 0.942718356000114,
+  "source_record": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/OddLengthSum/mutant_15/c/record.json",
+  "source_record_sha256": "dbc86ab48763f795ef613b576c8fc33cb9a5fbcdb21f63eacd913394408e134d",
+  "verification_outcome": "unknown/timeout",
+  "verification_rerun": false,
+  "verification_reused": true
+}

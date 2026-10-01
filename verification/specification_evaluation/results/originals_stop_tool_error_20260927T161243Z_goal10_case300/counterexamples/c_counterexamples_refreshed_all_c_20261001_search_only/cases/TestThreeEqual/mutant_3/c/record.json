@@ -1,0 +1,91 @@
+{
+  "attempt_status": "complete",
+  "frozen_spec_sha256": "5b2e35adc9fe18a60d4dacfab61fa4b5a0591020c47f619ff2cbfb4e17deeb92",
+  "language": "c",
+  "mutant_id": "3",
+  "outcome": "specification violation",
+  "program": "TestThreeEqual",
+  "replay": {
+    "audit_compilation_failed": false,
+    "checked": 5,
+    "independent_audit": {
+      "baseline_execution": {
+        "elapsed_seconds": 0.008651969999846187,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {},
+          "errno": 0,
+          "result": 3,
+          "rows_separate": true,
+          "state": {}
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":3,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "baseline_failed_clauses": [],
+      "baseline_passed": true,
+      "execution": {
+        "elapsed_seconds": 0.008273016999737592,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {},
+          "errno": 0,
+          "result": 2,
+          "rows_separate": true,
+          "state": {}
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":2,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "passed": true
+    },
+    "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+    "rejected_candidates": {},
+    "search_exhausted": false,
+    "status": "validated_violation",
+    "timeouts": 0,
+    "witness": {
+      "elapsed_seconds": 0.005983040000501205,
+      "exit_code": 0,
+      "expected": 3,
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "inputs": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": 2,
+        "rows_separate": true,
+        "state": {}
+      },
+      "origin": "saved_test:TestThreeEqual_ESTest.test4",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":2,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+      "validated": true
+    }
+  },
+  "replay_source_kind": "frozen_annotated_source",
+  "replay_source_sha256": "2f7669ec9b0418258a94a874e23ef167a75b8051e9c439c5ff17683a2607805e",
+  "role": "mutant",
+  "search_elapsed_seconds": 0.9901663750006264,
+  "source_record": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/TestThreeEqual/mutant_3/c/record.json",
+  "source_record_sha256": "fc4936caabd1c31e01aea3103471af143e06583faef681c0f5ff55efc01e6bac",
+  "verification_outcome": "unknown/timeout",
+  "verification_rerun": false,
+  "verification_reused": true
+}

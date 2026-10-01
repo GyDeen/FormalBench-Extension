@@ -1,0 +1,143 @@
+{
+  "attempts": [
+    {
+      "elapsed_seconds": 0.00496511500023189,
+      "exit_code": 0,
+      "expected": 1,
+      "failed_clauses": [],
+      "inputs": {
+        "n": 1
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": 1,
+        "rows_separate": true,
+        "state": {}
+      },
+      "origin": "saved_test:Fibonacci_ESTest.test1",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":1,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.005328122000719304,
+      "exit_code": 0,
+      "expected": 0,
+      "failed_clauses": [],
+      "inputs": {
+        "n": 0
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": 0,
+        "rows_separate": true,
+        "state": {}
+      },
+      "origin": "saved_test:Fibonacci_ESTest.test2",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":0,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.005054973998994683,
+      "exit_code": 0,
+      "expected": 1,
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "inputs": {
+        "n": 2
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": 2,
+        "rows_separate": true,
+        "state": {}
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":2,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+      "validated": true
+    }
+  ],
+  "audit_compilation_failed": false,
+  "checked": 3,
+  "independent_audit": {
+    "baseline_execution": {
+      "elapsed_seconds": 0.007593936999910511,
+      "exit_code": 0,
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": 1,
+        "rows_separate": true,
+        "state": {}
+      },
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":1,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    "baseline_failed_clauses": [],
+    "baseline_passed": true,
+    "execution": {
+      "elapsed_seconds": 0.008248956999523216,
+      "exit_code": 0,
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": 2,
+        "rows_separate": true,
+        "state": {}
+      },
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":2,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    "failed_clauses": [
+      "frozen_return_value_or_array_contents"
+    ],
+    "passed": true
+  },
+  "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+  "rejected_candidates": {},
+  "search_exhausted": false,
+  "status": "validated_violation",
+  "timeouts": 0,
+  "witness": {
+    "elapsed_seconds": 0.005054973998994683,
+    "exit_code": 0,
+    "expected": 1,
+    "failed_clauses": [
+      "frozen_return_value_or_array_contents"
+    ],
+    "inputs": {
+      "n": 2
+    },
+    "observation": {
+      "EDOM": 33,
+      "aliases": {},
+      "errno": 0,
+      "result": 2,
+      "rows_separate": true,
+      "state": {}
+    },
+    "origin": "bounded_search_seed726",
+    "preconditions_satisfied": true,
+    "status": "returned",
+    "stderr": "",
+    "stdout": "\n@@REPLAY {\"result\":2,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+    "validated": true
+  }
+}

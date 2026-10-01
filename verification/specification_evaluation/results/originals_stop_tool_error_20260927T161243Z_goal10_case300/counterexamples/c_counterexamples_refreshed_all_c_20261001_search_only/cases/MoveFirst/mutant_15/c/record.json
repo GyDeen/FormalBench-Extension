@@ -1,0 +1,89 @@
+{
+  "attempt_status": "complete",
+  "frozen_spec_sha256": "7f684c126ace1d3bc4dacd84119a85312d38c46903ebe58a48948636f4c9e604",
+  "language": "c",
+  "mutant_id": "15",
+  "outcome": "precondition/RTE failure",
+  "program": "MoveFirst",
+  "replay": {
+    "audit_compilation_failed": false,
+    "checked": 182,
+    "independent_audit": {
+      "baseline_execution": {
+        "elapsed_seconds": 0.004700239000158035,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {
+            "testArray": false
+          },
+          "errno": 0,
+          "result": [
+            0,
+            0,
+            0
+          ],
+          "rows_separate": true,
+          "state": {
+            "testArray": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":[0,0,0],\"state\":{\"testArray\":[0,0,0]},\"aliases\":{\"testArray\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "baseline_failed_clauses": [],
+      "baseline_passed": true,
+      "execution": {
+        "elapsed_seconds": 0.0059607610000966815,
+        "exit_code": 72,
+        "status": "runtime_safety",
+        "stderr": "JAVA_ARRAY_ERROR: INDEX_OUT_OF_BOUNDS (java.lang.ArrayIndexOutOfBoundsException)\n",
+        "stdout": ""
+      },
+      "failed_clauses": [],
+      "passed": true
+    },
+    "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+    "rejected_candidates": {},
+    "search_exhausted": false,
+    "status": "validated_safety_failure",
+    "timeouts": 0,
+    "witness": {
+      "elapsed_seconds": 0.007403392000924214,
+      "exit_code": 72,
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "failed_clauses": [],
+      "inputs": {
+        "testArray": [
+          0,
+          0,
+          0
+        ]
+      },
+      "origin": "saved_test:MoveFirst_ESTest.test0",
+      "preconditions_satisfied": true,
+      "status": "runtime_safety",
+      "stderr": "JAVA_ARRAY_ERROR: INDEX_OUT_OF_BOUNDS (java.lang.ArrayIndexOutOfBoundsException)\n",
+      "stdout": "",
+      "validated": true
+    }
+  },
+  "replay_source_kind": "raw_source_after_annotation_transfer_failure",
+  "replay_source_sha256": "e3f50e21ec25edf174add1dc022949b96a8368b305a64e90ac60ca72471be85b",
+  "role": "mutant",
+  "search_elapsed_seconds": 4.544729682000252,
+  "source_record": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MoveFirst/mutant_15/c/record.json",
+  "source_record_sha256": "85ef71b8752f0dd908bf33e2adc78da756b26a55cdbc68ff2685e6b82aa6430f",
+  "verification_outcome": "not run",
+  "verification_rerun": false,
+  "verification_reused": true
+}

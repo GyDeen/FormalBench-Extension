@@ -1,0 +1,103 @@
+{
+  "attempt_status": "complete",
+  "frozen_spec_sha256": "946d512f66da48651d0d8ac682c6f5586e271b89fd51705a0b4ba98eabb9a0ce",
+  "language": "c",
+  "mutant_id": "4",
+  "outcome": "specification violation",
+  "program": "MinCoins",
+  "replay": {
+    "audit_compilation_failed": false,
+    "checked": 2,
+    "independent_audit": {
+      "baseline_execution": {
+        "elapsed_seconds": 0.013212338999437634,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {
+            "coins": false
+          },
+          "errno": 0,
+          "result": 0,
+          "rows_separate": true,
+          "state": {
+            "coins": []
+          }
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":0,\"state\":{\"coins\":[]},\"aliases\":{\"coins\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "baseline_failed_clauses": [],
+      "baseline_passed": true,
+      "execution": {
+        "elapsed_seconds": 0.012352362999081379,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {
+            "coins": false
+          },
+          "errno": 0,
+          "result": 2147483647,
+          "rows_separate": true,
+          "state": {
+            "coins": []
+          }
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":2147483647,\"state\":{\"coins\":[]},\"aliases\":{\"coins\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "passed": true
+    },
+    "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+    "rejected_candidates": {},
+    "search_exhausted": false,
+    "status": "validated_violation",
+    "timeouts": 0,
+    "witness": {
+      "elapsed_seconds": 0.005498194999745465,
+      "exit_code": 0,
+      "expected": 0,
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "inputs": {
+        "coins": [],
+        "m": 0,
+        "v": 0
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "coins": false
+        },
+        "errno": 0,
+        "result": 2147483647,
+        "rows_separate": true,
+        "state": {
+          "coins": []
+        }
+      },
+      "origin": "saved_test:MinCoins_ESTest.test06",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":2147483647,\"state\":{\"coins\":[]},\"aliases\":{\"coins\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+      "validated": true
+    }
+  },
+  "replay_source_kind": "frozen_annotated_source",
+  "replay_source_sha256": "11cc62069139a3f8451bce66d8908fd7d23c51d4749015540118b2b7b590f8f7",
+  "role": "mutant",
+  "search_elapsed_seconds": 1.4584116200003336,
+  "source_record": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinCoins/mutant_4/c/record.json",
+  "source_record_sha256": "3e08e75e0853aee9ee431d10a32bbb73ae4c9c731669a19a02b6073100437036",
+  "verification_outcome": "unknown/timeout",
+  "verification_rerun": false,
+  "verification_reused": true
+}

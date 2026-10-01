@@ -1,0 +1,680 @@
+{
+  "attempts": [
+    {
+      "elapsed_seconds": 0.005010369999581599,
+      "exit_code": 0,
+      "expected": 0,
+      "failed_clauses": [],
+      "inputs": {
+        "arr": [
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0
+        ],
+        "n": 3
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "arr": false
+        },
+        "errno": 0,
+        "result": 0,
+        "rows_separate": true,
+        "state": {
+          "arr": [
+            0,
+            0,
+            -1,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "origin": "saved_test:MaxSumOfThreeConsecutive_ESTest.test1",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":0,\"state\":{\"arr\":[0,0,-1,0,0,0]},\"aliases\":{\"arr\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.00405045800107473,
+      "exit_code": 0,
+      "expected": 0,
+      "failed_clauses": [],
+      "inputs": {
+        "arr": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "n": 1
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "arr": false
+        },
+        "errno": 0,
+        "result": 0,
+        "rows_separate": true,
+        "state": {
+          "arr": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "origin": "saved_test:MaxSumOfThreeConsecutive_ESTest.test2",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":0,\"state\":{\"arr\":[0,0,0,0]},\"aliases\":{\"arr\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.004533063000053517,
+      "exit_code": 75,
+      "expected": 1,
+      "failed_clauses": [],
+      "inputs": {
+        "arr": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "n": 3
+      },
+      "origin": "saved_test:MaxSumOfThreeConsecutive_ESTest.test3",
+      "preconditions_satisfied": true,
+      "status": "abnormal_exit",
+      "stderr": "JAVA_ARITHMETIC_ERROR: DIVIDE_BY_ZERO\n",
+      "stdout": ""
+    },
+    {
+      "elapsed_seconds": 0.00416016900089744,
+      "exit_code": 0,
+      "expected": -340,
+      "failed_clauses": [],
+      "inputs": {
+        "arr": [
+          0,
+          -340,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "n": 2
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "arr": false
+        },
+        "errno": 0,
+        "result": -340,
+        "rows_separate": true,
+        "state": {
+          "arr": [
+            0,
+            -340,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "origin": "saved_test:MaxSumOfThreeConsecutive_ESTest.test4",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":-340,\"state\":{\"arr\":[0,-340,0,0,0,0,0,0,0]},\"aliases\":{\"arr\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.004445715001565986,
+      "exit_code": 0,
+      "expected": 0,
+      "failed_clauses": [],
+      "inputs": {
+        "arr": [
+          0
+        ],
+        "n": 1
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "arr": false
+        },
+        "errno": 0,
+        "result": 0,
+        "rows_separate": true,
+        "state": {
+          "arr": [
+            0
+          ]
+        }
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":0,\"state\":{\"arr\":[0]},\"aliases\":{\"arr\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.004648651000024984,
+      "exit_code": 0,
+      "expected": -1,
+      "failed_clauses": [],
+      "inputs": {
+        "arr": [
+          -1
+        ],
+        "n": 1
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "arr": false
+        },
+        "errno": 0,
+        "result": -1,
+        "rows_separate": true,
+        "state": {
+          "arr": [
+            -1
+          ]
+        }
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":-1,\"state\":{\"arr\":[-1]},\"aliases\":{\"arr\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.004568348998873262,
+      "exit_code": 0,
+      "expected": 1,
+      "failed_clauses": [],
+      "inputs": {
+        "arr": [
+          1
+        ],
+        "n": 1
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "arr": false
+        },
+        "errno": 0,
+        "result": 1,
+        "rows_separate": true,
+        "state": {
+          "arr": [
+            1
+          ]
+        }
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":1,\"state\":{\"arr\":[1]},\"aliases\":{\"arr\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.003950799999074661,
+      "exit_code": 0,
+      "expected": 2,
+      "failed_clauses": [],
+      "inputs": {
+        "arr": [
+          2
+        ],
+        "n": 1
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "arr": false
+        },
+        "errno": 0,
+        "result": 2,
+        "rows_separate": true,
+        "state": {
+          "arr": [
+            2
+          ]
+        }
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":2,\"state\":{\"arr\":[2]},\"aliases\":{\"arr\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.0041072719996009255,
+      "exit_code": 0,
+      "expected": 1,
+      "failed_clauses": [],
+      "inputs": {
+        "arr": [
+          1,
+          0
+        ],
+        "n": 1
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "arr": false
+        },
+        "errno": 0,
+        "result": 1,
+        "rows_separate": true,
+        "state": {
+          "arr": [
+            1,
+            0
+          ]
+        }
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":1,\"state\":{\"arr\":[1,0]},\"aliases\":{\"arr\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.004892519000350148,
+      "exit_code": 0,
+      "expected": 1,
+      "failed_clauses": [],
+      "inputs": {
+        "arr": [
+          1,
+          0
+        ],
+        "n": 2
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "arr": false
+        },
+        "errno": 0,
+        "result": 1,
+        "rows_separate": true,
+        "state": {
+          "arr": [
+            1,
+            0
+          ]
+        }
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":1,\"state\":{\"arr\":[1,0]},\"aliases\":{\"arr\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.004410827999890898,
+      "exit_code": 0,
+      "expected": 0,
+      "failed_clauses": [],
+      "inputs": {
+        "arr": [
+          0,
+          1
+        ],
+        "n": 1
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "arr": false
+        },
+        "errno": 0,
+        "result": 0,
+        "rows_separate": true,
+        "state": {
+          "arr": [
+            0,
+            1
+          ]
+        }
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":0,\"state\":{\"arr\":[0,1]},\"aliases\":{\"arr\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.0040764799996395595,
+      "exit_code": 0,
+      "expected": 1,
+      "failed_clauses": [],
+      "inputs": {
+        "arr": [
+          0,
+          1
+        ],
+        "n": 2
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "arr": false
+        },
+        "errno": 0,
+        "result": 1,
+        "rows_separate": true,
+        "state": {
+          "arr": [
+            0,
+            1
+          ]
+        }
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":1,\"state\":{\"arr\":[0,1]},\"aliases\":{\"arr\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.005209756000112975,
+      "exit_code": 0,
+      "expected": 2,
+      "failed_clauses": [],
+      "inputs": {
+        "arr": [
+          2,
+          1
+        ],
+        "n": 1
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "arr": false
+        },
+        "errno": 0,
+        "result": 2,
+        "rows_separate": true,
+        "state": {
+          "arr": [
+            2,
+            1
+          ]
+        }
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":2,\"state\":{\"arr\":[2,1]},\"aliases\":{\"arr\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.004249187999448623,
+      "exit_code": 0,
+      "expected": 3,
+      "failed_clauses": [],
+      "inputs": {
+        "arr": [
+          2,
+          1
+        ],
+        "n": 2
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "arr": false
+        },
+        "errno": 0,
+        "result": 3,
+        "rows_separate": true,
+        "state": {
+          "arr": [
+            2,
+            1
+          ]
+        }
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":3,\"state\":{\"arr\":[2,1]},\"aliases\":{\"arr\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.004006942999694729,
+      "exit_code": 0,
+      "expected": -1,
+      "failed_clauses": [],
+      "inputs": {
+        "arr": [
+          -1,
+          0,
+          1
+        ],
+        "n": 1
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "arr": false
+        },
+        "errno": 0,
+        "result": -1,
+        "rows_separate": true,
+        "state": {
+          "arr": [
+            -1,
+            0,
+            1
+          ]
+        }
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":-1,\"state\":{\"arr\":[-1,0,1]},\"aliases\":{\"arr\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.004609616000379901,
+      "exit_code": 0,
+      "expected": -1,
+      "failed_clauses": [],
+      "inputs": {
+        "arr": [
+          -1,
+          0,
+          1
+        ],
+        "n": 2
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "arr": false
+        },
+        "errno": 0,
+        "result": -1,
+        "rows_separate": true,
+        "state": {
+          "arr": [
+            -1,
+            0,
+            1
+          ]
+        }
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":-1,\"state\":{\"arr\":[-1,0,1]},\"aliases\":{\"arr\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.005107984999995097,
+      "exit_code": 0,
+      "expected": 1,
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "inputs": {
+        "arr": [
+          -1,
+          0,
+          1
+        ],
+        "n": 3
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "arr": false
+        },
+        "errno": 0,
+        "result": 0,
+        "rows_separate": true,
+        "state": {
+          "arr": [
+            -1,
+            0,
+            1
+          ]
+        }
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":0,\"state\":{\"arr\":[-1,0,1]},\"aliases\":{\"arr\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+      "validated": true
+    }
+  ],
+  "audit_compilation_failed": false,
+  "checked": 17,
+  "independent_audit": {
+    "baseline_execution": {
+      "elapsed_seconds": 0.006876980000015465,
+      "exit_code": 0,
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "arr": false
+        },
+        "errno": 0,
+        "result": 1,
+        "rows_separate": true,
+        "state": {
+          "arr": [
+            -1,
+            0,
+            1
+          ]
+        }
+      },
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":1,\"state\":{\"arr\":[-1,0,1]},\"aliases\":{\"arr\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    "baseline_failed_clauses": [],
+    "baseline_passed": true,
+    "execution": {
+      "elapsed_seconds": 0.006607535000512144,
+      "exit_code": 0,
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "arr": false
+        },
+        "errno": 0,
+        "result": 0,
+        "rows_separate": true,
+        "state": {
+          "arr": [
+            -1,
+            0,
+            1
+          ]
+        }
+      },
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":0,\"state\":{\"arr\":[-1,0,1]},\"aliases\":{\"arr\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    "failed_clauses": [
+      "frozen_return_value_or_array_contents"
+    ],
+    "passed": true
+  },
+  "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+  "rejected_candidates": {},
+  "search_exhausted": false,
+  "status": "validated_violation",
+  "timeouts": 0,
+  "witness": {
+    "elapsed_seconds": 0.005107984999995097,
+    "exit_code": 0,
+    "expected": 1,
+    "failed_clauses": [
+      "frozen_return_value_or_array_contents"
+    ],
+    "inputs": {
+      "arr": [
+        -1,
+        0,
+        1
+      ],
+      "n": 3
+    },
+    "observation": {
+      "EDOM": 33,
+      "aliases": {
+        "arr": false
+      },
+      "errno": 0,
+      "result": 0,
+      "rows_separate": true,
+      "state": {
+        "arr": [
+          -1,
+          0,
+          1
+        ]
+      }
+    },
+    "origin": "bounded_search_seed726",
+    "preconditions_satisfied": true,
+    "status": "returned",
+    "stderr": "",
+    "stdout": "\n@@REPLAY {\"result\":0,\"state\":{\"arr\":[-1,0,1]},\"aliases\":{\"arr\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+    "validated": true
+  }
+}

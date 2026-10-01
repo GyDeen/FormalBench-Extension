@@ -40,7 +40,7 @@
       "text": "/*@\n  requires jintarray_valid_nonnull(l1);\n  assigns \\nothing;\n  frees \\nothing;\n  ensures jintarray2_valid_nonnull(\\result);\n  ensures \\result->length == (l1->length < 2 ? 0 : l1->length - 1);\n  ensures \\fresh(\\result, sizeof(*\\result));\n  ensures \\result->length > 0 ==> \\fresh(\\result->data, \\result->length * sizeof(JIntArray));\n  ensures \\forall integer k; 0 <= k < \\result->length ==>\n    jintarray_valid_nonnull(\\result->data[k]) && \\result->data[k]->length == 2 &&\n    \\fresh(\\result->data[k], sizeof(*\\result->data[k])) &&\n    \\fresh(\\result->data[k]->data, 2 * sizeof(int32_t)) &&\n    \\result->data[k]->data[0] == l1->data[k] && \\result->data[k]->data[1] == l1->data[k + 1];\n  ensures \\forall integer p, q; 0 <= p < q < \\result->length ==>\n    \\separated(\\result->data[p], \\result->data[q]) &&\n    \\separated(\\result->data[p]->data + (0 .. 1), \\result->data[q]->data + (0 .. 1));\n*/"
     },
     {
-      "boundary_token": 122,
+      "boundary_token": 127,
       "following_tokens": [
         "for",
         "("
@@ -50,11 +50,11 @@
       "loop_id": "loop_1",
       "next_token": "for",
       "target": "loop",
-      "text": "/*@\n      loop invariant 0 <= i <= limit && limit == l1->length - 1;\n      loop invariant jintarray2_valid_nonnull(result) && result->length == limit;\n      loop invariant \\forall integer k; 0 <= k < limit ==> result->data[k] != \\null && result->data[k]->length == 2;\n      loop invariant \\forall integer k; 0 <= k < i ==> result->data[k]->data[0] == l1->data[k] && result->data[k]->data[1] == l1->data[k + 1];\n      loop assigns i, result->data[0 .. limit - 1]->data[0 .. 1];\n      loop variant limit - i;\n    */"
+      "text": "/*@\n      loop invariant 0 <= i <= l1->length - 1;\n      loop invariant jintarray2_valid_nonnull(result) && result->length == l1->length - 1;\n      loop invariant \\forall integer k; 0 <= k < l1->length - 1 ==> result->data[k] != \\null && result->data[k]->length == 2;\n      loop invariant \\forall integer k; 0 <= k < i ==> result->data[k]->data[0] == l1->data[k] && result->data[k]->data[1] == l1->data[k + 1];\n      loop assigns i, result->data[0 .. l1->length - 2]->data[0 .. 1];\n      loop variant l1->length - 1 - i;\n    */"
     }
   ],
   "language": "c",
-  "original_executable_token_sha256": "e8cee512f4c9358af87ccab1e870b90b357db6189128c657593200753fe16971",
+  "original_executable_token_sha256": "6f4194528e9ed923b288a9d85a66dec8207c64195c030ad508f34a49d5fa2269",
   "program": "PairWise",
   "schema_version": "1.0"
 }

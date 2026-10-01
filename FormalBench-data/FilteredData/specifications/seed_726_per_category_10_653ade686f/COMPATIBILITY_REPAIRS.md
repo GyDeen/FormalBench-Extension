@@ -43,3 +43,32 @@ Local diagnostic evidence is under
 These diagnostic artifacts remain ignored by Git. The specification manifest
 records revised hashes, individual record paths, and unresolved proof status.
 The full batch remains stopped.
+
+## Four original C translation revisions, 2026-10-01
+
+MoveFirst, MultiplyElements, PairWise, and NextPowerOf2 were retranslated from
+unchanged Java originals using the Java-to-C skill and the shared mutant emitter.
+Only those four raw C originals and their annotated counterparts were updated;
+the other 46 raw C originals were verified byte-for-byte unchanged.
+
+Direct JArray length expressions replace the original-only length/limit caches.
+The System.arraycopy expansion and general masked-distance shift helper use the
+same structure as the shared translator. The refreshed ACSL retains behavioral
+postconditions and input domains, with invariants adapted to the actual source.
+The new annotations were frozen before checking any corresponding mutants.
+
+All 15 existing differential tests passed: all 16 calls match Java with no
+observed differences or timeouts. No boundary cases were added. All four
+originals pass direct ACSL parsing and WP/RTE task generation. Original proof
+checks at 10 seconds per goal / 300 seconds per case completed without tool
+failures, but all four remain unknown/timeout due to unresolved obligations.
+
+47 of the 50 retained C mutants pass refreshed transfer and task generation.
+NextPowerOf2/8, /9, and /10 no longer define the left-shift helper after actual
+Java mutations replace or delete the shift; these three still fail helper
+contract attachment. Their solver proofs were not rerun in this diagnostic.
+
+Evidence: `output/c_translation_repairs_20261001/verification_summary.json`.
+New frozen inputs and original records:
+`verification/specification_evaluation/results/translation_repairs_20261001_goal10_case300/`.
+Historical results and frozen specifications retain their old source provenance.

@@ -18,8 +18,16 @@ reading/*
 /.downloads
 /.tools
 /major
+# Local generated outputs and the report maintained in its own Git repository.
+/output/
+/FormalBench-Extension-Report/
 test/
 tests/
+# Local verification tests and solver/toolchain configuration artifacts.
+/verification/specification_evaluation/test_*.py
+/verification/**/*.conf
+/verification/**/*.ml
+/verification/**/*.smt2
 # Ignore generated mutant directories by default; selected Java/C pairs are tracked explicitly.
 /FormalBench-data/FilteredData/fault_mutants/run_ukcw__uc/*/mutants/*/
 # Local archive of mutant sources excluded from the paired completeness evaluation.
@@ -55,8 +63,14 @@ tests/
 !/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/**/
 !/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/run.json
 !/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/summary.json
+!/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/summary_verification.json
+!/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/c_run_archive.json
+!/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/c_run_archives/*.json
 !/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/README.md
 !/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/statistics.json
+!/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/results_summary.json
+!/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/final_report_audit.json
+!/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/java_workload_snapshot.json
 !/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/sort_c_integration.json
 !/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/frozen_specs/**
 !/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/*/*/*/record.json
@@ -67,6 +81,41 @@ tests/
 !/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/*/*/java/*.java
 # Keep archived attempts and duplicated trusted support headers local.
 /verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/history/
+
+# C counterexample evidence is archived inside the final experiment.
+# Separate stopped/pilot runs, solver files and binaries remain local.
+!/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/README.md
+!/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/*.json
+!/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/source_summaries/*.json
+!/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/*/README.md
+!/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/*/run.json
+!/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/*/summary.json
+!/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/*/audit.json
+!/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/*/stop.json
+# Only the refreshed full-population search supplies final per-case C evidence.
+# Keep historical run summaries above, but exclude duplicate raw case archives.
+/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/c_counterexamples_all_c_20261001_search_only/cases/
+/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/c_counterexamples_all_c_20261001_workers4/cases/
+/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/c_counterexamples_proved_originals_20261001_goal10_case300/cases/
+!/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/c_counterexamples_refreshed_all_c_20261001_search_only/cases/*/*/c/record.json
+!/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/c_counterexamples_refreshed_all_c_20261001_search_only/cases/*/*/c/command.json
+!/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/c_counterexamples_refreshed_all_c_20261001_search_only/cases/*/*/c/wp-report.json
+!/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/c_counterexamples_refreshed_all_c_20261001_search_only/cases/*/*/c/replay.json
+!/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/c_counterexamples_refreshed_all_c_20261001_search_only/cases/*/*/c/native*compile.json
+!/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/c_counterexamples_refreshed_all_c_20261001_search_only/cases/*/*/c/*.c
+# Nested copies of earlier searches are cache inputs, not final run evidence.
+/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/*/counterexamples/
+
+# Matching corrected-original verification records and their source snapshots.
+!/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/original_verification/integration.json
+!/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/original_verification/source_records/*.json
+!/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/original_verification/c_corrected_originals_verification_20261001/**/*.json
+!/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/original_verification/c_corrected_originals_verification_20261001/**/*.c
+!/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/original_verification/c_corrected_originals_verification_20261001/**/*.md
+# Retain repair summaries while keeping trial sources and task-generation files local.
+!/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/original_verification/translation_repairs_20261001/*.json
+!/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/original_verification/translation_repairs_20261001/README.md
+/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/original_verification/translation_repairs_20261001/*/
 
 # Generated compiler output (after allowlists so it cannot be re-included).
 /FormalBench-data/FilteredData/compiled_classes/

@@ -1,0 +1,90 @@
+{
+  "attempt_status": "complete",
+  "frozen_spec_sha256": "9006fb206aa515ca89b7e4fb025bdf75a313c84e5224500e33b39991da4d5a84",
+  "language": "c",
+  "mutant_id": "15",
+  "outcome": "specification violation",
+  "program": "ParallelogramPerimeter",
+  "replay": {
+    "audit_compilation_failed": false,
+    "checked": 4,
+    "independent_audit": {
+      "baseline_execution": {
+        "elapsed_seconds": 0.00640181900052994,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {},
+          "errno": 0,
+          "result": 7227602,
+          "rows_separate": true,
+          "state": {}
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":7227602,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "baseline_failed_clauses": [],
+      "baseline_passed": true,
+      "execution": {
+        "elapsed_seconds": 0.008995914000479388,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {},
+          "errno": 0,
+          "result": 2,
+          "rows_separate": true,
+          "state": {}
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":2,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "passed": true
+    },
+    "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+    "rejected_candidates": {},
+    "search_exhausted": false,
+    "status": "validated_violation",
+    "timeouts": 0,
+    "witness": {
+      "elapsed_seconds": 0.004488197000682703,
+      "exit_code": 0,
+      "expected": 7227602,
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "inputs": {
+        "b": 1901,
+        "h": 1901
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": 2,
+        "rows_separate": true,
+        "state": {}
+      },
+      "origin": "saved_test:ParallelogramPerimeter_ESTest.test3",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":2,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+      "validated": true
+    }
+  },
+  "replay_source_kind": "frozen_annotated_source",
+  "replay_source_sha256": "2902f84f656136a2b84bf16ef76e717c40cfeaddcfea09c8e85353a6a890f75c",
+  "role": "mutant",
+  "search_elapsed_seconds": 0.9943488240005536,
+  "source_record": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/ParallelogramPerimeter/mutant_15/c/record.json",
+  "source_record_sha256": "d1eb77e29a2be6a8076bc7d2df376ba3ba690c926af195f6659d17ff4795ef0b",
+  "verification_outcome": "unknown/timeout",
+  "verification_rerun": false,
+  "verification_reused": true
+}

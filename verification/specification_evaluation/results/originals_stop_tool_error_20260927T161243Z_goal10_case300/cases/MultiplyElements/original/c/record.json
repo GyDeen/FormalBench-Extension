@@ -1,12 +1,12 @@
 {
   "adapter_sha256": {
-    "annotations.py": "c971d29b176cd45810857db756883638e9551bb950d5cb1426e5bcf57f9e497e",
-    "c_bindings.py": "2f21fdaa46151906b048409a92d784b801ecdf78191436c2976999a4c36d3cf6",
-    "c_structure.py": "772364a38abaceacb66e98c0aee01b26a188bbb883e4ee8135d80b5fa8b50540",
-    "verifiers.py": "9977eb05f2cb524e9647ef1578aad446fe92c2b4f2ae3faae8bc880063c56975"
+    "annotations.py": "7f730d0275c185de8199e16b487819eb823acaba46195f4e73152471bb1097e8",
+    "c_bindings.py": "fc8f9d74f58723d57562bc5f21087a9ce9e959986a9edd53b26d07b9c9fca1e1",
+    "c_structure.py": "efcea8872a653827d977ef2e9c102acc70a44952a6e316a52cef4779a738a0d5",
+    "verifiers.py": "8daa5f32b6f8aaa007a40ac75afb97d5512d5fe6cf0e48862405557aa310a3a5"
   },
   "annotated_source": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
-  "annotated_source_sha256": "0018ce96593fef23efe1273b63691d4296eadd05276ef5d4253c867e5d24f676",
+  "annotated_source_sha256": "0daf91066baed001755f30b720c51839975721ef5f571f2a79e96f2eb4bec4c2",
   "attempt_status": "complete",
   "command": [
     "/root/.opam/default/bin/frama-c",
@@ -15,7 +15,7 @@
     "-load-module",
     "/mnt/d/ResearchProject/.tools/frama-c-compat/1e5af7b10d6dd41df377/float_negation_33.cmxs",
     "-paired-c-prepare",
-    "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
     "-then",
     "-wp",
     "-wp-rte",
@@ -35,18 +35,18 @@
     "-wp-cache",
     "none",
     "-wp-report-json",
-    "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/wp-report.json"
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/wp-report.json"
   ],
-  "elapsed_seconds": 45.548,
+  "elapsed_seconds": 46.061,
   "exit_code": 0,
   "failure_stage": null,
   "frozen_spec": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/frozen_specs/c/MultiplyElements.json",
-  "frozen_spec_sha256": "db5fde2d3f2c1b02b696f99153afa188259f5c53c5dba4bcc42d09d2ad60a7cc",
+  "frozen_spec_sha256": "9e889b41292d2efa3d496452cca41ba67946cb537e7dfb287447c1c08b94d5dd",
   "goals": [
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "java_add",
       "goal": "typed_ref_java_add_ensures",
       "line": 6,
@@ -56,12 +56,12 @@
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.00132
+          "time": 0.00158
         },
         {
           "prover": "Z3:4.8.12",
           "success": 1,
-          "time": 0.0163
+          "time": 0.0168
         }
       ],
       "state": "proved",
@@ -72,7 +72,7 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "java_add",
       "goal": "typed_ref_java_add_assigns",
       "line": 8,
@@ -93,17 +93,17 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "java_mul",
       "goal": "typed_ref_java_mul_ensures",
-      "line": 22,
+      "line": 16,
       "property": "java_mul_ensures",
       "proved_subgoals": 0,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.00143
+          "time": 0.00169
         },
         {
           "prover": "Alt-Ergo:2.4.3",
@@ -119,10 +119,10 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "java_mul",
       "goal": "typed_ref_java_mul_assigns",
-      "line": 24,
+      "line": 18,
       "property": "java_mul_assigns",
       "proved_subgoals": 1,
       "provers": [
@@ -140,22 +140,22 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "java_sub",
       "goal": "typed_ref_java_sub_ensures",
-      "line": 14,
+      "line": 11,
       "property": "java_sub_ensures",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.00136
+          "time": 0.00125
         },
         {
           "prover": "Z3:4.8.12",
           "success": 1,
-          "time": 0.0165
+          "time": 0.023
         }
       ],
       "state": "proved",
@@ -166,10 +166,10 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "java_sub",
       "goal": "typed_ref_java_sub_assigns",
-      "line": 16,
+      "line": 13,
       "property": "java_sub_assigns",
       "proved_subgoals": 1,
       "provers": [
@@ -187,10 +187,10 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_terminates",
-      "line": 40,
+      "line": 32,
       "property": "multiplyElements_terminates",
       "proved_subgoals": 1,
       "provers": [
@@ -208,22 +208,22 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_ensures",
-      "line": 33,
+      "line": 25,
       "property": "multiplyElements_ensures",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.03
+          "time": 0.0407
         },
         {
           "prover": "Alt-Ergo:2.4.3",
           "success": 1,
-          "time": 0.00826
+          "time": 0.00884
         }
       ],
       "state": "proved",
@@ -234,22 +234,22 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_ensures_2",
-      "line": 34,
+      "line": 26,
       "property": "multiplyElements_ensures_2",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.0289
+          "time": 0.0453
         },
         {
           "prover": "Alt-Ergo:2.4.3",
           "success": 1,
-          "time": 0.0113
+          "time": 0.0118
         }
       ],
       "state": "proved",
@@ -260,17 +260,17 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_ensures_3",
-      "line": 35,
+      "line": 27,
       "property": "multiplyElements_ensures_3",
       "proved_subgoals": 0,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.0338
+          "time": 0.0481
         },
         {
           "prover": "Alt-Ergo:2.4.3",
@@ -286,17 +286,17 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_ensures_4",
-      "line": 36,
+      "line": 28,
       "property": "multiplyElements_ensures_4",
       "proved_subgoals": 0,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.0531
+          "time": 0.0413
         },
         {
           "prover": "Alt-Ergo:2.4.3",
@@ -312,22 +312,22 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_ensures_5",
-      "line": 38,
+      "line": 30,
       "property": "multiplyElements_ensures_5",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.0393
+          "time": 0.0451
         },
         {
           "prover": "Alt-Ergo:2.4.3",
           "success": 1,
-          "time": 0.0208
+          "time": 0.017
         }
       ],
       "state": "proved",
@@ -338,10 +338,10 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_exits",
-      "line": 40,
+      "line": 32,
       "property": "multiplyElements_exits",
       "proved_subgoals": 1,
       "provers": [
@@ -359,22 +359,17 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_loop_invariant_established",
-      "line": 48,
+      "line": 38,
       "property": "multiplyElements_loop_invariant",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
-          "success": 0,
-          "time": 0.0086
-        },
-        {
-          "prover": "Alt-Ergo:2.4.3",
           "success": 1,
-          "time": 0.015
+          "time": 0
         }
       ],
       "state": "proved",
@@ -385,22 +380,22 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_loop_invariant_preserved",
-      "line": 48,
+      "line": 38,
       "property": "multiplyElements_loop_invariant",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.022
+          "time": 0.0273
         },
         {
-          "prover": "Alt-Ergo:2.4.3",
+          "prover": "Z3:4.8.12",
           "success": 1,
-          "time": 0.0212
+          "time": 0.0776
         }
       ],
       "state": "proved",
@@ -411,22 +406,22 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_loop_invariant_2_established",
-      "line": 49,
+      "line": 39,
       "property": "multiplyElements_loop_invariant_2",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.00805
+          "time": 0.00782
         },
         {
           "prover": "Alt-Ergo:2.4.3",
           "success": 1,
-          "time": 0.0156
+          "time": 0.0215
         }
       ],
       "state": "proved",
@@ -437,22 +432,22 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_loop_invariant_2_preserved",
-      "line": 49,
+      "line": 39,
       "property": "multiplyElements_loop_invariant_2",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.0268
+          "time": 0.0345
         },
         {
-          "prover": "Alt-Ergo:2.4.3",
+          "prover": "Z3:4.8.12",
           "success": 1,
-          "time": 0.0308
+          "time": 0.0736
         }
       ],
       "state": "proved",
@@ -463,10 +458,10 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_loop_invariant_3_established",
-      "line": 50,
+      "line": 40,
       "property": "multiplyElements_loop_invariant_3",
       "proved_subgoals": 1,
       "provers": [
@@ -484,17 +479,17 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_loop_invariant_3_preserved",
-      "line": 50,
+      "line": 40,
       "property": "multiplyElements_loop_invariant_3",
       "proved_subgoals": 0,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.0269
+          "time": 0.0346
         },
         {
           "prover": "Alt-Ergo:2.4.3",
@@ -510,10 +505,10 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_loop_assigns_part1",
-      "line": 51,
+      "line": 41,
       "property": "multiplyElements_loop_assigns",
       "proved_subgoals": 1,
       "provers": [
@@ -531,17 +526,22 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_loop_assigns_part2",
-      "line": 51,
+      "line": 41,
       "property": "multiplyElements_loop_assigns",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
+          "success": 0,
+          "time": 0.0337
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
           "success": 1,
-          "time": 0
+          "time": 0.00846
         }
       ],
       "state": "proved",
@@ -552,10 +552,10 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_loop_assigns_part3",
-      "line": 51,
+      "line": 41,
       "property": "multiplyElements_loop_assigns",
       "proved_subgoals": 1,
       "provers": [
@@ -573,10 +573,10 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_loop_assigns_part4",
-      "line": 51,
+      "line": 41,
       "property": "multiplyElements_loop_assigns",
       "proved_subgoals": 1,
       "provers": [
@@ -594,10 +594,10 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_loop_assigns_part5",
-      "line": 51,
+      "line": 41,
       "property": "multiplyElements_loop_assigns",
       "proved_subgoals": 1,
       "provers": [
@@ -615,10 +615,10 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_loop_assigns_part6",
-      "line": 51,
+      "line": 41,
       "property": "multiplyElements_loop_assigns",
       "proved_subgoals": 1,
       "provers": [
@@ -636,22 +636,64 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_loop_assigns_part7",
-      "line": 51,
+      "line": 41,
+      "property": "multiplyElements_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "function": "multiplyElements",
+      "goal": "typed_ref_multiplyElements_loop_assigns_part8",
+      "line": 41,
+      "property": "multiplyElements_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "function": "multiplyElements",
+      "goal": "typed_ref_multiplyElements_loop_assigns_part9",
+      "line": 41,
       "property": "multiplyElements_loop_assigns",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.0252
+          "time": 0.0296
         },
         {
           "prover": "Alt-Ergo:2.4.3",
           "success": 1,
-          "time": 0.0409
+          "time": 0.0641
         }
       ],
       "state": "proved",
@@ -662,10 +704,10 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
-      "goal": "typed_ref_multiplyElements_assigns_normal_part1",
-      "line": 40,
+      "goal": "typed_ref_multiplyElements_assigns_normal_part01",
+      "line": 32,
       "property": "multiplyElements_assigns",
       "proved_subgoals": 1,
       "provers": [
@@ -683,10 +725,10 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
-      "goal": "typed_ref_multiplyElements_assigns_normal_part2",
-      "line": 40,
+      "goal": "typed_ref_multiplyElements_assigns_normal_part02",
+      "line": 32,
       "property": "multiplyElements_assigns",
       "proved_subgoals": 1,
       "provers": [
@@ -704,10 +746,10 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
-      "goal": "typed_ref_multiplyElements_assigns_normal_part3",
-      "line": 40,
+      "goal": "typed_ref_multiplyElements_assigns_normal_part03",
+      "line": 32,
       "property": "multiplyElements_assigns",
       "proved_subgoals": 1,
       "provers": [
@@ -725,10 +767,10 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
-      "goal": "typed_ref_multiplyElements_assigns_normal_part4",
-      "line": 40,
+      "goal": "typed_ref_multiplyElements_assigns_normal_part04",
+      "line": 32,
       "property": "multiplyElements_assigns",
       "proved_subgoals": 1,
       "provers": [
@@ -746,10 +788,10 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
-      "goal": "typed_ref_multiplyElements_assigns_normal_part5",
-      "line": 40,
+      "goal": "typed_ref_multiplyElements_assigns_normal_part05",
+      "line": 32,
       "property": "multiplyElements_assigns",
       "proved_subgoals": 1,
       "provers": [
@@ -767,10 +809,10 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
-      "goal": "typed_ref_multiplyElements_assigns_normal_part6",
-      "line": 40,
+      "goal": "typed_ref_multiplyElements_assigns_normal_part06",
+      "line": 32,
       "property": "multiplyElements_assigns",
       "proved_subgoals": 1,
       "provers": [
@@ -788,10 +830,10 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
-      "goal": "typed_ref_multiplyElements_assigns_normal_part7",
-      "line": 40,
+      "goal": "typed_ref_multiplyElements_assigns_normal_part07",
+      "line": 32,
       "property": "multiplyElements_assigns",
       "proved_subgoals": 1,
       "provers": [
@@ -809,17 +851,17 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
-      "goal": "typed_ref_multiplyElements_assigns_normal_part8",
-      "line": 40,
+      "goal": "typed_ref_multiplyElements_assigns_normal_part08",
+      "line": 32,
       "property": "multiplyElements_assigns",
       "proved_subgoals": 0,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.00817
+          "time": 0.00882
         },
         {
           "prover": "Alt-Ergo:2.4.3",
@@ -835,10 +877,10 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
-      "goal": "typed_ref_multiplyElements_assigns_normal_part9",
-      "line": 40,
+      "goal": "typed_ref_multiplyElements_assigns_normal_part09",
+      "line": 32,
       "property": "multiplyElements_assigns",
       "proved_subgoals": 1,
       "provers": [
@@ -856,10 +898,52 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "function": "multiplyElements",
+      "goal": "typed_ref_multiplyElements_assigns_normal_part10",
+      "line": 32,
+      "property": "multiplyElements_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "function": "multiplyElements",
+      "goal": "typed_ref_multiplyElements_assigns_normal_part11",
+      "line": 32,
+      "property": "multiplyElements_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_assigns_exit_part01",
-      "line": 40,
+      "line": 32,
       "property": "multiplyElements_assigns",
       "proved_subgoals": 1,
       "provers": [
@@ -877,10 +961,10 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_assigns_exit_part02",
-      "line": 40,
+      "line": 32,
       "property": "multiplyElements_assigns",
       "proved_subgoals": 1,
       "provers": [
@@ -898,10 +982,10 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_assigns_exit_part03",
-      "line": 40,
+      "line": 32,
       "property": "multiplyElements_assigns",
       "proved_subgoals": 1,
       "provers": [
@@ -919,10 +1003,10 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_assigns_exit_part04",
-      "line": 40,
+      "line": 32,
       "property": "multiplyElements_assigns",
       "proved_subgoals": 1,
       "provers": [
@@ -940,10 +1024,10 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_assigns_exit_part05",
-      "line": 40,
+      "line": 32,
       "property": "multiplyElements_assigns",
       "proved_subgoals": 1,
       "provers": [
@@ -961,17 +1045,17 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_assigns_exit_part06",
-      "line": 40,
+      "line": 32,
       "property": "multiplyElements_assigns",
       "proved_subgoals": 0,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.00838
+          "time": 0.0122
         },
         {
           "prover": "Alt-Ergo:2.4.3",
@@ -987,10 +1071,10 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_assigns_exit_part07",
-      "line": 40,
+      "line": 32,
       "property": "multiplyElements_assigns",
       "proved_subgoals": 1,
       "provers": [
@@ -1008,10 +1092,10 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_assigns_exit_part08",
-      "line": 40,
+      "line": 32,
       "property": "multiplyElements_assigns",
       "proved_subgoals": 1,
       "provers": [
@@ -1029,10 +1113,10 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_assigns_exit_part09",
-      "line": 40,
+      "line": 32,
       "property": "multiplyElements_assigns",
       "proved_subgoals": 1,
       "provers": [
@@ -1050,10 +1134,10 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_assigns_exit_part10",
-      "line": 40,
+      "line": 32,
       "property": "multiplyElements_assigns",
       "proved_subgoals": 1,
       "provers": [
@@ -1071,17 +1155,59 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_assigns_exit_part11",
-      "line": 40,
+      "line": 32,
+      "property": "multiplyElements_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "function": "multiplyElements",
+      "goal": "typed_ref_multiplyElements_assigns_exit_part12",
+      "line": 32,
+      "property": "multiplyElements_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "function": "multiplyElements",
+      "goal": "typed_ref_multiplyElements_assigns_exit_part13",
+      "line": 32,
       "property": "multiplyElements_assigns",
       "proved_subgoals": 0,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.0186
+          "time": 0.0222
         },
         {
           "prover": "Alt-Ergo:2.4.3",
@@ -1097,10 +1223,10 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_loop_variant_positive",
-      "line": 52,
+      "line": 42,
       "property": "multiplyElements_loop_variant",
       "proved_subgoals": 1,
       "provers": [
@@ -1118,22 +1244,22 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_loop_variant_decrease",
-      "line": 52,
+      "line": 42,
       "property": "multiplyElements_loop_variant",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.022
+          "time": 0.0248
         },
         {
           "prover": "Alt-Ergo:2.4.3",
           "success": 1,
-          "time": 0.0317
+          "time": 0.0282
         }
       ],
       "state": "proved",
@@ -1144,22 +1270,22 @@
     {
       "category": "precondition/RTE",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_call_jarray_length_requires",
-      "line": 41,
+      "line": 33,
       "property": "jarray_length_requires",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.00391
+          "time": 0.00351
         },
         {
           "prover": "Alt-Ergo:2.4.3",
           "success": 1,
-          "time": 0.0168
+          "time": 0.00898
         }
       ],
       "state": "proved",
@@ -1170,22 +1296,22 @@
     {
       "category": "precondition/RTE",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_call_jarray_length_requires_2",
-      "line": 41,
+      "line": 33,
       "property": "jarray_length_requires_2",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.00413
+          "time": 0.00344
         },
         {
           "prover": "Alt-Ergo:2.4.3",
           "success": 1,
-          "time": 0.0134
+          "time": 0.0159
         }
       ],
       "state": "proved",
@@ -1196,10 +1322,10 @@
     {
       "category": "precondition/RTE",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_call_jarray_new_requires",
-      "line": 43,
+      "line": 34,
       "property": "jarray_new_requires",
       "proved_subgoals": 1,
       "provers": [
@@ -1217,10 +1343,10 @@
     {
       "category": "precondition/RTE",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_call_jarray_new_requires_2",
-      "line": 43,
+      "line": 34,
       "property": "jarray_new_requires_2",
       "proved_subgoals": 1,
       "provers": [
@@ -1238,22 +1364,17 @@
     {
       "category": "precondition/RTE",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
-      "goal": "typed_ref_multiplyElements_call_jarray_new_2_requires",
-      "line": 45,
-      "property": "jarray_new_requires_3",
+      "goal": "typed_ref_multiplyElements_call_jarray_length_2_requires",
+      "line": 36,
+      "property": "jarray_length_requires_3",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
-          "success": 0,
-          "time": 0.007
-        },
-        {
-          "prover": "Alt-Ergo:2.4.3",
           "success": 1,
-          "time": 0.0177
+          "time": 0
         }
       ],
       "state": "proved",
@@ -1264,10 +1385,57 @@
     {
       "category": "precondition/RTE",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "function": "multiplyElements",
+      "goal": "typed_ref_multiplyElements_call_jarray_length_2_requires_2",
+      "line": 36,
+      "property": "jarray_length_requires_4",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "function": "multiplyElements",
+      "goal": "typed_ref_multiplyElements_call_jarray_new_2_requires",
+      "line": 36,
+      "property": "jarray_new_requires_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00768
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0141
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_call_jarray_new_2_requires_2",
-      "line": 45,
+      "line": 36,
       "property": "jarray_new_requires_4",
       "proved_subgoals": 1,
       "provers": [
@@ -1285,10 +1453,57 @@
     {
       "category": "precondition/RTE",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "function": "multiplyElements",
+      "goal": "typed_ref_multiplyElements_call_jarray_length_3_requires",
+      "line": 44,
+      "property": "jarray_length_requires_5",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "function": "multiplyElements",
+      "goal": "typed_ref_multiplyElements_call_jarray_length_3_requires_2",
+      "line": 44,
+      "property": "jarray_length_requires_6",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.018
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_call_jarray_get_requires",
-      "line": 56,
+      "line": 45,
       "property": "jarray_get_requires",
       "proved_subgoals": 1,
       "provers": [
@@ -1306,48 +1521,17 @@
     {
       "category": "precondition/RTE",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_call_jarray_get_requires_2",
-      "line": 56,
+      "line": 45,
       "property": "jarray_get_requires_2",
-      "proved_subgoals": 0,
-      "provers": [
-        {
-          "prover": "qed",
-          "success": 0,
-          "time": 0.0123
-        },
-        {
-          "prover": "Alt-Ergo:2.4.3",
-          "success": 0,
-          "time": 0
-        }
-      ],
-      "state": "unknown",
-      "timeout_subgoals": 1,
-      "unknown_subgoals": 0,
-      "verdict": "timeout"
-    },
-    {
-      "category": "precondition/RTE",
-      "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
-      "function": "multiplyElements",
-      "goal": "typed_ref_multiplyElements_call_jarray_get_requires_3",
-      "line": 56,
-      "property": "jarray_get_requires_3",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
-          "success": 0,
-          "time": 0.0122
-        },
-        {
-          "prover": "Alt-Ergo:2.4.3",
           "success": 1,
-          "time": 0.0151
+          "time": 0
         }
       ],
       "state": "proved",
@@ -1358,10 +1542,36 @@
     {
       "category": "precondition/RTE",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "function": "multiplyElements",
+      "goal": "typed_ref_multiplyElements_call_jarray_get_requires_3",
+      "line": 45,
+      "property": "jarray_get_requires_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.015
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0168
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_call_jarray_get_2_requires",
-      "line": 56,
+      "line": 45,
       "property": "jarray_get_requires_4",
       "proved_subgoals": 1,
       "provers": [
@@ -1379,10 +1589,10 @@
     {
       "category": "precondition/RTE",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_call_jarray_get_2_requires_2",
-      "line": 56,
+      "line": 45,
       "property": "jarray_get_requires_5",
       "proved_subgoals": 1,
       "provers": [
@@ -1400,22 +1610,17 @@
     {
       "category": "precondition/RTE",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_call_jarray_get_2_requires_3",
-      "line": 56,
+      "line": 45,
       "property": "jarray_get_requires_6",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
-          "success": 0,
-          "time": 0.0157
-        },
-        {
-          "prover": "Alt-Ergo:2.4.3",
           "success": 1,
-          "time": 0.0145
+          "time": 0
         }
       ],
       "state": "proved",
@@ -1426,10 +1631,10 @@
     {
       "category": "precondition/RTE",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_call_jarray_set_requires",
-      "line": 55,
+      "line": 46,
       "property": "jarray_set_requires",
       "proved_subgoals": 1,
       "provers": [
@@ -1447,22 +1652,22 @@
     {
       "category": "precondition/RTE",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_call_jarray_set_requires_2",
-      "line": 55,
+      "line": 46,
       "property": "jarray_set_requires_2",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.0173
+          "time": 0.0235
         },
         {
           "prover": "Alt-Ergo:2.4.3",
           "success": 1,
-          "time": 0.00947
+          "time": 0.0196
         }
       ],
       "state": "proved",
@@ -1473,17 +1678,22 @@
     {
       "category": "precondition/RTE",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/original/c/MultiplyElements.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/MultiplyElements.c",
       "function": "multiplyElements",
       "goal": "typed_ref_multiplyElements_call_jarray_set_requires_3",
-      "line": 55,
+      "line": 46,
       "property": "jarray_set_requires_3",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
+          "success": 0,
+          "time": 0.0187
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
           "success": 1,
-          "time": 0
+          "time": 0.0229
         }
       ],
       "state": "proved",
@@ -1492,18 +1702,22 @@
       "verdict": "valid"
     }
   ],
-  "input_fingerprint": "ce0726fab7d17dfcb17bdb0f0ef65ec336f52ee995c40818104ac4a91be4eb85",
+  "input_fingerprint": "180da15bfbd9c28446538951630668ba682bc70ba24a429359207c28549bcb00",
   "language": "c",
   "logs": {
     "stderr": "stderr.log",
     "stdout": "stdout.log",
     "wp_report": "wp-report.json"
   },
+  "migration_provenance": {
+    "archive": "/mnt/d/ResearchProject/output/verification_run_archive_20261001T080722Z",
+    "utc": "20261001T080722Z"
+  },
   "mutant_id": null,
   "outcome": "unknown/timeout",
   "program": "MultiplyElements",
   "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/MultiplyElements.c",
-  "raw_source_sha256": "3ca27d63134bf52a0c92783149df4fef35193cc71645b5238b3802ceabb1b712",
+  "raw_source_sha256": "f1f2567b9e4b878845227dbc9480746bac62fbaf9feaaa8bca62d03ad58a4b20",
   "reason": "At least one WP goal remains unresolved",
   "role": "original",
   "selection": null,
@@ -1533,7 +1747,7 @@
   "timed_out": false,
   "transfer": {
     "annotation_count": 5,
-    "executable_token_sha256": "ab2f8639db6051364eb299ec92f99cecf57cc6545615c247d40716a9c1522f59",
+    "executable_token_sha256": "076d4dff479721f62e5ca803a59bb2aa75b7843889e78522f6753f62af7b183d",
     "internal_annotation_coverage": "complete",
     "method": "frozen structured JSON with audited C declaration bindings",
     "omitted_annotations": [],
@@ -1552,7 +1766,7 @@
         "function": "java_sub",
         "id": "annotation_2",
         "loop_id": null,
-        "mutant_offset": 160,
+        "mutant_offset": 155,
         "next_token": "static",
         "target": "function"
       },
@@ -1561,7 +1775,7 @@
         "function": "java_mul",
         "id": "annotation_3",
         "loop_id": null,
-        "mutant_offset": 274,
+        "mutant_offset": 264,
         "next_token": "static",
         "target": "function"
       },
@@ -1570,22 +1784,30 @@
         "function": "multiplyElements",
         "id": "annotation_4",
         "loop_id": null,
-        "mutant_offset": 388,
+        "mutant_offset": 374,
         "next_token": "JIntArray",
         "target": "function"
       },
       {
-        "boundary_token": 146,
+        "boundary_token": 145,
         "function": "multiplyElements",
         "id": "annotation_5",
         "loop_id": "loop_1",
-        "mutant_offset": 640,
+        "mutant_offset": 601,
         "next_token": "for",
         "target": "loop"
       }
     ],
     "removed_loop_annotations": 0,
     "removed_temporary_policy": "original pure initializer with stable dependencies"
+  },
+  "verification_integration": {
+    "invocation_paths_preserved": true,
+    "previous_record": "original_verification/source_records/6b31ac8a4545462e6fdcad64aeb3f21eb70f0cf778547c9a8b4d6af1bd374993.json",
+    "previous_record_sha256": "6b31ac8a4545462e6fdcad64aeb3f21eb70f0cf778547c9a8b4d6af1bd374993",
+    "rerun": "c_corrected_originals_verification_20261001",
+    "source_record": "original_verification/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/record.json",
+    "source_record_sha256": "dd26f6d15a75859737c9ca69ae20bdeea01402615ab9f16007231a134bbc539a"
   },
   "verification_started": true,
   "verifier": {

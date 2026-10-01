@@ -1,0 +1,189 @@
+{
+  "attempts": [
+    {
+      "elapsed_seconds": 0.005409551000411739,
+      "exit_code": 72,
+      "expected": 0,
+      "failed_clauses": [],
+      "inputs": {
+        "n": 1
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "runtime_safety",
+      "stderr": "JAVA_ARRAY_ERROR: INDEX_OUT_OF_BOUNDS (java.lang.ArrayIndexOutOfBoundsException)\n",
+      "stdout": "",
+      "validated": true
+    },
+    {
+      "elapsed_seconds": 0.004367513000033796,
+      "exit_code": 72,
+      "expected": 3,
+      "failed_clauses": [],
+      "inputs": {
+        "n": 2
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "runtime_safety",
+      "stderr": "JAVA_ARRAY_ERROR: INDEX_OUT_OF_BOUNDS (java.lang.ArrayIndexOutOfBoundsException)\n",
+      "stdout": "",
+      "validated": true
+    },
+    {
+      "elapsed_seconds": 0.004306406000978313,
+      "exit_code": 72,
+      "expected": 0,
+      "failed_clauses": [],
+      "inputs": {
+        "n": 3
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "runtime_safety",
+      "stderr": "JAVA_ARRAY_ERROR: INDEX_OUT_OF_BOUNDS (java.lang.ArrayIndexOutOfBoundsException)\n",
+      "stdout": "",
+      "validated": true
+    },
+    {
+      "elapsed_seconds": 0.004713464000815293,
+      "exit_code": 72,
+      "expected": 11,
+      "failed_clauses": [],
+      "inputs": {
+        "n": 4
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "runtime_safety",
+      "stderr": "JAVA_ARRAY_ERROR: INDEX_OUT_OF_BOUNDS (java.lang.ArrayIndexOutOfBoundsException)\n",
+      "stdout": "",
+      "validated": true
+    },
+    {
+      "elapsed_seconds": 0.0059475880007084925,
+      "exit_code": 72,
+      "expected": 0,
+      "failed_clauses": [],
+      "inputs": {
+        "n": 7
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "runtime_safety",
+      "stderr": "JAVA_ARRAY_ERROR: INDEX_OUT_OF_BOUNDS (java.lang.ArrayIndexOutOfBoundsException)\n",
+      "stdout": "",
+      "validated": true
+    },
+    {
+      "elapsed_seconds": 0.004678413000874571,
+      "exit_code": 72,
+      "expected": 0,
+      "failed_clauses": [],
+      "inputs": {
+        "n": 63
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "runtime_safety",
+      "stderr": "JAVA_ARRAY_ERROR: INDEX_OUT_OF_BOUNDS (java.lang.ArrayIndexOutOfBoundsException)\n",
+      "stdout": "",
+      "validated": true
+    },
+    {
+      "elapsed_seconds": 0.006567972999619087,
+      "exit_code": 72,
+      "expected": 1117014753,
+      "failed_clauses": [],
+      "inputs": {
+        "n": 32
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "runtime_safety",
+      "stderr": "JAVA_ARRAY_ERROR: INDEX_OUT_OF_BOUNDS (java.lang.ArrayIndexOutOfBoundsException)\n",
+      "stdout": "",
+      "validated": true
+    },
+    {
+      "elapsed_seconds": 0.006924526000148035,
+      "exit_code": 72,
+      "expected": 29681,
+      "failed_clauses": [],
+      "inputs": {
+        "n": 16
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "runtime_safety",
+      "stderr": "JAVA_ARRAY_ERROR: INDEX_OUT_OF_BOUNDS (java.lang.ArrayIndexOutOfBoundsException)\n",
+      "stdout": "",
+      "validated": true
+    },
+    {
+      "elapsed_seconds": 0.004401922000397462,
+      "exit_code": 72,
+      "expected": 0,
+      "failed_clauses": [],
+      "inputs": {
+        "n": 31
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "runtime_safety",
+      "stderr": "JAVA_ARRAY_ERROR: INDEX_OUT_OF_BOUNDS (java.lang.ArrayIndexOutOfBoundsException)\n",
+      "stdout": "",
+      "validated": true
+    }
+  ],
+  "audit_compilation_failed": false,
+  "checked": 9,
+  "independent_audit": {
+    "baseline_execution": {
+      "elapsed_seconds": 0.008116590999634354,
+      "exit_code": 0,
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": 0,
+        "rows_separate": true,
+        "state": {}
+      },
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":0,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    "baseline_failed_clauses": [],
+    "baseline_passed": true,
+    "execution": {
+      "elapsed_seconds": 0.006676666000203113,
+      "exit_code": 72,
+      "status": "runtime_safety",
+      "stderr": "JAVA_ARRAY_ERROR: INDEX_OUT_OF_BOUNDS (java.lang.ArrayIndexOutOfBoundsException)\n",
+      "stdout": ""
+    },
+    "failed_clauses": [],
+    "passed": true
+  },
+  "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+  "rejected_candidates": {},
+  "search_exhausted": false,
+  "status": "validated_safety_failure",
+  "timeouts": 0,
+  "witness": {
+    "elapsed_seconds": 0.005409551000411739,
+    "exit_code": 72,
+    "expected": 0,
+    "failed_clauses": [],
+    "inputs": {
+      "n": 1
+    },
+    "origin": "bounded_search_seed726",
+    "preconditions_satisfied": true,
+    "status": "runtime_safety",
+    "stderr": "JAVA_ARRAY_ERROR: INDEX_OUT_OF_BOUNDS (java.lang.ArrayIndexOutOfBoundsException)\n",
+    "stdout": "",
+    "validated": true
+  }
+}

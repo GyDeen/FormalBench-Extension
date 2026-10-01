@@ -1,0 +1,103 @@
+{
+  "attempt_status": "complete",
+  "frozen_spec_sha256": "b547194e7e80bae103fb5399933b94d4bf4730273dcfef577d7199cf924cbfae",
+  "language": "c",
+  "mutant_id": "23",
+  "outcome": "specification violation",
+  "program": "ParabolaVertex",
+  "replay": {
+    "audit_compilation_failed": false,
+    "checked": 1,
+    "independent_audit": {
+      "baseline_execution": {
+        "elapsed_seconds": 0.006338233999485965,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {},
+          "errno": 0,
+          "result": [
+            -0.5,
+            2635.5
+          ],
+          "rows_separate": true,
+          "state": {}
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":[-0.5,2635.5],\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "baseline_failed_clauses": [],
+      "baseline_passed": true,
+      "execution": {
+        "elapsed_seconds": 0.007335147000048892,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {},
+          "errno": 0,
+          "result": [
+            -0.5,
+            0
+          ],
+          "rows_separate": true,
+          "state": {}
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":[-0.5,0],\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "passed": true
+    },
+    "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+    "rejected_candidates": {},
+    "search_exhausted": false,
+    "status": "validated_violation",
+    "timeouts": 0,
+    "witness": {
+      "elapsed_seconds": 0.00500955500137934,
+      "exit_code": 0,
+      "expected": [
+        -0.5,
+        2635.5
+      ],
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "inputs": {
+        "a": 3514,
+        "b": 3514,
+        "c": 3514
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": [
+          -0.5,
+          0
+        ],
+        "rows_separate": true,
+        "state": {}
+      },
+      "origin": "saved_test:ParabolaVertex_ESTest.test1",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":[-0.5,0],\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+      "validated": true
+    }
+  },
+  "replay_source_kind": "frozen_annotated_source",
+  "replay_source_sha256": "672317a5072932a13de607996c20393b60d9dda5f621aff2fac87dc9b21e7ac0",
+  "role": "mutant",
+  "search_elapsed_seconds": 0.9625469650000014,
+  "source_record": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/ParabolaVertex/mutant_23/c/record.json",
+  "source_record_sha256": "bd9cbd53674a8c9773b13029c9c8459d2c9444e2ae67e7cdf5fd6834087a6bb9",
+  "verification_outcome": "unknown/timeout",
+  "verification_rerun": false,
+  "verification_reused": true
+}

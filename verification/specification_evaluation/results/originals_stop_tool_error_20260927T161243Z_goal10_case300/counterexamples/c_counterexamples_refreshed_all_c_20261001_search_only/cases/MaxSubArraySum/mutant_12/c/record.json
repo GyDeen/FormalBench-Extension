@@ -1,0 +1,130 @@
+{
+  "attempt_status": "complete",
+  "frozen_spec_sha256": "a58d9bd62440187a778ac6be58f8e72136ad1f9adf1db09e495a2274cc092df6",
+  "language": "c",
+  "mutant_id": "12",
+  "outcome": "specification violation",
+  "program": "MaxSubArraySum",
+  "replay": {
+    "audit_compilation_failed": false,
+    "checked": 1,
+    "independent_audit": {
+      "baseline_execution": {
+        "elapsed_seconds": 0.006766096999854199,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {
+            "a": false
+          },
+          "errno": 0,
+          "result": 3,
+          "rows_separate": true,
+          "state": {
+            "a": [
+              -1,
+              0,
+              0,
+              437,
+              0,
+              0
+            ]
+          }
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":3,\"state\":{\"a\":[-1,0,0,437,0,0]},\"aliases\":{\"a\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "baseline_failed_clauses": [],
+      "baseline_passed": true,
+      "execution": {
+        "elapsed_seconds": 0.00716062200081069,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {
+            "a": false
+          },
+          "errno": 0,
+          "result": 1,
+          "rows_separate": true,
+          "state": {
+            "a": [
+              -1,
+              0,
+              0,
+              437,
+              0,
+              0
+            ]
+          }
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":1,\"state\":{\"a\":[-1,0,0,437,0,0]},\"aliases\":{\"a\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "passed": true
+    },
+    "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+    "rejected_candidates": {},
+    "search_exhausted": false,
+    "status": "validated_violation",
+    "timeouts": 0,
+    "witness": {
+      "elapsed_seconds": 0.007643672000995139,
+      "exit_code": 0,
+      "expected": 3,
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "inputs": {
+        "a": [
+          -1,
+          0,
+          0,
+          437,
+          0,
+          0
+        ],
+        "size": 5
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "a": false
+        },
+        "errno": 0,
+        "result": 1,
+        "rows_separate": true,
+        "state": {
+          "a": [
+            -1,
+            0,
+            0,
+            437,
+            0,
+            0
+          ]
+        }
+      },
+      "origin": "saved_test:MaxSubArraySum_ESTest.test0",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":1,\"state\":{\"a\":[-1,0,0,437,0,0]},\"aliases\":{\"a\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+      "validated": true
+    }
+  },
+  "replay_source_kind": "frozen_annotated_source",
+  "replay_source_sha256": "b13ea1bb5dfefac897ac3118d57819e6392eed1f0a51f26762780c00e72a3c20",
+  "role": "mutant",
+  "search_elapsed_seconds": 0.9549097790004453,
+  "source_record": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSubArraySum/mutant_12/c/record.json",
+  "source_record_sha256": "f0c761963e119f4f8e2baec08567a7a4901ff8b2ee1b4aaa442c3a219b4852f1",
+  "verification_outcome": "unknown/timeout",
+  "verification_rerun": false,
+  "verification_reused": true
+}

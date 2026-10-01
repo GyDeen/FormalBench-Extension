@@ -3,21 +3,24 @@
     "annotations.py": "7f730d0275c185de8199e16b487819eb823acaba46195f4e73152471bb1097e8",
     "c_bindings.py": "fc8f9d74f58723d57562bc5f21087a9ce9e959986a9edd53b26d07b9c9fca1e1",
     "c_structure.py": "efcea8872a653827d977ef2e9c102acc70a44952a6e316a52cef4779a738a0d5",
-    "verifiers.py": "0a9f1dd8a08eb33d35451283f3e0e3f4d272a24d7ada1aad48c5cbf39246bfcf"
+    "verifiers.py": "8daa5f32b6f8aaa007a40ac75afb97d5512d5fe6cf0e48862405557aa310a3a5"
   },
-  "attempt_status": "complete",
-  "failure_stage": "annotation_transfer",
+  "attempt_status": "pending",
   "frozen_spec": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/frozen_specs/c/MultiplyElements.json",
-  "frozen_spec_sha256": "db5fde2d3f2c1b02b696f99153afa188259f5c53c5dba4bcc42d09d2ad60a7cc",
+  "frozen_spec_sha256": "9e889b41292d2efa3d496452cca41ba67946cb537e7dfb287447c1c08b94d5dd",
   "goals": [],
-  "input_fingerprint": "e16b25248e40780be79cd20bae57af15e68639bebf0165ffc12cb5dc8b5c5fe4",
+  "input_fingerprint": "37bfd9901a5c24c9312507667928b0e4a4d869e4ae820e71a25e14888cf5b696",
   "language": "c",
+  "migration_provenance": {
+    "archive": "/mnt/d/ResearchProject/output/verification_run_archive_20261001T080722Z",
+    "utc": "20261001T080722Z"
+  },
   "mutant_id": "22",
-  "outcome": "syntax/tool failure",
+  "outcome": "not run",
   "program": "MultiplyElements",
   "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/fault_mutants/run_ukcw__uc/MultiplyElements/mutants/22/c/MultiplyElements.c",
   "raw_source_sha256": "4c6daf0a69317225a012f23f9a719c6ac6613a01bdfd4d15e28da03c96ad51cf",
-  "reason": "Annotation transfer failed: Original initializer of limit has an unmapped dependency: length",
+  "reason": "Corrected original C and matching frozen ACSL migrated; verification deferred by user",
   "role": "mutant",
   "selection": "direct_match",
   "selection_manifest_sha256": "92fa1533eafe32fdc60b119b0c6abc8a4f3c0b372d66ac21f39e54a3b5d7433d",
@@ -43,6 +46,7 @@
     "generated/types.h": "484e5df1fa6f1a573bee0b8ea778cefb259659d6b419e0c94ecd92e490d88301",
     "java_arrays.h": "71446403075d5c68ce8ab8f85d63f98f3727133700a879b4e43c5ae59d7f0101"
   },
+  "verification_started": false,
   "verifier": {
     "compatibility": {
       "module": "/mnt/d/ResearchProject/.tools/frama-c-compat/1e5af7b10d6dd41df377/float_negation_33.cmxs",

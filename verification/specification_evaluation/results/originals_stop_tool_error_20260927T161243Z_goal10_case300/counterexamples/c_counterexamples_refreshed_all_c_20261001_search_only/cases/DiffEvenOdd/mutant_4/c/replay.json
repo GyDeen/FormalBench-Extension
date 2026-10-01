@@ -1,0 +1,197 @@
+{
+  "attempts": [
+    {
+      "elapsed_seconds": 0.01860629200018593,
+      "exit_code": 0,
+      "expected": -1135,
+      "failed_clauses": [],
+      "inputs": {
+        "array": [
+          1135,
+          0
+        ]
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "array": false
+        },
+        "errno": 0,
+        "result": -1135,
+        "rows_separate": true,
+        "state": {
+          "array": [
+            1135,
+            0
+          ]
+        }
+      },
+      "origin": "saved_test:DiffEvenOdd_ESTest.test0",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":-1135,\"state\":{\"array\":[1135,0]},\"aliases\":{\"array\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.009705887001473457,
+      "exit_code": 0,
+      "expected": 0,
+      "failed_clauses": [],
+      "inputs": {
+        "array": []
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "array": false
+        },
+        "errno": 0,
+        "result": 0,
+        "rows_separate": true,
+        "state": {
+          "array": []
+        }
+      },
+      "origin": "saved_test:DiffEvenOdd_ESTest.test1",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":0,\"state\":{\"array\":[]},\"aliases\":{\"array\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.008410274000198115,
+      "exit_code": 0,
+      "expected": -2029,
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "inputs": {
+        "array": [
+          -2030,
+          0,
+          0
+        ]
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "array": false
+        },
+        "errno": 0,
+        "result": 1,
+        "rows_separate": true,
+        "state": {
+          "array": [
+            -2030,
+            0,
+            0
+          ]
+        }
+      },
+      "origin": "saved_test:DiffEvenOdd_ESTest.test2",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":1,\"state\":{\"array\":[-2030,0,0]},\"aliases\":{\"array\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+      "validated": true
+    }
+  ],
+  "audit_compilation_failed": false,
+  "checked": 3,
+  "independent_audit": {
+    "baseline_execution": {
+      "elapsed_seconds": 0.06925383599991619,
+      "exit_code": 0,
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "array": false
+        },
+        "errno": 0,
+        "result": -2029,
+        "rows_separate": true,
+        "state": {
+          "array": [
+            -2030,
+            0,
+            0
+          ]
+        }
+      },
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":-2029,\"state\":{\"array\":[-2030,0,0]},\"aliases\":{\"array\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    "baseline_failed_clauses": [],
+    "baseline_passed": true,
+    "execution": {
+      "elapsed_seconds": 0.02499469299982593,
+      "exit_code": 0,
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "array": false
+        },
+        "errno": 0,
+        "result": 1,
+        "rows_separate": true,
+        "state": {
+          "array": [
+            -2030,
+            0,
+            0
+          ]
+        }
+      },
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":1,\"state\":{\"array\":[-2030,0,0]},\"aliases\":{\"array\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    "failed_clauses": [
+      "frozen_return_value_or_array_contents"
+    ],
+    "passed": true
+  },
+  "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+  "rejected_candidates": {},
+  "search_exhausted": false,
+  "status": "validated_violation",
+  "timeouts": 0,
+  "witness": {
+    "elapsed_seconds": 0.008410274000198115,
+    "exit_code": 0,
+    "expected": -2029,
+    "failed_clauses": [
+      "frozen_return_value_or_array_contents"
+    ],
+    "inputs": {
+      "array": [
+        -2030,
+        0,
+        0
+      ]
+    },
+    "observation": {
+      "EDOM": 33,
+      "aliases": {
+        "array": false
+      },
+      "errno": 0,
+      "result": 1,
+      "rows_separate": true,
+      "state": {
+        "array": [
+          -2030,
+          0,
+          0
+        ]
+      }
+    },
+    "origin": "saved_test:DiffEvenOdd_ESTest.test2",
+    "preconditions_satisfied": true,
+    "status": "returned",
+    "stderr": "",
+    "stdout": "\n@@REPLAY {\"result\":1,\"state\":{\"array\":[-2030,0,0]},\"aliases\":{\"array\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+    "validated": true
+  }
+}

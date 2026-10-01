@@ -1,0 +1,155 @@
+{
+  "attempt_status": "complete",
+  "frozen_spec_sha256": "68adcfc91d76e92817b05a3b86d12c06f910d553ca84071c54e4630ae4f9bd77",
+  "language": "c",
+  "mutant_id": "11",
+  "outcome": "specification violation",
+  "program": "MinCost",
+  "replay": {
+    "audit_compilation_failed": false,
+    "checked": 17,
+    "independent_audit": {
+      "baseline_execution": {
+        "elapsed_seconds": 0.00967940800001088,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {
+            "cost": false
+          },
+          "errno": 0,
+          "result": 6,
+          "rows_separate": true,
+          "state": {
+            "cost": [
+              [
+                2,
+                -1
+              ],
+              [
+                4,
+                3
+              ],
+              [
+                0,
+                0
+              ]
+            ]
+          }
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":6,\"state\":{\"cost\":[[2,-1],[4,3],[0,0]]},\"aliases\":{\"cost\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "baseline_failed_clauses": [],
+      "baseline_passed": true,
+      "execution": {
+        "elapsed_seconds": 0.009300458001234801,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {
+            "cost": false
+          },
+          "errno": 0,
+          "result": 0,
+          "rows_separate": true,
+          "state": {
+            "cost": [
+              [
+                2,
+                -1
+              ],
+              [
+                4,
+                3
+              ],
+              [
+                0,
+                0
+              ]
+            ]
+          }
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":0,\"state\":{\"cost\":[[2,-1],[4,3],[0,0]]},\"aliases\":{\"cost\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "passed": true
+    },
+    "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+    "rejected_candidates": {},
+    "search_exhausted": false,
+    "status": "validated_violation",
+    "timeouts": 0,
+    "witness": {
+      "elapsed_seconds": 0.004649221000363468,
+      "exit_code": 0,
+      "expected": 6,
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "inputs": {
+        "cost": [
+          [
+            2,
+            -1
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "m": 2,
+        "n": 0
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "cost": false
+        },
+        "errno": 0,
+        "result": 0,
+        "rows_separate": true,
+        "state": {
+          "cost": [
+            [
+              2,
+              -1
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":0,\"state\":{\"cost\":[[2,-1],[4,3],[0,0]]},\"aliases\":{\"cost\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+      "validated": true
+    }
+  },
+  "replay_source_kind": "frozen_annotated_source",
+  "replay_source_sha256": "bb34c83556443a0d93ce1dcd9fe449e72d36c09abebea8db46eb246564ab050e",
+  "role": "mutant",
+  "search_elapsed_seconds": 1.4649578829994425,
+  "source_record": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MinCost/mutant_11/c/record.json",
+  "source_record_sha256": "4fff370322e42a33bce780adacd99e62fc18673027845a85d8d32d07c5f5448e",
+  "verification_outcome": "unknown/timeout",
+  "verification_rerun": false,
+  "verification_reused": true
+}

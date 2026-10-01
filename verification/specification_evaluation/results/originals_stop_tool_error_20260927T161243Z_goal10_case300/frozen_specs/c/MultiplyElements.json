@@ -53,7 +53,7 @@
       "text": "/*@\n  requires jintarray_valid_nonnull(testTup);\n  assigns \\nothing;\n  allocates \\result, \\result->data;\n  frees \\nothing;\n  ensures jintarray_valid_nonnull(\\result);\n  ensures \\result->length == (testTup->length < 2 ? 0 : testTup->length - 1);\n  ensures \\fresh(\\result, sizeof(*\\result));\n  ensures \\result->length > 0 ==> \\fresh(\\result->data, \\result->length * sizeof(int32_t));\n  \n  ensures \\forall integer k; 0 <= k < \\result->length ==> \\result->data[k] == (int32_t)((integer)testTup->data[k] * testTup->data[k + 1]);\n*/"
     },
     {
-      "boundary_token": 146,
+      "boundary_token": 145,
       "following_tokens": [
         "for",
         "("
@@ -63,11 +63,11 @@
       "loop_id": "loop_1",
       "next_token": "for",
       "target": "loop",
-      "text": "/*@\n      loop invariant 0 <= i <= limit && limit == testTup->length - 1;\n      loop invariant jintarray_valid_nonnull(result) && result->length == limit;\n      loop invariant \\forall integer k; 0 <= k < i ==> result->data[k] == (int32_t)((integer)testTup->data[k] * testTup->data[k + 1]);\n      loop assigns i, result->data[0 .. limit - 1];\n      loop variant limit - i;\n    */"
+      "text": "/*@\n      loop invariant 0 <= i <= testTup->length - 1;\n      loop invariant jintarray_valid_nonnull(result) && result->length == testTup->length - 1;\n      loop invariant \\forall integer k; 0 <= k < i ==> result->data[k] == (int32_t)((integer)testTup->data[k] * testTup->data[k + 1]);\n      loop assigns i, result->data[0 .. testTup->length - 2];\n      loop variant testTup->length - 1 - i;\n    */"
     }
   ],
   "language": "c",
-  "original_executable_token_sha256": "ab2f8639db6051364eb299ec92f99cecf57cc6545615c247d40716a9c1522f59",
+  "original_executable_token_sha256": "076d4dff479721f62e5ca803a59bb2aa75b7843889e78522f6753f62af7b183d",
   "program": "MultiplyElements",
   "schema_version": "1.0"
 }

@@ -1,0 +1,139 @@
+{
+  "attempts": [
+    {
+      "elapsed_seconds": 0.004572049998387229,
+      "exit_code": 0,
+      "expected": 0,
+      "failed_clauses": [],
+      "inputs": {
+        "k": 1,
+        "n": 0
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": 0,
+        "rows_separate": true,
+        "state": {}
+      },
+      "origin": "saved_test:NoOfCubes_ESTest.test0",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":0,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.004320076001022244,
+      "exit_code": 75,
+      "expected": 1,
+      "failed_clauses": [],
+      "inputs": {
+        "k": 0,
+        "n": 0
+      },
+      "origin": "saved_test:NoOfCubes_ESTest.test1",
+      "preconditions_satisfied": true,
+      "status": "abnormal_exit",
+      "stderr": "JAVA_ARITHMETIC_ERROR: DIVIDE_BY_ZERO\n",
+      "stdout": ""
+    },
+    {
+      "elapsed_seconds": 0.005054335999375326,
+      "exit_code": 0,
+      "expected": -97336000,
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "inputs": {
+        "k": 462,
+        "n": 1
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": 211600,
+        "rows_separate": true,
+        "state": {}
+      },
+      "origin": "saved_test:NoOfCubes_ESTest.test2",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":211600,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+      "validated": true
+    }
+  ],
+  "audit_compilation_failed": false,
+  "checked": 3,
+  "independent_audit": {
+    "baseline_execution": {
+      "elapsed_seconds": 0.007963863001350546,
+      "exit_code": 0,
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": -97336000,
+        "rows_separate": true,
+        "state": {}
+      },
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":-97336000,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    "baseline_failed_clauses": [],
+    "baseline_passed": true,
+    "execution": {
+      "elapsed_seconds": 0.006989575998886721,
+      "exit_code": 0,
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": 211600,
+        "rows_separate": true,
+        "state": {}
+      },
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":211600,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    "failed_clauses": [
+      "frozen_return_value_or_array_contents"
+    ],
+    "passed": true
+  },
+  "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+  "rejected_candidates": {},
+  "search_exhausted": false,
+  "status": "validated_violation",
+  "timeouts": 0,
+  "witness": {
+    "elapsed_seconds": 0.005054335999375326,
+    "exit_code": 0,
+    "expected": -97336000,
+    "failed_clauses": [
+      "frozen_return_value_or_array_contents"
+    ],
+    "inputs": {
+      "k": 462,
+      "n": 1
+    },
+    "observation": {
+      "EDOM": 33,
+      "aliases": {},
+      "errno": 0,
+      "result": 211600,
+      "rows_separate": true,
+      "state": {}
+    },
+    "origin": "saved_test:NoOfCubes_ESTest.test2",
+    "preconditions_satisfied": true,
+    "status": "returned",
+    "stderr": "",
+    "stdout": "\n@@REPLAY {\"result\":211600,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+    "validated": true
+  }
+}

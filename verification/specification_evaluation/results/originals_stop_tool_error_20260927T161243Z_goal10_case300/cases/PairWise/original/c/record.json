@@ -1,12 +1,12 @@
 {
   "adapter_sha256": {
-    "annotations.py": "c971d29b176cd45810857db756883638e9551bb950d5cb1426e5bcf57f9e497e",
-    "c_bindings.py": "2f21fdaa46151906b048409a92d784b801ecdf78191436c2976999a4c36d3cf6",
-    "c_structure.py": "772364a38abaceacb66e98c0aee01b26a188bbb883e4ee8135d80b5fa8b50540",
-    "verifiers.py": "9977eb05f2cb524e9647ef1578aad446fe92c2b4f2ae3faae8bc880063c56975"
+    "annotations.py": "7f730d0275c185de8199e16b487819eb823acaba46195f4e73152471bb1097e8",
+    "c_bindings.py": "fc8f9d74f58723d57562bc5f21087a9ce9e959986a9edd53b26d07b9c9fca1e1",
+    "c_structure.py": "efcea8872a653827d977ef2e9c102acc70a44952a6e316a52cef4779a738a0d5",
+    "verifiers.py": "8daa5f32b6f8aaa007a40ac75afb97d5512d5fe6cf0e48862405557aa310a3a5"
   },
   "annotated_source": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
-  "annotated_source_sha256": "fd3db5e6dcf0c23368e65eea97266392a4a386956d2a53d95c8fc8a09a5a4739",
+  "annotated_source_sha256": "386cbf66dc1ddcbd83038ab2987e322f591d56fb50b45f60dcf74c7a9ca74d13",
   "attempt_status": "complete",
   "command": [
     "/root/.opam/default/bin/frama-c",
@@ -15,7 +15,7 @@
     "-load-module",
     "/mnt/d/ResearchProject/.tools/frama-c-compat/1e5af7b10d6dd41df377/float_negation_33.cmxs",
     "-paired-c-prepare",
-    "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
     "-then",
     "-wp",
     "-wp-rte",
@@ -35,18 +35,18 @@
     "-wp-cache",
     "none",
     "-wp-report-json",
-    "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/wp-report.json"
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/wp-report.json"
   ],
-  "elapsed_seconds": 54.939,
+  "elapsed_seconds": 82.64,
   "exit_code": 0,
   "failure_stage": null,
   "frozen_spec": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/frozen_specs/c/PairWise.json",
-  "frozen_spec_sha256": "c21a9b4df17af2cadfc364fbf2c6cb9b26d18f0e1917482a40db961471b7ad5b",
+  "frozen_spec_sha256": "6d2e55e5c356135dba6d82b815bed188ff1bcdcaab09eb02079f17ec8349a07e",
   "goals": [
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "java_add",
       "goal": "typed_ref_java_add_ensures",
       "line": 6,
@@ -56,12 +56,12 @@
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.00138
+          "time": 0.00174
         },
         {
-          "prover": "Z3:4.8.12",
+          "prover": "Alt-Ergo:2.4.3",
           "success": 1,
-          "time": 0.0121
+          "time": 0.0562
         }
       ],
       "state": "proved",
@@ -72,7 +72,7 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "java_add",
       "goal": "typed_ref_java_add_assigns",
       "line": 8,
@@ -93,22 +93,22 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "java_sub",
       "goal": "typed_ref_java_sub_ensures",
-      "line": 14,
+      "line": 11,
       "property": "java_sub_ensures",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.00134
+          "time": 0.0014
         },
         {
           "prover": "Z3:4.8.12",
           "success": 1,
-          "time": 0.0117
+          "time": 0.016
         }
       ],
       "state": "proved",
@@ -119,10 +119,10 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "java_sub",
       "goal": "typed_ref_java_sub_assigns",
-      "line": 16,
+      "line": 13,
       "property": "java_sub_assigns",
       "proved_subgoals": 1,
       "provers": [
@@ -140,10 +140,10 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
       "goal": "typed_ref_pairWise_terminates",
-      "line": 37,
+      "line": 32,
       "property": "pairWise_terminates",
       "proved_subgoals": 1,
       "provers": [
@@ -161,22 +161,22 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
       "goal": "typed_ref_pairWise_ensures",
-      "line": 24,
+      "line": 19,
       "property": "pairWise_ensures",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.04
+          "time": 0.0521
         },
         {
           "prover": "Alt-Ergo:2.4.3",
           "success": 1,
-          "time": 0.00779
+          "time": 0.00962
         }
       ],
       "state": "proved",
@@ -187,22 +187,22 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
       "goal": "typed_ref_pairWise_ensures_2",
-      "line": 25,
+      "line": 20,
       "property": "pairWise_ensures_2",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.0484
+          "time": 0.061
         },
         {
           "prover": "Alt-Ergo:2.4.3",
           "success": 1,
-          "time": 0.0162
+          "time": 0.012
         }
       ],
       "state": "proved",
@@ -213,17 +213,17 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
       "goal": "typed_ref_pairWise_ensures_3",
-      "line": 26,
+      "line": 21,
       "property": "pairWise_ensures_3",
       "proved_subgoals": 0,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.0495
+          "time": 0.0692
         },
         {
           "prover": "Alt-Ergo:2.4.3",
@@ -239,17 +239,17 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
       "goal": "typed_ref_pairWise_ensures_4",
-      "line": 27,
+      "line": 22,
       "property": "pairWise_ensures_4",
       "proved_subgoals": 0,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.0495
+          "time": 0.0591
         },
         {
           "prover": "Alt-Ergo:2.4.3",
@@ -265,17 +265,17 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
       "goal": "typed_ref_pairWise_ensures_5",
-      "line": 28,
+      "line": 23,
       "property": "pairWise_ensures_5",
       "proved_subgoals": 0,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.0452
+          "time": 0.0717
         },
         {
           "prover": "Alt-Ergo:2.4.3",
@@ -291,22 +291,22 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
       "goal": "typed_ref_pairWise_ensures_6",
-      "line": 33,
+      "line": 28,
       "property": "pairWise_ensures_6",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.0612
+          "time": 0.095
         },
         {
           "prover": "Alt-Ergo:2.4.3",
           "success": 1,
-          "time": 0.0348
+          "time": 8.55
         }
       ],
       "state": "proved",
@@ -317,10 +317,10 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
       "goal": "typed_ref_pairWise_exits",
-      "line": 37,
+      "line": 32,
       "property": "pairWise_exits",
       "proved_subgoals": 1,
       "provers": [
@@ -338,22 +338,17 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
       "goal": "typed_ref_pairWise_loop_invariant_established",
-      "line": 45,
+      "line": 38,
       "property": "pairWise_loop_invariant",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
-          "success": 0,
-          "time": 0.0165
-        },
-        {
-          "prover": "Alt-Ergo:2.4.3",
           "success": 1,
-          "time": 0.00858
+          "time": 0
         }
       ],
       "state": "proved",
@@ -364,22 +359,22 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
       "goal": "typed_ref_pairWise_loop_invariant_preserved",
-      "line": 45,
+      "line": 38,
       "property": "pairWise_loop_invariant",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.0541
+          "time": 0.0453
         },
         {
-          "prover": "Alt-Ergo:2.4.3",
+          "prover": "Z3:4.8.12",
           "success": 1,
-          "time": 0.0417
+          "time": 3.36
         }
       ],
       "state": "proved",
@@ -390,22 +385,22 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
       "goal": "typed_ref_pairWise_loop_invariant_2_established",
-      "line": 46,
+      "line": 39,
       "property": "pairWise_loop_invariant_2",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.0114
+          "time": 0.0083
         },
         {
           "prover": "Alt-Ergo:2.4.3",
           "success": 1,
-          "time": 0.0123
+          "time": 0.0146
         }
       ],
       "state": "proved",
@@ -416,17 +411,17 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
       "goal": "typed_ref_pairWise_loop_invariant_2_preserved",
-      "line": 46,
+      "line": 39,
       "property": "pairWise_loop_invariant_2",
       "proved_subgoals": 0,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.0425
+          "time": 0.0519
         },
         {
           "prover": "Alt-Ergo:2.4.3",
@@ -442,22 +437,22 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
       "goal": "typed_ref_pairWise_loop_invariant_3_established",
-      "line": 47,
+      "line": 40,
       "property": "pairWise_loop_invariant_3",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.0161
+          "time": 0.026
         },
         {
           "prover": "Alt-Ergo:2.4.3",
           "success": 1,
-          "time": 0.0171
+          "time": 0.00917
         }
       ],
       "state": "proved",
@@ -468,36 +463,36 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
       "goal": "typed_ref_pairWise_loop_invariant_3_preserved",
-      "line": 47,
+      "line": 40,
       "property": "pairWise_loop_invariant_3",
-      "proved_subgoals": 1,
+      "proved_subgoals": 0,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.0532
+          "time": 0.0671
         },
         {
           "prover": "Alt-Ergo:2.4.3",
-          "success": 1,
-          "time": 0.0536
+          "success": 0,
+          "time": 0
         }
       ],
-      "state": "proved",
-      "timeout_subgoals": 0,
+      "state": "unknown",
+      "timeout_subgoals": 1,
       "unknown_subgoals": 0,
-      "verdict": "valid"
+      "verdict": "timeout"
     },
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
       "goal": "typed_ref_pairWise_loop_invariant_4_established",
-      "line": 48,
+      "line": 41,
       "property": "pairWise_loop_invariant_4",
       "proved_subgoals": 1,
       "provers": [
@@ -515,17 +510,17 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
       "goal": "typed_ref_pairWise_loop_invariant_4_preserved",
-      "line": 48,
+      "line": 41,
       "property": "pairWise_loop_invariant_4",
       "proved_subgoals": 0,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.0544
+          "time": 0.0539
         },
         {
           "prover": "Alt-Ergo:2.4.3",
@@ -541,10 +536,10 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
-      "goal": "typed_ref_pairWise_loop_assigns_part1",
-      "line": 49,
+      "goal": "typed_ref_pairWise_loop_assigns_part01",
+      "line": 42,
       "property": "pairWise_loop_assigns",
       "proved_subgoals": 1,
       "provers": [
@@ -562,37 +557,409 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
-      "goal": "typed_ref_pairWise_loop_assigns_part2",
-      "line": 49,
+      "goal": "typed_ref_pairWise_loop_assigns_part02",
+      "line": 42,
       "property": "pairWise_loop_assigns",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.0687
+          "time": 0.0519
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 1.5
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_loop_assigns_part03",
+      "line": 42,
+      "property": "pairWise_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_loop_assigns_part04",
+      "line": 42,
+      "property": "pairWise_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_loop_assigns_part05",
+      "line": 42,
+      "property": "pairWise_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_loop_assigns_part06",
+      "line": 42,
+      "property": "pairWise_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_loop_assigns_part07",
+      "line": 42,
+      "property": "pairWise_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0658
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.036
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_loop_assigns_part08",
+      "line": 42,
+      "property": "pairWise_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_loop_assigns_part09",
+      "line": 42,
+      "property": "pairWise_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_loop_assigns_part10",
+      "line": 42,
+      "property": "pairWise_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_loop_assigns_part11",
+      "line": 42,
+      "property": "pairWise_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0491
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0355
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_normal_part01",
+      "line": 32,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_normal_part02",
+      "line": 32,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_normal_part03",
+      "line": 32,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_normal_part04",
+      "line": 32,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_normal_part05",
+      "line": 32,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_normal_part06",
+      "line": 32,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_normal_part07",
+      "line": 32,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_normal_part08",
+      "line": 32,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0194
         },
         {
           "prover": "Alt-Ergo:2.4.3",
-          "success": 1,
-          "time": 0.118
+          "success": 0,
+          "time": 0
         }
       ],
-      "state": "proved",
-      "timeout_subgoals": 0,
+      "state": "unknown",
+      "timeout_subgoals": 1,
       "unknown_subgoals": 0,
-      "verdict": "valid"
+      "verdict": "timeout"
     },
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
-      "goal": "typed_ref_pairWise_loop_assigns_part3",
-      "line": 49,
-      "property": "pairWise_loop_assigns",
+      "goal": "typed_ref_pairWise_assigns_normal_part09",
+      "line": 32,
+      "property": "pairWise_assigns",
       "proved_subgoals": 1,
       "provers": [
         {
@@ -609,11 +976,11 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
-      "goal": "typed_ref_pairWise_loop_assigns_part4",
-      "line": 49,
-      "property": "pairWise_loop_assigns",
+      "goal": "typed_ref_pairWise_assigns_normal_part10",
+      "line": 32,
+      "property": "pairWise_assigns",
       "proved_subgoals": 1,
       "provers": [
         {
@@ -630,12 +997,337 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
-      "goal": "typed_ref_pairWise_loop_assigns_part5",
-      "line": 49,
-      "property": "pairWise_loop_assigns",
+      "goal": "typed_ref_pairWise_assigns_normal_part11",
+      "line": 32,
+      "property": "pairWise_assigns",
       "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_exit_part01",
+      "line": 32,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_exit_part02",
+      "line": 32,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_exit_part03",
+      "line": 32,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_exit_part04",
+      "line": 32,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_exit_part05",
+      "line": 32,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_exit_part06",
+      "line": 32,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0201
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_exit_part07",
+      "line": 32,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_exit_part08",
+      "line": 32,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_exit_part09",
+      "line": 32,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_exit_part10",
+      "line": 32,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_exit_part11",
+      "line": 32,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0327
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_exit_part12",
+      "line": 32,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_exit_part13",
+      "line": 32,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_exit_part14",
+      "line": 32,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_assigns_exit_part15",
+      "line": 32,
+      "property": "pairWise_assigns",
+      "proved_subgoals": 0,
       "provers": [
         {
           "prover": "qed",
@@ -644,247 +1336,6 @@
         },
         {
           "prover": "Alt-Ergo:2.4.3",
-          "success": 1,
-          "time": 0.0249
-        }
-      ],
-      "state": "proved",
-      "timeout_subgoals": 0,
-      "unknown_subgoals": 0,
-      "verdict": "valid"
-    },
-    {
-      "category": "specification",
-      "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
-      "function": "pairWise",
-      "goal": "typed_ref_pairWise_loop_assigns_part6",
-      "line": 49,
-      "property": "pairWise_loop_assigns",
-      "proved_subgoals": 1,
-      "provers": [
-        {
-          "prover": "qed",
-          "success": 1,
-          "time": 0
-        }
-      ],
-      "state": "proved",
-      "timeout_subgoals": 0,
-      "unknown_subgoals": 0,
-      "verdict": "valid"
-    },
-    {
-      "category": "specification",
-      "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
-      "function": "pairWise",
-      "goal": "typed_ref_pairWise_loop_assigns_part7",
-      "line": 49,
-      "property": "pairWise_loop_assigns",
-      "proved_subgoals": 1,
-      "provers": [
-        {
-          "prover": "qed",
-          "success": 1,
-          "time": 0
-        }
-      ],
-      "state": "proved",
-      "timeout_subgoals": 0,
-      "unknown_subgoals": 0,
-      "verdict": "valid"
-    },
-    {
-      "category": "specification",
-      "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
-      "function": "pairWise",
-      "goal": "typed_ref_pairWise_loop_assigns_part8",
-      "line": 49,
-      "property": "pairWise_loop_assigns",
-      "proved_subgoals": 1,
-      "provers": [
-        {
-          "prover": "qed",
-          "success": 0,
-          "time": 0.0675
-        },
-        {
-          "prover": "Alt-Ergo:2.4.3",
-          "success": 1,
-          "time": 0.0186
-        }
-      ],
-      "state": "proved",
-      "timeout_subgoals": 0,
-      "unknown_subgoals": 0,
-      "verdict": "valid"
-    },
-    {
-      "category": "specification",
-      "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
-      "function": "pairWise",
-      "goal": "typed_ref_pairWise_assigns_normal_part1",
-      "line": 37,
-      "property": "pairWise_assigns",
-      "proved_subgoals": 1,
-      "provers": [
-        {
-          "prover": "qed",
-          "success": 1,
-          "time": 0
-        }
-      ],
-      "state": "proved",
-      "timeout_subgoals": 0,
-      "unknown_subgoals": 0,
-      "verdict": "valid"
-    },
-    {
-      "category": "specification",
-      "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
-      "function": "pairWise",
-      "goal": "typed_ref_pairWise_assigns_normal_part2",
-      "line": 37,
-      "property": "pairWise_assigns",
-      "proved_subgoals": 1,
-      "provers": [
-        {
-          "prover": "qed",
-          "success": 1,
-          "time": 0
-        }
-      ],
-      "state": "proved",
-      "timeout_subgoals": 0,
-      "unknown_subgoals": 0,
-      "verdict": "valid"
-    },
-    {
-      "category": "specification",
-      "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
-      "function": "pairWise",
-      "goal": "typed_ref_pairWise_assigns_normal_part3",
-      "line": 37,
-      "property": "pairWise_assigns",
-      "proved_subgoals": 1,
-      "provers": [
-        {
-          "prover": "qed",
-          "success": 1,
-          "time": 0
-        }
-      ],
-      "state": "proved",
-      "timeout_subgoals": 0,
-      "unknown_subgoals": 0,
-      "verdict": "valid"
-    },
-    {
-      "category": "specification",
-      "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
-      "function": "pairWise",
-      "goal": "typed_ref_pairWise_assigns_normal_part4",
-      "line": 37,
-      "property": "pairWise_assigns",
-      "proved_subgoals": 1,
-      "provers": [
-        {
-          "prover": "qed",
-          "success": 1,
-          "time": 0
-        }
-      ],
-      "state": "proved",
-      "timeout_subgoals": 0,
-      "unknown_subgoals": 0,
-      "verdict": "valid"
-    },
-    {
-      "category": "specification",
-      "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
-      "function": "pairWise",
-      "goal": "typed_ref_pairWise_assigns_normal_part5",
-      "line": 37,
-      "property": "pairWise_assigns",
-      "proved_subgoals": 1,
-      "provers": [
-        {
-          "prover": "qed",
-          "success": 1,
-          "time": 0
-        }
-      ],
-      "state": "proved",
-      "timeout_subgoals": 0,
-      "unknown_subgoals": 0,
-      "verdict": "valid"
-    },
-    {
-      "category": "specification",
-      "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
-      "function": "pairWise",
-      "goal": "typed_ref_pairWise_assigns_normal_part6",
-      "line": 37,
-      "property": "pairWise_assigns",
-      "proved_subgoals": 1,
-      "provers": [
-        {
-          "prover": "qed",
-          "success": 1,
-          "time": 0
-        }
-      ],
-      "state": "proved",
-      "timeout_subgoals": 0,
-      "unknown_subgoals": 0,
-      "verdict": "valid"
-    },
-    {
-      "category": "specification",
-      "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
-      "function": "pairWise",
-      "goal": "typed_ref_pairWise_assigns_normal_part7",
-      "line": 37,
-      "property": "pairWise_assigns",
-      "proved_subgoals": 1,
-      "provers": [
-        {
-          "prover": "qed",
-          "success": 1,
-          "time": 0
-        }
-      ],
-      "state": "proved",
-      "timeout_subgoals": 0,
-      "unknown_subgoals": 0,
-      "verdict": "valid"
-    },
-    {
-      "category": "specification",
-      "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
-      "function": "pairWise",
-      "goal": "typed_ref_pairWise_assigns_normal_part8",
-      "line": 37,
-      "property": "pairWise_assigns",
-      "proved_subgoals": 0,
-      "provers": [
-        {
-          "prover": "qed",
-          "success": 0,
-          "time": 0.0182
-        },
-        {
-          "prover": "Alt-Ergo:2.4.3",
           "success": 0,
           "time": 0
         }
@@ -897,298 +1348,10 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
-      "function": "pairWise",
-      "goal": "typed_ref_pairWise_assigns_normal_part9",
-      "line": 37,
-      "property": "pairWise_assigns",
-      "proved_subgoals": 1,
-      "provers": [
-        {
-          "prover": "qed",
-          "success": 1,
-          "time": 0
-        }
-      ],
-      "state": "proved",
-      "timeout_subgoals": 0,
-      "unknown_subgoals": 0,
-      "verdict": "valid"
-    },
-    {
-      "category": "specification",
-      "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
-      "function": "pairWise",
-      "goal": "typed_ref_pairWise_assigns_exit_part01",
-      "line": 37,
-      "property": "pairWise_assigns",
-      "proved_subgoals": 1,
-      "provers": [
-        {
-          "prover": "qed",
-          "success": 1,
-          "time": 0
-        }
-      ],
-      "state": "proved",
-      "timeout_subgoals": 0,
-      "unknown_subgoals": 0,
-      "verdict": "valid"
-    },
-    {
-      "category": "specification",
-      "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
-      "function": "pairWise",
-      "goal": "typed_ref_pairWise_assigns_exit_part02",
-      "line": 37,
-      "property": "pairWise_assigns",
-      "proved_subgoals": 1,
-      "provers": [
-        {
-          "prover": "qed",
-          "success": 1,
-          "time": 0
-        }
-      ],
-      "state": "proved",
-      "timeout_subgoals": 0,
-      "unknown_subgoals": 0,
-      "verdict": "valid"
-    },
-    {
-      "category": "specification",
-      "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
-      "function": "pairWise",
-      "goal": "typed_ref_pairWise_assigns_exit_part03",
-      "line": 37,
-      "property": "pairWise_assigns",
-      "proved_subgoals": 1,
-      "provers": [
-        {
-          "prover": "qed",
-          "success": 1,
-          "time": 0
-        }
-      ],
-      "state": "proved",
-      "timeout_subgoals": 0,
-      "unknown_subgoals": 0,
-      "verdict": "valid"
-    },
-    {
-      "category": "specification",
-      "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
-      "function": "pairWise",
-      "goal": "typed_ref_pairWise_assigns_exit_part04",
-      "line": 37,
-      "property": "pairWise_assigns",
-      "proved_subgoals": 1,
-      "provers": [
-        {
-          "prover": "qed",
-          "success": 1,
-          "time": 0
-        }
-      ],
-      "state": "proved",
-      "timeout_subgoals": 0,
-      "unknown_subgoals": 0,
-      "verdict": "valid"
-    },
-    {
-      "category": "specification",
-      "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
-      "function": "pairWise",
-      "goal": "typed_ref_pairWise_assigns_exit_part05",
-      "line": 37,
-      "property": "pairWise_assigns",
-      "proved_subgoals": 1,
-      "provers": [
-        {
-          "prover": "qed",
-          "success": 1,
-          "time": 0
-        }
-      ],
-      "state": "proved",
-      "timeout_subgoals": 0,
-      "unknown_subgoals": 0,
-      "verdict": "valid"
-    },
-    {
-      "category": "specification",
-      "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
-      "function": "pairWise",
-      "goal": "typed_ref_pairWise_assigns_exit_part06",
-      "line": 37,
-      "property": "pairWise_assigns",
-      "proved_subgoals": 0,
-      "provers": [
-        {
-          "prover": "qed",
-          "success": 0,
-          "time": 0.0266
-        },
-        {
-          "prover": "Alt-Ergo:2.4.3",
-          "success": 0,
-          "time": 0
-        }
-      ],
-      "state": "unknown",
-      "timeout_subgoals": 1,
-      "unknown_subgoals": 0,
-      "verdict": "timeout"
-    },
-    {
-      "category": "specification",
-      "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
-      "function": "pairWise",
-      "goal": "typed_ref_pairWise_assigns_exit_part07",
-      "line": 37,
-      "property": "pairWise_assigns",
-      "proved_subgoals": 1,
-      "provers": [
-        {
-          "prover": "qed",
-          "success": 1,
-          "time": 0
-        }
-      ],
-      "state": "proved",
-      "timeout_subgoals": 0,
-      "unknown_subgoals": 0,
-      "verdict": "valid"
-    },
-    {
-      "category": "specification",
-      "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
-      "function": "pairWise",
-      "goal": "typed_ref_pairWise_assigns_exit_part08",
-      "line": 37,
-      "property": "pairWise_assigns",
-      "proved_subgoals": 1,
-      "provers": [
-        {
-          "prover": "qed",
-          "success": 1,
-          "time": 0
-        }
-      ],
-      "state": "proved",
-      "timeout_subgoals": 0,
-      "unknown_subgoals": 0,
-      "verdict": "valid"
-    },
-    {
-      "category": "specification",
-      "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
-      "function": "pairWise",
-      "goal": "typed_ref_pairWise_assigns_exit_part09",
-      "line": 37,
-      "property": "pairWise_assigns",
-      "proved_subgoals": 0,
-      "provers": [
-        {
-          "prover": "qed",
-          "success": 0,
-          "time": 0.0338
-        },
-        {
-          "prover": "Alt-Ergo:2.4.3",
-          "success": 0,
-          "time": 0
-        }
-      ],
-      "state": "unknown",
-      "timeout_subgoals": 1,
-      "unknown_subgoals": 0,
-      "verdict": "timeout"
-    },
-    {
-      "category": "specification",
-      "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
-      "function": "pairWise",
-      "goal": "typed_ref_pairWise_assigns_exit_part10",
-      "line": 37,
-      "property": "pairWise_assigns",
-      "proved_subgoals": 1,
-      "provers": [
-        {
-          "prover": "qed",
-          "success": 1,
-          "time": 0
-        }
-      ],
-      "state": "proved",
-      "timeout_subgoals": 0,
-      "unknown_subgoals": 0,
-      "verdict": "valid"
-    },
-    {
-      "category": "specification",
-      "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
-      "function": "pairWise",
-      "goal": "typed_ref_pairWise_assigns_exit_part11",
-      "line": 37,
-      "property": "pairWise_assigns",
-      "proved_subgoals": 1,
-      "provers": [
-        {
-          "prover": "qed",
-          "success": 1,
-          "time": 0
-        }
-      ],
-      "state": "proved",
-      "timeout_subgoals": 0,
-      "unknown_subgoals": 0,
-      "verdict": "valid"
-    },
-    {
-      "category": "specification",
-      "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
-      "function": "pairWise",
-      "goal": "typed_ref_pairWise_assigns_exit_part12",
-      "line": 37,
-      "property": "pairWise_assigns",
-      "proved_subgoals": 0,
-      "provers": [
-        {
-          "prover": "qed",
-          "success": 0,
-          "time": 0.0326
-        },
-        {
-          "prover": "Alt-Ergo:2.4.3",
-          "success": 0,
-          "time": 0
-        }
-      ],
-      "state": "unknown",
-      "timeout_subgoals": 1,
-      "unknown_subgoals": 0,
-      "verdict": "timeout"
-    },
-    {
-      "category": "specification",
-      "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
       "goal": "typed_ref_pairWise_loop_variant_positive",
-      "line": 50,
+      "line": 43,
       "property": "pairWise_loop_variant",
       "proved_subgoals": 1,
       "provers": [
@@ -1206,22 +1369,22 @@
     {
       "category": "specification",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
       "goal": "typed_ref_pairWise_loop_variant_decrease",
-      "line": 50,
+      "line": 43,
       "property": "pairWise_loop_variant",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.0476
+          "time": 0.0818
         },
         {
-          "prover": "Alt-Ergo:2.4.3",
+          "prover": "Z3:4.8.12",
           "success": 1,
-          "time": 0.0375
+          "time": 0.364
         }
       ],
       "state": "proved",
@@ -1232,22 +1395,22 @@
     {
       "category": "precondition/RTE",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
       "goal": "typed_ref_pairWise_call_jarray_length_requires",
-      "line": 38,
+      "line": 33,
       "property": "jarray_length_requires",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.00391
+          "time": 0.00466
         },
         {
           "prover": "Alt-Ergo:2.4.3",
           "success": 1,
-          "time": 0.00392
+          "time": 0.0134
         }
       ],
       "state": "proved",
@@ -1258,22 +1421,22 @@
     {
       "category": "precondition/RTE",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
       "goal": "typed_ref_pairWise_call_jarray_length_requires_2",
-      "line": 38,
+      "line": 33,
       "property": "jarray_length_requires_2",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.00305
+          "time": 0.00298
         },
         {
           "prover": "Alt-Ergo:2.4.3",
           "success": 1,
-          "time": 0.00787
+          "time": 0.016
         }
       ],
       "state": "proved",
@@ -1284,10 +1447,10 @@
     {
       "category": "precondition/RTE",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
       "goal": "typed_ref_pairWise_call_jarray2_new_requires",
-      "line": 40,
+      "line": 34,
       "property": "jarray2_new_requires",
       "proved_subgoals": 1,
       "provers": [
@@ -1305,10 +1468,10 @@
     {
       "category": "precondition/RTE",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
       "goal": "typed_ref_pairWise_call_jarray2_new_requires_2",
-      "line": 40,
+      "line": 34,
       "property": "jarray2_new_requires_2",
       "proved_subgoals": 1,
       "provers": [
@@ -1326,10 +1489,10 @@
     {
       "category": "precondition/RTE",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
       "goal": "typed_ref_pairWise_call_jarray2_new_requires_3",
-      "line": 40,
+      "line": 34,
       "property": "jarray2_new_requires_3",
       "proved_subgoals": 1,
       "provers": [
@@ -1347,10 +1510,10 @@
     {
       "category": "precondition/RTE",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
       "goal": "typed_ref_pairWise_call_jarray2_new_requires_4",
-      "line": 40,
+      "line": 34,
       "property": "jarray2_new_requires_4",
       "proved_subgoals": 1,
       "provers": [
@@ -1368,22 +1531,17 @@
     {
       "category": "precondition/RTE",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
-      "goal": "typed_ref_pairWise_call_jarray2_new_2_requires",
-      "line": 42,
-      "property": "jarray2_new_requires_5",
+      "goal": "typed_ref_pairWise_call_jarray_length_2_requires",
+      "line": 36,
+      "property": "jarray_length_requires_3",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
-          "success": 0,
-          "time": 0.0124
-        },
-        {
-          "prover": "Alt-Ergo:2.4.3",
           "success": 1,
-          "time": 0.0203
+          "time": 0
         }
       ],
       "state": "proved",
@@ -1394,10 +1552,57 @@
     {
       "category": "precondition/RTE",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_call_jarray_length_2_requires_2",
+      "line": 36,
+      "property": "jarray_length_requires_4",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_call_jarray2_new_2_requires",
+      "line": 36,
+      "property": "jarray2_new_requires_5",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00762
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.015
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
       "goal": "typed_ref_pairWise_call_jarray2_new_2_requires_2",
-      "line": 42,
+      "line": 36,
       "property": "jarray2_new_requires_6",
       "proved_subgoals": 1,
       "provers": [
@@ -1415,10 +1620,10 @@
     {
       "category": "precondition/RTE",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
       "goal": "typed_ref_pairWise_call_jarray2_new_2_requires_3",
-      "line": 42,
+      "line": 36,
       "property": "jarray2_new_requires_7",
       "proved_subgoals": 1,
       "provers": [
@@ -1436,10 +1641,10 @@
     {
       "category": "precondition/RTE",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
       "goal": "typed_ref_pairWise_call_jarray2_new_2_requires_4",
-      "line": 42,
+      "line": 36,
       "property": "jarray2_new_requires_8",
       "proved_subgoals": 1,
       "provers": [
@@ -1457,11 +1662,11 @@
     {
       "category": "precondition/RTE",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
-      "goal": "typed_ref_pairWise_call_jarray2_get_requires",
-      "line": 53,
-      "property": "jarray2_get_requires",
+      "goal": "typed_ref_pairWise_call_jarray_length_3_requires",
+      "line": 45,
+      "property": "jarray_length_requires_5",
       "proved_subgoals": 1,
       "provers": [
         {
@@ -1478,22 +1683,22 @@
     {
       "category": "precondition/RTE",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
-      "goal": "typed_ref_pairWise_call_jarray2_get_requires_2",
-      "line": 53,
-      "property": "jarray2_get_requires_2",
+      "goal": "typed_ref_pairWise_call_jarray_length_3_requires_2",
+      "line": 45,
+      "property": "jarray_length_requires_6",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.0189
+          "time": 0.0164
         },
         {
           "prover": "Alt-Ergo:2.4.3",
           "success": 1,
-          "time": 0.0113
+          "time": 8.94
         }
       ],
       "state": "proved",
@@ -1504,31 +1709,10 @@
     {
       "category": "precondition/RTE",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
-      "function": "pairWise",
-      "goal": "typed_ref_pairWise_call_jarray2_get_requires_3",
-      "line": 53,
-      "property": "jarray2_get_requires_3",
-      "proved_subgoals": 1,
-      "provers": [
-        {
-          "prover": "qed",
-          "success": 1,
-          "time": 0
-        }
-      ],
-      "state": "proved",
-      "timeout_subgoals": 0,
-      "unknown_subgoals": 0,
-      "verdict": "valid"
-    },
-    {
-      "category": "precondition/RTE",
-      "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
       "goal": "typed_ref_pairWise_call_jarray_get_requires",
-      "line": 54,
+      "line": 46,
       "property": "jarray_get_requires",
       "proved_subgoals": 1,
       "provers": [
@@ -1546,22 +1730,17 @@
     {
       "category": "precondition/RTE",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
       "goal": "typed_ref_pairWise_call_jarray_get_requires_2",
-      "line": 54,
+      "line": 46,
       "property": "jarray_get_requires_2",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
-          "success": 0,
-          "time": 0.0162
-        },
-        {
-          "prover": "Z3:4.8.12",
           "success": 1,
-          "time": 1
+          "time": 0
         }
       ],
       "state": "proved",
@@ -1572,22 +1751,17 @@
     {
       "category": "precondition/RTE",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
       "goal": "typed_ref_pairWise_call_jarray_get_requires_3",
-      "line": 54,
+      "line": 46,
       "property": "jarray_get_requires_3",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
-          "success": 0,
-          "time": 0.0132
-        },
-        {
-          "prover": "Alt-Ergo:2.4.3",
           "success": 1,
-          "time": 0.00792
+          "time": 0
         }
       ],
       "state": "proved",
@@ -1598,22 +1772,95 @@
     {
       "category": "precondition/RTE",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_call_jarray2_get_requires",
+      "line": 47,
+      "property": "jarray2_get_requires",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_call_jarray2_get_requires_2",
+      "line": 47,
+      "property": "jarray2_get_requires_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0206
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0178
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_call_jarray2_get_requires_3",
+      "line": 47,
+      "property": "jarray2_get_requires_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0223
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0181
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
       "goal": "typed_ref_pairWise_call_jarray_set_requires",
-      "line": 54,
+      "line": 47,
       "property": "jarray_set_requires",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.0226
+          "time": 0.0312
         },
         {
           "prover": "Alt-Ergo:2.4.3",
           "success": 1,
-          "time": 0.0167
+          "time": 0.0166
         }
       ],
       "state": "proved",
@@ -1624,22 +1871,22 @@
     {
       "category": "precondition/RTE",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
       "goal": "typed_ref_pairWise_call_jarray_set_requires_2",
-      "line": 54,
+      "line": 47,
       "property": "jarray_set_requires_2",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.0244
+          "time": 0.0288
         },
         {
-          "prover": "Alt-Ergo:2.4.3",
+          "prover": "Z3:4.8.12",
           "success": 1,
-          "time": 0.0537
+          "time": 0.021
         }
       ],
       "state": "proved",
@@ -1650,22 +1897,22 @@
     {
       "category": "precondition/RTE",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
       "goal": "typed_ref_pairWise_call_jarray_set_requires_3",
-      "line": 54,
+      "line": 47,
       "property": "jarray_set_requires_3",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.0229
+          "time": 0.0364
         },
         {
           "prover": "Alt-Ergo:2.4.3",
           "success": 1,
-          "time": 0.00977
+          "time": 0.0111
         }
       ],
       "state": "proved",
@@ -1676,10 +1923,10 @@
     {
       "category": "precondition/RTE",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
       "goal": "typed_ref_pairWise_call_jarray_get_2_requires",
-      "line": 55,
+      "line": 48,
       "property": "jarray_get_requires_4",
       "proved_subgoals": 1,
       "provers": [
@@ -1697,22 +1944,22 @@
     {
       "category": "precondition/RTE",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
       "goal": "typed_ref_pairWise_call_jarray_get_2_requires_2",
-      "line": 55,
+      "line": 48,
       "property": "jarray_get_requires_5",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.0315
+          "time": 0.0461
         },
         {
           "prover": "Alt-Ergo:2.4.3",
           "success": 1,
-          "time": 6.14
+          "time": 7.33
         }
       ],
       "state": "proved",
@@ -1723,22 +1970,22 @@
     {
       "category": "precondition/RTE",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
       "goal": "typed_ref_pairWise_call_jarray_get_2_requires_3",
-      "line": 55,
+      "line": 48,
       "property": "jarray_get_requires_6",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.0389
+          "time": 0.0502
         },
         {
           "prover": "Alt-Ergo:2.4.3",
           "success": 1,
-          "time": 0.036
+          "time": 3.72
         }
       ],
       "state": "proved",
@@ -1749,10 +1996,83 @@
     {
       "category": "precondition/RTE",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_call_jarray2_get_2_requires",
+      "line": 49,
+      "property": "jarray2_get_requires_4",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_call_jarray2_get_2_requires_2",
+      "line": 49,
+      "property": "jarray2_get_requires_5",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0478
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
+      "function": "pairWise",
+      "goal": "typed_ref_pairWise_call_jarray2_get_2_requires_3",
+      "line": 49,
+      "property": "jarray2_get_requires_6",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0466
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.258
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
       "goal": "typed_ref_pairWise_call_jarray_set_2_requires",
-      "line": 55,
+      "line": 49,
       "property": "jarray_set_requires_4",
       "proved_subgoals": 1,
       "provers": [
@@ -1770,10 +2090,10 @@
     {
       "category": "precondition/RTE",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
       "goal": "typed_ref_pairWise_call_jarray_set_2_requires_2",
-      "line": 55,
+      "line": 49,
       "property": "jarray_set_requires_5",
       "proved_subgoals": 1,
       "provers": [
@@ -1791,22 +2111,22 @@
     {
       "category": "precondition/RTE",
       "failed_subgoals": 0,
-      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/original/c/PairWise.c",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_corrected_originals_verification_20261001/cases/PairWise/original/c/PairWise.c",
       "function": "pairWise",
       "goal": "typed_ref_pairWise_call_jarray_set_2_requires_3",
-      "line": 55,
+      "line": 49,
       "property": "jarray_set_requires_6",
       "proved_subgoals": 1,
       "provers": [
         {
           "prover": "qed",
           "success": 0,
-          "time": 0.0322
+          "time": 0.0469
         },
         {
-          "prover": "Alt-Ergo:2.4.3",
+          "prover": "Z3:4.8.12",
           "success": 1,
-          "time": 0.0244
+          "time": 0.274
         }
       ],
       "state": "proved",
@@ -1815,18 +2135,22 @@
       "verdict": "valid"
     }
   ],
-  "input_fingerprint": "6217715bef5d8984e07b437c44199aa98177b021490d32c6044af96f90d921de",
+  "input_fingerprint": "b309c72169e89ab2882cb3966551673262f6082722d1e08ff50c1340c0ee17f5",
   "language": "c",
   "logs": {
     "stderr": "stderr.log",
     "stdout": "stdout.log",
     "wp_report": "wp-report.json"
   },
+  "migration_provenance": {
+    "archive": "/mnt/d/ResearchProject/output/verification_run_archive_20261001T080722Z",
+    "utc": "20261001T080722Z"
+  },
   "mutant_id": null,
   "outcome": "unknown/timeout",
   "program": "PairWise",
   "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/PairWise.c",
-  "raw_source_sha256": "75c6ccc88b6c558dbb42ee417c5442b5dae7930b6f8683f777d094da476cd21f",
+  "raw_source_sha256": "76419ae82e3ffb71344b9c4a9322d6dc020519db69dace5c4988d1535e335e90",
   "reason": "At least one WP goal remains unresolved",
   "role": "original",
   "selection": null,
@@ -1856,7 +2180,7 @@
   "timed_out": false,
   "transfer": {
     "annotation_count": 4,
-    "executable_token_sha256": "e8cee512f4c9358af87ccab1e870b90b357db6189128c657593200753fe16971",
+    "executable_token_sha256": "6f4194528e9ed923b288a9d85a66dec8207c64195c030ad508f34a49d5fa2269",
     "internal_annotation_coverage": "complete",
     "method": "frozen structured JSON with audited C declaration bindings",
     "omitted_annotations": [],
@@ -1875,7 +2199,7 @@
         "function": "java_sub",
         "id": "annotation_2",
         "loop_id": null,
-        "mutant_offset": 160,
+        "mutant_offset": 155,
         "next_token": "static",
         "target": "function"
       },
@@ -1884,22 +2208,30 @@
         "function": "pairWise",
         "id": "annotation_3",
         "loop_id": null,
-        "mutant_offset": 274,
+        "mutant_offset": 265,
         "next_token": "JIntArray2",
         "target": "function"
       },
       {
-        "boundary_token": 122,
+        "boundary_token": 127,
         "function": "pairWise",
         "id": "annotation_4",
         "loop_id": "loop_1",
-        "mutant_offset": 518,
+        "mutant_offset": 497,
         "next_token": "for",
         "target": "loop"
       }
     ],
     "removed_loop_annotations": 0,
     "removed_temporary_policy": "original pure initializer with stable dependencies"
+  },
+  "verification_integration": {
+    "invocation_paths_preserved": true,
+    "previous_record": "original_verification/source_records/269b56c512c247037cd25c13669fc518074fa59d88e7c861f54c162560ca9bee.json",
+    "previous_record_sha256": "269b56c512c247037cd25c13669fc518074fa59d88e7c861f54c162560ca9bee",
+    "rerun": "c_corrected_originals_verification_20261001",
+    "source_record": "original_verification/c_corrected_originals_verification_20261001/cases/PairWise/original/c/record.json",
+    "source_record_sha256": "9c14ecb7b3a22fb95814e67f222c4c285e196b4a9a017af9a91412ea54470c58"
   },
   "verification_started": true,
   "verifier": {

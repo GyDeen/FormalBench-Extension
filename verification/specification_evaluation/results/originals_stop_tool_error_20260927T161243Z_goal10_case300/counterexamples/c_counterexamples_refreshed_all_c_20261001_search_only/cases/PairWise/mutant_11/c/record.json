@@ -1,0 +1,89 @@
+{
+  "attempt_status": "complete",
+  "frozen_spec_sha256": "6d2e55e5c356135dba6d82b815bed188ff1bcdcaab09eb02079f17ec8349a07e",
+  "language": "c",
+  "mutant_id": "11",
+  "outcome": "precondition/RTE failure",
+  "program": "PairWise",
+  "replay": {
+    "audit_compilation_failed": false,
+    "checked": 181,
+    "independent_audit": {
+      "baseline_execution": {
+        "elapsed_seconds": 0.007586077001178637,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {
+            "l1": false
+          },
+          "errno": 0,
+          "result": [
+            [
+              0,
+              0
+            ]
+          ],
+          "rows_separate": true,
+          "state": {
+            "l1": [
+              0,
+              0
+            ]
+          }
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":[[0,0]],\"state\":{\"l1\":[0,0]},\"aliases\":{\"l1\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "baseline_failed_clauses": [],
+      "baseline_passed": true,
+      "execution": {
+        "elapsed_seconds": 0.007725367000603001,
+        "exit_code": 72,
+        "status": "runtime_safety",
+        "stderr": "JAVA_ARRAY_ERROR: INDEX_OUT_OF_BOUNDS (java.lang.ArrayIndexOutOfBoundsException)\n",
+        "stdout": ""
+      },
+      "failed_clauses": [],
+      "passed": true
+    },
+    "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+    "rejected_candidates": {},
+    "search_exhausted": false,
+    "status": "validated_safety_failure",
+    "timeouts": 0,
+    "witness": {
+      "elapsed_seconds": 0.007605078999404213,
+      "exit_code": 72,
+      "expected": [
+        [
+          0,
+          0
+        ]
+      ],
+      "failed_clauses": [],
+      "inputs": {
+        "l1": [
+          0,
+          0
+        ]
+      },
+      "origin": "saved_test:PairWise_ESTest.test0",
+      "preconditions_satisfied": true,
+      "status": "runtime_safety",
+      "stderr": "JAVA_ARRAY_ERROR: INDEX_OUT_OF_BOUNDS (java.lang.ArrayIndexOutOfBoundsException)\n",
+      "stdout": "",
+      "validated": true
+    }
+  },
+  "replay_source_kind": "raw_source_after_annotation_transfer_failure",
+  "replay_source_sha256": "ffbc6bcd5fd627bc00aa379897c96dccb83e93624e9a1b57ebee7b0b193789d9",
+  "role": "mutant",
+  "search_elapsed_seconds": 4.364003270000467,
+  "source_record": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/mutant_11/c/record.json",
+  "source_record_sha256": "a638cc1a43e96abbe063edde3a49e491e004f39a3e1469ca4becd07b4d665482",
+  "verification_outcome": "not run",
+  "verification_rerun": false,
+  "verification_reused": true
+}

@@ -1,0 +1,103 @@
+{
+  "attempt_status": "complete",
+  "frozen_spec_sha256": "b2f831bdde4f4a798d461f799193cdda129f6dcefa212e782139bd8aeabdcd06",
+  "language": "c",
+  "mutant_id": "1",
+  "outcome": "precondition/RTE failure",
+  "program": "MaxDifference",
+  "replay": {
+    "audit_compilation_failed": false,
+    "checked": 66,
+    "independent_audit": {
+      "baseline_execution": {
+        "elapsed_seconds": 0.006896021999637014,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {
+            "testArray": false
+          },
+          "errno": 0,
+          "result": 0,
+          "rows_separate": true,
+          "state": {
+            "testArray": [
+              [
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ]
+          }
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":0,\"state\":{\"testArray\":[[0,0,0,0,0],[0,0,0,0,0]]},\"aliases\":{\"testArray\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "baseline_failed_clauses": [],
+      "baseline_passed": true,
+      "execution": {
+        "elapsed_seconds": 0.00943430200095463,
+        "exit_code": 72,
+        "status": "runtime_safety",
+        "stderr": "JAVA_ARRAY_ERROR: INDEX_OUT_OF_BOUNDS (java.lang.ArrayIndexOutOfBoundsException)\n",
+        "stdout": ""
+      },
+      "failed_clauses": [],
+      "passed": true
+    },
+    "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+    "rejected_candidates": {},
+    "search_exhausted": false,
+    "status": "validated_safety_failure",
+    "timeouts": 0,
+    "witness": {
+      "elapsed_seconds": 0.0049903399994946085,
+      "exit_code": 72,
+      "expected": 0,
+      "failed_clauses": [],
+      "inputs": {
+        "testArray": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "origin": "saved_test:MaxDifference_ESTest.test3",
+      "preconditions_satisfied": true,
+      "status": "runtime_safety",
+      "stderr": "JAVA_ARRAY_ERROR: INDEX_OUT_OF_BOUNDS (java.lang.ArrayIndexOutOfBoundsException)\n",
+      "stdout": "",
+      "validated": true
+    }
+  },
+  "replay_source_kind": "frozen_annotated_source",
+  "replay_source_sha256": "1e5ab094bec5fad20251b9319ad7a893895602e340bb074301eddc17d45d530a",
+  "role": "mutant",
+  "search_elapsed_seconds": 2.3545308970005863,
+  "source_record": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxDifference/mutant_1/c/record.json",
+  "source_record_sha256": "f1c059969115859e50a398df57429ab897218eb0ac308eda78976d3351a2881e",
+  "verification_outcome": "unknown/timeout",
+  "verification_rerun": false,
+  "verification_reused": true
+}

@@ -1,0 +1,475 @@
+{
+  "attempts": [
+    {
+      "elapsed_seconds": 0.008401766001043143,
+      "exit_code": 75,
+      "expected": 0,
+      "failed_clauses": [],
+      "inputs": {
+        "cost": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "m": 4,
+        "n": 4
+      },
+      "origin": "saved_test:MinCost_ESTest.test6",
+      "preconditions_satisfied": true,
+      "status": "abnormal_exit",
+      "stderr": "JAVA_ARITHMETIC_ERROR: DIVIDE_BY_ZERO\n",
+      "stdout": ""
+    },
+    {
+      "elapsed_seconds": 0.004719852000562241,
+      "exit_code": 0,
+      "expected": 0,
+      "failed_clauses": [],
+      "inputs": {
+        "cost": [
+          [
+            0
+          ]
+        ],
+        "m": 0,
+        "n": 0
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "cost": false
+        },
+        "errno": 0,
+        "result": 0,
+        "rows_separate": true,
+        "state": {
+          "cost": [
+            [
+              0
+            ]
+          ]
+        }
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":0,\"state\":{\"cost\":[[0]]},\"aliases\":{\"cost\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.0047342930010927375,
+      "exit_code": 0,
+      "expected": 1,
+      "failed_clauses": [],
+      "inputs": {
+        "cost": [
+          [
+            1,
+            2
+          ]
+        ],
+        "m": 0,
+        "n": 0
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "cost": false
+        },
+        "errno": 0,
+        "result": 1,
+        "rows_separate": true,
+        "state": {
+          "cost": [
+            [
+              1,
+              2
+            ]
+          ]
+        }
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":1,\"state\":{\"cost\":[[1,2]]},\"aliases\":{\"cost\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.0039861539989942685,
+      "exit_code": 0,
+      "expected": 3,
+      "failed_clauses": [],
+      "inputs": {
+        "cost": [
+          [
+            1,
+            2
+          ]
+        ],
+        "m": 0,
+        "n": 1
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "cost": false
+        },
+        "errno": 0,
+        "result": 3,
+        "rows_separate": true,
+        "state": {
+          "cost": [
+            [
+              1,
+              2
+            ]
+          ]
+        }
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":3,\"state\":{\"cost\":[[1,2]]},\"aliases\":{\"cost\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.004649607000828837,
+      "exit_code": 0,
+      "expected": 1,
+      "failed_clauses": [],
+      "inputs": {
+        "cost": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "m": 0,
+        "n": 0
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "cost": false
+        },
+        "errno": 0,
+        "result": 1,
+        "rows_separate": true,
+        "state": {
+          "cost": [
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ]
+        }
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":1,\"state\":{\"cost\":[[1,2],[3,4]]},\"aliases\":{\"cost\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.004163678999248077,
+      "exit_code": 0,
+      "expected": 3,
+      "failed_clauses": [],
+      "inputs": {
+        "cost": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "m": 0,
+        "n": 1
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "cost": false
+        },
+        "errno": 0,
+        "result": 3,
+        "rows_separate": true,
+        "state": {
+          "cost": [
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ]
+        }
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":3,\"state\":{\"cost\":[[1,2],[3,4]]},\"aliases\":{\"cost\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.004437719999259571,
+      "exit_code": 0,
+      "expected": 4,
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "inputs": {
+        "cost": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "m": 1,
+        "n": 0
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "cost": false
+        },
+        "errno": 0,
+        "result": 1,
+        "rows_separate": true,
+        "state": {
+          "cost": [
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ]
+        }
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":1,\"state\":{\"cost\":[[1,2],[3,4]]},\"aliases\":{\"cost\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+      "validated": true
+    }
+  ],
+  "audit_compilation_failed": false,
+  "checked": 7,
+  "independent_audit": {
+    "baseline_execution": {
+      "elapsed_seconds": 0.006901172000652878,
+      "exit_code": 0,
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "cost": false
+        },
+        "errno": 0,
+        "result": 4,
+        "rows_separate": true,
+        "state": {
+          "cost": [
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ]
+        }
+      },
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":4,\"state\":{\"cost\":[[1,2],[3,4]]},\"aliases\":{\"cost\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    "baseline_failed_clauses": [],
+    "baseline_passed": true,
+    "execution": {
+      "elapsed_seconds": 0.006319780000922037,
+      "exit_code": 0,
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "cost": false
+        },
+        "errno": 0,
+        "result": 1,
+        "rows_separate": true,
+        "state": {
+          "cost": [
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ]
+        }
+      },
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":1,\"state\":{\"cost\":[[1,2],[3,4]]},\"aliases\":{\"cost\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    "failed_clauses": [
+      "frozen_return_value_or_array_contents"
+    ],
+    "passed": true
+  },
+  "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+  "rejected_candidates": {},
+  "search_exhausted": false,
+  "status": "validated_violation",
+  "timeouts": 0,
+  "witness": {
+    "elapsed_seconds": 0.004437719999259571,
+    "exit_code": 0,
+    "expected": 4,
+    "failed_clauses": [
+      "frozen_return_value_or_array_contents"
+    ],
+    "inputs": {
+      "cost": [
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "m": 1,
+      "n": 0
+    },
+    "observation": {
+      "EDOM": 33,
+      "aliases": {
+        "cost": false
+      },
+      "errno": 0,
+      "result": 1,
+      "rows_separate": true,
+      "state": {
+        "cost": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ]
+        ]
+      }
+    },
+    "origin": "bounded_search_seed726",
+    "preconditions_satisfied": true,
+    "status": "returned",
+    "stderr": "",
+    "stdout": "\n@@REPLAY {\"result\":1,\"state\":{\"cost\":[[1,2],[3,4]]},\"aliases\":{\"cost\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+    "validated": true
+  }
+}

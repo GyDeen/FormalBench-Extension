@@ -1,0 +1,95 @@
+{
+  "case_timeout": 300,
+  "cases": [
+    "MoveFirst/original",
+    "MultiplyElements/original",
+    "NextPowerOf2/original",
+    "PairWise/original"
+  ],
+  "complete": true,
+  "goal_timeout": 10,
+  "kind": "short_budget_diagnostic",
+  "results": [
+    {
+      "case": "MoveFirst/original",
+      "elapsed_seconds": 54.097,
+      "failure_stage": null,
+      "goals": {
+        "proved": 73,
+        "unknown": 9
+      },
+      "omitted_annotations": [],
+      "outcome": "unknown/timeout",
+      "reason": "At least one WP goal remains unresolved",
+      "task_generation": "passed",
+      "timed_out": false
+    },
+    {
+      "case": "MultiplyElements/original",
+      "elapsed_seconds": 46.061,
+      "failure_stage": null,
+      "goals": {
+        "proved": 65,
+        "unknown": 8
+      },
+      "omitted_annotations": [],
+      "outcome": "unknown/timeout",
+      "reason": "At least one WP goal remains unresolved",
+      "task_generation": "passed",
+      "timed_out": false
+    },
+    {
+      "case": "NextPowerOf2/original",
+      "elapsed_seconds": 11.719,
+      "failure_stage": null,
+      "goals": {
+        "proved": 20,
+        "unknown": 2
+      },
+      "omitted_annotations": [],
+      "outcome": "unknown/timeout",
+      "reason": "At least one WP goal remains unresolved",
+      "task_generation": "passed",
+      "timed_out": false
+    },
+    {
+      "case": "PairWise/original",
+      "elapsed_seconds": 82.64,
+      "failure_stage": null,
+      "goals": {
+        "proved": 80,
+        "unknown": 11
+      },
+      "omitted_annotations": [],
+      "outcome": "unknown/timeout",
+      "reason": "At least one WP goal remains unresolved",
+      "task_generation": "passed",
+      "timed_out": false
+    }
+  ],
+  "selection_manifest_sha256": "92fa1533eafe32fdc60b119b0c6abc8a4f3c0b372d66ac21f39e54a3b5d7433d",
+  "sources": {
+    "MoveFirst/original": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/MoveFirst.c",
+    "MultiplyElements/original": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/MultiplyElements.c",
+    "NextPowerOf2/original": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/NextPowerOf2.c",
+    "PairWise/original": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/PairWise.c"
+  },
+  "study": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300",
+  "verifier": {
+    "compatibility": {
+      "module": "/mnt/d/ResearchProject/.tools/frama-c-compat/1e5af7b10d6dd41df377/float_negation_33.cmxs",
+      "module_sha256": "1db37c95f71be52efae9dccb88c510a543ef611378c9e6438d65ec35880d70a8",
+      "name": "Frama-C 33.0 implicit floating-negation coercion repair",
+      "source": "/mnt/d/ResearchProject/verification/specification_evaluation/framac/float_negation_33.ml",
+      "source_sha256": "4ff87e29b00ac2eff69fd600225636521287641211fb362c1121246754c3870a"
+    },
+    "path": "/root/.opam/default/bin/frama-c",
+    "sha256": "9e49b5c48b5ca47a377a1b845f580bfbfb095fb18d51788c05cb42572201f116",
+    "version_command": [
+      "/root/.opam/default/bin/frama-c",
+      "-version"
+    ],
+    "version_exit_code": 0,
+    "version_output": "33.0 (Arsenic)"
+  }
+}

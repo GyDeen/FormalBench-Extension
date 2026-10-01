@@ -67,6 +67,8 @@ def arguments() -> argparse.Namespace:
                      help="concurrent Java mutant cases sharing a queue")
     run.add_argument("--capture-java-workload", action="store_true",
                      help="save generated assertions and solver input traces (use a new run directory)")
+    run.add_argument("--capture-c-counterexamples", action="store_true",
+                     help="request WP models and retain solver queries (use a new run directory; models require validation)")
     run.add_argument("--parallel-languages", "--independent-languages",
                      dest="parallel_languages", action="store_true",
                      help="run independent Java and C mutant queues; each advances when its own case finishes")
@@ -110,6 +112,7 @@ def main() -> int:
             args.timeout, args.goal_timeout, args.memory_model, args.machdep,
             args.wp_memlimit, args.wp_par,
             args.why3_extra_config.resolve() if args.why3_extra_config else None,
+            args.capture_c_counterexamples,
         )
         summary = run_population(population, programs, args.output,
                                  args.java_specs.resolve() if args.java_specs else None,

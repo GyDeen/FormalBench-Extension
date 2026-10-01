@@ -1,0 +1,73 @@
+{
+  "attempt_status": "complete",
+  "frozen_spec_sha256": "1ff4f79ded72133414dd68c0bc762c505c4a0ae3ca4d598593c6753158081816",
+  "language": "c",
+  "mutant_id": "3",
+  "outcome": "precondition/RTE failure",
+  "program": "CountingSort",
+  "replay": {
+    "audit_compilation_failed": false,
+    "checked": 141,
+    "independent_audit": {
+      "baseline_execution": {
+        "elapsed_seconds": 0.0065692379994288785,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {
+            "myArray": false
+          },
+          "errno": 0,
+          "result": [],
+          "rows_separate": true,
+          "state": {
+            "myArray": []
+          }
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":[],\"state\":{\"myArray\":[]},\"aliases\":{\"myArray\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "baseline_failed_clauses": [],
+      "baseline_passed": true,
+      "execution": {
+        "elapsed_seconds": 0.006801694000387215,
+        "exit_code": 72,
+        "status": "runtime_safety",
+        "stderr": "JAVA_ARRAY_ERROR: INDEX_OUT_OF_BOUNDS (java.lang.ArrayIndexOutOfBoundsException)\n",
+        "stdout": ""
+      },
+      "failed_clauses": [],
+      "passed": true
+    },
+    "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+    "rejected_candidates": {},
+    "search_exhausted": false,
+    "status": "validated_safety_failure",
+    "timeouts": 0,
+    "witness": {
+      "elapsed_seconds": 0.008060398000452551,
+      "exit_code": 72,
+      "expected": [],
+      "failed_clauses": [],
+      "inputs": {
+        "myArray": []
+      },
+      "origin": "saved_test:CountingSort_ESTest.test3",
+      "preconditions_satisfied": true,
+      "status": "runtime_safety",
+      "stderr": "JAVA_ARRAY_ERROR: INDEX_OUT_OF_BOUNDS (java.lang.ArrayIndexOutOfBoundsException)\n",
+      "stdout": "",
+      "validated": true
+    }
+  },
+  "replay_source_kind": "frozen_annotated_source",
+  "replay_source_sha256": "c64d79aaf8a1bbc2d33a1839314d18bcd7c9c33caf4b4cf1c315eded5e1ed00c",
+  "role": "mutant",
+  "search_elapsed_seconds": 1.5918496750000486,
+  "source_record": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_3/c/record.json",
+  "source_record_sha256": "06958e5aa1a27389d167aa719f9b2f878f5b435327f6f9e22dec629b034f2a03",
+  "verification_outcome": "unknown/timeout",
+  "verification_rerun": false,
+  "verification_reused": true
+}

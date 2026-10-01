@@ -1,4 +1,4 @@
-"""Generate a source-grounded README and statistics for a completed paired run."""
+"""Generate a source-grounded README and statistics for a paired run."""
 from __future__ import annotations
 
 import argparse
@@ -15,7 +15,7 @@ from .annotations import scan
 from .manifest import REPO, sha256
 
 CATEGORIES = ('sequential', 'branch', 'single_path_loop', 'multi_path_loop', 'nested')
-OUTCOMES = ('proved', 'specification violation', 'precondition/RTE failure', 'unknown/timeout', 'syntax/tool failure')
+OUTCOMES = ('proved', 'specification violation', 'precondition/RTE failure', 'unknown/timeout', 'syntax/tool failure', 'not run')
 
 
 def read(path):
@@ -72,7 +72,9 @@ def build(output, workload, selection):
     paths = {}
     for path in sorted((output/'cases').glob('*/*/*/record.json')):
         record = read(path)
-        assert record['program'] in categories and record['attempt_status'] == 'complete'
+        assert record['program'] in categories
+        assert record['attempt_status'] == 'complete' or (
+            record['outcome'] == 'not run' and record['attempt_status'] in ('pending', 'interrupted', 'running'))
         assert record['outcome'] in OUTCOMES
         key = (record['program'], record['role'], record['mutant_id'], record['language'])
         assert key not in paths
@@ -95,6 +97,10 @@ def build(output, workload, selection):
     # the final experiment's verdicts or wall-clock timings.
     java_workloads = {}
     missing_workloads = []
+    snapshot_path=output/'java_workload_snapshot.json'
+    snapshot=read(snapshot_path) if snapshot_path.is_file() else None
+    saved_workloads={(r['program'],r['role'],r['mutant_id'],'java'):r
+                     for r in snapshot['matched_cases']} if snapshot else {}
     for record in records:
         if record['language'] != 'java' or record['outcome'] != 'proved':
             continue
@@ -102,6 +108,17 @@ def build(output, workload, selection):
         relative = paths[key].relative_to(output)
         auxiliary = workload/relative
         if not auxiliary.exists():
+            saved=saved_workloads.get(key)
+            if saved:
+                assert saved['capture_complete']
+                assert saved['final_record_sha256']==sha256(paths[key]), record['program']
+                for field in ('raw_source_sha256', 'frozen_spec_sha256', 'annotated_source_sha256'):
+                    assert saved[field]==record[field], (record['program'],field)
+                assert saved['final_settings']==record['settings']
+                assert saved['final_verifier']==record['verifier']
+                java_workloads[key]={**saved,'snapshot':snapshot_path.relative_to(output).as_posix(),
+                                     'snapshot_sha256':sha256(snapshot_path)}
+                continue
             missing_workloads.append(record['program'])
             continue
         captured = read(auxiliary)
@@ -258,25 +275,72 @@ def build(output, workload, selection):
               'category_mapping': categories, 'statistical_method': 'median from statistics.median; sample SD n-1; quartiles and p95 linear interpolation at (n-1)*p',
               'success_criterion': 'final run record outcome == proved; timing is elapsed_seconds from this run',
               'successful': successful, 'categories': category_results,
+              'rejection_reporting': {
+                  'java': 'Classified OpenJML specification proof-failure diagnostics; excludes reported unknown validity',
+                  'c': 'Requires explicit invalid verdict or validated counterexample; model generation was disabled in this source run',
+                  'c_recorded_wp_verdicts': dict(Counter(g['verdict'] for r in records if r['language']=='c' for g in r['goals'])),
+                  'cross_language_rejection_comparable': False,
+              },
               'java_workload': {'source_run': workload.name, 'matched_cases': list(java_workloads.values()),
+                                'snapshot':snapshot_path.relative_to(output).as_posix() if snapshot else None,
+                                'snapshot_sha256':sha256(snapshot_path) if snapshot else None,
                                 'missing_programs': missing_workloads},
               'jarray': {'groups': jarray_groups, 'apis': api_rows, 'unresolved_clauses': clause_rows,
                          'contract_sha256': contract_hashes, 'cases': jarray_cases}}
+    result['completion'] = {'completed_case_records': sum(r['attempt_status']=='complete' for r in records),
+                            'total_case_records': len(records),
+                            'not_run_case_records': sum(r['outcome']=='not run' for r in records)}
+    if summary.get('c_original_verification_integration'):
+        result['c_original_verification_integration'] = summary['c_original_verification_integration']
+    if summary.get('c_run_archives'):
+        assert sha256(output/summary['c_run_archives']['index'])==summary['c_run_archives']['index_sha256']
+        result['c_run_archives']=summary['c_run_archives']
+    source_summary_hash = sha256(output/'summary_verification.json') if (output/'summary_verification.json').is_file() else result['summary_sha256']
+    result['source_verification_summary_sha256'] = source_summary_hash
+    followup = output/'counterexamples/c_counterexamples_proved_originals_20261001_goal10_case300'
+    if not followup.is_dir():
+        followup = output.parent/'c_counterexamples_proved_originals_20261001_goal10_case300'
+    if (followup/'audit.json').is_file():
+        follow_summary, follow_config, audit = (read(followup/name) for name in ('summary.json','run.json','audit.json'))
+        if follow_config['source_summary_sha256'] == source_summary_hash:
+            assert follow_summary['complete'] and audit['passed'] and not audit['partial']
+            assert audit['summary_sha256'] == sha256(followup/'summary.json')
+            follow_categories = {c: Counter() for c in CATEGORIES}
+            for program, outcomes in follow_summary['by_program'].items():
+                follow_categories[categories[program]].update(outcomes['mutant'])
+            result['c_counterexample_followup'] = {
+                'run':followup.name, 'report_path':('counterexamples/'+followup.name if followup.parent==output/'counterexamples' else '../'+followup.name),
+                'summary_sha256':sha256(followup/'summary.json'),
+                'audit_sha256':sha256(followup/'audit.json'), 'outcomes':follow_summary['outcomes'],
+                'wp_outcomes':follow_summary['wp_outcomes'], 'full_wp_model_count':follow_summary['full_wp_model_count'],
+                'functional_witness_origins':follow_summary['functional_witness_origins'],
+                'mutants_by_category':{c:dict(counts) for c,counts in follow_categories.items()},
+                'interpretation':'Supplemental concrete replay evidence; original proof outcomes unchanged; not a matched Java/C proof-rejection comparison',
+            }
+    integrated = summary.get('c_counterexample_evidence')
+    if integrated:
+        evidence = output/integrated['evidence_summary']
+        assert sha256(evidence)==integrated['evidence_summary_sha256']
+        audit = read(output/integrated['integration_audit'])
+        assert audit['passed'] and audit['summary_sha256']==sha256(evidence)
+        assert integrated['source_verification_summary_sha256']==source_summary_hash
+        result['c_counterexample_evidence'] = integrated
     return result, summary, config, records, paths
 
 
 def render(data, summary, config, records, paths):
     sections = ['# Final paired specification verification experiment',
-                f"Run: `{data['run']}`. This report covers 50 selected originals in each language and 977 retained Java/C mutant pairs (2,054 case records). Every case has a completed recorded outcome. Completion does not imply that all programs were proved.",
-                '## Result summary',
-                table(['Population', 'Language', 'Total', 'Proved', 'Specification violation', 'Precondition/RTE failure', 'Unknown/timeout', 'Syntax/tool failure'],
+                f"Run: `{data['run']}`. This report covers 50 selected originals in each language and 977 retained Java/C mutant pairs (2,054 case records). {data['completion']['completed_case_records']:,} case records are complete; {data['completion']['not_run_case_records']} have deferred verification. Completed counterexample searches are reported separately from WP proof outcomes.",
+                '## Recorded verifier outcomes',
+                table(['Population', 'Language', 'Total', 'Proved', 'Specification violation', 'Precondition/RTE failure', 'Unknown/timeout', 'Syntax/tool failure', 'Not run'],
                       [[role.capitalize(), language.capitalize() if language == 'java' else 'C',
                         sum(summary[key][language].values()), *[summary[key][language].get(status, 0) for status in OUTCOMES]]
                        for role, key in (('originals', 'originals'), ('mutants', 'mutants')) for language in ('java', 'c')]),
-                'Java proved 13/50 originals (26.00%); C proved 6/50 (12.00%). No mutant was fully proved in either language. Java reports 146 specification violations (146/977 = 14.94%), including 121 among the 192 mutants whose Java original proved (63.02%). C reports no confirmed specification violations, including 0/80 mutants whose C original proved. Unknown and tool failures remain in the eligible denominator; zero confirmed C rejections does not establish successful verification of those mutants.',
+                'Java proved 13/50 originals (26.00%); C proved 6/50 (12.00%). No mutant was fully proved in either language. Java reports 146 specification violations (146/977 = 14.94%), including 121 among the 192 mutants whose Java original proved (63.02%). The C WP records contain zero explicit invalid verdicts. The completed native search supplies independently validated C failures, reported above and in the integrated evidence section. WP unknown verdicts remain recorded as unknown.',
                 table(['Paired mutant outcome', 'Count'], [[name, count] for name, count in summary['pairs'].items()]),
-                f"There are {summary['paired_comparison']['decisive_pairs']} decisive pairs; agreement on decisive pairs is N/A. The 55 C sort reruns replaced old annotation/tool failures with `unknown/timeout`, reducing C tool failures from 110 to 55. Original Java results were preserved. See [summary.json](summary.json), [run.json](run.json), and [sort_c_integration.json](sort_c_integration.json).",
+                f"There are {summary['paired_comparison']['decisive_pairs']} decisive pairs; agreement on decisive pairs is N/A. The 55 C sort reruns replaced old annotation/tool failures with `unknown/timeout`. After the four C original repairs, {summary['mutants']['c'].get('not run',0)} mutant WP runs remain deferred and {summary['mutants']['c'].get('syntax/tool failure',0)} retain syntax/tool failures. Original Java results were preserved. See [summary.json](summary.json), [run.json](run.json), and [sort_c_integration.json](sort_c_integration.json).",
                 '## Configuration and interpretation',
+                '**Rejection-reporting limitation:** the 146 Java specification violations are classified OpenJML proof-failure reports. C requires an explicit invalid verdict or a validated counterexample, but this run did not enable WP counterexample generation. Standard WP JSON reports document proof/unknown/failure/timeout statuses rather than a top-level invalid verdict. The zero C rejection count is therefore not directly comparable to Java fault detection, and does not mean the C mutants satisfy their specifications. Increasing the timeout alone does not fix this evidence mismatch. See the [Frama-C 33 WP manual, sections 2.4.10 and 2.7](https://www.frama-c.com/download/frama-c-wp-manual.pdf).',
                 'The sample uses seed 726 with ten originals in each of five dataset categories. Only retained, previously screened mutant pairs are evaluated. Specifications are frozen independently per language and transferred to unchanged executable sources.',
                 f"The Java verifier reports `{config['verifiers']['java']['version_output']}` and uses the `z3-4.3.X` driver with bundled solver `{config['verifiers']['java']['compatibility']['solver']['version']}`. The C verifier reports `{config['verifiers']['c']['version_output']}` and uses {config['settings']['c_provers']}, `{config['settings']['memory_model']}`, and `{config['settings']['machdep']}`. Budgets are {config['settings']['goal_timeout']} seconds per solver goal and {config['settings']['timeout']} seconds per process, with {config['settings']['wp_memlimit']} MB WP memory and {config['settings']['wp_par']} parallel WP jobs per C worker. Final scheduling used two C workers and one Java worker; the integrated sort rerun used two C workers. Timings reflect recorded invocations under these schedules, not an isolated speed benchmark.",
                 '`proved` means all applicable reported checks completed successfully. A specification violation is distinct from a precondition/RTE failure. Syntax/transfer/tool failures are evaluation failures, not detected behavioral faults. `unknown/timeout` establishes neither acceptance nor rejection. Primary specification rejection rates require a proved original; other original-outcome strata remain available in [summary.json](summary.json).',
@@ -291,6 +355,8 @@ def render(data, summary, config, records, paths):
                 '## Goal counts for the same successful cohort',
                 'C counts are classified WP JSON goal entries, including specification, termination, safety and callee-precondition obligations. Java warning diagnostics are **not** a goal count: an empty Java `goals` array means no recorded warnings. Java generated assertions, method VCs and solver queries are separate units and must not be equated with C WP entries.',
                 f"Java counts below come from {len(data['java_workload']['matched_cases'])} complete captures in `{data['java_workload']['source_run']}`, matched to the successful final-run cases by raw-source, frozen-specification and annotated-source hashes, settings and verifier identity. Final-run verdicts and timing measurements remain authoritative; instrumented replay timing and outcomes are not substituted. Missing capture programs: {', '.join(data['java_workload']['missing_programs']) or 'none'}. Generated method VCs and total assertions include constructors; the program-assertion row removes constructors."]
+    if data['java_workload'].get('snapshot'):
+        sections.append('The original workload directory is unavailable locally. Its count captures are retained in [java_workload_snapshot.json](java_workload_snapshot.json), recovered from the committed report and checked against unchanged final Java case records. These snapshots allow report regeneration without rerunning Java verification.')
     goal_rows = []
     for name, label in (('generated_assertions', 'Java: all generated assertions'), ('program_assertions', 'Java: program assertions, excluding constructors'),
                         ('generated_method_vcs', 'Java: generated method VCs'), ('solver_queries', 'Java: solver check-sat queries')):
@@ -320,7 +386,7 @@ def render(data, summary, config, records, paths):
             sections.append('### Mutant outcomes by category')
         rows = [[e['category'], language, sum(e[language][role].values()), *[e[language][role].get(outcome, 0) for outcome in OUTCOMES]]
                 for e in data['categories'] for language in ('java', 'c')]
-        sections.append(table(['Category', 'Language', 'Total', 'Proved', 'Specification violation', 'Precondition/RTE', 'Unknown/timeout', 'Syntax/tool'], rows))
+        sections.append(table(['Category', 'Language', 'Total', 'Proved', 'Specification violation', 'Precondition/RTE', 'Unknown/timeout', 'Syntax/tool', 'Not run'], rows))
     sections += ['### Successful-case time and goal statistics by category',
                  'These rows use the same fully proved cohort as above; no successfully verified mutants contribute. Java goal columns count generated assertions (including constructors); C goal columns count WP entries. These units differ.',
                  'Time statistics (seconds):',
@@ -353,7 +419,7 @@ def render(data, summary, config, records, paths):
     only = groups['original']['cases_with_only_unresolved_jarray'] + groups['mutant']['cases_with_only_unresolved_jarray']
     sections += [f"**Observed conclusion: JArray call preconditions are a proof blocker in {blocked:,} C cases ({groups['original']['cases_with_unresolved_jarray']} originals and {groups['mutant']['cases_with_unresolved_jarray']} mutants).** They are the only remaining recorded blocker in {only:,} {'case' if only == 1 else 'cases'}. These case counts overlap other proof difficulties; they are not additional outcome categories. Goal-less cases are excluded from blocker attribution, including transfer/tool failures and process timeouts without classified goal coverage. All unresolved JArray goals here are unknown; none is classified as violated.",
                  f"Among originals, {groups['original']['calling_jarray_proved']}/{groups['original']['calling_jarray']} callers of JArray proved; {groups['original']['no_jarray_proved']}/{groups['original']['cases'] - groups['original']['calling_jarray']} originals without JArray calls proved. This is an association in the selected program sample; program complexity, invariants and solver limits also vary.",
-                 f"There are {groups['mutant']['no_goal_cases']} mutant cases without classified goal coverage ({groups['mutant']['no_goal_outcomes'].get('syntax/tool failure', 0)} syntax/tool failures and {groups['mutant']['no_goal_outcomes'].get('unknown/timeout', 0)} unknown/timeouts). Of these, {groups['mutant']['calling_jarray_without_goals']} call JArray; their blocker status is unavailable. Requirement text below comes from trusted headers whose hashes match the run configuration and every C case record.",
+                 f"There are {groups['mutant']['no_goal_cases']} mutant cases without classified goal coverage ({groups['mutant']['no_goal_outcomes'].get('syntax/tool failure', 0)} syntax/tool failures, {groups['mutant']['no_goal_outcomes'].get('unknown/timeout', 0)} unknown/timeouts and {groups['mutant']['no_goal_outcomes'].get('not run', 0)} deferred runs). Of these, {groups['mutant']['calling_jarray_without_goals']} call JArray; their blocker status is unavailable. Requirement text below comes from trusted headers whose hashes match the run configuration and every C case record.",
                  '### JArray preconditions by function',
                  table(['API', 'Total goals', 'Proved', 'Unknown', 'Violated', 'Blocked originals', 'Blocked mutants'],
                        [[e['api'], e.get('total', 0), e.get('proved', 0), e.get('unknown', 0), e.get('violated', 0), e['blocked_originals'], e['blocked_mutants']]
@@ -378,9 +444,93 @@ def render(data, summary, config, records, paths):
                  '## Evidence and regeneration',
                  '[statistics.json](statistics.json) contains full-precision statistics, case-level JArray blocker evidence, Java workload-count snapshots and source hashes. Category membership comes from the [selection manifest](../../../../FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/selection_manifest.json). Main case records and WP reports are the outcome evidence. Historic records under `history/` and other diagnostic runs are excluded.',
                  'The Java workload run supplies only matching, complete count captures for the successful final cases. Its different aggregate outcomes are not mixed into this experiment. The snapshots in `statistics.json` preserve the counts used in this README; raw solver traces and test/configuration changes are not required to read the report.',
-                 'Regenerate from the repository root in the local Linux environment (the matching workload run must be available):',
+                 'Regenerate from the repository root in the local Linux environment; matching Java workload captures can come from the archived snapshot:',
                  '```bash\npython3 -m verification.specification_evaluation.summarize_experiment \\\n  --output verification/specification_evaluation/results/' + data['run'] + ' \\\n  --java-workload verification/specification_evaluation/results/' + data['java_workload']['source_run'] + '\n```']
+    followup = data.get('c_counterexample_followup')
+    if followup:
+        mutants = followup['outcomes']['mutant']
+        insertion = sections.index('## Configuration and interpretation')
+        sections[insertion:insertion] = [
+            '### Historical C counterexample subset',
+            'These 80 mutants are included in the full 977-mutant search and are not added again to the final totals.',
+            f"A separate C-only follow-up completed the six proved original controls and their 80 mutants. Concrete replay validated **{mutants.get('specification violation',0)} functional postcondition violations and {mutants.get('precondition/RTE failure',0)} runtime-safety failure**. All 80 mutant WP proof outcomes remain `unknown/timeout`; no full WP model was returned. Of the functional witnesses, {followup['functional_witness_origins'].get('wp_partial_model',0)} came from preliminary incremental SMT candidate models and {followup['functional_witness_origins'].get('bounded_search_seed726',0)} from bounded candidate search. Every witness reproduced with stronger compiler diagnostics, ASan/UBSan, and the proved original as a control. These are execution-validated faults, not WP invalid verdicts. The main results above and their original timings are preserved.",
+            table(['Category','Supplemental mutants','Validated postcondition violations','Validated safety failures'],
+                  [[c,sum(counts.values()),counts.get('specification violation',0),counts.get('precondition/RTE failure',0)]
+                   for c,counts in followup['mutants_by_category'].items()]),
+            f"See the [C counterexample follow-up]({followup['report_path']}/README.md) and [independent audit]({followup['report_path']}/audit.json). Java's original tool-reported outcomes and these replay-validated C outcomes use different evidence; their rejection rates must not be directly compared.",
+        ]
+    integrated = data.get('c_counterexample_evidence')
+    if integrated:
+        coverage=integrated['coverage']; outcomes=integrated['validated_mutant_outcomes']
+        insertion=sections.index('### Historical C counterexample subset') if followup else sections.index('## Configuration and interpretation')
+        sections[insertion:insertion] = [
+            '### Integrated C counterexample evidence',
+            f"The full-population C replay search is archived inside this experiment. **{coverage['searched_originals']}/50 originals and {coverage['searched_mutants']}/977 mutants** have replay evidence. **{outcomes.get('specification violation',0)} mutant postcondition violations and {outcomes.get('precondition/RTE failure',0)} safety failures** were independently validated with passing original controls. Another {coverage['searched_without_validated_mutant_failure']} searched mutants have no validated failure; {coverage['not_searched_mutants']} mutants have no counterexample search evidence. The search is complete. Finite passing trials do not prove a program.",
+            table(['C mutant evidence view','Proved','Postcondition violations','Safety failures','Unknown/timeout','Syntax/tool failure','Not run'],
+                  [[label,*[counts.get(status,0) for status in OUTCOMES]] for label,counts in (
+                    ('Original WP outcomes',summary['mutants']['c']),
+                    ('WP plus validated concrete replay',integrated['c_mutant_outcomes_with_validated_replay']))]),
+            'The main proof table and successful-verification time/goal statistics retain their original meaning. The combined evidence view records concrete failures while preserving each WP verdict in its case record. Java tool-reported rejections and C replay-validated failures remain different evidence types.',
+            table(['Category','Eligible C mutants','Searched','Postcondition violations','Safety failures','Searched, unresolved','Not searched'],
+                  [[c,*[integrated['by_category'][c][key] for key in ('eligible_mutants','searched_mutants','validated_postcondition_violations','validated_safety_failures','searched_without_validated_failure','not_searched')]] for c in CATEGORIES]),
+            'The replay evidence uses the refreshed experiment sources and frozen contracts, including MoveFirst, MultiplyElements, NextPowerOf2 and PairWise. Earlier evidence with incompatible source records is excluded.',
+            'Replay constructs valid JArray inputs and executes the fixed native runtime. Finding a concrete program fault can therefore succeed even when its WP JArray obligations remain unknown. This does not resolve the JArray proof blockers listed below.',
+            'See the [integrated counterexample report](counterexamples/README.md), [per-case evidence](counterexamples/summary.json), and [integration audit](counterexamples/integration_audit.json). The original proof-only summary is preserved byte-for-byte in [summary_verification.json](summary_verification.json); [summary.json](summary.json) now includes `c_counterexample_evidence`.',
+        ]
+    original_rerun = data.get('c_original_verification_integration')
+    if original_rerun:
+        insertion=sections.index('## Configuration and interpretation')
+        sections[insertion:insertion]=[
+            '### Corrected C original verification',
+            'The four corrected originals were rerun with the experiment settings (10 seconds per goal, 300 seconds per process). All annotation preflights and task-generation checks passed. Each result remains `unknown/timeout` because WP goals are unresolved; no process reached its 300-second limit. These results replace the four deferred original records. Mutant WP reruns remain deferred.',
+            table(['Original','Outcome','Wall seconds','Proved goals','Unresolved goals'],
+                  [[r['program'],r['outcome'],fmt(r['elapsed_seconds']),r['goals'].get('proved',0),r['goals'].get('unknown',0)]
+                   for r in original_rerun['results']]),
+            'See the [original verification integration](original_verification/integration.json) for source, contract and record hashes and the archived invocations.',
+        ]
+    if data.get('c_run_archives'):
+        sections += ['## Archived C run reports',
+                     'Corrected C translation/original verification reports and completed sibling C counterexample runs are archived inside this experiment. See [c_run_archive.json](c_run_archive.json) for source-to-archive mappings and hash checks. Final outcome counts are unchanged; historical execution paths remain recorded as originally used.']
+    if integrated:
+        coverage=integrated['coverage']; outcomes=integrated['validated_mutant_outcomes']
+        sections[2:2]=[
+            '## Result summary',
+            table(['Population / evidence','Total','Proved','Specification/postcondition failures','Safety failures','Inconclusive','Tool failures','Deferred verification'],[
+                ['Java originals / OpenJML',50,13,2,1,34,0,0],
+                ['C originals / WP',50,6,0,0,44,0,0],
+                ['Java mutants / OpenJML',977,0,146,34,797,0,0],
+                ['C mutants / validated native replay',coverage['searched_mutants'],0,outcomes.get('specification violation',0),outcomes.get('precondition/RTE failure',0),coverage['searched_without_validated_mutant_failure'],0,0]]),
+            'All 977 C mutants were searched: **710 postcondition violations and 190 safety failures (900 validated failures, 92.12%)**; 77 have no validated failure. All 50 original controls have replay evidence with no validated failure. Finite passing trials are inconclusive and do not count as proofs. Java diagnostics and C execution witnesses use different evidence types.',
+            f"The four corrected C originals completed WP re-verification and remain unknown because some goals are unresolved. The C counterexample search is complete; {summary['mutants']['c'].get('not run',0)} mutant WP invocations remain deferred after the source repairs. Historical search subsets are included once. See [results_summary.json](results_summary.json) for the consolidated outcomes, category statistics, successful-case time/goal distributions and JArray blockers.",
+        ]
     return '\n\n'.join(sections) + '\n'
+
+
+def final_results(data, summary):
+    """Keep proof outcomes and finite execution evidence separately identifiable."""
+    evidence=data.get('c_counterexample_evidence')
+    result={
+        'run':data['run'], 'generated_utc':data['generated_utc'],
+        'verification_completion':data['completion'],
+        'original_verifier_outcomes':summary['originals'],
+        'mutant_verifier_outcomes':summary['mutants'],
+        'successful_verification':data['successful'],
+        'category_statistics':data['categories'],
+        'jarray':{'groups':data['jarray']['groups'],'apis':data['jarray']['apis'],
+                  'interpretation':'Unresolved WP callee-precondition goals are proof blockers; native counterexample search does not discharge them.'},
+        'corrected_c_originals':data.get('c_original_verification_integration'),
+        'statistical_method':data['statistical_method'],
+        'source_hashes':{key:data[key] for key in ('summary_sha256','record_inventory_sha256','category_source_sha256','source_verification_summary_sha256')},
+        'interpretation':'Java tool diagnostics and C validated native witnesses are different evidence. No validated failure in finite search is inconclusive, not proof. Historical subsets are counted once.'}
+    if evidence:
+        result['c_counterexample_search']={key:evidence[key] for key in
+            ('complete','coverage','validated_mutant_outcomes','by_category','refreshed_c_originals','evidence_summary','evidence_summary_sha256','integration_audit')}
+        result['c_mutant_evidence_outcomes']={
+            'validated_postcondition_violation':evidence['validated_mutant_outcomes'].get('specification violation',0),
+            'validated_safety_failure':evidence['validated_mutant_outcomes'].get('precondition/RTE failure',0),
+            'searched_without_validated_failure':evidence['coverage']['searched_without_validated_mutant_failure'],
+            'not_searched':evidence['coverage']['not_searched_mutants']}
+    return result
 
 
 def main():
@@ -392,6 +542,7 @@ def main():
     output, workload, selection = args.output.resolve(), args.java_workload.resolve(), args.selection.resolve()
     data, summary, config, records, paths = build(output, workload, selection)
     (output/'statistics.json').write_text(json.dumps(data, indent=2, sort_keys=True) + '\n', encoding='utf-8')
+    (output/'results_summary.json').write_text(json.dumps(final_results(data, summary), indent=2, sort_keys=True) + '\n', encoding='utf-8')
     (output/'README.md').write_text(render(data, summary, config, records, paths), encoding='utf-8')
     print(json.dumps({'successful_timing': {lang: value['wall_seconds'] for lang, value in data['successful'].items()},
                       'java_workload_matches': len(data['java_workload']['matched_cases']),

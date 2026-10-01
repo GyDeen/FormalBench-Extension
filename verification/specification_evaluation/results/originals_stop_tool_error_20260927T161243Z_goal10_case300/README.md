@@ -1,27 +1,97 @@
 # Final paired specification verification experiment
 
-Run: `originals_stop_tool_error_20260927T161243Z_goal10_case300`. This report covers 50 selected originals in each language and 977 retained Java/C mutant pairs (2,054 case records). Every case has a completed recorded outcome. Completion does not imply that all programs were proved.
+Run: `originals_stop_tool_error_20260927T161243Z_goal10_case300`. This report covers 50 selected originals in each language and 977 retained Java/C mutant pairs (2,054 case records). 2,004 case records are complete; 50 have deferred verification. Completed counterexample searches are reported separately from WP proof outcomes.
 
 ## Result summary
 
-| Population | Language | Total | Proved | Specification violation | Precondition/RTE failure | Unknown/timeout | Syntax/tool failure |
+| Population / evidence | Total | Proved | Specification/postcondition failures | Safety failures | Inconclusive | Tool failures | Deferred verification |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Originals | Java | 50 | 13 | 2 | 1 | 34 | 0 |
-| Originals | C | 50 | 6 | 0 | 0 | 44 | 0 |
-| Mutants | Java | 977 | 0 | 146 | 34 | 797 | 0 |
-| Mutants | C | 977 | 0 | 0 | 0 | 922 | 55 |
+| Java originals / OpenJML | 50 | 13 | 2 | 1 | 34 | 0 | 0 |
+| C originals / WP | 50 | 6 | 0 | 0 | 44 | 0 | 0 |
+| Java mutants / OpenJML | 977 | 0 | 146 | 34 | 797 | 0 | 0 |
+| C mutants / validated native replay | 977 | 0 | 710 | 190 | 77 | 0 | 0 |
 
-Java proved 13/50 originals (26.00%); C proved 6/50 (12.00%). No mutant was fully proved in either language. Java reports 146 specification violations (146/977 = 14.94%), including 121 among the 192 mutants whose Java original proved (63.02%). C reports no confirmed specification violations, including 0/80 mutants whose C original proved. Unknown and tool failures remain in the eligible denominator; zero confirmed C rejections does not establish successful verification of those mutants.
+All 977 C mutants were searched: **710 postcondition violations and 190 safety failures (900 validated failures, 92.12%)**; 77 have no validated failure. All 50 original controls have replay evidence with no validated failure. Finite passing trials are inconclusive and do not count as proofs. Java diagnostics and C execution witnesses use different evidence types.
+
+The four corrected C originals completed WP re-verification and remain unknown because some goals are unresolved. The C counterexample search is complete; 50 mutant WP invocations remain deferred after the source repairs. Historical search subsets are included once. See [results_summary.json](results_summary.json) for the consolidated outcomes, category statistics, successful-case time/goal distributions and JArray blockers.
+
+## Recorded verifier outcomes
+
+| Population | Language | Total | Proved | Specification violation | Precondition/RTE failure | Unknown/timeout | Syntax/tool failure | Not run |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Originals | Java | 50 | 13 | 2 | 1 | 34 | 0 | 0 |
+| Originals | C | 50 | 6 | 0 | 0 | 44 | 0 | 0 |
+| Mutants | Java | 977 | 0 | 146 | 34 | 797 | 0 | 0 |
+| Mutants | C | 977 | 0 | 0 | 0 | 922 | 5 | 50 |
+
+Java proved 13/50 originals (26.00%); C proved 6/50 (12.00%). No mutant was fully proved in either language. Java reports 146 specification violations (146/977 = 14.94%), including 121 among the 192 mutants whose Java original proved (63.02%). The C WP records contain zero explicit invalid verdicts. The completed native search supplies independently validated C failures, reported above and in the integrated evidence section. WP unknown verdicts remain recorded as unknown.
 
 | Paired mutant outcome | Count |
 | --- | --- |
+| not run | 50 |
 | precondition/RTE failure | 34 |
-| tool failure | 55 |
+| tool failure | 5 |
 | unknown/timeout | 888 |
 
-There are 0 decisive pairs; agreement on decisive pairs is N/A. The 55 C sort reruns replaced old annotation/tool failures with `unknown/timeout`, reducing C tool failures from 110 to 55. Original Java results were preserved. See [summary.json](summary.json), [run.json](run.json), and [sort_c_integration.json](sort_c_integration.json).
+There are 0 decisive pairs; agreement on decisive pairs is N/A. The 55 C sort reruns replaced old annotation/tool failures with `unknown/timeout`. After the four C original repairs, 50 mutant WP runs remain deferred and 5 retain syntax/tool failures. Original Java results were preserved. See [summary.json](summary.json), [run.json](run.json), and [sort_c_integration.json](sort_c_integration.json).
+
+### Integrated C counterexample evidence
+
+The full-population C replay search is archived inside this experiment. **50/50 originals and 977/977 mutants** have replay evidence. **710 mutant postcondition violations and 190 safety failures** were independently validated with passing original controls. Another 77 searched mutants have no validated failure; 0 mutants have no counterexample search evidence. The search is complete. Finite passing trials do not prove a program.
+
+| C mutant evidence view | Proved | Postcondition violations | Safety failures | Unknown/timeout | Syntax/tool failure | Not run |
+| --- | --- | --- | --- | --- | --- | --- |
+| Original WP outcomes | 0 | 0 | 0 | 922 | 5 | 50 |
+| WP plus validated concrete replay | 0 | 710 | 190 | 73 | 0 | 4 |
+
+The main proof table and successful-verification time/goal statistics retain their original meaning. The combined evidence view records concrete failures while preserving each WP verdict in its case record. Java tool-reported rejections and C replay-validated failures remain different evidence types.
+
+| Category | Eligible C mutants | Searched | Postcondition violations | Safety failures | Searched, unresolved | Not searched |
+| --- | --- | --- | --- | --- | --- | --- |
+| sequential | 143 | 143 | 143 | 0 | 0 | 0 |
+| branch | 193 | 193 | 143 | 42 | 8 | 0 |
+| single_path_loop | 183 | 183 | 122 | 52 | 9 | 0 |
+| multi_path_loop | 239 | 239 | 171 | 28 | 40 | 0 |
+| nested | 219 | 219 | 131 | 68 | 20 | 0 |
+
+The replay evidence uses the refreshed experiment sources and frozen contracts, including MoveFirst, MultiplyElements, NextPowerOf2 and PairWise. Earlier evidence with incompatible source records is excluded.
+
+Replay constructs valid JArray inputs and executes the fixed native runtime. Finding a concrete program fault can therefore succeed even when its WP JArray obligations remain unknown. This does not resolve the JArray proof blockers listed below.
+
+See the [integrated counterexample report](counterexamples/README.md), [per-case evidence](counterexamples/summary.json), and [integration audit](counterexamples/integration_audit.json). The original proof-only summary is preserved byte-for-byte in [summary_verification.json](summary_verification.json); [summary.json](summary.json) now includes `c_counterexample_evidence`.
+
+### Historical C counterexample subset
+
+These 80 mutants are included in the full 977-mutant search and are not added again to the final totals.
+
+A separate C-only follow-up completed the six proved original controls and their 80 mutants. Concrete replay validated **79 functional postcondition violations and 1 runtime-safety failure**. All 80 mutant WP proof outcomes remain `unknown/timeout`; no full WP model was returned. Of the functional witnesses, 51 came from preliminary incremental SMT candidate models and 28 from bounded candidate search. Every witness reproduced with stronger compiler diagnostics, ASan/UBSan, and the proved original as a control. These are execution-validated faults, not WP invalid verdicts. The main results above and their original timings are preserved.
+
+| Category | Supplemental mutants | Validated postcondition violations | Validated safety failures |
+| --- | --- | --- | --- |
+| sequential | 19 | 19 | 0 |
+| branch | 35 | 35 | 0 |
+| single_path_loop | 0 | 0 | 0 |
+| multi_path_loop | 26 | 25 | 1 |
+| nested | 0 | 0 | 0 |
+
+See the [C counterexample follow-up](counterexamples/c_counterexamples_proved_originals_20261001_goal10_case300/README.md) and [independent audit](counterexamples/c_counterexamples_proved_originals_20261001_goal10_case300/audit.json). Java's original tool-reported outcomes and these replay-validated C outcomes use different evidence; their rejection rates must not be directly compared.
+
+### Corrected C original verification
+
+The four corrected originals were rerun with the experiment settings (10 seconds per goal, 300 seconds per process). All annotation preflights and task-generation checks passed. Each result remains `unknown/timeout` because WP goals are unresolved; no process reached its 300-second limit. These results replace the four deferred original records. Mutant WP reruns remain deferred.
+
+| Original | Outcome | Wall seconds | Proved goals | Unresolved goals |
+| --- | --- | --- | --- | --- |
+| MoveFirst | unknown/timeout | 54.097 | 73 | 9 |
+| MultiplyElements | unknown/timeout | 46.061 | 65 | 8 |
+| NextPowerOf2 | unknown/timeout | 11.719 | 20 | 2 |
+| PairWise | unknown/timeout | 82.640 | 80 | 11 |
+
+See the [original verification integration](original_verification/integration.json) for source, contract and record hashes and the archived invocations.
 
 ## Configuration and interpretation
+
+**Rejection-reporting limitation:** the 146 Java specification violations are classified OpenJML proof-failure reports. C requires an explicit invalid verdict or a validated counterexample, but this run did not enable WP counterexample generation. Standard WP JSON reports document proof/unknown/failure/timeout statuses rather than a top-level invalid verdict. The zero C rejection count is therefore not directly comparable to Java fault detection, and does not mean the C mutants satisfy their specifications. Increasing the timeout alone does not fix this evidence mismatch. See the [Frama-C 33 WP manual, sections 2.4.10 and 2.7](https://www.frama-c.com/download/frama-c-wp-manual.pdf).
 
 The sample uses seed 726 with ten originals in each of five dataset categories. Only retained, previously screened mutant pairs are evaluated. Specifications are frozen independently per language and transferred to unchanged executable sources.
 
@@ -47,6 +117,8 @@ Java and C have different successful-program cohorts. These descriptive times do
 C counts are classified WP JSON goal entries, including specification, termination, safety and callee-precondition obligations. Java warning diagnostics are **not** a goal count: an empty Java `goals` array means no recorded warnings. Java generated assertions, method VCs and solver queries are separate units and must not be equated with C WP entries.
 
 Java counts below come from 13 complete captures in `java_workload_20260929T133038Z_workers2`, matched to the successful final-run cases by raw-source, frozen-specification and annotated-source hashes, settings and verifier identity. Final-run verdicts and timing measurements remain authoritative; instrumented replay timing and outcomes are not substituted. Missing capture programs: none. Generated method VCs and total assertions include constructors; the program-assertion row removes constructors.
+
+The original workload directory is unavailable locally. Its count captures are retained in [java_workload_snapshot.json](java_workload_snapshot.json), recovered from the committed report and checked against unchanged final Java case records. These snapshots allow report regeneration without rerunning Java verification.
 
 | Metric per successful case | n | Total | Mean | Median | Sample SD | Q1 | Q3 | P95 | Min | Max |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -94,33 +166,33 @@ Category labels come from the saved selection manifest, not from reclassifying t
 
 ### Original outcomes by category
 
-| Category | Language | Total | Proved | Specification violation | Precondition/RTE | Unknown/timeout | Syntax/tool |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| sequential | java | 10 | 9 | 0 | 1 | 0 | 0 |
-| sequential | c | 10 | 2 | 0 | 0 | 8 | 0 |
-| branch | java | 10 | 4 | 2 | 0 | 4 | 0 |
-| branch | c | 10 | 2 | 0 | 0 | 8 | 0 |
-| single_path_loop | java | 10 | 0 | 0 | 0 | 10 | 0 |
-| single_path_loop | c | 10 | 0 | 0 | 0 | 10 | 0 |
-| multi_path_loop | java | 10 | 0 | 0 | 0 | 10 | 0 |
-| multi_path_loop | c | 10 | 2 | 0 | 0 | 8 | 0 |
-| nested | java | 10 | 0 | 0 | 0 | 10 | 0 |
-| nested | c | 10 | 0 | 0 | 0 | 10 | 0 |
+| Category | Language | Total | Proved | Specification violation | Precondition/RTE | Unknown/timeout | Syntax/tool | Not run |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| sequential | java | 10 | 9 | 0 | 1 | 0 | 0 | 0 |
+| sequential | c | 10 | 2 | 0 | 0 | 8 | 0 | 0 |
+| branch | java | 10 | 4 | 2 | 0 | 4 | 0 | 0 |
+| branch | c | 10 | 2 | 0 | 0 | 8 | 0 | 0 |
+| single_path_loop | java | 10 | 0 | 0 | 0 | 10 | 0 | 0 |
+| single_path_loop | c | 10 | 0 | 0 | 0 | 10 | 0 | 0 |
+| multi_path_loop | java | 10 | 0 | 0 | 0 | 10 | 0 | 0 |
+| multi_path_loop | c | 10 | 2 | 0 | 0 | 8 | 0 | 0 |
+| nested | java | 10 | 0 | 0 | 0 | 10 | 0 | 0 |
+| nested | c | 10 | 0 | 0 | 0 | 10 | 0 | 0 |
 
 ### Mutant outcomes by category
 
-| Category | Language | Total | Proved | Specification violation | Precondition/RTE | Unknown/timeout | Syntax/tool |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| sequential | java | 143 | 0 | 40 | 31 | 72 | 0 |
-| sequential | c | 143 | 0 | 0 | 0 | 143 | 0 |
-| branch | java | 193 | 0 | 105 | 2 | 86 | 0 |
-| branch | c | 193 | 0 | 0 | 0 | 181 | 12 |
-| single_path_loop | java | 183 | 0 | 0 | 0 | 183 | 0 |
-| single_path_loop | c | 183 | 0 | 0 | 0 | 144 | 39 |
-| multi_path_loop | java | 239 | 0 | 1 | 1 | 237 | 0 |
-| multi_path_loop | c | 239 | 0 | 0 | 0 | 238 | 1 |
-| nested | java | 219 | 0 | 0 | 0 | 219 | 0 |
-| nested | c | 219 | 0 | 0 | 0 | 216 | 3 |
+| Category | Language | Total | Proved | Specification violation | Precondition/RTE | Unknown/timeout | Syntax/tool | Not run |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| sequential | java | 143 | 0 | 40 | 31 | 72 | 0 | 0 |
+| sequential | c | 143 | 0 | 0 | 0 | 143 | 0 | 0 |
+| branch | java | 193 | 0 | 105 | 2 | 86 | 0 | 0 |
+| branch | c | 193 | 0 | 0 | 0 | 181 | 0 | 12 |
+| single_path_loop | java | 183 | 0 | 0 | 0 | 183 | 0 | 0 |
+| single_path_loop | c | 183 | 0 | 0 | 0 | 144 | 1 | 38 |
+| multi_path_loop | java | 239 | 0 | 1 | 1 | 237 | 0 | 0 |
+| multi_path_loop | c | 239 | 0 | 0 | 0 | 238 | 1 | 0 |
+| nested | java | 219 | 0 | 0 | 0 | 219 | 0 | 0 |
+| nested | c | 219 | 0 | 0 | 0 | 216 | 3 | 0 |
 
 ### Successful-case time and goal statistics by category
 
@@ -179,24 +251,24 @@ JArray is the trusted interface assumed by translated C callers. Its implementat
 
 | C population | Cases | Call JArray | Goal coverage available | Call JArray but no goals | JArray blocker cases | JArray-only blocker cases | JArray precondition goals | Unresolved JArray goals |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| original | 50 | 28 | 50 | 0 | 12 | 0 | 567 | 47 |
+| original | 50 | 28 | 50 | 0 | 13 | 0 | 582 | 48 |
 | mutant | 977 | 618 | 918 | 53 | 400 | 1 | 15501 | 2687 |
 
-**Observed conclusion: JArray call preconditions are a proof blocker in 412 C cases (12 originals and 400 mutants).** They are the only remaining recorded blocker in 1 case. These case counts overlap other proof difficulties; they are not additional outcome categories. Goal-less cases are excluded from blocker attribution, including transfer/tool failures and process timeouts without classified goal coverage. All unresolved JArray goals here are unknown; none is classified as violated.
+**Observed conclusion: JArray call preconditions are a proof blocker in 413 C cases (13 originals and 400 mutants).** They are the only remaining recorded blocker in 1 case. These case counts overlap other proof difficulties; they are not additional outcome categories. Goal-less cases are excluded from blocker attribution, including transfer/tool failures and process timeouts without classified goal coverage. All unresolved JArray goals here are unknown; none is classified as violated.
 
 Among originals, 2/28 callers of JArray proved; 4/22 originals without JArray calls proved. This is an association in the selected program sample; program complexity, invariants and solver limits also vary.
 
-There are 59 mutant cases without classified goal coverage (55 syntax/tool failures and 4 unknown/timeouts). Of these, 53 call JArray; their blocker status is unavailable. Requirement text below comes from trusted headers whose hashes match the run configuration and every C case record.
+There are 59 mutant cases without classified goal coverage (5 syntax/tool failures, 4 unknown/timeouts and 50 deferred runs). Of these, 53 call JArray; their blocker status is unavailable. Requirement text below comes from trusted headers whose hashes match the run configuration and every C case record.
 
 ### JArray preconditions by function
 
 | API | Total goals | Proved | Unknown | Violated | Blocked originals | Blocked mutants |
 | --- | --- | --- | --- | --- | --- | --- |
-| jarray2_get | 1584 | 1307 | 277 | 0 | 1 | 37 |
+| jarray2_get | 1587 | 1309 | 278 | 0 | 2 | 37 |
 | jarray2_length | 34 | 34 | 0 | 0 | 0 | 0 |
 | jarray2_new | 156 | 151 | 5 | 0 | 0 | 5 |
-| jarray_get | 8382 | 6628 | 1754 | 0 | 11 | 332 |
-| jarray_length | 790 | 677 | 113 | 0 | 0 | 85 |
+| jarray_get | 8382 | 6630 | 1752 | 0 | 9 | 332 |
+| jarray_length | 802 | 687 | 115 | 0 | 2 | 85 |
 | jarray_new | 784 | 757 | 27 | 0 | 0 | 27 |
 | jarray_set | 3840 | 3291 | 549 | 0 | 5 | 257 |
 | jbool_array_get | 51 | 51 | 0 | 0 | 0 | 0 |
@@ -213,12 +285,12 @@ Blocked-case counts overlap between API functions. Goal counts count distinct re
 | API | Requires clause | Unresolved goals | Trusted requirement |
 | --- | --- | --- | --- |
 | jarray_get | 3 | 1132 | `0 <= index < array->length` |
-| jarray_get | 2 | 594 | `jintarray_valid(array)` |
+| jarray_get | 2 | 592 | `jintarray_valid(array)` |
 | jarray_set | 3 | 372 | `0 <= index < array->length` |
 | jarray_set | 2 | 165 | `jintarray_valid(array)` |
 | jarray2_get | 3 | 152 | `0 <= index < array->length` |
-| jarray2_get | 2 | 125 | `jintarray2_valid(array)` |
-| jarray_length | 2 | 113 | `jintarray_valid(array)` |
+| jarray2_get | 2 | 126 | `jintarray2_valid(array)` |
+| jarray_length | 2 | 115 | `jintarray_valid(array)` |
 | jarray_get | 1 | 28 | `array != \null` |
 | jarray_new | 1 | 27 | `length >= 0` |
 | jarray_set | 1 | 12 | `array != \null` |
@@ -233,7 +305,7 @@ Blocked-case counts overlap between API functions. Goal counts count distinct re
 | sequential | mutant | 35 | 2 | 0 | 4 |
 | branch | original | 2 | 1 | 0 | 1 |
 | branch | mutant | 34 | 22 | 0 | 142 |
-| single_path_loop | original | 9 | 5 | 0 | 10 |
+| single_path_loop | original | 9 | 6 | 0 | 11 |
 | single_path_loop | mutant | 176 | 99 | 0 | 434 |
 | multi_path_loop | original | 8 | 0 | 0 | 0 |
 | multi_path_loop | mutant | 192 | 120 | 1 | 940 |
@@ -254,6 +326,7 @@ Blocked-case counts overlap between API functions. Goal counts count distinct re
 | [MinJumps](cases/MinJumps/original/c/record.json) | nested | 2 | 11 |
 | [MoveFirst](cases/MoveFirst/original/c/record.json) | branch | 1 | 8 |
 | [MultiplyElements](cases/MultiplyElements/original/c/record.json) | single_path_loop | 1 | 7 |
+| [PairWise](cases/PairWise/original/c/record.json) | single_path_loop | 1 | 10 |
 | [RadixSort](cases/RadixSort/original/c/record.json) | nested | 6 | 21 |
 | [SumList](cases/SumList/original/c/record.json) | single_path_loop | 4 | 7 |
 
@@ -265,10 +338,14 @@ Cases where JArray preconditions are the sole recorded unresolved obligations: [
 
 The Java workload run supplies only matching, complete count captures for the successful final cases. Its different aggregate outcomes are not mixed into this experiment. The snapshots in `statistics.json` preserve the counts used in this README; raw solver traces and test/configuration changes are not required to read the report.
 
-Regenerate from the repository root in the local Linux environment (the matching workload run must be available):
+Regenerate from the repository root in the local Linux environment; matching Java workload captures can come from the archived snapshot:
 
 ```bash
 python3 -m verification.specification_evaluation.summarize_experiment \
   --output verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300 \
   --java-workload verification/specification_evaluation/results/java_workload_20260929T133038Z_workers2
 ```
+
+## Archived C run reports
+
+Corrected C translation/original verification reports and completed sibling C counterexample runs are archived inside this experiment. See [c_run_archive.json](c_run_archive.json) for source-to-archive mappings and hash checks. Final outcome counts are unchanged; historical execution paths remain recorded as originally used.

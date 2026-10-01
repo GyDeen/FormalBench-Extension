@@ -1,0 +1,175 @@
+{
+  "attempts": [
+    {
+      "elapsed_seconds": 0.005514493999726255,
+      "exit_code": 0,
+      "expected": 20416,
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "inputs": {
+        "arr": [
+          0,
+          0,
+          1856,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "arr": false
+        },
+        "errno": 0,
+        "result": 3712,
+        "rows_separate": true,
+        "state": {
+          "arr": [
+            0,
+            0,
+            1856,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "origin": "saved_test:OddLengthSum_ESTest.test0",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":3712,\"state\":{\"arr\":[0,0,1856,0,0,0,0,0,0]},\"aliases\":{\"arr\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+      "validated": true
+    }
+  ],
+  "audit_compilation_failed": false,
+  "checked": 1,
+  "independent_audit": {
+    "baseline_execution": {
+      "elapsed_seconds": 0.010701498000344145,
+      "exit_code": 0,
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "arr": false
+        },
+        "errno": 0,
+        "result": 20416,
+        "rows_separate": true,
+        "state": {
+          "arr": [
+            0,
+            0,
+            1856,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":20416,\"state\":{\"arr\":[0,0,1856,0,0,0,0,0,0]},\"aliases\":{\"arr\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    "baseline_failed_clauses": [],
+    "baseline_passed": true,
+    "execution": {
+      "elapsed_seconds": 0.018632332001288887,
+      "exit_code": 0,
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "arr": false
+        },
+        "errno": 0,
+        "result": 3712,
+        "rows_separate": true,
+        "state": {
+          "arr": [
+            0,
+            0,
+            1856,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":3712,\"state\":{\"arr\":[0,0,1856,0,0,0,0,0,0]},\"aliases\":{\"arr\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    "failed_clauses": [
+      "frozen_return_value_or_array_contents"
+    ],
+    "passed": true
+  },
+  "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+  "rejected_candidates": {},
+  "search_exhausted": false,
+  "status": "validated_violation",
+  "timeouts": 0,
+  "witness": {
+    "elapsed_seconds": 0.005514493999726255,
+    "exit_code": 0,
+    "expected": 20416,
+    "failed_clauses": [
+      "frozen_return_value_or_array_contents"
+    ],
+    "inputs": {
+      "arr": [
+        0,
+        0,
+        1856,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "observation": {
+      "EDOM": 33,
+      "aliases": {
+        "arr": false
+      },
+      "errno": 0,
+      "result": 3712,
+      "rows_separate": true,
+      "state": {
+        "arr": [
+          0,
+          0,
+          1856,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "origin": "saved_test:OddLengthSum_ESTest.test0",
+    "preconditions_satisfied": true,
+    "status": "returned",
+    "stderr": "",
+    "stdout": "\n@@REPLAY {\"result\":3712,\"state\":{\"arr\":[0,0,1856,0,0,0,0,0,0]},\"aliases\":{\"arr\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+    "validated": true
+  }
+}

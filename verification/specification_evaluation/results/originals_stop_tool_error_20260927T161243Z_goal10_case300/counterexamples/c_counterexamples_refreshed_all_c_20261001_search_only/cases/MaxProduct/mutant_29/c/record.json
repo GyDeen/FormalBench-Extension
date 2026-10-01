@@ -1,0 +1,114 @@
+{
+  "attempt_status": "complete",
+  "frozen_spec_sha256": "7f5adbc06cea13c3414523d1ce49773a449feb4076c6af40141df7f9bbf1229a",
+  "language": "c",
+  "mutant_id": "29",
+  "outcome": "specification violation",
+  "program": "MaxProduct",
+  "replay": {
+    "audit_compilation_failed": false,
+    "checked": 3,
+    "independent_audit": {
+      "baseline_execution": {
+        "elapsed_seconds": 0.0065581210001255386,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {
+            "arr": false
+          },
+          "errno": 0,
+          "result": 2626,
+          "rows_separate": true,
+          "state": {
+            "arr": [
+              2,
+              1313
+            ]
+          }
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":2626,\"state\":{\"arr\":[2,1313]},\"aliases\":{\"arr\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "baseline_failed_clauses": [],
+      "baseline_passed": true,
+      "execution": {
+        "elapsed_seconds": 0.006612537999899359,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {
+            "arr": false
+          },
+          "errno": 0,
+          "result": 1313,
+          "rows_separate": true,
+          "state": {
+            "arr": [
+              2,
+              1313
+            ]
+          }
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":1313,\"state\":{\"arr\":[2,1313]},\"aliases\":{\"arr\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "passed": true
+    },
+    "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+    "rejected_candidates": {},
+    "search_exhausted": false,
+    "status": "validated_violation",
+    "timeouts": 0,
+    "witness": {
+      "elapsed_seconds": 0.006617889001063304,
+      "exit_code": 0,
+      "expected": 2626,
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "inputs": {
+        "arr": [
+          2,
+          1313
+        ],
+        "n": 2
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "arr": false
+        },
+        "errno": 0,
+        "result": 1313,
+        "rows_separate": true,
+        "state": {
+          "arr": [
+            2,
+            1313
+          ]
+        }
+      },
+      "origin": "saved_test:MaxProduct_ESTest.test6",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":1313,\"state\":{\"arr\":[2,1313]},\"aliases\":{\"arr\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+      "validated": true
+    }
+  },
+  "replay_source_kind": "frozen_annotated_source",
+  "replay_source_sha256": "25828d3875389fc7e589dd41a4ea6d645f67340e35e8be6b197c4e7ca92c1cec",
+  "role": "mutant",
+  "search_elapsed_seconds": 0.9773460619999241,
+  "source_record": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxProduct/mutant_29/c/record.json",
+  "source_record_sha256": "21aa4ec587a50ec8d8b4002cb8a1166109da8a7ba256c8f8ac9289a6070eefaa",
+  "verification_outcome": "unknown/timeout",
+  "verification_rerun": false,
+  "verification_reused": true
+}

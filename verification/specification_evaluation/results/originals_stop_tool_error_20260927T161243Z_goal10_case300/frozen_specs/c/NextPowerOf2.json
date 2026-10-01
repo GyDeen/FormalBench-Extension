@@ -6,15 +6,15 @@
         "static",
         "int32_t"
       ],
-      "function": "java_shl_one",
+      "function": "java_shl",
       "id": "annotation_1",
       "loop_id": null,
       "next_token": "static",
       "target": "function",
-      "text": "/*@\n  assigns \\nothing;\n  ensures \\result == (int32_t)(2 * (integer)value);\n*/"
+      "text": "/*@\n  assigns \\nothing;\n  ensures \\result == (int32_t)((uint32_t)value << ((uint32_t)distance & 31));\n*/"
     },
     {
-      "boundary_token": 33,
+      "boundary_token": 44,
       "following_tokens": [
         "int32_t",
         "nextPowerOf2"
@@ -27,7 +27,7 @@
       "text": "/*@\n  terminates n <= 1073741824;\n  assigns \\nothing;\n  exits \\false;\n  ensures n <= 1073741824;\n  ensures 1 <= \\result <= 1073741824 && \\result >= n;\n  ensures (\\result & (\\result - 1)) == 0;\n  ensures \\result == 1 || \\result / 2 < n;\n*/"
     },
     {
-      "boundary_token": 57,
+      "boundary_token": 79,
       "following_tokens": [
         "while",
         "("
@@ -41,7 +41,7 @@
     }
   ],
   "language": "c",
-  "original_executable_token_sha256": "c9e3997e2c82907b12598c9aafddd12a5418580cfe1a1f90d9ccb063f9e8a2ce",
+  "original_executable_token_sha256": "660e02a359dbff628ab9cf473d535773fbe48e665d8ce104f93ccb60d89548a7",
   "program": "NextPowerOf2",
   "schema_version": "1.0"
 }

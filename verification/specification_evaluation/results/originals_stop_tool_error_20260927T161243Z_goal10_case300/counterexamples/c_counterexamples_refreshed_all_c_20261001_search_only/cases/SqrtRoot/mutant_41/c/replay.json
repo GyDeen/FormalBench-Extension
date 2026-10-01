@@ -1,0 +1,156 @@
+{
+  "attempts": [
+    {
+      "elapsed_seconds": 0.0049353369995515095,
+      "exit_code": 0,
+      "expected": 0,
+      "failed_clauses": [],
+      "inputs": {
+        "num": 0
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": 0,
+        "rows_separate": true,
+        "state": {}
+      },
+      "origin": "saved_test:SqrtRoot_ESTest.test0",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":0,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.004170110998529708,
+      "exit_code": 0,
+      "expected": -1,
+      "failed_clauses": [],
+      "inputs": {
+        "num": -3882
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": -1,
+        "rows_separate": true,
+        "state": {}
+      },
+      "origin": "saved_test:SqrtRoot_ESTest.test1",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":-1,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.5034250310000061,
+      "expected": 46,
+      "failed_clauses": [],
+      "inputs": {
+        "num": 2125
+      },
+      "origin": "saved_test:SqrtRoot_ESTest.test2",
+      "preconditions_satisfied": true,
+      "status": "timeout"
+    },
+    {
+      "elapsed_seconds": 0.0044513509983517,
+      "exit_code": 0,
+      "expected": -1,
+      "failed_clauses": [],
+      "inputs": {
+        "num": -2
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": -1,
+        "rows_separate": true,
+        "state": {}
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":-1,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.003962413999033743,
+      "exit_code": 0,
+      "expected": -1,
+      "failed_clauses": [],
+      "inputs": {
+        "num": -1
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": -1,
+        "rows_separate": true,
+        "state": {}
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":-1,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.003956595999625279,
+      "exit_code": 0,
+      "expected": 1,
+      "failed_clauses": [],
+      "inputs": {
+        "num": 1
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": 1,
+        "rows_separate": true,
+        "state": {}
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":1,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.5030692349992023,
+      "expected": 1,
+      "failed_clauses": [],
+      "inputs": {
+        "num": 2
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "timeout"
+    },
+    {
+      "elapsed_seconds": 0.5037070359994686,
+      "expected": 1,
+      "failed_clauses": [],
+      "inputs": {
+        "num": 3
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "timeout"
+    }
+  ],
+  "audit_compilation_failed": false,
+  "checked": 8,
+  "independent_audit": null,
+  "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+  "rejected_candidates": {},
+  "search_exhausted": false,
+  "status": "no_validated_violation",
+  "timeouts": 3,
+  "witness": null
+}

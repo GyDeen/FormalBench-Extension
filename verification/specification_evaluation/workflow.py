@@ -223,7 +223,8 @@ def _case_dir(output: Path, program: str, role: str, mutant_id: str | None,
 
 
 def _settings_record(settings: Settings) -> dict[str, Any]:
-    return {"java_prover": settings.java_prover, "c_provers": settings.c_provers,
+    return {**({"capture_c_counterexamples": True} if settings.capture_c_counterexamples else {}),
+            "java_prover": settings.java_prover, "c_provers": settings.c_provers,
             "timeout": settings.timeout, "goal_timeout": settings.goal_timeout,
             "memory_model": settings.memory_model, "machdep": settings.machdep,
             "wp_memlimit": settings.wp_memlimit, "wp_par": settings.wp_par,
@@ -322,6 +323,9 @@ def evaluate_case(output: Path, population: Population, program: str, role: str,
         base["java_workload_capture"] = {
             name: sha256(Path(__file__).parent / name)
             for name in ("java_workload.py", "java_solver_trace.py")}
+    if language == "c" and settings.capture_c_counterexamples:
+        base["c_counterexample_capture"] = {
+            "c_counterexamples.py": sha256(Path(__file__).with_name("c_counterexamples.py"))}
     fingerprint = digest(base)
     prior = case_dir / "record.json"
     recovery = (_latest_archive(output, program, case_dir, language)

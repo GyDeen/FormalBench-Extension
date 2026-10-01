@@ -1,0 +1,125 @@
+{
+  "attempt_status": "complete",
+  "frozen_spec_sha256": "1ff4f79ded72133414dd68c0bc762c505c4a0ae3ca4d598593c6753158081816",
+  "language": "c",
+  "mutant_id": "23",
+  "outcome": "specification violation",
+  "program": "CountingSort",
+  "replay": {
+    "audit_compilation_failed": false,
+    "checked": 6,
+    "independent_audit": {
+      "baseline_execution": {
+        "elapsed_seconds": 0.012064610999004799,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {
+            "myArray": false
+          },
+          "errno": 0,
+          "result": [
+            0,
+            1
+          ],
+          "rows_separate": true,
+          "state": {
+            "myArray": [
+              1,
+              0
+            ]
+          }
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":[0,1],\"state\":{\"myArray\":[1,0]},\"aliases\":{\"myArray\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "baseline_failed_clauses": [],
+      "baseline_passed": true,
+      "execution": {
+        "elapsed_seconds": 0.007163714999478543,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {
+            "myArray": false
+          },
+          "errno": 0,
+          "result": [
+            0,
+            0
+          ],
+          "rows_separate": true,
+          "state": {
+            "myArray": [
+              1,
+              0
+            ]
+          }
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":[0,0],\"state\":{\"myArray\":[1,0]},\"aliases\":{\"myArray\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "passed": true
+    },
+    "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+    "rejected_candidates": {},
+    "search_exhausted": false,
+    "status": "validated_violation",
+    "timeouts": 0,
+    "witness": {
+      "elapsed_seconds": 0.005536455000765272,
+      "exit_code": 0,
+      "expected": [
+        0,
+        1
+      ],
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "inputs": {
+        "myArray": [
+          1,
+          0
+        ]
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "myArray": false
+        },
+        "errno": 0,
+        "result": [
+          0,
+          0
+        ],
+        "rows_separate": true,
+        "state": {
+          "myArray": [
+            1,
+            0
+          ]
+        }
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":[0,0],\"state\":{\"myArray\":[1,0]},\"aliases\":{\"myArray\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+      "validated": true
+    }
+  },
+  "replay_source_kind": "frozen_annotated_source",
+  "replay_source_sha256": "747ee40e9bee4dc071ff1277fb47a56a0468b1d7ac42cbeaf5f9f728fb8a3aba",
+  "role": "mutant",
+  "search_elapsed_seconds": 1.0303855919992202,
+  "source_record": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountingSort/mutant_23/c/record.json",
+  "source_record_sha256": "f09bb66a666590186aeea5ec28e881e489610ff74b3d69c0a3208f3dcacb0fda",
+  "verification_outcome": "unknown/timeout",
+  "verification_rerun": false,
+  "verification_reused": true
+}

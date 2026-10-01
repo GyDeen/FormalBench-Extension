@@ -51,6 +51,7 @@ class Settings:
     wp_memlimit: int
     wp_par: int
     why3_extra_config: Path | None
+    capture_c_counterexamples: bool = False
 
 
 def executable_info(name: str, version_flag: str) -> dict[str, Any]:
@@ -177,6 +178,8 @@ def build_command(language: str, source: Path, case_dir: Path, settings: Setting
                     "-wp-memlimit", str(settings.wp_memlimit),
                     "-wp-par", str(settings.wp_par), "-wp-cache", "none",
                     "-wp-report-json", str(case_dir / "wp-report.json")])
+    if settings.capture_c_counterexamples:
+        command.extend(["-wp-counter-examples", "-wp-status", "-wp-out", str(case_dir / "wp")])
     if not compatibility:
         command.append(str(source))
     return command
@@ -381,7 +384,12 @@ def run_verifier(language: str, source: Path, case_dir: Path, settings: Settings
                          else "report" if report_error else "prover" if PROVER_FAILURE.search(output)
                          else "parse/typecheck" if re.search(r"annot-error|parse error|syntax error|invalid user input", output, re.I)
                          else "verifier")
+    captured_models = {}
+    if language == "c" and settings.capture_c_counterexamples:
+        from .c_counterexamples import extract_models
+        captured_models = {"counterexample_models": extract_models(stdout, goals)}
     return {"outcome": outcome, "reason": reason, "goals": goals, "exit_code": returncode,
+            **captured_models,
             "verification_started": process is not None, "failure_stage": failure_stage,
             **({"compiler_normalizations": [line for line in stdout.splitlines()
                                              if line.startswith("[NumericBitPredicates]")],

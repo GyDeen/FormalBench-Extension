@@ -3,21 +3,24 @@
     "annotations.py": "7f730d0275c185de8199e16b487819eb823acaba46195f4e73152471bb1097e8",
     "c_bindings.py": "fc8f9d74f58723d57562bc5f21087a9ce9e959986a9edd53b26d07b9c9fca1e1",
     "c_structure.py": "efcea8872a653827d977ef2e9c102acc70a44952a6e316a52cef4779a738a0d5",
-    "verifiers.py": "0a9f1dd8a08eb33d35451283f3e0e3f4d272a24d7ada1aad48c5cbf39246bfcf"
+    "verifiers.py": "8daa5f32b6f8aaa007a40ac75afb97d5512d5fe6cf0e48862405557aa310a3a5"
   },
-  "attempt_status": "complete",
-  "failure_stage": "annotation_transfer",
+  "attempt_status": "pending",
   "frozen_spec": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/frozen_specs/c/NextPowerOf2.json",
-  "frozen_spec_sha256": "26390c33a5830c68a0f91b4833e12bf2756137e10fad2eac9ff0a5f7e4ed8025",
+  "frozen_spec_sha256": "d3a1eff79459a53215219ae1f322f4870b5a3f048a831486e577ea4b20e0898c",
   "goals": [],
-  "input_fingerprint": "e1901df70b37bd2c6cb0e252d871b2f7d7d08a61e2e730ef8b691ac2a65478f7",
+  "input_fingerprint": "95ca610aad92247a0f1ef619bd2e2722178370d9b0d1cafabdd6370ef7e9c631",
   "language": "c",
+  "migration_provenance": {
+    "archive": "/mnt/d/ResearchProject/output/verification_run_archive_20261001T080722Z",
+    "utc": "20261001T080722Z"
+  },
   "mutant_id": "8",
-  "outcome": "syntax/tool failure",
+  "outcome": "not run",
   "program": "NextPowerOf2",
   "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/fault_mutants/run_ukcw__uc/NextPowerOf2/mutants/8/c/NextPowerOf2.c",
   "raw_source_sha256": "035c2e27f7f2d108fdb125af7ba1f1591515e45b1ec6f249c5dde50a8951d6ad",
-  "reason": "Annotation transfer failed: C function annotation has no unique named declaration",
+  "reason": "Corrected original C and matching frozen ACSL migrated; verification deferred by user",
   "role": "mutant",
   "selection": "direct_match",
   "selection_manifest_sha256": "92fa1533eafe32fdc60b119b0c6abc8a4f3c0b372d66ac21f39e54a3b5d7433d",
@@ -43,6 +46,7 @@
     "generated/types.h": "484e5df1fa6f1a573bee0b8ea778cefb259659d6b419e0c94ecd92e490d88301",
     "java_arrays.h": "71446403075d5c68ce8ab8f85d63f98f3727133700a879b4e43c5ae59d7f0101"
   },
+  "verification_started": false,
   "verifier": {
     "compatibility": {
       "module": "/mnt/d/ResearchProject/.tools/frama-c-compat/1e5af7b10d6dd41df377/float_negation_33.cmxs",

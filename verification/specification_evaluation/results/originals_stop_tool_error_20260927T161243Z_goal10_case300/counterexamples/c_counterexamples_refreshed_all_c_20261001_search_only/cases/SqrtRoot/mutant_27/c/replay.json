@@ -1,0 +1,178 @@
+{
+  "attempts": [
+    {
+      "elapsed_seconds": 0.5045402490013657,
+      "expected": 0,
+      "failed_clauses": [],
+      "inputs": {
+        "num": 0
+      },
+      "origin": "saved_test:SqrtRoot_ESTest.test0",
+      "preconditions_satisfied": true,
+      "status": "timeout"
+    },
+    {
+      "elapsed_seconds": 0.005137817999639083,
+      "exit_code": 0,
+      "expected": -1,
+      "failed_clauses": [],
+      "inputs": {
+        "num": -3882
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": -1,
+        "rows_separate": true,
+        "state": {}
+      },
+      "origin": "saved_test:SqrtRoot_ESTest.test1",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":-1,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.004969593999703648,
+      "exit_code": 0,
+      "expected": 46,
+      "failed_clauses": [],
+      "inputs": {
+        "num": 2125
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": 46,
+        "rows_separate": true,
+        "state": {}
+      },
+      "origin": "saved_test:SqrtRoot_ESTest.test2",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":46,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.004644353999537998,
+      "exit_code": 0,
+      "expected": -1,
+      "failed_clauses": [],
+      "inputs": {
+        "num": -2
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": -1,
+        "rows_separate": true,
+        "state": {}
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":-1,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.005743579000409227,
+      "exit_code": 0,
+      "expected": -1,
+      "failed_clauses": [],
+      "inputs": {
+        "num": -1
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": -1,
+        "rows_separate": true,
+        "state": {}
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":-1,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.5036792520004383,
+      "expected": 1,
+      "failed_clauses": [],
+      "inputs": {
+        "num": 1
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "timeout"
+    },
+    {
+      "elapsed_seconds": 0.005166565000763512,
+      "exit_code": 0,
+      "expected": 1,
+      "failed_clauses": [],
+      "inputs": {
+        "num": 2
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": 1,
+        "rows_separate": true,
+        "state": {}
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":1,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.0067103199999110075,
+      "exit_code": 0,
+      "expected": 1,
+      "failed_clauses": [],
+      "inputs": {
+        "num": 3
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": 1,
+        "rows_separate": true,
+        "state": {}
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":1,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.5029732319999312,
+      "expected": 2,
+      "failed_clauses": [],
+      "inputs": {
+        "num": 4
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "timeout"
+    }
+  ],
+  "audit_compilation_failed": false,
+  "checked": 9,
+  "independent_audit": null,
+  "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+  "rejected_candidates": {},
+  "search_exhausted": false,
+  "status": "no_validated_violation",
+  "timeouts": 3,
+  "witness": null
+}

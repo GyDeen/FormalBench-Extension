@@ -1,0 +1,58 @@
+{
+  "attempts": [
+    {
+      "elapsed_seconds": 0.5036552009987645,
+      "expected": [
+        0,
+        0,
+        1202
+      ],
+      "failed_clauses": [],
+      "inputs": {
+        "nums": [
+          1202,
+          0,
+          0
+        ]
+      },
+      "origin": "saved_test:CombSort_ESTest.test1",
+      "preconditions_satisfied": true,
+      "status": "timeout"
+    },
+    {
+      "elapsed_seconds": 0.504644307999115,
+      "expected": [],
+      "failed_clauses": [],
+      "inputs": {
+        "nums": []
+      },
+      "origin": "saved_test:CombSort_ESTest.test2",
+      "preconditions_satisfied": true,
+      "status": "timeout"
+    },
+    {
+      "elapsed_seconds": 0.5053895450000709,
+      "expected": [
+        0
+      ],
+      "failed_clauses": [],
+      "inputs": {
+        "nums": [
+          0
+        ]
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "timeout"
+    }
+  ],
+  "audit_compilation_failed": false,
+  "checked": 3,
+  "independent_audit": null,
+  "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+  "rejected_candidates": {},
+  "search_exhausted": false,
+  "status": "no_validated_violation",
+  "timeouts": 3,
+  "witness": null
+}

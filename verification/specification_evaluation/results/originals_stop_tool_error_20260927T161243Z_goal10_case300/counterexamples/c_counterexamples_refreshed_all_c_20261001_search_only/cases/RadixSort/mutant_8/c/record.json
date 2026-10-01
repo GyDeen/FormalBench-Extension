@@ -1,0 +1,85 @@
+{
+  "attempt_status": "complete",
+  "frozen_spec_sha256": "6992150888c44adbf0ba9fdf836738bf0b3d44e0f9ac0712bfc232aa2cb83e90",
+  "language": "c",
+  "mutant_id": "8",
+  "outcome": "precondition/RTE failure",
+  "program": "RadixSort",
+  "replay": {
+    "audit_compilation_failed": false,
+    "checked": 140,
+    "independent_audit": {
+      "baseline_execution": {
+        "elapsed_seconds": 0.007099161999576609,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {
+            "nums": true
+          },
+          "errno": 0,
+          "result": [
+            0,
+            1
+          ],
+          "rows_separate": true,
+          "state": {
+            "nums": [
+              0,
+              1
+            ]
+          }
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":[0,1],\"state\":{\"nums\":[0,1]},\"aliases\":{\"nums\":true},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "baseline_failed_clauses": [],
+      "baseline_passed": true,
+      "execution": {
+        "elapsed_seconds": 0.009195667998938006,
+        "exit_code": 72,
+        "status": "runtime_safety",
+        "stderr": "JAVA_ARRAY_ERROR: INDEX_OUT_OF_BOUNDS (java.lang.ArrayIndexOutOfBoundsException)\n",
+        "stdout": ""
+      },
+      "failed_clauses": [],
+      "passed": true
+    },
+    "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+    "rejected_candidates": {},
+    "search_exhausted": false,
+    "status": "validated_safety_failure",
+    "timeouts": 0,
+    "witness": {
+      "elapsed_seconds": 0.0043963870011793915,
+      "exit_code": 72,
+      "expected": [
+        0,
+        1
+      ],
+      "failed_clauses": [],
+      "inputs": {
+        "nums": [
+          1,
+          0
+        ]
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "runtime_safety",
+      "stderr": "JAVA_ARRAY_ERROR: INDEX_OUT_OF_BOUNDS (java.lang.ArrayIndexOutOfBoundsException)\n",
+      "stdout": "",
+      "validated": true
+    }
+  },
+  "replay_source_kind": "frozen_annotated_source",
+  "replay_source_sha256": "eb13ba206e61a9bfe69270791523fd11cce8fe6bcc0261a7de521bdc1237d898",
+  "role": "mutant",
+  "search_elapsed_seconds": 2.8360089199995855,
+  "source_record": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/RadixSort/mutant_8/c/record.json",
+  "source_record_sha256": "2118690f0604d0cff2599750d5d0dd77457a5f91ce7d406627a87bfb31d69127",
+  "verification_outcome": "unknown/timeout",
+  "verification_rerun": false,
+  "verification_reused": true
+}

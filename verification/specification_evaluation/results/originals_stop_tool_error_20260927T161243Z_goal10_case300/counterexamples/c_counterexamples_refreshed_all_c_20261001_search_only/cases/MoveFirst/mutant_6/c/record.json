@@ -1,0 +1,73 @@
+{
+  "attempt_status": "complete",
+  "frozen_spec_sha256": "7f684c126ace1d3bc4dacd84119a85312d38c46903ebe58a48948636f4c9e604",
+  "language": "c",
+  "mutant_id": "6",
+  "outcome": "precondition/RTE failure",
+  "program": "MoveFirst",
+  "replay": {
+    "audit_compilation_failed": false,
+    "checked": 182,
+    "independent_audit": {
+      "baseline_execution": {
+        "elapsed_seconds": 0.006726131001414615,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {
+            "testArray": true
+          },
+          "errno": 0,
+          "result": null,
+          "rows_separate": true,
+          "state": {
+            "testArray": null
+          }
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":null,\"state\":{\"testArray\":null},\"aliases\":{\"testArray\":true},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "baseline_failed_clauses": [],
+      "baseline_passed": true,
+      "execution": {
+        "elapsed_seconds": 0.007556701000794419,
+        "exit_code": 71,
+        "status": "runtime_safety",
+        "stderr": "JAVA_ARRAY_ERROR: NULL_REFERENCE_ERROR (java.lang.NullPointerException)\n",
+        "stdout": ""
+      },
+      "failed_clauses": [],
+      "passed": true
+    },
+    "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+    "rejected_candidates": {},
+    "search_exhausted": false,
+    "status": "validated_safety_failure",
+    "timeouts": 0,
+    "witness": {
+      "elapsed_seconds": 0.005757827999332221,
+      "exit_code": 71,
+      "expected": null,
+      "failed_clauses": [],
+      "inputs": {
+        "testArray": null
+      },
+      "origin": "saved_test:MoveFirst_ESTest.test2",
+      "preconditions_satisfied": true,
+      "status": "runtime_safety",
+      "stderr": "JAVA_ARRAY_ERROR: NULL_REFERENCE_ERROR (java.lang.NullPointerException)\n",
+      "stdout": "",
+      "validated": true
+    }
+  },
+  "replay_source_kind": "raw_source_after_annotation_transfer_failure",
+  "replay_source_sha256": "2f32b35c737efd881c6f86a70508ad861176f826244a3cf16948e4cf15b4d389",
+  "role": "mutant",
+  "search_elapsed_seconds": 2.0458750630004943,
+  "source_record": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MoveFirst/mutant_6/c/record.json",
+  "source_record_sha256": "8e5bb0eb875833bb9e25c0aa611701cdfb7b9f847a5a417718a1769ae0e57c3a",
+  "verification_outcome": "not run",
+  "verification_rerun": false,
+  "verification_reused": true
+}

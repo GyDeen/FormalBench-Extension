@@ -1,0 +1,149 @@
+{
+  "attempt_status": "complete",
+  "frozen_spec_sha256": "6d2e55e5c356135dba6d82b815bed188ff1bcdcaab09eb02079f17ec8349a07e",
+  "language": "c",
+  "mutant_id": "7",
+  "outcome": "specification violation",
+  "program": "PairWise",
+  "replay": {
+    "audit_compilation_failed": false,
+    "checked": 1,
+    "independent_audit": {
+      "baseline_execution": {
+        "elapsed_seconds": 0.007052996999846073,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {
+            "l1": false
+          },
+          "errno": 0,
+          "result": [
+            [
+              0,
+              0
+            ]
+          ],
+          "rows_separate": true,
+          "state": {
+            "l1": [
+              0,
+              0
+            ]
+          }
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":[[0,0]],\"state\":{\"l1\":[0,0]},\"aliases\":{\"l1\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "baseline_failed_clauses": [],
+      "baseline_passed": true,
+      "execution": {
+        "elapsed_seconds": 0.0071402860012312885,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {
+            "l1": false
+          },
+          "errno": 0,
+          "result": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "rows_separate": true,
+          "state": {
+            "l1": [
+              0,
+              0
+            ]
+          }
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":[[0,0],[0,0],[0,0]],\"state\":{\"l1\":[0,0]},\"aliases\":{\"l1\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "passed": true
+    },
+    "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+    "rejected_candidates": {},
+    "search_exhausted": false,
+    "status": "validated_violation",
+    "timeouts": 0,
+    "witness": {
+      "elapsed_seconds": 0.006443513000704115,
+      "exit_code": 0,
+      "expected": [
+        [
+          0,
+          0
+        ]
+      ],
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "inputs": {
+        "l1": [
+          0,
+          0
+        ]
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "l1": false
+        },
+        "errno": 0,
+        "result": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "rows_separate": true,
+        "state": {
+          "l1": [
+            0,
+            0
+          ]
+        }
+      },
+      "origin": "saved_test:PairWise_ESTest.test0",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":[[0,0],[0,0],[0,0]],\"state\":{\"l1\":[0,0]},\"aliases\":{\"l1\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+      "validated": true
+    }
+  },
+  "replay_source_kind": "raw_source_after_annotation_transfer_failure",
+  "replay_source_sha256": "919b20441ba615d000f482d332a68bf343fcec25f1fe77c47c0424f86be825e4",
+  "role": "mutant",
+  "search_elapsed_seconds": 0.9248589649996575,
+  "source_record": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/PairWise/mutant_7/c/record.json",
+  "source_record_sha256": "00738a48a34bc611c1543d5d15233669fce9df8b5b225770baae30e084e241e5",
+  "verification_outcome": "not run",
+  "verification_rerun": false,
+  "verification_reused": true
+}

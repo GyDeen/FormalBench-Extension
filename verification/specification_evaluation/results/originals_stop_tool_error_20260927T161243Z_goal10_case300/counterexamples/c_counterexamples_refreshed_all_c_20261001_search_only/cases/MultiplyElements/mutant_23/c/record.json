@@ -1,0 +1,129 @@
+{
+  "attempt_status": "complete",
+  "frozen_spec_sha256": "9e889b41292d2efa3d496452cca41ba67946cb537e7dfb287447c1c08b94d5dd",
+  "language": "c",
+  "mutant_id": "23",
+  "outcome": "specification violation",
+  "program": "MultiplyElements",
+  "replay": {
+    "audit_compilation_failed": false,
+    "checked": 12,
+    "independent_audit": {
+      "baseline_execution": {
+        "elapsed_seconds": 0.007130031999622588,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {
+            "testTup": false
+          },
+          "errno": 0,
+          "result": [
+            3,
+            2
+          ],
+          "rows_separate": true,
+          "state": {
+            "testTup": [
+              3,
+              1,
+              2
+            ]
+          }
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":[3,2],\"state\":{\"testTup\":[3,1,2]},\"aliases\":{\"testTup\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "baseline_failed_clauses": [],
+      "baseline_passed": true,
+      "execution": {
+        "elapsed_seconds": 0.006332693999866024,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {
+            "testTup": false
+          },
+          "errno": 0,
+          "result": [
+            3,
+            0
+          ],
+          "rows_separate": true,
+          "state": {
+            "testTup": [
+              3,
+              1,
+              2
+            ]
+          }
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":[3,0],\"state\":{\"testTup\":[3,1,2]},\"aliases\":{\"testTup\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "passed": true
+    },
+    "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+    "rejected_candidates": {},
+    "search_exhausted": false,
+    "status": "validated_violation",
+    "timeouts": 0,
+    "witness": {
+      "elapsed_seconds": 0.004612656999597675,
+      "exit_code": 0,
+      "expected": [
+        3,
+        2
+      ],
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "inputs": {
+        "testTup": [
+          3,
+          1,
+          2
+        ]
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "testTup": false
+        },
+        "errno": 0,
+        "result": [
+          3,
+          0
+        ],
+        "rows_separate": true,
+        "state": {
+          "testTup": [
+            3,
+            1,
+            2
+          ]
+        }
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":[3,0],\"state\":{\"testTup\":[3,1,2]},\"aliases\":{\"testTup\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+      "validated": true
+    }
+  },
+  "replay_source_kind": "raw_source_after_annotation_transfer_failure",
+  "replay_source_sha256": "457adc2b6afa83a9ef38a8ea01e111a9aa095d82bf094ae3ad3c625f8de2509c",
+  "role": "mutant",
+  "search_elapsed_seconds": 1.1120362209985615,
+  "source_record": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MultiplyElements/mutant_23/c/record.json",
+  "source_record_sha256": "088bf18ef77eb0e1699e4706089e1a7c9ce237d83fb40ddbeca90495d960750a",
+  "verification_outcome": "not run",
+  "verification_rerun": false,
+  "verification_reused": true
+}

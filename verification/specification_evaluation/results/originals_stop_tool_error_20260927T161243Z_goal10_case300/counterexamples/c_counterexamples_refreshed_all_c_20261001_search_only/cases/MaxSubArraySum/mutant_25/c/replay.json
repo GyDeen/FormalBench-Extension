@@ -1,0 +1,159 @@
+{
+  "attempts": [
+    {
+      "elapsed_seconds": 0.006026922001183266,
+      "exit_code": 0,
+      "expected": 3,
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "inputs": {
+        "a": [
+          -1,
+          0,
+          0,
+          437,
+          0,
+          0
+        ],
+        "size": 5
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "a": false
+        },
+        "errno": 0,
+        "result": 2,
+        "rows_separate": true,
+        "state": {
+          "a": [
+            -1,
+            0,
+            0,
+            437,
+            0,
+            0
+          ]
+        }
+      },
+      "origin": "saved_test:MaxSubArraySum_ESTest.test0",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":2,\"state\":{\"a\":[-1,0,0,437,0,0]},\"aliases\":{\"a\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+      "validated": true
+    }
+  ],
+  "audit_compilation_failed": false,
+  "checked": 1,
+  "independent_audit": {
+    "baseline_execution": {
+      "elapsed_seconds": 0.009079367000595084,
+      "exit_code": 0,
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "a": false
+        },
+        "errno": 0,
+        "result": 3,
+        "rows_separate": true,
+        "state": {
+          "a": [
+            -1,
+            0,
+            0,
+            437,
+            0,
+            0
+          ]
+        }
+      },
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":3,\"state\":{\"a\":[-1,0,0,437,0,0]},\"aliases\":{\"a\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    "baseline_failed_clauses": [],
+    "baseline_passed": true,
+    "execution": {
+      "elapsed_seconds": 0.012829403998694033,
+      "exit_code": 0,
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "a": false
+        },
+        "errno": 0,
+        "result": 2,
+        "rows_separate": true,
+        "state": {
+          "a": [
+            -1,
+            0,
+            0,
+            437,
+            0,
+            0
+          ]
+        }
+      },
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":2,\"state\":{\"a\":[-1,0,0,437,0,0]},\"aliases\":{\"a\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    "failed_clauses": [
+      "frozen_return_value_or_array_contents"
+    ],
+    "passed": true
+  },
+  "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+  "rejected_candidates": {},
+  "search_exhausted": false,
+  "status": "validated_violation",
+  "timeouts": 0,
+  "witness": {
+    "elapsed_seconds": 0.006026922001183266,
+    "exit_code": 0,
+    "expected": 3,
+    "failed_clauses": [
+      "frozen_return_value_or_array_contents"
+    ],
+    "inputs": {
+      "a": [
+        -1,
+        0,
+        0,
+        437,
+        0,
+        0
+      ],
+      "size": 5
+    },
+    "observation": {
+      "EDOM": 33,
+      "aliases": {
+        "a": false
+      },
+      "errno": 0,
+      "result": 2,
+      "rows_separate": true,
+      "state": {
+        "a": [
+          -1,
+          0,
+          0,
+          437,
+          0,
+          0
+        ]
+      }
+    },
+    "origin": "saved_test:MaxSubArraySum_ESTest.test0",
+    "preconditions_satisfied": true,
+    "status": "returned",
+    "stderr": "",
+    "stdout": "\n@@REPLAY {\"result\":2,\"state\":{\"a\":[-1,0,0,437,0,0]},\"aliases\":{\"a\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+    "validated": true
+  }
+}

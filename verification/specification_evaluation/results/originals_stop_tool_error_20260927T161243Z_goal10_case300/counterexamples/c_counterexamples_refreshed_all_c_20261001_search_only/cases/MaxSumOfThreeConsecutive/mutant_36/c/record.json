@@ -1,0 +1,122 @@
+{
+  "attempt_status": "complete",
+  "frozen_spec_sha256": "f6aac2fdc01e3ac93cbbf730ba0509730bdae7572d77dc24cbe99c44e7010707",
+  "language": "c",
+  "mutant_id": "36",
+  "outcome": "specification violation",
+  "program": "MaxSumOfThreeConsecutive",
+  "replay": {
+    "audit_compilation_failed": false,
+    "checked": 26,
+    "independent_audit": {
+      "baseline_execution": {
+        "elapsed_seconds": 0.00696276100097748,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {
+            "arr": false
+          },
+          "errno": 0,
+          "result": 8,
+          "rows_separate": true,
+          "state": {
+            "arr": [
+              4,
+              3,
+              2,
+              1
+            ]
+          }
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":8,\"state\":{\"arr\":[4,3,2,1]},\"aliases\":{\"arr\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "baseline_failed_clauses": [],
+      "baseline_passed": true,
+      "execution": {
+        "elapsed_seconds": 0.007109722999302903,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {
+            "arr": false
+          },
+          "errno": 0,
+          "result": 7,
+          "rows_separate": true,
+          "state": {
+            "arr": [
+              4,
+              3,
+              2,
+              1
+            ]
+          }
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":7,\"state\":{\"arr\":[4,3,2,1]},\"aliases\":{\"arr\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "passed": true
+    },
+    "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+    "rejected_candidates": {},
+    "search_exhausted": false,
+    "status": "validated_violation",
+    "timeouts": 0,
+    "witness": {
+      "elapsed_seconds": 0.004277620999346254,
+      "exit_code": 0,
+      "expected": 8,
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "inputs": {
+        "arr": [
+          4,
+          3,
+          2,
+          1
+        ],
+        "n": 4
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "arr": false
+        },
+        "errno": 0,
+        "result": 7,
+        "rows_separate": true,
+        "state": {
+          "arr": [
+            4,
+            3,
+            2,
+            1
+          ]
+        }
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":7,\"state\":{\"arr\":[4,3,2,1]},\"aliases\":{\"arr\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+      "validated": true
+    }
+  },
+  "replay_source_kind": "frozen_annotated_source",
+  "replay_source_sha256": "12a1a6ec398b9d8d75623e56147b792e147037c6fc0c7390239391f7f1267ba0",
+  "role": "mutant",
+  "search_elapsed_seconds": 1.0691740160000336,
+  "source_record": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/MaxSumOfThreeConsecutive/mutant_36/c/record.json",
+  "source_record_sha256": "4329f1b477dbe13076b720a3babec856e854b383efefb3159385af3184d3afbb",
+  "verification_outcome": "unknown/timeout",
+  "verification_rerun": false,
+  "verification_reused": true
+}

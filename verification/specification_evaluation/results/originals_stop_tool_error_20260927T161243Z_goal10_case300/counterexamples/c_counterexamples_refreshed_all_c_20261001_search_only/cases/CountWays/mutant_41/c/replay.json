@@ -1,0 +1,147 @@
+{
+  "attempts": [
+    {
+      "elapsed_seconds": 0.00444556399997964,
+      "exit_code": 0,
+      "expected": 0,
+      "failed_clauses": [],
+      "inputs": {
+        "n": 1
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": 0,
+        "rows_separate": true,
+        "state": {}
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":0,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+    },
+    {
+      "elapsed_seconds": 0.004721262999737519,
+      "exit_code": 75,
+      "expected": 3,
+      "failed_clauses": [],
+      "inputs": {
+        "n": 2
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "abnormal_exit",
+      "stderr": "JAVA_ARITHMETIC_ERROR: DIVIDE_BY_ZERO\n",
+      "stdout": ""
+    },
+    {
+      "elapsed_seconds": 0.004868202000579913,
+      "exit_code": 75,
+      "expected": 0,
+      "failed_clauses": [],
+      "inputs": {
+        "n": 3
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "abnormal_exit",
+      "stderr": "JAVA_ARITHMETIC_ERROR: DIVIDE_BY_ZERO\n",
+      "stdout": ""
+    },
+    {
+      "elapsed_seconds": 0.006791600999349612,
+      "exit_code": 75,
+      "expected": 11,
+      "failed_clauses": [],
+      "inputs": {
+        "n": 4
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "abnormal_exit",
+      "stderr": "JAVA_ARITHMETIC_ERROR: DIVIDE_BY_ZERO\n",
+      "stdout": ""
+    },
+    {
+      "elapsed_seconds": 0.004390652000438422,
+      "exit_code": 75,
+      "expected": 0,
+      "failed_clauses": [],
+      "inputs": {
+        "n": 7
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "abnormal_exit",
+      "stderr": "JAVA_ARITHMETIC_ERROR: DIVIDE_BY_ZERO\n",
+      "stdout": ""
+    },
+    {
+      "elapsed_seconds": 0.0049843319993669866,
+      "exit_code": 75,
+      "expected": 0,
+      "failed_clauses": [],
+      "inputs": {
+        "n": 63
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "abnormal_exit",
+      "stderr": "JAVA_ARITHMETIC_ERROR: DIVIDE_BY_ZERO\n",
+      "stdout": ""
+    },
+    {
+      "elapsed_seconds": 0.004939382999509689,
+      "exit_code": 75,
+      "expected": 1117014753,
+      "failed_clauses": [],
+      "inputs": {
+        "n": 32
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "abnormal_exit",
+      "stderr": "JAVA_ARITHMETIC_ERROR: DIVIDE_BY_ZERO\n",
+      "stdout": ""
+    },
+    {
+      "elapsed_seconds": 0.006467572999099502,
+      "exit_code": 75,
+      "expected": 29681,
+      "failed_clauses": [],
+      "inputs": {
+        "n": 16
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "abnormal_exit",
+      "stderr": "JAVA_ARITHMETIC_ERROR: DIVIDE_BY_ZERO\n",
+      "stdout": ""
+    },
+    {
+      "elapsed_seconds": 0.004632404999938444,
+      "exit_code": 75,
+      "expected": 0,
+      "failed_clauses": [],
+      "inputs": {
+        "n": 31
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "abnormal_exit",
+      "stderr": "JAVA_ARITHMETIC_ERROR: DIVIDE_BY_ZERO\n",
+      "stdout": ""
+    }
+  ],
+  "audit_compilation_failed": false,
+  "checked": 9,
+  "independent_audit": null,
+  "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+  "rejected_candidates": {},
+  "search_exhausted": true,
+  "status": "no_validated_violation",
+  "timeouts": 0,
+  "witness": null
+}

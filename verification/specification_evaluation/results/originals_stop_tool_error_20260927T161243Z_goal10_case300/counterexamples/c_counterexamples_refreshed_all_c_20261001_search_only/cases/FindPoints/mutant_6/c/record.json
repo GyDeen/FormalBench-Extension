@@ -1,0 +1,104 @@
+{
+  "attempt_status": "complete",
+  "frozen_spec_sha256": "ecda9aec04c3ed8f9e9d40aef4db9687bd47f9332388eed30249223a77e282e9",
+  "language": "c",
+  "mutant_id": "6",
+  "outcome": "specification violation",
+  "program": "FindPoints",
+  "replay": {
+    "audit_compilation_failed": false,
+    "checked": 5,
+    "independent_audit": {
+      "baseline_execution": {
+        "elapsed_seconds": 0.01371370000015304,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {},
+          "errno": 0,
+          "result": [
+            -1746,
+            2433
+          ],
+          "rows_separate": true,
+          "state": {}
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":[-1746,2433],\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "baseline_failed_clauses": [],
+      "baseline_passed": true,
+      "execution": {
+        "elapsed_seconds": 0.031011389000923373,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {},
+          "errno": 0,
+          "result": [
+            0,
+            -1746
+          ],
+          "rows_separate": true,
+          "state": {}
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":[0,-1746],\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "passed": true
+    },
+    "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+    "rejected_candidates": {},
+    "search_exhausted": false,
+    "status": "validated_violation",
+    "timeouts": 0,
+    "witness": {
+      "elapsed_seconds": 0.004828924000321422,
+      "exit_code": 0,
+      "expected": [
+        -1746,
+        2433
+      ],
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "inputs": {
+        "l1": 0,
+        "l2": 648,
+        "r1": -1746,
+        "r2": 2433
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {},
+        "errno": 0,
+        "result": [
+          0,
+          -1746
+        ],
+        "rows_separate": true,
+        "state": {}
+      },
+      "origin": "saved_test:FindPoints_ESTest.test4",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":[0,-1746],\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+      "validated": true
+    }
+  },
+  "replay_source_kind": "frozen_annotated_source",
+  "replay_source_sha256": "b339aa0b8eac544d965afa87a1381f12bc0c1c80e3a33c7b1dd3a227d5741d91",
+  "role": "mutant",
+  "search_elapsed_seconds": 1.0120916769992618,
+  "source_record": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/FindPoints/mutant_6/c/record.json",
+  "source_record_sha256": "9b630f6c8b7f4971998c8383070e2be512382786c894a41d9439c52207ee5c30",
+  "verification_outcome": "unknown/timeout",
+  "verification_rerun": false,
+  "verification_reused": true
+}

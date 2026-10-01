@@ -1,0 +1,133 @@
+{
+  "attempt_status": "complete",
+  "frozen_spec_sha256": "6992150888c44adbf0ba9fdf836738bf0b3d44e0f9ac0712bfc232aa2cb83e90",
+  "language": "c",
+  "mutant_id": "20",
+  "outcome": "specification violation",
+  "program": "RadixSort",
+  "replay": {
+    "audit_compilation_failed": false,
+    "checked": 21,
+    "independent_audit": {
+      "baseline_execution": {
+        "elapsed_seconds": 0.00862617799975851,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {
+            "nums": true
+          },
+          "errno": 0,
+          "result": [
+            -1,
+            -1,
+            0
+          ],
+          "rows_separate": true,
+          "state": {
+            "nums": [
+              -1,
+              -1,
+              0
+            ]
+          }
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":[-1,-1,0],\"state\":{\"nums\":[-1,-1,0]},\"aliases\":{\"nums\":true},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "baseline_failed_clauses": [],
+      "baseline_passed": true,
+      "execution": {
+        "elapsed_seconds": 0.009068571000170778,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {
+            "nums": true
+          },
+          "errno": 0,
+          "result": [
+            -1,
+            0,
+            0
+          ],
+          "rows_separate": true,
+          "state": {
+            "nums": [
+              -1,
+              0,
+              0
+            ]
+          }
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":[-1,0,0],\"state\":{\"nums\":[-1,0,0]},\"aliases\":{\"nums\":true},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "passed": true
+    },
+    "limitation": "Finite return/frame/identity checks; passing is not proof; does not validate every ACSL clause or WP loop goal.",
+    "rejected_candidates": {},
+    "search_exhausted": false,
+    "status": "validated_violation",
+    "timeouts": 0,
+    "witness": {
+      "elapsed_seconds": 0.004864821999944979,
+      "exit_code": 0,
+      "expected": [
+        -1,
+        -1,
+        0
+      ],
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "inputs": {
+        "nums": [
+          -1,
+          -1,
+          0
+        ]
+      },
+      "observation": {
+        "EDOM": 33,
+        "aliases": {
+          "nums": true
+        },
+        "errno": 0,
+        "result": [
+          -1,
+          0,
+          0
+        ],
+        "rows_separate": true,
+        "state": {
+          "nums": [
+            -1,
+            0,
+            0
+          ]
+        }
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true,
+      "status": "returned",
+      "stderr": "",
+      "stdout": "\n@@REPLAY {\"result\":[-1,0,0],\"state\":{\"nums\":[-1,0,0]},\"aliases\":{\"nums\":true},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+      "validated": true
+    }
+  },
+  "replay_source_kind": "frozen_annotated_source",
+  "replay_source_sha256": "3c21d99dce8ee14ff8461f37b596a90385d1fab4521375abcd63b8d8d2b36bf1",
+  "role": "mutant",
+  "search_elapsed_seconds": 1.2916780920004385,
+  "source_record": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/RadixSort/mutant_20/c/record.json",
+  "source_record_sha256": "7965fb6fd3576861c89227270aef214524f0b07d716bb1a52863cc91a26f9311",
+  "verification_outcome": "unknown/timeout",
+  "verification_rerun": false,
+  "verification_reused": true
+}

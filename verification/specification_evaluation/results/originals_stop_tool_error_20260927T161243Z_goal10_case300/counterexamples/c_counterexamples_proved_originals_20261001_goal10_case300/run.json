@@ -1,0 +1,54 @@
+{
+  "calibration": false,
+  "created_utc": "2026-10-01T07:00:54.089844+00:00",
+  "expected_cases": 86,
+  "prover_discovery": "[wp] Prover Alt-Ergo   2.4.3  [Alt-Ergo:2.4.3] (alt-ergo)\n[wp] Prover Z3         4.8.12 [Z3:4.8.12] (z3) (counter-examples)\n",
+  "replay_spec_sha256": {
+    "CountList": "ada941695475e9dfaf5b57a7e34c853007a832dd88be67d9177073171054db1b",
+    "MaxOfTwo": "f0be896ef1003dba076aa900da8e72c1ba1dc6658bf7d6c61930c397c0b12ade",
+    "MaxSubArraySum": "a58d9bd62440187a778ac6be58f8e72136ad1f9adf1db09e495a2274cc092df6",
+    "OddBitSetNumber": "26c35a8df64242b283d772ba1b155b6e721f608fb5c93db6179fc9b698a1c7bf",
+    "SumNums": "c5578ae8a1bc6553f4042363ca9294bcf18c64dd480872444f5e463149ad5746",
+    "TestThreeEqual": "5b2e35adc9fe18a60d4dacfab61fa4b5a0591020c47f619ff2cbfb4e17deeb92"
+  },
+  "runner_sha256": "0d5fa21c0045fdd97e1f49b7b4ed76628ff626c7931d99e361b110cb84620da9",
+  "runtime_sha256": {
+    "java_arrays.c": "398a200770104fd75ab0e1652f3a3d6711d858fd15a1c868b8aa9424e28a79ea",
+    "java_arrays.h": "307b35051412e76f0f85866261acf30702389528ccc5f48cba65b5bf7fa63fcf"
+  },
+  "settings": {
+    "c_provers": "Z3:4.8.12",
+    "capture_c_counterexamples": true,
+    "frama_c": "frama-c",
+    "goal_timeout": 10,
+    "java_prover": "z3-4.3.X",
+    "machdep": "x86_64",
+    "memory_model": "Typed+ref",
+    "openjml": "openjml",
+    "timeout": 300,
+    "why3_extra_config": "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+    "wp_memlimit": 1000,
+    "wp_par": 4
+  },
+  "source_run": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300",
+  "source_run_sha256": "ce94aae200d6ffd94644203a412efdaf85d116444ca4d27df51e06a509df0448",
+  "source_summary_sha256": "ec3480edf31252ee23096600e8c5b9421dfc8efbd0df860106ce6e03e2ed2ce8",
+  "verifier": {
+    "compatibility": {
+      "module": "/mnt/d/ResearchProject/.tools/frama-c-compat/1e5af7b10d6dd41df377/float_negation_33.cmxs",
+      "module_sha256": "1db37c95f71be52efae9dccb88c510a543ef611378c9e6438d65ec35880d70a8",
+      "name": "Frama-C 33.0 implicit floating-negation coercion repair",
+      "source": "/mnt/d/ResearchProject/verification/specification_evaluation/framac/float_negation_33.ml",
+      "source_sha256": "4ff87e29b00ac2eff69fd600225636521287641211fb362c1121246754c3870a"
+    },
+    "path": "/root/.opam/default/bin/frama-c",
+    "sha256": "9e49b5c48b5ca47a377a1b845f580bfbfb095fb18d51788c05cb42572201f116",
+    "version_command": [
+      "/root/.opam/default/bin/frama-c",
+      "-version"
+    ],
+    "version_exit_code": 0,
+    "version_output": "33.0 (Arsenic)"
+  },
+  "workers": 2
+}

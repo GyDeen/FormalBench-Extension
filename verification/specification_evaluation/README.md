@@ -148,6 +148,50 @@ tools. Diagnostic logging, proxying, and concurrent load can affect timings.
 See the [OpenJML proof splitting documentation](https://www.openjml.org/tutorial/SplittingProofs)
 and [user guide](https://www.openjml.org/documentation/OpenJMLUserGuide.pdf).
 
+## C counterexample capture and validated replay
+
+`--capture-c-counterexamples` enables `-wp-counter-examples -wp-status` and
+retains generated queries under each case's `wp/` directory. Select a solver
+with model support, identified by `frama-c -wp-list-provers`; the installed
+Z3 4.8.12 configuration supports this. Use a new output directory because the
+setting changes the verification protocol. Parsed full models appear in
+`counterexample_models`; a model alone does not change a verdict.
+
+WP's top-level JSON proof report does not document an `invalid` verdict. Even
+a model-producing proof attempt may remain `Unknown (Model)`. The C rejection
+rule requires explicit invalidity or a validated counterexample, while the
+Java rule uses classified OpenJML proof-failure diagnostics. Zero C rejections
+in the original run is therefore not a comparable measure of Java/C fault
+detection. See the [Frama-C 33 WP manual, sections 2.4.10 and 2.7](https://www.frama-c.com/download/frama-c-wp-manual.pdf).
+
+The supplemental runner calibrates on MaxOfTwo before evaluating the six proved
+C originals and their 80 mutants:
+
+```bash
+python3 -m verification.specification_evaluation.c_counterexamples \
+  --calibrate --output verification/specification_evaluation/results/c_counterexamples_calibration
+python3 -m verification.specification_evaluation.c_counterexamples \
+  --workers 2 --output verification/specification_evaluation/results/c_counterexamples_proved_originals
+```
+
+It reuses exact frozen annotated sources and support hashes. Original controls
+must prove and agree with executable equivalents of their frozen postconditions.
+The replay oracles are restricted to six explicitly pinned specification hashes;
+this is not a general ACSL-to-C translator. It retains WP outcomes separately
+from replay outcomes. WP's preliminary incremental SMT queries can provide scalar
+candidates even when completing the full theory model times out. Those queries
+are labelled partial, and their SAT result never establishes rejection. A fixed
+bounded search with seed 726 also supplies candidates, including valid arrays.
+
+A functional rejection requires an admissible input, normal execution of the
+actual C mutant, no UBSan diagnostic, and a result violating the frozen
+postcondition. Runtime-safety witnesses are separate. A passing finite search,
+failed model extraction, or replay timeout remains inconclusive. Native compile
+commands, witnesses, expected/actual values and candidate origins are saved.
+The source experiment is not modified or merged with these supplemental outcomes.
+Solver `.smt2` files, tests, compiler binaries and configuration changes need not
+be committed with the report.
+
 ## Targeted diagnostic runs
 
 Both `diagnose_c_repairs` and `diagnose_java_repairs` accept these repeatable
@@ -242,6 +286,47 @@ specification violation. OpenJML proof-failure warnings are recorded as Java
 verification failures, with precondition and runtime-safety warnings separated.
 
 ## Evidence categories and scores
+
+Saved C counterexamples can be integrated into their source experiment without
+restarting verification or replay:
+
+```bash
+python3 -m verification.specification_evaluation.integrate_c_counterexamples \
+  --output verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300
+```
+
+The integration preserves the original proof-only summary in
+`summary_verification.json`, archives completed case evidence under
+`counterexamples/`, and adds `c_counterexample_evidence` to `summary.json`.
+Overlapping case coverage is deduplicated. Stopped searches remain partial;
+current original-source changes are recorded separately. The combined C evidence
+view does not turn a WP unknown verdict into a WP invalid verdict. Regenerate the
+experiment README/statistics with `summarize_experiment` after integration.
+
+The default evidence run is the completed full-population replay search
+`c_counterexamples_refreshed_all_c_20261001_search_only`. It covers 50 originals
+and 977 mutants using the refreshed frozen contracts. Use repeatable
+`--evidence-run` arguments to choose other saved runs.
+
+The four corrected-original C verification invocations can be promoted after
+checking that their sources, frozen contracts, settings, trusted support and
+verifier match the experiment:
+
+```bash
+python3 -m verification.specification_evaluation.integrate_c_originals \
+  --output verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300 \
+  --rerun verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/original_verification/c_corrected_originals_verification_20261001
+```
+
+This archives the original invocation records and the replaced pending records
+under `original_verification/`, updates the four original case records, and
+recounts the proof summary. It does not rerun mutant verification. The README
+and statistics generator includes deferred `not run` cases explicitly.
+
+Corrected C translation reports and completed C search outputs have been
+consolidated inside the final experiment. `c_run_archive.json` records their
+former and current locations and copy/move hash checks. The counterexample
+integrator also accepts the archived final search as its default input.
 
 The unit of scoring is one selected mutant in one language, paired with that
 language's original. A parser or annotation-placement failure is never a
