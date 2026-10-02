@@ -42,14 +42,389 @@
     }
   ],
   "input_fingerprint": "ffd5d89572c951b8bbd003e737d6bdea7bba27eaaf678cd6c0474ed3d2c7ee4e",
+  "java_goal_recording": {
+    "finished_utc": "2026-10-02T10:01:58.001940+00:00",
+    "previous_record": "original_verification/java_goal_recording_20261002T100041Z/previous_cases/TupleToInt/record.json",
+    "previous_record_sha256": "bbb8eb3a9c2f02c8360cd852fb1bdb054a181252aab54bee56ffb1fe184066cd",
+    "started_batch_utc": "2026-10-02T10:00:41.464497+00:00",
+    "timing_note": "Canonical elapsed_seconds is the original uninstrumented proof time; recorder overhead is represented only in java_workload_rerun.elapsed_seconds.",
+    "workers": 12
+  },
+  "java_workload": {
+    "assertions_by_kind": {
+      "ExceptionList": 3,
+      "ExceptionalPostcondition": 2,
+      "LoopDecreases": 1,
+      "LoopDecreasesNonNegative": 1,
+      "LoopInvariant": 2,
+      "LoopInvariantAfterLoop": 2,
+      "LoopInvariantBeforeLoop": 2,
+      "Postcondition": 2,
+      "Precondition": 1,
+      "UndefinedCalledMethodPrecondition": 10,
+      "UndefinedDivideByZero": 10,
+      "UndefinedNegativeIndex": 5,
+      "UndefinedNullDeReference": 17,
+      "UndefinedTooLargeIndex": 5
+    },
+    "capture_complete": true,
+    "generated_assertion_count": 63,
+    "generated_method_vc_count": 2,
+    "method_proof_completions": 2,
+    "method_proof_starts": 2,
+    "methods": [
+      {
+        "assertion_count": 3,
+        "assertions": [
+          {
+            "expression": "ASSERT_9_0_0___9",
+            "kind": "Precondition"
+          },
+          {
+            "expression": "ASSERT_15_60_60___13",
+            "kind": "ExceptionalPostcondition"
+          },
+          {
+            "expression": "ASSERT_16_60_60___14",
+            "kind": "ExceptionList"
+          }
+        ],
+        "assertions_by_kind": {
+          "ExceptionList": 1,
+          "ExceptionalPostcondition": 1,
+          "Precondition": 1
+        },
+        "method": "TupleToInt.TupleToInt()"
+      },
+      {
+        "assertion_count": 60,
+        "assertions": [
+          {
+            "expression": "ASSERT_114_998",
+            "kind": "UndefinedNullDeReference"
+          },
+          {
+            "expression": "ASSERT_115_977",
+            "kind": "LoopInvariantBeforeLoop"
+          },
+          {
+            "expression": "ASSERT_128_347",
+            "kind": "UndefinedNullDeReference"
+          },
+          {
+            "expression": "ASSERT_131_334",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_136_434",
+            "kind": "UndefinedNullDeReference"
+          },
+          {
+            "expression": "ASSERT_137_434",
+            "kind": "UndefinedNegativeIndex"
+          },
+          {
+            "expression": "ASSERT_138_434",
+            "kind": "UndefinedTooLargeIndex"
+          },
+          {
+            "expression": "ASSERT_141_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_144_146",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_145_175",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_152_1038",
+            "kind": "LoopInvariantBeforeLoop"
+          },
+          {
+            "expression": "ASSERT_160_998",
+            "kind": "UndefinedNullDeReference"
+          },
+          {
+            "expression": "ASSERT_173_347",
+            "kind": "UndefinedNullDeReference"
+          },
+          {
+            "expression": "ASSERT_176_334",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_181_434",
+            "kind": "UndefinedNullDeReference"
+          },
+          {
+            "expression": "ASSERT_182_434",
+            "kind": "UndefinedNegativeIndex"
+          },
+          {
+            "expression": "ASSERT_183_434",
+            "kind": "UndefinedTooLargeIndex"
+          },
+          {
+            "expression": "ASSERT_186_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_189_146",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_190_175",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_199_1133",
+            "kind": "UndefinedNullDeReference"
+          },
+          {
+            "expression": "ASSERT_201_998",
+            "kind": "UndefinedNullDeReference"
+          },
+          {
+            "expression": "ASSERT_202_977",
+            "kind": "LoopInvariantAfterLoop"
+          },
+          {
+            "expression": "ASSERT_206_347",
+            "kind": "UndefinedNullDeReference"
+          },
+          {
+            "expression": "ASSERT_209_334",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_214_434",
+            "kind": "UndefinedNullDeReference"
+          },
+          {
+            "expression": "ASSERT_215_434",
+            "kind": "UndefinedNegativeIndex"
+          },
+          {
+            "expression": "ASSERT_216_434",
+            "kind": "UndefinedTooLargeIndex"
+          },
+          {
+            "expression": "ASSERT_219_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_222_146",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_223_175",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_230_1038",
+            "kind": "LoopInvariantAfterLoop"
+          },
+          {
+            "expression": "ASSERT_231_0",
+            "kind": "LoopDecreasesNonNegative"
+          },
+          {
+            "expression": "ASSERT_237_998",
+            "kind": "UndefinedNullDeReference"
+          },
+          {
+            "expression": "ASSERT_238_977",
+            "kind": "LoopInvariant"
+          },
+          {
+            "expression": "ASSERT_242_347",
+            "kind": "UndefinedNullDeReference"
+          },
+          {
+            "expression": "ASSERT_245_334",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_250_434",
+            "kind": "UndefinedNullDeReference"
+          },
+          {
+            "expression": "ASSERT_251_434",
+            "kind": "UndefinedNegativeIndex"
+          },
+          {
+            "expression": "ASSERT_252_434",
+            "kind": "UndefinedTooLargeIndex"
+          },
+          {
+            "expression": "ASSERT_255_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_258_146",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_259_175",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_266_1038",
+            "kind": "LoopInvariant"
+          },
+          {
+            "expression": "ASSERT_268_1133",
+            "kind": "UndefinedNullDeReference"
+          },
+          {
+            "expression": "ASSERT_269_1133",
+            "kind": "LoopDecreases"
+          },
+          {
+            "expression": "ASSERT_272_684",
+            "kind": "UndefinedNullDeReference"
+          },
+          {
+            "expression": "ASSERT_276_347",
+            "kind": "UndefinedNullDeReference"
+          },
+          {
+            "expression": "ASSERT_279_334",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_284_434",
+            "kind": "UndefinedNullDeReference"
+          },
+          {
+            "expression": "ASSERT_285_434",
+            "kind": "UndefinedNegativeIndex"
+          },
+          {
+            "expression": "ASSERT_286_434",
+            "kind": "UndefinedTooLargeIndex"
+          },
+          {
+            "expression": "ASSERT_289_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_292_146",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_293_175",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_300_653",
+            "kind": "Postcondition"
+          },
+          {
+            "expression": "ASSERT_302_0",
+            "kind": "Postcondition"
+          },
+          {
+            "expression": "ASSERT_270_561",
+            "kind": "ExceptionalPostcondition"
+          },
+          {
+            "expression": "ASSERT_301_901",
+            "kind": "ExceptionList"
+          },
+          {
+            "expression": "ASSERT_303_811",
+            "kind": "ExceptionList"
+          }
+        ],
+        "assertions_by_kind": {
+          "ExceptionList": 2,
+          "ExceptionalPostcondition": 1,
+          "LoopDecreases": 1,
+          "LoopDecreasesNonNegative": 1,
+          "LoopInvariant": 2,
+          "LoopInvariantAfterLoop": 2,
+          "LoopInvariantBeforeLoop": 2,
+          "Postcondition": 2,
+          "UndefinedCalledMethodPrecondition": 10,
+          "UndefinedDivideByZero": 10,
+          "UndefinedNegativeIndex": 5,
+          "UndefinedNullDeReference": 17,
+          "UndefinedTooLargeIndex": 5
+        },
+        "method": "TupleToInt.tupleToInt(int[])"
+      }
+    ],
+    "reported_warning_count": 1,
+    "schema_version": "1.0",
+    "solver_check_sat_count": 2,
+    "solver_check_sat_results": {
+      "unknown": 1,
+      "unsat": 1
+    },
+    "solver_invocation_count": 2,
+    "solver_traces": [
+      {
+        "all_queries_answered": true,
+        "check_sat_count": 1,
+        "check_sat_results": {
+          "unsat": 1
+        },
+        "file": "solver-traces/solver-2789.smt2",
+        "responses_file": "solver-traces/solver-2789.responses",
+        "sha256": "e17d47135e8d2aaa9d0e9074142201a3c743d3dd9594813962ccad0e4467aa27",
+        "solver_exit_code": null
+      },
+      {
+        "all_queries_answered": true,
+        "check_sat_count": 1,
+        "check_sat_results": {
+          "unknown": 1
+        },
+        "file": "solver-traces/solver-2802.smt2",
+        "responses_file": "solver-traces/solver-2802.responses",
+        "sha256": "87e31367c4d46e89935765581ae06a78513ea09f7b0ae17e873d4a8bac7f52e7",
+        "solver_exit_code": null
+      }
+    ],
+    "units": {
+      "comparability": "none of these is directly equivalent to a Frama-C WP report entry",
+      "generated_assertion_count": "assert statements in emitted OpenJML basic-block method VCs; includes implicit checks and constructors",
+      "generated_method_vc_count": "emitted basic-block method VC sections; retries/splits can repeat a method",
+      "solver_check_sat_count": "check-sat commands forwarded to the solver, including feasibility and counterexample follow-up queries"
+    }
+  },
+  "java_workload_capture": {
+    "java_solver_trace.py": "a042c155f8daf5a4a8cd3824823c0a618ff938b5c05ba836c365c17e0158763e",
+    "java_workload.py": "f9333d2c349a5050a66aedce0f9358424d1c623d5c067f89da42fdda3e91e218"
+  },
+  "java_workload_rerun": {
+    "artifacts_directory": "cases/TupleToInt/original/java",
+    "elapsed_seconds": 8.061,
+    "interpretation": "Supplemental instrumented workload capture; does not replace the original proof result or timing.",
+    "outcome": "unknown/timeout",
+    "record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/TupleToInt/record.json",
+    "record_sha256": "7c8ed8b2c24d5eed7560afdcf8013af73d7499b6fed2eacc8b2cefb2f1aa6ae8"
+  },
   "language": "java",
   "logs": {
-    "stderr": "stderr.log",
-    "stdout": "stdout.log",
+    "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/TupleToInt/record.json",
+    "java_workload": "java-workload.json",
+    "original_record": "original_verification/java_goal_recording_20261002T100041Z/previous_cases/TupleToInt/record.json",
+    "stderr": null,
+    "stdout": null,
     "wp_report": null
   },
   "mutant_id": null,
   "outcome": "unknown/timeout",
+  "primary_verification": {
+    "policy": "Original uninstrumented proof verdict and elapsed time are authoritative.",
+    "record": "original_verification/java_goal_recording_20261002T100041Z/previous_cases/TupleToInt/record.json",
+    "record_sha256": "bbb8eb3a9c2f02c8360cd852fb1bdb054a181252aab54bee56ffb1fe184066cd"
+  },
   "program": "TupleToInt",
   "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/TupleToInt.java",
   "raw_source_sha256": "adc608deb27dcc7c4083f2b2e37aa9676f31df8918603ad59c830b5ff9c1b993",

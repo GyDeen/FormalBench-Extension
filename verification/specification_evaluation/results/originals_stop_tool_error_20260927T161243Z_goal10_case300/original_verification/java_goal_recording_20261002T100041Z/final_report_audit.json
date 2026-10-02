@@ -1,0 +1,74 @@
+{
+  "archived_external_directories_removed": 4,
+  "artifacts": {
+    "README.md": "0ae1656524d754a9d464642a27e40fdf3a050bcd151d8d4c54fda006ab913ba7",
+    "c_run_archive.json": "0dc84cf65434c5821cff9b153a66a5821ee3cfc36f4600c1cbdf3769bd7e5733",
+    "counterexamples/integration_audit.json": "615f809f21464b0a120723f363addab6eb4abd057b1981fa233f0b7aa73f6305",
+    "counterexamples/summary.json": "61d47a93048fc770d63e3dea7274753b3b359714eef3b1b3a94d60aad400bffa",
+    "java_original_goal_recording.json": "4865d68b43518e7df9c95db27ad375ef1076b98bb183c21f93204f68d4b9fa95",
+    "java_workload_snapshot.json": "4d081eb92146b63feecef9c71266875a1e3bc9a62341eeb07e101d8b2e460e43",
+    "original_verification/integration.json": "f85e5f2dfd268593c44b84b4f81130b653129f636bbf6f580ac69f9d9226abdd",
+    "results_summary.json": "3f6a80cf2a3ac5d4ec7f66ec8f8e438b2c6019c28646810891cad0351638cf55",
+    "statistics.json": "87b5ab4361f7d18e07da68edef896c49e48ba25dcf218b0308a3641902abf66d",
+    "summary.json": "6f2ae7d2058b0d5590e7ba5c174e90b198b1a881d12aedd71af6263228ca6492"
+  },
+  "corrected_originals": 4,
+  "created_utc": "2026-10-02T11:00:16.628549+00:00",
+  "deferred_mutant_wp_invocations": 50,
+  "java_original_goal_recording": {
+    "complete_solver_captures": 49,
+    "goal_timeout_seconds": 10,
+    "non_java_original_records_unchanged": true,
+    "originals": 50,
+    "outcome_changes": [
+      {
+        "after": "unknown/timeout",
+        "before": "proved",
+        "capture_complete": true,
+        "elapsed_seconds": 11.546,
+        "generated_assertions": 68,
+        "generated_method_vcs": 2,
+        "program": "FindPoints",
+        "record_sha256": "256b427cdd6d877cafb32a21158691c9401cbcb2753d0881184bd2d0e96f22d3",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      }
+    ],
+    "program_timeout_seconds": 300,
+    "source_and_settings_hashes_checked": true,
+    "workers": 12,
+    "workload_counts_checked": true
+  },
+  "method": "Canonical Java original rerun workload counts, source/spec/verifier/settings hashes, summary outcomes, successful-case statistics and report hashes reconciled; C and mutant result records unchanged.",
+  "passed": true,
+  "primary_records": 2054,
+  "record_inventory_sha256": "eaf3bc00f2b82cc31011f46ac7c55781a28b95a6505299c3fd325405b26f940d",
+  "replay_records": 1027,
+  "result_artifact_policy": {
+    "canonical_sources": "FormalBench-data/",
+    "canonical_sources_hash_checked": 2054,
+    "embedded_provenance": "Verification record.json already contains commands, transfer results, source hashes, settings, goals, outcomes and timings; replay records include witnesses and independent audit results.",
+    "excluded": [
+      "generated annotated source snapshots",
+      "replay harnesses",
+      "native compiler reports",
+      "binary and solver artifacts",
+      "duplicated command.json and transfer.json"
+    ],
+    "interpretation": "Historical execution and annotated-source paths in immutable reports identify files used at run time. Generated working files are stored outside verification results and excluded from Git. No result or witness was changed.",
+    "kind": "results_only",
+    "local_relocation_manifest": "output/experiment_work_artifacts_20261002/relocation_manifest.json",
+    "local_work_artifacts": "output/experiment_work_artifacts_20261002/originals_stop_tool_error_20260927T161243Z_goal10_case300",
+    "local_work_files_moved": 33934,
+    "retained": [
+      "verification record.json",
+      "WP goal reports",
+      "replay results and witnesses",
+      "independent audit results",
+      "frozen contract JSON",
+      "statistical summaries and source/provenance hashes"
+    ],
+    "updated_utc": "2026-10-01T14:52:26.535Z"
+  },
+  "validated_mutant_failures": 900
+}

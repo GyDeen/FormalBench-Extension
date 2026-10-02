@@ -34,14 +34,140 @@
   "frozen_spec_sha256": "d7be50b7a6fea46da6c858af858c9618d7eff9f1d0895bd12758fc56265cc033",
   "goals": [],
   "input_fingerprint": "53ece0c7a9e8503ebc7c6ea8554fcf830f0d279cd62aae390ae040d8ba7edbb3",
+  "java_goal_recording": {
+    "finished_utc": "2026-10-02T10:00:51.642629+00:00",
+    "previous_record": "original_verification/java_goal_recording_20261002T100041Z/previous_cases/DogAge/record.json",
+    "previous_record_sha256": "4807295083126df302f80dc05bc8c266d028b143844a7a5e87f103e49656a758",
+    "started_batch_utc": "2026-10-02T10:00:41.464497+00:00",
+    "timing_note": "Canonical elapsed_seconds is the original uninstrumented proof time; recorder overhead is represented only in java_workload_rerun.elapsed_seconds.",
+    "workers": 12
+  },
+  "java_workload": {
+    "assertions_by_kind": {
+      "ExceptionList": 2,
+      "ExceptionalPostcondition": 2,
+      "Postcondition": 1,
+      "Precondition": 1
+    },
+    "capture_complete": true,
+    "generated_assertion_count": 6,
+    "generated_method_vc_count": 2,
+    "method_proof_completions": 2,
+    "method_proof_starts": 2,
+    "methods": [
+      {
+        "assertion_count": 3,
+        "assertions": [
+          {
+            "expression": "ASSERT_9_0_0___9",
+            "kind": "Precondition"
+          },
+          {
+            "expression": "ASSERT_15_80_80___13",
+            "kind": "ExceptionalPostcondition"
+          },
+          {
+            "expression": "ASSERT_16_80_80___14",
+            "kind": "ExceptionList"
+          }
+        ],
+        "assertions_by_kind": {
+          "ExceptionList": 1,
+          "ExceptionalPostcondition": 1,
+          "Precondition": 1
+        },
+        "method": "DogAge.DogAge()"
+      },
+      {
+        "assertion_count": 3,
+        "assertions": [
+          {
+            "expression": "ASSERT_35_176",
+            "kind": "Postcondition"
+          },
+          {
+            "expression": "ASSERT_28_115",
+            "kind": "ExceptionalPostcondition"
+          },
+          {
+            "expression": "ASSERT_36_323",
+            "kind": "ExceptionList"
+          }
+        ],
+        "assertions_by_kind": {
+          "ExceptionList": 1,
+          "ExceptionalPostcondition": 1,
+          "Postcondition": 1
+        },
+        "method": "DogAge.dogAge(int)"
+      }
+    ],
+    "reported_warning_count": 0,
+    "schema_version": "1.0",
+    "solver_check_sat_count": 2,
+    "solver_check_sat_results": {
+      "unsat": 2
+    },
+    "solver_invocation_count": 2,
+    "solver_traces": [
+      {
+        "all_queries_answered": true,
+        "check_sat_count": 1,
+        "check_sat_results": {
+          "unsat": 1
+        },
+        "file": "solver-traces/solver-1619.smt2",
+        "responses_file": "solver-traces/solver-1619.responses",
+        "sha256": "f304aff9f310aded69d295b38b50ccd908ffeb2c26911541c83b55c1c1252e49",
+        "solver_exit_code": null
+      },
+      {
+        "all_queries_answered": true,
+        "check_sat_count": 1,
+        "check_sat_results": {
+          "unsat": 1
+        },
+        "file": "solver-traces/solver-1680.smt2",
+        "responses_file": "solver-traces/solver-1680.responses",
+        "sha256": "ba560e050e253019a97bb2de93b21978fc7dc0cc232acf76ab4cbc47143d34e2",
+        "solver_exit_code": null
+      }
+    ],
+    "units": {
+      "comparability": "none of these is directly equivalent to a Frama-C WP report entry",
+      "generated_assertion_count": "assert statements in emitted OpenJML basic-block method VCs; includes implicit checks and constructors",
+      "generated_method_vc_count": "emitted basic-block method VC sections; retries/splits can repeat a method",
+      "solver_check_sat_count": "check-sat commands forwarded to the solver, including feasibility and counterexample follow-up queries"
+    }
+  },
+  "java_workload_capture": {
+    "java_solver_trace.py": "a042c155f8daf5a4a8cd3824823c0a618ff938b5c05ba836c365c17e0158763e",
+    "java_workload.py": "f9333d2c349a5050a66aedce0f9358424d1c623d5c067f89da42fdda3e91e218"
+  },
+  "java_workload_rerun": {
+    "artifacts_directory": "cases/DogAge/original/java",
+    "elapsed_seconds": 9.95,
+    "interpretation": "Supplemental instrumented workload capture; does not replace the original proof result or timing.",
+    "outcome": "proved",
+    "record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/DogAge/record.json",
+    "record_sha256": "a2d138286590ba1fb0003a6bd6f581c7b5d7585c10549628ae8e5987f2d9aa86"
+  },
   "language": "java",
   "logs": {
-    "stderr": "stderr.log",
-    "stdout": "stdout.log",
+    "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/DogAge/record.json",
+    "java_workload": "java-workload.json",
+    "original_record": "original_verification/java_goal_recording_20261002T100041Z/previous_cases/DogAge/record.json",
+    "stderr": null,
+    "stdout": null,
     "wp_report": null
   },
   "mutant_id": null,
   "outcome": "proved",
+  "primary_verification": {
+    "policy": "Original uninstrumented proof verdict and elapsed time are authoritative.",
+    "record": "original_verification/java_goal_recording_20261002T100041Z/previous_cases/DogAge/record.json",
+    "record_sha256": "4807295083126df302f80dc05bc8c266d028b143844a7a5e87f103e49656a758"
+  },
   "program": "DogAge",
   "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/DogAge.java",
   "raw_source_sha256": "56df05250e9c8b61fa7c599ed2622991bd0def646f290716d00ee46b106bdcfb",

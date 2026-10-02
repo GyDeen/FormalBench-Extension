@@ -34,14 +34,140 @@
   "frozen_spec_sha256": "b01f14befc19ccc37e3ebf8b6f3e91765c8fb4a4304dccad182e6773593de69f",
   "goals": [],
   "input_fingerprint": "19ac422ea49ac41fae66dbd32766107ba31e7ee5165167a29388b3b27103c8f6",
+  "java_goal_recording": {
+    "finished_utc": "2026-10-02T10:00:51.861652+00:00",
+    "previous_record": "original_verification/java_goal_recording_20261002T100041Z/previous_cases/CountIntgralPoints/record.json",
+    "previous_record_sha256": "acde79949c8e4a9e76add2f63c756660709c733e77ea0340bacc577d8a8ca059",
+    "started_batch_utc": "2026-10-02T10:00:41.464497+00:00",
+    "timing_note": "Canonical elapsed_seconds is the original uninstrumented proof time; recorder overhead is represented only in java_workload_rerun.elapsed_seconds.",
+    "workers": 12
+  },
+  "java_workload": {
+    "assertions_by_kind": {
+      "ExceptionList": 2,
+      "ExceptionalPostcondition": 2,
+      "Postcondition": 1,
+      "Precondition": 1
+    },
+    "capture_complete": true,
+    "generated_assertion_count": 6,
+    "generated_method_vc_count": 2,
+    "method_proof_completions": 2,
+    "method_proof_starts": 2,
+    "methods": [
+      {
+        "assertion_count": 3,
+        "assertions": [
+          {
+            "expression": "ASSERT_9_0_0___9",
+            "kind": "Precondition"
+          },
+          {
+            "expression": "ASSERT_15_80_80___13",
+            "kind": "ExceptionalPostcondition"
+          },
+          {
+            "expression": "ASSERT_16_80_80___14",
+            "kind": "ExceptionList"
+          }
+        ],
+        "assertions_by_kind": {
+          "ExceptionList": 1,
+          "ExceptionalPostcondition": 1,
+          "Precondition": 1
+        },
+        "method": "CountIntgralPoints.CountIntgralPoints()"
+      },
+      {
+        "assertion_count": 3,
+        "assertions": [
+          {
+            "expression": "ASSERT_41_188",
+            "kind": "Postcondition"
+          },
+          {
+            "expression": "ASSERT_32_127",
+            "kind": "ExceptionalPostcondition"
+          },
+          {
+            "expression": "ASSERT_42_297",
+            "kind": "ExceptionList"
+          }
+        ],
+        "assertions_by_kind": {
+          "ExceptionList": 1,
+          "ExceptionalPostcondition": 1,
+          "Postcondition": 1
+        },
+        "method": "CountIntgralPoints.countIntgralPoints(int,int,int,int)"
+      }
+    ],
+    "reported_warning_count": 0,
+    "schema_version": "1.0",
+    "solver_check_sat_count": 2,
+    "solver_check_sat_results": {
+      "unsat": 2
+    },
+    "solver_invocation_count": 2,
+    "solver_traces": [
+      {
+        "all_queries_answered": true,
+        "check_sat_count": 1,
+        "check_sat_results": {
+          "unsat": 1
+        },
+        "file": "solver-traces/solver-1627.smt2",
+        "responses_file": "solver-traces/solver-1627.responses",
+        "sha256": "eb68d1b365e0e520694864ee8db1a346ed675b5df989f3a093d8fc019b5a03e7",
+        "solver_exit_code": null
+      },
+      {
+        "all_queries_answered": true,
+        "check_sat_count": 1,
+        "check_sat_results": {
+          "unsat": 1
+        },
+        "file": "solver-traces/solver-1700.smt2",
+        "responses_file": "solver-traces/solver-1700.responses",
+        "sha256": "622753ce6a9131d771002db5c73a9e4139f55497691e59739016891af302e2ff",
+        "solver_exit_code": null
+      }
+    ],
+    "units": {
+      "comparability": "none of these is directly equivalent to a Frama-C WP report entry",
+      "generated_assertion_count": "assert statements in emitted OpenJML basic-block method VCs; includes implicit checks and constructors",
+      "generated_method_vc_count": "emitted basic-block method VC sections; retries/splits can repeat a method",
+      "solver_check_sat_count": "check-sat commands forwarded to the solver, including feasibility and counterexample follow-up queries"
+    }
+  },
+  "java_workload_capture": {
+    "java_solver_trace.py": "a042c155f8daf5a4a8cd3824823c0a618ff938b5c05ba836c365c17e0158763e",
+    "java_workload.py": "f9333d2c349a5050a66aedce0f9358424d1c623d5c067f89da42fdda3e91e218"
+  },
+  "java_workload_rerun": {
+    "artifacts_directory": "cases/CountIntgralPoints/original/java",
+    "elapsed_seconds": 10.156,
+    "interpretation": "Supplemental instrumented workload capture; does not replace the original proof result or timing.",
+    "outcome": "proved",
+    "record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/CountIntgralPoints/record.json",
+    "record_sha256": "d13d881f351b1cd32b5efe51bdd9cabf3c9d9954ada788eb8460f2cdb8b12346"
+  },
   "language": "java",
   "logs": {
-    "stderr": "stderr.log",
-    "stdout": "stdout.log",
+    "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/CountIntgralPoints/record.json",
+    "java_workload": "java-workload.json",
+    "original_record": "original_verification/java_goal_recording_20261002T100041Z/previous_cases/CountIntgralPoints/record.json",
+    "stderr": null,
+    "stdout": null,
     "wp_report": null
   },
   "mutant_id": null,
   "outcome": "proved",
+  "primary_verification": {
+    "policy": "Original uninstrumented proof verdict and elapsed time are authoritative.",
+    "record": "original_verification/java_goal_recording_20261002T100041Z/previous_cases/CountIntgralPoints/record.json",
+    "record_sha256": "acde79949c8e4a9e76add2f63c756660709c733e77ea0340bacc577d8a8ca059"
+  },
   "program": "CountIntgralPoints",
   "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/CountIntgralPoints.java",
   "raw_source_sha256": "f38fb84404908eb4cd7b47b7a7f4eac04e9d5519303a57aa9093f25dfcb3838d",

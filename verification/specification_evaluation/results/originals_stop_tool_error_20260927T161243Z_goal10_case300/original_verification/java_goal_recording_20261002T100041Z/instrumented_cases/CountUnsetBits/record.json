@@ -1,0 +1,520 @@
+{
+  "adapter_sha256": {
+    "annotations.py": "c971d29b176cd45810857db756883638e9551bb950d5cb1426e5bcf57f9e497e",
+    "c_bindings.py": "2f21fdaa46151906b048409a92d784b801ecdf78191436c2976999a4c36d3cf6",
+    "c_structure.py": "772364a38abaceacb66e98c0aee01b26a188bbb883e4ee8135d80b5fa8b50540",
+    "java_compat.py": "7f6dcd7de982187c9720adbbb03489acc8986a41dda6132dde2c17e8bc4795ab",
+    "verifiers.py": "9977eb05f2cb524e9647ef1578aad446fe92c2b4f2ae3faae8bc880063c56975"
+  },
+  "annotated_source": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountUnsetBits/original/java/CountUnsetBits.java",
+  "annotated_source_sha256": "5389bba8a1e0797ea03c735d37824b55a15bf011e82169b20f06710e230c8541",
+  "attempt_status": "complete",
+  "classification_correction": "Reclassified from saved OpenJML logs after ignoring the progress counter Timeout: 0.",
+  "command": [
+    "/root/tools/openjml/openjml",
+    "-J--add-exports=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED",
+    "-J--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED",
+    "-processorpath",
+    "/mnt/d/ResearchProject/.tools/openjml-compat/47613dac9ce1473c6ada/numeric-bit-predicates.jar",
+    "-Xplugin:NumericBitPredicates file:///mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountUnsetBits/original/java/CountUnsetBits.java",
+    "--exec=/mnt/d/ResearchProject/verification/specification_evaluation/java_solver_trace.py",
+    "--esc",
+    "--progress",
+    "--nullable-by-default",
+    "--prover=z3-4.3.X",
+    "--timeout",
+    "10",
+    "--show=bb",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountUnsetBits/original/java/CountUnsetBits.java"
+  ],
+  "compiler_normalizations": [],
+  "elapsed_seconds": 16.959,
+  "exit_code": 6,
+  "failure_stage": null,
+  "frozen_spec": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/frozen_specs/java/CountUnsetBits.json",
+  "frozen_spec_sha256": "506c9bfc30d8a83cd2197f1090393b5ccffdab5e68dad297c38d8942e4e0f504",
+  "goals": [
+    {
+      "category": "unclassified",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/cases/CountUnsetBits/original/java/CountUnsetBits.java",
+      "line": "31",
+      "message": "Validity is unknown - no model available method CountUnsetBits.countUnsetBits -  (possible timeout): (error \"line 3144 column 18: model is not available\")",
+      "state": "unknown"
+    }
+  ],
+  "goals_unit": "reported Java warning diagnostics, not generated proof obligations",
+  "input_fingerprint": "bf238c6f1b66d8d69e07b0a986e741ed883ec368f45e5f9419ad30cb9241d099",
+  "java_goal_recording": {
+    "finished_utc": "2026-10-02T10:00:58.709178+00:00",
+    "previous_record": "original_verification/java_goal_recording_20261002T100041Z/previous_cases/CountUnsetBits/record.json",
+    "previous_record_sha256": "1c049750c651eb712e21d812dab574ed166fa9b647269e571a4ab1e565b4b82e",
+    "started_batch_utc": "2026-10-02T10:00:41.464497+00:00",
+    "timing_note": "Instrumented rerun elapsed time includes diagnostic and solver recorder overhead.",
+    "workers": 12
+  },
+  "java_workload": {
+    "assertions_by_kind": {
+      "ExceptionList": 2,
+      "ExceptionalPostcondition": 2,
+      "LoopInvariant": 4,
+      "LoopInvariantAfterLoop": 4,
+      "LoopInvariantBeforeLoop": 4,
+      "Postcondition": 2,
+      "Precondition": 1,
+      "UndefinedCalledMethodPrecondition": 31,
+      "UndefinedDivideByZero": 18
+    },
+    "capture_complete": true,
+    "generated_assertion_count": 68,
+    "generated_method_vc_count": 2,
+    "method_proof_completions": 2,
+    "method_proof_starts": 2,
+    "methods": [
+      {
+        "assertion_count": 3,
+        "assertions": [
+          {
+            "expression": "ASSERT_9_0_0___9",
+            "kind": "Precondition"
+          },
+          {
+            "expression": "ASSERT_15_80_80___13",
+            "kind": "ExceptionalPostcondition"
+          },
+          {
+            "expression": "ASSERT_16_80_80___14",
+            "kind": "ExceptionList"
+          }
+        ],
+        "assertions_by_kind": {
+          "ExceptionList": 1,
+          "ExceptionalPostcondition": 1,
+          "Precondition": 1
+        },
+        "method": "CountUnsetBits.CountUnsetBits()"
+      },
+      {
+        "assertion_count": 65,
+        "assertions": [
+          {
+            "expression": "ASSERT_126_1070",
+            "kind": "LoopInvariantBeforeLoop"
+          },
+          {
+            "expression": "ASSERT_137_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_145_341",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_161_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_164_172",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_165_201",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_169_1173",
+            "kind": "LoopInvariantBeforeLoop"
+          },
+          {
+            "expression": "ASSERT_187_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_195_341",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_211_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_214_172",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_215_201",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_220_1070",
+            "kind": "LoopInvariantAfterLoop"
+          },
+          {
+            "expression": "ASSERT_223_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_231_341",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_244_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_247_172",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_248_201",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_252_1173",
+            "kind": "LoopInvariantAfterLoop"
+          },
+          {
+            "expression": "ASSERT_254_1385",
+            "kind": "LoopInvariantBeforeLoop"
+          },
+          {
+            "expression": "ASSERT_257_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_265_341",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_280_341",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_290_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_293_172",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_294_201",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_298_1454",
+            "kind": "LoopInvariantBeforeLoop"
+          },
+          {
+            "expression": "ASSERT_316_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_324_341",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_339_341",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_352_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_355_172",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_356_201",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_361_1385",
+            "kind": "LoopInvariantAfterLoop"
+          },
+          {
+            "expression": "ASSERT_364_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_372_341",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_387_341",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_397_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_400_172",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_401_201",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_405_1454",
+            "kind": "LoopInvariantAfterLoop"
+          },
+          {
+            "expression": "ASSERT_407_1385",
+            "kind": "LoopInvariant"
+          },
+          {
+            "expression": "ASSERT_410_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_418_341",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_433_341",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_443_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_446_172",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_447_201",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_451_1454",
+            "kind": "LoopInvariant"
+          },
+          {
+            "expression": "ASSERT_453_1070",
+            "kind": "LoopInvariant"
+          },
+          {
+            "expression": "ASSERT_456_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_464_341",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_477_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_480_172",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_481_201",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_485_1173",
+            "kind": "LoopInvariant"
+          },
+          {
+            "expression": "ASSERT_487_858",
+            "kind": "Postcondition"
+          },
+          {
+            "expression": "ASSERT_490_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_498_341",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_511_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_514_172",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_515_201",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_519_899",
+            "kind": "Postcondition"
+          },
+          {
+            "expression": "ASSERT_486_750",
+            "kind": "ExceptionalPostcondition"
+          },
+          {
+            "expression": "ASSERT_520_990",
+            "kind": "ExceptionList"
+          }
+        ],
+        "assertions_by_kind": {
+          "ExceptionList": 1,
+          "ExceptionalPostcondition": 1,
+          "LoopInvariant": 4,
+          "LoopInvariantAfterLoop": 4,
+          "LoopInvariantBeforeLoop": 4,
+          "Postcondition": 2,
+          "UndefinedCalledMethodPrecondition": 31,
+          "UndefinedDivideByZero": 18
+        },
+        "method": "CountUnsetBits.countUnsetBits(int)"
+      }
+    ],
+    "reported_warning_count": 1,
+    "schema_version": "1.0",
+    "solver_check_sat_count": 2,
+    "solver_check_sat_results": {
+      "unknown": 1,
+      "unsat": 1
+    },
+    "solver_invocation_count": 2,
+    "solver_traces": [
+      {
+        "all_queries_answered": true,
+        "check_sat_count": 1,
+        "check_sat_results": {
+          "unsat": 1
+        },
+        "file": "solver-traces/solver-1653.smt2",
+        "responses_file": "solver-traces/solver-1653.responses",
+        "sha256": "7be60db85f1ad8fe745ca72d2755635fc941689eb7cbb0e56eddf84709b44b79",
+        "solver_exit_code": null
+      },
+      {
+        "all_queries_answered": true,
+        "check_sat_count": 1,
+        "check_sat_results": {
+          "unknown": 1
+        },
+        "file": "solver-traces/solver-1718.smt2",
+        "responses_file": "solver-traces/solver-1718.responses",
+        "sha256": "205163c37dc01dd75ecfe55ac3912495a2645ac35bef8f09b8f43a167ff52318",
+        "solver_exit_code": null
+      }
+    ],
+    "units": {
+      "comparability": "none of these is directly equivalent to a Frama-C WP report entry",
+      "generated_assertion_count": "assert statements in emitted OpenJML basic-block method VCs; includes implicit checks and constructors",
+      "generated_method_vc_count": "emitted basic-block method VC sections; retries/splits can repeat a method",
+      "solver_check_sat_count": "check-sat commands forwarded to the solver, including feasibility and counterexample follow-up queries"
+    }
+  },
+  "java_workload_capture": {
+    "java_solver_trace.py": "a042c155f8daf5a4a8cd3824823c0a618ff938b5c05ba836c365c17e0158763e",
+    "java_workload.py": "f9333d2c349a5050a66aedce0f9358424d1c623d5c067f89da42fdda3e91e218"
+  },
+  "language": "java",
+  "logs": {
+    "java_workload": "java-workload.json",
+    "stderr": "stderr.log",
+    "stdout": "stdout.log"
+  },
+  "mutant_id": null,
+  "outcome": "unknown/timeout",
+  "program": "CountUnsetBits",
+  "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/CountUnsetBits.java",
+  "raw_source_sha256": "3a490d3f98e4fda22cdd853eb57590a2e839b081f92e56bca0bc3f9882341a85",
+  "reason": "OpenJML reported unknown validity; warnings are not confirmed rejections",
+  "role": "original",
+  "selection": null,
+  "selection_manifest_sha256": "92fa1533eafe32fdc60b119b0c6abc8a4f3c0b372d66ac21f39e54a3b5d7433d",
+  "settings": {
+    "c_provers": "Alt-Ergo:2.4.3,Z3:4.8.12",
+    "goal_timeout": 10,
+    "java_prover": "z3-4.3.X",
+    "machdep": "x86_64",
+    "memory_model": "Typed+ref",
+    "timeout": 300,
+    "why3_extra_config": "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+    "why3_extra_config_sha256": "97cc443d7439274ad732814842ae77a7b461d43c8d2099eb8994fb97e739049b",
+    "wp_memlimit": 1000,
+    "wp_par": 4
+  },
+  "support_sha256": {},
+  "timed_out": false,
+  "trace_solver": "/root/tools/openjml/Solvers-linux/z3-4.10.2",
+  "transfer": {
+    "annotation_count": 4,
+    "executable_token_sha256": "a274cbcf2a07154869b5d8288495b59b022a6eff3823e435ed15438bb8ecbefc",
+    "internal_annotation_coverage": "complete",
+    "method": "frozen structured JSON",
+    "omitted_annotations": [],
+    "placements": [
+      {
+        "boundary_token": 31,
+        "function": "countUnsetBits",
+        "id": "annotation_1",
+        "loop_id": null,
+        "mutant_offset": 112,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 31,
+        "function": "countUnsetBits",
+        "id": "annotation_2",
+        "loop_id": null,
+        "mutant_offset": 112,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 45,
+        "function": "countUnsetBits",
+        "id": "annotation_3",
+        "loop_id": "loop_1",
+        "mutant_offset": 183,
+        "next_token": "for",
+        "target": "loop"
+      },
+      {
+        "boundary_token": 67,
+        "function": "countUnsetBits",
+        "id": "annotation_4",
+        "loop_id": "loop_2",
+        "mutant_offset": 252,
+        "next_token": "while",
+        "target": "loop"
+      }
+    ],
+    "removed_loop_annotations": 0,
+    "removed_temporary_policy": "original pure initializer with stable dependencies"
+  },
+  "unsupported_features": [],
+  "verification_started": true,
+  "verifier": {
+    "compatibility": {
+      "compiler_sha256": "03ccef52f8ee2258bb69cfb8974a5eb609787349490390ce68e1e24de2f3fae0",
+      "equivalence_obligations_sha256": "b63fb7bfa0b474ed71c3a7217d6195363a8a14bafc1e7d0360af3ace1f5f357b",
+      "name": "OpenJML 21.0.27 numeric bit predicates and bundled Z3 repair",
+      "plugin": "/mnt/d/ResearchProject/.tools/openjml-compat/47613dac9ce1473c6ada/numeric-bit-predicates.jar",
+      "plugin_sha256": "632836c0a1f1dfa2e7bc132cce4f5d1a095241b571d4535730850d7183bbac92",
+      "scope": "primitive int local/parameter predicates (x ^ 1) == 0 and (x | 1) == 0",
+      "solver": {
+        "path": "/root/tools/openjml/Solvers-linux/z3-4.10.2",
+        "sha256": "79f7ced8a9f2156a4337ed89485faa65b905af17241f82bbeac69cbfdb518520",
+        "version": "Z3 version 4.10.2 - 64 bit"
+      },
+      "source": "/mnt/d/ResearchProject/verification/specification_evaluation/openjml/NumericBitPredicates.java",
+      "source_sha256": "9db3f96088894fa7c47bede5e97303beec13125a647fe60be0c0847eaa74571d"
+    },
+    "path": "/root/tools/openjml/openjml",
+    "sha256": "077efb88a059a09c43ccf5171031bdc0c70816765b8abf3cb7f0aeb151847adf",
+    "version_command": [
+      "/root/tools/openjml/openjml",
+      "--version"
+    ],
+    "version_exit_code": 0,
+    "version_output": "openjml 21.0.27"
+  }
+}

@@ -42,14 +42,282 @@
     }
   ],
   "input_fingerprint": "e05da54ec7105f16127b2244be4e2e5b195597f40c7b18692deb1f567e2e53cc",
+  "java_goal_recording": {
+    "finished_utc": "2026-10-02T10:01:01.230617+00:00",
+    "previous_record": "original_verification/java_goal_recording_20261002T100041Z/previous_cases/CountOddSquares/record.json",
+    "previous_record_sha256": "d3c817a10b72d0d325c306a054ac9b90f7188015045006b7482dd766893fe74a",
+    "started_batch_utc": "2026-10-02T10:00:41.464497+00:00",
+    "timing_note": "Canonical elapsed_seconds is the original uninstrumented proof time; recorder overhead is represented only in java_workload_rerun.elapsed_seconds.",
+    "workers": 12
+  },
+  "java_workload": {
+    "assertions_by_kind": {
+      "ExceptionList": 2,
+      "ExceptionalPostcondition": 2,
+      "LoopInvariant": 2,
+      "LoopInvariantAfterLoop": 2,
+      "LoopInvariantBeforeLoop": 2,
+      "Postcondition": 3,
+      "Precondition": 2,
+      "UndefinedCalledMethodPrecondition": 24
+    },
+    "capture_complete": true,
+    "generated_assertion_count": 39,
+    "generated_method_vc_count": 2,
+    "method_proof_completions": 2,
+    "method_proof_starts": 2,
+    "methods": [
+      {
+        "assertion_count": 3,
+        "assertions": [
+          {
+            "expression": "ASSERT_9_0_0___9",
+            "kind": "Precondition"
+          },
+          {
+            "expression": "ASSERT_15_80_80___13",
+            "kind": "ExceptionalPostcondition"
+          },
+          {
+            "expression": "ASSERT_16_80_80___14",
+            "kind": "ExceptionList"
+          }
+        ],
+        "assertions_by_kind": {
+          "ExceptionList": 1,
+          "ExceptionalPostcondition": 1,
+          "Precondition": 1
+        },
+        "method": "CountOddSquares.CountOddSquares()"
+      },
+      {
+        "assertion_count": 36,
+        "assertions": [
+          {
+            "expression": "ASSERT_59_800",
+            "kind": "LoopInvariantBeforeLoop"
+          },
+          {
+            "expression": "ASSERT_66_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_76_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_83_912",
+            "kind": "LoopInvariantBeforeLoop"
+          },
+          {
+            "expression": "ASSERT_97_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_107_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_115_800",
+            "kind": "LoopInvariantAfterLoop"
+          },
+          {
+            "expression": "ASSERT_119_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_129_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_136_912",
+            "kind": "LoopInvariantAfterLoop"
+          },
+          {
+            "expression": "ASSERT_146_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_151_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_159_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_170_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_187_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_197_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_207_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_216_8798",
+            "kind": "Precondition"
+          },
+          {
+            "expression": "ASSERT_222_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_227_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_235_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_252_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_261_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_271_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_280_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_291_800",
+            "kind": "LoopInvariant"
+          },
+          {
+            "expression": "ASSERT_295_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_305_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_312_912",
+            "kind": "LoopInvariant"
+          },
+          {
+            "expression": "ASSERT_314_494",
+            "kind": "Postcondition"
+          },
+          {
+            "expression": "ASSERT_318_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_328_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_335_531",
+            "kind": "Postcondition"
+          },
+          {
+            "expression": "ASSERT_336_634",
+            "kind": "Postcondition"
+          },
+          {
+            "expression": "ASSERT_313_398",
+            "kind": "ExceptionalPostcondition"
+          },
+          {
+            "expression": "ASSERT_337_710",
+            "kind": "ExceptionList"
+          }
+        ],
+        "assertions_by_kind": {
+          "ExceptionList": 1,
+          "ExceptionalPostcondition": 1,
+          "LoopInvariant": 2,
+          "LoopInvariantAfterLoop": 2,
+          "LoopInvariantBeforeLoop": 2,
+          "Postcondition": 3,
+          "Precondition": 1,
+          "UndefinedCalledMethodPrecondition": 24
+        },
+        "method": "CountOddSquares.countOddSquares(int,int)"
+      }
+    ],
+    "reported_warning_count": 7,
+    "schema_version": "1.0",
+    "solver_check_sat_count": 3,
+    "solver_check_sat_results": {
+      "unknown": 2,
+      "unsat": 1
+    },
+    "solver_invocation_count": 2,
+    "solver_traces": [
+      {
+        "all_queries_answered": true,
+        "check_sat_count": 1,
+        "check_sat_results": {
+          "unsat": 1
+        },
+        "file": "solver-traces/solver-1648.smt2",
+        "responses_file": "solver-traces/solver-1648.responses",
+        "sha256": "de96e2672f89ea930ffbc2f0541b099bde2b4aff3ef618e71e70a608124a6fcf",
+        "solver_exit_code": null
+      },
+      {
+        "all_queries_answered": true,
+        "check_sat_count": 2,
+        "check_sat_results": {
+          "unknown": 2
+        },
+        "file": "solver-traces/solver-1717.smt2",
+        "responses_file": "solver-traces/solver-1717.responses",
+        "sha256": "675361579c2db09e25e648b4c49408f0ceefc2cd327a0816494f79188a7fe908",
+        "solver_exit_code": null
+      }
+    ],
+    "units": {
+      "comparability": "none of these is directly equivalent to a Frama-C WP report entry",
+      "generated_assertion_count": "assert statements in emitted OpenJML basic-block method VCs; includes implicit checks and constructors",
+      "generated_method_vc_count": "emitted basic-block method VC sections; retries/splits can repeat a method",
+      "solver_check_sat_count": "check-sat commands forwarded to the solver, including feasibility and counterexample follow-up queries"
+    }
+  },
+  "java_workload_capture": {
+    "java_solver_trace.py": "a042c155f8daf5a4a8cd3824823c0a618ff938b5c05ba836c365c17e0158763e",
+    "java_workload.py": "f9333d2c349a5050a66aedce0f9358424d1c623d5c067f89da42fdda3e91e218"
+  },
+  "java_workload_rerun": {
+    "artifacts_directory": "cases/CountOddSquares/original/java",
+    "elapsed_seconds": 19.414,
+    "interpretation": "Supplemental instrumented workload capture; does not replace the original proof result or timing.",
+    "outcome": "unknown/timeout",
+    "record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/CountOddSquares/record.json",
+    "record_sha256": "6d65717efcdd052cc8d9efe24a13d41e1ca7971311d79072792a4d31c697bcc2"
+  },
   "language": "java",
   "logs": {
-    "stderr": "stderr.log",
-    "stdout": "stdout.log",
+    "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/CountOddSquares/record.json",
+    "java_workload": "java-workload.json",
+    "original_record": "original_verification/java_goal_recording_20261002T100041Z/previous_cases/CountOddSquares/record.json",
+    "stderr": null,
+    "stdout": null,
     "wp_report": null
   },
   "mutant_id": null,
   "outcome": "unknown/timeout",
+  "primary_verification": {
+    "policy": "Original uninstrumented proof verdict and elapsed time are authoritative.",
+    "record": "original_verification/java_goal_recording_20261002T100041Z/previous_cases/CountOddSquares/record.json",
+    "record_sha256": "d3c817a10b72d0d325c306a054ac9b90f7188015045006b7482dd766893fe74a"
+  },
   "program": "CountOddSquares",
   "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/CountOddSquares.java",
   "raw_source_sha256": "1bcd209e75a981e18b38509890fdc3c24996ecb60b8aee617bc2ca5d0d124154",

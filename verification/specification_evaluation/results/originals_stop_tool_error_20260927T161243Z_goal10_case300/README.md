@@ -33,7 +33,7 @@ Java proved 13/50 originals (26.00%); C proved 6/50 (12.00%). No mutant was full
 | tool failure | 5 |
 | unknown/timeout | 888 |
 
-There are 0 decisive pairs; agreement on decisive pairs is N/A. The 55 C sort reruns replaced old annotation/tool failures with `unknown/timeout`. After the four C original repairs, 50 mutant WP runs remain deferred and 5 retain syntax/tool failures. Original Java results were preserved. See [summary.json](summary.json), [run.json](run.json), and [sort_c_integration.json](sort_c_integration.json).
+There are 0 decisive pairs; agreement on decisive pairs is N/A. The 55 C sort reruns replaced old annotation/tool failures with `unknown/timeout`. After the four C original repairs, 50 mutant WP runs remain deferred and 5 retain syntax/tool failures. Java originals were rerun with workload recording. See [summary.json](summary.json), [run.json](run.json), and [sort_c_integration.json](sort_c_integration.json).
 
 ### Integrated C counterexample evidence
 
@@ -95,7 +95,7 @@ See the [original verification integration](original_verification/integration.js
 
 The sample uses seed 726 with ten originals in each of five dataset categories. Only retained, previously screened mutant pairs are evaluated. Specifications are frozen independently per language and transferred to unchanged executable sources.
 
-The Java verifier reports `openjml 21.0.27` and uses the `z3-4.3.X` driver with bundled solver `Z3 version 4.10.2 - 64 bit`. The C verifier reports `33.0 (Arsenic)` and uses Alt-Ergo:2.4.3,Z3:4.8.12, `Typed+ref`, and `x86_64`. Budgets are 10 seconds per solver goal and 300 seconds per process, with 1000 MB WP memory and 4 parallel WP jobs per C worker. Final scheduling used two C workers and one Java worker; the integrated sort rerun used two C workers. Timings reflect recorded invocations under these schedules, not an isolated speed benchmark.
+The Java verifier reports `openjml 21.0.27` and uses the `z3-4.3.X` driver with bundled solver `Z3 version 4.10.2 - 64 bit`. The C verifier reports `33.0 (Arsenic)` and uses Alt-Ergo:2.4.3,Z3:4.8.12, `Typed+ref`, and `x86_64`. Budgets are 10 seconds per solver goal and 300 seconds per process, with 1000 MB WP memory and 4 parallel WP jobs per C worker. The initial batch used two C workers and one Java worker; the integrated sort rerun used two C workers. Java original workload reruns used 12 concurrent workers. Timings reflect recorded invocations under these schedules, not an isolated speed benchmark.
 
 `proved` means all applicable reported checks completed successfully. A specification violation is distinct from a precondition/RTE failure. Syntax/transfer/tool failures are evaluation failures, not detected behavioral faults. `unknown/timeout` establishes neither acceptance nor rejection. Primary specification rejection rates require a proved original; other original-outcome strata remain available in [summary.json](summary.json).
 
@@ -116,9 +116,13 @@ Java and C have different successful-program cohorts. These descriptive times do
 
 C counts are classified WP JSON goal entries, including specification, termination, safety and callee-precondition obligations. Java warning diagnostics are **not** a goal count: an empty Java `goals` array means no recorded warnings. Java generated assertions, method VCs and solver queries are separate units and must not be equated with C WP entries.
 
-Java counts below come from 13 complete captures in `java_workload_20260929T133038Z_workers2`, matched to the successful final-run cases by raw-source, frozen-specification and annotated-source hashes, settings and verifier identity. Final-run verdicts and timing measurements remain authoritative; instrumented replay timing and outcomes are not substituted. Missing capture programs: none. Generated method VCs and total assertions include constructors; the program-assertion row removes constructors.
+Java counts below come from 13 complete captures in `originals_stop_tool_error_20260927T161243Z_goal10_case300`, matched to the successful final-run cases by raw-source, frozen-specification and annotated-source hashes, settings and verifier identity. Original uninstrumented verdicts and proof timings remain authoritative; instrumented reruns supply workload counts and retain separate outcomes and timings. Missing capture programs: none. Generated method VCs and total assertions include constructors; the program-assertion row removes constructors.
 
-The original workload directory is unavailable locally. Its count captures are retained in [java_workload_snapshot.json](java_workload_snapshot.json), recovered from the committed report and checked against unchanged final Java case records. These snapshots allow report regeneration without rerunning Java verification.
+## Java original goal recording
+
+All 50 Java originals have generated workload counts in their case records: 9,387 assertions, 100 method VCs and 164 solver queries. 49/50 solver captures are complete. The 50 reruns used 12 concurrent workers with the same frozen inputs, verifier and proof budgets. The original uninstrumented proof results and timings are preserved for all Java originals. Instrumented verdicts and timings are supplemental; FindPoints remains proved from its original invocation, while its recorded rerun returned unknown. See [per-original counts and outcome changes](java_original_goal_recording.json).
+
+Previous case results and summaries are retained under `original_verification/java_goal_recording_20261002T100041Z`.
 
 | Metric per successful case | n | Total | Mean | Median | Sample SD | Q1 | Q3 | P95 | Min | Max |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -336,14 +340,14 @@ Cases where JArray preconditions are the sole recorded unresolved obligations: [
 
 [statistics.json](statistics.json) contains full-precision statistics, case-level JArray blocker evidence, Java workload-count snapshots and source hashes. Category membership comes from the [selection manifest](../../../../FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/selection_manifest.json). Main case records and WP reports are the outcome evidence. Historic records under `history/` and other diagnostic runs are excluded.
 
-The Java workload run supplies only matching, complete count captures for the successful final cases. Its different aggregate outcomes are not mixed into this experiment. The snapshots in `statistics.json` preserve the counts used in this README; raw solver traces and test/configuration changes are not required to read the report.
+Java original case records retain the uninstrumented proof results and timings, and link to separate instrumented rerun records. Statistics for successfully verified cases combine original proof timings with matching complete workload captures. The snapshots in `statistics.json` preserve the counts used in this README; raw solver traces and test/configuration changes are not required to read the report.
 
 Regenerate from the repository root in the local Linux environment; matching Java workload captures can come from the archived snapshot:
 
 ```bash
 python3 -m verification.specification_evaluation.summarize_experiment \
   --output verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300 \
-  --java-workload verification/specification_evaluation/results/java_workload_20260929T133038Z_workers2
+  --java-workload verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300
 ```
 
 ## Archived C run reports

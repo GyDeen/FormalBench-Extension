@@ -1,48 +1,81 @@
 {
-  "passed": true,
-  "created_utc": "2026-10-01T14:55:04.342Z",
-  "primary_records": 2054,
-  "replay_records": 1027,
-  "validated_mutant_failures": 900,
-  "corrected_originals": 4,
-  "deferred_mutant_wp_invocations": 50,
-  "archived_external_directories_removed": 4,
-  "record_inventory_sha256": "e39571f589f28e9987855db003682bf6bccb204397304f1b89ad0cb2ef9bbd00",
-  "result_artifact_policy": {
-    "kind": "results_only",
-    "updated_utc": "2026-10-01T14:52:26.535Z",
-    "canonical_sources": "FormalBench-data/",
-    "retained": [
-      "verification record.json",
-      "WP goal reports",
-      "replay results and witnesses",
-      "independent audit results",
-      "frozen contract JSON",
-      "statistical summaries and source/provenance hashes"
-    ],
-    "excluded": [
-      "generated annotated source snapshots",
-      "replay harnesses",
-      "native compiler reports",
-      "binary and solver artifacts",
-      "duplicated command.json and transfer.json"
-    ],
-    "embedded_provenance": "Verification record.json already contains commands, transfer results, source hashes, settings, goals, outcomes and timings; replay records include witnesses and independent audit results.",
-    "local_work_artifacts": "output/experiment_work_artifacts_20261002/originals_stop_tool_error_20260927T161243Z_goal10_case300",
-    "local_relocation_manifest": "output/experiment_work_artifacts_20261002/relocation_manifest.json",
-    "local_work_files_moved": 33934,
-    "canonical_sources_hash_checked": 2054,
-    "interpretation": "Historical execution and annotated-source paths in immutable reports identify files used at run time. Generated working files are stored outside verification results and excluded from Git. No result or witness was changed."
-  },
-  "artifacts": {
-    "summary.json": "82f7566002182114e3de64399fc25f8579c55573bebb70b1318cbec15a95b3db",
-    "statistics.json": "56b73a86e37b08a5226adc35aed6ae6ec7643d76bbcd9956e7c9521fe97a7e92",
-    "results_summary.json": "b5450e482d4e0f71321a55780463bd9213beca0912c5dbe5ddf92e96f62daf41",
-    "README.md": "6e8bf50d832b8ee9d119173ee59d816c60f211c203536f98cb4988af283a6fc3",
-    "counterexamples/summary.json": "61d47a93048fc770d63e3dea7274753b3b359714eef3b1b3a94d60aad400bffa",
-    "counterexamples/integration_audit.json": "615f809f21464b0a120723f363addab6eb4abd057b1981fa233f0b7aa73f6305",
-    "original_verification/integration.json": "f85e5f2dfd268593c44b84b4f81130b653129f636bbf6f580ac69f9d9226abdd",
-    "c_run_archive.json": "0dc84cf65434c5821cff9b153a66a5821ee3cfc36f4600c1cbdf3769bd7e5733"
-  },
-  "method": "Source-record and replay hashes reconciled before report regeneration; canonical source hashes and retained result hashes checked during relocation; all retained replay record hashes, final summary counts, category totals, statistics, original results, archive mappings and report links checked. No verification or search rerun."
+    "archived_external_directories_removed":  4,
+    "artifacts":  {
+                      "README.md":  "575c7ecfd0edfbafa27d81ff27824e690c97c9c61da0b5af32e1f529453e1c3e",
+                      "c_run_archive.json":  "0dc84cf65434c5821cff9b153a66a5821ee3cfc36f4600c1cbdf3769bd7e5733",
+                      "counterexamples/integration_audit.json":  "615f809f21464b0a120723f363addab6eb4abd057b1981fa233f0b7aa73f6305",
+                      "counterexamples/summary.json":  "61d47a93048fc770d63e3dea7274753b3b359714eef3b1b3a94d60aad400bffa",
+                      "java_original_goal_recording.json":  "674d1c0e824e53c3d828422ed2051d83f789c76c801e4655c9c749180285dbdc",
+                      "java_workload_snapshot.json":  "30b60b2c51a82c781e5a9c85dae22d635a0dace57e9c341fab286f34d75eefc2",
+                      "original_verification/integration.json":  "f85e5f2dfd268593c44b84b4f81130b653129f636bbf6f580ac69f9d9226abdd",
+                      "results_summary.json":  "a8579b52d5514b8b48e16b781d29b088b9236db0cf8a64ff488dcc8876b62b3a",
+                      "statistics.json":  "37440ddbaf63b05f9bcaf05a82a7d146acab622e21b8fd84c5ad12084e1fade0",
+                      "summary.json":  "e29ab602fdb07652c4a0d12077f0dc3bab96ed9edfb230e9df472b55bce624dd"
+                  },
+    "corrected_originals":  4,
+    "created_utc":  "2026-10-02T12:50:28.538918+00:00",
+    "deferred_mutant_wp_invocations":  50,
+    "java_original_goal_recording":  {
+                                         "complete_solver_captures":  49,
+                                         "goal_timeout_seconds":  10,
+                                         "instrumented_outcome_changes":  [
+                                                                              {
+                                                                                  "instrumented":  "unknown/timeout",
+                                                                                  "instrumented_record":  "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/FindPoints/record.json",
+                                                                                  "original":  "proved",
+                                                                                  "program":  "FindPoints"
+                                                                              }
+                                                                          ],
+                                         "instrumented_outcomes":  {
+                                                                       "precondition/RTE failure":  1,
+                                                                       "proved":  12,
+                                                                       "specification violation":  2,
+                                                                       "unknown/timeout":  35
+                                                                   },
+                                         "original_proof_results_preserved":  50,
+                                         "originals":  50,
+                                         "primary_outcomes":  {
+                                                                  "precondition/RTE failure":  1,
+                                                                  "proved":  13,
+                                                                  "specification violation":  2,
+                                                                  "unknown/timeout":  34
+                                                              },
+                                         "program_timeout_seconds":  300,
+                                         "source_and_settings_hashes_checked":  true,
+                                         "workers":  12,
+                                         "workload_counts_checked":  true,
+                                         "non_java_original_records_unchanged":  true
+                                     },
+    "method":  "Original Java proof fields and elapsed times reconciled against all 50 pre-recording records; supplemental captures matched by source/spec/verifier/settings hashes; summary counts, 13 successful cases, workload counts and artifact hashes regenerated and checked.",
+    "passed":  true,
+    "primary_records":  2054,
+    "record_inventory_sha256":  "5cad3bd12f5f14f321209432ca5e05420a9f148066f5faa3a93d7765b327791a",
+    "replay_records":  1027,
+    "result_artifact_policy":  {
+                                   "canonical_sources":  "FormalBench-data/",
+                                   "canonical_sources_hash_checked":  2054,
+                                   "embedded_provenance":  "Verification record.json already contains commands, transfer results, source hashes, settings, goals, outcomes and timings; replay records include witnesses and independent audit results.",
+                                   "excluded":  [
+                                                    "generated annotated source snapshots",
+                                                    "replay harnesses",
+                                                    "native compiler reports",
+                                                    "binary and solver artifacts",
+                                                    "duplicated command.json and transfer.json"
+                                                ],
+                                   "interpretation":  "Historical execution and annotated-source paths in immutable reports identify files used at run time. Generated working files are stored outside verification results and excluded from Git. No result or witness was changed.",
+                                   "kind":  "results_only",
+                                   "local_relocation_manifest":  "output/experiment_work_artifacts_20261002/relocation_manifest.json",
+                                   "local_work_artifacts":  "output/experiment_work_artifacts_20261002/originals_stop_tool_error_20260927T161243Z_goal10_case300",
+                                   "local_work_files_moved":  33934,
+                                   "retained":  [
+                                                    "verification record.json",
+                                                    "WP goal reports",
+                                                    "replay results and witnesses",
+                                                    "independent audit results",
+                                                    "frozen contract JSON",
+                                                    "statistical summaries and source/provenance hashes"
+                                                ],
+                                   "updated_utc":  "2026-10-01T14:52:26.535Z"
+                               },
+    "validated_mutant_failures":  900
 }

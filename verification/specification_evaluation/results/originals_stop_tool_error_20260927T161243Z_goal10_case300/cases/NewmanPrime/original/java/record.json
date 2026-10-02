@@ -42,14 +42,222 @@
     }
   ],
   "input_fingerprint": "b6c9fe2a4f921e3c2af0cd88ef1c7dcbd582d4d50db067a23cf5808b9fcb1336",
+  "java_goal_recording": {
+    "finished_utc": "2026-10-02T10:01:29.148774+00:00",
+    "previous_record": "original_verification/java_goal_recording_20261002T100041Z/previous_cases/NewmanPrime/record.json",
+    "previous_record_sha256": "7723e8efc554d5e88df8da6a923919b327a50544cdf6087c1db1979aec380358",
+    "started_batch_utc": "2026-10-02T10:00:41.464497+00:00",
+    "timing_note": "Canonical elapsed_seconds is the original uninstrumented proof time; recorder overhead is represented only in java_workload_rerun.elapsed_seconds.",
+    "workers": 12
+  },
+  "java_workload": {
+    "assertions_by_kind": {
+      "ExceptionList": 2,
+      "ExceptionalPostcondition": 2,
+      "Postcondition": 1,
+      "Precondition": 3,
+      "TerminationDecreases": 2,
+      "TerminationNonNegative": 2,
+      "UndefinedCalledMethodPrecondition": 6,
+      "UndefinedDivideByZero": 6
+    },
+    "capture_complete": true,
+    "generated_assertion_count": 24,
+    "generated_method_vc_count": 2,
+    "method_proof_completions": 2,
+    "method_proof_starts": 2,
+    "methods": [
+      {
+        "assertion_count": 3,
+        "assertions": [
+          {
+            "expression": "ASSERT_9_0_0___9",
+            "kind": "Precondition"
+          },
+          {
+            "expression": "ASSERT_15_80_80___13",
+            "kind": "ExceptionalPostcondition"
+          },
+          {
+            "expression": "ASSERT_16_80_80___14",
+            "kind": "ExceptionList"
+          }
+        ],
+        "assertions_by_kind": {
+          "ExceptionList": 1,
+          "ExceptionalPostcondition": 1,
+          "Precondition": 1
+        },
+        "method": "NewmanPrime.NewmanPrime()"
+      },
+      {
+        "assertion_count": 21,
+        "assertions": [
+          {
+            "expression": "ASSERT_91_671",
+            "kind": "TerminationDecreases"
+          },
+          {
+            "expression": "ASSERT_92_671",
+            "kind": "TerminationNonNegative"
+          },
+          {
+            "expression": "ASSERT_98_579",
+            "kind": "Precondition"
+          },
+          {
+            "expression": "ASSERT_108_347",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_123_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_126_167",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_127_196",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_137_671",
+            "kind": "TerminationDecreases"
+          },
+          {
+            "expression": "ASSERT_138_671",
+            "kind": "TerminationNonNegative"
+          },
+          {
+            "expression": "ASSERT_144_579",
+            "kind": "Precondition"
+          },
+          {
+            "expression": "ASSERT_150_347",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_162_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_165_167",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_166_196",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_181_347",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_193_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_196_167",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_197_196",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_201_630",
+            "kind": "Postcondition"
+          },
+          {
+            "expression": "ASSERT_176_544",
+            "kind": "ExceptionalPostcondition"
+          },
+          {
+            "expression": "ASSERT_202_741",
+            "kind": "ExceptionList"
+          }
+        ],
+        "assertions_by_kind": {
+          "ExceptionList": 1,
+          "ExceptionalPostcondition": 1,
+          "Postcondition": 1,
+          "Precondition": 2,
+          "TerminationDecreases": 2,
+          "TerminationNonNegative": 2,
+          "UndefinedCalledMethodPrecondition": 6,
+          "UndefinedDivideByZero": 6
+        },
+        "method": "NewmanPrime.newmanPrime(int)"
+      }
+    ],
+    "reported_warning_count": 1,
+    "schema_version": "1.0",
+    "solver_check_sat_count": 2,
+    "solver_check_sat_results": {
+      "unknown": 1,
+      "unsat": 1
+    },
+    "solver_invocation_count": 2,
+    "solver_traces": [
+      {
+        "all_queries_answered": true,
+        "check_sat_count": 1,
+        "check_sat_results": {
+          "unsat": 1
+        },
+        "file": "solver-traces/solver-2271.smt2",
+        "responses_file": "solver-traces/solver-2271.responses",
+        "sha256": "d39d9bd11202d6e5fc45d8ffd4d4103f3f9922c8f4b32f821113d97ccae4ccde",
+        "solver_exit_code": null
+      },
+      {
+        "all_queries_answered": true,
+        "check_sat_count": 1,
+        "check_sat_results": {
+          "unknown": 1
+        },
+        "file": "solver-traces/solver-2278.smt2",
+        "responses_file": "solver-traces/solver-2278.responses",
+        "sha256": "4681ef6d8f370bd2a45bb48d2d1cf1281bcfbbc4d307a765e2a81689864a880b",
+        "solver_exit_code": null
+      }
+    ],
+    "units": {
+      "comparability": "none of these is directly equivalent to a Frama-C WP report entry",
+      "generated_assertion_count": "assert statements in emitted OpenJML basic-block method VCs; includes implicit checks and constructors",
+      "generated_method_vc_count": "emitted basic-block method VC sections; retries/splits can repeat a method",
+      "solver_check_sat_count": "check-sat commands forwarded to the solver, including feasibility and counterexample follow-up queries"
+    }
+  },
+  "java_workload_capture": {
+    "java_solver_trace.py": "a042c155f8daf5a4a8cd3824823c0a618ff938b5c05ba836c365c17e0158763e",
+    "java_workload.py": "f9333d2c349a5050a66aedce0f9358424d1c623d5c067f89da42fdda3e91e218"
+  },
+  "java_workload_rerun": {
+    "artifacts_directory": "cases/NewmanPrime/original/java",
+    "elapsed_seconds": 8.332,
+    "interpretation": "Supplemental instrumented workload capture; does not replace the original proof result or timing.",
+    "outcome": "unknown/timeout",
+    "record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/NewmanPrime/record.json",
+    "record_sha256": "63ab038d7a6b5d67bf9b9f1537781041fbafc588f0031ad193f2da264f2a6fd8"
+  },
   "language": "java",
   "logs": {
-    "stderr": "stderr.log",
-    "stdout": "stdout.log",
+    "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/NewmanPrime/record.json",
+    "java_workload": "java-workload.json",
+    "original_record": "original_verification/java_goal_recording_20261002T100041Z/previous_cases/NewmanPrime/record.json",
+    "stderr": null,
+    "stdout": null,
     "wp_report": null
   },
   "mutant_id": null,
   "outcome": "unknown/timeout",
+  "primary_verification": {
+    "policy": "Original uninstrumented proof verdict and elapsed time are authoritative.",
+    "record": "original_verification/java_goal_recording_20261002T100041Z/previous_cases/NewmanPrime/record.json",
+    "record_sha256": "7723e8efc554d5e88df8da6a923919b327a50544cdf6087c1db1979aec380358"
+  },
   "program": "NewmanPrime",
   "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/NewmanPrime.java",
   "raw_source_sha256": "66f2c5c37487e4be8f7c2eefdd1648382afa491b722702829024f202cd5b6037",
