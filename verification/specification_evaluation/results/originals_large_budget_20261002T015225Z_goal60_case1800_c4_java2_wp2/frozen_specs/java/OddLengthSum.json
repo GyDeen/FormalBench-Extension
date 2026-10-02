@@ -1,0 +1,73 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "oddLengthSum",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ requires a != null && 0 <= k <= a.length;\n      @ ensures \\result == (k == 0 ? (\\bigint)0 : fb_odd_prefix(a, k - 1) + (\\bigint)\\java_math(((k * (a.length - (k - 1)) + 1) / 2) * a[k - 1]));\n      @ measured_by k;\n      @ model public static pure \\bigint fb_odd_prefix(int[] a, int k);\n      @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "oddLengthSum",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ ensures \\result == ((x % 4294967296L + 6442450944L) % 4294967296L) - 2147483648L;\n      @ model public static pure \\bigint fb_wrap(\\bigint x);\n      @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "oddLengthSum",
+      "id": "annotation_3",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ requires arr != null;\n      @ assignable \\nothing;\n      @ \n      @ ensures \\result == fb_wrap(fb_odd_prefix(arr, arr.length));\n      @ \n      @ also\n      @ public exceptional_behavior\n      @ requires arr == null;\n      @ assignable \\nothing;\n      @ signals_only NullPointerException;\n      @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "oddLengthSum",
+      "id": "annotation_4",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "//@ code_java_math"
+    },
+    {
+      "boundary_token": 54,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "oddLengthSum",
+      "id": "annotation_5",
+      "loop_id": "loop_1",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@ loop_invariant 0 <= i <= l && l == arr.length;\n          @ loop_invariant sum == fb_wrap(fb_odd_prefix(arr, i));\n          @ loop_writes i, sum;\n          @ decreases l - i;\n          @*/"
+    }
+  ],
+  "language": "java",
+  "original_executable_token_sha256": "2d9ce62fd489d2b8014f287686d2319b93e52e98502def2619e5e39c9842398d",
+  "program": "OddLengthSum",
+  "schema_version": "1.0"
+}

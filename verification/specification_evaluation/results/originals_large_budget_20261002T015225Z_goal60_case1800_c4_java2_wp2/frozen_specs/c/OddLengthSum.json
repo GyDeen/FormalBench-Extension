@@ -1,0 +1,99 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 10,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_add",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\n  assigns \\nothing;\n  ensures \\result == (int32_t)((integer)left + right);\n*/"
+    },
+    {
+      "boundary_token": 38,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_sub",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\n  assigns \\nothing;\n  ensures \\result == (int32_t)((integer)left - right);\n*/"
+    },
+    {
+      "boundary_token": 66,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_mul",
+      "id": "annotation_3",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\n  assigns \\nothing;\n  ensures \\result == (int32_t)((integer)left * right);\n*/"
+    },
+    {
+      "boundary_token": 94,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_div",
+      "id": "annotation_4",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\n  requires divisor != 0;\n  assigns \\nothing;\n  ensures \\result == (int32_t)((integer)dividend / divisor);\n*/"
+    },
+    {
+      "boundary_token": 130,
+      "following_tokens": [
+        "int32_t",
+        "oddLengthSum"
+      ],
+      "function": "oddLengthSum",
+      "id": "annotation_5",
+      "loop_id": null,
+      "next_token": "int32_t",
+      "target": "function",
+      "text": "/*@\n  logic integer fb_odd_terms{L}(JIntArray a, integer k) =\n    k <= 0 ? 0 : fb_odd_terms(a, k - 1) +\n      ((int32_t)(k * (a->length - k + 1) + 1) / 2) * a->data[k - 1];\n*/"
+    },
+    {
+      "boundary_token": 130,
+      "following_tokens": [
+        "int32_t",
+        "oddLengthSum"
+      ],
+      "function": "oddLengthSum",
+      "id": "annotation_6",
+      "loop_id": null,
+      "next_token": "int32_t",
+      "target": "function",
+      "text": "/*@\n  requires jintarray_valid_nonnull(arr);\n  assigns \\nothing;\n  ensures \\result == (int32_t)fb_odd_terms(arr, arr->length);\n*/"
+    },
+    {
+      "boundary_token": 150,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "oddLengthSum",
+      "id": "annotation_7",
+      "loop_id": "loop_1",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@\n      loop invariant 0 <= i <= l && l == arr->length;\n      loop invariant sum == (int32_t)fb_odd_terms(arr, i);\n      loop assigns i, sum;\n      loop variant l - i;\n    */"
+    }
+  ],
+  "language": "c",
+  "original_executable_token_sha256": "2691422e84efd6038ed679da0f6b4a2c147037b57489cdea5692fcb956f331c8",
+  "program": "OddLengthSum",
+  "schema_version": "1.0"
+}

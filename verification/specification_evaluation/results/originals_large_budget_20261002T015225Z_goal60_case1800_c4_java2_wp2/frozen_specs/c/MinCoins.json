@@ -1,0 +1,73 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 10,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_add",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\nassigns \\nothing;\nensures \\result == (int32_t)((integer)left + right);\n*/"
+    },
+    {
+      "boundary_token": 38,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_sub",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\nassigns \\nothing;\nensures \\result == (int32_t)((integer)left - right);\n*/"
+    },
+    {
+      "boundary_token": 66,
+      "following_tokens": [
+        "int32_t",
+        "minCoins"
+      ],
+      "function": "minCoins",
+      "id": "annotation_3",
+      "loop_id": null,
+      "next_token": "int32_t",
+      "target": "function",
+      "text": "/*@\nlogic integer fb_inc_cost(integer x) = x == INT32_MAX ? x : x + 1;\nlogic integer fb_cost{L}(JIntArray a, integer m, integer v, integer j) =\n  v == 0 ? 0 : v < 0 || j <= 0 ? INT32_MAX : a->data[j - 1] > v ? fb_cost(a, m, v, j - 1) :\n  \\min(fb_cost(a, m, v, j - 1), fb_inc_cost(fb_cost(a, m, v - a->data[j - 1], m)));\n*/"
+    },
+    {
+      "boundary_token": 66,
+      "following_tokens": [
+        "int32_t",
+        "minCoins"
+      ],
+      "function": "minCoins",
+      "id": "annotation_4",
+      "loop_id": null,
+      "next_token": "int32_t",
+      "target": "function",
+      "text": "/*@\nrequires v <= 0 || m <= 0 || (jintarray_valid_nonnull(coins) && m <= coins->length && (\\forall integer k; 0 <= k < m ==> coins->data[k] > 0));\ndecreases \\max(0, v);\nassigns \\nothing;\nensures \\result == (v == 0 ? 0 : v < 0 || m <= 0 ? INT32_MAX : fb_cost(coins, m, v, m));\n*/"
+    },
+    {
+      "boundary_token": 107,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "minCoins",
+      "id": "annotation_5",
+      "loop_id": "loop_1",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@\n    loop invariant 0 <= i <= \\max(0, m);\n    loop invariant m > 0 ==> minCoinsValue == fb_cost(coins, m, v, i);\n    loop invariant m <= 0 ==> minCoinsValue == INT32_MAX;\n    loop assigns i, minCoinsValue;\n    loop variant \\max(0, m) - i;\n    */"
+    }
+  ],
+  "language": "c",
+  "original_executable_token_sha256": "7dbae3a696c756d910b6f69b6249881f652b1ab9f59ed09389131c55e60d3f6e",
+  "program": "MinCoins",
+  "schema_version": "1.0"
+}

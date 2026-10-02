@@ -1,0 +1,60 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 10,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_add",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\n  assigns \\nothing;\n  ensures \\result == (int32_t)((integer)left + right);\n*/"
+    },
+    {
+      "boundary_token": 38,
+      "following_tokens": [
+        "int32_t",
+        "sumRangeArray"
+      ],
+      "function": "sumRangeArray",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "int32_t",
+      "target": "function",
+      "text": "/*@\n  logic integer fb_sum{L}(JIntArray a, integer lo, integer hi) =\n    hi <= lo ? 0 : fb_sum(a, lo, hi - 1) + a->data[hi - 1];\n*/"
+    },
+    {
+      "boundary_token": 38,
+      "following_tokens": [
+        "int32_t",
+        "sumRangeArray"
+      ],
+      "function": "sumRangeArray",
+      "id": "annotation_3",
+      "loop_id": null,
+      "next_token": "int32_t",
+      "target": "function",
+      "text": "/*@\n  requires m > n || (jintarray_valid_nonnull(nums) && 0 <= m && n < nums->length);\n  assigns \\nothing;\n  ensures \\result == (int32_t)fb_sum(nums, m, (integer)n + 1);\n*/"
+    },
+    {
+      "boundary_token": 56,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "sumRangeArray",
+      "id": "annotation_4",
+      "loop_id": "loop_1",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@\n      loop invariant m <= i && (m > n ? i == m : i <= (integer)n + 1);\n      loop invariant sum == (int32_t)fb_sum(nums, m, i);\n      loop assigns i, sum;\n      loop variant (integer)n - i + 1;\n    */"
+    }
+  ],
+  "language": "c",
+  "original_executable_token_sha256": "f488b09ad321fc714c68d5e7612c7c601e94a9d45d68a4d0c24df5e7577c5cae",
+  "program": "SumRangeList",
+  "schema_version": "1.0"
+}

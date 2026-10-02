@@ -1,0 +1,34 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "moveFirst",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ assignable \\nothing;\n      @ ensures testArray == null ==> \\result == null;\n      @ ensures testArray != null && testArray.length == 0 ==> \\result == testArray;\n      @ ensures testArray != null && testArray.length > 0 ==> \\result != null && \\fresh(\\result) && \\result.length == testArray.length;\n      @ ensures testArray != null && testArray.length > 0 ==> \\result[0] == testArray[testArray.length - 1];\n      @ ensures testArray != null && testArray.length > 0 ==> (\\forall int k; 1 <= k < testArray.length; \\result[k] == testArray[k - 1]);\n      @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "moveFirst",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "//@ code_java_math"
+    }
+  ],
+  "language": "java",
+  "original_executable_token_sha256": "311d5213cab652f88173f76b485fbcfeca89055f3ddb23373a6601866783f57e",
+  "program": "MoveFirst",
+  "schema_version": "1.0"
+}

@@ -1,0 +1,34 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 10,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_mul",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\n  assigns \\nothing;\n  ensures \\result == (int32_t)((integer)left * right);\n*/"
+    },
+    {
+      "boundary_token": 38,
+      "following_tokens": [
+        "int32_t",
+        "squarePerimeter"
+      ],
+      "function": "squarePerimeter",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "int32_t",
+      "target": "function",
+      "text": "/*@\n  assigns \\nothing;\n  ensures \\result == (int32_t)(4 * (integer)a);\n*/"
+    }
+  ],
+  "language": "c",
+  "original_executable_token_sha256": "a488f8c70cf4f1f7b21db9f13599a71ef4609a58c28f4379e806a861172fa716",
+  "program": "SquarePerimeter",
+  "schema_version": "1.0"
+}

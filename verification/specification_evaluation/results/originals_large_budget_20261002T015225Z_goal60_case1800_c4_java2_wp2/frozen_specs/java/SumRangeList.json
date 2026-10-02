@@ -1,0 +1,73 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "sumRangeArray",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ requires hi <= lo || (a != null && 0 <= lo && hi <= a.length);\n      @ ensures \\result == (hi <= lo ? (\\bigint)0 : fb_range_sum(a, lo, hi - 1) + a[(int)(hi - 1)]);\n      @ measured_by hi > lo ? hi - lo : 0;\n      @ model public static pure \\bigint fb_range_sum(int[] a, \\bigint lo, \\bigint hi);\n      @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "sumRangeArray",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ ensures \\result == ((x % 4294967296L + 6442450944L) % 4294967296L) - 2147483648L;\n      @ model public static pure \\bigint fb_wrap(\\bigint x);\n      @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "sumRangeArray",
+      "id": "annotation_3",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ requires m > n || (nums != null && 0 <= m && n < nums.length);\n      @ assignable \\nothing;\n      @ ensures \\result == fb_wrap(fb_range_sum(nums, m, (\\bigint)n + 1));\n      @ also\n      @ public exceptional_behavior\n      @ requires m <= n && nums == null;\n      @ assignable \\nothing;\n      @ signals_only NullPointerException;\n      @ also\n      @ public exceptional_behavior\n      @ requires m <= n && nums != null && (m < 0 || n >= nums.length);\n      @ assignable \\nothing;\n      @ signals_only ArrayIndexOutOfBoundsException;\n      @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "sumRangeArray",
+      "id": "annotation_4",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "//@ code_java_math"
+    },
+    {
+      "boundary_token": 53,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "sumRangeArray",
+      "id": "annotation_5",
+      "loop_id": "loop_1",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@ loop_invariant m <= i && (m > n ? i == m : i <= n + 1);\n          @ loop_invariant sum == fb_wrap(fb_range_sum(nums, m, i));\n          @ loop_writes i, sum;\n          @ decreases (\\bigint)n - i + 1;\n          @*/"
+    }
+  ],
+  "language": "java",
+  "original_executable_token_sha256": "db386426d98c01745dcdb199620c58857eb7fc54e91493b5326bab3a9af5feae",
+  "program": "SumRangeList",
+  "schema_version": "1.0"
+}

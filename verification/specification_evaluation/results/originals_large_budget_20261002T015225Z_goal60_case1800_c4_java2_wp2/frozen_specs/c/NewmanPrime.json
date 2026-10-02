@@ -1,0 +1,73 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 10,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_sub",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\n  assigns \\nothing;\n  ensures \\result == (int32_t)((integer)left - right);\n*/"
+    },
+    {
+      "boundary_token": 38,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_mul",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\n  assigns \\nothing;\n  ensures \\result == (int32_t)((integer)left * right);\n*/"
+    },
+    {
+      "boundary_token": 66,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_add",
+      "id": "annotation_3",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\n  assigns \\nothing;\n  ensures \\result == (int32_t)((integer)left + right);\n*/"
+    },
+    {
+      "boundary_token": 94,
+      "following_tokens": [
+        "int32_t",
+        "newmanPrime"
+      ],
+      "function": "newmanPrime",
+      "id": "annotation_4",
+      "loop_id": null,
+      "next_token": "int32_t",
+      "target": "function",
+      "text": "/*@\n  logic integer fb_value(integer n) = n <= 1 ? 1 : 2 * fb_value(n - 1) + fb_value(n - 2);\n*/"
+    },
+    {
+      "boundary_token": 94,
+      "following_tokens": [
+        "int32_t",
+        "newmanPrime"
+      ],
+      "function": "newmanPrime",
+      "id": "annotation_5",
+      "loop_id": null,
+      "next_token": "int32_t",
+      "target": "function",
+      "text": "/*@\n  requires n >= 0;\n  decreases n;\n  assigns \\nothing;\n  ensures \\result == (int32_t)fb_value(n);\n*/"
+    }
+  ],
+  "language": "c",
+  "original_executable_token_sha256": "ddd7d29db0f199768879f1d34ef93f66947be84c2da2f67ac190ccd53669166b",
+  "program": "NewmanPrime",
+  "schema_version": "1.0"
+}

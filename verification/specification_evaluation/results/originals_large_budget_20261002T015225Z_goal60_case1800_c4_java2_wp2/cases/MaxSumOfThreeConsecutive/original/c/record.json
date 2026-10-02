@@ -1,0 +1,3551 @@
+{
+  "adapter_sha256": {
+    "annotations.py": "7f730d0275c185de8199e16b487819eb823acaba46195f4e73152471bb1097e8",
+    "c_bindings.py": "fc8f9d74f58723d57562bc5f21087a9ce9e959986a9edd53b26d07b9c9fca1e1",
+    "c_structure.py": "efcea8872a653827d977ef2e9c102acc70a44952a6e316a52cef4779a738a0d5",
+    "verifiers.py": "8daa5f32b6f8aaa007a40ac75afb97d5512d5fe6cf0e48862405557aa310a3a5"
+  },
+  "annotated_source": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+  "annotated_source_sha256": "6df21b27b7b1ba834dd2b5161078a8260cb1e9042706ef1270448326a647191d",
+  "attempt_status": "complete",
+  "command": [
+    "/root/.opam/default/bin/frama-c",
+    "-machdep",
+    "x86_64",
+    "-load-module",
+    "/mnt/d/ResearchProject/.tools/frama-c-compat/1e5af7b10d6dd41df377/float_negation_33.cmxs",
+    "-paired-c-prepare",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+    "-then",
+    "-wp",
+    "-wp-rte",
+    "-wp-no-filter-init",
+    "-wp-model",
+    "Typed+ref",
+    "-wp-why3-extra-config",
+    "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+    "-wp-prover",
+    "Alt-Ergo:2.4.3,Z3:4.8.12",
+    "-wp-timeout",
+    "60",
+    "-wp-memlimit",
+    "1000",
+    "-wp-par",
+    "2",
+    "-wp-cache",
+    "none",
+    "-wp-report-json",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/wp-report.json"
+  ],
+  "elapsed_seconds": 770.906,
+  "exit_code": 0,
+  "failure_stage": null,
+  "frozen_spec": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/frozen_specs/c/MaxSumOfThreeConsecutive.json",
+  "frozen_spec_sha256": "f6aac2fdc01e3ac93cbbf730ba0509730bdae7572d77dc24cbe99c44e7010707",
+  "goals": [
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "java_add",
+      "goal": "typed_ref_java_add_ensures",
+      "line": 6,
+      "property": "java_add_ensures",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00195
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0586
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "java_add",
+      "goal": "typed_ref_java_add_assigns",
+      "line": 8,
+      "property": "java_add_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "java_max",
+      "goal": "typed_ref_java_max_ensures",
+      "line": 22,
+      "property": "java_max_ensures",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "java_max",
+      "goal": "typed_ref_java_max_assigns_part1",
+      "line": 24,
+      "property": "java_max_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "java_max",
+      "goal": "typed_ref_java_max_assigns_part2",
+      "line": 24,
+      "property": "java_max_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "java_sub",
+      "goal": "typed_ref_java_sub_ensures",
+      "line": 14,
+      "property": "java_sub_ensures",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00131
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0752
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "java_sub",
+      "goal": "typed_ref_java_sub_assigns",
+      "line": 16,
+      "property": "java_sub_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_terminates",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_terminates",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_ensures",
+      "line": 38,
+      "property": "maxSumOfThreeConsecutive_ensures",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.864
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.124
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_exits",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_exits",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_loop_invariant_established",
+      "line": 55,
+      "property": "maxSumOfThreeConsecutive_loop_invariant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_loop_invariant_preserved",
+      "line": 55,
+      "property": "maxSumOfThreeConsecutive_loop_invariant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.991
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.217
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_loop_invariant_2_established",
+      "line": 56,
+      "property": "maxSumOfThreeConsecutive_loop_invariant_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.814
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.161
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_loop_invariant_2_preserved",
+      "line": 56,
+      "property": "maxSumOfThreeConsecutive_loop_invariant_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.922
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0894
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_loop_invariant_3_established",
+      "line": 57,
+      "property": "maxSumOfThreeConsecutive_loop_invariant_3",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 1.15
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_loop_invariant_3_preserved",
+      "line": 57,
+      "property": "maxSumOfThreeConsecutive_loop_invariant_3",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 1.32
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_loop_assigns_part01",
+      "line": 58,
+      "property": "maxSumOfThreeConsecutive_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_loop_assigns_part02",
+      "line": 58,
+      "property": "maxSumOfThreeConsecutive_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_loop_assigns_part03",
+      "line": 58,
+      "property": "maxSumOfThreeConsecutive_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_loop_assigns_part04",
+      "line": 58,
+      "property": "maxSumOfThreeConsecutive_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_loop_assigns_part05",
+      "line": 58,
+      "property": "maxSumOfThreeConsecutive_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_loop_assigns_part06",
+      "line": 58,
+      "property": "maxSumOfThreeConsecutive_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_loop_assigns_part07",
+      "line": 58,
+      "property": "maxSumOfThreeConsecutive_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_loop_assigns_part08",
+      "line": 58,
+      "property": "maxSumOfThreeConsecutive_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_loop_assigns_part09",
+      "line": 58,
+      "property": "maxSumOfThreeConsecutive_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_loop_assigns_part10",
+      "line": 58,
+      "property": "maxSumOfThreeConsecutive_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_loop_assigns_part11",
+      "line": 58,
+      "property": "maxSumOfThreeConsecutive_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_loop_assigns_part12",
+      "line": 58,
+      "property": "maxSumOfThreeConsecutive_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_loop_assigns_part13",
+      "line": 58,
+      "property": "maxSumOfThreeConsecutive_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_loop_assigns_part14",
+      "line": 58,
+      "property": "maxSumOfThreeConsecutive_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_loop_assigns_part15",
+      "line": 58,
+      "property": "maxSumOfThreeConsecutive_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_loop_assigns_part16",
+      "line": 58,
+      "property": "maxSumOfThreeConsecutive_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_loop_assigns_part17",
+      "line": 58,
+      "property": "maxSumOfThreeConsecutive_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_loop_assigns_part18",
+      "line": 58,
+      "property": "maxSumOfThreeConsecutive_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 1.93
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.62
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_normal_part01",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_normal_part02",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_normal_part03",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_normal_part04",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0665
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_normal_part05",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_normal_part06",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_normal_part07",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_normal_part08",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.111
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_normal_part09",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_normal_part10",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_normal_part11",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_normal_part12",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_normal_part13",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_normal_part14",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_normal_part15",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_normal_part16",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_normal_part17",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_normal_part18",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.577
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_normal_part19",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.889
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_normal_part20",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_normal_part21",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_exit_part01",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_exit_part02",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_exit_part03",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_exit_part04",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0733
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_exit_part05",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_exit_part06",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_exit_part07",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_exit_part08",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.166
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_exit_part09",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_exit_part10",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_exit_part11",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_exit_part12",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_exit_part13",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_exit_part14",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_exit_part15",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_exit_part16",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_exit_part17",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_exit_part18",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.59
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_exit_part19",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 1.44
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_exit_part20",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_exit_part21",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_exit_part22",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_exit_part23",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_exit_part24",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_exit_part25",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_exit_part26",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_exit_part27",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_exit_part28",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_exit_part29",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_exit_part30",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_exit_part31",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_exit_part32",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_exit_part33",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_exit_part34",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_exit_part35",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 1.47
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_assigns_exit_part36",
+      "line": 40,
+      "property": "maxSumOfThreeConsecutive_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_loop_variant_positive",
+      "line": 59,
+      "property": "maxSumOfThreeConsecutive_loop_variant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_loop_variant_decrease",
+      "line": 59,
+      "property": "maxSumOfThreeConsecutive_loop_variant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 1.27
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.337
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_new_requires",
+      "line": 41,
+      "property": "jarray_new_requires",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_new_requires_2",
+      "line": 41,
+      "property": "jarray_new_requires_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_requires",
+      "line": 43,
+      "property": "jarray_get_requires",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0196
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0177
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_requires_2",
+      "line": 43,
+      "property": "jarray_get_requires_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0202
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0226
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_requires_3",
+      "line": 43,
+      "property": "jarray_get_requires_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_set_requires",
+      "line": 43,
+      "property": "jarray_set_requires",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_set_requires_2",
+      "line": 43,
+      "property": "jarray_set_requires_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_set_requires_3",
+      "line": 43,
+      "property": "jarray_set_requires_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_2_requires",
+      "line": 46,
+      "property": "jarray_get_requires_4",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_2_requires_2",
+      "line": 46,
+      "property": "jarray_get_requires_5",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0856
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.189
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_2_requires_3",
+      "line": 46,
+      "property": "jarray_get_requires_6",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0718
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0219
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_3_requires",
+      "line": 46,
+      "property": "jarray_get_requires_7",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_3_requires_2",
+      "line": 46,
+      "property": "jarray_get_requires_8",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_3_requires_3",
+      "line": 46,
+      "property": "jarray_get_requires_9",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0969
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0181
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_set_2_requires",
+      "line": 46,
+      "property": "jarray_set_requires_4",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_set_2_requires_2",
+      "line": 46,
+      "property": "jarray_set_requires_5",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_set_2_requires_3",
+      "line": 46,
+      "property": "jarray_set_requires_6",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0655
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0188
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_4_requires",
+      "line": 49,
+      "property": "jarray_get_requires_10",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_4_requires_2",
+      "line": 49,
+      "property": "jarray_get_requires_11",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_4_requires_3",
+      "line": 49,
+      "property": "jarray_get_requires_12",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.218
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0304
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_5_requires",
+      "line": 50,
+      "property": "jarray_get_requires_13",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_5_requires_2",
+      "line": 50,
+      "property": "jarray_get_requires_14",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.254
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0604
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_5_requires_3",
+      "line": 50,
+      "property": "jarray_get_requires_15",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.258
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0398
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_6_requires",
+      "line": 50,
+      "property": "jarray_get_requires_16",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_6_requires_2",
+      "line": 50,
+      "property": "jarray_get_requires_17",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_6_requires_3",
+      "line": 50,
+      "property": "jarray_get_requires_18",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_7_requires",
+      "line": 51,
+      "property": "jarray_get_requires_19",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_7_requires_2",
+      "line": 51,
+      "property": "jarray_get_requires_20",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_7_requires_3",
+      "line": 51,
+      "property": "jarray_get_requires_21",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_8_requires",
+      "line": 51,
+      "property": "jarray_get_requires_22",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_8_requires_2",
+      "line": 51,
+      "property": "jarray_get_requires_23",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_8_requires_3",
+      "line": 51,
+      "property": "jarray_get_requires_24",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_set_3_requires",
+      "line": 52,
+      "property": "jarray_set_requires_7",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_set_3_requires_2",
+      "line": 52,
+      "property": "jarray_set_requires_8",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_set_3_requires_3",
+      "line": 52,
+      "property": "jarray_set_requires_9",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.371
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0359
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_9_requires",
+      "line": 62,
+      "property": "jarray_get_requires_25",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_9_requires_2",
+      "line": 62,
+      "property": "jarray_get_requires_26",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.788
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0368
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_9_requires_3",
+      "line": 62,
+      "property": "jarray_get_requires_27",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.731
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0733
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_10_requires",
+      "line": 63,
+      "property": "jarray_get_requires_28",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_10_requires_2",
+      "line": 63,
+      "property": "jarray_get_requires_29",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.836
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_10_requires_3",
+      "line": 63,
+      "property": "jarray_get_requires_30",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.832
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_11_requires",
+      "line": 63,
+      "property": "jarray_get_requires_31",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_11_requires_2",
+      "line": 63,
+      "property": "jarray_get_requires_32",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_11_requires_3",
+      "line": 63,
+      "property": "jarray_get_requires_33",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.873
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.076
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_12_requires",
+      "line": 65,
+      "property": "jarray_get_requires_34",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_12_requires_2",
+      "line": 65,
+      "property": "jarray_get_requires_35",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_12_requires_3",
+      "line": 65,
+      "property": "jarray_get_requires_36",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.861
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0961
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_13_requires",
+      "line": 64,
+      "property": "jarray_get_requires_37",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_13_requires_2",
+      "line": 64,
+      "property": "jarray_get_requires_38",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_13_requires_3",
+      "line": 64,
+      "property": "jarray_get_requires_39",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.963
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.102
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_14_requires",
+      "line": 64,
+      "property": "jarray_get_requires_40",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_14_requires_2",
+      "line": 64,
+      "property": "jarray_get_requires_41",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_14_requires_3",
+      "line": 64,
+      "property": "jarray_get_requires_42",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_set_4_requires",
+      "line": 66,
+      "property": "jarray_set_requires_10",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_set_4_requires_2",
+      "line": 66,
+      "property": "jarray_set_requires_11",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_set_4_requires_3",
+      "line": 66,
+      "property": "jarray_set_requires_12",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_15_requires",
+      "line": 68,
+      "property": "jarray_get_requires_43",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_15_requires_2",
+      "line": 68,
+      "property": "jarray_get_requires_44",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 1.11
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.041
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxSumOfThreeConsecutive/original/c/MaxSumOfThreeConsecutive.c",
+      "function": "maxSumOfThreeConsecutive",
+      "goal": "typed_ref_maxSumOfThreeConsecutive_call_jarray_get_15_requires_3",
+      "line": 68,
+      "property": "jarray_get_requires_45",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.947
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.209
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    }
+  ],
+  "input_fingerprint": "6b52597eaba42e16071daf9c965b73ac54874476320fecb30568eff4b50c5a20",
+  "language": "c",
+  "logs": {
+    "stderr": "stderr.log",
+    "stdout": "stdout.log",
+    "wp_report": "wp-report.json"
+  },
+  "mutant_id": null,
+  "outcome": "unknown/timeout",
+  "program": "MaxSumOfThreeConsecutive",
+  "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/MaxSumOfThreeConsecutive.c",
+  "raw_source_sha256": "b0810b60ddf0cfe7691542f0baf7d89112630b8527c6b722863430652eadd360",
+  "reason": "At least one WP goal remains unresolved",
+  "role": "original",
+  "selection": null,
+  "selection_manifest_sha256": "92fa1533eafe32fdc60b119b0c6abc8a4f3c0b372d66ac21f39e54a3b5d7433d",
+  "settings": {
+    "c_provers": "Alt-Ergo:2.4.3,Z3:4.8.12",
+    "goal_timeout": 60,
+    "java_prover": "z3-4.3.X",
+    "machdep": "x86_64",
+    "memory_model": "Typed+ref",
+    "timeout": 1800,
+    "why3_extra_config": "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+    "why3_extra_config_sha256": "97cc443d7439274ad732814842ae77a7b461d43c8d2099eb8994fb97e739049b",
+    "wp_memlimit": 1000,
+    "wp_par": 2
+  },
+  "support_sha256": {
+    "contracts/helpers.acsl.h": "37d683d91eb44cd98b6daa2984e93a296bbca187916781519d29dea8ce77ca8c",
+    "contracts/jboolarray.acsl.h": "ae0173e8ce64f3102e2e57b14c0509eeb9315974b553558b846a4ac879421460",
+    "contracts/jdoublearray.acsl.h": "bb472fd0bcd8757b89fb4f5a58f09134f92f145c147d4271d61b73c7232cf0ea",
+    "contracts/jdoublearray2.acsl.h": "3603fd8d9aeb9fb3b17424f2b258250c3dda9793d0822af5bb35e3a2754cedd8",
+    "contracts/jintarray.acsl.h": "83cfffb114f3cad5e5553951b0a239298a8e52e47bfbe783d4bceedead0983bb",
+    "contracts/jintarray2.acsl.h": "976047a31f67f24008deec58da879eddf81f37b2ab09e83da3978cd269773696",
+    "generated/types.h": "484e5df1fa6f1a573bee0b8ea778cefb259659d6b419e0c94ecd92e490d88301",
+    "java_arrays.h": "71446403075d5c68ce8ab8f85d63f98f3727133700a879b4e43c5ae59d7f0101"
+  },
+  "timed_out": false,
+  "transfer": {
+    "annotation_count": 6,
+    "executable_token_sha256": "2adb88cafc6ae78a1a13838ece50a519f6740b96262f23505d94646d7d490456",
+    "internal_annotation_coverage": "complete",
+    "method": "frozen structured JSON with audited C declaration bindings",
+    "omitted_annotations": [],
+    "placements": [
+      {
+        "boundary_token": 10,
+        "function": "java_add",
+        "id": "annotation_1",
+        "loop_id": null,
+        "mutant_offset": 46,
+        "next_token": "static",
+        "target": "function"
+      },
+      {
+        "boundary_token": 38,
+        "function": "java_sub",
+        "id": "annotation_2",
+        "loop_id": null,
+        "mutant_offset": 160,
+        "next_token": "static",
+        "target": "function"
+      },
+      {
+        "boundary_token": 66,
+        "function": "java_max",
+        "id": "annotation_3",
+        "loop_id": null,
+        "mutant_offset": 274,
+        "next_token": "static",
+        "target": "function"
+      },
+      {
+        "boundary_token": 87,
+        "function": "maxSumOfThreeConsecutive",
+        "id": "annotation_4",
+        "loop_id": null,
+        "mutant_offset": 372,
+        "next_token": "int32_t",
+        "target": "function"
+      },
+      {
+        "boundary_token": 87,
+        "function": "maxSumOfThreeConsecutive",
+        "id": "annotation_5",
+        "loop_id": null,
+        "mutant_offset": 372,
+        "next_token": "int32_t",
+        "target": "function"
+      },
+      {
+        "boundary_token": 238,
+        "function": "maxSumOfThreeConsecutive",
+        "id": "annotation_6",
+        "loop_id": "loop_1",
+        "mutant_offset": 960,
+        "next_token": "for",
+        "target": "loop"
+      }
+    ],
+    "removed_loop_annotations": 0,
+    "removed_temporary_policy": "original pure initializer with stable dependencies"
+  },
+  "verification_started": true,
+  "verifier": {
+    "compatibility": {
+      "module": "/mnt/d/ResearchProject/.tools/frama-c-compat/1e5af7b10d6dd41df377/float_negation_33.cmxs",
+      "module_sha256": "1db37c95f71be52efae9dccb88c510a543ef611378c9e6438d65ec35880d70a8",
+      "name": "Frama-C 33.0 implicit floating-negation coercion repair",
+      "source": "/mnt/d/ResearchProject/verification/specification_evaluation/framac/float_negation_33.ml",
+      "source_sha256": "4ff87e29b00ac2eff69fd600225636521287641211fb362c1121246754c3870a"
+    },
+    "path": "/root/.opam/default/bin/frama-c",
+    "sha256": "9e49b5c48b5ca47a377a1b845f580bfbfb095fb18d51788c05cb42572201f116",
+    "version_command": [
+      "/root/.opam/default/bin/frama-c",
+      "-version"
+    ],
+    "version_exit_code": 0,
+    "version_output": "33.0 (Arsenic)"
+  }
+}

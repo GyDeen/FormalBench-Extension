@@ -1,0 +1,112 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 10,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_add",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\n  assigns \\nothing;\n  ensures \\result == (int32_t)((integer)left + right);\n*/"
+    },
+    {
+      "boundary_token": 38,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_mul",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\n  assigns \\nothing;\n  ensures \\result == (int32_t)((integer)left * right);\n*/"
+    },
+    {
+      "boundary_token": 66,
+      "following_tokens": [
+        "int32_t",
+        "maxProduct"
+      ],
+      "function": "maxProduct",
+      "id": "annotation_3",
+      "loop_id": null,
+      "next_token": "int32_t",
+      "target": "function",
+      "text": "/*@\n  logic integer fb_product_end{L}(JIntArray a, integer i, integer j) =\n    j <= 0 ? a->data[i] : \\max(fb_product_end(a, i, j - 1),\n    a->data[i] > a->data[j - 1] ? (int32_t)(fb_product_end(a, j - 1, j - 1) * a->data[i]) : a->data[i]);\n  logic integer fb_product_best{L}(JIntArray a, integer k) =\n    k <= 1 ? a->data[0] : \\max(fb_product_best(a, k - 1), fb_product_end(a, k - 1, k - 1));\n*/"
+    },
+    {
+      "boundary_token": 66,
+      "following_tokens": [
+        "int32_t",
+        "maxProduct"
+      ],
+      "function": "maxProduct",
+      "id": "annotation_4",
+      "loop_id": null,
+      "next_token": "int32_t",
+      "target": "function",
+      "text": "/*@\n  requires jintarray_valid_nonnull(arr) && 1 <= n <= arr->length;\n  assigns \\nothing;\n  ensures \\result == fb_product_best(arr, n);\n*/"
+    },
+    {
+      "boundary_token": 84,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "maxProduct",
+      "id": "annotation_5",
+      "loop_id": "loop_1",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@\n      loop invariant 0 <= i <= n;\n      loop invariant jintarray_valid_nonnull(mpis) && mpis->length == n;\n      loop invariant \\forall integer k; 0 <= k < i ==> mpis->data[k] == arr->data[k];\n      loop assigns i, mpis->data[0 .. n - 1];\n      loop variant n - i;\n    */"
+    },
+    {
+      "boundary_token": 120,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "maxProduct",
+      "id": "annotation_6",
+      "loop_id": "loop_2",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@\n      loop invariant 1 <= i <= n;\n      loop invariant jintarray_valid_nonnull(mpis) && mpis->length == n;\n      loop invariant \\forall integer k; 0 <= k < i ==> mpis->data[k] == fb_product_end(arr, k, k);\n      loop invariant \\forall integer k; i <= k < n ==> mpis->data[k] == arr->data[k];\n      loop assigns i, mpis->data[0 .. n - 1];\n      loop variant n - i;\n    */"
+    },
+    {
+      "boundary_token": 141,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "maxProduct",
+      "id": "annotation_7",
+      "loop_id": "loop_3",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@\n          loop invariant 0 <= j <= i;\n          loop invariant jintarray_valid_nonnull(mpis) && mpis->length == n;\n          loop invariant mpis->data[i] == fb_product_end(arr, i, j);\n          loop assigns j, mpis->data[i];\n          loop variant i - j;\n        */"
+    },
+    {
+      "boundary_token": 236,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "maxProduct",
+      "id": "annotation_8",
+      "loop_id": "loop_4",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@\n      loop invariant 1 <= i <= n;\n      loop invariant max == fb_product_best(arr, i);\n      loop assigns i, max;\n      loop variant n - i;\n    */"
+    }
+  ],
+  "language": "c",
+  "original_executable_token_sha256": "f593cce3e1f7c66697074e35189dff03d85e8caa6181e8b05efa97febf18936c",
+  "program": "MaxProduct",
+  "schema_version": "1.0"
+}

@@ -1,0 +1,86 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "combSort",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@\n    public normal_behavior\n      requires g >= 0;\n      ensures \\result == (int)((double)g / 1.3);\n    model public static pure int fb_shrink(int g);\n    public normal_behavior\n      requires g >= 0;\n      ensures \\result == (g <= 1 ? 1 : 1 + fb_steps(fb_shrink(g)));\n      measured_by g;\n    model public static pure int fb_steps(int g);\n    public normal_behavior\n      requires n >= 0 && t >= 0;\n      ensures \\result == (t == 0 ? n : fb_shrink(fb_gap(n, t - 1)));\n      measured_by t;\n    model public static pure int fb_gap(int n, int t);\n    public normal_behavior\n      requires a != null && 0 <= t <= fb_steps(a.length) && 0 <= p < a.length;\n      requires 0 <= k <= a.length - fb_gap(a.length, t);\n      ensures \\result == (t == 0 ? a[p] : k == 0 || fb_gap(a.length, t) == 0 ?\n        fb_value(a, t - 1, a.length - fb_gap(a.length, t - 1), p) :\n        p == k - 1 ?\n          (fb_value(a, t, k - 1, k - 1) <= fb_value(a, t, k - 1, k - 1 + fb_gap(a.length, t)) ? fb_value(a, t, k - 1, k - 1) : fb_value(a, t, k - 1, k - 1 + fb_gap(a.length, t))) :\n        p == k - 1 + fb_gap(a.length, t) ?\n          (fb_value(a, t, k - 1, k - 1) >= fb_value(a, t, k - 1, k - 1 + fb_gap(a.length, t)) ? fb_value(a, t, k - 1, k - 1) : fb_value(a, t, k - 1, k - 1 + fb_gap(a.length, t))) :\n        fb_value(a, t, k - 1, p));\n      measured_by (\\bigint)t * ((\\bigint)a.length + 1) + k;\n    model public static pure int fb_value(int[] a, int t, int k, int p);\n\n    public normal_behavior\n      requires nums != null;\n      assignable nums[*];\n      ensures \\result == nums;\n      ensures (\\forall int p; 0 <= p < nums.length;\n        nums[p] == \\old(fb_value(nums, fb_steps(nums.length), nums.length, p)));\n      ensures nums.length > 0 ==> (\\forall int p; 0 <= p < nums.length; nums[p] <= nums[nums.length - 1]);\n      also\n    public exceptional_behavior\n      requires nums == null;\n      assignable \\nothing;\n      signals_only NullPointerException;\n    @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "combSort",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "//@ code_java_math"
+    },
+    {
+      "boundary_token": 61,
+      "following_tokens": [
+        "while",
+        "("
+      ],
+      "function": "combSort",
+      "id": "annotation_3",
+      "loop_id": null,
+      "next_token": "while",
+      "target": "statement",
+      "text": "//@ ghost int fb_pass = 0;"
+    },
+    {
+      "boundary_token": 61,
+      "following_tokens": [
+        "while",
+        "("
+      ],
+      "function": "combSort",
+      "id": "annotation_4",
+      "loop_id": "loop_1",
+      "next_token": "while",
+      "target": "loop",
+      "text": "/*@\n        loop_invariant 0 <= fb_pass <= fb_steps(n) && gap == fb_gap(n, fb_pass) && 0 <= gap <= n;\n        loop_invariant (\\forall int t, p; t == fb_pass && 0 <= p < n; nums[p] == \\old(fb_value(nums, t, nums.length - fb_gap(nums.length, t), p)));\n        loop_writes gap, swapped, nums[*], fb_pass;\n        decreases 2 * (\\bigint)gap + (swapped ? 1 : 0);\n        @*/"
+    },
+    {
+      "boundary_token": 86,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "combSort",
+      "id": "annotation_5",
+      "loop_id": null,
+      "next_token": "for",
+      "target": "statement",
+      "text": "//@ set fb_pass = fb_pass + 1;"
+    },
+    {
+      "boundary_token": 86,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "combSort",
+      "id": "annotation_6",
+      "loop_id": "loop_2",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@\n            loop_invariant 0 <= i <= n - gap;\n            loop_invariant 1 <= fb_pass <= fb_steps(n) && gap == fb_gap(n, fb_pass);\n            loop_invariant (\\forall int t, k, p; t == fb_pass && k == i && 0 <= p < n; nums[p] == \\old(fb_value(nums, t, k, p)));\n            loop_writes i, swapped, nums[*];\n            decreases (\\bigint)n - gap - i;\n            @*/"
+    }
+  ],
+  "language": "java",
+  "original_executable_token_sha256": "27b5437838f30e67baa3c26f4970d7af10be3be3d5fbf675cebaf122358ae857",
+  "program": "CombSort",
+  "schema_version": "1.0"
+}

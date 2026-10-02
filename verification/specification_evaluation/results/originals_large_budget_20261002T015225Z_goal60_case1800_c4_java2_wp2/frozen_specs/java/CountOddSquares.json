@@ -1,0 +1,47 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "countOddSquares",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@\n    public normal_behavior\n      ensures x < 0 ==> \\result == 0;\n      ensures x >= 0 ==> 1 <= \\result <= 46341\n        && (\\bigint)(\\result - 1) * (\\result - 1) <= x\n        && x < (\\bigint)\\result * \\result;\n    model public static pure int fb_squaresThrough(int x);\n\n    public normal_behavior\n      assignable \\nothing;\n      diverges m == Integer.MAX_VALUE;\n      ensures m < Integer.MAX_VALUE;\n      ensures \\result == (n > m ? 0 : fb_squaresThrough(m) - (n <= 0 ? 0 : fb_squaresThrough(n - 1)));\n      ensures 0 <= \\result <= 46341;\n    @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "countOddSquares",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "//@ code_java_math"
+    },
+    {
+      "boundary_token": 48,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "countOddSquares",
+      "id": "annotation_3",
+      "loop_id": "loop_1",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@\n        loop_invariant m < Integer.MAX_VALUE ==> n <= i && (\\bigint)i <= (n > m ? (\\bigint)n : (\\bigint)m + 1);\n        loop_invariant m < Integer.MAX_VALUE ==> count == (i == n ? 0 : fb_squaresThrough(i - 1) - (n <= 0 ? 0 : fb_squaresThrough(n - 1)));\n        loop_writes i, count;\n        @*/"
+    }
+  ],
+  "language": "java",
+  "original_executable_token_sha256": "50c72d48178e0f60cddb7be555e7322ec1379f6b5aec10643b9cc432de056a33",
+  "program": "CountOddSquares",
+  "schema_version": "1.0"
+}

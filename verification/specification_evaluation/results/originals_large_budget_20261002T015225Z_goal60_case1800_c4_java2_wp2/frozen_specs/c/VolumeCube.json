@@ -1,0 +1,34 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 10,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_mul",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\n  assigns \\nothing;\n  ensures \\result == (int32_t)((integer)left * right);\n*/"
+    },
+    {
+      "boundary_token": 38,
+      "following_tokens": [
+        "int32_t",
+        "volumeCube"
+      ],
+      "function": "volumeCube",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "int32_t",
+      "target": "function",
+      "text": "/*@\n  assigns \\nothing;\n  ensures \\result == (int32_t)((integer)l * l * l);\n*/"
+    }
+  ],
+  "language": "c",
+  "original_executable_token_sha256": "cbeb92e736e50273b8b5a31b2ffa4e5d9fe05b097331eb6f78c4b8b442165233",
+  "program": "VolumeCube",
+  "schema_version": "1.0"
+}
