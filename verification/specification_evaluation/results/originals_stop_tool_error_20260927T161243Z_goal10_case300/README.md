@@ -194,6 +194,32 @@ C tables count individually reported WP goal entries. Java tables count generate
 
 No WP goal is reported violated. This does not contradict the independently validated native C mutant counterexamples: replay outcomes are a different evidence type. Cases without recorded WP goals contribute no goal entries; missing/deferred/tool-failure runs do not count as proved goals.
 
+### Java clause types: readable grouping of generated checks
+
+These are clause-family labels inferred from the saved OpenJML assertion kinds, following the [OpenJML check definitions](https://www.openjml.org/documentation/checks.shtml). Preconditions at method entry are assumptions; the asserted precondition checks below concern called methods. Counts include constructor/library contracts, model-method calls and implicit checks, rather than only explicit benchmark clauses. One source clause can produce multiple checks: loop invariants have before-loop, loop-body and loop-exit checks; loop variants have decrease and non-negativity checks. A raw Assignable check alone does not identify whether its owning source clause was assignable or loop_writes.
+
+The coverage/status definitions remain the same as in the raw-kind table below. Zero proved-method coverage does not establish that every check of that family is unproved; individual outcomes within other methods were not recorded.
+
+| Clause type | JML syntax / meaning | Generated checks | Covered by proved method VCs | In other method VCs | Reported violation diagnostics |
+|---|---|---:|---:|---:|---:|
+| Callee preconditions | requires | 784 | 50 | 734 | 0 |
+| Preconditions of calls within specifications | requires; specification-expression well-definedness | 2255 | 0 | 2255 | 0 |
+| Normal postconditions | ensures | 132 | 12 | 120 | 2 |
+| Exceptional postconditions | signals; also implicit exception constraints of normal_behavior | 101 | 62 | 39 | 0 |
+| Allowed exception types | signals_only | 135 | 62 | 73 | 0 |
+| Loop invariants | loop_invariant / maintaining | 375 | 0 | 375 | 0 |
+| Loop variants | decreases / decreasing (decrease and non-negativity checks) | 82 | 0 | 82 | 0 |
+| Recursive termination metrics | measured_by (decrease and non-negativity checks) | 16 | 0 | 16 | 0 |
+| Write/frame conditions | assignable / loop_writes; raw kind does not identify the owning clause | 150 | 0 | 150 | 0 |
+| Read permissions | accessible | 517 | 0 | 517 | 0 |
+| Class invariants | invariant | 1 | 0 | 1 | 0 |
+| Explicit assertions | assert (Java or JML) | 1 | 0 | 1 | 0 |
+| Java runtime safety | implicit null, bounds, allocation-size and division checks | 789 | 0 | 789 | 1 |
+| Specification-expression well-definedness | implicit checks within JML expressions | 4049 | 0 | 4049 | 0 |
+| **Total** | | **9387** | **186** | **9201** | **3** |
+
+No verifier was rerun to obtain these families. These are generated-check counts, not source-clause counts or a complete per-clause verdict partition. The detailed assertion and mutant-diagnostic CSVs now include a clause_type column; [clause-type totals](goal_kind_status/java_clause_types.csv) are also available.
+
 ### Java generated assertion kinds: original workload capture
 
 An assertion in a method VC that finished with `no warnings` is covered by that method proof. The other-method column includes assertions in unresolved, failed, or interrupted method VCs; it is **not** a count of individually unknown or violated assertions. A partially failed method can still contain checks that hold. Reported violation diagnostics are separate observations, not a complete per-assertion verdict partition. Inconclusive warnings are excluded from the violation column.

@@ -13894,5 +13894,221 @@
                                          }
                                      ],
     "java_mutants_without_generated_assertion_captures":  977,
-    "readme_section_sha256":  "3b02776df10c4252ca0413569016a477b12da345838ad22ce8b720b7550b0a4f"
+    "java_clause_types":  [
+                              {
+                                  "clause_type":  "Callee preconditions",
+                                  "jml_syntax_or_meaning":  "requires",
+                                  "raw_assertion_kinds":  [
+                                                              "Precondition"
+                                                          ],
+                                  "generated":  784,
+                                  "covered_by_proved_method_vcs":  50,
+                                  "in_other_method_vcs":  734,
+                                  "reported_violation_diagnostics":  0,
+                                  "unconfirmed_failure_diagnostics":  1
+                              },
+                              {
+                                  "clause_type":  "Preconditions of calls within specifications",
+                                  "jml_syntax_or_meaning":  "requires; specification-expression well-definedness",
+                                  "raw_assertion_kinds":  [
+                                                              "UndefinedCalledMethodPrecondition"
+                                                          ],
+                                  "generated":  2255,
+                                  "covered_by_proved_method_vcs":  0,
+                                  "in_other_method_vcs":  2255,
+                                  "reported_violation_diagnostics":  0,
+                                  "unconfirmed_failure_diagnostics":  0
+                              },
+                              {
+                                  "clause_type":  "Normal postconditions",
+                                  "jml_syntax_or_meaning":  "ensures",
+                                  "raw_assertion_kinds":  [
+                                                              "Postcondition"
+                                                          ],
+                                  "generated":  132,
+                                  "covered_by_proved_method_vcs":  12,
+                                  "in_other_method_vcs":  120,
+                                  "reported_violation_diagnostics":  2,
+                                  "unconfirmed_failure_diagnostics":  0
+                              },
+                              {
+                                  "clause_type":  "Exceptional postconditions",
+                                  "jml_syntax_or_meaning":  "signals; also implicit exception constraints of normal_behavior",
+                                  "raw_assertion_kinds":  [
+                                                              "ExceptionalPostcondition"
+                                                          ],
+                                  "generated":  101,
+                                  "covered_by_proved_method_vcs":  62,
+                                  "in_other_method_vcs":  39,
+                                  "reported_violation_diagnostics":  0,
+                                  "unconfirmed_failure_diagnostics":  0
+                              },
+                              {
+                                  "clause_type":  "Allowed exception types",
+                                  "jml_syntax_or_meaning":  "signals_only",
+                                  "raw_assertion_kinds":  [
+                                                              "ExceptionList"
+                                                          ],
+                                  "generated":  135,
+                                  "covered_by_proved_method_vcs":  62,
+                                  "in_other_method_vcs":  73,
+                                  "reported_violation_diagnostics":  0,
+                                  "unconfirmed_failure_diagnostics":  0
+                              },
+                              {
+                                  "clause_type":  "Loop invariants",
+                                  "jml_syntax_or_meaning":  "loop_invariant / maintaining",
+                                  "raw_assertion_kinds":  [
+                                                              "LoopInvariantBeforeLoop",
+                                                              "LoopInvariant",
+                                                              "LoopInvariantAfterLoop"
+                                                          ],
+                                  "generated":  375,
+                                  "covered_by_proved_method_vcs":  0,
+                                  "in_other_method_vcs":  375,
+                                  "reported_violation_diagnostics":  0,
+                                  "unconfirmed_failure_diagnostics":  0
+                              },
+                              {
+                                  "clause_type":  "Loop variants",
+                                  "jml_syntax_or_meaning":  "decreases / decreasing (decrease and non-negativity checks)",
+                                  "raw_assertion_kinds":  [
+                                                              "LoopDecreases",
+                                                              "LoopDecreasesNonNegative"
+                                                          ],
+                                  "generated":  82,
+                                  "covered_by_proved_method_vcs":  0,
+                                  "in_other_method_vcs":  82,
+                                  "reported_violation_diagnostics":  0,
+                                  "unconfirmed_failure_diagnostics":  0
+                              },
+                              {
+                                  "clause_type":  "Recursive termination metrics",
+                                  "jml_syntax_or_meaning":  "measured_by (decrease and non-negativity checks)",
+                                  "raw_assertion_kinds":  [
+                                                              "TerminationDecreases",
+                                                              "TerminationNonNegative"
+                                                          ],
+                                  "generated":  16,
+                                  "covered_by_proved_method_vcs":  0,
+                                  "in_other_method_vcs":  16,
+                                  "reported_violation_diagnostics":  0,
+                                  "unconfirmed_failure_diagnostics":  0
+                              },
+                              {
+                                  "clause_type":  "Write/frame conditions",
+                                  "jml_syntax_or_meaning":  "assignable / loop_writes; raw kind does not identify the owning clause",
+                                  "raw_assertion_kinds":  [
+                                                              "Assignable"
+                                                          ],
+                                  "generated":  150,
+                                  "covered_by_proved_method_vcs":  0,
+                                  "in_other_method_vcs":  150,
+                                  "reported_violation_diagnostics":  0,
+                                  "unconfirmed_failure_diagnostics":  0
+                              },
+                              {
+                                  "clause_type":  "Read permissions",
+                                  "jml_syntax_or_meaning":  "accessible",
+                                  "raw_assertion_kinds":  [
+                                                              "Accessible"
+                                                          ],
+                                  "generated":  517,
+                                  "covered_by_proved_method_vcs":  0,
+                                  "in_other_method_vcs":  517,
+                                  "reported_violation_diagnostics":  0,
+                                  "unconfirmed_failure_diagnostics":  0
+                              },
+                              {
+                                  "clause_type":  "Class invariants",
+                                  "jml_syntax_or_meaning":  "invariant",
+                                  "raw_assertion_kinds":  [
+                                                              "InvariantEntrance"
+                                                          ],
+                                  "generated":  1,
+                                  "covered_by_proved_method_vcs":  0,
+                                  "in_other_method_vcs":  1,
+                                  "reported_violation_diagnostics":  0,
+                                  "unconfirmed_failure_diagnostics":  0
+                              },
+                              {
+                                  "clause_type":  "Explicit assertions",
+                                  "jml_syntax_or_meaning":  "assert (Java or JML)",
+                                  "raw_assertion_kinds":  [
+                                                              "Assert"
+                                                          ],
+                                  "generated":  1,
+                                  "covered_by_proved_method_vcs":  0,
+                                  "in_other_method_vcs":  1,
+                                  "reported_violation_diagnostics":  0,
+                                  "unconfirmed_failure_diagnostics":  0
+                              },
+                              {
+                                  "clause_type":  "Java runtime safety",
+                                  "jml_syntax_or_meaning":  "implicit null, bounds, allocation-size and division checks",
+                                  "raw_assertion_kinds":  [
+                                                              "PossiblyDivideByZero",
+                                                              "PossiblyNegativeIndex",
+                                                              "PossiblyNegativeSize",
+                                                              "PossiblyNullDeReference",
+                                                              "PossiblyTooLargeIndex"
+                                                          ],
+                                  "generated":  789,
+                                  "covered_by_proved_method_vcs":  0,
+                                  "in_other_method_vcs":  789,
+                                  "reported_violation_diagnostics":  1,
+                                  "unconfirmed_failure_diagnostics":  0
+                              },
+                              {
+                                  "clause_type":  "Specification-expression well-definedness",
+                                  "jml_syntax_or_meaning":  "implicit checks within JML expressions",
+                                  "raw_assertion_kinds":  [
+                                                              "UndefinedBadCast",
+                                                              "UndefinedDivideByZero",
+                                                              "UndefinedNegativeIndex",
+                                                              "UndefinedNullDeReference",
+                                                              "UndefinedTooLargeIndex",
+                                                              "IllegalArgument",
+                                                              "NullArgument"
+                                                          ],
+                                  "generated":  4049,
+                                  "covered_by_proved_method_vcs":  0,
+                                  "in_other_method_vcs":  4049,
+                                  "reported_violation_diagnostics":  0,
+                                  "unconfirmed_failure_diagnostics":  1
+                              }
+                          ],
+    "java_kind_to_clause_type":  {
+                                     "Assignable":  "Write/frame conditions",
+                                     "ExceptionalPostcondition":  "Exceptional postconditions",
+                                     "Precondition":  "Callee preconditions",
+                                     "TerminationDecreases":  "Recursive termination metrics",
+                                     "ExceptionList":  "Allowed exception types",
+                                     "PossiblyTooLargeIndex":  "Java runtime safety",
+                                     "TerminationNonNegative":  "Recursive termination metrics",
+                                     "UndefinedBadCast":  "Specification-expression well-definedness",
+                                     "LoopInvariantAfterLoop":  "Loop invariants",
+                                     "PossiblyDivideByZero":  "Java runtime safety",
+                                     "Assert":  "Explicit assertions",
+                                     "UndefinedNullDeReference":  "Specification-expression well-definedness",
+                                     "PossiblyNullDeReference":  "Java runtime safety",
+                                     "LoopDecreases":  "Loop variants",
+                                     "LoopDecreasesNonNegative":  "Loop variants",
+                                     "UndefinedTooLargeIndex":  "Specification-expression well-definedness",
+                                     "LoopInvariantBeforeLoop":  "Loop invariants",
+                                     "PossiblyNegativeSize":  "Java runtime safety",
+                                     "PossiblyNegativeIndex":  "Java runtime safety",
+                                     "InvariantEntrance":  "Class invariants",
+                                     "NullArgument":  "Specification-expression well-definedness",
+                                     "UndefinedCalledMethodPrecondition":  "Preconditions of calls within specifications",
+                                     "UndefinedDivideByZero":  "Specification-expression well-definedness",
+                                     "Postcondition":  "Normal postconditions",
+                                     "LoopInvariant":  "Loop invariants",
+                                     "IllegalArgument":  "Specification-expression well-definedness",
+                                     "UndefinedNegativeIndex":  "Specification-expression well-definedness",
+                                     "Accessible":  "Read permissions"
+                                 },
+    "java_clause_type_interpretation":  "Semantic clause families inferred from saved OpenJML check labels, not source-clause counts or an exact source-clause attribution. Includes implicit checks, constructors, library contracts and model-method calls. Several generated checks can arise from one clause; some source clauses are assumed rather than asserted. Individual assertion verdict limitations are unchanged.",
+    "java_clause_type_reference":  "https://www.openjml.org/documentation/checks.shtml",
+    "readme_section_sha256":  "0e02e53c355cae268c73732c2951071041199409027d6007b39fe84a719dbbde"
 }
