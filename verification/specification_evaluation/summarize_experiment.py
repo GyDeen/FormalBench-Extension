@@ -392,8 +392,34 @@ def render(data, summary, config, records, paths):
         rows.append([r['program'], data['category_mapping'][r['program']], r['language'], fmt(r['elapsed_seconds']),
                      len(r['goals']) if r['language'] == 'c' else 'N/A',
                      j['generated_assertions'] if j else 'N/A', j['generated_method_vcs'] if j else 'N/A'])
-    sections += [table(['Program', 'Category', 'Language', 'Wall s', 'C WP goals', 'Java assertions', 'Java method VCs'], rows),
-                 '## Category results',
+    sections.append(table(['Program', 'Category', 'Language', 'Wall s', 'C WP goals', 'Java assertions', 'Java method VCs'], rows))
+    # Retain the saved kind/status analysis when regenerating this report.
+    kind_directory = next(iter(paths.values())).parents[4] / 'goal_kind_status'
+    if (kind_directory / 'goal_kinds.json').is_file():
+        kind_summary = read(kind_directory / 'goal_kinds.json')
+        for source in kind_summary['source_records']:
+            assert sha256(kind_directory.parent / source['relative_record']) == source['sha256']
+        mutant_capture = kind_summary.get('java_mutant_workload_snapshot')
+        if mutant_capture:
+            assert sha256(kind_directory.parent / mutant_capture['path']) == mutant_capture['sha256']
+        kind_section = kind_directory / 'section.md'
+        assert sha256(kind_section) == kind_summary['readme_section_sha256']
+        sections.append('<!-- goal-kind-status:start -->\n' + kind_section.read_text(encoding='utf-8') +
+                        '\n<!-- goal-kind-status:end -->')
+    mapping_directory = kind_directory.parent / 'counterexample_goal_mapping'
+    if (mapping_directory / 'manifest.json').is_file():
+        mapping_manifest = read(mapping_directory / 'manifest.json')
+        assert sha256(REPO / mapping_manifest['contracts_file']) == mapping_manifest['contracts_sha256']
+        for helper in mapping_manifest['helper_contracts']:
+            assert sha256(REPO / helper['path']) == helper['sha256']
+        for source in mapping_manifest['source_files']:
+            assert sha256(mapping_directory.parent / source['path']) == source['sha256']
+        for name, expected_hash in mapping_manifest['artifacts'].items():
+            assert sha256(mapping_directory / name) == expected_hash
+        sections.append('<!-- counterexample-goal-mapping:start -->\n' +
+                        (mapping_directory / 'section.md').read_text(encoding='utf-8') +
+                        '\n<!-- counterexample-goal-mapping:end -->')
+    sections += ['## Category results',
                  'Category labels come from the saved selection manifest, not from reclassifying translated code. Each category contains ten originals in each language; mutant totals vary after eligibility screening.',
                  table(['Category', 'Originals per language', 'Retained mutant pairs'],
                        [[e['category'], e['original_count'], e['mutant_pairs']] for e in data['categories']]),
@@ -520,6 +546,9 @@ def render(data, summary, config, records, paths):
             'All 977 C mutants were searched: **710 postcondition violations and 190 safety failures (900 validated failures, 92.12%)**; 77 have no validated failure. All 50 original controls have replay evidence with no validated failure. Finite passing trials are inconclusive and do not count as proofs. Java diagnostics and C execution witnesses use different evidence types.',
             f"The four corrected C originals completed WP re-verification and remain unknown because some goals are unresolved. The C counterexample search is complete; {summary['mutants']['c'].get('not run',0)} mutant WP invocations remain deferred after the source repairs. Historical search subsets are included once. See [results_summary.json](results_summary.json) for the consolidated outcomes, category statistics, successful-case time/goal distributions and JArray blockers.",
         ]
+    sections += ['## Result artifact layout',
+                 'This directory retains verification records, WP goal reports, replay results and witnesses, independent audit results, frozen contracts, and statistical summaries. Canonical program sources remain under `FormalBench-data/`; each case record identifies its original `raw_source` and source hash. Generated annotated source copies, replay harnesses, native compiler reports, binaries and duplicated command/transfer files are excluded from Git and kept in ignored local output storage. Commands and annotation-transfer results are already embedded in the verification records. Historical annotated-source and execution paths identify the files used at run time; they are not additional committed source files.',
+                 'README and statistics regeneration requires the retained result JSON, frozen contracts, canonical repository support contracts, and Java workload count snapshot. Replaying witnesses or reintegrating raw runs requires the local generated working artifacts, or regeneration from canonical inputs; the result-only archive does not include those working files.']
     return '\n\n'.join(sections) + '\n'
 
 

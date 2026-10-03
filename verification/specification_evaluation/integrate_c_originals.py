@@ -57,7 +57,7 @@ def integrate(output: Path, rerun: Path):
         assert sha256(prior_snapshot) == old_hash
         archived = archive / relative
         archived.mkdir(parents=True, exist_ok=True)
-        names = ('record.json', 'command.json', 'transfer.json', 'wp-report.json', program + '.c')
+        names = ('record.json', 'wp-report.json')
         for name in names:
             if (source / name).resolve() != (archived / name).resolve():
                 shutil.copy2(source / name, archived / name)
@@ -73,7 +73,7 @@ def integrate(output: Path, rerun: Path):
         record['annotated_source'] = str(target / (program + '.c'))
         record['verification_integration'] = provenance
         # Commands and goal locations retain the paths actually used by Frama-C.
-        for name in ('command.json', 'transfer.json', 'wp-report.json'):
+        for name in ('wp-report.json',):
             shutil.copy2(source / name, target / name)
         write_json(target / 'record.json', record)
         results.append({'program': program, 'outcome': record['outcome'],

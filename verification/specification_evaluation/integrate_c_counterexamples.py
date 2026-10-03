@@ -16,9 +16,7 @@ from .summarize_experiment import distribution
 from .workflow import read_json, write_json
 
 DEFAULT_RUNS = ('c_counterexamples_refreshed_all_c_20261001_search_only',)
-CASE_FILES = ('record.json','command.json','wp-report.json','replay.json',
-              'native_compile.json','native_audit_compile.json',
-              'native_search_compile.json','native_replay.c')
+CASE_FILES = ('record.json','wp-report.json','replay.json')
 
 
 def original_summary(output, expected_hash):
@@ -109,7 +107,7 @@ def integrate(output, evidence_runs):
                     assert read_json(cp)['harness_sha256']==sha256(path.parent/'native_replay.c')
             target=destination/path.parent.relative_to(run)
             target.mkdir(parents=True,exist_ok=True)
-            for name in (*CASE_FILES,f'{p}.c'):
+            for name in CASE_FILES:
                 src=path.parent/name
                 if src.is_file():
                     if src.resolve()!=(target/name).resolve(): shutil.copy2(src,target/name)
@@ -206,7 +204,7 @@ def integrate(output, evidence_runs):
         'completed_records_archived':sum(r['completed_cases'] for r in runs),'deduplicated_records':len(records),
         'source_verification_summary_sha256':sha256(frozen_summary),'source_run_sha256':sha256(output/'run.json'),
         'summary_sha256':sha256(archives/'summary.json'),'files_copied':copied,'checks':checks,
-        'method':'Check source case/specification/harness hashes and existing independent sanitizer replay audits; byte-identical archive; no verification or replay started.'})
+        'method':'Check source case/specification/harness hashes and existing independent sanitizer replay audits before archiving result JSON; generated sources, harnesses and compiler metadata are not archived; no verification or replay started.'})
     lines=['# Integrated C counterexample evidence','',f'Unique coverage: **{result["coverage"]["searched_originals"]}/50 originals and {len(mutants)}/977 mutants**. '+('The full-population replay search completed and passed its independent audit.' if full_coverage else 'Counterexample coverage is partial.'),'',
         f"Validated mutant failures: **{result['validated_mutant_outcomes'].get('specification violation',0)} postcondition violations and {result['validated_mutant_outcomes'].get('precondition/RTE failure',0)} safety failures**. Every accepted witness reproduced under the stronger sanitizer audit and passed its original control.",'',
         'The original verifier results are preserved in [summary_verification.json](../summary_verification.json). The parent [summary.json](../summary.json) adds this evidence as `c_counterexample_evidence`; it does not rewrite WP unknown verdicts. Passing finite replay trials is not proof. No counterexample search is currently running.','',
@@ -219,7 +217,7 @@ def integrate(output, evidence_runs):
         ('Refreshed originals: '+', '.join(v['program'] for v in refreshed)+'. Their replay results use the refreshed frozen contracts.' if refreshed else 'The full replay search used the current frozen source and contract records.'),'',
         '## Witnesses','','| Case | Kind | Inputs | Expected | Actual |','| --- | --- | --- | --- | --- |']
     for r in accepted: lines.append(f"| [{r['program']}/{r['mutant_id']}]({r['record'].removeprefix('counterexamples/').replace('record.json','replay.json')}) | {r['outcome']} | `{json.dumps(r['inputs'],sort_keys=True)}` | `{json.dumps(r['expected'])}` | `{json.dumps(r['actual'])}` |")
-    lines+=['','See [summary.json](summary.json) for full-precision timing distributions and per-case provenance, and [integration_audit.json](integration_audit.json) for source checks. Solver files, native binaries, tests and configuration files are excluded from the archive.','']
+    lines+=['','See [summary.json](summary.json) for full-precision timing distributions and per-case provenance, and [integration_audit.json](integration_audit.json) for source checks. Canonical sources remain under FormalBench-data. Generated source snapshots, harnesses, compiler metadata, solver files and native binaries are excluded; accepted witnesses and audit results remain in record.json/replay.json.','']
     (archives/'README.md').write_text('\n'.join(lines))
     snapshot=output/'summary_verification.json'
     if not snapshot.exists(): shutil.copy2(frozen_summary,snapshot)

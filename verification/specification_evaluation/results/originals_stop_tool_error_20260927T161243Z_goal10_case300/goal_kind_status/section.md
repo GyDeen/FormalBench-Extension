@@ -35,7 +35,33 @@ C tables count individually reported WP goal entries. Java tables count generate
 
 No WP goal is reported violated. This does not contradict the independently validated native C mutant counterexamples: replay outcomes are a different evidence type. Cases without recorded WP goals contribute no goal entries; missing/deferred/tool-failure runs do not count as proved goals.
 
-### Java generated assertion kinds: original workload capture
+### Java originals (50): clause types and generated-check evidence
+
+These are clause-family labels inferred from the saved OpenJML assertion kinds, following the [OpenJML check definitions](https://www.openjml.org/documentation/checks.shtml). Preconditions at method entry are assumptions; the asserted precondition checks below concern called methods. Counts include constructor/library contracts, model-method calls and implicit checks, rather than only explicit benchmark clauses. One source clause can produce multiple checks: loop invariants have before-loop, loop-body and loop-exit checks; loop variants have decrease and non-negativity checks. A raw Assignable check alone does not identify whether its owning source clause was assignable or loop_writes.
+
+The coverage/status definitions remain the same as in the raw-kind table below. Zero proved-method coverage does not establish that every check of that family is unproved; individual outcomes within other methods were not recorded.
+
+| Clause type | JML syntax / meaning | Generated checks | Covered by proved method VCs | In other method VCs | Reported violation diagnostics |
+|---|---|---:|---:|---:|---:|
+| Callee preconditions | requires | 784 | 50 | 734 | 0 |
+| Preconditions of calls within specifications | requires; specification-expression well-definedness | 2255 | 0 | 2255 | 0 |
+| Normal postconditions | ensures | 132 | 12 | 120 | 2 |
+| Exceptional postconditions | signals; also implicit exception constraints of normal_behavior | 101 | 62 | 39 | 0 |
+| Allowed exception types | signals_only | 135 | 62 | 73 | 0 |
+| Loop invariants | loop_invariant / maintaining | 375 | 0 | 375 | 0 |
+| Loop variants | decreases / decreasing (decrease and non-negativity checks) | 82 | 0 | 82 | 0 |
+| Recursive termination metrics | measured_by (decrease and non-negativity checks) | 16 | 0 | 16 | 0 |
+| Write/frame conditions | assignable / loop_writes; raw kind does not identify the owning clause | 150 | 0 | 150 | 0 |
+| Read permissions | accessible | 517 | 0 | 517 | 0 |
+| Class invariants | invariant | 1 | 0 | 1 | 0 |
+| Explicit assertions | assert (Java or JML) | 1 | 0 | 1 | 0 |
+| Java runtime safety | implicit null, bounds, allocation-size and division checks | 789 | 0 | 789 | 1 |
+| Specification-expression well-definedness | implicit checks within JML expressions | 4049 | 0 | 4049 | 0 |
+| **Total** | | **9387** | **186** | **9201** | **3** |
+
+No verifier was rerun to obtain these families. These are generated-check counts, not source-clause counts or a complete per-clause verdict partition. The detailed assertion and mutant-diagnostic CSVs now include a clause_type column; [clause-type totals](goal_kind_status/java_clause_types.csv) are also available.
+
+#### Java originals: raw assertion-kind details
 
 An assertion in a method VC that finished with `no warnings` is covered by that method proof. The other-method column includes assertions in unresolved, failed, or interrupted method VCs; it is **not** a count of individually unknown or violated assertions. A partially failed method can still contain checks that hold. Reported violation diagnostics are separate observations, not a complete per-assertion verdict partition. Inconclusive warnings are excluded from the violation column.
 
@@ -73,9 +99,37 @@ An assertion in a method VC that finished with `no warnings` is covered by that 
 
 Method outcomes were read from saved recorder logs. MaxDifference hit the process timeout; its unfinished method is kept in the other-method column. A complete Java assertion-level proved/violated/unknown partition is unavailable from these results and would require additional verification. No experiment was rerun.
 
-### Java mutant assertion-failure diagnostics by kind
+### Java mutants (977): clause types and generated-check evidence
 
-Generated assertion captures are absent for 977 of 977 canonical Java mutants. The table below counts saved diagnostics only; a zero diagnostic count supplies no assertion-level proof count. Multiple diagnostics can belong to one mutant, so these counts differ from mutant outcome counts.
+Generated assertion captures **are available** for all 977 mutants in the earlier short-budget workload archive. All 977 captures were matched to the canonical mutant records by raw-source, frozen-specification and annotated-source hashes, settings, and verifier identity. This earlier run used two Java workers and its earlier recorder version; its workload counts and method proof coverage are supplemental. Canonical mutant outcomes and diagnostics are preserved. Complete solver captures: 958/977; records missing generated counts: 0.
+
+The generated/coverage columns below come from that archived recording run. The violation and unknown-diagnostic columns come from the canonical short-budget mutant records. They describe different attempts and do not form a complete assertion-level verdict partition. Unknown diagnostic counts are not counts of all unknown assertions.
+
+| Clause type | Generated checks | Covered by proved method VCs | In other method VCs | Canonical violation diagnostics | Canonical unknown/unconfirmed diagnostics |
+|---|---:|---:|---:|---:|---:|
+| Callee preconditions | 19429 | 977 | 18452 | 0 | 6 |
+| Preconditions of calls within specifications | 55303 | 0 | 55303 | 2 | 0 |
+| Normal postconditions | 2804 | 0 | 2804 | 175 | 1 |
+| Exceptional postconditions | 1970 | 977 | 993 | 0 | 0 |
+| Allowed exception types | 2698 | 977 | 1721 | 0 | 0 |
+| Loop invariants | 8712 | 0 | 8712 | 1 | 5 |
+| Loop variants | 1934 | 0 | 1934 | 0 | 1 |
+| Recursive termination metrics | 362 | 0 | 362 | 6 | 15 |
+| Write/frame conditions | 4071 | 0 | 4071 | 0 | 0 |
+| Read permissions | 14165 | 0 | 14165 | 0 | 0 |
+| Class invariants | 15 | 0 | 15 | 0 | 0 |
+| Explicit assertions | 16 | 0 | 16 | 0 | 0 |
+| Java runtime safety | 24272 | 0 | 24272 | 35 | 82 |
+| Specification-expression well-definedness | 96345 | 0 | 96345 | 1 | 40 |
+| Diagnostic without a recorded clause kind | N/A | N/A | N/A | 0 | 787 |
+| **Mutant total** | **232096** | **2931** | **229165** | **220** | **937** |
+
+The counts are retained in a portable [mutant workload snapshot](goal_kind_status/java_mutant_workload_snapshot.json), [mutant clause-type totals](goal_kind_status/java_mutant_clause_types.csv), and [mutant raw assertion-kind totals](goal_kind_status/java_mutant_assertion_kinds.csv). README regeneration does not require the archived raw logs. No verification was rerun.
+
+#### Java mutants: canonical raw diagnostic details
+
+
+The canonical record.json files do not embed generated-assertion captures; those were recovered from the matching archived recording run above. This table retains the canonical diagnostics by raw kind. Multiple diagnostics can belong to one mutant, so these counts differ from mutant outcome counts.
 
 | Diagnostic kind | Reported violation diagnostics | Unknown/unconfirmed diagnostics |
 |---|---:|---:|
