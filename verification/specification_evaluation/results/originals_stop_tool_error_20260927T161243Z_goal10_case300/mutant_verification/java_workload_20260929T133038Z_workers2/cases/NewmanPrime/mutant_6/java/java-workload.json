@@ -1,0 +1,180 @@
+{
+  "schema_version": "1.0",
+  "capture_complete": true,
+  "generated_assertion_count": 24,
+  "generated_method_vc_count": 2,
+  "method_proof_starts": 2,
+  "method_proof_completions": 2,
+  "solver_invocation_count": 2,
+  "solver_check_sat_count": 3,
+  "solver_check_sat_results": {
+    "unsat": 1,
+    "unknown": 2
+  },
+  "assertions_by_kind": {
+    "Precondition": 3,
+    "ExceptionalPostcondition": 2,
+    "ExceptionList": 2,
+    "TerminationDecreases": 2,
+    "TerminationNonNegative": 2,
+    "UndefinedCalledMethodPrecondition": 6,
+    "UndefinedDivideByZero": 6,
+    "Postcondition": 1
+  },
+  "methods": [
+    {
+      "method": "NewmanPrime.NewmanPrime()",
+      "assertion_count": 3,
+      "assertions_by_kind": {
+        "Precondition": 1,
+        "ExceptionalPostcondition": 1,
+        "ExceptionList": 1
+      },
+      "assertions": [
+        {
+          "kind": "Precondition",
+          "expression": "ASSERT_9_0_0___9"
+        },
+        {
+          "kind": "ExceptionalPostcondition",
+          "expression": "ASSERT_15_80_80___13"
+        },
+        {
+          "kind": "ExceptionList",
+          "expression": "ASSERT_16_80_80___14"
+        }
+      ]
+    },
+    {
+      "method": "NewmanPrime.newmanPrime(int)",
+      "assertion_count": 21,
+      "assertions_by_kind": {
+        "TerminationDecreases": 2,
+        "TerminationNonNegative": 2,
+        "Precondition": 2,
+        "UndefinedCalledMethodPrecondition": 6,
+        "UndefinedDivideByZero": 6,
+        "Postcondition": 1,
+        "ExceptionalPostcondition": 1,
+        "ExceptionList": 1
+      },
+      "assertions": [
+        {
+          "kind": "TerminationDecreases",
+          "expression": "ASSERT_91_671"
+        },
+        {
+          "kind": "TerminationNonNegative",
+          "expression": "ASSERT_92_671"
+        },
+        {
+          "kind": "Precondition",
+          "expression": "ASSERT_98_579"
+        },
+        {
+          "kind": "UndefinedCalledMethodPrecondition",
+          "expression": "ASSERT_108_347"
+        },
+        {
+          "kind": "UndefinedCalledMethodPrecondition",
+          "expression": "ASSERT_123_0"
+        },
+        {
+          "kind": "UndefinedDivideByZero",
+          "expression": "ASSERT_126_167"
+        },
+        {
+          "kind": "UndefinedDivideByZero",
+          "expression": "ASSERT_127_196"
+        },
+        {
+          "kind": "TerminationDecreases",
+          "expression": "ASSERT_137_671"
+        },
+        {
+          "kind": "TerminationNonNegative",
+          "expression": "ASSERT_138_671"
+        },
+        {
+          "kind": "Precondition",
+          "expression": "ASSERT_144_579"
+        },
+        {
+          "kind": "UndefinedCalledMethodPrecondition",
+          "expression": "ASSERT_150_347"
+        },
+        {
+          "kind": "UndefinedCalledMethodPrecondition",
+          "expression": "ASSERT_162_0"
+        },
+        {
+          "kind": "UndefinedDivideByZero",
+          "expression": "ASSERT_165_167"
+        },
+        {
+          "kind": "UndefinedDivideByZero",
+          "expression": "ASSERT_166_196"
+        },
+        {
+          "kind": "UndefinedCalledMethodPrecondition",
+          "expression": "ASSERT_181_347"
+        },
+        {
+          "kind": "UndefinedCalledMethodPrecondition",
+          "expression": "ASSERT_193_0"
+        },
+        {
+          "kind": "UndefinedDivideByZero",
+          "expression": "ASSERT_196_167"
+        },
+        {
+          "kind": "UndefinedDivideByZero",
+          "expression": "ASSERT_197_196"
+        },
+        {
+          "kind": "Postcondition",
+          "expression": "ASSERT_201_630"
+        },
+        {
+          "kind": "ExceptionalPostcondition",
+          "expression": "ASSERT_176_544"
+        },
+        {
+          "kind": "ExceptionList",
+          "expression": "ASSERT_202_741"
+        }
+      ]
+    }
+  ],
+  "solver_traces": [
+    {
+      "file": "solver-traces/solver-82172.smt2",
+      "sha256": "0788016efc3f913c37e6666ff2be2b085a97017b795f1198442b1ab11c1e8047",
+      "responses_file": "solver-traces/solver-82172.responses",
+      "check_sat_count": 1,
+      "check_sat_results": {
+        "unsat": 1
+      },
+      "all_queries_answered": true,
+      "solver_exit_code": null
+    },
+    {
+      "file": "solver-traces/solver-82187.smt2",
+      "sha256": "c08aca78e6543179a63dc6b35fb6d1db472d3421225156aca055c5ec80616b81",
+      "responses_file": "solver-traces/solver-82187.responses",
+      "check_sat_count": 2,
+      "check_sat_results": {
+        "unknown": 2
+      },
+      "all_queries_answered": true,
+      "solver_exit_code": null
+    }
+  ],
+  "units": {
+    "generated_assertion_count": "assert statements in emitted OpenJML basic-block method VCs; includes implicit checks and constructors",
+    "generated_method_vc_count": "emitted basic-block method VC sections; retries/splits can repeat a method",
+    "solver_check_sat_count": "check-sat commands forwarded to the solver, including feasibility and counterexample follow-up queries",
+    "comparability": "none of these is directly equivalent to a Frama-C WP report entry"
+  },
+  "reported_warning_count": 2
+}

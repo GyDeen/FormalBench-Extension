@@ -1,0 +1,99 @@
+{
+  "schema_version": "1.0",
+  "capture_complete": true,
+  "generated_assertion_count": 6,
+  "generated_method_vc_count": 2,
+  "method_proof_starts": 2,
+  "method_proof_completions": 2,
+  "solver_invocation_count": 2,
+  "solver_check_sat_count": 2,
+  "solver_check_sat_results": {
+    "unsat": 1,
+    "unknown": 1
+  },
+  "assertions_by_kind": {
+    "Precondition": 1,
+    "ExceptionalPostcondition": 2,
+    "ExceptionList": 2,
+    "Postcondition": 1
+  },
+  "methods": [
+    {
+      "method": "NoOfCubes.NoOfCubes()",
+      "assertion_count": 3,
+      "assertions_by_kind": {
+        "Precondition": 1,
+        "ExceptionalPostcondition": 1,
+        "ExceptionList": 1
+      },
+      "assertions": [
+        {
+          "kind": "Precondition",
+          "expression": "ASSERT_9_0_0___9"
+        },
+        {
+          "kind": "ExceptionalPostcondition",
+          "expression": "ASSERT_15_80_80___13"
+        },
+        {
+          "kind": "ExceptionList",
+          "expression": "ASSERT_16_80_80___14"
+        }
+      ]
+    },
+    {
+      "method": "NoOfCubes.noOfCubes(int,int)",
+      "assertion_count": 3,
+      "assertions_by_kind": {
+        "Postcondition": 1,
+        "ExceptionalPostcondition": 1,
+        "ExceptionList": 1
+      },
+      "assertions": [
+        {
+          "kind": "Postcondition",
+          "expression": "ASSERT_50_179"
+        },
+        {
+          "kind": "ExceptionalPostcondition",
+          "expression": "ASSERT_36_118"
+        },
+        {
+          "kind": "ExceptionList",
+          "expression": "ASSERT_51_298"
+        }
+      ]
+    }
+  ],
+  "solver_traces": [
+    {
+      "file": "solver-traces/solver-83771.smt2",
+      "sha256": "9ca5af4ca8848d83f068385488efbaa687caa301ddb6be38cae49a97b26eab97",
+      "responses_file": "solver-traces/solver-83771.responses",
+      "check_sat_count": 1,
+      "check_sat_results": {
+        "unsat": 1
+      },
+      "all_queries_answered": true,
+      "solver_exit_code": null
+    },
+    {
+      "file": "solver-traces/solver-83785.smt2",
+      "sha256": "db867cb7c458e2414442db50902abf10bb110c73307c524b87942fad3425a05f",
+      "responses_file": "solver-traces/solver-83785.responses",
+      "check_sat_count": 1,
+      "check_sat_results": {
+        "unknown": 1
+      },
+      "all_queries_answered": true,
+      "solver_exit_code": null
+    }
+  ],
+  "units": {
+    "generated_assertion_count": "assert statements in emitted OpenJML basic-block method VCs; includes implicit checks and constructors",
+    "generated_method_vc_count": "emitted basic-block method VC sections; retries/splits can repeat a method",
+    "solver_check_sat_count": "check-sat commands forwarded to the solver, including feasibility and counterexample follow-up queries",
+    "comparability": "none of these is directly equivalent to a Frama-C WP report entry"
+  },
+  "reported_warning_count": 1
+}

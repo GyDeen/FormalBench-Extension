@@ -1,0 +1,153 @@
+{
+  "schema_version": "1.0",
+  "capture_complete": true,
+  "generated_assertion_count": 18,
+  "generated_method_vc_count": 2,
+  "method_proof_starts": 2,
+  "method_proof_completions": 2,
+  "solver_invocation_count": 2,
+  "solver_check_sat_count": 2,
+  "solver_check_sat_results": {
+    "unsat": 1,
+    "unknown": 1
+  },
+  "assertions_by_kind": {
+    "Precondition": 1,
+    "ExceptionalPostcondition": 2,
+    "ExceptionList": 2,
+    "LoopInvariantBeforeLoop": 3,
+    "LoopInvariantAfterLoop": 3,
+    "LoopInvariant": 3,
+    "Postcondition": 4
+  },
+  "methods": [
+    {
+      "method": "NextPowerOf2.NextPowerOf2()",
+      "assertion_count": 3,
+      "assertions_by_kind": {
+        "Precondition": 1,
+        "ExceptionalPostcondition": 1,
+        "ExceptionList": 1
+      },
+      "assertions": [
+        {
+          "kind": "Precondition",
+          "expression": "ASSERT_9_0_0___9"
+        },
+        {
+          "kind": "ExceptionalPostcondition",
+          "expression": "ASSERT_15_80_80___13"
+        },
+        {
+          "kind": "ExceptionList",
+          "expression": "ASSERT_16_80_80___14"
+        }
+      ]
+    },
+    {
+      "method": "NextPowerOf2.nextPowerOf2(int)",
+      "assertion_count": 15,
+      "assertions_by_kind": {
+        "LoopInvariantBeforeLoop": 3,
+        "LoopInvariantAfterLoop": 3,
+        "LoopInvariant": 3,
+        "Postcondition": 4,
+        "ExceptionalPostcondition": 1,
+        "ExceptionList": 1
+      },
+      "assertions": [
+        {
+          "kind": "LoopInvariantBeforeLoop",
+          "expression": "ASSERT_31_599"
+        },
+        {
+          "kind": "LoopInvariantBeforeLoop",
+          "expression": "ASSERT_32_675"
+        },
+        {
+          "kind": "LoopInvariantBeforeLoop",
+          "expression": "ASSERT_33_744"
+        },
+        {
+          "kind": "LoopInvariantAfterLoop",
+          "expression": "ASSERT_42_599"
+        },
+        {
+          "kind": "LoopInvariantAfterLoop",
+          "expression": "ASSERT_43_675"
+        },
+        {
+          "kind": "LoopInvariantAfterLoop",
+          "expression": "ASSERT_44_744"
+        },
+        {
+          "kind": "LoopInvariant",
+          "expression": "ASSERT_45_599"
+        },
+        {
+          "kind": "LoopInvariant",
+          "expression": "ASSERT_46_675"
+        },
+        {
+          "kind": "LoopInvariant",
+          "expression": "ASSERT_47_744"
+        },
+        {
+          "kind": "Postcondition",
+          "expression": "ASSERT_49_215"
+        },
+        {
+          "kind": "Postcondition",
+          "expression": "ASSERT_50_275"
+        },
+        {
+          "kind": "Postcondition",
+          "expression": "ASSERT_51_308"
+        },
+        {
+          "kind": "Postcondition",
+          "expression": "ASSERT_52_369"
+        },
+        {
+          "kind": "ExceptionalPostcondition",
+          "expression": "ASSERT_48_121"
+        },
+        {
+          "kind": "ExceptionList",
+          "expression": "ASSERT_53_444"
+        }
+      ]
+    }
+  ],
+  "solver_traces": [
+    {
+      "file": "solver-traces/solver-82937.smt2",
+      "sha256": "b39bf17f8cf687f7c5b960d9bb2f360e49aff16c6364219ab215f0058bd35419",
+      "responses_file": "solver-traces/solver-82937.responses",
+      "check_sat_count": 1,
+      "check_sat_results": {
+        "unsat": 1
+      },
+      "all_queries_answered": true,
+      "solver_exit_code": null
+    },
+    {
+      "file": "solver-traces/solver-82952.smt2",
+      "sha256": "a95b1d3c2f6ad49d449ed8d2421a377d51f519700b82efbcc25c44cb426d5f34",
+      "responses_file": "solver-traces/solver-82952.responses",
+      "check_sat_count": 1,
+      "check_sat_results": {
+        "unknown": 1
+      },
+      "all_queries_answered": true,
+      "solver_exit_code": null
+    }
+  ],
+  "units": {
+    "generated_assertion_count": "assert statements in emitted OpenJML basic-block method VCs; includes implicit checks and constructors",
+    "generated_method_vc_count": "emitted basic-block method VC sections; retries/splits can repeat a method",
+    "solver_check_sat_count": "check-sat commands forwarded to the solver, including feasibility and counterexample follow-up queries",
+    "comparability": "none of these is directly equivalent to a Frama-C WP report entry"
+  },
+  "reported_warning_count": 1
+}

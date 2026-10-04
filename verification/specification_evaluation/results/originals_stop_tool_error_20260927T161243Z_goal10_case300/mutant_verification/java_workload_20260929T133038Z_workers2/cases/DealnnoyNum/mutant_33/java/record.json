@@ -1,0 +1,362 @@
+{
+  "adapter_sha256": {
+    "annotations.py": "7f730d0275c185de8199e16b487819eb823acaba46195f4e73152471bb1097e8",
+    "c_bindings.py": "fc8f9d74f58723d57562bc5f21087a9ce9e959986a9edd53b26d07b9c9fca1e1",
+    "c_structure.py": "efcea8872a653827d977ef2e9c102acc70a44952a6e316a52cef4779a738a0d5",
+    "java_compat.py": "3eef914d390217d7cabe4637d900e1e1010045b90665d03802b7ac602149e139",
+    "verifiers.py": "0a9f1dd8a08eb33d35451283f3e0e3f4d272a24d7ada1aad48c5cbf39246bfcf"
+  },
+  "annotated_source": "/mnt/d/ResearchProject/verification/specification_evaluation/results/java_workload_20260929T133038Z_workers2/cases/DealnnoyNum/mutant_33/java/DealnnoyNum.java",
+  "annotated_source_sha256": "b7982b2c3c91dd20ab678b6c2b214b74b7db1e5e7a5c61d3ba8a8741a3d6548e",
+  "attempt_status": "complete",
+  "command": [
+    "/root/tools/openjml/openjml",
+    "-J--add-exports=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED",
+    "-J--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED",
+    "-processorpath",
+    "/mnt/d/ResearchProject/.tools/openjml-compat/47613dac9ce1473c6ada/numeric-bit-predicates.jar",
+    "-Xplugin:NumericBitPredicates file:///mnt/d/ResearchProject/verification/specification_evaluation/results/java_workload_20260929T133038Z_workers2/cases/DealnnoyNum/mutant_33/java/DealnnoyNum.java",
+    "--exec=/mnt/d/ResearchProject/verification/specification_evaluation/java_solver_trace.py",
+    "--esc",
+    "--progress",
+    "--nullable-by-default",
+    "--prover=z3-4.3.X",
+    "--timeout",
+    "10",
+    "--show=bb",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/java_workload_20260929T133038Z_workers2/cases/DealnnoyNum/mutant_33/java/DealnnoyNum.java"
+  ],
+  "compiler_normalizations": [],
+  "elapsed_seconds": 5.83,
+  "exit_code": 6,
+  "failure_stage": null,
+  "frozen_spec": "/mnt/d/ResearchProject/verification/specification_evaluation/results/java_workload_20260929T133038Z_workers2/frozen_specs/java/DealnnoyNum.json",
+  "frozen_spec_sha256": "b63b2b2c4a639229aba5cda9035f05cad80cf72428abbded0eb39ce931f2a912",
+  "goals": [
+    {
+      "category": "unclassified",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/java_workload_20260929T133038Z_workers2/cases/DealnnoyNum/mutant_33/java/DealnnoyNum.java",
+      "line": "26",
+      "message": "Validity is unknown - no model available method DealnnoyNum.dealnnoyNum -  (possible timeout): (error \"line 2030 column 18: model is not available\")",
+      "state": "unknown"
+    }
+  ],
+  "goals_unit": "reported Java warning diagnostics, not generated proof obligations",
+  "input_fingerprint": "8b42ccf696dcd4ba466927c012c78bfd87eaf532941b34b0a401c2c539408002",
+  "java_workload": {
+    "assertions_by_kind": {
+      "ExceptionList": 2,
+      "ExceptionalPostcondition": 2,
+      "Postcondition": 1,
+      "Precondition": 4,
+      "TerminationDecreases": 3,
+      "TerminationNonNegative": 3,
+      "UndefinedCalledMethodPrecondition": 8,
+      "UndefinedDivideByZero": 8
+    },
+    "capture_complete": true,
+    "generated_assertion_count": 31,
+    "generated_method_vc_count": 2,
+    "method_proof_completions": 2,
+    "method_proof_starts": 2,
+    "methods": [
+      {
+        "assertion_count": 3,
+        "assertions": [
+          {
+            "expression": "ASSERT_9_0_0___9",
+            "kind": "Precondition"
+          },
+          {
+            "expression": "ASSERT_15_80_80___13",
+            "kind": "ExceptionalPostcondition"
+          },
+          {
+            "expression": "ASSERT_16_80_80___14",
+            "kind": "ExceptionList"
+          }
+        ],
+        "assertions_by_kind": {
+          "ExceptionList": 1,
+          "ExceptionalPostcondition": 1,
+          "Precondition": 1
+        },
+        "method": "DealnnoyNum.DealnnoyNum()"
+      },
+      {
+        "assertion_count": 28,
+        "assertions": [
+          {
+            "expression": "ASSERT_127_824",
+            "kind": "TerminationDecreases"
+          },
+          {
+            "expression": "ASSERT_128_824",
+            "kind": "TerminationNonNegative"
+          },
+          {
+            "expression": "ASSERT_134_711",
+            "kind": "Precondition"
+          },
+          {
+            "expression": "ASSERT_145_362",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_162_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_165_167",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_166_196",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_176_824",
+            "kind": "TerminationDecreases"
+          },
+          {
+            "expression": "ASSERT_177_824",
+            "kind": "TerminationNonNegative"
+          },
+          {
+            "expression": "ASSERT_183_711",
+            "kind": "Precondition"
+          },
+          {
+            "expression": "ASSERT_189_362",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_203_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_206_167",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_207_196",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_218_824",
+            "kind": "TerminationDecreases"
+          },
+          {
+            "expression": "ASSERT_219_824",
+            "kind": "TerminationNonNegative"
+          },
+          {
+            "expression": "ASSERT_225_711",
+            "kind": "Precondition"
+          },
+          {
+            "expression": "ASSERT_231_362",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_245_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_248_167",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_249_196",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_264_362",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_278_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_281_167",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_282_196",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_286_777",
+            "kind": "Postcondition"
+          },
+          {
+            "expression": "ASSERT_259_661",
+            "kind": "ExceptionalPostcondition"
+          },
+          {
+            "expression": "ASSERT_287_930",
+            "kind": "ExceptionList"
+          }
+        ],
+        "assertions_by_kind": {
+          "ExceptionList": 1,
+          "ExceptionalPostcondition": 1,
+          "Postcondition": 1,
+          "Precondition": 3,
+          "TerminationDecreases": 3,
+          "TerminationNonNegative": 3,
+          "UndefinedCalledMethodPrecondition": 8,
+          "UndefinedDivideByZero": 8
+        },
+        "method": "DealnnoyNum.dealnnoyNum(int,int)"
+      }
+    ],
+    "reported_warning_count": 1,
+    "schema_version": "1.0",
+    "solver_check_sat_count": 2,
+    "solver_check_sat_results": {
+      "unknown": 1,
+      "unsat": 1
+    },
+    "solver_invocation_count": 2,
+    "solver_traces": [
+      {
+        "all_queries_answered": true,
+        "check_sat_count": 1,
+        "check_sat_results": {
+          "unsat": 1
+        },
+        "file": "solver-traces/solver-58939.smt2",
+        "responses_file": "solver-traces/solver-58939.responses",
+        "sha256": "71ebb76445d8d13950740e377706a537cadb4e6ce89a24a6770efdf6aa61dd50",
+        "solver_exit_code": null
+      },
+      {
+        "all_queries_answered": true,
+        "check_sat_count": 1,
+        "check_sat_results": {
+          "unknown": 1
+        },
+        "file": "solver-traces/solver-58956.smt2",
+        "responses_file": "solver-traces/solver-58956.responses",
+        "sha256": "64a60b713e93790f64236de1baf09b42e88c22f0794b027ed23e68b7f423c1a1",
+        "solver_exit_code": null
+      }
+    ],
+    "units": {
+      "comparability": "none of these is directly equivalent to a Frama-C WP report entry",
+      "generated_assertion_count": "assert statements in emitted OpenJML basic-block method VCs; includes implicit checks and constructors",
+      "generated_method_vc_count": "emitted basic-block method VC sections; retries/splits can repeat a method",
+      "solver_check_sat_count": "check-sat commands forwarded to the solver, including feasibility and counterexample follow-up queries"
+    }
+  },
+  "java_workload_capture": {
+    "java_solver_trace.py": "a042c155f8daf5a4a8cd3824823c0a618ff938b5c05ba836c365c17e0158763e",
+    "java_workload.py": "f9333d2c349a5050a66aedce0f9358424d1c623d5c067f89da42fdda3e91e218"
+  },
+  "language": "java",
+  "logs": {
+    "java_workload": "java-workload.json",
+    "stderr": "stderr.log",
+    "stdout": "stdout.log"
+  },
+  "mutant_id": "33",
+  "outcome": "unknown/timeout",
+  "program": "DealnnoyNum",
+  "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/fault_mutants/run_ukcw__uc/DealnnoyNum/mutants/33/java/DealnnoyNum.java",
+  "raw_source_sha256": "7afe0d11e615645f8c73605604b834f42746fe6245d4321a302d2d8edb9c98f1",
+  "reason": "OpenJML reported unknown validity; warnings are not confirmed rejections",
+  "role": "mutant",
+  "selection": "sanitizer_supported_stack_overflow",
+  "selection_manifest_sha256": "92fa1533eafe32fdc60b119b0c6abc8a4f3c0b372d66ac21f39e54a3b5d7433d",
+  "settings": {
+    "c_provers": "Alt-Ergo:2.4.3,Z3:4.8.12",
+    "goal_timeout": 10,
+    "java_prover": "z3-4.3.X",
+    "machdep": "x86_64",
+    "memory_model": "Typed+ref",
+    "timeout": 300,
+    "why3_extra_config": "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+    "why3_extra_config_sha256": "97cc443d7439274ad732814842ae77a7b461d43c8d2099eb8994fb97e739049b",
+    "wp_memlimit": 1000,
+    "wp_par": 4
+  },
+  "support_sha256": {},
+  "timed_out": false,
+  "trace_solver": "/root/tools/openjml/Solvers-linux/z3-4.10.2",
+  "transfer": {
+    "annotation_count": 4,
+    "executable_token_sha256": "38154bc8acfd741d35d44572d6ce4ca473fc1130bf9a6b41185d043867377f56",
+    "internal_annotation_coverage": "complete",
+    "method": "frozen structured JSON",
+    "omitted_annotations": [],
+    "placements": [
+      {
+        "boundary_token": 31,
+        "function": "dealnnoyNum",
+        "id": "annotation_1",
+        "loop_id": null,
+        "mutant_offset": 109,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 31,
+        "function": "dealnnoyNum",
+        "id": "annotation_2",
+        "loop_id": null,
+        "mutant_offset": 109,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 31,
+        "function": "dealnnoyNum",
+        "id": "annotation_3",
+        "loop_id": null,
+        "mutant_offset": 109,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 31,
+        "function": "dealnnoyNum",
+        "id": "annotation_4",
+        "loop_id": null,
+        "mutant_offset": 109,
+        "next_token": "public",
+        "target": "function"
+      }
+    ],
+    "removed_loop_annotations": 0,
+    "removed_temporary_policy": "original pure initializer with stable dependencies"
+  },
+  "unsupported_features": [],
+  "verification_started": true,
+  "verifier": {
+    "compatibility": {
+      "compiler_sha256": "03ccef52f8ee2258bb69cfb8974a5eb609787349490390ce68e1e24de2f3fae0",
+      "equivalence_obligations_sha256": "b63fb7bfa0b474ed71c3a7217d6195363a8a14bafc1e7d0360af3ace1f5f357b",
+      "name": "OpenJML 21.0.27 numeric bit predicates and bundled Z3 repair",
+      "plugin": "/mnt/d/ResearchProject/.tools/openjml-compat/47613dac9ce1473c6ada/numeric-bit-predicates.jar",
+      "plugin_sha256": "632836c0a1f1dfa2e7bc132cce4f5d1a095241b571d4535730850d7183bbac92",
+      "scope": "primitive int local/parameter predicates (x ^ 1) == 0 and (x | 1) == 0",
+      "solver": {
+        "path": "/root/tools/openjml/Solvers-linux/z3-4.10.2",
+        "sha256": "79f7ced8a9f2156a4337ed89485faa65b905af17241f82bbeac69cbfdb518520",
+        "version": "Z3 version 4.10.2 - 64 bit"
+      },
+      "source": "/mnt/d/ResearchProject/verification/specification_evaluation/openjml/NumericBitPredicates.java",
+      "source_sha256": "9db3f96088894fa7c47bede5e97303beec13125a647fe60be0c0847eaa74571d"
+    },
+    "path": "/root/tools/openjml/openjml",
+    "sha256": "077efb88a059a09c43ccf5171031bdc0c70816765b8abf3cb7f0aeb151847adf",
+    "version_command": [
+      "/root/tools/openjml/openjml",
+      "--version"
+    ],
+    "version_exit_code": 0,
+    "version_output": "openjml 21.0.27"
+  }
+}

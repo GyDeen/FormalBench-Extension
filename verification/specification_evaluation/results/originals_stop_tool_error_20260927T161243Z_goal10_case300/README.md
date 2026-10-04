@@ -161,7 +161,11 @@ Previous case results and summaries are retained under `original_verification/ja
 
 Short-budget saved results: 50 originals and 977 retained mutants per language; 10 seconds per goal, 300 seconds per case; no verifier rerun.
 
-C tables count individually reported WP goal entries. Java tables count generated assertions and the method-level proof evidence available for them; these are different units. Java uses the saved instrumented original workload attempt (12 proved programs), while the authoritative original proof results elsewhere remain unchanged (13 proved programs). Constructors are included.
+C tables count individually reported WP goal entries. Java tables count generated assertions and the method-level proof evidence available for them; these are different units. Constructors are included.
+
+The Java original assertion table covers **all 50 originals** (9,387 generated assertions). Its counts and method-proof coverage come from the instrumented attempt `original_verification/java_goal_recording_20261002T100041Z/instrumented_cases`, in which **12/50 originals** were fully verified. The authoritative program-level results remain **13/50**. **FindPoints** was proved in the authoritative run but returned unknown/timeout in the instrumented attempt. The 12 verified originals are an outcome of that attempt, not a filter on the assertion table.
+
+The Java mutant assertion table covers **all 977 mutants from all 50 originals**, using the separate [archived instrumented mutant attempt](mutant_verification/java_workload_20260929T133038Z_workers2/README.md). Its run metadata, individual case records, workload counts, and summaries are retained in this non-ignored results directory. Paths in the portable workload snapshot are relative to the experiment directory; historical paths inside raw records are preserved as provenance. It is not restricted to mutants of the 12 instrumented-run verified originals. For completeness analysis conditioned on a verified original, the authoritative subset remains **192 mutants from 13 originals**. The 12 originals verified in the instrumented attempt have 170 mutants; FindPoints contributes the remaining 22. These alternative subsets must not be substituted for one another. Canonical mutant outcomes and diagnostics remain authoritative; archived assertion counts and method-proof coverage are supplemental and do not provide a complete individual-assertion verdict partition.
 
 ### C WP goal kinds: originals and mutants
 

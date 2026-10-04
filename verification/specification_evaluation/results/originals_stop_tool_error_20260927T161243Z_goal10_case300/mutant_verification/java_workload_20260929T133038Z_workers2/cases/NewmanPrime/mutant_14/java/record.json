@@ -1,0 +1,335 @@
+{
+  "adapter_sha256": {
+    "annotations.py": "7f730d0275c185de8199e16b487819eb823acaba46195f4e73152471bb1097e8",
+    "c_bindings.py": "fc8f9d74f58723d57562bc5f21087a9ce9e959986a9edd53b26d07b9c9fca1e1",
+    "c_structure.py": "efcea8872a653827d977ef2e9c102acc70a44952a6e316a52cef4779a738a0d5",
+    "java_compat.py": "3eef914d390217d7cabe4637d900e1e1010045b90665d03802b7ac602149e139",
+    "verifiers.py": "0a9f1dd8a08eb33d35451283f3e0e3f4d272a24d7ada1aad48c5cbf39246bfcf"
+  },
+  "annotated_source": "/mnt/d/ResearchProject/verification/specification_evaluation/results/java_workload_20260929T133038Z_workers2/cases/NewmanPrime/mutant_14/java/NewmanPrime.java",
+  "annotated_source_sha256": "fd20ac9bdbd986be0b375728154f1a08915cdcf492f011fbe6c5287afef73dfa",
+  "attempt_status": "complete",
+  "command": [
+    "/root/tools/openjml/openjml",
+    "-J--add-exports=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED",
+    "-J--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED",
+    "-processorpath",
+    "/mnt/d/ResearchProject/.tools/openjml-compat/47613dac9ce1473c6ada/numeric-bit-predicates.jar",
+    "-Xplugin:NumericBitPredicates file:///mnt/d/ResearchProject/verification/specification_evaluation/results/java_workload_20260929T133038Z_workers2/cases/NewmanPrime/mutant_14/java/NewmanPrime.java",
+    "--exec=/mnt/d/ResearchProject/verification/specification_evaluation/java_solver_trace.py",
+    "--esc",
+    "--progress",
+    "--nullable-by-default",
+    "--prover=z3-4.3.X",
+    "--timeout",
+    "10",
+    "--show=bb",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/java_workload_20260929T133038Z_workers2/cases/NewmanPrime/mutant_14/java/NewmanPrime.java"
+  ],
+  "compiler_normalizations": [],
+  "elapsed_seconds": 5.301,
+  "exit_code": 6,
+  "failure_stage": null,
+  "frozen_spec": "/mnt/d/ResearchProject/verification/specification_evaluation/results/java_workload_20260929T133038Z_workers2/frozen_specs/java/NewmanPrime.json",
+  "frozen_spec_sha256": "93fe6e20f18f9ead304397c3f1af635df3dd576fe4ec7693afe4acc2e587d2e8",
+  "goals": [
+    {
+      "category": "specification",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/java_workload_20260929T133038Z_workers2/cases/NewmanPrime/mutant_14/java/NewmanPrime.java",
+      "line": "23",
+      "message": "The prover cannot establish an assertion (TerminationDecreases: /mnt/d/ResearchProject/verification/specification_evaluation/results/java_workload_20260929T133038Z_workers2/cases/NewmanPrime/mutant_14/java/NewmanPrime.java:30:) in method newmanPrime",
+      "state": "violated"
+    }
+  ],
+  "goals_unit": "reported Java warning diagnostics, not generated proof obligations",
+  "input_fingerprint": "25934dca318acbcaa1eb58d652a529d1fad789ebf50cc6e8be756638cfec6a79",
+  "java_workload": {
+    "assertions_by_kind": {
+      "ExceptionList": 2,
+      "ExceptionalPostcondition": 2,
+      "Postcondition": 1,
+      "Precondition": 3,
+      "TerminationDecreases": 2,
+      "TerminationNonNegative": 2,
+      "UndefinedCalledMethodPrecondition": 6,
+      "UndefinedDivideByZero": 6
+    },
+    "capture_complete": true,
+    "generated_assertion_count": 24,
+    "generated_method_vc_count": 2,
+    "method_proof_completions": 2,
+    "method_proof_starts": 2,
+    "methods": [
+      {
+        "assertion_count": 3,
+        "assertions": [
+          {
+            "expression": "ASSERT_9_0_0___9",
+            "kind": "Precondition"
+          },
+          {
+            "expression": "ASSERT_15_80_80___13",
+            "kind": "ExceptionalPostcondition"
+          },
+          {
+            "expression": "ASSERT_16_80_80___14",
+            "kind": "ExceptionList"
+          }
+        ],
+        "assertions_by_kind": {
+          "ExceptionList": 1,
+          "ExceptionalPostcondition": 1,
+          "Precondition": 1
+        },
+        "method": "NewmanPrime.NewmanPrime()"
+      },
+      {
+        "assertion_count": 21,
+        "assertions": [
+          {
+            "expression": "ASSERT_91_671",
+            "kind": "TerminationDecreases"
+          },
+          {
+            "expression": "ASSERT_92_671",
+            "kind": "TerminationNonNegative"
+          },
+          {
+            "expression": "ASSERT_98_579",
+            "kind": "Precondition"
+          },
+          {
+            "expression": "ASSERT_108_347",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_123_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_126_167",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_127_196",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_137_671",
+            "kind": "TerminationDecreases"
+          },
+          {
+            "expression": "ASSERT_138_671",
+            "kind": "TerminationNonNegative"
+          },
+          {
+            "expression": "ASSERT_144_579",
+            "kind": "Precondition"
+          },
+          {
+            "expression": "ASSERT_150_347",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_162_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_165_167",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_166_196",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_181_347",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_193_0",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_196_167",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_197_196",
+            "kind": "UndefinedDivideByZero"
+          },
+          {
+            "expression": "ASSERT_201_630",
+            "kind": "Postcondition"
+          },
+          {
+            "expression": "ASSERT_176_544",
+            "kind": "ExceptionalPostcondition"
+          },
+          {
+            "expression": "ASSERT_202_741",
+            "kind": "ExceptionList"
+          }
+        ],
+        "assertions_by_kind": {
+          "ExceptionList": 1,
+          "ExceptionalPostcondition": 1,
+          "Postcondition": 1,
+          "Precondition": 2,
+          "TerminationDecreases": 2,
+          "TerminationNonNegative": 2,
+          "UndefinedCalledMethodPrecondition": 6,
+          "UndefinedDivideByZero": 6
+        },
+        "method": "NewmanPrime.newmanPrime(int)"
+      }
+    ],
+    "reported_warning_count": 1,
+    "schema_version": "1.0",
+    "solver_check_sat_count": 3,
+    "solver_check_sat_results": {
+      "unknown": 1,
+      "unsat": 2
+    },
+    "solver_invocation_count": 2,
+    "solver_traces": [
+      {
+        "all_queries_answered": true,
+        "check_sat_count": 1,
+        "check_sat_results": {
+          "unsat": 1
+        },
+        "file": "solver-traces/solver-82555.smt2",
+        "responses_file": "solver-traces/solver-82555.responses",
+        "sha256": "84fbd90b569b7b9b2a3220b080cb969ea911de807d64bfcbe90c2a5c4f2408ed",
+        "solver_exit_code": null
+      },
+      {
+        "all_queries_answered": true,
+        "check_sat_count": 2,
+        "check_sat_results": {
+          "unknown": 1,
+          "unsat": 1
+        },
+        "file": "solver-traces/solver-82572.smt2",
+        "responses_file": "solver-traces/solver-82572.responses",
+        "sha256": "f6d9688829be9d6f4f2b4286748141a108b5d0c541b62178dd6f33b53a6d8195",
+        "solver_exit_code": null
+      }
+    ],
+    "units": {
+      "comparability": "none of these is directly equivalent to a Frama-C WP report entry",
+      "generated_assertion_count": "assert statements in emitted OpenJML basic-block method VCs; includes implicit checks and constructors",
+      "generated_method_vc_count": "emitted basic-block method VC sections; retries/splits can repeat a method",
+      "solver_check_sat_count": "check-sat commands forwarded to the solver, including feasibility and counterexample follow-up queries"
+    }
+  },
+  "java_workload_capture": {
+    "java_solver_trace.py": "a042c155f8daf5a4a8cd3824823c0a618ff938b5c05ba836c365c17e0158763e",
+    "java_workload.py": "f9333d2c349a5050a66aedce0f9358424d1c623d5c067f89da42fdda3e91e218"
+  },
+  "language": "java",
+  "logs": {
+    "java_workload": "java-workload.json",
+    "stderr": "stderr.log",
+    "stdout": "stdout.log"
+  },
+  "mutant_id": "14",
+  "outcome": "specification violation",
+  "program": "NewmanPrime",
+  "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/fault_mutants/run_ukcw__uc/NewmanPrime/mutants/14/java/NewmanPrime.java",
+  "raw_source_sha256": "bd723dddaf523deaf6b0165f82e1a0dc55f6cdfda2f1fc7dc0d22c0e77b6fb49",
+  "reason": "OpenJML reported an unproved specification obligation",
+  "role": "mutant",
+  "selection": "sanitizer_supported_stack_overflow",
+  "selection_manifest_sha256": "92fa1533eafe32fdc60b119b0c6abc8a4f3c0b372d66ac21f39e54a3b5d7433d",
+  "settings": {
+    "c_provers": "Alt-Ergo:2.4.3,Z3:4.8.12",
+    "goal_timeout": 10,
+    "java_prover": "z3-4.3.X",
+    "machdep": "x86_64",
+    "memory_model": "Typed+ref",
+    "timeout": 300,
+    "why3_extra_config": "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+    "why3_extra_config_sha256": "97cc443d7439274ad732814842ae77a7b461d43c8d2099eb8994fb97e739049b",
+    "wp_memlimit": 1000,
+    "wp_par": 4
+  },
+  "support_sha256": {},
+  "timed_out": false,
+  "trace_solver": "/root/tools/openjml/Solvers-linux/z3-4.10.2",
+  "transfer": {
+    "annotation_count": 4,
+    "executable_token_sha256": "3068c9574f8ea026f474abbafdc0ddbd45c4b79cb988a7880526ec0c44c17d51",
+    "internal_annotation_coverage": "complete",
+    "method": "frozen structured JSON",
+    "omitted_annotations": [],
+    "placements": [
+      {
+        "boundary_token": 31,
+        "function": "newmanPrime",
+        "id": "annotation_1",
+        "loop_id": null,
+        "mutant_offset": 109,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 31,
+        "function": "newmanPrime",
+        "id": "annotation_2",
+        "loop_id": null,
+        "mutant_offset": 109,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 31,
+        "function": "newmanPrime",
+        "id": "annotation_3",
+        "loop_id": null,
+        "mutant_offset": 109,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 31,
+        "function": "newmanPrime",
+        "id": "annotation_4",
+        "loop_id": null,
+        "mutant_offset": 109,
+        "next_token": "public",
+        "target": "function"
+      }
+    ],
+    "removed_loop_annotations": 0,
+    "removed_temporary_policy": "original pure initializer with stable dependencies"
+  },
+  "unsupported_features": [],
+  "verification_started": true,
+  "verifier": {
+    "compatibility": {
+      "compiler_sha256": "03ccef52f8ee2258bb69cfb8974a5eb609787349490390ce68e1e24de2f3fae0",
+      "equivalence_obligations_sha256": "b63fb7bfa0b474ed71c3a7217d6195363a8a14bafc1e7d0360af3ace1f5f357b",
+      "name": "OpenJML 21.0.27 numeric bit predicates and bundled Z3 repair",
+      "plugin": "/mnt/d/ResearchProject/.tools/openjml-compat/47613dac9ce1473c6ada/numeric-bit-predicates.jar",
+      "plugin_sha256": "632836c0a1f1dfa2e7bc132cce4f5d1a095241b571d4535730850d7183bbac92",
+      "scope": "primitive int local/parameter predicates (x ^ 1) == 0 and (x | 1) == 0",
+      "solver": {
+        "path": "/root/tools/openjml/Solvers-linux/z3-4.10.2",
+        "sha256": "79f7ced8a9f2156a4337ed89485faa65b905af17241f82bbeac69cbfdb518520",
+        "version": "Z3 version 4.10.2 - 64 bit"
+      },
+      "source": "/mnt/d/ResearchProject/verification/specification_evaluation/openjml/NumericBitPredicates.java",
+      "source_sha256": "9db3f96088894fa7c47bede5e97303beec13125a647fe60be0c0847eaa74571d"
+    },
+    "path": "/root/tools/openjml/openjml",
+    "sha256": "077efb88a059a09c43ccf5171031bdc0c70816765b8abf3cb7f0aeb151847adf",
+    "version_command": [
+      "/root/tools/openjml/openjml",
+      "--version"
+    ],
+    "version_exit_code": 0,
+    "version_output": "openjml 21.0.27"
+  }
+}
