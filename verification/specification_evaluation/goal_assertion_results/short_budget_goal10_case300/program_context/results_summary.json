@@ -1,0 +1,1891 @@
+{
+  "c_counterexample_search": {
+    "by_category": {
+      "branch": {
+        "eligible_mutants": 193,
+        "not_searched": 0,
+        "searched_mutants": 193,
+        "searched_without_validated_failure": 8,
+        "validated_postcondition_violations": 143,
+        "validated_safety_failures": 42
+      },
+      "multi_path_loop": {
+        "eligible_mutants": 239,
+        "not_searched": 0,
+        "searched_mutants": 239,
+        "searched_without_validated_failure": 40,
+        "validated_postcondition_violations": 171,
+        "validated_safety_failures": 28
+      },
+      "nested": {
+        "eligible_mutants": 219,
+        "not_searched": 0,
+        "searched_mutants": 219,
+        "searched_without_validated_failure": 20,
+        "validated_postcondition_violations": 131,
+        "validated_safety_failures": 68
+      },
+      "sequential": {
+        "eligible_mutants": 143,
+        "not_searched": 0,
+        "searched_mutants": 143,
+        "searched_without_validated_failure": 0,
+        "validated_postcondition_violations": 143,
+        "validated_safety_failures": 0
+      },
+      "single_path_loop": {
+        "eligible_mutants": 183,
+        "not_searched": 0,
+        "searched_mutants": 183,
+        "searched_without_validated_failure": 9,
+        "validated_postcondition_violations": 122,
+        "validated_safety_failures": 52
+      }
+    },
+    "complete": true,
+    "coverage": {
+      "eligible_mutants": 977,
+      "eligible_originals": 50,
+      "not_searched_mutants": 0,
+      "searched_mutants": 977,
+      "searched_originals": 50,
+      "searched_without_validated_mutant_failure": 77,
+      "validated_mutant_failures": 900
+    },
+    "evidence_summary": "counterexamples/summary.json",
+    "evidence_summary_sha256": "61d47a93048fc770d63e3dea7274753b3b359714eef3b1b3a94d60aad400bffa",
+    "integration_audit": "counterexamples/integration_audit.json",
+    "refreshed_c_originals": [
+      {
+        "current_frozen_spec_sha256": "7f684c126ace1d3bc4dacd84119a85312d38c46903ebe58a48948636f4c9e604",
+        "current_original_raw_sha256": "5a60783091cc017be865385aa7d4dd5c3d5960d3088c284de7fb116a923b86ae",
+        "current_recorded_wp_outcome": "unknown/timeout",
+        "current_verification_record": "cases/MoveFirst/original/c/record.json",
+        "current_verification_record_sha256": "345cd52bc5b9c30153b2a00eb89a3c0bdc7c0bd6d5c7b798e430a6f3a1a5e193",
+        "previous_original_raw_sha256": "7d0f37d2521cb9c801292870b4875266de3afdcfb020411423e8d9c71660c8d3",
+        "program": "MoveFirst",
+        "wp_outcome_at_search": "not run"
+      },
+      {
+        "current_frozen_spec_sha256": "9e889b41292d2efa3d496452cca41ba67946cb537e7dfb287447c1c08b94d5dd",
+        "current_original_raw_sha256": "f1f2567b9e4b878845227dbc9480746bac62fbaf9feaaa8bca62d03ad58a4b20",
+        "current_recorded_wp_outcome": "unknown/timeout",
+        "current_verification_record": "cases/MultiplyElements/original/c/record.json",
+        "current_verification_record_sha256": "7d6a07fc7c2fb14093b895208377f4cef7bd429eb1a6a321aacfcfc05d91f1c4",
+        "previous_original_raw_sha256": "3ca27d63134bf52a0c92783149df4fef35193cc71645b5238b3802ceabb1b712",
+        "program": "MultiplyElements",
+        "wp_outcome_at_search": "not run"
+      },
+      {
+        "current_frozen_spec_sha256": "d3a1eff79459a53215219ae1f322f4870b5a3f048a831486e577ea4b20e0898c",
+        "current_original_raw_sha256": "b185507390fbdcc6ad5cf3a02f5774bda9c807123580b9f26e3f64d7d110f354",
+        "current_recorded_wp_outcome": "unknown/timeout",
+        "current_verification_record": "cases/NextPowerOf2/original/c/record.json",
+        "current_verification_record_sha256": "f5fecacb2ff16cff45cc1594fad7be7382d3162dd8f9bab73cc1a83401981359",
+        "previous_original_raw_sha256": "09b1a5d7334da786c07b846b02d2ab4d58f5bb1bda985b850e01b90c062b4cb3",
+        "program": "NextPowerOf2",
+        "wp_outcome_at_search": "not run"
+      },
+      {
+        "current_frozen_spec_sha256": "6d2e55e5c356135dba6d82b815bed188ff1bcdcaab09eb02079f17ec8349a07e",
+        "current_original_raw_sha256": "76419ae82e3ffb71344b9c4a9322d6dc020519db69dace5c4988d1535e335e90",
+        "current_recorded_wp_outcome": "unknown/timeout",
+        "current_verification_record": "cases/PairWise/original/c/record.json",
+        "current_verification_record_sha256": "9a07cf17f43f088d0282ac57e2da854b3250bc8995199b2a213cd67bedfb798f",
+        "previous_original_raw_sha256": "75c6ccc88b6c558dbb42ee417c5442b5dae7930b6f8683f777d094da476cd21f",
+        "program": "PairWise",
+        "wp_outcome_at_search": "not run"
+      }
+    ],
+    "validated_mutant_outcomes": {
+      "precondition/RTE failure": 190,
+      "specification violation": 710
+    }
+  },
+  "c_mutant_evidence_outcomes": {
+    "not_searched": 0,
+    "searched_without_validated_failure": 77,
+    "validated_postcondition_violation": 710,
+    "validated_safety_failure": 190
+  },
+  "category_statistics": [
+    {
+      "c": {
+        "mutant": {
+          "unknown/timeout": 143
+        },
+        "original": {
+          "proved": 2,
+          "unknown/timeout": 8
+        },
+        "primary_eligible": 19,
+        "primary_rejected": 0,
+        "successful_goal_counts": {
+          "max": 7,
+          "mean": 5,
+          "median": 5.0,
+          "min": 3,
+          "n": 2,
+          "p95": 6.8,
+          "q1": 4.0,
+          "q3": 6.0,
+          "sample_sd": 2.8284271247461903,
+          "total": 10
+        },
+        "successful_wall_seconds": {
+          "max": 0.66,
+          "mean": 0.6085,
+          "median": 0.6085,
+          "min": 0.557,
+          "n": 2,
+          "p95": 0.65485,
+          "q1": 0.5827500000000001,
+          "q3": 0.63425,
+          "sample_sd": 0.07283199846221439,
+          "total": 1.217
+        }
+      },
+      "category": "sequential",
+      "java": {
+        "mutant": {
+          "precondition/RTE failure": 31,
+          "specification violation": 40,
+          "unknown/timeout": 72
+        },
+        "original": {
+          "precondition/RTE failure": 1,
+          "proved": 9
+        },
+        "primary_eligible": 108,
+        "primary_rejected": 40,
+        "successful_goal_counts": {
+          "max": 6,
+          "mean": 6,
+          "median": 6,
+          "min": 6,
+          "n": 9,
+          "p95": 6.0,
+          "q1": 6.0,
+          "q3": 6.0,
+          "sample_sd": 0.0,
+          "total": 54
+        },
+        "successful_wall_seconds": {
+          "max": 4.414,
+          "mean": 3.9714444444444443,
+          "median": 3.867,
+          "min": 3.779,
+          "n": 9,
+          "p95": 4.3488,
+          "q1": 3.811,
+          "q3": 4.126,
+          "sample_sd": 0.23318078346591467,
+          "total": 35.743
+        }
+      },
+      "mutant_pairs": 143,
+      "original_count": 10,
+      "programs": [
+        "CountIntgralPoints",
+        "DiameterCircle",
+        "FindRectNum",
+        "HexagonalNum",
+        "MaxOfTwo",
+        "NoOfCubes",
+        "OddBitSetNumber",
+        "ParabolaVertex",
+        "SquarePerimeter",
+        "VolumeCube"
+      ]
+    },
+    {
+      "c": {
+        "mutant": {
+          "not run": 12,
+          "unknown/timeout": 181
+        },
+        "original": {
+          "proved": 2,
+          "unknown/timeout": 8
+        },
+        "primary_eligible": 35,
+        "primary_rejected": 0,
+        "successful_goal_counts": {
+          "max": 10,
+          "mean": 7,
+          "median": 7.0,
+          "min": 4,
+          "n": 2,
+          "p95": 9.7,
+          "q1": 5.5,
+          "q3": 8.5,
+          "sample_sd": 4.242640687119285,
+          "total": 14
+        },
+        "successful_wall_seconds": {
+          "max": 1.015,
+          "mean": 0.8584999999999999,
+          "median": 0.8584999999999999,
+          "min": 0.702,
+          "n": 2,
+          "p95": 0.99935,
+          "q1": 0.7802499999999999,
+          "q3": 0.93675,
+          "sample_sd": 0.22132442251138934,
+          "total": 1.7169999999999999
+        }
+      },
+      "category": "branch",
+      "java": {
+        "mutant": {
+          "precondition/RTE failure": 2,
+          "specification violation": 105,
+          "unknown/timeout": 86
+        },
+        "original": {
+          "proved": 4,
+          "specification violation": 2,
+          "unknown/timeout": 4
+        },
+        "primary_eligible": 84,
+        "primary_rejected": 81,
+        "successful_goal_counts": {
+          "max": 68,
+          "mean": 21.5,
+          "median": 6.0,
+          "min": 6,
+          "n": 4,
+          "p95": 58.699999999999974,
+          "q1": 6.0,
+          "q3": 21.5,
+          "sample_sd": 31.0,
+          "total": 86
+        },
+        "successful_wall_seconds": {
+          "max": 4.106,
+          "mean": 3.9829999999999997,
+          "median": 3.9595,
+          "min": 3.907,
+          "n": 4,
+          "p95": 4.0907,
+          "q1": 3.9130000000000003,
+          "q3": 4.0295,
+          "sample_sd": 0.0930412095077587,
+          "total": 15.931999999999999
+        }
+      },
+      "mutant_pairs": 193,
+      "original_count": 10,
+      "programs": [
+        "DealnnoyNum",
+        "DogAge",
+        "Fibonacci",
+        "FindPoints",
+        "MoveFirst",
+        "NewmanPrime",
+        "ParallelogramPerimeter",
+        "SumNums",
+        "TestThreeEqual",
+        "TriangleArea"
+      ]
+    },
+    {
+      "c": {
+        "mutant": {
+          "not run": 38,
+          "syntax/tool failure": 1,
+          "unknown/timeout": 144
+        },
+        "original": {
+          "unknown/timeout": 10
+        },
+        "primary_eligible": 0,
+        "primary_rejected": 0,
+        "successful_goal_counts": {
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null,
+          "n": 0,
+          "p95": null,
+          "q1": null,
+          "q3": null,
+          "sample_sd": null,
+          "total": null
+        },
+        "successful_wall_seconds": {
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null,
+          "n": 0,
+          "p95": null,
+          "q1": null,
+          "q3": null,
+          "sample_sd": null,
+          "total": null
+        }
+      },
+      "category": "single_path_loop",
+      "java": {
+        "mutant": {
+          "unknown/timeout": 183
+        },
+        "original": {
+          "unknown/timeout": 10
+        },
+        "primary_eligible": 0,
+        "primary_rejected": 0,
+        "successful_goal_counts": {
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null,
+          "n": 0,
+          "p95": null,
+          "q1": null,
+          "q3": null,
+          "sample_sd": null,
+          "total": null
+        },
+        "successful_wall_seconds": {
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null,
+          "n": 0,
+          "p95": null,
+          "q1": null,
+          "q3": null,
+          "sample_sd": null,
+          "total": null
+        }
+      },
+      "mutant_pairs": 183,
+      "original_count": 10,
+      "programs": [
+        "CountWays",
+        "MaxSumOfThreeConsecutive",
+        "MaxSumSubseq",
+        "MultiplyElements",
+        "NextPowerOf2",
+        "OddLengthSum",
+        "PairWise",
+        "SumList",
+        "SumRangeList",
+        "TupleToInt"
+      ]
+    },
+    {
+      "c": {
+        "mutant": {
+          "syntax/tool failure": 1,
+          "unknown/timeout": 238
+        },
+        "original": {
+          "proved": 2,
+          "unknown/timeout": 8
+        },
+        "primary_eligible": 26,
+        "primary_rejected": 0,
+        "successful_goal_counts": {
+          "max": 36,
+          "mean": 33,
+          "median": 33.0,
+          "min": 30,
+          "n": 2,
+          "p95": 35.7,
+          "q1": 31.5,
+          "q3": 34.5,
+          "sample_sd": 4.242640687119285,
+          "total": 66
+        },
+        "successful_wall_seconds": {
+          "max": 3.968,
+          "mean": 3.3075,
+          "median": 3.3075,
+          "min": 2.647,
+          "n": 2,
+          "p95": 3.90195,
+          "q1": 2.9772499999999997,
+          "q3": 3.63775,
+          "sample_sd": 0.9340880579474294,
+          "total": 6.615
+        }
+      },
+      "category": "multi_path_loop",
+      "java": {
+        "mutant": {
+          "precondition/RTE failure": 1,
+          "specification violation": 1,
+          "unknown/timeout": 237
+        },
+        "original": {
+          "unknown/timeout": 10
+        },
+        "primary_eligible": 0,
+        "primary_rejected": 0,
+        "successful_goal_counts": {
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null,
+          "n": 0,
+          "p95": null,
+          "q1": null,
+          "q3": null,
+          "sample_sd": null,
+          "total": null
+        },
+        "successful_wall_seconds": {
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null,
+          "n": 0,
+          "p95": null,
+          "q1": null,
+          "q3": null,
+          "sample_sd": null,
+          "total": null
+        }
+      },
+      "mutant_pairs": 239,
+      "original_count": 10,
+      "programs": [
+        "CountList",
+        "CountOddSquares",
+        "DiffEvenOdd",
+        "FindPeak",
+        "LeftInsertion",
+        "MaxDifference",
+        "MaxSubArraySum",
+        "MaximumSegments",
+        "MinCoins",
+        "SqrtRoot"
+      ]
+    },
+    {
+      "c": {
+        "mutant": {
+          "syntax/tool failure": 3,
+          "unknown/timeout": 216
+        },
+        "original": {
+          "unknown/timeout": 10
+        },
+        "primary_eligible": 0,
+        "primary_rejected": 0,
+        "successful_goal_counts": {
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null,
+          "n": 0,
+          "p95": null,
+          "q1": null,
+          "q3": null,
+          "sample_sd": null,
+          "total": null
+        },
+        "successful_wall_seconds": {
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null,
+          "n": 0,
+          "p95": null,
+          "q1": null,
+          "q3": null,
+          "sample_sd": null,
+          "total": null
+        }
+      },
+      "category": "nested",
+      "java": {
+        "mutant": {
+          "unknown/timeout": 219
+        },
+        "original": {
+          "unknown/timeout": 10
+        },
+        "primary_eligible": 0,
+        "primary_rejected": 0,
+        "successful_goal_counts": {
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null,
+          "n": 0,
+          "p95": null,
+          "q1": null,
+          "q3": null,
+          "sample_sd": null,
+          "total": null
+        },
+        "successful_wall_seconds": {
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null,
+          "n": 0,
+          "p95": null,
+          "q1": null,
+          "q3": null,
+          "sample_sd": null,
+          "total": null
+        }
+      },
+      "mutant_pairs": 219,
+      "original_count": 10,
+      "programs": [
+        "CombSort",
+        "CountUnsetBits",
+        "CountingSort",
+        "MaxProduct",
+        "MaxVolume",
+        "MinCost",
+        "MinJumps",
+        "RadixSort",
+        "SumOfPrimes",
+        "SumOfSubarrayProd"
+      ]
+    }
+  ],
+  "corrected_c_originals": {
+    "complete": true,
+    "generated_utc": "2026-10-01T13:12:31.214070+00:00",
+    "interpretation": "Four completed C original WP invocations promoted after matching source, frozen contract, settings, support and verifier hashes. Mutant WP invocations were not rerun.",
+    "passed": true,
+    "rerun": "c_corrected_originals_verification_20261001",
+    "results": [
+      {
+        "annotated_source_sha256": "4c7c32772255e8fcbcbf78e72b90648093fcaf6ee0b5006ea5e02a57cb53c2e2",
+        "elapsed_seconds": 54.097,
+        "frozen_spec_sha256": "7f684c126ace1d3bc4dacd84119a85312d38c46903ebe58a48948636f4c9e604",
+        "goals": {
+          "proved": 73,
+          "unknown": 9
+        },
+        "invocation_paths_preserved": true,
+        "outcome": "unknown/timeout",
+        "previous_record": "original_verification/source_records/dded56a8ba57626a672a334715d48a8a40e8081c6b46166fc1acfb3520ac5509.json",
+        "previous_record_sha256": "dded56a8ba57626a672a334715d48a8a40e8081c6b46166fc1acfb3520ac5509",
+        "program": "MoveFirst",
+        "raw_source_sha256": "5a60783091cc017be865385aa7d4dd5c3d5960d3088c284de7fb116a923b86ae",
+        "record": "cases/MoveFirst/original/c/record.json",
+        "record_sha256": "345cd52bc5b9c30153b2a00eb89a3c0bdc7c0bd6d5c7b798e430a6f3a1a5e193",
+        "rerun": "c_corrected_originals_verification_20261001",
+        "source_record": "original_verification/c_corrected_originals_verification_20261001/cases/MoveFirst/original/c/record.json",
+        "source_record_sha256": "aec6eac32ce3045ad36f632b9f9f0ec3ae284fb3c84da229875c54c3ce1aa362",
+        "timed_out": false
+      },
+      {
+        "annotated_source_sha256": "0daf91066baed001755f30b720c51839975721ef5f571f2a79e96f2eb4bec4c2",
+        "elapsed_seconds": 46.061,
+        "frozen_spec_sha256": "9e889b41292d2efa3d496452cca41ba67946cb537e7dfb287447c1c08b94d5dd",
+        "goals": {
+          "proved": 65,
+          "unknown": 8
+        },
+        "invocation_paths_preserved": true,
+        "outcome": "unknown/timeout",
+        "previous_record": "original_verification/source_records/6b31ac8a4545462e6fdcad64aeb3f21eb70f0cf778547c9a8b4d6af1bd374993.json",
+        "previous_record_sha256": "6b31ac8a4545462e6fdcad64aeb3f21eb70f0cf778547c9a8b4d6af1bd374993",
+        "program": "MultiplyElements",
+        "raw_source_sha256": "f1f2567b9e4b878845227dbc9480746bac62fbaf9feaaa8bca62d03ad58a4b20",
+        "record": "cases/MultiplyElements/original/c/record.json",
+        "record_sha256": "7d6a07fc7c2fb14093b895208377f4cef7bd429eb1a6a321aacfcfc05d91f1c4",
+        "rerun": "c_corrected_originals_verification_20261001",
+        "source_record": "original_verification/c_corrected_originals_verification_20261001/cases/MultiplyElements/original/c/record.json",
+        "source_record_sha256": "dd26f6d15a75859737c9ca69ae20bdeea01402615ab9f16007231a134bbc539a",
+        "timed_out": false
+      },
+      {
+        "annotated_source_sha256": "fbfc13a2a87e3c525d942f5780799b6b6b6dba7037f0c0bf2bdc06345a6b9b26",
+        "elapsed_seconds": 11.719,
+        "frozen_spec_sha256": "d3a1eff79459a53215219ae1f322f4870b5a3f048a831486e577ea4b20e0898c",
+        "goals": {
+          "proved": 20,
+          "unknown": 2
+        },
+        "invocation_paths_preserved": true,
+        "outcome": "unknown/timeout",
+        "previous_record": "original_verification/source_records/26ae4f02089e48dac3056a96b6c492bf374948444c77346c1ee53a85aa2b6451.json",
+        "previous_record_sha256": "26ae4f02089e48dac3056a96b6c492bf374948444c77346c1ee53a85aa2b6451",
+        "program": "NextPowerOf2",
+        "raw_source_sha256": "b185507390fbdcc6ad5cf3a02f5774bda9c807123580b9f26e3f64d7d110f354",
+        "record": "cases/NextPowerOf2/original/c/record.json",
+        "record_sha256": "f5fecacb2ff16cff45cc1594fad7be7382d3162dd8f9bab73cc1a83401981359",
+        "rerun": "c_corrected_originals_verification_20261001",
+        "source_record": "original_verification/c_corrected_originals_verification_20261001/cases/NextPowerOf2/original/c/record.json",
+        "source_record_sha256": "8218cd023dfd3c71b10f3d9b2cbfb41ac89123e9cc3965f39a0221bf2fdea53d",
+        "timed_out": false
+      },
+      {
+        "annotated_source_sha256": "386cbf66dc1ddcbd83038ab2987e322f591d56fb50b45f60dcf74c7a9ca74d13",
+        "elapsed_seconds": 82.64,
+        "frozen_spec_sha256": "6d2e55e5c356135dba6d82b815bed188ff1bcdcaab09eb02079f17ec8349a07e",
+        "goals": {
+          "proved": 80,
+          "unknown": 11
+        },
+        "invocation_paths_preserved": true,
+        "outcome": "unknown/timeout",
+        "previous_record": "original_verification/source_records/269b56c512c247037cd25c13669fc518074fa59d88e7c861f54c162560ca9bee.json",
+        "previous_record_sha256": "269b56c512c247037cd25c13669fc518074fa59d88e7c861f54c162560ca9bee",
+        "program": "PairWise",
+        "raw_source_sha256": "76419ae82e3ffb71344b9c4a9322d6dc020519db69dace5c4988d1535e335e90",
+        "record": "cases/PairWise/original/c/record.json",
+        "record_sha256": "9a07cf17f43f088d0282ac57e2da854b3250bc8995199b2a213cd67bedfb798f",
+        "rerun": "c_corrected_originals_verification_20261001",
+        "source_record": "original_verification/c_corrected_originals_verification_20261001/cases/PairWise/original/c/record.json",
+        "source_record_sha256": "9c14ecb7b3a22fb95814e67f222c4c285e196b4a9a017af9a91412ea54470c58",
+        "timed_out": false
+      }
+    ],
+    "settings_match": true,
+    "source_summary_sha256": "e2ba38f914f87819300cb77f670a978d3db7e7c7efb073fd54561acbacca1fe1",
+    "summary": "original_verification/c_corrected_originals_verification_20261001/summary.json"
+  },
+  "generated_utc": "2026-10-02T12:50:28.410050+00:00",
+  "interpretation": "Java tool diagnostics and C validated native witnesses are different evidence. No validated failure in finite search is inconclusive, not proof. Historical subsets are counted once.",
+  "jarray": {
+    "apis": [
+      {
+        "api": "jarray2_get",
+        "blocked_mutants": 37,
+        "blocked_originals": 2,
+        "proved": 1309,
+        "total": 1587,
+        "unknown": 278
+      },
+      {
+        "api": "jarray2_length",
+        "blocked_mutants": 0,
+        "blocked_originals": 0,
+        "proved": 34,
+        "total": 34
+      },
+      {
+        "api": "jarray2_new",
+        "blocked_mutants": 5,
+        "blocked_originals": 0,
+        "proved": 151,
+        "total": 156,
+        "unknown": 5
+      },
+      {
+        "api": "jarray_get",
+        "blocked_mutants": 332,
+        "blocked_originals": 9,
+        "proved": 6630,
+        "total": 8382,
+        "unknown": 1752
+      },
+      {
+        "api": "jarray_length",
+        "blocked_mutants": 85,
+        "blocked_originals": 2,
+        "proved": 687,
+        "total": 802,
+        "unknown": 115
+      },
+      {
+        "api": "jarray_new",
+        "blocked_mutants": 27,
+        "blocked_originals": 0,
+        "proved": 757,
+        "total": 784,
+        "unknown": 27
+      },
+      {
+        "api": "jarray_set",
+        "blocked_mutants": 257,
+        "blocked_originals": 5,
+        "proved": 3291,
+        "total": 3840,
+        "unknown": 549
+      },
+      {
+        "api": "jbool_array_get",
+        "blocked_mutants": 0,
+        "blocked_originals": 0,
+        "proved": 51,
+        "total": 51
+      },
+      {
+        "api": "jbool_array_length",
+        "blocked_mutants": 0,
+        "blocked_originals": 0,
+        "proved": 32,
+        "total": 32
+      },
+      {
+        "api": "jbool_array_new",
+        "blocked_mutants": 4,
+        "blocked_originals": 0,
+        "proved": 30,
+        "total": 34,
+        "unknown": 4
+      },
+      {
+        "api": "jbool_array_set",
+        "blocked_mutants": 1,
+        "blocked_originals": 0,
+        "proved": 98,
+        "total": 99,
+        "unknown": 1
+      },
+      {
+        "api": "jdouble_array_new",
+        "blocked_mutants": 0,
+        "blocked_originals": 0,
+        "proved": 72,
+        "total": 72
+      },
+      {
+        "api": "jdouble_array_set",
+        "blocked_mutants": 2,
+        "blocked_originals": 0,
+        "proved": 206,
+        "total": 210,
+        "unknown": 4
+      }
+    ],
+    "groups": {
+      "mutant": {
+        "calling_jarray": 618,
+        "calling_jarray_proved": 0,
+        "calling_jarray_without_goals": 53,
+        "cases": 977,
+        "cases_with_only_unresolved_jarray": 1,
+        "cases_with_unresolved_jarray": 400,
+        "jarray_goals": 15501,
+        "no_goal_cases": 59,
+        "no_goal_outcomes": {
+          "not run": 50,
+          "syntax/tool failure": 5,
+          "unknown/timeout": 4
+        },
+        "no_jarray_proved": 0,
+        "unresolved_jarray_goals": 2687,
+        "with_recorded_goals": 918
+      },
+      "original": {
+        "calling_jarray": 28,
+        "calling_jarray_proved": 2,
+        "calling_jarray_without_goals": 0,
+        "cases": 50,
+        "cases_with_only_unresolved_jarray": 0,
+        "cases_with_unresolved_jarray": 13,
+        "jarray_goals": 582,
+        "no_goal_cases": 0,
+        "no_goal_outcomes": {},
+        "no_jarray_proved": 4,
+        "unresolved_jarray_goals": 48,
+        "with_recorded_goals": 50
+      }
+    },
+    "interpretation": "Unresolved WP callee-precondition goals are proof blockers; native counterexample search does not discharge them."
+  },
+  "java_original_goal_recording": {
+    "archive": "original_verification/java_goal_recording_20261002T100041Z",
+    "complete": true,
+    "complete_solver_captures": 49,
+    "finished_utc": "2026-10-02T10:06:33.338241+00:00",
+    "generated_assertions": 9387,
+    "generated_method_vcs": 100,
+    "instrumented_outcome_changes": [
+      {
+        "instrumented": "unknown/timeout",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/FindPoints/record.json",
+        "original": "proved",
+        "program": "FindPoints"
+      }
+    ],
+    "instrumented_outcomes": {
+      "precondition/RTE failure": 1,
+      "proved": 12,
+      "specification violation": 2,
+      "unknown/timeout": 35
+    },
+    "interpretation": "Generated assertions and solver queries are supplemental workload counts. Original uninstrumented proof results and timings remain authoritative. An inconclusive recording run does not invalidate an earlier proof of identical inputs.",
+    "original_proof_results_preserved": 50,
+    "originals_with_recorded_workload": 50,
+    "outcome_changes": [],
+    "policy_updated_utc": "2026-10-02T12:49:44.143724+00:00",
+    "primary_outcomes": {
+      "precondition/RTE failure": 1,
+      "proved": 13,
+      "specification violation": 2,
+      "unknown/timeout": 34
+    },
+    "rerun_originals": 50,
+    "results": [
+      {
+        "after": "proved",
+        "before": "proved",
+        "capture_complete": true,
+        "elapsed_seconds": 3.915,
+        "generated_assertions": 6,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 9.95,
+        "instrumented_outcome": "proved",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/DogAge/record.json",
+        "instrumented_record_sha256": "a2d138286590ba1fb0003a6bd6f581c7b5d7585c10549628ae8e5987f2d9aa86",
+        "primary_outcome": "proved",
+        "program": "DogAge",
+        "record_sha256": "099d7b76d5b690919c447c075313eb11605cede82293109125a0451c49f928a5",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "proved",
+        "before": "proved",
+        "capture_complete": true,
+        "elapsed_seconds": 3.867,
+        "generated_assertions": 6,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 9.978,
+        "instrumented_outcome": "proved",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/DiameterCircle/record.json",
+        "instrumented_record_sha256": "38cb64674f402c8de2a0568ce3ffad1c0afa69338011409644b17a1da89a9c31",
+        "primary_outcome": "proved",
+        "program": "DiameterCircle",
+        "record_sha256": "b3d9373b2ffd5cb0ae963ff6babd5d27348035cb8726a850e4fad03a4bd140db",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "proved",
+        "before": "proved",
+        "capture_complete": true,
+        "elapsed_seconds": 3.887,
+        "generated_assertions": 6,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 10.156,
+        "instrumented_outcome": "proved",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/CountIntgralPoints/record.json",
+        "instrumented_record_sha256": "d13d881f351b1cd32b5efe51bdd9cabf3c9d9954ada788eb8460f2cdb8b12346",
+        "primary_outcome": "proved",
+        "program": "CountIntgralPoints",
+        "record_sha256": "9b5e851ff6aa1adf4331b05b42421901f8539fa7d61aa91045d3b800ee059ade",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "unknown/timeout",
+        "before": "unknown/timeout",
+        "capture_complete": true,
+        "elapsed_seconds": 3.934,
+        "generated_assertions": 24,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 11.159,
+        "instrumented_outcome": "unknown/timeout",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/Fibonacci/record.json",
+        "instrumented_record_sha256": "dad0083cce6e78dd32faf862186eec965de09053f3d404f6f17770c2ec383ff1",
+        "primary_outcome": "unknown/timeout",
+        "program": "Fibonacci",
+        "record_sha256": "6fecd6cc85157354810d6ed363085f89905d6ea2081d17af85fa2dbfc92af868",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "unknown/timeout",
+        "before": "unknown/timeout",
+        "capture_complete": true,
+        "elapsed_seconds": 4.097,
+        "generated_assertions": 31,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 13.841,
+        "instrumented_outcome": "unknown/timeout",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/DealnnoyNum/record.json",
+        "instrumented_record_sha256": "9c155b9eae692484b79be77207d3bd5ecfbb671a39e89788bc8fa0e80339d3ca",
+        "primary_outcome": "unknown/timeout",
+        "program": "DealnnoyNum",
+        "record_sha256": "6261a6bfa0ce385160d05b64f00b7e490e780c1dae421594f899430e2d6da75c",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "unknown/timeout",
+        "before": "unknown/timeout",
+        "capture_complete": true,
+        "elapsed_seconds": 4.151,
+        "generated_assertions": 65,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 15.704,
+        "instrumented_outcome": "unknown/timeout",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/CountList/record.json",
+        "instrumented_record_sha256": "d7a9dba74675ba469c0bb7b9c694f8d1c4605e22acc3017335b3d52bdf25dfab",
+        "primary_outcome": "unknown/timeout",
+        "program": "CountList",
+        "record_sha256": "35b20c4df458618bf4cbd724d68a7326394795dc933fc82354b958e88a9dc364",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "unknown/timeout",
+        "before": "unknown/timeout",
+        "capture_complete": true,
+        "elapsed_seconds": 4.73,
+        "generated_assertions": 68,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 16.959,
+        "instrumented_outcome": "unknown/timeout",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/CountUnsetBits/record.json",
+        "instrumented_record_sha256": "85084dccf3810d730df03eb78924ffdaa72789624759421a29ffad28c4fe1b09",
+        "primary_outcome": "unknown/timeout",
+        "program": "CountUnsetBits",
+        "record_sha256": "b756aad6d253321f798346f7c0a4053732f9f54235366ead733972e7cbeeb4f6",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "unknown/timeout",
+        "before": "unknown/timeout",
+        "capture_complete": true,
+        "elapsed_seconds": 4.325,
+        "generated_assertions": 119,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 17.204,
+        "instrumented_outcome": "unknown/timeout",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/DiffEvenOdd/record.json",
+        "instrumented_record_sha256": "452614c13ab57883693ff488c6adb05f1f50ec55ee9657cfc74db27664854a23",
+        "primary_outcome": "unknown/timeout",
+        "program": "DiffEvenOdd",
+        "record_sha256": "1f4e09e3a522d16d54ab5ff0cc986a75d0057c9cf083bbf460f0fa85a91dbac0",
+        "solver_queries": 3,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "proved",
+        "before": "proved",
+        "capture_complete": true,
+        "elapsed_seconds": 3.811,
+        "generated_assertions": 6,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 7.123,
+        "instrumented_outcome": "proved",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/FindRectNum/record.json",
+        "instrumented_record_sha256": "06c62a6b102c104cdf5123a183ede3309237ab13a05f610e21c1f230870ef5cc",
+        "primary_outcome": "proved",
+        "program": "FindRectNum",
+        "record_sha256": "f16587398f45f191b3d03bbe8b2fc92d06d8cbd0289802ae334ad1d926755490",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "proved",
+        "before": "proved",
+        "capture_complete": true,
+        "elapsed_seconds": 3.814,
+        "generated_assertions": 6,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 6.986,
+        "instrumented_outcome": "proved",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/HexagonalNum/record.json",
+        "instrumented_record_sha256": "069d6bc3900f2c24f75d11cf13f9689d9ce718295459cd527c437c32e10b5d7b",
+        "primary_outcome": "proved",
+        "program": "HexagonalNum",
+        "record_sha256": "882329fcc0302bead94f3a5bd6184ee5921c1b2a988b037de63a74d44ce460b9",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "unknown/timeout",
+        "before": "unknown/timeout",
+        "capture_complete": true,
+        "elapsed_seconds": 4.378,
+        "generated_assertions": 39,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 19.414,
+        "instrumented_outcome": "unknown/timeout",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/CountOddSquares/record.json",
+        "instrumented_record_sha256": "6d65717efcdd052cc8d9efe24a13d41e1ca7971311d79072792a4d31c697bcc2",
+        "primary_outcome": "unknown/timeout",
+        "program": "CountOddSquares",
+        "record_sha256": "a1af6c81bddcd95b8cd41ca152f828c2aea9f9d0254e4fe57420d7c0594d413a",
+        "solver_queries": 3,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "proved",
+        "before": "proved",
+        "capture_complete": true,
+        "elapsed_seconds": 4.106,
+        "generated_assertions": 68,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 11.546,
+        "instrumented_outcome": "unknown/timeout",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/FindPoints/record.json",
+        "instrumented_record_sha256": "256b427cdd6d877cafb32a21158691c9401cbcb2753d0881184bd2d0e96f22d3",
+        "primary_outcome": "proved",
+        "program": "FindPoints",
+        "record_sha256": "42a96682436f4c65a1f4836bb53e6c2797062f6e7589c71b0686f01125cfc5b1",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "unknown/timeout",
+        "before": "unknown/timeout",
+        "capture_complete": true,
+        "elapsed_seconds": 4.169,
+        "generated_assertions": 172,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 13.797,
+        "instrumented_outcome": "unknown/timeout",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/FindPeak/record.json",
+        "instrumented_record_sha256": "52e48eaabdeb74766e2efe1f3586cd30de0ff4d6f687742f8336e888ff8741d4",
+        "primary_outcome": "unknown/timeout",
+        "program": "FindPeak",
+        "record_sha256": "9e401fbd99e77399e1731739f430a25fc710ff0b08e15ce8f870721b42985b43",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "proved",
+        "before": "proved",
+        "capture_complete": true,
+        "elapsed_seconds": 4.251,
+        "generated_assertions": 6,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 7.392,
+        "instrumented_outcome": "proved",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/MaxOfTwo/record.json",
+        "instrumented_record_sha256": "b80c5007ac4068c56779fd94a44b08e60a7f714a5ca204d6c430cb78553f2b85",
+        "primary_outcome": "proved",
+        "program": "MaxOfTwo",
+        "record_sha256": "95edbbfecf8b7ad81d17bfc5d3ae56101acbdb16f0d2921666c1199ddd94ccb3",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "unknown/timeout",
+        "before": "unknown/timeout",
+        "capture_complete": true,
+        "elapsed_seconds": 4.101,
+        "generated_assertions": 33,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 9.149,
+        "instrumented_outcome": "unknown/timeout",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/MaxVolume/record.json",
+        "instrumented_record_sha256": "3053c83c57bd3a77d2d24f8a98916dd3c2667be60698023c7324e73cf18844b8",
+        "primary_outcome": "unknown/timeout",
+        "program": "MaxVolume",
+        "record_sha256": "cb518a0cfdb0cc7e92c5b909d09ec13affea8391f5a2f93c3f30ff9d01c0af11",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "unknown/timeout",
+        "before": "unknown/timeout",
+        "capture_complete": true,
+        "elapsed_seconds": 5.748,
+        "generated_assertions": 243,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 31.877,
+        "instrumented_outcome": "unknown/timeout",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/CombSort/record.json",
+        "instrumented_record_sha256": "49703758e9684ea34551ecc1ecc587ef0597a04f8cefd57fb14d3ca94ac9145f",
+        "primary_outcome": "unknown/timeout",
+        "program": "CombSort",
+        "record_sha256": "1c2eeff9ba5ef3aa80dad4041dd96df2b016f6002d98323939d31e40a9112e8a",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "unknown/timeout",
+        "before": "unknown/timeout",
+        "capture_complete": true,
+        "elapsed_seconds": 4.661,
+        "generated_assertions": 399,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 16.612,
+        "instrumented_outcome": "unknown/timeout",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/MaxProduct/record.json",
+        "instrumented_record_sha256": "ca05787f658f370534daf7eaffddf349da9b2210e9c354410687aa4c648b5b6e",
+        "primary_outcome": "unknown/timeout",
+        "program": "MaxProduct",
+        "record_sha256": "b0fb769e2e595ae1db09056e1270acd1b69d8855a86413d3c8c53e1422040aea",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "unknown/timeout",
+        "before": "unknown/timeout",
+        "capture_complete": true,
+        "elapsed_seconds": 4.378,
+        "generated_assertions": 136,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 11.541,
+        "instrumented_outcome": "unknown/timeout",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/MaximumSegments/record.json",
+        "instrumented_record_sha256": "328b4a6395c947eae912b5d2db1a47b24526502f9654a2027bd1679a05753863",
+        "primary_outcome": "unknown/timeout",
+        "program": "MaximumSegments",
+        "record_sha256": "6d54e7d024f454cec03bcf991a2a67674da27f8ca180ae3794cd56ddc705f870",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "unknown/timeout",
+        "before": "unknown/timeout",
+        "capture_complete": true,
+        "elapsed_seconds": 4.469,
+        "generated_assertions": 106,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 13.669,
+        "instrumented_outcome": "unknown/timeout",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/MinCoins/record.json",
+        "instrumented_record_sha256": "47e95f4da8e8032c7a8aef94b488bcdffebf731eba44ff450061b81482db2a42",
+        "primary_outcome": "unknown/timeout",
+        "program": "MinCoins",
+        "record_sha256": "9dc244dd603a68948578a3959a3c2e9b79cf86b1f10eab82c24df53278fb79d7",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "unknown/timeout",
+        "before": "unknown/timeout",
+        "capture_complete": true,
+        "elapsed_seconds": 300.158,
+        "generated_assertions": 199,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 23.884,
+        "instrumented_outcome": "unknown/timeout",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/MaxSumSubseq/record.json",
+        "instrumented_record_sha256": "173e6e6c6d22234019d3ea9c0ffd879bf591588e8300e611664997c562f7452a",
+        "primary_outcome": "unknown/timeout",
+        "program": "MaxSumSubseq",
+        "record_sha256": "53c81f1a7b7eda15610bd13e0989118153e9dc4b18cc6bd4839620f091a5f47d",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "unknown/timeout",
+        "before": "unknown/timeout",
+        "capture_complete": true,
+        "elapsed_seconds": 4.27,
+        "generated_assertions": 318,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 12.716,
+        "instrumented_outcome": "unknown/timeout",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/MinCost/record.json",
+        "instrumented_record_sha256": "04e2824f0280f5543725f2ff95bd46c7c758cfd6d8a2fc779aa077c816f7941a",
+        "primary_outcome": "unknown/timeout",
+        "program": "MinCost",
+        "record_sha256": "230792b1cbefbe631c24bfed6b61727571f9a9ce57deb3e4101a1e975f1ab7c5",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "unknown/timeout",
+        "before": "unknown/timeout",
+        "capture_complete": true,
+        "elapsed_seconds": 4.141,
+        "generated_assertions": 174,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 12.133,
+        "instrumented_outcome": "unknown/timeout",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/MinJumps/record.json",
+        "instrumented_record_sha256": "a6bace3e5356d0040dbb704cc46308a54fc5b3c5c32d1fefeb51eaa09ac6ed89",
+        "primary_outcome": "unknown/timeout",
+        "program": "MinJumps",
+        "record_sha256": "828bbfd6d430ca2e91e58ff16731a6f6958d068295ca0b1844fefa28837ddbd4",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "unknown/timeout",
+        "before": "unknown/timeout",
+        "capture_complete": true,
+        "elapsed_seconds": 6.096,
+        "generated_assertions": 483,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 45.445,
+        "instrumented_outcome": "unknown/timeout",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/CountWays/record.json",
+        "instrumented_record_sha256": "4fd617211d6f6e3d32dcb80715e23a2ec1482a96f05dcc123fe82e0fc494df82",
+        "primary_outcome": "unknown/timeout",
+        "program": "CountWays",
+        "record_sha256": "e1331d9cb1b2272664381fb90a47c3779bf4afa33aa752bb9fbb984c6762a9dd",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "unknown/timeout",
+        "before": "unknown/timeout",
+        "capture_complete": true,
+        "elapsed_seconds": 4.465,
+        "generated_assertions": 24,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 8.332,
+        "instrumented_outcome": "unknown/timeout",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/NewmanPrime/record.json",
+        "instrumented_record_sha256": "63ab038d7a6b5d67bf9b9f1537781041fbafc588f0031ad193f2da264f2a6fd8",
+        "primary_outcome": "unknown/timeout",
+        "program": "NewmanPrime",
+        "record_sha256": "32eec74422cb6f55e513ac8ab851020eae2f088a792e652ea1b00cb791ce434e",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "unknown/timeout",
+        "before": "unknown/timeout",
+        "capture_complete": true,
+        "elapsed_seconds": 4.397,
+        "generated_assertions": 207,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 17.177,
+        "instrumented_outcome": "unknown/timeout",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/MoveFirst/record.json",
+        "instrumented_record_sha256": "c8627f6e87d4ea821ce9f83dbe091ed9089d53fb1ef6ec0fb4967c0eaddff9bc",
+        "primary_outcome": "unknown/timeout",
+        "program": "MoveFirst",
+        "record_sha256": "a74d102ca3d632eec559bd6152a334b5ac05d9f6bbd218e4fc3ddd4bdb892f8a",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "proved",
+        "before": "proved",
+        "capture_complete": true,
+        "elapsed_seconds": 4.414,
+        "generated_assertions": 6,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 7.218,
+        "instrumented_outcome": "proved",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/NoOfCubes/record.json",
+        "instrumented_record_sha256": "f13bd668158f663e94c1f25f382fb479eec0b65c34483f21e254b08629bef03c",
+        "primary_outcome": "proved",
+        "program": "NoOfCubes",
+        "record_sha256": "b5f56b41bfbba730baa0ab821b20c79a936988180658ce55d8c6c8d3ede9bd99",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "proved",
+        "before": "proved",
+        "capture_complete": true,
+        "elapsed_seconds": 4.126,
+        "generated_assertions": 6,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 7.282,
+        "instrumented_outcome": "proved",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/OddBitSetNumber/record.json",
+        "instrumented_record_sha256": "5131a1acc9a7296d5a4a1af7bf8b8d5334b657507bc256f80e29ed231047874c",
+        "primary_outcome": "proved",
+        "program": "OddBitSetNumber",
+        "record_sha256": "39b02aa8fdb01b00535ec310a7b2d77df8950c59c049e00c1e1783bfe50145bf",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "unknown/timeout",
+        "before": "unknown/timeout",
+        "capture_complete": true,
+        "elapsed_seconds": 4.309,
+        "generated_assertions": 18,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 7.958,
+        "instrumented_outcome": "unknown/timeout",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/NextPowerOf2/record.json",
+        "instrumented_record_sha256": "ea68bebe0d9d75302dc7dd6103e092493dcc00c228b016f0ce17ac7dbe0e5894",
+        "primary_outcome": "unknown/timeout",
+        "program": "NextPowerOf2",
+        "record_sha256": "03fb2c0f638caab76055641a20523401f8277713c34b429cb44300299f138cb7",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "unknown/timeout",
+        "before": "unknown/timeout",
+        "capture_complete": true,
+        "elapsed_seconds": 4.472,
+        "generated_assertions": 138,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 17.879,
+        "instrumented_outcome": "unknown/timeout",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/MultiplyElements/record.json",
+        "instrumented_record_sha256": "344cc27c7c7cf621dd25281075732f0c9d111fd197fcfd97405eb91a6ea8c611",
+        "primary_outcome": "unknown/timeout",
+        "program": "MultiplyElements",
+        "record_sha256": "bb40dfc962f11e72651e8f065848bee2584f75421ff01859f54cd08fbbcf28a1",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "unknown/timeout",
+        "before": "unknown/timeout",
+        "capture_complete": true,
+        "elapsed_seconds": 5.671,
+        "generated_assertions": 649,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 40.649,
+        "instrumented_outcome": "unknown/timeout",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/LeftInsertion/record.json",
+        "instrumented_record_sha256": "5bfc66e480d066c8c077e7d0c4232d76e3f109ff3eeb7c195a6d5b885171434c",
+        "primary_outcome": "unknown/timeout",
+        "program": "LeftInsertion",
+        "record_sha256": "894fe424eaa0c2a7874d6f402b72ff96edc9c49691c3e26c1fdee54267ab61c4",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "unknown/timeout",
+        "before": "unknown/timeout",
+        "capture_complete": true,
+        "elapsed_seconds": 5.799,
+        "generated_assertions": 824,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 41.29,
+        "instrumented_outcome": "unknown/timeout",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/MaxSubArraySum/record.json",
+        "instrumented_record_sha256": "f382c22ba8a24718eb69f837aafda20256cb23d0f749699c7be90e1a7622989e",
+        "primary_outcome": "unknown/timeout",
+        "program": "MaxSubArraySum",
+        "record_sha256": "901e419fa669916bedcbf42586696e116e3ac0c057e72a5aacdac2b3b6f8b7fc",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "specification violation",
+        "before": "specification violation",
+        "capture_complete": true,
+        "elapsed_seconds": 3.855,
+        "generated_assertions": 6,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 7.364,
+        "instrumented_outcome": "specification violation",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/ParallelogramPerimeter/record.json",
+        "instrumented_record_sha256": "eacf12b1c332d8fc76500177f10727aed13ceae78f3a83d6d481a7b1ad799fd1",
+        "primary_outcome": "specification violation",
+        "program": "ParallelogramPerimeter",
+        "record_sha256": "1965b597642548b655baa84f3c3ec0768d52c4790647cbc5a4ead2012a049478",
+        "solver_queries": 3,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "unknown/timeout",
+        "before": "unknown/timeout",
+        "capture_complete": true,
+        "elapsed_seconds": 4.447,
+        "generated_assertions": 90,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 13.68,
+        "instrumented_outcome": "unknown/timeout",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/OddLengthSum/record.json",
+        "instrumented_record_sha256": "de8d63a5cc254b6cae9f622b3d257e298d4f7aa93605d88c5828ba9c9870740e",
+        "primary_outcome": "unknown/timeout",
+        "program": "OddLengthSum",
+        "record_sha256": "cb4d6e130e0489009ef778b409ef42a87baac4049924e2319415fe92702577a3",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "proved",
+        "before": "proved",
+        "capture_complete": true,
+        "elapsed_seconds": 3.779,
+        "generated_assertions": 6,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 6.9,
+        "instrumented_outcome": "proved",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/SquarePerimeter/record.json",
+        "instrumented_record_sha256": "61b8eff389327002603daf86322ae968231917b2666b6de2851aed3ff51e6a1f",
+        "primary_outcome": "proved",
+        "program": "SquarePerimeter",
+        "record_sha256": "df2c2f2812fe8df7d1d7e58f2fee7c0961d016c4b4d9868c66623e932adfde9c",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "precondition/RTE failure",
+        "before": "precondition/RTE failure",
+        "capture_complete": true,
+        "elapsed_seconds": 4.107,
+        "generated_assertions": 57,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 10.548,
+        "instrumented_outcome": "precondition/RTE failure",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/ParabolaVertex/record.json",
+        "instrumented_record_sha256": "e4b3229c6d20fc19f15e2c5a28a3c6a396dafdb23f83855fac4ef7545964be03",
+        "primary_outcome": "precondition/RTE failure",
+        "program": "ParabolaVertex",
+        "record_sha256": "3bdc2c058b7f0c90ae0ab8925fc63233d773c798f54dabcfcb4437059bf64f23",
+        "solver_queries": 3,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "proved",
+        "before": "proved",
+        "capture_complete": true,
+        "elapsed_seconds": 3.907,
+        "generated_assertions": 6,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 7.098,
+        "instrumented_outcome": "proved",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/SumNums/record.json",
+        "instrumented_record_sha256": "c89881d7d20f280041903e506eb32b1b2da387e332da3abeb92b852b3c82bcb6",
+        "primary_outcome": "proved",
+        "program": "SumNums",
+        "record_sha256": "b270f6e6d93c698ca90b2e9cd08d518e0889a003ca75fdfd9651531811daa4e2",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "unknown/timeout",
+        "before": "unknown/timeout",
+        "capture_complete": true,
+        "elapsed_seconds": 4.567,
+        "generated_assertions": 167,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 20.123,
+        "instrumented_outcome": "unknown/timeout",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/PairWise/record.json",
+        "instrumented_record_sha256": "d014bdcb16efdd5ce149138722335c4adaf52c3a7c3bcb6099dbdbf96b3ddfa9",
+        "primary_outcome": "unknown/timeout",
+        "program": "PairWise",
+        "record_sha256": "3c7a40e56a0dc6c5b99bc39c73d05bfc4324d5474498e90b0599611af39c2895",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "proved",
+        "before": "proved",
+        "capture_complete": true,
+        "elapsed_seconds": 4.004,
+        "generated_assertions": 6,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 7.239,
+        "instrumented_outcome": "proved",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/TestThreeEqual/record.json",
+        "instrumented_record_sha256": "265d8ff5e7188b8684b3aae71ac10de841d47f01309ef8a4e8797f351d7fb348",
+        "primary_outcome": "proved",
+        "program": "TestThreeEqual",
+        "record_sha256": "79aad99aa52cdade422dd88d1e582542c201d9ed02fbe23144405f919c6e3f6a",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "unknown/timeout",
+        "before": "unknown/timeout",
+        "capture_complete": true,
+        "elapsed_seconds": 4.404,
+        "generated_assertions": 119,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 16.639,
+        "instrumented_outcome": "unknown/timeout",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/SumList/record.json",
+        "instrumented_record_sha256": "ccf520e6b1d7cd698c0b2db23b0e39282f95d1c5a5f37cfcf046428459f710ba",
+        "primary_outcome": "unknown/timeout",
+        "program": "SumList",
+        "record_sha256": "4064cb9e1b02c8aa705e28309fd4d4b20143783d0fbfabcfc1544a90a83f3693",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "unknown/timeout",
+        "before": "unknown/timeout",
+        "capture_complete": true,
+        "elapsed_seconds": 5.086,
+        "generated_assertions": 204,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 19.958,
+        "instrumented_outcome": "unknown/timeout",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/SqrtRoot/record.json",
+        "instrumented_record_sha256": "9c7a25bc1a71963d28f7a84b1a3d57b8e40f40ebc3a2b862af075bb9d6251881",
+        "primary_outcome": "unknown/timeout",
+        "program": "SqrtRoot",
+        "record_sha256": "3c3c6a09a4807fb075c352299f18cfcb2116f8735fcab83458bd20878521171b",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "specification violation",
+        "before": "specification violation",
+        "capture_complete": true,
+        "elapsed_seconds": 4.125,
+        "generated_assertions": 21,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 8.487,
+        "instrumented_outcome": "specification violation",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/TriangleArea/record.json",
+        "instrumented_record_sha256": "f2234d8408aedcc3b14b873d2fd9741e586c83b47a02134dda66cc2da3041a82",
+        "primary_outcome": "specification violation",
+        "program": "TriangleArea",
+        "record_sha256": "68a82c7ee75bf007701902d8641d5e707bb1f2b5e6f31b0482762aab841563dd",
+        "solver_queries": 3,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "unknown/timeout",
+        "before": "unknown/timeout",
+        "capture_complete": true,
+        "elapsed_seconds": 3.98,
+        "generated_assertions": 63,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 8.061,
+        "instrumented_outcome": "unknown/timeout",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/TupleToInt/record.json",
+        "instrumented_record_sha256": "7c8ed8b2c24d5eed7560afdcf8013af73d7499b6fed2eacc8b2cefb2f1aa6ae8",
+        "primary_outcome": "unknown/timeout",
+        "program": "TupleToInt",
+        "record_sha256": "ff4ea16a6d85f3ca36313adfb033ee54753f6adfecae71f604c801809580beb1",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "proved",
+        "before": "proved",
+        "capture_complete": true,
+        "elapsed_seconds": 3.794,
+        "generated_assertions": 6,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 6.18,
+        "instrumented_outcome": "proved",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/VolumeCube/record.json",
+        "instrumented_record_sha256": "dd738fe1879e0a3f3dfed17bd0608da8b79db2dbedade499d6f0728a7d84cfd1",
+        "primary_outcome": "proved",
+        "program": "VolumeCube",
+        "record_sha256": "e90533a6ffd14bbc4c5f97ad2a386c7515160225da114b0dc3f999ee8c63271e",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "unknown/timeout",
+        "before": "unknown/timeout",
+        "capture_complete": true,
+        "elapsed_seconds": 4.334,
+        "generated_assertions": 112,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 15.46,
+        "instrumented_outcome": "unknown/timeout",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/SumRangeList/record.json",
+        "instrumented_record_sha256": "5216d874da96378a0352f5a2b2e771afd86c49b400e49546af6a6c9c1fe131fe",
+        "primary_outcome": "unknown/timeout",
+        "program": "SumRangeList",
+        "record_sha256": "5ba371bc51d56b757781a38cbbe7aa6db262ee2be4597369ddf86ba18bfdfd3a",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "unknown/timeout",
+        "before": "unknown/timeout",
+        "capture_complete": true,
+        "elapsed_seconds": 4.865,
+        "generated_assertions": 251,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 21.443,
+        "instrumented_outcome": "unknown/timeout",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/SumOfSubarrayProd/record.json",
+        "instrumented_record_sha256": "ec3558d856c356fe84339deb85ce6e6fbf0fa4c79c49bbdeeb41063a55547aae",
+        "primary_outcome": "unknown/timeout",
+        "program": "SumOfSubarrayProd",
+        "record_sha256": "1f594b96ec0d13fb524feabf5e24dcbde033fc1aafd90b4f6eb36f28abefe424",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "unknown/timeout",
+        "before": "unknown/timeout",
+        "capture_complete": true,
+        "elapsed_seconds": 7.694,
+        "generated_assertions": 916,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 82.273,
+        "instrumented_outcome": "unknown/timeout",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/CountingSort/record.json",
+        "instrumented_record_sha256": "5c590b411512a0a49adae4759123b335efbd652f66315e3f95db591af7ed6417",
+        "primary_outcome": "unknown/timeout",
+        "program": "CountingSort",
+        "record_sha256": "22bc7f907f33cd5afa7d0bf803bdb340002ec0fb508a2ee88538fc315895b762",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "unknown/timeout",
+        "before": "unknown/timeout",
+        "capture_complete": true,
+        "elapsed_seconds": 6.139,
+        "generated_assertions": 457,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 33.543,
+        "instrumented_outcome": "unknown/timeout",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/SumOfPrimes/record.json",
+        "instrumented_record_sha256": "4baf92395e7d9a77ec4f7922f87b75851f647f58ff3e5f44bcc39637063ac356",
+        "primary_outcome": "unknown/timeout",
+        "program": "SumOfPrimes",
+        "record_sha256": "efe2f66e1b9fcb2b3a74e8de1df04c9a688895ca0cd06caeac05009df7a2c067",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "unknown/timeout",
+        "before": "unknown/timeout",
+        "capture_complete": true,
+        "elapsed_seconds": 7.419,
+        "generated_assertions": 773,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 45.193,
+        "instrumented_outcome": "unknown/timeout",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/RadixSort/record.json",
+        "instrumented_record_sha256": "e2a7f8bca58479a3cf853b441d897876aaab6d7284a22694866977b03781f14c",
+        "primary_outcome": "unknown/timeout",
+        "program": "RadixSort",
+        "record_sha256": "9d3f61ffae953069d48b7b38b88efb6da8a05047ba1f34fecee303df3d9aaafd",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "unknown/timeout",
+        "before": "unknown/timeout",
+        "capture_complete": true,
+        "elapsed_seconds": 10.132,
+        "generated_assertions": 1172,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 85.32,
+        "instrumented_outcome": "unknown/timeout",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/MaxSumOfThreeConsecutive/record.json",
+        "instrumented_record_sha256": "a95f08b0377d6c1cb9ca908529cb9f2d0b44736ce0fb3f79842045c282f9930c",
+        "primary_outcome": "unknown/timeout",
+        "program": "MaxSumOfThreeConsecutive",
+        "record_sha256": "fa4af9c34a06190ff51c3d4298ae14af97919696551585345b7213e71e93c101",
+        "solver_queries": 2,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      },
+      {
+        "after": "unknown/timeout",
+        "before": "unknown/timeout",
+        "capture_complete": false,
+        "elapsed_seconds": 5.62,
+        "generated_assertions": 370,
+        "generated_method_vcs": 2,
+        "instrumented_elapsed_seconds": 300.123,
+        "instrumented_outcome": "unknown/timeout",
+        "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/MaxDifference/record.json",
+        "instrumented_record_sha256": "4c2b7aca3486eacfc3b0f46eaf7dbfb24d261e53f53c58034c7e4ef72b4ef831",
+        "primary_outcome": "unknown/timeout",
+        "program": "MaxDifference",
+        "record_sha256": "ed7ed92d0492f72cf047a0253b7686137022761cf8225edfc0c6280805262013",
+        "solver_queries": 61,
+        "study": "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      }
+    ],
+    "solver_queries": 164,
+    "units": {
+      "comparability": "none of these is directly equivalent to a Frama-C WP report entry",
+      "generated_assertion_count": "assert statements in emitted OpenJML basic-block method VCs; includes implicit checks and constructors",
+      "generated_method_vc_count": "emitted basic-block method VC sections; retries/splits can repeat a method",
+      "solver_check_sat_count": "check-sat commands forwarded to the solver, including feasibility and counterexample follow-up queries"
+    },
+    "verification_result_policy": "Original uninstrumented verdicts and proof timings; instrumented reruns supply supplemental workload counts.",
+    "workers": 12
+  },
+  "mutant_verifier_outcomes": {
+    "c": {
+      "not run": 50,
+      "syntax/tool failure": 5,
+      "unknown/timeout": 922
+    },
+    "java": {
+      "precondition/RTE failure": 34,
+      "specification violation": 146,
+      "unknown/timeout": 797
+    }
+  },
+  "original_verifier_outcomes": {
+    "c": {
+      "proved": 6,
+      "unknown/timeout": 44
+    },
+    "java": {
+      "precondition/RTE failure": 1,
+      "proved": 13,
+      "specification violation": 2,
+      "unknown/timeout": 34
+    }
+  },
+  "run": "originals_stop_tool_error_20260927T161243Z_goal10_case300",
+  "source_hashes": {
+    "category_source_sha256": "c5cf4c8d90219575850b873f5078c11433fb291035e6047ba7ad1626ac0dd8ef",
+    "record_inventory_sha256": "5cad3bd12f5f14f321209432ca5e05420a9f148066f5faa3a93d7765b327791a",
+    "source_verification_summary_sha256": "ec3480edf31252ee23096600e8c5b9421dfc8efbd0df860106ce6e03e2ed2ce8",
+    "summary_sha256": "e29ab602fdb07652c4a0d12077f0dc3bab96ed9edfb230e9df472b55bce624dd"
+  },
+  "statistical_method": "median from statistics.median; sample SD n-1; quartiles and p95 linear interpolation at (n-1)*p",
+  "successful_verification": {
+    "c": {
+      "by_role": {
+        "mutant": {
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null,
+          "n": 0,
+          "p95": null,
+          "q1": null,
+          "q3": null,
+          "sample_sd": null,
+          "total": null
+        },
+        "original": {
+          "max": 3.968,
+          "mean": 1.5915,
+          "median": 0.8584999999999999,
+          "min": 0.557,
+          "n": 6,
+          "p95": 3.63775,
+          "q1": 0.6705,
+          "q3": 2.239,
+          "sample_sd": 1.401661692420821,
+          "total": 9.549
+        }
+      },
+      "goals": {
+        "max": 36,
+        "mean": 15,
+        "median": 8.5,
+        "min": 3,
+        "n": 6,
+        "p95": 34.5,
+        "q1": 4.75,
+        "q3": 25.0,
+        "sample_sd": 14.2828568570857,
+        "total": 90
+      },
+      "programs": [
+        "CountList",
+        "MaxOfTwo",
+        "MaxSubArraySum",
+        "OddBitSetNumber",
+        "SumNums",
+        "TestThreeEqual"
+      ],
+      "wall_seconds": {
+        "max": 3.968,
+        "mean": 1.5915,
+        "median": 0.8584999999999999,
+        "min": 0.557,
+        "n": 6,
+        "p95": 3.63775,
+        "q1": 0.6705,
+        "q3": 2.239,
+        "sample_sd": 1.401661692420821,
+        "total": 9.549
+      }
+    },
+    "java": {
+      "by_role": {
+        "mutant": {
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null,
+          "n": 0,
+          "p95": null,
+          "q1": null,
+          "q3": null,
+          "sample_sd": null,
+          "total": null
+        },
+        "original": {
+          "max": 4.414,
+          "mean": 3.975,
+          "median": 3.907,
+          "min": 3.779,
+          "n": 13,
+          "p95": 4.3162,
+          "q1": 3.814,
+          "q3": 4.106,
+          "sample_sd": 0.19607099054509142,
+          "total": 51.675
+        }
+      },
+      "goals": {
+        "generated_assertions": {
+          "max": 68,
+          "mean": 10.76923076923077,
+          "median": 6,
+          "min": 6,
+          "n": 13,
+          "p95": 30.799999999999912,
+          "q1": 6.0,
+          "q3": 6.0,
+          "sample_sd": 17.195706082982102,
+          "total": 140
+        },
+        "generated_method_vcs": {
+          "max": 2,
+          "mean": 2,
+          "median": 2,
+          "min": 2,
+          "n": 13,
+          "p95": 2.0,
+          "q1": 2.0,
+          "q3": 2.0,
+          "sample_sd": 0.0,
+          "total": 26
+        },
+        "program_assertions": {
+          "max": 65,
+          "mean": 7.769230769230769,
+          "median": 3,
+          "min": 3,
+          "n": 13,
+          "p95": 27.799999999999912,
+          "q1": 3.0,
+          "q3": 3.0,
+          "sample_sd": 17.195706082982102,
+          "total": 101
+        },
+        "solver_queries": {
+          "max": 2,
+          "mean": 2,
+          "median": 2,
+          "min": 2,
+          "n": 13,
+          "p95": 2.0,
+          "q1": 2.0,
+          "q3": 2.0,
+          "sample_sd": 0.0,
+          "total": 26
+        }
+      },
+      "programs": [
+        "CountIntgralPoints",
+        "DiameterCircle",
+        "DogAge",
+        "FindPoints",
+        "FindRectNum",
+        "HexagonalNum",
+        "MaxOfTwo",
+        "NoOfCubes",
+        "OddBitSetNumber",
+        "SquarePerimeter",
+        "SumNums",
+        "TestThreeEqual",
+        "VolumeCube"
+      ],
+      "wall_seconds": {
+        "max": 4.414,
+        "mean": 3.975,
+        "median": 3.907,
+        "min": 3.779,
+        "n": 13,
+        "p95": 4.3162,
+        "q1": 3.814,
+        "q3": 4.106,
+        "sample_sd": 0.19607099054509142,
+        "total": 51.675
+      }
+    }
+  },
+  "verification_completion": {
+    "completed_case_records": 2004,
+    "not_run_case_records": 50,
+    "total_case_records": 2054
+  }
+}

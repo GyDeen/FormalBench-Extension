@@ -1,0 +1,79 @@
+{
+  "no_experiment_rerun": true,
+  "artifacts": {
+    "README.md": "d6d6655099e00052fcf0aa20165ab99095d124803cdf1ed26cce150705c051f2",
+    "counterexample_goal_mapping/cases.csv": "9dbc535e6928042003966bc0b59ed978ea135e6a0d1409b721d9db937069c16e",
+    "counterexample_goal_mapping/goals.csv": "4f657634cf40970c4775f43b15d1dbd245874a3ca56db947a31671b204a5d251",
+    "counterexample_goal_mapping/manifest.json": "4d2773dd26d51cdadc82f0b76a12fb377c03db479e8fcaf8c9a5cef2193bbe0c",
+    "counterexample_goal_mapping/mapping.json": "8e03e561cb4d67c4c6d83e1aa85ac5f34b8d2a16854d3e31b11aa8febd655df1",
+    "counterexample_goal_mapping/mappings.csv": "2399808ad0fa69860b1145396a611883a9da6605d5002083dcd901c5b570b28f",
+    "counterexample_goal_mapping/README.md": "c596d21dc9a4d9a1d1ae55ded7799074cd4c394447fe13f8781982253a2a125e",
+    "counterexample_goal_mapping/section.md": "7cbafe788f458c6034f3604507c9352ade4a5a53de6e0cd78e5f3612229c03b5",
+    "goal_kind_status/goal_kinds.json": "f3c68e03d021ff2e234905cb0dad080c12d7907ff78048f5cace5a5ac1823890",
+    "goal_kind_status/section.md": "98e212fae5dd1cbb787dae71b4a07f30963d67f073f0ef10cfe646dcf9674b5d",
+    "goal_kind_status/java_mutant_workload_snapshot.json": "32f6c215cedd209fd558363dacef0c39bcc91641a6b4dd635b957dbfbf7f020e"
+  },
+  "counterexample_goal_mapping": {
+    "no_experiment_rerun": true,
+    "source_files_hash_checked": 4011,
+    "summary": {
+      "mutant_pairs": 977,
+      "validated_c_failures": 900,
+      "cases_with_falsified_postcondition": 710,
+      "cases_with_recorded_goal_for_falsified_clause": 685,
+      "cases_with_confirmed_java_same_family_diagnostic": 179,
+      "mapping_edges_by_status": {
+        "falsified_clause_with_recorded_goal": 745,
+        "compatible_call_precondition_candidates": 129,
+        "related_termination_goal_candidates": 31,
+        "falsified_clause_goal_not_recorded": 25,
+        "safety_goal_not_located": 30
+      },
+      "safety_cases_by_kind": {
+        "array_bounds": 144,
+        "negative_allocation_size": 12,
+        "stack_overflow": 31,
+        "null_reference": 3
+      },
+      "distinct_mapped_postcondition_goals_by_wp_state": {
+        "unknown": 465,
+        "proved": 280
+      },
+      "cross_language_case_matrix": [
+        {
+          "c_evidence": "no_validated_failure",
+          "java_outcome": "unknown/timeout",
+          "cases": 77
+        },
+        {
+          "c_evidence": "precondition/RTE failure",
+          "java_outcome": "specification violation",
+          "cases": 5
+        },
+        {
+          "c_evidence": "precondition/RTE failure",
+          "java_outcome": "unknown/timeout",
+          "cases": 185
+        },
+        {
+          "c_evidence": "specification violation",
+          "java_outcome": "precondition/RTE failure",
+          "cases": 34
+        },
+        {
+          "c_evidence": "specification violation",
+          "java_outcome": "specification violation",
+          "cases": 141
+        },
+        {
+          "c_evidence": "specification violation",
+          "java_outcome": "unknown/timeout",
+          "cases": 535
+        }
+      ]
+    },
+    "manifest_sha256": "4d2773dd26d51cdadc82f0b76a12fb377c03db479e8fcaf8c9a5cef2193bbe0c"
+  },
+  "source_experiment": "verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300",
+  "program_outcomes_and_timings_preserved": true
+}

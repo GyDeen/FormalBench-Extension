@@ -34,140 +34,14 @@
   "frozen_spec_sha256": "9630fe921af1bdd53a774ac126888581816bf09db969dc2397af09b39e3092b7",
   "goals": [],
   "input_fingerprint": "c844df86de9f16d804f785725de65f74190a3ebc0b6460320ab53254ebab6a56",
-  "java_goal_recording": {
-    "finished_utc": "2026-10-02T10:01:33.558328+00:00",
-    "previous_record": "original_verification/java_goal_recording_20261002T100041Z/previous_cases/NoOfCubes/record.json",
-    "previous_record_sha256": "d18ae6b4dda39cca81891d258ec1a7e5ecd734654890d4d3e5b19be53cc41485",
-    "started_batch_utc": "2026-10-02T10:00:41.464497+00:00",
-    "timing_note": "Canonical elapsed_seconds is the original uninstrumented proof time; recorder overhead is represented only in java_workload_rerun.elapsed_seconds.",
-    "workers": 12
-  },
-  "java_workload": {
-    "assertions_by_kind": {
-      "ExceptionList": 2,
-      "ExceptionalPostcondition": 2,
-      "Postcondition": 1,
-      "Precondition": 1
-    },
-    "capture_complete": true,
-    "generated_assertion_count": 6,
-    "generated_method_vc_count": 2,
-    "method_proof_completions": 2,
-    "method_proof_starts": 2,
-    "methods": [
-      {
-        "assertion_count": 3,
-        "assertions": [
-          {
-            "expression": "ASSERT_9_0_0___9",
-            "kind": "Precondition"
-          },
-          {
-            "expression": "ASSERT_15_80_80___13",
-            "kind": "ExceptionalPostcondition"
-          },
-          {
-            "expression": "ASSERT_16_80_80___14",
-            "kind": "ExceptionList"
-          }
-        ],
-        "assertions_by_kind": {
-          "ExceptionList": 1,
-          "ExceptionalPostcondition": 1,
-          "Precondition": 1
-        },
-        "method": "NoOfCubes.NoOfCubes()"
-      },
-      {
-        "assertion_count": 3,
-        "assertions": [
-          {
-            "expression": "ASSERT_50_179",
-            "kind": "Postcondition"
-          },
-          {
-            "expression": "ASSERT_36_118",
-            "kind": "ExceptionalPostcondition"
-          },
-          {
-            "expression": "ASSERT_51_298",
-            "kind": "ExceptionList"
-          }
-        ],
-        "assertions_by_kind": {
-          "ExceptionList": 1,
-          "ExceptionalPostcondition": 1,
-          "Postcondition": 1
-        },
-        "method": "NoOfCubes.noOfCubes(int,int)"
-      }
-    ],
-    "reported_warning_count": 0,
-    "schema_version": "1.0",
-    "solver_check_sat_count": 2,
-    "solver_check_sat_results": {
-      "unsat": 2
-    },
-    "solver_invocation_count": 2,
-    "solver_traces": [
-      {
-        "all_queries_answered": true,
-        "check_sat_count": 1,
-        "check_sat_results": {
-          "unsat": 1
-        },
-        "file": "solver-traces/solver-2378.smt2",
-        "responses_file": "solver-traces/solver-2378.responses",
-        "sha256": "3f9e1db4d018a038aef375c0224591408e1fbcd7cec353425ccb31e8176e8a70",
-        "solver_exit_code": null
-      },
-      {
-        "all_queries_answered": true,
-        "check_sat_count": 1,
-        "check_sat_results": {
-          "unsat": 1
-        },
-        "file": "solver-traces/solver-2399.smt2",
-        "responses_file": "solver-traces/solver-2399.responses",
-        "sha256": "2cd0698d8af0d2307648690a7022b78dbed263433714f1f9397ac20fc4607b2d",
-        "solver_exit_code": null
-      }
-    ],
-    "units": {
-      "comparability": "none of these is directly equivalent to a Frama-C WP report entry",
-      "generated_assertion_count": "assert statements in emitted OpenJML basic-block method VCs; includes implicit checks and constructors",
-      "generated_method_vc_count": "emitted basic-block method VC sections; retries/splits can repeat a method",
-      "solver_check_sat_count": "check-sat commands forwarded to the solver, including feasibility and counterexample follow-up queries"
-    }
-  },
-  "java_workload_capture": {
-    "java_solver_trace.py": "a042c155f8daf5a4a8cd3824823c0a618ff938b5c05ba836c365c17e0158763e",
-    "java_workload.py": "f9333d2c349a5050a66aedce0f9358424d1c623d5c067f89da42fdda3e91e218"
-  },
-  "java_workload_rerun": {
-    "artifacts_directory": "cases/NoOfCubes/original/java",
-    "elapsed_seconds": 7.218,
-    "interpretation": "Supplemental instrumented workload capture; does not replace the original proof result or timing.",
-    "outcome": "proved",
-    "record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/NoOfCubes/record.json",
-    "record_sha256": "f13bd668158f663e94c1f25f382fb479eec0b65c34483f21e254b08629bef03c"
-  },
   "language": "java",
   "logs": {
-    "instrumented_record": "original_verification/java_goal_recording_20261002T100041Z/instrumented_cases/NoOfCubes/record.json",
-    "java_workload": "java-workload.json",
-    "original_record": "original_verification/java_goal_recording_20261002T100041Z/previous_cases/NoOfCubes/record.json",
-    "stderr": null,
-    "stdout": null,
+    "stderr": "stderr.log",
+    "stdout": "stdout.log",
     "wp_report": null
   },
   "mutant_id": null,
   "outcome": "proved",
-  "primary_verification": {
-    "policy": "Original uninstrumented proof verdict and elapsed time are authoritative.",
-    "record": "original_verification/java_goal_recording_20261002T100041Z/previous_cases/NoOfCubes/record.json",
-    "record_sha256": "d18ae6b4dda39cca81891d258ec1a7e5ecd734654890d4d3e5b19be53cc41485"
-  },
   "program": "NoOfCubes",
   "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/NoOfCubes.java",
   "raw_source_sha256": "d5d7f69544de2c01754c93c5a202e31069bdc40eb0b7859f39307185a8300c4b",

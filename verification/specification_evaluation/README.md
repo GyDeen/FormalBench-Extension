@@ -9,11 +9,11 @@ as study programs, mutants, or entries in the paired score.
 
 ## Saved results
 
-Saved short-budget results are available in the [final experiment](results/originals_stop_tool_error_20260927T161243Z_goal10_case300/README.md).
-The [goal/assertion tables](results/originals_stop_tool_error_20260927T161243Z_goal10_case300/goal_kind_status/README.md)
-distinguish the authoritative program-level outcomes from instrumented workload attempts.
-The [instrumented Java mutant run](results/originals_stop_tool_error_20260927T161243Z_goal10_case300/mutant_verification/java_workload_20260929T133038Z_workers2/README.md)
-now resides alongside those results, with its individual result records, workload counts, and summaries allowed by Git.
+Saved short-budget [consistency and completeness results](results/originals_stop_tool_error_20260927T161243Z_goal10_case300/README.md)
+contain the authoritative program-level outcomes.
+The separate [goal/assertion results](goal_assertion_results/originals_stop_tool_error_20260927T161243Z_goal10_case300/README.md)
+retain tables, instrumented case records, counts, and provenance. Their README explains the limits on reconstructing exact
+Java clause types and individual assertion verdicts within unresolved methods. Both folders track results only.
 
 ## Inputs
 

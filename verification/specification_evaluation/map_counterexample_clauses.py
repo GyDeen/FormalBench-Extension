@@ -14,6 +14,11 @@ import re
 
 ROOT = Path(__file__).resolve().parent
 DEFAULT = ROOT / 'results/originals_stop_tool_error_20260927T161243Z_goal10_case300'
+DEFAULT_ANALYSIS = ROOT / 'goal_assertion_results/short_budget_goal10_case300'
+
+
+def analysis_directory(study):
+    return DEFAULT_ANALYSIS if study.name == DEFAULT.name else ROOT / 'goal_assertion_results' / study.name
 
 
 def read(path):
@@ -241,7 +246,8 @@ def csv_file(path, rows, columns):
             writer.writerow({k: json.dumps(row.get(k), ensure_ascii=False) if isinstance(row.get(k), (dict, list)) else row.get(k) for k in columns})
 
 
-def build(study):
+def build(study, analysis=None):
+    analysis = analysis or analysis_directory(study)
     contracts_path = ROOT / 'c_replay_contracts.json'
     contracts = read(contracts_path)
     source_hashes = {}
@@ -252,17 +258,18 @@ def build(study):
         sha = digest(path)
         if expected:
             assert sha == expected, path
-        source_hashes[path.relative_to(study).as_posix()] = sha
+        source_hashes[path.relative_to(ROOT.parent.parent).as_posix()] = sha
         return read(path)
 
     replay_summary = saved(study / 'counterexamples/summary.json')
-    snapshot = saved(study / 'goal_kind_status/java_mutant_workload_snapshot.json')
+    snapshot = saved(analysis / 'goal_kind_status/java_mutant_workload_snapshot.json')
     workloads = {(r['program'], str(r['mutant_id'])): r for r in snapshot['cases']}
-    with (study / 'goal_kind_status/java_mutant_diagnostics.csv').open(encoding='utf-8-sig', newline='') as stream:
+    with (analysis / 'goal_kind_status/java_mutant_diagnostics.csv').open(encoding='utf-8-sig', newline='') as stream:
         diagnostics = {}
         for row in csv.DictReader(stream):
             diagnostics.setdefault((row['program'], str(row['mutant_id'])), []).append(row)
-    source_hashes['goal_kind_status/java_mutant_diagnostics.csv'] = digest(study / 'goal_kind_status/java_mutant_diagnostics.csv')
+    diagnostics_path = analysis / 'goal_kind_status/java_mutant_diagnostics.csv'
+    source_hashes[diagnostics_path.relative_to(ROOT.parent.parent).as_posix()] = digest(diagnostics_path)
     catalog = {}
     for p, c in contracts.items():
         c_spec = saved(study / f'frozen_specs/c/{p}.json', c['frozen_spec_sha256'])
@@ -367,6 +374,7 @@ def build(study):
         'cross_language_case_matrix': [{'c_evidence': c, 'java_outcome': j, 'cases': n} for (c, j), n in sorted(matrix.items())]}
     return {'schema_version': 1, 'no_experiment_rerun': True, 'budget': {'goal_seconds': 10, 'case_seconds': 300},
         'interpretation': 'C native replay clause falsification is distinct from a WP invalid verdict. Java comparisons are paired-case semantic candidates or assertion families; the C witness was not executed in Java and Java diagnostics are not linked to individual Java clauses. Conditional WP proofs can depend on unproved intermediate obligations.',
+        'source_experiment': study.relative_to(ROOT.parent.parent).as_posix(), 'source_path_root': 'repository',
         'contracts_file': contracts_path.relative_to(ROOT.parent.parent).as_posix(), 'contracts_sha256': digest(contracts_path),
         'helper_contracts': [{'path': 'verification/java_arrays/' + name, 'sha256': sha} for name, sha in helper_hashes.items()],
         'source_files': [{'path': p, 'sha256': h} for p, h in sorted(source_hashes.items())],
@@ -396,8 +404,10 @@ def section(report):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--study', type=Path, default=DEFAULT)
+    parser.add_argument('--analysis-output', type=Path)
     args = parser.parse_args(); study = args.study.resolve()
-    report = build(study); out = study / 'counterexample_goal_mapping'; out.mkdir(exist_ok=True)
+    analysis = (args.analysis_output or analysis_directory(study)).resolve()
+    report = build(study, analysis); out = analysis / 'counterexample_goal_mapping'; out.mkdir(parents=True, exist_ok=True)
     write_json(out / 'mapping.json', report)
     csv_file(out / 'cases.csv', report['cases'], ['program', 'mutant_id', 'category', 'c_validated_failure', 'c_replay_outcome', 'c_verification_outcome', 'java_verification_outcome', 'inputs', 'expected', 'saved_failed_labels', 'mapping_count', 'has_falsified_clause', 'has_recorded_goal_for_falsified_clause', 'has_confirmed_java_same_family_diagnostic', 'java_generated_assertions', 'java_assertion_capture_complete', 'java_diagnostics', 'c_record', 'java_record', 'replay_evidence'])
     csv_file(out / 'mappings.csv', report['mappings'], ['program', 'mutant_id', 'kind', 'semantic_role', 'mapping_status', 'clause_index', 'property', 'clause', 'evidence_basis', 'evidence', 'c_goals', 'c_wp_reported_violation', 'java_alignment', 'java_clause_index', 'java_clause', 'java_relevant_kinds', 'java_relevant_diagnostics', 'java_confirmed_same_family_diagnostic', 'java_clause_specific_diagnostic_link'])
@@ -413,22 +423,24 @@ def main():
     text = section(report); (out / 'section.md').write_text(text, encoding='utf-8')
     (out / 'README.md').write_text(text.replace('(counterexample_goal_mapping/', '('), encoding='utf-8')
     write_json(out / 'manifest.json', {'no_experiment_rerun': True, 'source_files': report['source_files'],
+        'source_experiment': report['source_experiment'], 'source_path_root': 'repository',
         'analysis_code_sha256': digest(Path(__file__)), 'contracts_file': report['contracts_file'], 'contracts_sha256': report['contracts_sha256'],
         'helper_contracts': report['helper_contracts'],
         'artifacts': {name: digest(out / name) for name in ['mapping.json', 'cases.csv', 'mappings.csv', 'goals.csv', 'section.md', 'README.md']}})
-    readme = study / 'README.md'; old = readme.read_text(encoding='utf-8-sig')
+    readme = analysis / 'README.md'; old = readme.read_text(encoding='utf-8-sig') if readme.is_file() else '# Goal/assertion analysis\n\n'
     block = '<!-- counterexample-goal-mapping:start -->\n' + text + '\n<!-- counterexample-goal-mapping:end -->\n\n'
     if '<!-- counterexample-goal-mapping:start -->' in old:
         old = re.sub(r'<!-- counterexample-goal-mapping:start -->.*?<!-- counterexample-goal-mapping:end -->\s*', lambda _: block, old, flags=re.S)
     else:
-        old = old.replace('## Category results', block + '## Category results', 1)
-    readme.write_text(old, encoding='utf-8')
-    audit_path = study / 'final_report_audit.json'; audit = read(audit_path)
+        old += '\n' + block
+    readme.write_text(old.rstrip() + '\n', encoding='utf-8')
+    audit_path = analysis / 'analysis_audit.json'
+    audit = read(audit_path) if audit_path.is_file() else {'no_experiment_rerun': True, 'artifacts': {}}
     audit['counterexample_goal_mapping'] = {'no_experiment_rerun': True, 'source_files_hash_checked': len(report['source_files']), 'summary': report['summary'], 'manifest_sha256': digest(out / 'manifest.json')}
     audit['artifacts']['README.md'] = digest(readme)
     for path in out.iterdir():
         if path.suffix in {'.json', '.csv', '.md'}:
-            audit['artifacts'][path.relative_to(study).as_posix()] = digest(path)
+            audit['artifacts'][path.relative_to(analysis).as_posix()] = digest(path)
     write_json(audit_path, audit)
     print(json.dumps(report['summary'], indent=2))
 
