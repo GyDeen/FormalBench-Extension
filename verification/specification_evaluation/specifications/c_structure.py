@@ -1,9 +1,9 @@
 """C-specific declaration checks for shared loop-structure matching."""
 from __future__ import annotations
 
-from .c_bindings import Function, normalize
-from .loop_structure import match_loop_structure
-from .manifest import InputError
+from verification.specification_evaluation.specifications.c_bindings import Function, normalize
+from verification.specification_evaluation.specifications.loop_structure import match_loop_structure
+from verification.specification_evaluation.manifest import InputError
 
 
 def _validate_inert_declaration_gap(target: Function, next_target: int,

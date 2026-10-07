@@ -15,7 +15,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-from .manifest import REPO, InputError, sha256
+from verification.specification_evaluation.manifest import REPO, InputError, sha256
 
 CONTRACT_ROOT = REPO / "verification/java_arrays"
 CONTRACTS = (
@@ -73,14 +73,14 @@ def executable_info(name: str, version_flag: str) -> dict[str, Any]:
     if version_flag == "-version" and re.match(r"^33\.0(?:\s|$)", version):
         info["compatibility"] = _float_negation_compatibility(info)
     if version_flag == "--version" and version == "openjml 21.0.27":
-        from .java_compat import compatibility
+        from verification.specification_evaluation.backends.java_compat import compatibility
         info["compatibility"] = compatibility(info)
     return info
 
 
 def _float_negation_compatibility(verifier: dict[str, Any]) -> dict[str, str]:
     """Build a version-specific RTE repair without changing the installed tool."""
-    source = Path(__file__).parent / "framac/float_negation_33.ml"
+    source = Path(__file__).parents[1] / "framac/float_negation_33.ml"
     source_hash = sha256(source)
     key = hashlib.sha256((source_hash + verifier["sha256"]).encode()).hexdigest()[:20]
     directory = REPO / ".tools/frama-c-compat" / key
@@ -152,7 +152,7 @@ def build_command(language: str, source: Path, case_dir: Path, settings: Setting
     """Build the configured OpenJML or Frama-C command for one annotated program."""
     if language == "java":
         # OpenJML checks the annotated FormalBench Java program.
-        from .java_compat import command_options
+        from verification.specification_evaluation.backends.java_compat import command_options
         return [executables["java"]["path"],
                 *command_options(executables["java"], source, settings.java_prover),
                 "--esc", "--progress", "--nullable-by-default",
@@ -386,7 +386,7 @@ def run_verifier(language: str, source: Path, case_dir: Path, settings: Settings
                          else "verifier")
     captured_models = {}
     if language == "c" and settings.capture_c_counterexamples:
-        from .c_counterexamples import extract_models
+        from verification.specification_evaluation.counterexamples.wp_models import extract_models
         captured_models = {"counterexample_models": extract_models(stdout, goals)}
     return {"outcome": outcome, "reason": reason, "goals": goals, "exit_code": returncode,
             **captured_models,

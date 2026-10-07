@@ -8,7 +8,7 @@ import re
 from dataclasses import dataclass
 from typing import Any
 
-from .manifest import InputError
+from verification.specification_evaluation.manifest import InputError
 
 LEX = re.compile(
     r'"(?:\\.|[^"\\])*"|\'(?:\\.|[^\'\\])*\'|//[^\n]*|/\*[\s\S]*?\*/|'
@@ -252,7 +252,7 @@ def apply_specification(raw_original: str, specification: dict[str, Any],
             if record.get("loop_id") != f"loop_{same_function.index(index) + 1}":
                 raise InputError("Structured loop ID does not match the original")
             if specification.get("language") == "c":
-                from .c_structure import loop_correspondence
+                from verification.specification_evaluation.specifications.c_structure import loop_correspondence
                 owner = record["function"]
                 if owner not in c_loop_maps:
                     old = [s for s in original_spans if s[0] == owner]
@@ -261,7 +261,7 @@ def apply_specification(raw_original: str, specification: dict[str, Any],
                         raise InputError("C loop annotation has no unique function")
                     loop_mapping, deleted = loop_correspondence(before, after, old[0], new[0])
                     if deleted:
-                        from .c_bindings import Function
+                        from verification.specification_evaluation.specifications.c_bindings import Function
                         old_function = Function(before, old[0])
                         for removed in deleted:
                             end = old_function.loop_ends[removed]
@@ -298,8 +298,8 @@ def apply_specification(raw_original: str, specification: dict[str, Any],
                             raise InputError("Deleted Java do loop has no safe correspondence")
                         # Java needs only shared token/loop structure matching;
                         # declaration rebinding remains specific to C/ACSL.
-                        from .loop_structure import match_loop_structure
-                        from .token_structure import FunctionStructure
+                        from verification.specification_evaluation.specifications.loop_structure import match_loop_structure
+                        from verification.specification_evaluation.specifications.token_structure import FunctionStructure
                         loop_mapping, deleted = match_loop_structure(before, after, old[0], new[0])
                         old_function = FunctionStructure(before, old[0])
                         for removed, null in deleted.items():
@@ -370,7 +370,7 @@ def apply_specification(raw_original: str, specification: dict[str, Any],
             reanchored_empty = False
             if (specification.get("language") in {"c", "java"} and record["target"] == "statement"
                     and re.fullmatch(r"(?:/\*@\s*assert\b[\s\S]*\*/|//@\s*assert\b[^\n]*)", record["text"])):
-                from .loop_structure import empty_statement_anchor
+                from verification.specification_evaluation.specifications.loop_structure import empty_statement_anchor
                 empty_index = empty_statement_anchor(before, after, index, mapping)
                 if empty_index is not None:
                     target_index, reanchored_empty = empty_index, True
@@ -389,7 +389,7 @@ def apply_specification(raw_original: str, specification: dict[str, Any],
         ):
             raise InputError("Function annotation moved away from its declaration")
         if specification.get("language") == "c" and before != after and record["function"]:
-            from .c_bindings import rebind_annotation
+            from verification.specification_evaluation.specifications.c_bindings import rebind_annotation
             old = [span for span in original_spans if span[0] == record["function"]]
             new = [span for span in target_spans if span[0] == record["function"]]
             if len(old) != 1 or len(new) != 1:
@@ -399,7 +399,7 @@ def apply_specification(raw_original: str, specification: dict[str, Any],
                                                loop_mapping)
             record = {**record, "text": text, "c_bindings": bindings}
         if specification.get("language") == "java":
-            from .java_compat import normalize_annotation
+            from verification.specification_evaluation.backends.java_compat import normalize_annotation
             text, repairs = normalize_annotation(record["text"])
             record = {**record, "text": text, "java_compatibility": repairs}
         position = mutant_tokens[target_index].start

@@ -7,11 +7,11 @@ import subprocess
 from collections import Counter
 from pathlib import Path
 
-from .annotations import apply_specification
-from .diagnostic_selection import add_selectors, select_cases
-from .manifest import DEFAULT_C, DEFAULT_JAVA, DEFAULT_MANIFEST, InputError, load_population, sha256
-from .verifiers import Settings, build_command, executable_info, stage_c_support, support_hashes
-from .workflow import evaluate_case, read_json, write_json
+from verification.specification_evaluation.specifications.annotations import apply_specification
+from verification.specification_evaluation.diagnostics.selection import add_selectors, select_cases
+from verification.specification_evaluation.manifest import DEFAULT_C, DEFAULT_JAVA, DEFAULT_MANIFEST, InputError, load_population, sha256
+from verification.specification_evaluation.backends.verifiers import Settings, build_command, executable_info, stage_c_support, support_hashes
+from verification.specification_evaluation.workflow import evaluate_case, read_json, write_json
 
 
 def main():

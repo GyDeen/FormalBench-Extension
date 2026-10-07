@@ -1,7 +1,7 @@
 """Language-neutral token indexes for function and control-flow structure."""
 from __future__ import annotations
 
-from .manifest import InputError
+from verification.specification_evaluation.manifest import InputError
 
 
 def pairs(tokens):

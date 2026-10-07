@@ -7,7 +7,7 @@ import json
 import math
 from pathlib import Path
 import statistics
-from .manifest import REPO
+from verification.specification_evaluation.manifest import REPO
 
 CATEGORIES = ('sequential', 'branch', 'single_path_loop', 'multi_path_loop', 'nested')
 OUTCOMES = ('proved', 'specification violation', 'precondition/RTE failure', 'unknown/timeout', 'syntax/tool failure', 'not run')
@@ -59,7 +59,22 @@ def build(output, selection):
         assert key not in paths
         paths[key] = path
         records.append(record)
-    assert len(records) == 2 * (50 + summary['eligible_pair_count']) == 2054
+    available_record_count = len(records)
+    expected = [(program, 'original', None, language)
+                for program in categories for language in ('java', 'c')]
+    for pair in summary['pair_records']:
+        program, mutant_id = pair['mutant'].split('/')
+        expected.extend((program, 'mutant', mutant_id, language) for language in ('java', 'c'))
+    assert len(expected) == 2 * (50 + summary['eligible_pair_count']) == 2054
+    assert set(paths).issubset(expected)
+    by_key = {(r['program'], r['role'], r['mutant_id'], r['language']): r for r in records}
+    for key in expected:
+        if key not in by_key:
+            program, role, mutant_id, language = key
+            record = {'program': program, 'role': role, 'mutant_id': mutant_id,
+                      'language': language, 'outcome': 'not run', 'attempt_status': 'not run'}
+            records.append(record)
+            by_key[key] = record
     for language in ('java', 'c'):
         for role in ('original', 'mutant'):
             counts = Counter(r['outcome'] for r in records if r['language'] == language and r['role'] == role)
@@ -69,15 +84,7 @@ def build(output, selection):
     for pair in summary['pair_records']:
         program, mutant_id = pair['mutant'].split('/')
         for language in ('java', 'c'):
-            assert pair[language] == read(paths[(program, 'mutant', mutant_id, language)])['outcome']
-    replay_path = output / 'counterexamples/summary.json'
-    replay_summary = read(replay_path) if replay_path.is_file() else None
-    replay_records = [r for r in replay_summary['records'] if r['role'] == 'mutant'] if replay_summary else []
-    if replay_summary:
-        assert len(replay_records) == summary['eligible_pair_count']
-
-    def replay_counts(rows):
-        return dict(Counter(r['outcome'] if r['validated'] else 'no validated failure' for r in rows))
+            assert pair[language] == by_key[(program, 'mutant', mutant_id, language)]['outcome']
 
     successful, primary = {}, {}
     for language in ('java', 'c'):
@@ -89,10 +96,6 @@ def build(output, selection):
                    and originals[(r['program'], language)]['outcome'] == 'proved']
         primary[language] = {'originals': sum(r['outcome'] == 'proved' for (p, l), r in originals.items() if l == language),
                              'eligible': len(mutants), 'verifier_outcomes': dict(Counter(r['outcome'] for r in mutants))}
-        if language == 'c' and replay_summary:
-            rows = [r for r in replay_records if originals[(r['program'], 'c')]['outcome'] == 'proved']
-            assert len(rows) == len(mutants)
-            primary[language]['validated_replay_outcomes'] = replay_counts(rows)
     category_results = []
     for category in CATEGORIES:
         programs = [p for p, c in categories.items() if c == category]
@@ -101,22 +104,19 @@ def build(output, selection):
         for language in ('java', 'c'):
             rows = [r for r in records if r['program'] in programs and r['language'] == language]
             entry[language] = {role: dict(Counter(r['outcome'] for r in rows if r['role'] == role)) for role in ('original', 'mutant')}
-        if replay_summary:
-            entry['c_replay'] = replay_counts(r for r in replay_records if r['program'] in programs)
         category_results.append(entry)
     data = {'generated_utc': datetime.now(timezone.utc).isoformat(), 'run': output.name,
             'scope': 'Program-level consistency and mutation-based completeness only.',
             'category_source': selection.relative_to(REPO).as_posix(),
             'successful': successful, 'categories': category_results, 'verified_original_subsets': primary,
             'completion': {'completed_case_records': sum(r['attempt_status'] == 'complete' for r in records),
-                           'total_case_records': len(records), 'not_run_case_records': sum(r['outcome'] == 'not run' for r in records)},
+                           'total_case_records': len(records), 'available_case_records': available_record_count,
+                           'not_run_case_records': sum(r['outcome'] == 'not run' for r in records)},
             'statistical_method': 'Sample SD n-1; quartiles and p95 use linear interpolation at (n-1)*p.',
-            'interpretation': 'Java diagnostics and C execution witnesses are different evidence. Unknown verification '
-                              'and finite searches without a validated failure establish neither correctness nor completeness.'}
-    if replay_summary:
-        data['c_counterexample_search'] = {'source': 'counterexamples/summary.json',
-                                         'mutant_outcomes': replay_counts(replay_records), 'searched_mutants': len(replay_records),
-                                         'searched_originals': sum(r['role'] == 'original' for r in replay_summary['records'])}
+            'interpretation': 'Only saved verifier outcomes are reported. Captured WP models are candidates, not '
+                              'validated detections. Missing records are not run; unresolved verification is inconclusive.'}
+    if summary.get('c_mutant_status'):
+        data['c_mutant_status'] = summary['c_mutant_status']
     return data, summary, config, records, paths
 
 
@@ -145,47 +145,35 @@ def render(data, summary, config, records, paths):
                                         ('n', 'total', 'mean', 'median', 'sample_sd', 'min', 'max')]] for lang in ('java', 'c')]),
                 '## Completeness',
                 'Completeness is assessed by rejection of behaviour-changing mutants under their originals’ frozen specifications. '
-                'Java rows use classified OpenJML diagnostics. C proof outcomes and execution-validated failures are distinct.',
+                'Java rows use classified OpenJML diagnostics. C rows use WP verdicts; captured models alone do not count as detections.',
                 table(['Verifier', *outcome_headers], [[label, 977, *[summary['mutants'][lang].get(o, 0) for o in OUTCOMES]]
                        for lang, label in (('java', 'Java / OpenJML'), ('c', 'C / WP'))])]
-    replay = data.get('c_counterexample_search')
-    if replay:
-        counts = replay['mutant_outcomes']
-        sections += ['### Validated C mutant failures',
-                     table(['Searched mutants', 'Postcondition violations', 'Safety failures', 'No validated failure'],
-                           [[replay['searched_mutants'], counts.get('specification violation', 0),
-                             counts.get('precondition/RTE failure', 0), counts.get('no validated failure', 0)]]),
-                     f"The saved search covers {replay['searched_originals']}/50 original controls. "
-                     'A finite search without a validated failure is inconclusive. Validated C witnesses do not change saved WP verdicts.',
-                     'Evidence is retained in the [counterexample report](counterexamples/README.md), '
-                     '[per-case replay results](counterexamples/summary.json), and [integration audit](counterexamples/integration_audit.json).']
+    if data.get('c_mutant_status'):
+        sections.insert(1, '**C mutant status:** ' + data['c_mutant_status'])
     rows = []
     for lang in ('java', 'c'):
         subset = data['verified_original_subsets'][lang]
-        counts = subset.get('validated_replay_outcomes', subset['verifier_outcomes'])
+        counts = subset['verifier_outcomes']
         rejected = counts.get('specification violation', 0)
+        not_run = counts.get('not run', 0)
         rows.append([lang.title(), subset['originals'], subset['eligible'], rejected, counts.get('precondition/RTE failure', 0),
-                     counts.get('no validated failure', counts.get('unknown/timeout', 0)), pct(rejected, subset['eligible'])])
+                     counts.get('unknown/timeout', 0), not_run,
+                     'N/A (not run)' if not_run == subset['eligible'] else pct(rejected, subset['eligible'])])
     sections += ['### Mutants whose originals were fully verified',
                  'This subset gives more direct evidence that a specification accepts its original while rejecting a mutant. '
                  'Rates use all eligible mutants in each subset; safety failures are separate from specification/postcondition violations. '
-                 'Java diagnostics and C replay witnesses have different meanings, so their rates are descriptive rather than equivalent measurements.',
-                 table(['Language', 'Verified originals', 'Eligible mutants', 'Specification/postcondition violations', 'Safety failures', 'Inconclusive', 'Violation rate'], rows),
+                 'A cohort with no executed mutants has no detection rate.',
+                 table(['Language', 'Verified originals', 'Eligible mutants', 'Specification violations', 'Safety failures', 'Inconclusive', 'Not run', 'Violation rate'], rows),
                  '### Mutant outcomes by category',
                  table(['Category', 'Language', *outcome_headers],
                        [[e['category'], lang.title(), sum(e[lang]['mutant'].values()), *[e[lang]['mutant'].get(o, 0) for o in OUTCOMES]]
                         for e in data['categories'] for lang in ('java', 'c')])]
-    if replay:
-        sections += [table(['Category', 'Searched C mutants', 'Postcondition violations', 'Safety failures', 'No validated failure'],
-                           [[e['category'], e['mutant_pairs'], e['c_replay'].get('specification violation', 0),
-                             e['c_replay'].get('precondition/RTE failure', 0), e['c_replay'].get('no validated failure', 0)]
-                            for e in data['categories']])]
     sections += ['Authoritative records are `cases/<program>/<original or mutant_ID>/<language>/record.json`. '
                  '[summary.json](summary.json) retains overall outcomes and original-outcome strata; '
                  '[results_summary.json](results_summary.json) and [statistics.json](statistics.json) contain the derived program-level report. '
                  'Generated source files, binaries, and solver traces remain excluded from Git.',
                  'Regenerate this report from saved results without invoking a verifier:',
-                 '```bash\npython3 -m verification.specification_evaluation.summarize_experiment \\\n'
+                 '```bash\npython3 -m verification.specification_evaluation.reporting.experiment \\\n'
                  f"  --output verification/specification_evaluation/results/{data['run']}\n```"]
     return '\n\n'.join(sections) + '\n'
 

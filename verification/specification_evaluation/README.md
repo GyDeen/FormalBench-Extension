@@ -7,11 +7,44 @@ new mutants. JArray is only the fixed library interface assumed by translated
 C programs; its implementation and validation clients are **not** evaluated
 as study programs, mutants, or entries in the paired score.
 
+## Package organization
+
+| Location | Responsibility |
+| --- | --- |
+| `__main__.py`, `workflow.py`, `manifest.py` | CLI, ordered study stages, fixed input population and case records |
+| `specifications/` | Freeze and transfer annotations; token, function, loop and C binding correspondence |
+| `backends/` | OpenJML and Frama-C commands, outcome classification, compatibility setup and Java solver recording |
+| `counterexamples/wp_models.py` | Parse full models emitted by WP; no input generator, replay oracle or extra solver search |
+| `diagnostics/` | Explicitly selected C/Java diagnostic runs outside the main experiment |
+| `reporting/` | Saved-result summaries and checked promotion of C original verification records |
+| `tests/` | Unit checks; optional OpenJML integration checks are separate |
+| `framac/`, `openjml/` | Version-specific compatibility source assets used by the backends |
+| `results/`, `goal_assertion_results/` | Saved experiment evidence, separate from executable modules |
+
+The study CLI remains `python3 -m verification.specification_evaluation`.
+Reporting and diagnostic commands now use their subpackage paths; the former
+flat script entry points have been removed. New code locations change adapter
+fingerprints, so use a fresh output directory for future verification and copy
+the existing frozen specifications into it. Historical records are not rewritten
+to make them resumable under changed code.
+
+The local `tests/` directory follows the repository's existing Git ignore policy.
+When those local checks are present, run them without a verifier or counterexample search:
+
+```bash
+python3 -m verification.specification_evaluation.tests
+```
+
+This entry point blocks external process launches. Two artifact-dependent checks
+are skipped if their historical pilot files are unavailable. OpenJML plugin
+integration tests are excluded; invoke `tests.test_java_plugin` separately with
+`python3 -m unittest` when deliberately testing the installed toolchain.
+
 ## Saved results
 
 Saved short-budget [consistency and completeness results](results/originals_stop_tool_error_20260927T161243Z_goal10_case300/README.md)
-contain the authoritative program-level outcomes.
-The separate [goal/assertion results](goal_assertion_results/originals_stop_tool_error_20260927T161243Z_goal10_case300/README.md)
+contain the retained program-level outcomes. Previous C mutant proof and replay results were withdrawn on 8 October 2026; Java results and C original verification remain. No replacement C run has started.
+The separate [goal/assertion results](goal_assertion_results/short_budget_goal10_case300/README.md)
 retain tables, instrumented case records, counts, and provenance. Their README explains the limits on reconstructing exact
 Java clause types and individual assertion verdicts within unresolved methods. Both folders track results only.
 
@@ -156,53 +189,35 @@ tools. Diagnostic logging, proxying, and concurrent load can affect timings.
 See the [OpenJML proof splitting documentation](https://www.openjml.org/tutorial/SplittingProofs)
 and [user guide](https://www.openjml.org/documentation/OpenJMLUserGuide.pdf).
 
-## C counterexample capture and validated replay
+## C counterexample model capture
 
 `--capture-c-counterexamples` enables `-wp-counter-examples -wp-status` and
-retains generated queries under each case's `wp/` directory. Select a solver
-with model support, identified by `frama-c -wp-list-provers`; the installed
-Z3 4.8.12 configuration supports this. Use a new output directory because the
-setting changes the verification protocol. Parsed full models appear in
-`counterexample_models`; a model alone does not change a verdict.
+retains generated queries under each case's `wp/` directory. Use a fresh output
+directory and a model-capable prover configuration. The installed configuration
+must still be calibrated before the replacement experiment is launched.
 
-WP's top-level JSON proof report does not document an `invalid` verdict. Even
-a model-producing proof attempt may remain `Unknown (Model)`. The C rejection
-rule requires explicit invalidity or a validated counterexample, while the
-Java rule uses classified OpenJML proof-failure diagnostics. Zero C rejections
-in the original run is therefore not a comparable measure of Java/C fault
-detection. See the [Frama-C 33 WP manual, sections 2.4.10 and 2.7](https://www.frama-c.com/download/frama-c-wp-manual.pdf).
+The backend passes WP output to `counterexamples.wp_models.extract_models`.
+Parsed model blocks are stored as `counterexample_models` separately from proof
+verdicts. The parser does not execute a solver, generate inputs, reconstruct heap
+objects, evaluate ACSL postconditions or replay a program.
 
-The supplemental runner calibrates on MaxOfTwo before evaluating the six proved
-C originals and their 80 mutants:
+The former supplemental C runners, bounded/EvoSuite input sources, shortened
+SMT-query search, handwritten replay oracles, witness audits, result-merging
+scripts and witness-to-goal mapper have been removed from the active package.
+Historical scripts are retained only in ignored local `output/` recovery storage.
+Reporting no longer imports their replay summaries or counts.
 
-```bash
-python3 -m verification.specification_evaluation.c_counterexamples \
-  --calibrate --output verification/specification_evaluation/results/c_counterexamples_calibration
-python3 -m verification.specification_evaluation.c_counterexamples \
-  --workers 2 --output verification/specification_evaluation/results/c_counterexamples_proved_originals
-```
-
-It reuses exact frozen annotated sources and support hashes. Original controls
-must prove and agree with executable equivalents of their frozen postconditions.
-The replay oracles are restricted to six explicitly pinned specification hashes;
-this is not a general ACSL-to-C translator. It retains WP outcomes separately
-from replay outcomes. WP's preliminary incremental SMT queries can provide scalar
-candidates even when completing the full theory model times out. Those queries
-are labelled partial, and their SAT result never establishes rejection. A fixed
-bounded search with seed 726 also supplies candidates, including valid arrays.
-
-A functional rejection requires an admissible input, normal execution of the
-actual C mutant, no UBSan diagnostic, and a result violating the frozen
-postcondition. Runtime-safety witnesses are separate. A passing finite search,
-failed model extraction, or replay timeout remains inconclusive. Native compile
-commands, witnesses, expected/actual values and candidate origins are saved.
-The source experiment is not modified or merged with these supplemental outcomes.
-Solver `.smt2` files, tests, compiler binaries and configuration changes need not
-be committed with the report.
+WP may report `Unknown (Model)`. A captured model is a candidate, not an
+automatically validated mutant detection. Unknown/timeouts remain unresolved;
+the current classifier requires explicit invalidity or a validated counterexample
+for a violation label. Candidate validation and a calibrated full-population
+Frama-C-only runner still need completing. There is currently no replacement
+replay command. See the [Frama-C WP manual](https://www.frama-c.com/download/frama-c-wp-manual.pdf)
+for the model-generation and proof-report interfaces.
 
 ## Targeted diagnostic runs
 
-Both `diagnose_c_repairs` and `diagnose_java_repairs` accept these repeatable
+Both `diagnostics.c` and `diagnostics.java` accept these repeatable
 selectors. Multiple selectors are combined, with duplicate cases run once:
 
 | Selector | Target |
@@ -215,12 +230,12 @@ selectors. Multiple selectors are combined, with duplicate cases run once:
 Run from the repository root inside the verifier's Linux environment, for example:
 
 ```bash
-python3 -m verification.specification_evaluation.diagnose_c_repairs \
+python3 -m verification.specification_evaluation.diagnostics.c \
   --study verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300 \
   --output verification/specification_evaluation/results/diagnose_countingsort_c \
   --program CountingSort --goal-timeout 5 --timeout 60
 
-python3 -m verification.specification_evaluation.diagnose_java_repairs \
+python3 -m verification.specification_evaluation.diagnostics.java \
   --study verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300 \
   --output verification/specification_evaluation/results/diagnose_countingsort_java \
   --source FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/CountingSort.java
@@ -293,61 +308,35 @@ An explicit invalid precondition or RTE goal is recorded separately from a
 specification violation. OpenJML proof-failure warnings are recorded as Java
 verification failures, with precondition and runtime-safety warnings separated.
 
-## Evidence categories and scores
+## Saved-result reporting
 
-Saved C counterexamples can be integrated into their source experiment without
-restarting verification or replay:
+Regenerate summaries from saved verification records without executing tools:
 
 ```bash
-python3 -m verification.specification_evaluation.integrate_c_counterexamples \
+python3 -m verification.specification_evaluation.reporting.experiment \
   --output verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300
 ```
 
-The committed experiment contains result information only: per-case verification
-records and WP reports, replay records and witnesses, audits, frozen contracts,
-and summaries. Canonical sources remain under `FormalBench-data/`. Generated
-source snapshots, harnesses, compiler metadata and binaries stay in ignored
-local output storage. Commands and transfer results are embedded in the case
-records, so their separate copies are excluded as well.
+The generator reports missing case records as `not run`, checks them against the
+saved population summary, and leaves a wholly unrun cohort's detection rate
+unavailable. It reads verifier evidence only; it does not import historical
+supplementary replay results or add hash provenance to generated summaries.
 
-README/statistics regeneration uses the retained results and Java workload
-snapshot. The integration commands below require the complete local working
-artifacts of the input run; a results-only checkout does not include those files.
-
-The integration preserves the original proof-only summary in
-`summary_verification.json`, archives completed case evidence under
-`counterexamples/`, and adds `c_counterexample_evidence` to `summary.json`.
-Overlapping case coverage is deduplicated. Stopped searches remain partial;
-current original-source changes are recorded separately. The combined C evidence
-view does not turn a WP unknown verdict into a WP invalid verdict. Regenerate the
-experiment README/statistics with `summarize_experiment` after integration.
-
-The default evidence run is the completed full-population replay search
-`c_counterexamples_refreshed_all_c_20261001_search_only`. It covers 50 originals
-and 977 mutants using the refreshed frozen contracts. Use repeatable
-`--evidence-run` arguments to choose other saved runs.
-
-The four corrected-original C verification invocations can be promoted after
-checking that their sources, frozen contracts, settings, trusted support and
-verifier match the experiment:
+`reporting.c_originals` retains the checked promotion of the four corrected C
+original verification runs. It requires the complete local artifacts and matching
+sources, contracts, settings and trusted support. It does not run verification:
 
 ```bash
-python3 -m verification.specification_evaluation.integrate_c_originals \
+python3 -m verification.specification_evaluation.reporting.c_originals \
   --output verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300 \
   --rerun verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/original_verification/c_corrected_originals_verification_20261001
 ```
 
-This archives the original invocation records and the replaced pending records
-under `original_verification/`, updates the four original case records, and
-recounts the proof summary. It does not rerun mutant verification. The README
-and statistics generator includes deferred `not run` cases explicitly.
+Canonical sources stay under `FormalBench-data/`. Saved result records and frozen
+contracts are separate from generated sources, solver traces and binaries, which
+remain in ignored working storage.
 
-Corrected C translation reports and completed C search outputs have been
-consolidated inside the final experiment. `c_run_archive.json` records their
-former and current result locations and historical copy/move hash checks.
-The committed archive retains result information. Raw-run integration requires
-the complete local generated input artifacts; report regeneration reads the
-retained JSON results and workload snapshot.
+## Evidence categories and scores
 
 The unit of scoring is one selected mutant in one language, paired with that
 language's original. A parser or annotation-placement failure is never a

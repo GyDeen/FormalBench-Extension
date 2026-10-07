@@ -5,8 +5,8 @@ import re
 from collections.abc import Callable
 from typing import Any
 
-from .manifest import InputError
-from .token_structure import FunctionStructure, pairs, statement_end
+from verification.specification_evaluation.manifest import InputError
+from verification.specification_evaluation.specifications.token_structure import FunctionStructure, pairs, statement_end
 
 
 def _parents(function: FunctionStructure, loop: int) -> tuple[int, ...]:

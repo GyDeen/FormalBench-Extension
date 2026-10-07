@@ -7,7 +7,7 @@ import subprocess
 import zipfile
 from pathlib import Path
 
-from .manifest import REPO, InputError, sha256
+from verification.specification_evaluation.manifest import REPO, InputError, sha256
 
 EXPORTS = ["--add-exports=jdk.compiler/com.sun.tools.javac." + part + "=ALL-UNNAMED"
            for part in ("code", "tree")]
@@ -37,7 +37,7 @@ def normalize_annotation(text: str) -> tuple[str, list[str]]:
 def compatibility(verifier: dict) -> dict:
     """Build and fingerprint the OpenJML 21.0.27 plugin and bundled solver."""
     home = Path(verifier["path"]).parent
-    source = Path(__file__).parent / "openjml/NumericBitPredicates.java"
+    source = Path(__file__).parents[1] / "openjml/NumericBitPredicates.java"
     compiler = home / "jdk/bin/javac"
     module_image = home / "jdk/lib/modules"
     if module_image.is_file():

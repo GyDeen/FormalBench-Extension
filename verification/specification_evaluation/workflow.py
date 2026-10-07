@@ -14,9 +14,9 @@ from pathlib import Path
 from threading import Event
 from typing import Any
 
-from .annotations import Transfer, apply_specification, extract_specification
-from .manifest import InputError, Population, sha256
-from .verifiers import (
+from verification.specification_evaluation.specifications.annotations import Transfer, apply_specification, extract_specification
+from verification.specification_evaluation.manifest import InputError, Population, sha256
+from verification.specification_evaluation.backends.verifiers import (
     Settings,
     executable_info,
     run_verifier,
@@ -315,17 +315,17 @@ def evaluate_case(output: Path, population: Population, program: str, role: str,
             "verifier": executables[language], "settings": _settings_record(settings)}
     if language == "c":
         base["adapter_sha256"] = {name: sha256(Path(__file__).parent / name)
-                                  for name in ("annotations.py", "c_bindings.py", "c_structure.py", "verifiers.py")}
+                                  for name in ("specifications/annotations.py", "specifications/c_bindings.py", "specifications/c_structure.py", "backends/verifiers.py")}
     else:
         base["adapter_sha256"] = {name: sha256(Path(__file__).parent / name)
-                                  for name in ("annotations.py", "c_bindings.py", "c_structure.py", "java_compat.py", "verifiers.py")}
+                                  for name in ("specifications/annotations.py", "specifications/c_bindings.py", "specifications/c_structure.py", "backends/java_compat.py", "backends/verifiers.py")}
     if language == "java" and capture_java_workload:
         base["java_workload_capture"] = {
             name: sha256(Path(__file__).parent / name)
-            for name in ("java_workload.py", "java_solver_trace.py")}
+            for name in ("backends/java_workload.py", "backends/java_solver_trace.py")}
     if language == "c" and settings.capture_c_counterexamples:
         base["c_counterexample_capture"] = {
-            "c_counterexamples.py": sha256(Path(__file__).with_name("c_counterexamples.py"))}
+            "counterexamples/wp_models.py": sha256(Path(__file__).parent / "counterexamples/wp_models.py")}
     fingerprint = digest(base)
     prior = case_dir / "record.json"
     recovery = (_latest_archive(output, program, case_dir, language)
@@ -395,7 +395,7 @@ def evaluate_case(output: Path, population: Population, program: str, role: str,
             raise InputError("Staged C contracts differ from the fixed support hashes")
     try:
         if language == "java" and capture_java_workload:
-            from .java_workload import run_java_workload
+            from verification.specification_evaluation.backends.java_workload import run_java_workload
             verification = run_java_workload(source, case_dir, settings, executables)
         else:
             verification = run_verifier(language, source, case_dir, settings, executables)

@@ -9,8 +9,8 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass
 
-from .manifest import InputError
-from .token_structure import FunctionStructure, pairs
+from verification.specification_evaluation.manifest import InputError
+from verification.specification_evaluation.specifications.token_structure import FunctionStructure, pairs
 
 IDENT = re.compile(r"[A-Za-z_][A-Za-z_0-9]*\Z")
 TYPES = {"int32_t", "uint32_t", "int64_t", "uint64_t", "int", "double", "float",

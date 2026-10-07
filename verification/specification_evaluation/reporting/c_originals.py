@@ -7,8 +7,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 import shutil
 
-from .manifest import load_population, sha256
-from .workflow import read_json, write_json, summarize
+from verification.specification_evaluation.manifest import load_population, sha256
+from verification.specification_evaluation.workflow import read_json, write_json, summarize
 
 PROGRAMS = ('MoveFirst', 'MultiplyElements', 'NextPowerOf2', 'PairWise')
 

@@ -5,10 +5,10 @@ import argparse
 import json
 from pathlib import Path
 
-from .diagnostic_selection import add_selectors, select_cases
-from .manifest import DEFAULT_C, DEFAULT_JAVA, DEFAULT_MANIFEST, InputError, load_population, sha256
-from .verifiers import Settings, executable_info, java_tool_error
-from .workflow import evaluate_case, read_json, write_json
+from verification.specification_evaluation.diagnostics.selection import add_selectors, select_cases
+from verification.specification_evaluation.manifest import DEFAULT_C, DEFAULT_JAVA, DEFAULT_MANIFEST, InputError, load_population, sha256
+from verification.specification_evaluation.backends.verifiers import Settings, executable_info, java_tool_error
+from verification.specification_evaluation.workflow import evaluate_case, read_json, write_json
 
 
 def main():

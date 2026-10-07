@@ -4,7 +4,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import Path
 
-from .manifest import InputError, Population, sha256
+from verification.specification_evaluation.manifest import InputError, Population, sha256
 
 
 @dataclass(frozen=True)

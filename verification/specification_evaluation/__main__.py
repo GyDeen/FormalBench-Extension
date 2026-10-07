@@ -5,15 +5,15 @@ import json
 import sys
 from pathlib import Path
 
-from .manifest import (
+from verification.specification_evaluation.manifest import (
     DEFAULT_C,
     DEFAULT_JAVA,
     DEFAULT_MANIFEST,
     InputError,
     load_population,
 )
-from .verifiers import Settings
-from .workflow import run_population, validate_transfers
+from verification.specification_evaluation.backends.verifiers import Settings
+from verification.specification_evaluation.workflow import run_population, validate_transfers
 
 
 def positive(value: str) -> int:

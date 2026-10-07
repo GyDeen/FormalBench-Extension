@@ -12,8 +12,8 @@ import shlex
 import subprocess
 import time
 
-from .manifest import InputError, sha256
-from .verifiers import (build_command, classify_java, JAVA_UNSUPPORTED, _stop_process_group)
+from verification.specification_evaluation.manifest import InputError, sha256
+from verification.specification_evaluation.backends.verifiers import (build_command, classify_java, JAVA_UNSUPPORTED, _stop_process_group)
 
 BB = re.compile(r'^BasicBlock2 FORM of (?P<method>[^\n]+)\n(?P<body>.*?)(?=^\s*$|\Z)', re.M | re.S)
 ASSERTION = re.compile(r'^\s+assert\s+(\w+)\s+([^;\n]+);', re.M)
