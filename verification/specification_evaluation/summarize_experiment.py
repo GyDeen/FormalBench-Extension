@@ -3,12 +3,11 @@ from __future__ import annotations
 import argparse
 from collections import Counter
 from datetime import datetime, timezone
-import hashlib
 import json
 import math
 from pathlib import Path
 import statistics
-from .manifest import REPO, sha256
+from .manifest import REPO
 
 CATEGORIES = ('sequential', 'branch', 'single_path_loop', 'multi_path_loop', 'nested')
 OUTCOMES = ('proved', 'specification violation', 'precondition/RTE failure', 'unknown/timeout', 'syntax/tool failure', 'not run')
@@ -105,13 +104,9 @@ def build(output, selection):
         if replay_summary:
             entry['c_replay'] = replay_counts(r for r in replay_records if r['program'] in programs)
         category_results.append(entry)
-    inventory = '\n'.join(f'{path.relative_to(output).as_posix()}:{sha256(path)}' for path in sorted(paths.values()))
     data = {'generated_utc': datetime.now(timezone.utc).isoformat(), 'run': output.name,
             'scope': 'Program-level consistency and mutation-based completeness only.',
-            'summary_sha256': sha256(output / 'summary.json'),
-            'record_inventory_sha256': hashlib.sha256(inventory.encode()).hexdigest(),
-            'category_source': selection.relative_to(REPO).as_posix(), 'category_source_sha256': sha256(selection),
-            'source_verification_summary_sha256': sha256(output / 'summary_verification.json'),
+            'category_source': selection.relative_to(REPO).as_posix(),
             'successful': successful, 'categories': category_results, 'verified_original_subsets': primary,
             'completion': {'completed_case_records': sum(r['attempt_status'] == 'complete' for r in records),
                            'total_case_records': len(records), 'not_run_case_records': sum(r['outcome'] == 'not run' for r in records)},
@@ -119,7 +114,7 @@ def build(output, selection):
             'interpretation': 'Java diagnostics and C execution witnesses are different evidence. Unknown verification '
                               'and finite searches without a validated failure establish neither correctness nor completeness.'}
     if replay_summary:
-        data['c_counterexample_search'] = {'source': 'counterexamples/summary.json', 'sha256': sha256(replay_path),
+        data['c_counterexample_search'] = {'source': 'counterexamples/summary.json',
                                          'mutant_outcomes': replay_counts(replay_records), 'searched_mutants': len(replay_records),
                                          'searched_originals': sum(r['role'] == 'original' for r in replay_summary['records'])}
     return data, summary, config, records, paths
