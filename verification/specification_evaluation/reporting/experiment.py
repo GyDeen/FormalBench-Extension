@@ -113,8 +113,11 @@ def build(output, selection):
                            'total_case_records': len(records), 'available_case_records': available_record_count,
                            'not_run_case_records': sum(r['outcome'] == 'not run' for r in records)},
             'statistical_method': 'Sample SD n-1; quartiles and p95 use linear interpolation at (n-1)*p.',
-            'interpretation': 'Only saved verifier outcomes are reported. Captured WP models are candidates, not '
-                              'validated detections. Missing records are not run; unresolved verification is inconclusive.'}
+            'interpretation': 'Saved proof outcomes and verifier-level mutant detection are separate. WP-reported '
+                              'counterexamples can count as detections while the proof status remains unknown. '
+                              'Models are not execution-validated witnesses; missing records are not run.'}
+    if summary.get('c_verifier_detection'):
+        data['c_verifier_detection'] = summary['c_verifier_detection']
     if summary.get('c_mutant_status'):
         data['c_mutant_status'] = summary['c_mutant_status']
     return data, summary, config, records, paths
@@ -150,6 +153,21 @@ def render(data, summary, config, records, paths):
                        for lang, label in (('java', 'Java / OpenJML'), ('c', 'C / WP'))])]
     if data.get('c_mutant_status'):
         sections.insert(1, '**C mutant status:** ' + data['c_mutant_status'])
+    if data.get('c_verifier_detection'):
+        detection_rows = []
+        for label, key in [('All C mutants', 'all_mutants'), ('C mutants of verified originals', 'verified_original_cohort')]:
+            counts = data['c_verifier_detection'][key]
+            rate = counts['detection_rate_on_eligible']
+            detection_rows.append([label, counts['eligible'], counts['recorded'], counts['detected'],
+                                   counts['specification_detected'], counts['safety_detected'],
+                                   counts['specification_and_safety'], 'N/A' if rate is None else f'{100*rate:.2f}%'])
+        sections += ['### C verifier-level detection',
+                     'A WP-reported specification-goal counterexample or explicit refutation counts once per mutant '
+                     'in completeness. Safety/precondition failures are recorded separately and excluded from '
+                     'that numerator. Specification and safety evidence can overlap. '
+                     'Proof outcomes above remain unchanged. These are verifier-level results without execution replay.',
+                     table(['Cohort', 'Eligible', 'Recorded', 'Completeness detections', 'Specification', 'Safety', 'Both', 'Completeness rate'], detection_rows),
+                     'See [per-mutant detection records](mutant_detection/summary.json).']
     rows = []
     for lang in ('java', 'c'):
         subset = data['verified_original_subsets'][lang]

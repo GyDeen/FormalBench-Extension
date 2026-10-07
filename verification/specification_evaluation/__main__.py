@@ -68,7 +68,7 @@ def arguments() -> argparse.Namespace:
     run.add_argument("--capture-java-workload", action="store_true",
                      help="save generated assertions and solver input traces (use a new run directory)")
     run.add_argument("--capture-c-counterexamples", action="store_true",
-                     help="request WP models and retain solver queries (use a new run directory; models require validation)")
+                     help="request WP counterexamples, retain goal evidence and record verifier-level detection separately from proof status")
     run.add_argument("--parallel-languages", "--independent-languages",
                      dest="parallel_languages", action="store_true",
                      help="run independent Java and C mutant queues; each advances when its own case finishes")

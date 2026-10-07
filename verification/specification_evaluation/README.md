@@ -14,9 +14,9 @@ as study programs, mutants, or entries in the paired score.
 | `__main__.py`, `workflow.py`, `manifest.py` | CLI, ordered study stages, fixed input population and case records |
 | `specifications/` | Freeze and transfer annotations; token, function, loop and C binding correspondence |
 | `backends/` | OpenJML and Frama-C commands, outcome classification, compatibility setup and Java solver recording |
-| `counterexamples/wp_models.py` | Parse full models emitted by WP; no input generator, replay oracle or extra solver search |
+| `counterexamples/` | WP model parsing, verifier-level detection policy, and the C-only completeness runner |
 | `diagnostics/` | Explicitly selected C/Java diagnostic runs outside the main experiment |
-| `reporting/` | Saved-result summaries and checked promotion of C original verification records |
+| `reporting/` | Saved-result proof summaries, per-mutant C detection reports, and checked promotion of C original verification records |
 | `tests/` | Unit checks; optional OpenJML integration checks are separate |
 | `framac/`, `openjml/` | Version-specific compatibility source assets used by the backends |
 | `results/`, `goal_assertion_results/` | Saved experiment evidence, separate from executable modules |
@@ -207,13 +207,69 @@ scripts and witness-to-goal mapper have been removed from the active package.
 Historical scripts are retained only in ignored local `output/` recovery storage.
 Reporting no longer imports their replay summaries or counts.
 
-WP may report `Unknown (Model)`. A captured model is a candidate, not an
-automatically validated mutant detection. Unknown/timeouts remain unresolved;
-the current classifier requires explicit invalidity or a validated counterexample
-for a violation label. Candidate validation and a calibrated full-population
-Frama-C-only runner still need completing. There is currently no replacement
-replay command. See the [Frama-C WP manual](https://www.frama-c.com/download/frama-c-wp-manual.pdf)
-for the model-generation and proof-report interfaces.
+For completeness, `counterexamples.detection` implements the study rule:
+**a mutant counts in completeness if WP reports a counterexample for a non-smoke
+specification goal or explicitly refutes a specification obligation of the
+transferred frozen specification.** Safety and callee-precondition failures are
+recorded separately and do not contribute to the completeness numerator.
+A mutant with both specification and safety evidence counts once in completeness,
+with the overlap reported. Counterexamples whose goal category cannot be resolved
+are retained separately and excluded from that numerator.
+
+WP may report `Unknown (Model)`. A specification-goal counterexample counts as
+verifier-level completeness detection while the raw proof verdict remains unknown. It is
+not an execution-validated input or runtime witness. Unknown, timeout and failed
+proof attempts without a model/refutation do not count. Models for smoke tests,
+unmatched goals, proved/conflicting goals or malformed/tool-failure runs are
+excluded. If several goal IDs share a matching source location and obligation
+kind, retain the candidate set rather than asserting every goal was falsified.
+Partial output on timeout can retain reported counterexample evidence; a model
+block without a recorded ID is identified by its submitted-source location and
+kept unclassified, outside completeness. The specification-only rule has a new
+policy identifier so earlier safety-inclusive records cannot be silently reused.
+See the [Frama-C WP manual](https://www.frama-c.com/download/frama-c-wp-manual.pdf)
+for model generation and proof-report formats.
+
+## C-only completeness runner
+
+The replacement entry point uses the existing frozen specifications in a new
+output directory. It verifies C originals before their mutants, with WP/RTE and
+counterexample generation enabled. Its only solver calls are those made by WP;
+there is no independently generated input, shortened SMT query or native replay.
+Java is not executed. Defaults are Z3 4.8.12, 10 seconds per query, 300 seconds
+per case, `Typed+ref`, `x86_64`, one C worker and two WP proof jobs.
+
+Prepared command (not executed during implementation):
+
+```bash
+python3 -m verification.specification_evaluation.counterexamples.c_completeness \
+  --study verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300 \
+  --output verification/specification_evaluation/results/c_verifier_only_study_01
+```
+
+Use `--program MaxOfTwo --max-pairs 2` for a pilot when deliberately launching
+one. The installed model-capable prover configuration still needs calibration;
+parser/unit checks do not establish that the solver produces models on this
+dataset. Matching completed cases can be resumed with the same settings and
+frozen inputs.
+
+Each C case records `verifier_detection` beside the raw `outcome` and
+`counterexample_models`. Detection evidence identifies reported models or explicit
+invalidity, candidate goal IDs, source coordinates where needed, categories and
+matching ambiguity. The run saves:
+
+- `mutant_detection/summary.json`: per-mutant evidence, per-program counts and
+  all-mutant/verified-original cohort counts, with overlap and unresolved cases.
+- `mutant_detection/mutants.csv`: one row per eligible C mutant.
+- `mutant_detection/README.md`: cohort tables and evidence definitions.
+- `summary.json`: raw proof outcomes plus separate `c_verifier_detection` counts.
+
+Regenerate only the detection reports without executing tools:
+
+```bash
+python3 -m verification.specification_evaluation.reporting.c_detection \
+  --output verification/specification_evaluation/results/c_verifier_only_study_01
+```
 
 ## Targeted diagnostic runs
 

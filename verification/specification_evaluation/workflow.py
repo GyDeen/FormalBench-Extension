@@ -315,7 +315,7 @@ def evaluate_case(output: Path, population: Population, program: str, role: str,
             "verifier": executables[language], "settings": _settings_record(settings)}
     if language == "c":
         base["adapter_sha256"] = {name: sha256(Path(__file__).parent / name)
-                                  for name in ("specifications/annotations.py", "specifications/c_bindings.py", "specifications/c_structure.py", "backends/verifiers.py")}
+                                  for name in ("specifications/annotations.py", "specifications/c_bindings.py", "specifications/c_structure.py", "backends/verifiers.py", "counterexamples/detection.py")}
     else:
         base["adapter_sha256"] = {name: sha256(Path(__file__).parent / name)
                                   for name in ("specifications/annotations.py", "specifications/c_bindings.py", "specifications/c_structure.py", "backends/java_compat.py", "backends/verifiers.py")}
@@ -378,9 +378,13 @@ def evaluate_case(output: Path, population: Population, program: str, role: str,
                            else "frozen structured JSON"}
     except InputError as error:
         # Unsafe placement is an evaluation failure, not a killed mutant.
+        detection = {}
+        if language == "c":
+            from verification.specification_evaluation.counterexamples.detection import detection_result
+            detection = {"verifier_detection": detection_result("syntax/tool failure", [], [])}
         return _store_record(case_dir, {**record, "outcome": "syntax/tool failure",
                                          "failure_stage": "annotation_transfer",
-                                         "reason": f"Annotation transfer failed: {error}", "goals": []})
+                                         "reason": f"Annotation transfer failed: {error}", "goals": [], **detection})
     source = case_dir / raw.name
     if source.is_file() and source.read_text(encoding="utf-8") != annotated_source:
         raise InputError(f"Staged source changed after freezing: {source}")
@@ -510,6 +514,11 @@ def summarize(output: Path, population: Population) -> dict[str, Any]:
             "rejection_rate_on_eligible": counts["specification violation"] / len(population.pairs)
             if population.pairs else None,
         }
+    if (output / "completeness_run.json").is_file():
+        from verification.specification_evaluation.reporting.c_detection import collect
+        detection = collect(output, population)
+        summary["c_verifier_detection"] = {
+            key: detection[key] for key in ("policy", "all_mutants", "verified_original_cohort")}
     write_json(output / "summary.json", summary)
     return summary
 
@@ -545,7 +554,8 @@ def run_population(population: Population, programs: tuple[str, ...], output: Pa
 
     output = output.resolve()
     if output.exists() and not (output / "run.json").is_file():
-        unexpected = {path.name for path in output.iterdir()} - {"frozen_specs", "generated_specs", "summary.json"}
+        unexpected = {path.name for path in output.iterdir()} - {
+            "frozen_specs", "generated_specs", "summary.json", "completeness_run.json", "mutant_detection"}
         if unexpected:
             raise InputError(f"Output directory contains unrelated files: {output}")
     output.mkdir(parents=True, exist_ok=True)

@@ -26,7 +26,7 @@ OUTCOMES = (
     "proved", "specification violation", "precondition/RTE failure",
     "syntax/tool failure", "unknown/timeout", "invalid mutant", "not run",
 )
-SUPPORT_GOAL = re.compile(r"requires|precondition|\brte\b|runtime|division_by_zero|overflow|out_of_bounds|valid_access", re.I)
+SUPPORT_GOAL = re.compile(r"requires|precondition|\brte\b|assert_rte|runtime|division_by_zero|overflow|out_of_bounds|valid_access", re.I)
 TOOL_FAILURE = re.compile(r"(?:error:|\bsyntax error\b|\bparse error\b|unsupported|internal jml bug|unknown option)", re.I)
 PROVER_FAILURE = re.compile(r"(?:\bwhy3 error\b|\brunning prover\b[^\n]*\bfailed\b|\bunknown prover\b|\bno prover\b)", re.I)
 JAVA_WARNING = re.compile(
@@ -202,25 +202,35 @@ def _goal_records(report: Any) -> list[dict[str, Any]]:
 def classify_c(returncode: int | None, timed_out: bool, stdout: str, stderr: str,
                report: Any | None) -> tuple[str, list[dict[str, Any]], str]:
     """Classify WP goals using explicit invalidity, proof, and tool-failure evidence."""
-    if timed_out:
-        return "unknown/timeout", [], "Frama-C process exceeded its time budget"
     output = stdout + "\n" + stderr
+    console_records = {}
+    for match in re.finditer(r'^\[wp\]\s+\[(Valid|Invalid|Unknown|Timeout|Failed)\]\s+(?:Goal\s+)?([\w.]+)', stdout, re.M):
+        status, goal_id = match.groups()
+        console_records[goal_id] = {'goal': goal_id, 'property': goal_id,
+                                    'passed': status == 'Valid', 'verdict': status.lower(),
+                                    'smoke': 'smoke' in goal_id.lower(), 'report_source': 'wp_console'}
     if TOOL_FAILURE.search(output) and (report is None or returncode != 0):
         return "syntax/tool failure", [], "Frama-C reported a parse, tool, or unsupported-feature error"
     if report is None:
-        return ("syntax/tool failure" if returncode else "unknown/timeout"), [], "No WP goal report was produced"
+        if console_records:
+            report = list(console_records.values())
+        elif timed_out:
+            return "unknown/timeout", [], "Frama-C process exceeded its time budget"
+        else:
+            return ("syntax/tool failure" if returncode else "unknown/timeout"), [], "No WP goal report was produced"
     try:
         records = _goal_records(report)
     except ValueError as error:
         return "syntax/tool failure", [], str(error)
+    reported_ids = {record.get('goal') for record in records}
+    records = [*records, *(record for goal_id, record in console_records.items() if goal_id not in reported_ids)]
     goals: list[dict[str, Any]] = []
     for record in records:
         # Only an explicit invalid verdict/validated counterexample supports a
         # violation label. A failed or timed-out proof stays unknown.
         verdict = str(record.get("verdict", "none")).lower()
-        counterexample = record.get("counterexample")
-        invalid = verdict == "invalid" or (isinstance(counterexample, dict)
-                                           and counterexample.get("validated") is True)
+        console_invalid = console_records.get(record.get('goal'), {}).get('verdict') == 'invalid'
+        invalid = (verdict == "invalid" or (console_invalid and record.get('passed') is not True)) and not record.get("smoke", False)
         proved = record.get("passed") is True and verdict in {"valid", "passed"}
         category = "precondition/RTE" if SUPPORT_GOAL.search(" ".join(str(record.get(key, ""))
                                       for key in ("goal", "property", "behavior"))) else "specification"
@@ -229,6 +239,9 @@ def classify_c(returncode: int | None, timed_out: bool, stdout: str, stderr: str
         goals.append({"goal": record.get("goal"), "property": record.get("property"),
                       "function": record.get("function"), "file": record.get("file"),
                       "line": record.get("line"), "category": category, "verdict": verdict,
+                      "smoke": record.get("smoke", False),
+                      "report_source": record.get("report_source", "wp_json"),
+                      "explicit_invalidity": invalid,
                       "state": "violated" if invalid else "proved" if proved else "unknown",
                       "proved_subgoals": record.get("proved", 0),
                       "failed_subgoals": record.get("failed", 0),
@@ -241,6 +254,8 @@ def classify_c(returncode: int | None, timed_out: bool, stdout: str, stderr: str
         return "precondition/RTE failure", goals, "A precondition or runtime-safety goal was invalid"
     if any(goal["state"] == "violated" for goal in goals):
         return "specification violation", goals, "A specification goal had explicit invalidity evidence"
+    if timed_out:
+        return "unknown/timeout", goals, "Frama-C process exceeded its time budget; retained partial goal report"
     if returncode == 0 and all(goal["state"] == "proved" for goal in goals):
         return "proved", goals, "Every reported WP goal was proved"
     if PROVER_FAILURE.search(output):
@@ -385,9 +400,14 @@ def run_verifier(language: str, source: Path, case_dir: Path, settings: Settings
                          else "parse/typecheck" if re.search(r"annot-error|parse error|syntax error|invalid user input", output, re.I)
                          else "verifier")
     captured_models = {}
-    if language == "c" and settings.capture_c_counterexamples:
+    if language == "c":
         from verification.specification_evaluation.counterexamples.wp_models import extract_models
-        captured_models = {"counterexample_models": extract_models(stdout, goals)}
+        from verification.specification_evaluation.counterexamples.detection import detection_result
+        models = extract_models(stdout, goals) if settings.capture_c_counterexamples else []
+        captured_models = {"verifier_detection": detection_result(outcome, goals, models,
+                           timed_out=timed_out, source_file=source.name)}
+        if settings.capture_c_counterexamples:
+            captured_models["counterexample_models"] = models
     return {"outcome": outcome, "reason": reason, "goals": goals, "exit_code": returncode,
             **captured_models,
             "verification_started": process is not None, "failure_stage": failure_stage,
