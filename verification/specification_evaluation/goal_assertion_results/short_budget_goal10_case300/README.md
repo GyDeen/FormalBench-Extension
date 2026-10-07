@@ -1,3 +1,5 @@
+**8 October 2026:** Previous C mutant goal entries and replay mappings are withdrawn. C tables retain original-program goals only; Java analysis is unchanged. No new verification or search was run.
+
 # Goal/assertion results
 
 This is a separate, result-only analysis of the saved 10-second solver / 300-second case experiment. The [consistency and completeness report](../../results/originals_stop_tool_error_20260927T161243Z_goal10_case300/README.md) contains the authoritative program-level outcomes. No verifier or program was rerun during this separation.
@@ -32,7 +34,7 @@ The Java original assertion table covers **all 50 originals** (9,387 generated a
 
 The Java mutant assertion table covers **all 977 mutants from all 50 originals**, using the separate [archived instrumented mutant attempt](mutant_verification/java_workload_20260929T133038Z_workers2/README.md). Its run metadata, individual case records, workload counts, and summaries are retained in this separate analysis directory. Paths in the portable workload snapshot are relative to this analysis directory; historical paths inside raw records are preserved as provenance. It is not restricted to mutants of the 12 instrumented-run verified originals. For completeness analysis conditioned on a verified original, the authoritative subset remains **192 mutants from 13 originals**. The 12 originals verified in the instrumented attempt have 170 mutants; FindPoints contributes the remaining 22. These alternative subsets must not be substituted for one another. Canonical mutant outcomes and diagnostics remain authoritative; archived assertion counts and method-proof coverage are supplemental and do not provide a complete individual-assertion verdict partition.
 
-### C WP goal kinds: originals and mutants
+### C WP goal kinds: retained originals
 
 | Population | Goal kind | Total | Proved | Violated | Unresolved |
 |---|---|---:|---:|---:|---:|
@@ -48,20 +50,8 @@ The Java mutant assertion table covers **all 977 mutants from all 50 originals**
 | original | Runtime safety checks | 20 | 12 | 0 | 8 |
 | original | Termination | 54 | 47 | 0 | 7 |
 | **original total** | | **2600** | **2278** | **0** | **322** |
-| mutant | Behavior completeness/disjointness | 32 | 32 | 0 | 0 |
-| mutant | Callee preconditions | 16253 | 13494 | 0 | 2759 |
-| mutant | Exit conditions | 1270 | 994 | 0 | 276 |
-| mutant | Explicit assertions | 16 | 16 | 0 | 0 |
-| mutant | Function frame conditions | 23310 | 18652 | 0 | 4658 |
-| mutant | Loop frame conditions | 8824 | 7898 | 0 | 926 |
-| mutant | Loop invariants | 7008 | 4821 | 0 | 2187 |
-| mutant | Loop/recursion decrease | 2052 | 1825 | 0 | 227 |
-| mutant | Postconditions | 3889 | 2539 | 0 | 1350 |
-| mutant | Runtime safety checks | 1147 | 881 | 0 | 266 |
-| mutant | Termination | 1773 | 1378 | 0 | 395 |
-| **mutant total** | | **65574** | **52530** | **0** | **13044** |
 
-No WP goal is reported violated. This does not contradict the independently validated native C mutant counterexamples: replay outcomes are a different evidence type. Cases without recorded WP goals contribute no goal entries; missing/deferred/tool-failure runs do not count as proved goals.
+Previous C mutant goals and native replay mappings are withdrawn. Only C original-program goals remain in this table. Cases without recorded WP goals contribute no goal entries; missing/deferred/tool-failure runs do not count as proved goals.
 
 ### Java originals (50): clause types and generated-check evidence
 
@@ -181,28 +171,3 @@ The canonical record.json files do not embed generated-assertion captures; those
 Machine-readable details: [kind/status summary](goal_kind_status/goal_kinds.json), [C goal entries](goal_kind_status/c_goals.csv), [Java original assertions and method proof coverage](goal_kind_status/java_assertions.csv), [Java original kind totals](goal_kind_status/java_assertion_kinds.csv), and [Java mutant diagnostics](goal_kind_status/java_mutant_diagnostics.csv). The summary includes record and log hashes for provenance.
 
 <!-- goal-kind-status:end -->
-
-<!-- counterexample-goal-mapping:start -->
-## C witness-to-goal and Java comparison (short budget)
-
-This offline mapping covers all **977 mutant pairs** using saved results at **10 seconds per goal / 300 seconds per case**. No verifier, compiler, or replay was run. C provides 900 validated execution failures: 710 functional/specification failures and 190 safety failures. Another 77 mutants have no validated witness; this does not establish correctness.
-
-**710 mutants** have a concrete falsified C postcondition identified from the saved observation; **685** also have a recorded WP goal for at least one such clause. The clause index is resolved against the hash-pinned entry contract and the goal's property name. Goal states are retained exactly as saved; WP itself reported zero violated mutant goals.
-
-| C replay evidence | Java specification violation | Java safety failure | Java unknown/timeout | Total |
-|---|---:|---:|---:|---:|
-| specification violation | 141 | 34 | 535 | 710 |
-| precondition/RTE failure | 5 | 0 | 185 | 190 |
-| no_validated_failure | 0 | 0 | 77 | 77 |
-
-Safety evidence consists of 144 array-bounds failures, 12 negative-allocation-size failures, 3 null-reference failures, and 31 stack overflows identified by the saved independent audit. Compatible runtime-helper preconditions are listed for **129 cases** as **candidates**, never as individually falsified goals. Stack-overflow cases include related termination/recursive-variant goals where recorded (31 cases); stack overflow does not establish nontermination or a falsified variant. Another 30 safety cases have no located recorded goal. Audit harness source lines are retained as trace evidence and are not equated to annotated WP source lines. Final output cannot locate loop-invariant or loop-variant failures.
-
-Java alignment records corresponding source-clause **semantic candidates**, saved generated-assertion counts, and canonical diagnostics for the same mutant ID. **179 C-failing mutants** have a confirmed Java diagnostic in at least one corresponding assertion family. This is a family-level comparison: no individual Java assertion verdict, same-input Java replay, or logical equivalence of the two predicates is established. Unknown Java diagnostics are not counted as confirmed failures. C-specific errno and native buffer properties may have no direct Java counterpart.
-
-Example: **CombSort mutant 11**, input `nums=[1,0]`, returned `[1,0]` instead of `[0,1]`. Its saved post-state falsifies C postconditions 2 (the `fb_value` content specification) and 3 (every element is at most the last element). These map to `typed_ref_combSort_ensures_2` and `typed_ref_combSort_ensures_3`, with their recorded WP states retained. Java postconditions 2 and 3 are semantic counterparts, while the saved Java case is unknown/timeout.
-
-The 745 recorded postcondition goals mapped here retain **465 unknown** and **280 proved** WP states. A mapped goal can be recorded as proved while a concrete execution falsifies its clause: that goal can rely on loop invariants or callee contracts whose separate obligations remain unproved. This mapping does not establish which intermediate assumption failed and does not change any verification verdict.
-
-Artifacts: [per-mutant comparison CSV](counterexample_goal_mapping/cases.csv), [one-row-per-goal comparison CSV](counterexample_goal_mapping/goals.csv), [clause/goal mapping CSV](counterexample_goal_mapping/mappings.csv), and [full witnesses, clause catalog, goal states and hash provenance](counterexample_goal_mapping/mapping.json). Counts of mapping edges differ from mutant counts because one witness can falsify several clauses and one candidate mapping can list several goals.
-
-<!-- counterexample-goal-mapping:end -->

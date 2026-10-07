@@ -1,3 +1,5 @@
+**8 October 2026:** Previous C mutant goal entries and replay mappings are withdrawn. C tables retain original-program goals only; Java analysis is unchanged. No new verification or search was run.
+
 ## Short-budget goal/assertion kinds and status
 
 Short-budget saved results: 50 originals and 977 retained mutants per language; 10 seconds per goal, 300 seconds per case; no verifier rerun.
@@ -8,7 +10,7 @@ The Java original assertion table covers **all 50 originals** (9,387 generated a
 
 The Java mutant assertion table covers **all 977 mutants from all 50 originals**, using the separate [archived instrumented mutant attempt](mutant_verification/java_workload_20260929T133038Z_workers2/README.md). Its run metadata, individual case records, workload counts, and summaries are retained in this separate analysis directory. Paths in the portable workload snapshot are relative to this analysis directory; historical paths inside raw records are preserved as provenance. It is not restricted to mutants of the 12 instrumented-run verified originals. For completeness analysis conditioned on a verified original, the authoritative subset remains **192 mutants from 13 originals**. The 12 originals verified in the instrumented attempt have 170 mutants; FindPoints contributes the remaining 22. These alternative subsets must not be substituted for one another. Canonical mutant outcomes and diagnostics remain authoritative; archived assertion counts and method-proof coverage are supplemental and do not provide a complete individual-assertion verdict partition.
 
-### C WP goal kinds: originals and mutants
+### C WP goal kinds: retained originals
 
 | Population | Goal kind | Total | Proved | Violated | Unresolved |
 |---|---|---:|---:|---:|---:|
@@ -24,20 +26,8 @@ The Java mutant assertion table covers **all 977 mutants from all 50 originals**
 | original | Runtime safety checks | 20 | 12 | 0 | 8 |
 | original | Termination | 54 | 47 | 0 | 7 |
 | **original total** | | **2600** | **2278** | **0** | **322** |
-| mutant | Behavior completeness/disjointness | 32 | 32 | 0 | 0 |
-| mutant | Callee preconditions | 16253 | 13494 | 0 | 2759 |
-| mutant | Exit conditions | 1270 | 994 | 0 | 276 |
-| mutant | Explicit assertions | 16 | 16 | 0 | 0 |
-| mutant | Function frame conditions | 23310 | 18652 | 0 | 4658 |
-| mutant | Loop frame conditions | 8824 | 7898 | 0 | 926 |
-| mutant | Loop invariants | 7008 | 4821 | 0 | 2187 |
-| mutant | Loop/recursion decrease | 2052 | 1825 | 0 | 227 |
-| mutant | Postconditions | 3889 | 2539 | 0 | 1350 |
-| mutant | Runtime safety checks | 1147 | 881 | 0 | 266 |
-| mutant | Termination | 1773 | 1378 | 0 | 395 |
-| **mutant total** | | **65574** | **52530** | **0** | **13044** |
 
-No WP goal is reported violated. This does not contradict the independently validated native C mutant counterexamples: replay outcomes are a different evidence type. Cases without recorded WP goals contribute no goal entries; missing/deferred/tool-failure runs do not count as proved goals.
+Previous C mutant goals and native replay mappings are withdrawn. Only C original-program goals remain in this table. Cases without recorded WP goals contribute no goal entries; missing/deferred/tool-failure runs do not count as proved goals.
 
 ### Java originals (50): clause types and generated-check evidence
 

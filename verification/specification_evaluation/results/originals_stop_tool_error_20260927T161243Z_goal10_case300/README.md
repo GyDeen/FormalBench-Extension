@@ -1,5 +1,7 @@
 # Consistency and completeness results
 
+**8 October 2026:** Previous C mutant WP results and all supplementary C replay results have been removed from active reporting. No replacement run has started. Java results, C original verification and frozen specifications are retained.
+
 Run: `originals_stop_tool_error_20260927T161243Z_goal10_case300`. This report covers 50 originals per language and 977 retained Java/C mutant pairs. Budgets are 10 seconds per solver query and 300 seconds per process. Specifications are frozen per original and transferred to its retained mutants.
 
 ## Consistency
@@ -39,60 +41,37 @@ Times are saved verifier-process wall times. The successful Java and C cohorts c
 
 ## Completeness
 
-Completeness is assessed by rejection of behaviour-changing mutants under their originals’ frozen specifications. Java rows use classified OpenJML diagnostics. C proof outcomes and execution-validated failures are distinct.
+Completeness is assessed by rejection of behaviour-changing mutants under their originals’ frozen specifications. Java rows use classified OpenJML diagnostics. C mutant results are withdrawn and await a new Frama-C-only run.
 
 | Verifier | Total | Proved | Specification failures | Safety failures | Unknown/timeout | Tool failures | Not run |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Java / OpenJML | 977 | 0 | 146 | 34 | 797 | 0 | 0 |
-| C / WP | 977 | 0 | 0 | 0 | 922 | 5 | 50 |
-
-### Validated C mutant failures
-
-| Searched mutants | Postcondition violations | Safety failures | No validated failure |
-| --- | --- | --- | --- |
-| 977 | 710 | 190 | 77 |
-
-The saved search covers 50/50 original controls. A finite search without a validated failure is inconclusive. Validated C witnesses do not change saved WP verdicts.
-
-Evidence is retained in the [counterexample report](counterexamples/README.md), [per-case replay results](counterexamples/summary.json), and [integration audit](counterexamples/integration_audit.json).
+| C / WP | 977 | 0 | 0 | 0 | 0 | 0 | 977 |
 
 ### Mutants whose originals were fully verified
 
-This subset gives more direct evidence that a specification accepts its original while rejecting a mutant. Rates use all eligible mutants in each subset; safety failures are separate from specification/postcondition violations. Java diagnostics and C replay witnesses have different meanings, so their rates are descriptive rather than equivalent measurements.
+This subset gives more direct evidence that a specification accepts its original while rejecting a mutant. Rates use all eligible mutants in each subset; safety failures are separate from specification/postcondition violations. C completeness is unavailable until a replacement experiment is run.
 
 | Language | Verified originals | Eligible mutants | Specification/postcondition violations | Safety failures | Inconclusive | Violation rate |
 | --- | --- | --- | --- | --- | --- | --- |
 | Java | 13 | 192 | 121 | 17 | 54 | 63.02% |
-| C | 6 | 80 | 79 | 1 | 0 | 98.75% |
+| C | 6 | 80 | N/A | N/A | Not run | N/A |
 
 ### Mutant outcomes by category
 
 | Category | Language | Total | Proved | Specification failures | Safety failures | Unknown/timeout | Tool failures | Not run |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | sequential | Java | 143 | 0 | 40 | 31 | 72 | 0 | 0 |
-| sequential | C | 143 | 0 | 0 | 0 | 143 | 0 | 0 |
+| sequential | C | 143 | 0 | 0 | 0 | 0 | 0 | 143 |
 | branch | Java | 193 | 0 | 105 | 2 | 86 | 0 | 0 |
-| branch | C | 193 | 0 | 0 | 0 | 181 | 0 | 12 |
+| branch | C | 193 | 0 | 0 | 0 | 0 | 0 | 193 |
 | single_path_loop | Java | 183 | 0 | 0 | 0 | 183 | 0 | 0 |
-| single_path_loop | C | 183 | 0 | 0 | 0 | 144 | 1 | 38 |
+| single_path_loop | C | 183 | 0 | 0 | 0 | 0 | 0 | 183 |
 | multi_path_loop | Java | 239 | 0 | 1 | 1 | 237 | 0 | 0 |
-| multi_path_loop | C | 239 | 0 | 0 | 0 | 238 | 1 | 0 |
+| multi_path_loop | C | 239 | 0 | 0 | 0 | 0 | 0 | 239 |
 | nested | Java | 219 | 0 | 0 | 0 | 219 | 0 | 0 |
-| nested | C | 219 | 0 | 0 | 0 | 216 | 3 | 0 |
-
-| Category | Searched C mutants | Postcondition violations | Safety failures | No validated failure |
-| --- | --- | --- | --- | --- |
-| sequential | 143 | 143 | 0 | 0 |
-| branch | 193 | 143 | 42 | 8 |
-| single_path_loop | 183 | 122 | 52 | 9 |
-| multi_path_loop | 239 | 171 | 28 | 40 |
-| nested | 219 | 131 | 68 | 20 |
+| nested | C | 219 | 0 | 0 | 0 | 0 | 0 | 219 |
 
 Authoritative records are `cases/<program>/<original or mutant_ID>/<language>/record.json`. [summary.json](summary.json) retains overall outcomes and original-outcome strata; [results_summary.json](results_summary.json) and [statistics.json](statistics.json) contain the derived program-level report. Generated source files, binaries, and solver traces remain excluded from Git.
 
-Regenerate this report from saved results without invoking a verifier:
-
-```bash
-python3 -m verification.specification_evaluation.summarize_experiment \
-  --output verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300
-```
+C mutant case directories are absent after withdrawal. The saved-result generator now treats absent records as `not run` and leaves C completeness unavailable. Regenerate reporting without running verification using `python3 -m verification.specification_evaluation.reporting.experiment --output verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300`.
