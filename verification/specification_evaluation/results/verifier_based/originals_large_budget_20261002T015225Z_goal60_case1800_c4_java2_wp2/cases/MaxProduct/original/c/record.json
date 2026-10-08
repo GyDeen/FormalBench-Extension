@@ -1,0 +1,2681 @@
+{
+  "annotated_source": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+  "attempt_status": "complete",
+  "command": [
+    "/root/.opam/default/bin/frama-c",
+    "-machdep",
+    "x86_64",
+    "-load-module",
+    "/mnt/d/ResearchProject/.tools/frama-c-compat/1e5af7b10d6dd41df377/float_negation_33.cmxs",
+    "-paired-c-prepare",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+    "-then",
+    "-wp",
+    "-wp-rte",
+    "-wp-no-filter-init",
+    "-wp-model",
+    "Typed+ref",
+    "-wp-why3-extra-config",
+    "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+    "-wp-prover",
+    "Alt-Ergo:2.4.3,Z3:4.8.12",
+    "-wp-timeout",
+    "60",
+    "-wp-memlimit",
+    "1000",
+    "-wp-par",
+    "2",
+    "-wp-cache",
+    "none",
+    "-wp-report-json",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/wp-report.json"
+  ],
+  "elapsed_seconds": 979.115,
+  "exit_code": 0,
+  "failure_stage": null,
+  "frozen_spec": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/frozen_specs/c/MaxProduct.json",
+  "goals": [
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "java_add",
+      "goal": "typed_ref_java_add_ensures",
+      "line": 6,
+      "property": "java_add_ensures",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00226
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0169
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "java_add",
+      "goal": "typed_ref_java_add_assigns",
+      "line": 8,
+      "property": "java_add_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "java_mul",
+      "goal": "typed_ref_java_mul_ensures",
+      "line": 14,
+      "property": "java_mul_ensures",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00108
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "java_mul",
+      "goal": "typed_ref_java_mul_assigns",
+      "line": 16,
+      "property": "java_mul_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_terminates",
+      "line": 32,
+      "property": "maxProduct_terminates",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_ensures",
+      "line": 30,
+      "property": "maxProduct_ensures",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_exits",
+      "line": 32,
+      "property": "maxProduct_exits",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_invariant_established",
+      "line": 35,
+      "property": "maxProduct_loop_invariant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_invariant_preserved",
+      "line": 35,
+      "property": "maxProduct_loop_invariant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0284
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0899
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_invariant_2_established",
+      "line": 36,
+      "property": "maxProduct_loop_invariant_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0172
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0197
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_invariant_2_preserved",
+      "line": 36,
+      "property": "maxProduct_loop_invariant_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0647
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0374
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_invariant_3_established",
+      "line": 37,
+      "property": "maxProduct_loop_invariant_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_invariant_3_preserved",
+      "line": 37,
+      "property": "maxProduct_loop_invariant_3",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0522
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_invariant_4_established",
+      "line": 45,
+      "property": "maxProduct_loop_invariant_4",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_invariant_4_preserved",
+      "line": 45,
+      "property": "maxProduct_loop_invariant_4",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0565
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0643
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_invariant_5_established",
+      "line": 46,
+      "property": "maxProduct_loop_invariant_5",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_invariant_5_preserved",
+      "line": 46,
+      "property": "maxProduct_loop_invariant_5",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_invariant_6_established",
+      "line": 47,
+      "property": "maxProduct_loop_invariant_6",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0408
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0454
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_invariant_6_preserved",
+      "line": 47,
+      "property": "maxProduct_loop_invariant_6",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0896
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_invariant_7_established",
+      "line": 48,
+      "property": "maxProduct_loop_invariant_7",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0645
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0299
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_invariant_7_preserved",
+      "line": 48,
+      "property": "maxProduct_loop_invariant_7",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0948
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_invariant_8_established",
+      "line": 54,
+      "property": "maxProduct_loop_invariant_8",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_invariant_8_preserved",
+      "line": 54,
+      "property": "maxProduct_loop_invariant_8",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.355
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.114
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_invariant_9_established",
+      "line": 55,
+      "property": "maxProduct_loop_invariant_9",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_invariant_9_preserved",
+      "line": 55,
+      "property": "maxProduct_loop_invariant_9",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.438
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0738
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_invariant_10_established",
+      "line": 56,
+      "property": "maxProduct_loop_invariant_10",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0666
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0325
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_invariant_10_preserved",
+      "line": 56,
+      "property": "maxProduct_loop_invariant_10",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.462
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_invariant_11_established",
+      "line": 71,
+      "property": "maxProduct_loop_invariant_11",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_invariant_11_preserved",
+      "line": 71,
+      "property": "maxProduct_loop_invariant_11",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.128
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0369
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_invariant_12_established",
+      "line": 72,
+      "property": "maxProduct_loop_invariant_12",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0609
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0435
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_invariant_12_preserved",
+      "line": 72,
+      "property": "maxProduct_loop_invariant_12",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.173
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0779
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_assigns_part1",
+      "line": 38,
+      "property": "maxProduct_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_assigns_part2",
+      "line": 38,
+      "property": "maxProduct_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_assigns_part3",
+      "line": 38,
+      "property": "maxProduct_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_assigns_part4",
+      "line": 38,
+      "property": "maxProduct_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.057
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0278
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_assigns_2_part1",
+      "line": 49,
+      "property": "maxProduct_loop_assigns_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_assigns_2_part2",
+      "line": 49,
+      "property": "maxProduct_loop_assigns_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_assigns_2_part3",
+      "line": 49,
+      "property": "maxProduct_loop_assigns_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0898
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0687
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_assigns_3_part1",
+      "line": 57,
+      "property": "maxProduct_loop_assigns_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_assigns_3_part2",
+      "line": 57,
+      "property": "maxProduct_loop_assigns_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_assigns_3_part3",
+      "line": 57,
+      "property": "maxProduct_loop_assigns_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_assigns_3_part4",
+      "line": 57,
+      "property": "maxProduct_loop_assigns_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_assigns_3_part5",
+      "line": 57,
+      "property": "maxProduct_loop_assigns_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_assigns_3_part6",
+      "line": 57,
+      "property": "maxProduct_loop_assigns_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_assigns_3_part7",
+      "line": 57,
+      "property": "maxProduct_loop_assigns_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_assigns_4_part1",
+      "line": 73,
+      "property": "maxProduct_loop_assigns_4",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_assigns_4_part2",
+      "line": 73,
+      "property": "maxProduct_loop_assigns_4",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_assigns_normal_part1",
+      "line": 32,
+      "property": "maxProduct_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_assigns_normal_part2",
+      "line": 32,
+      "property": "maxProduct_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_assigns_normal_part3",
+      "line": 32,
+      "property": "maxProduct_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0176
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_assigns_normal_part4",
+      "line": 32,
+      "property": "maxProduct_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0404
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_assigns_normal_part5",
+      "line": 32,
+      "property": "maxProduct_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_assigns_normal_part6",
+      "line": 32,
+      "property": "maxProduct_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_assigns_exit_part01",
+      "line": 32,
+      "property": "maxProduct_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_assigns_exit_part02",
+      "line": 32,
+      "property": "maxProduct_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_assigns_exit_part03",
+      "line": 32,
+      "property": "maxProduct_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.013
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_assigns_exit_part04",
+      "line": 32,
+      "property": "maxProduct_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_assigns_exit_part05",
+      "line": 32,
+      "property": "maxProduct_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0476
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_assigns_exit_part06",
+      "line": 32,
+      "property": "maxProduct_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0652
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_assigns_exit_part07",
+      "line": 32,
+      "property": "maxProduct_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0674
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_assigns_exit_part08",
+      "line": 32,
+      "property": "maxProduct_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_assigns_exit_part09",
+      "line": 32,
+      "property": "maxProduct_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_assigns_exit_part10",
+      "line": 32,
+      "property": "maxProduct_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_assigns_exit_part11",
+      "line": 32,
+      "property": "maxProduct_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_assigns_exit_part12",
+      "line": 32,
+      "property": "maxProduct_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_assigns_exit_part13",
+      "line": 32,
+      "property": "maxProduct_assigns",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0937
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_assigns_exit_part14",
+      "line": 32,
+      "property": "maxProduct_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_assigns_exit_part15",
+      "line": 32,
+      "property": "maxProduct_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_assigns_exit_part16",
+      "line": 32,
+      "property": "maxProduct_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_assigns_exit_part17",
+      "line": 32,
+      "property": "maxProduct_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_variant_positive",
+      "line": 39,
+      "property": "maxProduct_loop_variant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_variant_decrease",
+      "line": 39,
+      "property": "maxProduct_loop_variant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0517
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0404
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_variant_2_positive",
+      "line": 50,
+      "property": "maxProduct_loop_variant_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_variant_2_decrease",
+      "line": 50,
+      "property": "maxProduct_loop_variant_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.117
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0412
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_variant_3_positive",
+      "line": 58,
+      "property": "maxProduct_loop_variant_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_variant_3_decrease",
+      "line": 58,
+      "property": "maxProduct_loop_variant_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.355
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0507
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_variant_4_positive",
+      "line": 74,
+      "property": "maxProduct_loop_variant_4",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_loop_variant_4_decrease",
+      "line": 74,
+      "property": "maxProduct_loop_variant_4",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.154
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0386
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_call_jarray_new_requires",
+      "line": 33,
+      "property": "jarray_new_requires",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_call_jarray_new_requires_2",
+      "line": 33,
+      "property": "jarray_new_requires_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_call_jarray_get_requires",
+      "line": 42,
+      "property": "jarray_get_requires",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0398
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.025
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_call_jarray_get_requires_2",
+      "line": 42,
+      "property": "jarray_get_requires_2",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0336
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_call_jarray_get_requires_3",
+      "line": 42,
+      "property": "jarray_get_requires_3",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0241
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_call_jarray_set_requires",
+      "line": 42,
+      "property": "jarray_set_requires",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_call_jarray_set_requires_2",
+      "line": 42,
+      "property": "jarray_set_requires_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0202
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.016
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_call_jarray_set_requires_3",
+      "line": 42,
+      "property": "jarray_set_requires_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_call_jarray_get_2_requires",
+      "line": 61,
+      "property": "jarray_get_requires_4",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.045
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0251
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_call_jarray_get_2_requires_2",
+      "line": 61,
+      "property": "jarray_get_requires_5",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0628
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_call_jarray_get_2_requires_3",
+      "line": 61,
+      "property": "jarray_get_requires_6",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0544
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_call_jarray_get_3_requires",
+      "line": 62,
+      "property": "jarray_get_requires_7",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_call_jarray_get_3_requires_2",
+      "line": 62,
+      "property": "jarray_get_requires_8",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_call_jarray_get_3_requires_3",
+      "line": 62,
+      "property": "jarray_get_requires_9",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0702
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0184
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_call_jarray_get_4_requires",
+      "line": 63,
+      "property": "jarray_get_requires_10",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_call_jarray_get_4_requires_2",
+      "line": 63,
+      "property": "jarray_get_requires_11",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0444
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0252
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_call_jarray_get_4_requires_3",
+      "line": 63,
+      "property": "jarray_get_requires_12",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0493
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0163
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_call_jarray_get_5_requires",
+      "line": 64,
+      "property": "jarray_get_requires_13",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_call_jarray_get_5_requires_2",
+      "line": 64,
+      "property": "jarray_get_requires_14",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_call_jarray_get_5_requires_3",
+      "line": 64,
+      "property": "jarray_get_requires_15",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_call_jarray_set_2_requires",
+      "line": 65,
+      "property": "jarray_set_requires_4",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_call_jarray_set_2_requires_2",
+      "line": 65,
+      "property": "jarray_set_requires_5",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_call_jarray_set_2_requires_3",
+      "line": 65,
+      "property": "jarray_set_requires_6",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_call_jarray_get_6_requires",
+      "line": 69,
+      "property": "jarray_get_requires_16",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_call_jarray_get_6_requires_2",
+      "line": 69,
+      "property": "jarray_get_requires_17",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0432
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0163
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_call_jarray_get_6_requires_3",
+      "line": 69,
+      "property": "jarray_get_requires_18",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_call_jarray_get_7_requires",
+      "line": 77,
+      "property": "jarray_get_requires_19",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_call_jarray_get_7_requires_2",
+      "line": 77,
+      "property": "jarray_get_requires_20",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_call_jarray_get_7_requires_3",
+      "line": 77,
+      "property": "jarray_get_requires_21",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_call_jarray_get_8_requires",
+      "line": 78,
+      "property": "jarray_get_requires_22",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_call_jarray_get_8_requires_2",
+      "line": 78,
+      "property": "jarray_get_requires_23",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/MaxProduct/original/c/MaxProduct.c",
+      "function": "maxProduct",
+      "goal": "typed_ref_maxProduct_call_jarray_get_8_requires_3",
+      "line": 78,
+      "property": "jarray_get_requires_24",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    }
+  ],
+  "language": "c",
+  "logs": {
+    "stderr": "stderr.log",
+    "stdout": "stdout.log",
+    "wp_report": "wp-report.json"
+  },
+  "mutant_id": null,
+  "outcome": "unknown/timeout",
+  "program": "MaxProduct",
+  "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/MaxProduct.c",
+  "reason": "At least one WP goal remains unresolved",
+  "role": "original",
+  "selection": null,
+  "settings": {
+    "c_provers": "Alt-Ergo:2.4.3,Z3:4.8.12",
+    "goal_timeout": 60,
+    "java_prover": "z3-4.3.X",
+    "machdep": "x86_64",
+    "memory_model": "Typed+ref",
+    "timeout": 1800,
+    "why3_extra_config": "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+    "wp_memlimit": 1000,
+    "wp_par": 2
+  },
+  "timed_out": false,
+  "transfer": {
+    "annotation_count": 8,
+    "internal_annotation_coverage": "complete",
+    "method": "frozen structured JSON with audited C declaration bindings",
+    "omitted_annotations": [],
+    "placements": [
+      {
+        "boundary_token": 10,
+        "function": "java_add",
+        "id": "annotation_1",
+        "loop_id": null,
+        "mutant_offset": 46,
+        "next_token": "static",
+        "target": "function"
+      },
+      {
+        "boundary_token": 38,
+        "function": "java_mul",
+        "id": "annotation_2",
+        "loop_id": null,
+        "mutant_offset": 160,
+        "next_token": "static",
+        "target": "function"
+      },
+      {
+        "boundary_token": 66,
+        "function": "maxProduct",
+        "id": "annotation_3",
+        "loop_id": null,
+        "mutant_offset": 274,
+        "next_token": "int32_t",
+        "target": "function"
+      },
+      {
+        "boundary_token": 66,
+        "function": "maxProduct",
+        "id": "annotation_4",
+        "loop_id": null,
+        "mutant_offset": 274,
+        "next_token": "int32_t",
+        "target": "function"
+      },
+      {
+        "boundary_token": 84,
+        "function": "maxProduct",
+        "id": "annotation_5",
+        "loop_id": "loop_1",
+        "mutant_offset": 361,
+        "next_token": "for",
+        "target": "loop"
+      },
+      {
+        "boundary_token": 120,
+        "function": "maxProduct",
+        "id": "annotation_6",
+        "loop_id": "loop_2",
+        "mutant_offset": 469,
+        "next_token": "for",
+        "target": "loop"
+      },
+      {
+        "boundary_token": 141,
+        "function": "maxProduct",
+        "id": "annotation_7",
+        "loop_id": "loop_3",
+        "mutant_offset": 526,
+        "next_token": "for",
+        "target": "loop"
+      },
+      {
+        "boundary_token": 236,
+        "function": "maxProduct",
+        "id": "annotation_8",
+        "loop_id": "loop_4",
+        "mutant_offset": 936,
+        "next_token": "for",
+        "target": "loop"
+      }
+    ],
+    "removed_loop_annotations": 0,
+    "removed_temporary_policy": "original pure initializer with stable dependencies"
+  },
+  "verification_started": true,
+  "verifier": {
+    "compatibility": {
+      "module": "/mnt/d/ResearchProject/.tools/frama-c-compat/1e5af7b10d6dd41df377/float_negation_33.cmxs",
+      "name": "Frama-C 33.0 implicit floating-negation coercion repair",
+      "source": "/mnt/d/ResearchProject/verification/specification_evaluation/framac/float_negation_33.ml"
+    },
+    "path": "/root/.opam/default/bin/frama-c",
+    "version_command": [
+      "/root/.opam/default/bin/frama-c",
+      "-version"
+    ],
+    "version_exit_code": 0,
+    "version_output": "33.0 (Arsenic)"
+  }
+}

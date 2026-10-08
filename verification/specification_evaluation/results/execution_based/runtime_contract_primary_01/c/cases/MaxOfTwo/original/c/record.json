@@ -1,0 +1,41 @@
+{
+  "checked_inputs": 135,
+  "complete": true,
+  "coverage": {
+    "other_checks": "observable input-array frames, result identity and selected allocation checks",
+    "primary": "frozen return-value/content postconditions",
+    "unchecked": [
+      "loop invariants",
+      "loop variants",
+      "statement assertions",
+      "full allocation/free sets",
+      "full write sets"
+    ],
+    "unsupported_policy": "visible evaluation failure; never treated as satisfied"
+  },
+  "evaluation_failures": 0,
+  "execution_rerun": false,
+  "imported_execution_evidence": "/mnt/d/ResearchProject/output/c_mutant_results_withdrawn_20261008T004534/withdrawn/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/c_counterexamples_refreshed_all_c_20261001_search_only/cases/MaxOfTwo/original/c/record.json",
+  "input_pool": {
+    "admissible_inputs": 135,
+    "bounded_unique_candidates": 133,
+    "excluded": {},
+    "saved_first_calls": 3,
+    "unique_candidates": 135
+  },
+  "language": "c",
+  "mutant_id": null,
+  "other_contract_detected": false,
+  "policy": "c-runtime-frozen-postconditions-evosuite-bounded-v1",
+  "program": "MaxOfTwo",
+  "role": "original",
+  "safety_detected": false,
+  "safety_witness": null,
+  "search_binary": null,
+  "search_exhausted": true,
+  "specification_detected": false,
+  "status": "original_passed_all_inputs",
+  "timeouts": 0,
+  "verification_rerun": false,
+  "witness": null
+}

@@ -1,0 +1,59 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "fibonacci",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ ensures \\result == ((x % 4294967296L + 6442450944L) % 4294967296L) - 2147483648L;\n      @ model public static pure \\bigint fb_wrap(\\bigint x);\n      @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "fibonacci",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ requires n >= 0;\n      @ ensures \\result == (n <= 1 ? n : fb_value(n - 1) + fb_value(n - 2));\n      @ measured_by n;\n      @ model public static pure \\bigint fb_value(\\bigint n);\n      @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "fibonacci",
+      "id": "annotation_3",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ requires n >= 0;\n      @ assignable \\nothing;\n      @ ensures \\result == fb_wrap(fb_value(n));\n      @ measured_by n;\n      @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "fibonacci",
+      "id": "annotation_4",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "//@ code_java_math"
+    }
+  ],
+  "language": "java",
+  "program": "Fibonacci",
+  "schema_version": "1.0"
+}

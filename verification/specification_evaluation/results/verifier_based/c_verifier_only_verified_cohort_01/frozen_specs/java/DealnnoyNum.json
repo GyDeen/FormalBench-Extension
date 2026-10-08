@@ -1,0 +1,59 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "dealnnoyNum",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ ensures \\result == ((x % 4294967296L + 6442450944L) % 4294967296L) - 2147483648L;\n      @ model public static pure \\bigint fb_wrap(\\bigint x);\n      @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "dealnnoyNum",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ requires n == 0 || m == 0 || (n > 0 && m > 0);\n      @ ensures \\result == (n == 0 || m == 0 ? 1 : fb_delannoy(m - 1, n) + fb_delannoy(m - 1, n - 1) + fb_delannoy(m, n - 1));\n      @ measured_by (n > 0 && m > 0 ? n + m : 0);\n      @ model public static pure \\bigint fb_delannoy(\\bigint n, \\bigint m);\n      @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "dealnnoyNum",
+      "id": "annotation_3",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ requires n == 0 || m == 0 || (n > 0 && m > 0);\n      @ assignable \\nothing;\n      @ ensures \\result == fb_wrap(fb_delannoy(n, m));\n      @ measured_by (n > 0 && m > 0 ? (\\bigint)n + m : 0);\n      @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "dealnnoyNum",
+      "id": "annotation_4",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "//@ code_java_math"
+    }
+  ],
+  "language": "java",
+  "program": "DealnnoyNum",
+  "schema_version": "1.0"
+}

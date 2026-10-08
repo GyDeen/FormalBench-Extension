@@ -1,0 +1,130 @@
+{
+  "program": "DogAge",
+  "counts": {
+    "saved_first_calls": 3,
+    "bounded_before_deduplication": 128,
+    "unique_candidates": 16,
+    "admissible_inputs": 16,
+    "invalid_java_int_inputs": 0,
+    "excluded_by_entry_preconditions": 0,
+    "entry_precondition": "true (no explicit requires; all parameters primitive int)",
+    "admissible_by_origin": {
+      "evosuite": 3,
+      "bounded": 13
+    }
+  },
+  "candidates": [
+    {
+      "inputs": {
+        "hAge": 0
+      },
+      "origin": "saved_test:DogAge_ESTest.test0",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "hAge": 2125
+      },
+      "origin": "saved_test:DogAge_ESTest.test1",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "hAge": -3882
+      },
+      "origin": "saved_test:DogAge_ESTest.test2",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "hAge": -2
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "hAge": -1
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "hAge": 1
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "hAge": 2
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "hAge": 3
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "hAge": 4
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "hAge": 7
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "hAge": 2147483647
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "hAge": 63
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "hAge": 32
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "hAge": 16
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "hAge": -2147483648
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "hAge": 31
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    }
+  ]
+}

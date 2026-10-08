@@ -1,0 +1,85 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 10,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_add",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\nassigns \\nothing;\nensures \\result == (int32_t)((integer)left + right);\n*/"
+    },
+    {
+      "boundary_token": 38,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_sub",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\nassigns \\nothing;\nensures \\result == (int32_t)((integer)left - right);\n*/"
+    },
+    {
+      "boundary_token": 66,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_mul",
+      "id": "annotation_3",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\nassigns \\nothing;\nensures \\result == (int32_t)((integer)left * right);\n*/"
+    },
+    {
+      "boundary_token": 94,
+      "following_tokens": [
+        "int32_t",
+        "maxVolume"
+      ],
+      "function": "maxVolume",
+      "id": "annotation_4",
+      "loop_id": null,
+      "next_token": "int32_t",
+      "target": "function",
+      "text": "/*@\nterminates s < INT32_MAX;\nassigns \\nothing;\nensures s < INT32_MAX;\nensures \\result >= 0;\nensures \\forall integer l, b; 1 <= l <= s && 1 <= b <= s - l + 1 ==> (int32_t)(l * b * (s - l - b)) <= \\result;\nensures \\result == 0 || (\\exists integer l, b; 1 <= l <= s && 1 <= b <= s - l + 1 && \\result == (int32_t)(l * b * (s - l - b)));\n*/"
+    },
+    {
+      "boundary_token": 106,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "maxVolume",
+      "id": "annotation_5",
+      "loop_id": "loop_1",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@\n    loop invariant maxVolume >= 0;\n    loop invariant s < INT32_MAX ==> 1 <= l <= (s < 1 ? 1 : (integer)s + 1);\n    loop invariant s < INT32_MAX ==> (\\forall integer p, q; 1 <= p < l && 1 <= q <= s - p + 1 ==> (int32_t)(p * q * (s - p - q)) <= maxVolume);\n    loop invariant s < INT32_MAX ==> maxVolume == 0 || (\\exists integer p, q; 1 <= p < l && 1 <= q <= s - p + 1 && maxVolume == (int32_t)(p * q * (s - p - q)));\n    loop assigns l, maxVolume;\n    */"
+    },
+    {
+      "boundary_token": 143,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "maxVolume",
+      "id": "annotation_6",
+      "loop_id": "loop_2",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@\n        loop invariant maxVolume >= 0;\n        loop invariant s < INT32_MAX ==> 1 <= b <= (integer)upper + 1;\n        loop invariant s < INT32_MAX ==> (\\forall integer p, q; 1 <= p <= l && 1 <= q <= s - p + 1 && (p < l || q < b) ==> (int32_t)(p * q * (s - p - q)) <= maxVolume);\n        loop invariant s < INT32_MAX ==> maxVolume == 0 || (\\exists integer p, q; 1 <= p <= l && 1 <= q <= s - p + 1 && (p < l || q < b) && maxVolume == (int32_t)(p * q * (s - p - q)));\n        loop assigns b, maxVolume;\n        */"
+    }
+  ],
+  "language": "c",
+  "program": "MaxVolume",
+  "schema_version": "1.0"
+}

@@ -1,0 +1,219 @@
+{
+  "annotated_source": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_01/cases/TestThreeEqual/mutant_22/c/TestThreeEqual.c",
+  "attempt_status": "complete",
+  "c_counterexample_capture": {
+    "counterexamples/wp_models.py": "72ebacf059ff3f2c5706a23a882dfd48ed5f65888a46f3f1eae9f250dc4a1afa"
+  },
+  "command": [
+    "/root/.opam/default/bin/frama-c",
+    "-machdep",
+    "x86_64",
+    "-load-module",
+    "/mnt/d/ResearchProject/.tools/frama-c-compat/1e5af7b10d6dd41df377/float_negation_33.cmxs",
+    "-paired-c-prepare",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_01/cases/TestThreeEqual/mutant_22/c/TestThreeEqual.c",
+    "-then",
+    "-wp",
+    "-wp-rte",
+    "-wp-no-filter-init",
+    "-wp-model",
+    "Typed+ref",
+    "-wp-prover",
+    "Z3:4.8.12",
+    "-wp-timeout",
+    "10",
+    "-wp-memlimit",
+    "1000",
+    "-wp-par",
+    "2",
+    "-wp-cache",
+    "none",
+    "-wp-report-json",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_01/cases/TestThreeEqual/mutant_22/c/wp-report.json",
+    "-wp-counter-examples",
+    "-wp-status",
+    "-wp-out",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_01/cases/TestThreeEqual/mutant_22/c/wp"
+  ],
+  "counterexample_models": [],
+  "elapsed_seconds": 11.079,
+  "exit_code": 0,
+  "failure_stage": null,
+  "frozen_spec": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_01/frozen_specs/c/TestThreeEqual.json",
+  "goals": [
+    {
+      "category": "specification",
+      "explicit_invalidity": false,
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_01/cases/TestThreeEqual/mutant_22/c/TestThreeEqual.c",
+      "function": "testThreeEqual",
+      "goal": "typed_ref_testThreeEqual_ensures",
+      "line": 6,
+      "property": "testThreeEqual_ensures",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0196
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "report_source": "wp_json",
+      "smoke": false,
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "explicit_invalidity": false,
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_01/cases/TestThreeEqual/mutant_22/c/TestThreeEqual.c",
+      "function": "testThreeEqual",
+      "goal": "typed_ref_testThreeEqual_assigns_part1",
+      "line": 8,
+      "property": "testThreeEqual_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "report_source": "wp_json",
+      "smoke": false,
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "explicit_invalidity": false,
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_01/cases/TestThreeEqual/mutant_22/c/TestThreeEqual.c",
+      "function": "testThreeEqual",
+      "goal": "typed_ref_testThreeEqual_assigns_part2",
+      "line": 8,
+      "property": "testThreeEqual_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "report_source": "wp_json",
+      "smoke": false,
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "explicit_invalidity": false,
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_01/cases/TestThreeEqual/mutant_22/c/TestThreeEqual.c",
+      "function": "testThreeEqual",
+      "goal": "typed_ref_testThreeEqual_assigns_part3",
+      "line": 8,
+      "property": "testThreeEqual_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "report_source": "wp_json",
+      "smoke": false,
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    }
+  ],
+  "language": "c",
+  "logs": {
+    "stderr": "stderr.log",
+    "stdout": "stdout.log",
+    "wp_report": "wp-report.json"
+  },
+  "mutant_id": "22",
+  "outcome": "unknown/timeout",
+  "program": "TestThreeEqual",
+  "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/fault_mutants/run_ukcw__uc/TestThreeEqual/mutants/22/c/TestThreeEqual.c",
+  "reason": "At least one WP goal remains unresolved",
+  "role": "mutant",
+  "selection": "direct_match",
+  "settings": {
+    "c_provers": "Z3:4.8.12",
+    "capture_c_counterexamples": true,
+    "goal_timeout": 10,
+    "java_prover": "cvc4",
+    "machdep": "x86_64",
+    "memory_model": "Typed+ref",
+    "timeout": 300,
+    "why3_extra_config": null,
+    "wp_memlimit": 1000,
+    "wp_par": 2
+  },
+  "timed_out": false,
+  "transfer": {
+    "annotation_count": 1,
+    "internal_annotation_coverage": "complete",
+    "method": "frozen structured JSON with audited C declaration bindings",
+    "omitted_annotations": [],
+    "placements": [
+      {
+        "boundary_token": 10,
+        "function": "testThreeEqual",
+        "id": "annotation_1",
+        "loop_id": null,
+        "mutant_offset": 46,
+        "next_token": "int32_t",
+        "target": "function"
+      }
+    ],
+    "removed_loop_annotations": 0,
+    "removed_temporary_policy": "original pure initializer with stable dependencies"
+  },
+  "verification_started": true,
+  "verifier": {
+    "compatibility": {
+      "module": "/mnt/d/ResearchProject/.tools/frama-c-compat/1e5af7b10d6dd41df377/float_negation_33.cmxs",
+      "name": "Frama-C 33.0 implicit floating-negation coercion repair",
+      "source": "/mnt/d/ResearchProject/verification/specification_evaluation/framac/float_negation_33.ml"
+    },
+    "path": "/root/.opam/default/bin/frama-c",
+    "version_command": [
+      "/root/.opam/default/bin/frama-c",
+      "-version"
+    ],
+    "version_exit_code": 0,
+    "version_output": "33.0 (Arsenic)"
+  },
+  "verifier_detection": {
+    "detected": false,
+    "evidence": [],
+    "excluded_models": [],
+    "execution_validated": false,
+    "policy": "frama_c_wp_specification_counterexample_or_explicit_invalidity_v2",
+    "safety_detected": false,
+    "source": "Frama-C/WP",
+    "specification_detected": false,
+    "status": "inconclusive",
+    "timed_out": false,
+    "unclassified_detected": false
+  }
+}

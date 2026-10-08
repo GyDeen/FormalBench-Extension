@@ -1,0 +1,1098 @@
+{
+  "program": "MaxOfTwo",
+  "counts": {
+    "saved_first_calls": 3,
+    "bounded_before_deduplication": 184,
+    "unique_candidates": 135,
+    "admissible_inputs": 135,
+    "invalid_java_int_inputs": 0,
+    "excluded_by_entry_preconditions": 0,
+    "entry_precondition": "true (no explicit requires; all parameters primitive int)",
+    "admissible_by_origin": {
+      "evosuite": 3,
+      "bounded": 132
+    }
+  },
+  "candidates": [
+    {
+      "inputs": {
+        "x": 0,
+        "y": 0
+      },
+      "origin": "saved_test:MaxOfTwo_ESTest.test0",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": -1,
+        "y": -347
+      },
+      "origin": "saved_test:MaxOfTwo_ESTest.test1",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 1,
+        "y": 462
+      },
+      "origin": "saved_test:MaxOfTwo_ESTest.test2",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": -2,
+        "y": -2
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": -2,
+        "y": -1
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": -2,
+        "y": 0
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": -2,
+        "y": 1
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": -2,
+        "y": 2
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": -2,
+        "y": 3
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": -2,
+        "y": 4
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": -2,
+        "y": 7
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": -1,
+        "y": -2
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": -1,
+        "y": -1
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": -1,
+        "y": 0
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": -1,
+        "y": 1
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": -1,
+        "y": 2
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": -1,
+        "y": 3
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": -1,
+        "y": 4
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": -1,
+        "y": 7
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 0,
+        "y": -2
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 0,
+        "y": -1
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 0,
+        "y": 1
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 0,
+        "y": 2
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 0,
+        "y": 3
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 0,
+        "y": 4
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 0,
+        "y": 7
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 1,
+        "y": -2
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 1,
+        "y": -1
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 1,
+        "y": 0
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 1,
+        "y": 1
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 1,
+        "y": 2
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 1,
+        "y": 3
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 1,
+        "y": 4
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 1,
+        "y": 7
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 2,
+        "y": -2
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 2,
+        "y": -1
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 2,
+        "y": 0
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 2,
+        "y": 1
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 2,
+        "y": 2
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 2,
+        "y": 3
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 2,
+        "y": 4
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 2,
+        "y": 7
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 3,
+        "y": -2
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 3,
+        "y": -1
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 3,
+        "y": 0
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 3,
+        "y": 1
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 3,
+        "y": 2
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 3,
+        "y": 3
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 3,
+        "y": 4
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 3,
+        "y": 7
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 4,
+        "y": -2
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 4,
+        "y": -1
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 4,
+        "y": 0
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 4,
+        "y": 1
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 4,
+        "y": 2
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 4,
+        "y": 3
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 4,
+        "y": 4
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 4,
+        "y": 7
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 7,
+        "y": -2
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 7,
+        "y": -1
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 7,
+        "y": 0
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 7,
+        "y": 1
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 7,
+        "y": 2
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 7,
+        "y": 3
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 7,
+        "y": 4
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 7,
+        "y": 7
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 2147483647,
+        "y": 7
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 63,
+        "y": 3
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 3,
+        "y": 32
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 16,
+        "y": 63
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 32,
+        "y": 1
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 2147483647,
+        "y": -2
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 32,
+        "y": -1
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": -2147483648,
+        "y": 63
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 31,
+        "y": 3
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 16,
+        "y": -1
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 32,
+        "y": 0
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 3,
+        "y": 31
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": -2,
+        "y": -2147483648
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": -2147483648,
+        "y": 3
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 2,
+        "y": -2147483648
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": -2147483648,
+        "y": 7
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 7,
+        "y": 31
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 2147483647,
+        "y": -1
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": -2147483648,
+        "y": 16
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 32,
+        "y": 2147483647
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 4,
+        "y": 2147483647
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 63,
+        "y": -2147483648
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 3,
+        "y": 2147483647
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 63,
+        "y": 4
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 2,
+        "y": 63
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": -2,
+        "y": 31
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": -1,
+        "y": -2147483648
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 32,
+        "y": 31
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 4,
+        "y": 31
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": -2,
+        "y": 32
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 31,
+        "y": 16
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 2,
+        "y": 2147483647
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 16,
+        "y": 2
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": -2,
+        "y": 63
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 63,
+        "y": -1
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 63,
+        "y": 2147483647
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 16,
+        "y": 4
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 1,
+        "y": 32
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 7,
+        "y": 32
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 31,
+        "y": -2
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 4,
+        "y": 16
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 32,
+        "y": 2
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": -2147483648,
+        "y": 32
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 0,
+        "y": 32
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 2147483647,
+        "y": 4
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 0,
+        "y": 31
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 32,
+        "y": 4
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 32,
+        "y": -2
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 2147483647,
+        "y": -2147483648
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 7,
+        "y": -2147483648
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 31,
+        "y": 2
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 63,
+        "y": 31
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 31,
+        "y": 2147483647
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 32,
+        "y": 32
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 4,
+        "y": -2147483648
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 7,
+        "y": 63
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 31,
+        "y": 1
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": -1,
+        "y": 2147483647
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 63,
+        "y": -2
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 63,
+        "y": 16
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 31,
+        "y": 32
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 1,
+        "y": 2147483647
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 63,
+        "y": 32
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 7,
+        "y": 2147483647
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 16,
+        "y": -2
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 32,
+        "y": 16
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 2147483647,
+        "y": 31
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 4,
+        "y": 63
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "x": 2147483647,
+        "y": 2
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    }
+  ]
+}

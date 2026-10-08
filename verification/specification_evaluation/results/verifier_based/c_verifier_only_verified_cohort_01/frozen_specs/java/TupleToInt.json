@@ -1,0 +1,72 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 24,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "tupleToInt",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ ensures \\result == ((x % 4294967296L + 6442450944L) % 4294967296L) - 2147483648L;\n      @ model public static pure \\bigint fb_wrap(\\bigint x);\n      @*/"
+    },
+    {
+      "boundary_token": 24,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "tupleToInt",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ requires a != null && 0 <= k <= a.length;\n      @ ensures \\result == (k == 0 ? 0 : fb_wrap(10 * fb_digits(a, k - 1) + a[k - 1]));\n      @ measured_by k;\n      @ model public static pure \\bigint fb_digits(int[] a, int k);\n      @*/"
+    },
+    {
+      "boundary_token": 24,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "tupleToInt",
+      "id": "annotation_3",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ requires nums != null;\n      @ assignable \\nothing;\n      @ ensures \\result == fb_digits(nums, nums.length);\n      @ also\n      @ public exceptional_behavior\n      @ requires nums == null;\n      @ assignable \\nothing;\n      @ signals_only NullPointerException;\n      @*/"
+    },
+    {
+      "boundary_token": 24,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "tupleToInt",
+      "id": "annotation_4",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "//@ code_java_math"
+    },
+    {
+      "boundary_token": 40,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "tupleToInt",
+      "id": "annotation_5",
+      "loop_id": "loop_1",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@ loop_invariant 0 <= \\count <= nums.length;\n          @ loop_invariant result == fb_digits(nums, \\count);\n          @ loop_writes result;\n          @ decreases nums.length - \\count;\n          @*/"
+    }
+  ],
+  "language": "java",
+  "program": "TupleToInt",
+  "schema_version": "1.0"
+}

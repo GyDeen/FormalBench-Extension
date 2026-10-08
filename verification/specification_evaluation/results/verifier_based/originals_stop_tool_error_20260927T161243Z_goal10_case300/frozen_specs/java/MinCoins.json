@@ -1,0 +1,46 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "minCoins",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@\n    public normal_behavior\n      ensures \\result == (x == Integer.MAX_VALUE ? x : x + 1);\n    model public static pure \\bigint fb_incCost(\\bigint x);\n    public normal_behavior\n      requires a != null && 0 <= m <= a.length && 0 <= j <= m;\n      requires (\\forall int k; 0 <= k < m; a[k] > 0);\n      ensures \\result == (v == 0 ? 0 : v < 0 || j == 0 ? Integer.MAX_VALUE : a[j - 1] > v ? fb_cost(a, m, v, j - 1) :\n        fb_cost(a, m, v, j - 1) <= fb_incCost(fb_cost(a, m, v - a[j - 1], m)) ? fb_cost(a, m, v, j - 1) : fb_incCost(fb_cost(a, m, v - a[j - 1], m)));\n      measured_by (v > 0 ? (\\bigint)v : 0) * ((\\bigint)m + 1) + j;\n    model public static pure \\bigint fb_cost(int[] a, int m, int v, int j);\n\n    public normal_behavior\n      requires v <= 0 || m <= 0 || (coins != null && m <= coins.length && (\\forall int k; 0 <= k < m; coins[k] > 0));\n      assignable \\nothing;\n      ensures \\result == (v == 0 ? 0 : v < 0 || m <= 0 ? Integer.MAX_VALUE : fb_cost(coins, m, v, m));\n      measured_by v > 0 ? v : 0;\n    @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "minCoins",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "//@ code_java_math"
+    },
+    {
+      "boundary_token": 80,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "minCoins",
+      "id": "annotation_3",
+      "loop_id": "loop_1",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@\n        loop_invariant 0 <= i <= (m < 0 ? 0 : m);\n        loop_invariant m > 0 ==> minCoins == fb_cost(coins, m, v, i);\n        loop_invariant m <= 0 ==> minCoins == Integer.MAX_VALUE;\n        loop_writes i, minCoins;\n        decreases m <= 0 ? 0 : (\\bigint)m - i;\n        @*/"
+    }
+  ],
+  "language": "java",
+  "program": "MinCoins",
+  "schema_version": "1.0"
+}

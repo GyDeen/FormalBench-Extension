@@ -1,0 +1,137 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "maxProduct",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ ensures \\result == ((x % 4294967296L + 6442450944L) % 4294967296L) - 2147483648L;\n      @ model public static pure \\bigint fb_wrap(\\bigint x);\n      @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "maxProduct",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ ensures \\result == (a >= b ? a : b);\n      @ model public static pure \\bigint fb_max(\\bigint a, \\bigint b);\n      @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "maxProduct",
+      "id": "annotation_3",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ requires a != null && 0 <= j <= i < a.length;\n      @ ensures \\result == (j == 0 ? a[i] : fb_max(fb_product_end(a, i, j - 1), a[i] > a[j - 1] ? fb_wrap(fb_product_end(a, j - 1, j - 1) * a[i]) : (\\bigint)a[i]));\n      @ measured_by (\\bigint)i * (a.length + 1) + j;\n      @ model public static pure \\bigint fb_product_end(int[] a, int i, int j);\n      @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "maxProduct",
+      "id": "annotation_4",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ requires a != null && 1 <= k <= a.length;\n      @ ensures \\result == (k == 1 ? a[0] : fb_max(fb_product_best(a, k - 1), fb_product_end(a, k - 1, k - 1)));\n      @ measured_by k;\n      @ model public static pure \\bigint fb_product_best(int[] a, int k);\n      @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "maxProduct",
+      "id": "annotation_5",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ requires arr != null && 1 <= n <= arr.length;\n      @ assignable \\nothing;\n      @ ensures \\result == fb_product_best(arr, n);\n      @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "maxProduct",
+      "id": "annotation_6",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "//@ code_java_math"
+    },
+    {
+      "boundary_token": 56,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "maxProduct",
+      "id": "annotation_7",
+      "loop_id": "loop_1",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@ loop_invariant 0 <= i <= n;\n          @ loop_invariant (\\forall int k; 0 <= k < i; mpis[k] == arr[k]);\n          @ loop_writes i, mpis[*];\n          @ decreases n - i;\n          @*/"
+    },
+    {
+      "boundary_token": 83,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "maxProduct",
+      "id": "annotation_8",
+      "loop_id": "loop_2",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@ loop_invariant 1 <= i <= n;\n          @ loop_invariant (\\forall int k; 0 <= k < i; mpis[k] == fb_product_end(arr, k, k));\n          @ loop_invariant (\\forall int k; i <= k < n; mpis[k] == arr[k]);\n          @ loop_writes i, mpis[*];\n          @ decreases n - i;\n          @*/"
+    },
+    {
+      "boundary_token": 99,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "maxProduct",
+      "id": "annotation_9",
+      "loop_id": "loop_3",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@ loop_invariant 0 <= j <= i;\n              @ loop_invariant mpis[i] == fb_product_end(arr, i, j);\n              @ loop_writes j, mpis[i];\n              @ decreases i - j;\n              @*/"
+    },
+    {
+      "boundary_token": 172,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "maxProduct",
+      "id": "annotation_10",
+      "loop_id": "loop_4",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@ loop_invariant 1 <= i <= n;\n          @ loop_invariant max == fb_product_best(arr, i);\n          @ loop_writes i, max;\n          @ decreases n - i;\n          @*/"
+    }
+  ],
+  "language": "java",
+  "program": "MaxProduct",
+  "schema_version": "1.0"
+}

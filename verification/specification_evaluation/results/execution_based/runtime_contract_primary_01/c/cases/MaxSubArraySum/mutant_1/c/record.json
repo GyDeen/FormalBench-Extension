@@ -1,0 +1,103 @@
+{
+  "checked_inputs": 872,
+  "complete": true,
+  "coverage": {
+    "other_checks": "observable input-array frames, result identity and selected allocation checks",
+    "primary": "frozen return-value/content postconditions",
+    "unchecked": [
+      "loop invariants",
+      "loop variants",
+      "statement assertions",
+      "full allocation/free sets",
+      "full write sets"
+    ],
+    "unsupported_policy": "visible evaluation failure; never treated as satisfied"
+  },
+  "evaluation_failures": 0,
+  "execution_rerun": false,
+  "imported_execution_evidence": "/mnt/d/ResearchProject/output/c_mutant_results_withdrawn_20261008T004534/withdrawn/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/c_counterexamples_refreshed_all_c_20261001_search_only/cases/MaxSubArraySum/mutant_1/c/record.json",
+  "input_pool": {
+    "admissible_inputs": 872,
+    "bounded_unique_candidates": 1051,
+    "excluded": {
+      "outside_frozen_entry_domain": 183
+    },
+    "saved_first_calls": 4,
+    "unique_candidates": 1055
+  },
+  "language": "c",
+  "mutant_id": "1",
+  "other_contract_detected": false,
+  "policy": "c-runtime-frozen-postconditions-evosuite-bounded-v1",
+  "program": "MaxSubArraySum",
+  "role": "mutant_1",
+  "safety_detected": true,
+  "safety_witness": {
+    "audit": {
+      "baseline_execution": {
+        "elapsed_seconds": 0.0068696260004799115,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {
+            "a": false
+          },
+          "errno": 0,
+          "result": 1,
+          "rows_separate": true,
+          "state": {
+            "a": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":1,\"state\":{\"a\":[0,0,0,0,0,0]},\"aliases\":{\"a\":false},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "baseline_failed_clauses": [],
+      "baseline_passed": true,
+      "execution": {
+        "elapsed_seconds": 0.009503459999905317,
+        "exit_code": 72,
+        "status": "runtime_safety",
+        "stderr": "JAVA_ARRAY_ERROR: INDEX_OUT_OF_BOUNDS (java.lang.ArrayIndexOutOfBoundsException)\n",
+        "stdout": ""
+      },
+      "failed_clauses": [],
+      "passed": true
+    },
+    "elapsed_seconds": 0.004584558999340516,
+    "exit_code": 72,
+    "expected": 1,
+    "failed_clauses": [],
+    "inputs": {
+      "a": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "size": -1
+    },
+    "origin": "saved_test:MaxSubArraySum_ESTest.test1",
+    "preconditions_satisfied": true,
+    "status": "runtime_safety",
+    "stderr": "JAVA_ARRAY_ERROR: INDEX_OUT_OF_BOUNDS (java.lang.ArrayIndexOutOfBoundsException)\n",
+    "stdout": "",
+    "validated": true
+  },
+  "search_exhausted": false,
+  "specification_detected": false,
+  "status": "validated_safety_failure",
+  "timeouts": 0,
+  "verification_rerun": false,
+  "witness": null
+}

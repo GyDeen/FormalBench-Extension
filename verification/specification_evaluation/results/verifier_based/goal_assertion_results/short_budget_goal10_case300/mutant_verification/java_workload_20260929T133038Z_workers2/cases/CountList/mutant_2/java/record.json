@@ -1,0 +1,475 @@
+{
+  "annotated_source": "/mnt/d/ResearchProject/verification/specification_evaluation/results/java_workload_20260929T133038Z_workers2/cases/CountList/mutant_2/java/CountList.java",
+  "attempt_status": "complete",
+  "command": [
+    "/root/tools/openjml/openjml",
+    "-J--add-exports=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED",
+    "-J--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED",
+    "-processorpath",
+    "/mnt/d/ResearchProject/.tools/openjml-compat/47613dac9ce1473c6ada/numeric-bit-predicates.jar",
+    "-Xplugin:NumericBitPredicates file:///mnt/d/ResearchProject/verification/specification_evaluation/results/java_workload_20260929T133038Z_workers2/cases/CountList/mutant_2/java/CountList.java",
+    "--exec=/mnt/d/ResearchProject/verification/specification_evaluation/java_solver_trace.py",
+    "--esc",
+    "--progress",
+    "--nullable-by-default",
+    "--prover=z3-4.3.X",
+    "--timeout",
+    "10",
+    "--show=bb",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/java_workload_20260929T133038Z_workers2/cases/CountList/mutant_2/java/CountList.java"
+  ],
+  "compiler_normalizations": [],
+  "elapsed_seconds": 7.693,
+  "exit_code": 6,
+  "failure_stage": null,
+  "frozen_spec": "/mnt/d/ResearchProject/verification/specification_evaluation/results/java_workload_20260929T133038Z_workers2/frozen_specs/java/CountList.json",
+  "goals": [
+    {
+      "category": "precondition/RTE",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/java_workload_20260929T133038Z_workers2/cases/CountList/mutant_2/java/CountList.java",
+      "line": "29",
+      "message": "The prover cannot establish an assertion (UndefinedCalledMethodPrecondition: /mnt/d/ResearchProject/verification/specification_evaluation/results/java_workload_20260929T133038Z_workers2/cases/CountList/mutant_2/java/CountList.java:13:) in method countList",
+      "state": "violated"
+    },
+    {
+      "category": "unclassified",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/java_workload_20260929T133038Z_workers2/cases/CountList/mutant_2/java/CountList.java",
+      "line": "10",
+      "message": "Precondition conjunct is false: (\\forall int i; 0 <= i < k; a[i] != null)",
+      "state": "unknown"
+    },
+    {
+      "category": "specification",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/java_workload_20260929T133038Z_workers2/cases/CountList/mutant_2/java/CountList.java",
+      "line": "29",
+      "message": "The prover cannot establish an assertion (LoopInvariant) in method countList",
+      "state": "violated"
+    },
+    {
+      "category": "precondition/RTE",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/java_workload_20260929T133038Z_workers2/cases/CountList/mutant_2/java/CountList.java",
+      "line": "29",
+      "message": "The prover cannot establish an assertion (UndefinedCalledMethodPrecondition: /mnt/d/ResearchProject/verification/specification_evaluation/results/java_workload_20260929T133038Z_workers2/cases/CountList/mutant_2/java/CountList.java:13:) in method countList",
+      "state": "violated"
+    },
+    {
+      "category": "unclassified",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/java_workload_20260929T133038Z_workers2/cases/CountList/mutant_2/java/CountList.java",
+      "line": "10",
+      "message": "Precondition conjunct is false: (\\forall int i; 0 <= i < k; a[i] != null)",
+      "state": "unknown"
+    },
+    {
+      "category": "precondition/RTE",
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/java_workload_20260929T133038Z_workers2/cases/CountList/mutant_2/java/CountList.java",
+      "line": "28",
+      "message": "The prover cannot establish an assertion (UndefinedNullDeReference) in method countList",
+      "state": "violated"
+    }
+  ],
+  "goals_unit": "reported Java warning diagnostics, not generated proof obligations",
+  "java_workload": {
+    "assertions_by_kind": {
+      "ExceptionList": 3,
+      "ExceptionalPostcondition": 2,
+      "LoopDecreases": 1,
+      "LoopDecreasesNonNegative": 1,
+      "LoopInvariant": 2,
+      "LoopInvariantAfterLoop": 2,
+      "LoopInvariantBeforeLoop": 2,
+      "Postcondition": 2,
+      "Precondition": 1,
+      "UndefinedCalledMethodPrecondition": 5,
+      "UndefinedNegativeIndex": 5,
+      "UndefinedNullDeReference": 22,
+      "UndefinedTooLargeIndex": 5
+    },
+    "capture_complete": true,
+    "generated_assertion_count": 53,
+    "generated_method_vc_count": 2,
+    "method_proof_completions": 2,
+    "method_proof_starts": 2,
+    "methods": [
+      {
+        "assertion_count": 3,
+        "assertions": [
+          {
+            "expression": "ASSERT_9_0_0___9",
+            "kind": "Precondition"
+          },
+          {
+            "expression": "ASSERT_15_60_60___13",
+            "kind": "ExceptionalPostcondition"
+          },
+          {
+            "expression": "ASSERT_16_60_60___14",
+            "kind": "ExceptionList"
+          }
+        ],
+        "assertions_by_kind": {
+          "ExceptionList": 1,
+          "ExceptionalPostcondition": 1,
+          "Precondition": 1
+        },
+        "method": "CountList.CountList()"
+      },
+      {
+        "assertion_count": 50,
+        "assertions": [
+          {
+            "expression": "ASSERT_99_1059",
+            "kind": "UndefinedNullDeReference"
+          },
+          {
+            "expression": "ASSERT_100_1038",
+            "kind": "LoopInvariantBeforeLoop"
+          },
+          {
+            "expression": "ASSERT_111_154",
+            "kind": "UndefinedNullDeReference"
+          },
+          {
+            "expression": "ASSERT_116_181",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_121_300",
+            "kind": "UndefinedNullDeReference"
+          },
+          {
+            "expression": "ASSERT_122_300",
+            "kind": "UndefinedNegativeIndex"
+          },
+          {
+            "expression": "ASSERT_123_300",
+            "kind": "UndefinedTooLargeIndex"
+          },
+          {
+            "expression": "ASSERT_126_307",
+            "kind": "UndefinedNullDeReference"
+          },
+          {
+            "expression": "ASSERT_130_1105",
+            "kind": "LoopInvariantBeforeLoop"
+          },
+          {
+            "expression": "ASSERT_138_1059",
+            "kind": "UndefinedNullDeReference"
+          },
+          {
+            "expression": "ASSERT_149_154",
+            "kind": "UndefinedNullDeReference"
+          },
+          {
+            "expression": "ASSERT_154_181",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_159_300",
+            "kind": "UndefinedNullDeReference"
+          },
+          {
+            "expression": "ASSERT_160_300",
+            "kind": "UndefinedNegativeIndex"
+          },
+          {
+            "expression": "ASSERT_161_300",
+            "kind": "UndefinedTooLargeIndex"
+          },
+          {
+            "expression": "ASSERT_164_307",
+            "kind": "UndefinedNullDeReference"
+          },
+          {
+            "expression": "ASSERT_170_1206",
+            "kind": "UndefinedNullDeReference"
+          },
+          {
+            "expression": "ASSERT_172_1059",
+            "kind": "UndefinedNullDeReference"
+          },
+          {
+            "expression": "ASSERT_173_1038",
+            "kind": "LoopInvariantAfterLoop"
+          },
+          {
+            "expression": "ASSERT_177_154",
+            "kind": "UndefinedNullDeReference"
+          },
+          {
+            "expression": "ASSERT_182_181",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_187_300",
+            "kind": "UndefinedNullDeReference"
+          },
+          {
+            "expression": "ASSERT_188_300",
+            "kind": "UndefinedNegativeIndex"
+          },
+          {
+            "expression": "ASSERT_189_300",
+            "kind": "UndefinedTooLargeIndex"
+          },
+          {
+            "expression": "ASSERT_192_307",
+            "kind": "UndefinedNullDeReference"
+          },
+          {
+            "expression": "ASSERT_196_1105",
+            "kind": "LoopInvariantAfterLoop"
+          },
+          {
+            "expression": "ASSERT_197_0",
+            "kind": "LoopDecreasesNonNegative"
+          },
+          {
+            "expression": "ASSERT_200_1059",
+            "kind": "UndefinedNullDeReference"
+          },
+          {
+            "expression": "ASSERT_201_1038",
+            "kind": "LoopInvariant"
+          },
+          {
+            "expression": "ASSERT_205_154",
+            "kind": "UndefinedNullDeReference"
+          },
+          {
+            "expression": "ASSERT_210_181",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_215_300",
+            "kind": "UndefinedNullDeReference"
+          },
+          {
+            "expression": "ASSERT_216_300",
+            "kind": "UndefinedNegativeIndex"
+          },
+          {
+            "expression": "ASSERT_217_300",
+            "kind": "UndefinedTooLargeIndex"
+          },
+          {
+            "expression": "ASSERT_220_307",
+            "kind": "UndefinedNullDeReference"
+          },
+          {
+            "expression": "ASSERT_224_1105",
+            "kind": "LoopInvariant"
+          },
+          {
+            "expression": "ASSERT_226_1206",
+            "kind": "UndefinedNullDeReference"
+          },
+          {
+            "expression": "ASSERT_227_1206",
+            "kind": "LoopDecreases"
+          },
+          {
+            "expression": "ASSERT_230_663",
+            "kind": "UndefinedNullDeReference"
+          },
+          {
+            "expression": "ASSERT_234_154",
+            "kind": "UndefinedNullDeReference"
+          },
+          {
+            "expression": "ASSERT_239_181",
+            "kind": "UndefinedCalledMethodPrecondition"
+          },
+          {
+            "expression": "ASSERT_244_300",
+            "kind": "UndefinedNullDeReference"
+          },
+          {
+            "expression": "ASSERT_245_300",
+            "kind": "UndefinedNegativeIndex"
+          },
+          {
+            "expression": "ASSERT_246_300",
+            "kind": "UndefinedTooLargeIndex"
+          },
+          {
+            "expression": "ASSERT_249_307",
+            "kind": "UndefinedNullDeReference"
+          },
+          {
+            "expression": "ASSERT_253_618",
+            "kind": "Postcondition"
+          },
+          {
+            "expression": "ASSERT_255_0",
+            "kind": "Postcondition"
+          },
+          {
+            "expression": "ASSERT_228_450",
+            "kind": "ExceptionalPostcondition"
+          },
+          {
+            "expression": "ASSERT_254_956",
+            "kind": "ExceptionList"
+          },
+          {
+            "expression": "ASSERT_256_866",
+            "kind": "ExceptionList"
+          }
+        ],
+        "assertions_by_kind": {
+          "ExceptionList": 2,
+          "ExceptionalPostcondition": 1,
+          "LoopDecreases": 1,
+          "LoopDecreasesNonNegative": 1,
+          "LoopInvariant": 2,
+          "LoopInvariantAfterLoop": 2,
+          "LoopInvariantBeforeLoop": 2,
+          "Postcondition": 2,
+          "UndefinedCalledMethodPrecondition": 5,
+          "UndefinedNegativeIndex": 5,
+          "UndefinedNullDeReference": 22,
+          "UndefinedTooLargeIndex": 5
+        },
+        "method": "CountList.countList(int[][])"
+      }
+    ],
+    "reported_warning_count": 6,
+    "schema_version": "1.0",
+    "solver_check_sat_count": 6,
+    "solver_check_sat_results": {
+      "unknown": 4,
+      "unsat": 2
+    },
+    "solver_invocation_count": 2,
+    "solver_traces": [
+      {
+        "all_queries_answered": true,
+        "check_sat_count": 1,
+        "check_sat_results": {
+          "unsat": 1
+        },
+        "file": "solver-traces/solver-53145.smt2",
+        "responses_file": "solver-traces/solver-53145.responses",
+        "solver_exit_code": null
+      },
+      {
+        "all_queries_answered": true,
+        "check_sat_count": 5,
+        "check_sat_results": {
+          "unknown": 4,
+          "unsat": 1
+        },
+        "file": "solver-traces/solver-53180.smt2",
+        "responses_file": "solver-traces/solver-53180.responses",
+        "solver_exit_code": null
+      }
+    ],
+    "units": {
+      "comparability": "none of these is directly equivalent to a Frama-C WP report entry",
+      "generated_assertion_count": "assert statements in emitted OpenJML basic-block method VCs; includes implicit checks and constructors",
+      "generated_method_vc_count": "emitted basic-block method VC sections; retries/splits can repeat a method",
+      "solver_check_sat_count": "check-sat commands forwarded to the solver, including feasibility and counterexample follow-up queries"
+    }
+  },
+  "java_workload_capture": {
+    "java_solver_trace.py": "a042c155f8daf5a4a8cd3824823c0a618ff938b5c05ba836c365c17e0158763e",
+    "java_workload.py": "f9333d2c349a5050a66aedce0f9358424d1c623d5c067f89da42fdda3e91e218"
+  },
+  "language": "java",
+  "logs": {
+    "java_workload": "java-workload.json",
+    "stderr": "stderr.log",
+    "stdout": "stdout.log"
+  },
+  "mutant_id": "2",
+  "outcome": "precondition/RTE failure",
+  "program": "CountList",
+  "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/fault_mutants/run_ukcw__uc/CountList/mutants/2/java/CountList.java",
+  "reason": "OpenJML reported an unproved precondition or runtime-safety obligation",
+  "role": "mutant",
+  "selection": "direct_match",
+  "settings": {
+    "c_provers": "Alt-Ergo:2.4.3,Z3:4.8.12",
+    "goal_timeout": 10,
+    "java_prover": "z3-4.3.X",
+    "machdep": "x86_64",
+    "memory_model": "Typed+ref",
+    "timeout": 300,
+    "why3_extra_config": "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+    "wp_memlimit": 1000,
+    "wp_par": 4
+  },
+  "timed_out": false,
+  "trace_solver": "/root/tools/openjml/Solvers-linux/z3-4.10.2",
+  "transfer": {
+    "annotation_count": 4,
+    "internal_annotation_coverage": "complete",
+    "method": "frozen structured JSON",
+    "omitted_annotations": [],
+    "placements": [
+      {
+        "boundary_token": 24,
+        "function": "countList",
+        "id": "annotation_1",
+        "loop_id": null,
+        "mutant_offset": 87,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 24,
+        "function": "countList",
+        "id": "annotation_2",
+        "loop_id": null,
+        "mutant_offset": 87,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 24,
+        "function": "countList",
+        "id": "annotation_3",
+        "loop_id": null,
+        "mutant_offset": 87,
+        "next_token": "public",
+        "target": "function"
+      },
+      {
+        "boundary_token": 42,
+        "function": "countList",
+        "id": "annotation_4",
+        "java_compatibility": [
+          "numeric loop counter identity: \\count -> (\\count + 0), occurrences=3"
+        ],
+        "loop_id": "loop_1",
+        "mutant_offset": 168,
+        "next_token": "for",
+        "target": "loop"
+      }
+    ],
+    "removed_loop_annotations": 0,
+    "removed_temporary_policy": "original pure initializer with stable dependencies"
+  },
+  "unsupported_features": [],
+  "verification_started": true,
+  "verifier": {
+    "compatibility": {
+      "name": "OpenJML 21.0.27 numeric bit predicates and bundled Z3 repair",
+      "plugin": "/mnt/d/ResearchProject/.tools/openjml-compat/47613dac9ce1473c6ada/numeric-bit-predicates.jar",
+      "scope": "primitive int local/parameter predicates (x ^ 1) == 0 and (x | 1) == 0",
+      "solver": {
+        "path": "/root/tools/openjml/Solvers-linux/z3-4.10.2",
+        "version": "Z3 version 4.10.2 - 64 bit"
+      },
+      "source": "/mnt/d/ResearchProject/verification/specification_evaluation/openjml/NumericBitPredicates.java"
+    },
+    "path": "/root/tools/openjml/openjml",
+    "version_command": [
+      "/root/tools/openjml/openjml",
+      "--version"
+    ],
+    "version_exit_code": 0,
+    "version_output": "openjml 21.0.27"
+  }
+}

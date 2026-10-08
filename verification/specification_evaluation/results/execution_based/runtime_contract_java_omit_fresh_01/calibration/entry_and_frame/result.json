@@ -1,0 +1,43 @@
+{
+  "compile": {
+    "command": [
+      "/root/tools/openjml/openjml",
+      "--rac",
+      "--nullable-by-default",
+      "--show-not-implemented",
+      "--show-not-executable",
+      "--rac-precondition-entry",
+      "--rac-show-source=line",
+      "-d",
+      "/mnt/d/ResearchProject/verification/specification_evaluation/results/runtime_contract_java_omit_fresh_01/calibration/entry_and_frame/rac_classes",
+      "/mnt/d/ResearchProject/verification/specification_evaluation/results/runtime_contract_java_omit_fresh_01/calibration/entry_and_frame/EntryFrame.java"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "",
+    "elapsed_seconds": 1.605,
+    "unsupported_diagnostics": [],
+    "usable": true
+  },
+  "precondition_excluded": {
+    "status": "failure",
+    "class": "org.jmlspecs.runtime.JmlAssertionError$PreconditionEntry",
+    "message": "/mnt/d/ResearchProject/verification/specification_evaluation/results/runtime_contract_java_omit_fresh_01/calibration/entry_and_frame/EntryFrame.java:3: verify: JML precondition is false",
+    "error_kind": "exception",
+    "cause": "null",
+    "category": "precondition_failure",
+    "elapsed_seconds": 0.0331
+  },
+  "precondition_admitted": {
+    "status": "returned",
+    "return": 1,
+    "category": "returned",
+    "elapsed_seconds": 0.02938
+  },
+  "frame_violation": {
+    "status": "returned",
+    "return": 1,
+    "category": "returned",
+    "elapsed_seconds": 0.0271
+  }
+}

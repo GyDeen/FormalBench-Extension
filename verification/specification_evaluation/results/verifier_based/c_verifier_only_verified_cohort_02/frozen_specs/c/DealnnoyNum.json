@@ -1,0 +1,59 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 10,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_sub",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\n  assigns \\nothing;\n  ensures \\result == (int32_t)((integer)left - right);\n*/"
+    },
+    {
+      "boundary_token": 38,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_add",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\n  assigns \\nothing;\n  ensures \\result == (int32_t)((integer)left + right);\n*/"
+    },
+    {
+      "boundary_token": 66,
+      "following_tokens": [
+        "int32_t",
+        "dealnnoyNum"
+      ],
+      "function": "dealnnoyNum",
+      "id": "annotation_3",
+      "loop_id": null,
+      "next_token": "int32_t",
+      "target": "function",
+      "text": "/*@\n  logic integer fb_delannoy(integer n, integer m) =\n    n <= 0 || m <= 0 ? 1 : fb_delannoy(m - 1, n) + fb_delannoy(m - 1, n - 1) + fb_delannoy(m, n - 1);\n*/"
+    },
+    {
+      "boundary_token": 66,
+      "following_tokens": [
+        "int32_t",
+        "dealnnoyNum"
+      ],
+      "function": "dealnnoyNum",
+      "id": "annotation_4",
+      "loop_id": null,
+      "next_token": "int32_t",
+      "target": "function",
+      "text": "/*@\n  requires n == 0 || m == 0 || (n > 0 && m > 0);\n  decreases n > 0 && m > 0 ? (integer)n + m : 0;\n  assigns \\nothing;\n  ensures \\result == (int32_t)fb_delannoy(n, m);\n*/"
+    }
+  ],
+  "language": "c",
+  "program": "DealnnoyNum",
+  "schema_version": "1.0"
+}

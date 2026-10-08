@@ -1,0 +1,114 @@
+{
+  "status": "postcondition_check_confirmed",
+  "controls": [
+    {
+      "label": "nonnull",
+      "inputs": {
+        "l1": 0,
+        "r1": 0,
+        "l2": 0,
+        "r2": 0
+      },
+      "compile_usable": true,
+      "observation": {
+        "status": "failure",
+        "class": "org.jmlspecs.runtime.JmlAssertionError",
+        "message": "/mnt/d/ResearchProject/verification/specification_evaluation/results/runtime_contract_java_omit_fresh_01/calibration/FindPoints/nonnull/FindPoints.java:17: verify: JML postcondition is false\n/mnt/d/ResearchProject/verification/specification_evaluation/results/runtime_contract_java_omit_fresh_01/calibration/FindPoints/nonnull/FindPoints.java:11: verify: Associated declaration: /mnt/d/ResearchProject/verification/specification_evaluation/results/runtime_contract_java_omit_fresh_01/calibration/FindPoints/nonnull/FindPoints.java:17:",
+        "error_kind": "exception",
+        "cause": "null",
+        "category": "postcondition_violation",
+        "elapsed_seconds": 0.04783
+      },
+      "confirmed": true
+    },
+    {
+      "label": "length",
+      "inputs": {
+        "l1": 0,
+        "r1": 0,
+        "l2": 0,
+        "r2": 0
+      },
+      "compile_usable": true,
+      "observation": {
+        "status": "failure",
+        "class": "org.jmlspecs.runtime.JmlAssertionError",
+        "message": "/mnt/d/ResearchProject/verification/specification_evaluation/results/runtime_contract_java_omit_fresh_01/calibration/FindPoints/length/FindPoints.java:17: verify: JML postcondition is false\n/mnt/d/ResearchProject/verification/specification_evaluation/results/runtime_contract_java_omit_fresh_01/calibration/FindPoints/length/FindPoints.java:11: verify: Associated declaration: /mnt/d/ResearchProject/verification/specification_evaluation/results/runtime_contract_java_omit_fresh_01/calibration/FindPoints/length/FindPoints.java:17:",
+        "error_kind": "exception",
+        "cause": "null",
+        "category": "postcondition_violation",
+        "elapsed_seconds": 0.0371
+      },
+      "confirmed": true
+    },
+    {
+      "label": "ascending_content",
+      "inputs": {
+        "l1": 1,
+        "r1": 3,
+        "l2": 2,
+        "r2": 4
+      },
+      "compile_usable": true,
+      "observation": {
+        "status": "failure",
+        "class": "org.jmlspecs.runtime.JmlAssertionError",
+        "message": "/mnt/d/ResearchProject/verification/specification_evaluation/results/runtime_contract_java_omit_fresh_01/calibration/FindPoints/ascending_content/FindPoints.java:17: verify: JML postcondition is false\n/mnt/d/ResearchProject/verification/specification_evaluation/results/runtime_contract_java_omit_fresh_01/calibration/FindPoints/ascending_content/FindPoints.java:12: verify: Associated declaration: /mnt/d/ResearchProject/verification/specification_evaluation/results/runtime_contract_java_omit_fresh_01/calibration/FindPoints/ascending_content/FindPoints.java:17:",
+        "error_kind": "exception",
+        "cause": "null",
+        "category": "postcondition_violation",
+        "elapsed_seconds": 0.03562
+      },
+      "confirmed": true
+    },
+    {
+      "label": "descending_content",
+      "inputs": {
+        "l1": 2,
+        "r1": 4,
+        "l2": 1,
+        "r2": 3
+      },
+      "compile_usable": true,
+      "observation": {
+        "status": "failure",
+        "class": "org.jmlspecs.runtime.JmlAssertionError",
+        "message": "/mnt/d/ResearchProject/verification/specification_evaluation/results/runtime_contract_java_omit_fresh_01/calibration/FindPoints/descending_content/FindPoints.java:17: verify: JML postcondition is false\n/mnt/d/ResearchProject/verification/specification_evaluation/results/runtime_contract_java_omit_fresh_01/calibration/FindPoints/descending_content/FindPoints.java:13: verify: Associated declaration: /mnt/d/ResearchProject/verification/specification_evaluation/results/runtime_contract_java_omit_fresh_01/calibration/FindPoints/descending_content/FindPoints.java:17:",
+        "error_kind": "exception",
+        "cause": "null",
+        "category": "postcondition_violation",
+        "elapsed_seconds": 0.0398
+      },
+      "confirmed": true
+    },
+    {
+      "label": "default_content",
+      "inputs": {
+        "l1": 0,
+        "r1": 0,
+        "l2": 0,
+        "r2": 0
+      },
+      "compile_usable": true,
+      "observation": {
+        "status": "failure",
+        "class": "org.jmlspecs.runtime.JmlAssertionError",
+        "message": "/mnt/d/ResearchProject/verification/specification_evaluation/results/runtime_contract_java_omit_fresh_01/calibration/FindPoints/default_content/FindPoints.java:17: verify: JML postcondition is false\n/mnt/d/ResearchProject/verification/specification_evaluation/results/runtime_contract_java_omit_fresh_01/calibration/FindPoints/default_content/FindPoints.java:14: verify: Associated declaration: /mnt/d/ResearchProject/verification/specification_evaluation/results/runtime_contract_java_omit_fresh_01/calibration/FindPoints/default_content/FindPoints.java:17:",
+        "error_kind": "exception",
+        "cause": "null",
+        "category": "postcondition_violation",
+        "elapsed_seconds": 0.03649
+      },
+      "confirmed": true
+    }
+  ],
+  "runtime_omissions": [
+    {
+      "annotation_id": "annotation_1",
+      "expression": "\\fresh(\\result)",
+      "reason": "Unsupported by installed RAC; unchecked for both original and mutants",
+      "original_text": "/*@ public normal_behavior\n      @ assignable \\nothing;\n      @ ensures \\result != null && \\fresh(\\result) && \\result.length == 2;\n      @ ensures l1 < l2 && r1 < r2 ==> \\result[0] == (l1 < r1 ? l1 : r1) && \\result[1] == (r2 > l2 ? r2 : l2);\n      @ ensures l1 > l2 && r1 > r2 ==> \\result[0] == (l2 < r2 ? l2 : r2) && \\result[1] == (l1 > r1 ? l1 : r1);\n      @ ensures !(l1 < l2 && r1 < r2) && !(l1 > l2 && r1 > r2) ==> \\result[0] == l1 && \\result[1] == r1;\n      @*/",
+      "runtime_text": "/*@ public normal_behavior\n      @ assignable \\nothing;\n      @ ensures \\result != null && \\result.length == 2;\n      @ ensures l1 < l2 && r1 < r2 ==> \\result[0] == (l1 < r1 ? l1 : r1) && \\result[1] == (r2 > l2 ? r2 : l2);\n      @ ensures l1 > l2 && r1 > r2 ==> \\result[0] == (l2 < r2 ? l2 : r2) && \\result[1] == (l1 > r1 ? l1 : r1);\n      @ ensures !(l1 < l2 && r1 < r2) && !(l1 > l2 && r1 > r2) ==> \\result[0] == l1 && \\result[1] == r1;\n      @*/"
+    }
+  ]
+}

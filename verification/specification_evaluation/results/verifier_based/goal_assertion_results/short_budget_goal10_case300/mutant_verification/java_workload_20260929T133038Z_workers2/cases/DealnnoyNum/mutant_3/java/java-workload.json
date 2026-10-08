@@ -1,0 +1,206 @@
+{
+  "schema_version": "1.0",
+  "capture_complete": true,
+  "generated_assertion_count": 31,
+  "generated_method_vc_count": 2,
+  "method_proof_starts": 2,
+  "method_proof_completions": 2,
+  "solver_invocation_count": 2,
+  "solver_check_sat_count": 2,
+  "solver_check_sat_results": {
+    "unsat": 1,
+    "unknown": 1
+  },
+  "assertions_by_kind": {
+    "Precondition": 4,
+    "ExceptionalPostcondition": 2,
+    "ExceptionList": 2,
+    "TerminationDecreases": 3,
+    "TerminationNonNegative": 3,
+    "UndefinedCalledMethodPrecondition": 8,
+    "UndefinedDivideByZero": 8,
+    "Postcondition": 1
+  },
+  "methods": [
+    {
+      "method": "DealnnoyNum.DealnnoyNum()",
+      "assertion_count": 3,
+      "assertions_by_kind": {
+        "Precondition": 1,
+        "ExceptionalPostcondition": 1,
+        "ExceptionList": 1
+      },
+      "assertions": [
+        {
+          "kind": "Precondition",
+          "expression": "ASSERT_9_0_0___9"
+        },
+        {
+          "kind": "ExceptionalPostcondition",
+          "expression": "ASSERT_15_80_80___13"
+        },
+        {
+          "kind": "ExceptionList",
+          "expression": "ASSERT_16_80_80___14"
+        }
+      ]
+    },
+    {
+      "method": "DealnnoyNum.dealnnoyNum(int,int)",
+      "assertion_count": 28,
+      "assertions_by_kind": {
+        "TerminationDecreases": 3,
+        "TerminationNonNegative": 3,
+        "Precondition": 3,
+        "UndefinedCalledMethodPrecondition": 8,
+        "UndefinedDivideByZero": 8,
+        "Postcondition": 1,
+        "ExceptionalPostcondition": 1,
+        "ExceptionList": 1
+      },
+      "assertions": [
+        {
+          "kind": "TerminationDecreases",
+          "expression": "ASSERT_127_824"
+        },
+        {
+          "kind": "TerminationNonNegative",
+          "expression": "ASSERT_128_824"
+        },
+        {
+          "kind": "Precondition",
+          "expression": "ASSERT_134_711"
+        },
+        {
+          "kind": "UndefinedCalledMethodPrecondition",
+          "expression": "ASSERT_145_362"
+        },
+        {
+          "kind": "UndefinedCalledMethodPrecondition",
+          "expression": "ASSERT_162_0"
+        },
+        {
+          "kind": "UndefinedDivideByZero",
+          "expression": "ASSERT_165_167"
+        },
+        {
+          "kind": "UndefinedDivideByZero",
+          "expression": "ASSERT_166_196"
+        },
+        {
+          "kind": "TerminationDecreases",
+          "expression": "ASSERT_176_824"
+        },
+        {
+          "kind": "TerminationNonNegative",
+          "expression": "ASSERT_177_824"
+        },
+        {
+          "kind": "Precondition",
+          "expression": "ASSERT_183_711"
+        },
+        {
+          "kind": "UndefinedCalledMethodPrecondition",
+          "expression": "ASSERT_189_362"
+        },
+        {
+          "kind": "UndefinedCalledMethodPrecondition",
+          "expression": "ASSERT_203_0"
+        },
+        {
+          "kind": "UndefinedDivideByZero",
+          "expression": "ASSERT_206_167"
+        },
+        {
+          "kind": "UndefinedDivideByZero",
+          "expression": "ASSERT_207_196"
+        },
+        {
+          "kind": "TerminationDecreases",
+          "expression": "ASSERT_218_824"
+        },
+        {
+          "kind": "TerminationNonNegative",
+          "expression": "ASSERT_219_824"
+        },
+        {
+          "kind": "Precondition",
+          "expression": "ASSERT_225_711"
+        },
+        {
+          "kind": "UndefinedCalledMethodPrecondition",
+          "expression": "ASSERT_231_362"
+        },
+        {
+          "kind": "UndefinedCalledMethodPrecondition",
+          "expression": "ASSERT_245_0"
+        },
+        {
+          "kind": "UndefinedDivideByZero",
+          "expression": "ASSERT_248_167"
+        },
+        {
+          "kind": "UndefinedDivideByZero",
+          "expression": "ASSERT_249_196"
+        },
+        {
+          "kind": "UndefinedCalledMethodPrecondition",
+          "expression": "ASSERT_264_362"
+        },
+        {
+          "kind": "UndefinedCalledMethodPrecondition",
+          "expression": "ASSERT_278_0"
+        },
+        {
+          "kind": "UndefinedDivideByZero",
+          "expression": "ASSERT_281_167"
+        },
+        {
+          "kind": "UndefinedDivideByZero",
+          "expression": "ASSERT_282_196"
+        },
+        {
+          "kind": "Postcondition",
+          "expression": "ASSERT_286_777"
+        },
+        {
+          "kind": "ExceptionalPostcondition",
+          "expression": "ASSERT_259_661"
+        },
+        {
+          "kind": "ExceptionList",
+          "expression": "ASSERT_287_930"
+        }
+      ]
+    }
+  ],
+  "solver_traces": [
+    {
+      "file": "solver-traces/solver-57652.smt2",
+      "responses_file": "solver-traces/solver-57652.responses",
+      "check_sat_count": 1,
+      "check_sat_results": {
+        "unsat": 1
+      },
+      "all_queries_answered": true,
+      "solver_exit_code": null
+    },
+    {
+      "file": "solver-traces/solver-57660.smt2",
+      "responses_file": "solver-traces/solver-57660.responses",
+      "check_sat_count": 1,
+      "check_sat_results": {
+        "unknown": 1
+      },
+      "all_queries_answered": true,
+      "solver_exit_code": null
+    }
+  ],
+  "units": {
+    "generated_assertion_count": "assert statements in emitted OpenJML basic-block method VCs; includes implicit checks and constructors",
+    "generated_method_vc_count": "emitted basic-block method VC sections; retries/splits can repeat a method",
+    "solver_check_sat_count": "check-sat commands forwarded to the solver, including feasibility and counterexample follow-up queries",
+    "comparability": "none of these is directly equivalent to a Frama-C WP report entry"
+  },
+  "reported_warning_count": 1
+}

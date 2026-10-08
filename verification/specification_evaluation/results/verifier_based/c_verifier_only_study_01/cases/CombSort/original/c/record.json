@@ -1,0 +1,171 @@
+{
+  "annotated_source": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_study_01/cases/CombSort/original/c/CombSort.c",
+  "attempt_status": "complete",
+  "c_counterexample_capture": {
+    "counterexamples/wp_models.py": "72ebacf059ff3f2c5706a23a882dfd48ed5f65888a46f3f1eae9f250dc4a1afa"
+  },
+  "command": [
+    "/root/.opam/default/bin/frama-c",
+    "-machdep",
+    "x86_64",
+    "-load-module",
+    "/mnt/d/ResearchProject/.tools/frama-c-compat/1e5af7b10d6dd41df377/float_negation_33.cmxs",
+    "-paired-c-prepare",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_study_01/cases/CombSort/original/c/CombSort.c",
+    "-then",
+    "-wp",
+    "-wp-rte",
+    "-wp-no-filter-init",
+    "-wp-model",
+    "Typed+ref",
+    "-wp-prover",
+    "Z3:4.8.12",
+    "-wp-timeout",
+    "10",
+    "-wp-memlimit",
+    "1000",
+    "-wp-par",
+    "2",
+    "-wp-cache",
+    "none",
+    "-wp-report-json",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_study_01/cases/CombSort/original/c/wp-report.json",
+    "-wp-counter-examples",
+    "-wp-status",
+    "-wp-out",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_study_01/cases/CombSort/original/c/wp"
+  ],
+  "counterexample_models": [],
+  "elapsed_seconds": 6.746,
+  "exit_code": 125,
+  "failure_stage": "prover",
+  "frozen_spec": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_study_01/frozen_specs/c/CombSort.json",
+  "goals": [],
+  "language": "c",
+  "logs": {
+    "stderr": "stderr.log",
+    "stdout": "stdout.log",
+    "wp_report": null
+  },
+  "mutant_id": null,
+  "outcome": "syntax/tool failure",
+  "program": "CombSort",
+  "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/CombSort.c",
+  "reason": "No WP goal report was produced",
+  "role": "original",
+  "selection": null,
+  "settings": {
+    "c_provers": "Z3:4.8.12",
+    "capture_c_counterexamples": true,
+    "goal_timeout": 10,
+    "java_prover": "cvc4",
+    "machdep": "x86_64",
+    "memory_model": "Typed+ref",
+    "timeout": 300,
+    "why3_extra_config": null,
+    "wp_memlimit": 1000,
+    "wp_par": 2
+  },
+  "timed_out": false,
+  "transfer": {
+    "annotation_count": 7,
+    "internal_annotation_coverage": "complete",
+    "method": "frozen structured JSON with audited C declaration bindings",
+    "omitted_annotations": [],
+    "placements": [
+      {
+        "boundary_token": 17,
+        "function": "java_add",
+        "id": "annotation_1",
+        "loop_id": null,
+        "mutant_offset": 67,
+        "next_token": "static",
+        "target": "function"
+      },
+      {
+        "boundary_token": 45,
+        "function": "combSort",
+        "id": "annotation_2",
+        "loop_id": null,
+        "mutant_offset": 181,
+        "next_token": "JIntArray",
+        "target": "function"
+      },
+      {
+        "boundary_token": 45,
+        "function": "combSort",
+        "id": "annotation_3",
+        "loop_id": null,
+        "mutant_offset": 181,
+        "next_token": "JIntArray",
+        "target": "function"
+      },
+      {
+        "boundary_token": 70,
+        "function": "combSort",
+        "id": "annotation_4",
+        "loop_id": null,
+        "mutant_offset": 306,
+        "next_token": "while",
+        "target": "statement"
+      },
+      {
+        "boundary_token": 70,
+        "function": "combSort",
+        "id": "annotation_5",
+        "loop_id": "loop_1",
+        "mutant_offset": 306,
+        "next_token": "while",
+        "target": "loop"
+      },
+      {
+        "boundary_token": 98,
+        "function": "combSort",
+        "id": "annotation_6",
+        "loop_id": null,
+        "mutant_offset": 413,
+        "next_token": "for",
+        "target": "statement"
+      },
+      {
+        "boundary_token": 98,
+        "function": "combSort",
+        "id": "annotation_7",
+        "loop_id": "loop_2",
+        "mutant_offset": 413,
+        "next_token": "for",
+        "target": "loop"
+      }
+    ],
+    "removed_loop_annotations": 0,
+    "removed_temporary_policy": "original pure initializer with stable dependencies"
+  },
+  "verification_started": true,
+  "verifier": {
+    "compatibility": {
+      "module": "/mnt/d/ResearchProject/.tools/frama-c-compat/1e5af7b10d6dd41df377/float_negation_33.cmxs",
+      "name": "Frama-C 33.0 implicit floating-negation coercion repair",
+      "source": "/mnt/d/ResearchProject/verification/specification_evaluation/framac/float_negation_33.ml"
+    },
+    "path": "/root/.opam/default/bin/frama-c",
+    "version_command": [
+      "/root/.opam/default/bin/frama-c",
+      "-version"
+    ],
+    "version_exit_code": 0,
+    "version_output": "33.0 (Arsenic)"
+  },
+  "verifier_detection": {
+    "detected": false,
+    "evidence": [],
+    "excluded_models": [],
+    "execution_validated": false,
+    "policy": "frama_c_wp_specification_counterexample_or_explicit_invalidity_v2",
+    "safety_detected": false,
+    "source": "Frama-C/WP",
+    "specification_detected": false,
+    "status": "tool failure",
+    "timed_out": false,
+    "unclassified_detected": false
+  }
+}

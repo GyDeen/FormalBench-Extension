@@ -1,0 +1,927 @@
+{
+  "schema_version": "1.0",
+  "capture_complete": true,
+  "generated_assertion_count": 207,
+  "generated_method_vc_count": 2,
+  "method_proof_starts": 2,
+  "method_proof_completions": 2,
+  "solver_invocation_count": 2,
+  "solver_check_sat_count": 2,
+  "solver_check_sat_results": {
+    "unsat": 2
+  },
+  "assertions_by_kind": {
+    "Precondition": 2,
+    "ExceptionalPostcondition": 2,
+    "ExceptionList": 2,
+    "UndefinedNullDeReference": 51,
+    "PossiblyNullDeReference": 40,
+    "Accessible": 4,
+    "PossiblyNegativeSize": 1,
+    "PossiblyNegativeIndex": 18,
+    "PossiblyTooLargeIndex": 18,
+    "Assignable": 8,
+    "NullArgument": 2,
+    "IllegalArgument": 2,
+    "UndefinedBadCast": 28,
+    "UndefinedNegativeIndex": 8,
+    "UndefinedTooLargeIndex": 9,
+    "UndefinedCalledMethodPrecondition": 7,
+    "Postcondition": 5
+  },
+  "methods": [
+    {
+      "method": "MoveFirst.MoveFirst()",
+      "assertion_count": 3,
+      "assertions_by_kind": {
+        "Precondition": 1,
+        "ExceptionalPostcondition": 1,
+        "ExceptionList": 1
+      },
+      "assertions": [
+        {
+          "kind": "Precondition",
+          "expression": "ASSERT_9_0_0___9"
+        },
+        {
+          "kind": "ExceptionalPostcondition",
+          "expression": "ASSERT_15_80_80___13"
+        },
+        {
+          "kind": "ExceptionList",
+          "expression": "ASSERT_16_80_80___14"
+        }
+      ]
+    },
+    {
+      "method": "MoveFirst.moveFirst(int[])",
+      "assertion_count": 204,
+      "assertions_by_kind": {
+        "UndefinedNullDeReference": 51,
+        "PossiblyNullDeReference": 40,
+        "Accessible": 4,
+        "PossiblyNegativeSize": 1,
+        "PossiblyNegativeIndex": 18,
+        "PossiblyTooLargeIndex": 18,
+        "Assignable": 8,
+        "NullArgument": 2,
+        "IllegalArgument": 2,
+        "UndefinedBadCast": 28,
+        "Precondition": 1,
+        "UndefinedNegativeIndex": 8,
+        "UndefinedTooLargeIndex": 9,
+        "UndefinedCalledMethodPrecondition": 7,
+        "Postcondition": 5,
+        "ExceptionalPostcondition": 1,
+        "ExceptionList": 1
+      },
+      "assertions": [
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_71_3293"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_72_3381"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_73_3469"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_84_805"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_85_805"
+        },
+        {
+          "kind": "Accessible",
+          "expression": "ASSERT_86_814"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_87_805"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_89_947"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_90_947"
+        },
+        {
+          "kind": "Accessible",
+          "expression": "ASSERT_91_956"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_92_947"
+        },
+        {
+          "kind": "PossiblyNegativeSize",
+          "expression": "ASSERT_93_0"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_104_974"
+        },
+        {
+          "kind": "PossiblyNegativeIndex",
+          "expression": "ASSERT_105_978"
+        },
+        {
+          "kind": "PossiblyTooLargeIndex",
+          "expression": "ASSERT_106_974"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_107_974"
+        },
+        {
+          "kind": "PossiblyNegativeIndex",
+          "expression": "ASSERT_108_978"
+        },
+        {
+          "kind": "PossiblyTooLargeIndex",
+          "expression": "ASSERT_109_978"
+        },
+        {
+          "kind": "Assignable",
+          "expression": "ASSERT_110_981"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_111_983"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_113_993"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_114_993"
+        },
+        {
+          "kind": "Accessible",
+          "expression": "ASSERT_115_1002"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_116_993"
+        },
+        {
+          "kind": "PossiblyNegativeIndex",
+          "expression": "ASSERT_118_1010"
+        },
+        {
+          "kind": "PossiblyTooLargeIndex",
+          "expression": "ASSERT_119_983"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_120_983"
+        },
+        {
+          "kind": "PossiblyNegativeIndex",
+          "expression": "ASSERT_121_1010"
+        },
+        {
+          "kind": "PossiblyTooLargeIndex",
+          "expression": "ASSERT_122_1010"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_124_1111"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_125_1111"
+        },
+        {
+          "kind": "Accessible",
+          "expression": "ASSERT_126_1120"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_127_1111"
+        },
+        {
+          "kind": "NullArgument",
+          "expression": "ASSERT_133_8302"
+        },
+        {
+          "kind": "IllegalArgument",
+          "expression": "ASSERT_134_8302"
+        },
+        {
+          "kind": "NullArgument",
+          "expression": "ASSERT_135_8330"
+        },
+        {
+          "kind": "IllegalArgument",
+          "expression": "ASSERT_136_8330"
+        },
+        {
+          "kind": "UndefinedBadCast",
+          "expression": "ASSERT_137_8393"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_139_8383"
+        },
+        {
+          "kind": "UndefinedBadCast",
+          "expression": "ASSERT_140_8461"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_142_8451"
+        },
+        {
+          "kind": "UndefinedBadCast",
+          "expression": "ASSERT_155_8527"
+        },
+        {
+          "kind": "UndefinedBadCast",
+          "expression": "ASSERT_167_8573"
+        },
+        {
+          "kind": "UndefinedBadCast",
+          "expression": "ASSERT_171_8878"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_173_8871"
+        },
+        {
+          "kind": "UndefinedBadCast",
+          "expression": "ASSERT_174_8943"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_176_8936"
+        },
+        {
+          "kind": "UndefinedBadCast",
+          "expression": "ASSERT_182_9003"
+        },
+        {
+          "kind": "UndefinedBadCast",
+          "expression": "ASSERT_187_9043"
+        },
+        {
+          "kind": "UndefinedBadCast",
+          "expression": "ASSERT_191_9351"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_193_9343"
+        },
+        {
+          "kind": "UndefinedBadCast",
+          "expression": "ASSERT_194_9417"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_196_9409"
+        },
+        {
+          "kind": "UndefinedBadCast",
+          "expression": "ASSERT_202_9479"
+        },
+        {
+          "kind": "UndefinedBadCast",
+          "expression": "ASSERT_207_9521"
+        },
+        {
+          "kind": "UndefinedBadCast",
+          "expression": "ASSERT_211_9830"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_213_9822"
+        },
+        {
+          "kind": "UndefinedBadCast",
+          "expression": "ASSERT_214_9896"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_216_9888"
+        },
+        {
+          "kind": "UndefinedBadCast",
+          "expression": "ASSERT_222_9958"
+        },
+        {
+          "kind": "UndefinedBadCast",
+          "expression": "ASSERT_227_10000"
+        },
+        {
+          "kind": "UndefinedBadCast",
+          "expression": "ASSERT_231_10317"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_233_10306"
+        },
+        {
+          "kind": "UndefinedBadCast",
+          "expression": "ASSERT_234_10386"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_236_10375"
+        },
+        {
+          "kind": "UndefinedBadCast",
+          "expression": "ASSERT_242_10454"
+        },
+        {
+          "kind": "UndefinedBadCast",
+          "expression": "ASSERT_247_10502"
+        },
+        {
+          "kind": "UndefinedBadCast",
+          "expression": "ASSERT_251_10813"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_253_10804"
+        },
+        {
+          "kind": "UndefinedBadCast",
+          "expression": "ASSERT_254_10880"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_256_10871"
+        },
+        {
+          "kind": "UndefinedBadCast",
+          "expression": "ASSERT_262_10944"
+        },
+        {
+          "kind": "UndefinedBadCast",
+          "expression": "ASSERT_267_10988"
+        },
+        {
+          "kind": "UndefinedBadCast",
+          "expression": "ASSERT_271_11296"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_273_11288"
+        },
+        {
+          "kind": "UndefinedBadCast",
+          "expression": "ASSERT_274_11362"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_276_11354"
+        },
+        {
+          "kind": "UndefinedBadCast",
+          "expression": "ASSERT_282_11424"
+        },
+        {
+          "kind": "UndefinedBadCast",
+          "expression": "ASSERT_287_11466"
+        },
+        {
+          "kind": "Precondition",
+          "expression": "ASSERT_289_8426"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_290_8601"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_291_8601"
+        },
+        {
+          "kind": "PossiblyNegativeIndex",
+          "expression": "ASSERT_292_8604"
+        },
+        {
+          "kind": "PossiblyTooLargeIndex",
+          "expression": "ASSERT_293_8615"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_315_8601"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_316_8601"
+        },
+        {
+          "kind": "PossiblyNegativeIndex",
+          "expression": "ASSERT_317_8604"
+        },
+        {
+          "kind": "PossiblyTooLargeIndex",
+          "expression": "ASSERT_318_8615"
+        },
+        {
+          "kind": "Assignable",
+          "expression": "ASSERT_319_8603"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_320_9071"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_321_9071"
+        },
+        {
+          "kind": "PossiblyNegativeIndex",
+          "expression": "ASSERT_322_9074"
+        },
+        {
+          "kind": "PossiblyTooLargeIndex",
+          "expression": "ASSERT_323_9085"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_345_9071"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_346_9071"
+        },
+        {
+          "kind": "PossiblyNegativeIndex",
+          "expression": "ASSERT_347_9074"
+        },
+        {
+          "kind": "PossiblyTooLargeIndex",
+          "expression": "ASSERT_348_9085"
+        },
+        {
+          "kind": "Assignable",
+          "expression": "ASSERT_349_9073"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_350_9549"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_351_9549"
+        },
+        {
+          "kind": "PossiblyNegativeIndex",
+          "expression": "ASSERT_352_9552"
+        },
+        {
+          "kind": "PossiblyTooLargeIndex",
+          "expression": "ASSERT_353_9563"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_375_9549"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_376_9549"
+        },
+        {
+          "kind": "PossiblyNegativeIndex",
+          "expression": "ASSERT_377_9552"
+        },
+        {
+          "kind": "PossiblyTooLargeIndex",
+          "expression": "ASSERT_378_9563"
+        },
+        {
+          "kind": "Assignable",
+          "expression": "ASSERT_379_9551"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_380_10028"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_381_10028"
+        },
+        {
+          "kind": "PossiblyNegativeIndex",
+          "expression": "ASSERT_382_10031"
+        },
+        {
+          "kind": "PossiblyTooLargeIndex",
+          "expression": "ASSERT_383_10042"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_405_10028"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_406_10028"
+        },
+        {
+          "kind": "PossiblyNegativeIndex",
+          "expression": "ASSERT_407_10031"
+        },
+        {
+          "kind": "PossiblyTooLargeIndex",
+          "expression": "ASSERT_408_10042"
+        },
+        {
+          "kind": "Assignable",
+          "expression": "ASSERT_409_10030"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_410_10530"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_411_10530"
+        },
+        {
+          "kind": "PossiblyNegativeIndex",
+          "expression": "ASSERT_412_10533"
+        },
+        {
+          "kind": "PossiblyTooLargeIndex",
+          "expression": "ASSERT_413_10544"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_435_10530"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_436_10530"
+        },
+        {
+          "kind": "PossiblyNegativeIndex",
+          "expression": "ASSERT_437_10533"
+        },
+        {
+          "kind": "PossiblyTooLargeIndex",
+          "expression": "ASSERT_438_10544"
+        },
+        {
+          "kind": "Assignable",
+          "expression": "ASSERT_439_10532"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_440_11016"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_441_11016"
+        },
+        {
+          "kind": "PossiblyNegativeIndex",
+          "expression": "ASSERT_442_11019"
+        },
+        {
+          "kind": "PossiblyTooLargeIndex",
+          "expression": "ASSERT_443_11030"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_465_11016"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_466_11016"
+        },
+        {
+          "kind": "PossiblyNegativeIndex",
+          "expression": "ASSERT_467_11019"
+        },
+        {
+          "kind": "PossiblyTooLargeIndex",
+          "expression": "ASSERT_468_11030"
+        },
+        {
+          "kind": "Assignable",
+          "expression": "ASSERT_469_11018"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_470_11494"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_471_11494"
+        },
+        {
+          "kind": "PossiblyNegativeIndex",
+          "expression": "ASSERT_472_11497"
+        },
+        {
+          "kind": "PossiblyTooLargeIndex",
+          "expression": "ASSERT_473_11508"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_495_11494"
+        },
+        {
+          "kind": "PossiblyNullDeReference",
+          "expression": "ASSERT_496_11494"
+        },
+        {
+          "kind": "PossiblyNegativeIndex",
+          "expression": "ASSERT_497_11497"
+        },
+        {
+          "kind": "PossiblyTooLargeIndex",
+          "expression": "ASSERT_498_11508"
+        },
+        {
+          "kind": "Assignable",
+          "expression": "ASSERT_499_11496"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_501_8603"
+        },
+        {
+          "kind": "UndefinedNegativeIndex",
+          "expression": "ASSERT_502_8604"
+        },
+        {
+          "kind": "UndefinedTooLargeIndex",
+          "expression": "ASSERT_503_8623"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_528_9073"
+        },
+        {
+          "kind": "UndefinedNegativeIndex",
+          "expression": "ASSERT_529_9074"
+        },
+        {
+          "kind": "UndefinedTooLargeIndex",
+          "expression": "ASSERT_530_9093"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_555_9551"
+        },
+        {
+          "kind": "UndefinedNegativeIndex",
+          "expression": "ASSERT_556_9552"
+        },
+        {
+          "kind": "UndefinedTooLargeIndex",
+          "expression": "ASSERT_557_9571"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_582_10030"
+        },
+        {
+          "kind": "UndefinedNegativeIndex",
+          "expression": "ASSERT_583_10031"
+        },
+        {
+          "kind": "UndefinedTooLargeIndex",
+          "expression": "ASSERT_584_10050"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_609_10532"
+        },
+        {
+          "kind": "UndefinedNegativeIndex",
+          "expression": "ASSERT_610_10533"
+        },
+        {
+          "kind": "UndefinedTooLargeIndex",
+          "expression": "ASSERT_611_10552"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_636_11018"
+        },
+        {
+          "kind": "UndefinedNegativeIndex",
+          "expression": "ASSERT_637_11019"
+        },
+        {
+          "kind": "UndefinedTooLargeIndex",
+          "expression": "ASSERT_638_11038"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_663_11496"
+        },
+        {
+          "kind": "UndefinedNegativeIndex",
+          "expression": "ASSERT_664_11497"
+        },
+        {
+          "kind": "UndefinedTooLargeIndex",
+          "expression": "ASSERT_665_11516"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_739_51477"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_743_51530"
+        },
+        {
+          "kind": "UndefinedCalledMethodPrecondition",
+          "expression": "ASSERT_746_51523"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_818_47020"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_822_47073"
+        },
+        {
+          "kind": "UndefinedCalledMethodPrecondition",
+          "expression": "ASSERT_825_47066"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_897_48123"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_901_48176"
+        },
+        {
+          "kind": "UndefinedCalledMethodPrecondition",
+          "expression": "ASSERT_904_48169"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_976_44807"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_980_44860"
+        },
+        {
+          "kind": "UndefinedCalledMethodPrecondition",
+          "expression": "ASSERT_983_44853"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_1055_41371"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_1059_41424"
+        },
+        {
+          "kind": "UndefinedCalledMethodPrecondition",
+          "expression": "ASSERT_1062_41417"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_1134_45914"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_1138_45967"
+        },
+        {
+          "kind": "UndefinedCalledMethodPrecondition",
+          "expression": "ASSERT_1141_45960"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_1213_43316"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_1217_43369"
+        },
+        {
+          "kind": "UndefinedCalledMethodPrecondition",
+          "expression": "ASSERT_1220_43362"
+        },
+        {
+          "kind": "Postcondition",
+          "expression": "ASSERT_1257_179"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_1259_264"
+        },
+        {
+          "kind": "Postcondition",
+          "expression": "ASSERT_1260_234"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_1262_349"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_1264_410"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_1266_430"
+        },
+        {
+          "kind": "Postcondition",
+          "expression": "ASSERT_1267_319"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_1269_485"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_1270_508"
+        },
+        {
+          "kind": "UndefinedTooLargeIndex",
+          "expression": "ASSERT_1271_508"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_1272_524"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_1274_534"
+        },
+        {
+          "kind": "UndefinedNegativeIndex",
+          "expression": "ASSERT_1275_524"
+        },
+        {
+          "kind": "UndefinedTooLargeIndex",
+          "expression": "ASSERT_1276_524"
+        },
+        {
+          "kind": "Postcondition",
+          "expression": "ASSERT_1277_455"
+        },
+        {
+          "kind": "UndefinedNullDeReference",
+          "expression": "ASSERT_1279_594"
+        },
+        {
+          "kind": "Postcondition",
+          "expression": "ASSERT_1281_564"
+        },
+        {
+          "kind": "ExceptionalPostcondition",
+          "expression": "ASSERT_1256_118"
+        },
+        {
+          "kind": "ExceptionList",
+          "expression": "ASSERT_1282_743"
+        }
+      ]
+    }
+  ],
+  "solver_traces": [
+    {
+      "file": "solver-traces/solver-862.smt2",
+      "responses_file": "solver-traces/solver-862.responses",
+      "check_sat_count": 1,
+      "check_sat_results": {
+        "unsat": 1
+      },
+      "all_queries_answered": true,
+      "solver_exit_code": null
+    },
+    {
+      "file": "solver-traces/solver-896.smt2",
+      "responses_file": "solver-traces/solver-896.responses",
+      "check_sat_count": 1,
+      "check_sat_results": {
+        "unsat": 1
+      },
+      "all_queries_answered": true,
+      "solver_exit_code": null
+    }
+  ],
+  "units": {
+    "generated_assertion_count": "assert statements in emitted OpenJML basic-block method VCs; includes implicit checks and constructors",
+    "generated_method_vc_count": "emitted basic-block method VC sections; retries/splits can repeat a method",
+    "solver_check_sat_count": "check-sat commands forwarded to the solver, including feasibility and counterexample follow-up queries",
+    "comparability": "none of these is directly equivalent to a Frama-C WP report entry"
+  },
+  "reported_warning_count": 0
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "result_sets": {
+    "verifier_based": {
+      "directory": "verifier_based",
+      "runs": [
+        "c_verifier_only_study_01",
+        "c_verifier_only_verified_cohort_01",
+        "c_verifier_only_verified_cohort_02",
+        "c_verifier_only_verified_cohort_02_validated",
+        "c_wp_model_replay_pilot_01",
+        "goal_assertion_results",
+        "java_originals_long_budget_goals_20261003T051958Z_goal60_case1800_workers12",
+        "originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2",
+        "originals_stop_tool_error_20260927T161243Z_goal10_case300"
+      ],
+      "tools": [
+        "OpenJML ESC",
+        "Frama-C WP"
+      ],
+      "role": "Original consistency and historical verifier-mutant diagnostics",
+      "contributes_to_primary_runtime_detection": false
+    },
+    "execution_based": {
+      "directory": "execution_based",
+      "primary": "execution_based/runtime_contract_primary_01",
+      "metric": "runtime contract postcondition mutant-detection rate",
+      "java_detected": 192,
+      "java_evaluated": 192,
+      "c_detected": 79,
+      "c_evaluated": 80,
+      "safety_contributes_to_detection": false,
+      "findpoints_separate_row": true,
+      "findpoints_freshness_unchecked_for_original_and_mutants": true
+    }
+  },
+  "historical_command_paths_preserved": true,
+  "new_executions": 0,
+  "staging_scope": "Generated reports, result JSON, input/trial evidence and program/specification JSON; implementation and toolchain files excluded"
+}

@@ -1,0 +1,163 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "radixSort",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ requires a != null && 0 <= k <= a.length;\n      @ ensures \\result == (k == 0 ? (\\bigint)0 : fb_count(a, k - 1, v) + (a[k - 1] == v ? 1 : 0));\n      @ measured_by k;\n      @ model public static pure \\bigint fb_count(int[] a, int k, \\bigint v);\n      @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "radixSort",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ requires a != null && 0 <= k <= a.length;\n      @ ensures \\result == (k == 0 ? (\\bigint)0 : fb_less(a, k - 1, v) + (a[k - 1] < v ? 1 : 0));\n      @ measured_by k;\n      @ model public static pure \\bigint fb_less(int[] a, int k, \\bigint v);\n      @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "radixSort",
+      "id": "annotation_3",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ ensures \\result == (a <= b ? a : b);\n      @ model public static pure \\bigint fb_min(\\bigint a, \\bigint b);\n      @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "radixSort",
+      "id": "annotation_4",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ ensures \\result == (a >= b ? a : b);\n      @ model public static pure \\bigint fb_max(\\bigint a, \\bigint b);\n      @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "radixSort",
+      "id": "annotation_5",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ requires a != null && 1 <= k <= a.length;\n      @ ensures \\result == (k == 1 ? a[0] : fb_min(fb_minval(a, k - 1), a[k - 1]));\n      @ measured_by k;\n      @ model public static pure \\bigint fb_minval(int[] a, int k);\n      @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "radixSort",
+      "id": "annotation_6",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ requires a != null && 1 <= k <= a.length;\n      @ ensures \\result == (k == 1 ? a[0] : fb_max(fb_maxval(a, k - 1), a[k - 1]));\n      @ measured_by k;\n      @ model public static pure \\bigint fb_maxval(int[] a, int k);\n      @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "radixSort",
+      "id": "annotation_7",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ requires nums != null && nums.length > 0 && fb_maxval(nums, nums.length) - fb_minval(nums, nums.length) < Integer.MAX_VALUE;\n      @ assignable nums[*];\n      @ ensures \\result == nums;\n      @ ensures (\\forall int p, q; 0 <= p < q < \\result.length; \\result[p] <= \\result[q]);\n      @ ensures (\\forall int v; fb_count(\\result, \\result.length, v) == \\old(fb_count(nums, nums.length, v)));\n      @ also\n      @ public exceptional_behavior\n      @ requires nums == null;\n      @ assignable \\nothing;\n      @ signals_only NullPointerException;\n      @ also\n      @ public exceptional_behavior\n      @ requires nums != null && nums.length > 0 && Integer.MAX_VALUE <= fb_maxval(nums, nums.length) - fb_minval(nums, nums.length) && fb_maxval(nums, nums.length) - fb_minval(nums, nums.length) < 4294967295L;\n      @ assignable \\nothing;\n      @ signals_only NegativeArraySizeException;\n      @ also\n      @ public exceptional_behavior\n      @ requires nums != null && nums.length > 0 && fb_maxval(nums, nums.length) - fb_minval(nums, nums.length) == 4294967295L;\n      @ assignable \\nothing;\n      @ signals_only ArrayIndexOutOfBoundsException;\n      @ \n      @ also\n      @ public exceptional_behavior\n      @ requires nums != null && nums.length == 0;\n      @ assignable \\nothing;\n      @ signals_only ArrayIndexOutOfBoundsException;\n      @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "radixSort",
+      "id": "annotation_8",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "//@ code_java_math"
+    },
+    {
+      "boundary_token": 60,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "radixSort",
+      "id": "annotation_9",
+      "loop_id": "loop_1",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@ loop_invariant 0 <= (\\count + 0) <= nums.length;\n          @ loop_invariant min == fb_minval(nums, (\\count + 0) > 0 ? (\\count + 0) : 1);\n          @ loop_invariant max == fb_maxval(nums, (\\count + 0) > 0 ? (\\count + 0) : 1);\n          @ loop_writes min, max;\n          @ decreases nums.length - (\\count + 0);\n          @*/"
+    },
+    {
+      "boundary_token": 109,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "radixSort",
+      "id": "annotation_10",
+      "loop_id": "loop_2",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@ loop_invariant 0 <= (\\count + 0) <= nums.length;\n          @ loop_invariant (\\forall int v; 0 <= v < bucket.length; bucket[v] == fb_count(nums, (\\count + 0), (\\bigint)min + v));\n          @ loop_writes bucket[*];\n          @ decreases nums.length - (\\count + 0);\n          @*/"
+    },
+    {
+      "boundary_token": 132,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "radixSort",
+      "id": "annotation_11",
+      "loop_id": "loop_3",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@ loop_invariant 0 <= i <= bucket.length && 0 <= pos <= nums.length;\n          @ loop_invariant (\\forall \\bigint threshold; threshold == (\\bigint)min + i; pos == \\old(fb_less(nums, nums.length, threshold)));\n          @ loop_invariant (\\forall int p, q; 0 <= p < q < pos; nums[p] <= nums[q]);\n          @ loop_invariant (\\forall int v; fb_count(nums, pos, v) == (v < (\\bigint)min + i ? \\old(fb_count(nums, nums.length, v)) : 0));\n          @ loop_writes i, pos, nums[*];\n          @ decreases bucket.length - i;\n          @*/"
+    },
+    {
+      "boundary_token": 148,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "radixSort",
+      "id": "annotation_12",
+      "loop_id": "loop_4",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@ loop_invariant 0 <= j <= bucket[i] && 0 <= pos <= nums.length;\n              @ loop_invariant (\\forall \\bigint threshold; threshold == (\\bigint)min + i; pos == \\old(fb_less(nums, nums.length, threshold)) + j);\n              @ loop_invariant (\\forall int p, q; 0 <= p < q < pos; nums[p] <= nums[q]);\n              @ loop_invariant (\\forall int v; fb_count(nums, pos, v) == (v < (\\bigint)min + i ? \\old(fb_count(nums, nums.length, v)) : v == (\\bigint)min + i ? j : 0));\n              @ loop_writes j, pos, nums[*];\n              @ decreases bucket[i] - j;\n              @*/"
+    }
+  ],
+  "language": "java",
+  "program": "RadixSort",
+  "schema_version": "1.0"
+}

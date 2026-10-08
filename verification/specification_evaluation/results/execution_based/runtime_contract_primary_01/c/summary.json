@@ -1,0 +1,79 @@
+{
+  "complete": true,
+  "coverage": {
+    "other_checks": "observable input-array frames, result identity and selected allocation checks",
+    "primary": "frozen return-value/content postconditions",
+    "unchecked": [
+      "loop invariants",
+      "loop variants",
+      "statement assertions",
+      "full allocation/free sets",
+      "full write sets"
+    ],
+    "unsupported_policy": "visible evaluation failure; never treated as satisfied"
+  },
+  "per_program": [
+    {
+      "original_status": "original_passed_all_inputs",
+      "postcondition_detected": 3,
+      "program": "CountList",
+      "runtime_evaluated_mutants": 3,
+      "safety_detected": 0,
+      "selected_mutants": 3,
+      "unavailable_mutants": 0
+    },
+    {
+      "original_status": "original_passed_all_inputs",
+      "postcondition_detected": 2,
+      "program": "MaxOfTwo",
+      "runtime_evaluated_mutants": 2,
+      "safety_detected": 0,
+      "selected_mutants": 2,
+      "unavailable_mutants": 0
+    },
+    {
+      "original_status": "original_passed_all_inputs",
+      "postcondition_detected": 22,
+      "program": "MaxSubArraySum",
+      "runtime_evaluated_mutants": 23,
+      "safety_detected": 1,
+      "selected_mutants": 23,
+      "unavailable_mutants": 0
+    },
+    {
+      "original_status": "original_passed_all_inputs",
+      "postcondition_detected": 17,
+      "program": "OddBitSetNumber",
+      "runtime_evaluated_mutants": 17,
+      "safety_detected": 0,
+      "selected_mutants": 17,
+      "unavailable_mutants": 0
+    },
+    {
+      "original_status": "original_passed_all_inputs",
+      "postcondition_detected": 13,
+      "program": "SumNums",
+      "runtime_evaluated_mutants": 13,
+      "safety_detected": 0,
+      "selected_mutants": 13,
+      "unavailable_mutants": 0
+    },
+    {
+      "original_status": "original_passed_all_inputs",
+      "postcondition_detected": 22,
+      "program": "TestThreeEqual",
+      "runtime_evaluated_mutants": 22,
+      "safety_detected": 0,
+      "selected_mutants": 22,
+      "unavailable_mutants": 0
+    }
+  ],
+  "policy": "c-runtime-frozen-postconditions-evosuite-bounded-v1",
+  "postcondition_detected": 79,
+  "runtime_evaluable_detection_rate": 0.9875,
+  "runtime_evaluated_mutants": 80,
+  "safety_detected": 1,
+  "selected_mutants": 80,
+  "source_run": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300",
+  "unavailable_mutants": 0
+}

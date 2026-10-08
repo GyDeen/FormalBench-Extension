@@ -1,0 +1,1215 @@
+{
+  "annotated_source": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+  "attempt_status": "complete",
+  "command": [
+    "/root/.opam/default/bin/frama-c",
+    "-machdep",
+    "x86_64",
+    "-load-module",
+    "/mnt/d/ResearchProject/.tools/frama-c-compat/1e5af7b10d6dd41df377/float_negation_33.cmxs",
+    "-paired-c-prepare",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+    "-then",
+    "-wp",
+    "-wp-rte",
+    "-wp-no-filter-init",
+    "-wp-model",
+    "Typed+ref",
+    "-wp-why3-extra-config",
+    "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+    "-wp-prover",
+    "Alt-Ergo:2.4.3,Z3:4.8.12",
+    "-wp-timeout",
+    "60",
+    "-wp-memlimit",
+    "1000",
+    "-wp-par",
+    "2",
+    "-wp-cache",
+    "none",
+    "-wp-report-json",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/wp-report.json"
+  ],
+  "elapsed_seconds": 125.907,
+  "exit_code": 0,
+  "failure_stage": null,
+  "frozen_spec": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/frozen_specs/c/OddLengthSum.json",
+  "goals": [
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "java_add",
+      "goal": "typed_ref_java_add_ensures",
+      "line": 6,
+      "property": "java_add_ensures",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00115
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.00792
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "java_add",
+      "goal": "typed_ref_java_add_assigns",
+      "line": 8,
+      "property": "java_add_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "java_div",
+      "goal": "typed_ref_java_div_ensures",
+      "line": 31,
+      "property": "java_div_ensures",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "java_div",
+      "goal": "typed_ref_java_div_assert_rte_division_by_zero",
+      "line": 37,
+      "property": "java_div_assert_rte_division_by_zero",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "java_div",
+      "goal": "typed_ref_java_div_assert_rte_signed_overflow",
+      "line": 37,
+      "property": "java_div_assert_rte_signed_overflow",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00335
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0127
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "java_div",
+      "goal": "typed_ref_java_div_assigns_part1",
+      "line": 33,
+      "property": "java_div_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "java_div",
+      "goal": "typed_ref_java_div_assigns_part2",
+      "line": 33,
+      "property": "java_div_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "java_mul",
+      "goal": "typed_ref_java_mul_ensures",
+      "line": 22,
+      "property": "java_mul_ensures",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00131
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "java_mul",
+      "goal": "typed_ref_java_mul_assigns",
+      "line": 24,
+      "property": "java_mul_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "java_sub",
+      "goal": "typed_ref_java_sub_ensures",
+      "line": 14,
+      "property": "java_sub_ensures",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00188
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0205
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "java_sub",
+      "goal": "typed_ref_java_sub_assigns",
+      "line": 16,
+      "property": "java_sub_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_terminates",
+      "line": 50,
+      "property": "oddLengthSum_terminates",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_ensures",
+      "line": 48,
+      "property": "oddLengthSum_ensures",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_exits",
+      "line": 50,
+      "property": "oddLengthSum_exits",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_loop_invariant_established",
+      "line": 54,
+      "property": "oddLengthSum_loop_invariant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00591
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0178
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_loop_invariant_preserved",
+      "line": 54,
+      "property": "oddLengthSum_loop_invariant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0242
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0121
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_loop_invariant_2_established",
+      "line": 55,
+      "property": "oddLengthSum_loop_invariant_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00525
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0275
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_loop_invariant_2_preserved",
+      "line": 55,
+      "property": "oddLengthSum_loop_invariant_2",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0179
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_loop_assigns_part1",
+      "line": 56,
+      "property": "oddLengthSum_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_loop_assigns_part2",
+      "line": 56,
+      "property": "oddLengthSum_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_loop_assigns_part3",
+      "line": 56,
+      "property": "oddLengthSum_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_loop_assigns_part4",
+      "line": 56,
+      "property": "oddLengthSum_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_loop_assigns_part5",
+      "line": 56,
+      "property": "oddLengthSum_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_loop_assigns_part6",
+      "line": 56,
+      "property": "oddLengthSum_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_loop_assigns_part7",
+      "line": 56,
+      "property": "oddLengthSum_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_loop_assigns_part8",
+      "line": 56,
+      "property": "oddLengthSum_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_assigns_normal_part1",
+      "line": 50,
+      "property": "oddLengthSum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_assigns_normal_part2",
+      "line": 50,
+      "property": "oddLengthSum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_assigns_normal_part3",
+      "line": 50,
+      "property": "oddLengthSum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_assigns_exit_part01",
+      "line": 50,
+      "property": "oddLengthSum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_assigns_exit_part02",
+      "line": 50,
+      "property": "oddLengthSum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_assigns_exit_part03",
+      "line": 50,
+      "property": "oddLengthSum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_assigns_exit_part04",
+      "line": 50,
+      "property": "oddLengthSum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_assigns_exit_part05",
+      "line": 50,
+      "property": "oddLengthSum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_assigns_exit_part06",
+      "line": 50,
+      "property": "oddLengthSum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_assigns_exit_part07",
+      "line": 50,
+      "property": "oddLengthSum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_assigns_exit_part08",
+      "line": 50,
+      "property": "oddLengthSum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_assigns_exit_part09",
+      "line": 50,
+      "property": "oddLengthSum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_assigns_exit_part10",
+      "line": 50,
+      "property": "oddLengthSum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_assigns_exit_part11",
+      "line": 50,
+      "property": "oddLengthSum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_loop_variant_positive",
+      "line": 57,
+      "property": "oddLengthSum_loop_variant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_loop_variant_decrease",
+      "line": 57,
+      "property": "oddLengthSum_loop_variant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0161
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.0407
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_call_jarray_length_requires",
+      "line": 52,
+      "property": "jarray_length_requires",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00361
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.00771
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_call_jarray_length_requires_2",
+      "line": 52,
+      "property": "jarray_length_requires_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00246
+        },
+        {
+          "prover": "Alt-Ergo:2.4.3",
+          "success": 1,
+          "time": 0.00862
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_call_java_div_requires",
+      "line": 62,
+      "property": "java_div_requires",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_call_jarray_get_requires",
+      "line": 63,
+      "property": "jarray_get_requires",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_call_jarray_get_requires_2",
+      "line": 63,
+      "property": "jarray_get_requires_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_large_budget_20261002T015225Z_goal60_case1800_c4_java2_wp2/cases/OddLengthSum/original/c/OddLengthSum.c",
+      "function": "oddLengthSum",
+      "goal": "typed_ref_oddLengthSum_call_jarray_get_requires_3",
+      "line": 63,
+      "property": "jarray_get_requires_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    }
+  ],
+  "language": "c",
+  "logs": {
+    "stderr": "stderr.log",
+    "stdout": "stdout.log",
+    "wp_report": "wp-report.json"
+  },
+  "mutant_id": null,
+  "outcome": "unknown/timeout",
+  "program": "OddLengthSum",
+  "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/OddLengthSum.c",
+  "reason": "At least one WP goal remains unresolved",
+  "role": "original",
+  "selection": null,
+  "settings": {
+    "c_provers": "Alt-Ergo:2.4.3,Z3:4.8.12",
+    "goal_timeout": 60,
+    "java_prover": "z3-4.3.X",
+    "machdep": "x86_64",
+    "memory_model": "Typed+ref",
+    "timeout": 1800,
+    "why3_extra_config": "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+    "wp_memlimit": 1000,
+    "wp_par": 2
+  },
+  "timed_out": false,
+  "transfer": {
+    "annotation_count": 7,
+    "internal_annotation_coverage": "complete",
+    "method": "frozen structured JSON with audited C declaration bindings",
+    "omitted_annotations": [],
+    "placements": [
+      {
+        "boundary_token": 10,
+        "function": "java_add",
+        "id": "annotation_1",
+        "loop_id": null,
+        "mutant_offset": 46,
+        "next_token": "static",
+        "target": "function"
+      },
+      {
+        "boundary_token": 38,
+        "function": "java_sub",
+        "id": "annotation_2",
+        "loop_id": null,
+        "mutant_offset": 160,
+        "next_token": "static",
+        "target": "function"
+      },
+      {
+        "boundary_token": 66,
+        "function": "java_mul",
+        "id": "annotation_3",
+        "loop_id": null,
+        "mutant_offset": 274,
+        "next_token": "static",
+        "target": "function"
+      },
+      {
+        "boundary_token": 94,
+        "function": "java_div",
+        "id": "annotation_4",
+        "loop_id": null,
+        "mutant_offset": 388,
+        "next_token": "static",
+        "target": "function"
+      },
+      {
+        "boundary_token": 130,
+        "function": "oddLengthSum",
+        "id": "annotation_5",
+        "loop_id": null,
+        "mutant_offset": 565,
+        "next_token": "int32_t",
+        "target": "function"
+      },
+      {
+        "boundary_token": 130,
+        "function": "oddLengthSum",
+        "id": "annotation_6",
+        "loop_id": null,
+        "mutant_offset": 565,
+        "next_token": "int32_t",
+        "target": "function"
+      },
+      {
+        "boundary_token": 150,
+        "function": "oddLengthSum",
+        "id": "annotation_7",
+        "loop_id": "loop_1",
+        "mutant_offset": 664,
+        "next_token": "for",
+        "target": "loop"
+      }
+    ],
+    "removed_loop_annotations": 0,
+    "removed_temporary_policy": "original pure initializer with stable dependencies"
+  },
+  "verification_started": true,
+  "verifier": {
+    "compatibility": {
+      "module": "/mnt/d/ResearchProject/.tools/frama-c-compat/1e5af7b10d6dd41df377/float_negation_33.cmxs",
+      "name": "Frama-C 33.0 implicit floating-negation coercion repair",
+      "source": "/mnt/d/ResearchProject/verification/specification_evaluation/framac/float_negation_33.ml"
+    },
+    "path": "/root/.opam/default/bin/frama-c",
+    "version_command": [
+      "/root/.opam/default/bin/frama-c",
+      "-version"
+    ],
+    "version_exit_code": 0,
+    "version_output": "33.0 (Arsenic)"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 10,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_shl",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\n  assigns \\nothing;\n  ensures \\result == (int32_t)((uint32_t)value << ((uint32_t)distance & 31));\n*/"
+    },
+    {
+      "boundary_token": 44,
+      "following_tokens": [
+        "int32_t",
+        "nextPowerOf2"
+      ],
+      "function": "nextPowerOf2",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "int32_t",
+      "target": "function",
+      "text": "/*@\n  terminates n <= 1073741824;\n  assigns \\nothing;\n  exits \\false;\n  ensures n <= 1073741824;\n  ensures 1 <= \\result <= 1073741824 && \\result >= n;\n  ensures (\\result & (\\result - 1)) == 0;\n  ensures \\result == 1 || \\result / 2 < n;\n*/"
+    },
+    {
+      "boundary_token": 79,
+      "following_tokens": [
+        "while",
+        "("
+      ],
+      "function": "nextPowerOf2",
+      "id": "annotation_3",
+      "loop_id": "loop_1",
+      "next_token": "while",
+      "target": "loop",
+      "text": "/*@\n      loop invariant i == 0 || i == INT32_MIN || (1 <= i <= 1073741824 && (i & (i - 1)) == 0);\n      loop invariant n <= 1073741824 ==> 1 <= i <= 1073741824;\n      loop invariant n <= 1073741824 ==> i == 1 || i / 2 < n;\n      loop assigns i;\n    */"
+    }
+  ],
+  "language": "c",
+  "program": "NextPowerOf2",
+  "schema_version": "1.0"
+}

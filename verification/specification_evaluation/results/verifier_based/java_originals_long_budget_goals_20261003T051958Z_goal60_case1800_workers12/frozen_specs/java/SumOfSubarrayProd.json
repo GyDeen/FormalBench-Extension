@@ -1,0 +1,111 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 24,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "sumOfSubarrayProd",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ requires end <= start || (a != null && 0 <= start && end <= a.length);\n      @ ensures \\result == (end <= start ? (\\bigint)1 : fb_product(a, start, end - 1) * a[end - 1]);\n      @ measured_by end > start ? (\\bigint)end - start : 0;\n      @ model public static pure \\bigint fb_product(int[] a, int start, int end);\n      @*/"
+    },
+    {
+      "boundary_token": 24,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "sumOfSubarrayProd",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ requires end <= start || (a != null && 0 <= start && end <= a.length);\n      @ ensures \\result == (end <= start ? (\\bigint)0 : fb_row_sum(a, start, end - 1) + fb_product(a, start, end));\n      @ measured_by end > start ? (\\bigint)end - start : 0;\n      @ model public static pure \\bigint fb_row_sum(int[] a, int start, int end);\n      @*/"
+    },
+    {
+      "boundary_token": 24,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "sumOfSubarrayProd",
+      "id": "annotation_3",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ requires rows >= 0 && (rows == 0 || (a != null && rows <= n <= a.length));\n      @ ensures \\result == (rows == 0 ? (\\bigint)0 : fb_rows_sum(a, rows - 1, n) + fb_row_sum(a, rows - 1, n));\n      @ measured_by rows;\n      @ model public static pure \\bigint fb_rows_sum(int[] a, int rows, int n);\n      @*/"
+    },
+    {
+      "boundary_token": 24,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "sumOfSubarrayProd",
+      "id": "annotation_4",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ ensures \\result == ((x % 4294967296L + 6442450944L) % 4294967296L) - 2147483648L;\n      @ model public static pure \\bigint fb_wrap(\\bigint x);\n      @*/"
+    },
+    {
+      "boundary_token": 24,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "sumOfSubarrayProd",
+      "id": "annotation_5",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ requires n <= 0 || (arr != null && n <= arr.length);\n      @ assignable \\nothing;\n      @ ensures \\result == fb_wrap(fb_rows_sum(arr, n > 0 ? n : 0, n));\n      @ also\n      @ public exceptional_behavior\n      @ requires n > 0 && arr == null;\n      @ assignable \\nothing;\n      @ signals_only NullPointerException;\n      @ also\n      @ public exceptional_behavior\n      @ requires n > 0 && arr != null && n > arr.length;\n      @ assignable \\nothing;\n      @ signals_only ArrayIndexOutOfBoundsException;\n      @*/"
+    },
+    {
+      "boundary_token": 24,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "sumOfSubarrayProd",
+      "id": "annotation_6",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "//@ code_java_math"
+    },
+    {
+      "boundary_token": 43,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "sumOfSubarrayProd",
+      "id": "annotation_7",
+      "loop_id": "loop_1",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@ loop_invariant 0 <= i <= (n > 0 ? n : 0);\n          @ loop_invariant sum == fb_wrap(fb_rows_sum(arr, i, n));\n          @ loop_writes i, sum;\n          @ decreases (\\bigint)n - i;\n          @*/"
+    },
+    {
+      "boundary_token": 64,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "sumOfSubarrayProd",
+      "id": "annotation_8",
+      "loop_id": "loop_2",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@ loop_invariant i <= j <= n;\n              @ loop_invariant product == fb_wrap(fb_product(arr, i, j));\n              @ loop_invariant sum == fb_wrap(fb_rows_sum(arr, i, n) + fb_row_sum(arr, i, j));\n              @ loop_writes j, product, sum;\n              @ decreases n - j;\n              @*/"
+    }
+  ],
+  "language": "java",
+  "program": "SumOfSubarrayProd",
+  "schema_version": "1.0"
+}

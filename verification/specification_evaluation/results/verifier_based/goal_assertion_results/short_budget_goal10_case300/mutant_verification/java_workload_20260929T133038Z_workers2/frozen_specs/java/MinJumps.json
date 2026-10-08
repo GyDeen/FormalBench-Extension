@@ -1,0 +1,98 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "minJumps",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ ensures \\result == ((x % 4294967296L + 6442450944L) % 4294967296L) - 2147483648L;\n      @ model public static pure \\bigint fb_wrap(\\bigint x);\n      @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "minJumps",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ ensures \\result == (a <= b ? a : b);\n      @ model public static pure \\bigint fb_min(\\bigint a, \\bigint b);\n      @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "minJumps",
+      "id": "annotation_3",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ requires a != null && 0 <= j <= i <= a.length;\n      @ ensures \\result == (i == 0 ? 0 : j == 0 ? Integer.MAX_VALUE : fb_min(fb_jumps(a, i, j - 1), \\java_math(a[j - 1] + (j - 1)) >= i ? fb_wrap(fb_jumps(a, j - 1, j - 1) + 1) : (\\bigint)Integer.MAX_VALUE));\n      @ measured_by (\\bigint)i * (a.length + 1) + j;\n      @ model public static pure \\bigint fb_jumps(int[] a, int i, int j);\n      @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "minJumps",
+      "id": "annotation_4",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ requires n >= 1 && (n == 1 || (arr != null && n - 1 <= arr.length));\n      @ assignable \\nothing;\n      @ ensures \\result == (n == 1 ? 0 : fb_jumps(arr, n - 1, n - 1));\n      @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "minJumps",
+      "id": "annotation_5",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "//@ code_java_math"
+    },
+    {
+      "boundary_token": 74,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "minJumps",
+      "id": "annotation_6",
+      "loop_id": "loop_1",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@ loop_invariant 1 <= i <= n;\n          @ loop_invariant (\\forall int k; 0 <= k < i; dp[k] == (k == 0 ? 0 : fb_jumps(arr, k, k)));\n          @ loop_invariant (\\forall int k; i <= k < n; dp[k] == Integer.MAX_VALUE);\n          @ loop_writes i, dp[*];\n          @ decreases n - i;\n          @*/"
+    },
+    {
+      "boundary_token": 90,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "minJumps",
+      "id": "annotation_7",
+      "loop_id": "loop_2",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@ loop_invariant 0 <= j <= i;\n              @ loop_invariant dp[i] == fb_jumps(arr, i, j);\n              @ loop_writes j, dp[i];\n              @ decreases i - j;\n              @*/"
+    }
+  ],
+  "language": "java",
+  "program": "MinJumps",
+  "schema_version": "1.0"
+}

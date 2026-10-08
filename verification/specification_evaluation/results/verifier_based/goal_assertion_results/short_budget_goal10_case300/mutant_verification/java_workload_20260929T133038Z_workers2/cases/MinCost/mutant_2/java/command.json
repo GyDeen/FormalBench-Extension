@@ -1,0 +1,27 @@
+{
+  "argv": [
+    "/root/tools/openjml/openjml",
+    "-J--add-exports=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED",
+    "-J--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED",
+    "-processorpath",
+    "/mnt/d/ResearchProject/.tools/openjml-compat/47613dac9ce1473c6ada/numeric-bit-predicates.jar",
+    "-Xplugin:NumericBitPredicates file:///mnt/d/ResearchProject/verification/specification_evaluation/results/java_workload_20260929T133038Z_workers2/cases/MinCost/mutant_2/java/MinCost.java",
+    "--exec=/mnt/d/ResearchProject/verification/specification_evaluation/java_solver_trace.py",
+    "--esc",
+    "--progress",
+    "--nullable-by-default",
+    "--prover=z3-4.3.X",
+    "--timeout",
+    "10",
+    "--show=bb",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/java_workload_20260929T133038Z_workers2/cases/MinCost/mutant_2/java/MinCost.java"
+  ],
+  "shell_display": "/root/tools/openjml/openjml -J--add-exports=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED -J--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED -processorpath /mnt/d/ResearchProject/.tools/openjml-compat/47613dac9ce1473c6ada/numeric-bit-predicates.jar '-Xplugin:NumericBitPredicates file:///mnt/d/ResearchProject/verification/specification_evaluation/results/java_workload_20260929T133038Z_workers2/cases/MinCost/mutant_2/java/MinCost.java' --exec=/mnt/d/ResearchProject/verification/specification_evaluation/java_solver_trace.py --esc --progress --nullable-by-default --prover=z3-4.3.X --timeout 10 --show=bb /mnt/d/ResearchProject/verification/specification_evaluation/results/java_workload_20260929T133038Z_workers2/cases/MinCost/mutant_2/java/MinCost.java",
+  "cwd": "/mnt/d/ResearchProject/verification/specification_evaluation/results/java_workload_20260929T133038Z_workers2/cases/MinCost/mutant_2/java",
+  "timeout_seconds": 300,
+  "trace_solver": "/root/tools/openjml/Solvers-linux/z3-4.10.2",
+  "trace_environment": {
+    "OPENJML_TRACE_DIRECTORY": "/mnt/d/ResearchProject/verification/specification_evaluation/results/java_workload_20260929T133038Z_workers2/cases/MinCost/mutant_2/java/solver-traces",
+    "OPENJML_TRACE_SOLVER": "/root/tools/openjml/Solvers-linux/z3-4.10.2"
+  }
+}

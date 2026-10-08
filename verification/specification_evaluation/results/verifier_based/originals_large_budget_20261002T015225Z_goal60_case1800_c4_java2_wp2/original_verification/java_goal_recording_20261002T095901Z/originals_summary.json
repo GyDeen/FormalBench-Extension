@@ -1,0 +1,60 @@
+{
+    "stage":  "originals",
+    "complete":  true,
+    "expected_originals":  100,
+    "completed_originals":  100,
+    "started_utc":  "2026-10-02T01:52:27.687695+00:00",
+    "finished_utc":  "2026-10-02T03:14:28.781009+00:00",
+    "elapsed_batch_seconds":  4921.093314,
+    "outcomes":  {
+                     "c":  {
+                               "expected":  50,
+                               "completed":  50,
+                               "outcomes":  {
+                                                "unknown/timeout":  44,
+                                                "proved":  6
+                                            }
+                           },
+                     "java":  {
+                                  "expected":  50,
+                                  "completed":  50,
+                                  "outcomes":  {
+                                                   "unknown/timeout":  36,
+                                                   "proved":  13,
+                                                   "precondition/RTE failure":  1
+                                               }
+                              }
+                 },
+    "settings":  {
+                     "program_timeout_seconds":  1800,
+                     "solver_timeout_seconds":  60,
+                     "c_workers":  4,
+                     "java_workers":  2,
+                     "wp_parallel_jobs_per_c_worker":  2,
+                     "wp_memory_limit_mb_per_solver":  1000
+                 },
+    "scope":  "50 originals in each language; no mutants evaluated",
+    "baseline_run":  "originals_stop_tool_error_20260927T161243Z_goal10_case300",
+    "newly_proved_originals":  0,
+    "process_timeout_cases":  [
+                                  {
+                                      "program":  "MinCost",
+                                      "language":  "c"
+                                  }
+                              ],
+    "newly_proved_c_obligations":  [
+                                       {
+                                           "program":  "CountingSort",
+                                           "goal":  "typed_ref_countingSort_call_jarray_get_4_requires_3"
+                                       },
+                                       {
+                                           "program":  "CountWays",
+                                           "goal":  "typed_ref_countWays_loop_invariant_2_preserved"
+                                       },
+                                       {
+                                           "program":  "CountWays",
+                                           "goal":  "typed_ref_countWays_call_jarray_set_6_requires_2"
+                                       }
+                                   ],
+    "interpretation":  "Completion applies to this originals-only stage. summary.json retains the whole paired inventory and complete=false because 977 mutant pairs were not run. MinCost process timeout has no classified WP goal coverage."
+}

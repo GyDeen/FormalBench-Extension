@@ -1,0 +1,102 @@
+{
+  "checked_inputs": 2,
+  "complete": true,
+  "coverage": {
+    "other_checks": "observable input-array frames, result identity and selected allocation checks",
+    "primary": "frozen return-value/content postconditions",
+    "unchecked": [
+      "loop invariants",
+      "loop variants",
+      "statement assertions",
+      "full allocation/free sets",
+      "full write sets"
+    ],
+    "unsupported_policy": "visible evaluation failure; never treated as satisfied"
+  },
+  "evaluation_failures": 0,
+  "execution_rerun": false,
+  "imported_execution_evidence": "/mnt/d/ResearchProject/output/c_mutant_results_withdrawn_20261008T004534/withdrawn/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/c_counterexamples_refreshed_all_c_20261001_search_only/cases/OddBitSetNumber/mutant_5/c/record.json",
+  "input_pool": {
+    "admissible_inputs": 42,
+    "bounded_unique_candidates": 40,
+    "excluded": {},
+    "saved_first_calls": 3,
+    "unique_candidates": 42
+  },
+  "language": "c",
+  "mutant_id": "5",
+  "other_contract_detected": false,
+  "policy": "c-runtime-frozen-postconditions-evosuite-bounded-v1",
+  "program": "OddBitSetNumber",
+  "role": "mutant_5",
+  "safety_detected": false,
+  "safety_witness": null,
+  "search_exhausted": false,
+  "specification_detected": true,
+  "status": "validated_postcondition_violation",
+  "timeouts": 0,
+  "verification_rerun": false,
+  "witness": {
+    "audit": {
+      "baseline_execution": {
+        "elapsed_seconds": 0.00870162100000016,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {},
+          "errno": 0,
+          "result": 3679,
+          "rows_separate": true,
+          "state": {}
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":3679,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "baseline_failed_clauses": [],
+      "baseline_passed": true,
+      "execution": {
+        "elapsed_seconds": 0.007108686000719899,
+        "exit_code": 0,
+        "observation": {
+          "EDOM": 33,
+          "aliases": {},
+          "errno": 0,
+          "result": 6751,
+          "rows_separate": true,
+          "state": {}
+        },
+        "status": "returned",
+        "stderr": "",
+        "stdout": "\n@@REPLAY {\"result\":6751,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n"
+      },
+      "failed_clauses": [
+        "frozen_return_value_or_array_contents"
+      ],
+      "passed": true
+    },
+    "elapsed_seconds": 0.0047298949994001305,
+    "exit_code": 0,
+    "expected": 3679,
+    "failed_clauses": [
+      "frozen_return_value_or_array_contents"
+    ],
+    "inputs": {
+      "n": 2125
+    },
+    "observation": {
+      "EDOM": 33,
+      "aliases": {},
+      "errno": 0,
+      "result": 6751,
+      "rows_separate": true,
+      "state": {}
+    },
+    "origin": "saved_test:OddBitSetNumber_ESTest.test1",
+    "preconditions_satisfied": true,
+    "status": "returned",
+    "stderr": "",
+    "stdout": "\n@@REPLAY {\"result\":6751,\"state\":{},\"aliases\":{},\"rows_separate\":true,\"errno\":0,\"EDOM\":33}\n",
+    "validated": true
+  }
+}

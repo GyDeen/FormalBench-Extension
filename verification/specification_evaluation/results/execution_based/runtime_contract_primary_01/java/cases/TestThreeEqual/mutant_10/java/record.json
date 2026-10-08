@@ -1,0 +1,122 @@
+{
+  "policy": "java-rac-frozen-postconditions-evosuite-bounded-pilot-v1",
+  "program": "TestThreeEqual",
+  "mutant_id": "10",
+  "role": "mutant_10",
+  "frozen_specification": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/frozen_specs/java/TestThreeEqual.json",
+  "source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/fault_mutants/run_ukcw__uc/TestThreeEqual/mutants/10/java/TestThreeEqual.java",
+  "input_pool": {
+    "saved_first_calls": 7,
+    "bounded_before_deduplication": 632,
+    "unique_candidates": 614,
+    "admissible_inputs": 614,
+    "invalid_java_int_inputs": 0,
+    "excluded_by_entry_preconditions": 0,
+    "entry_precondition": "true (no explicit requires; all parameters primitive int)",
+    "admissible_by_origin": {
+      "evosuite": 7,
+      "bounded": 607
+    }
+  },
+  "specification_detected": true,
+  "safety_detected": false,
+  "other_jml_detected": false,
+  "witness": {
+    "inputs": {
+      "x": -850,
+      "y": 0,
+      "z": 0
+    },
+    "origin": "saved_test:TestThreeEqual_ESTest.test3",
+    "preconditions_satisfied": true,
+    "observation": {
+      "status": "failure",
+      "class": "org.jmlspecs.runtime.JmlAssertionError",
+      "message": "/mnt/d/ResearchProject/output/c_mutant_results_withdrawn_20261008T004534/withdrawn/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/java_counterexamples_verified_pilot5_20261008_evosuite_bounded/cases/TestThreeEqual/mutant_10/java/TestThreeEqual.java:14: verify: JML postcondition is false\n/mnt/d/ResearchProject/output/c_mutant_results_withdrawn_20261008T004534/withdrawn/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/java_counterexamples_verified_pilot5_20261008_evosuite_bounded/cases/TestThreeEqual/mutant_10/java/TestThreeEqual.java:11: verify: Associated declaration: /mnt/d/ResearchProject/output/c_mutant_results_withdrawn_20261008T004534/withdrawn/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/java_counterexamples_verified_pilot5_20261008_evosuite_bounded/cases/TestThreeEqual/mutant_10/java/TestThreeEqual.java:14:",
+      "error_kind": "exception",
+      "cause": "null",
+      "category": "postcondition_violation",
+      "elapsed_seconds": 0.04783
+    },
+    "audit": {
+      "fresh_interpreted_rac": {
+        "status": "failure",
+        "class": "org.jmlspecs.runtime.JmlAssertionError",
+        "message": "/mnt/d/ResearchProject/output/c_mutant_results_withdrawn_20261008T004534/withdrawn/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/java_counterexamples_verified_pilot5_20261008_evosuite_bounded/cases/TestThreeEqual/mutant_10/java/TestThreeEqual.java:14: verify: JML postcondition is false\n/mnt/d/ResearchProject/output/c_mutant_results_withdrawn_20261008T004534/withdrawn/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/java_counterexamples_verified_pilot5_20261008_evosuite_bounded/cases/TestThreeEqual/mutant_10/java/TestThreeEqual.java:11: verify: Associated declaration: /mnt/d/ResearchProject/output/c_mutant_results_withdrawn_20261008T004534/withdrawn/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/java_counterexamples_verified_pilot5_20261008_evosuite_bounded/cases/TestThreeEqual/mutant_10/java/TestThreeEqual.java:14:",
+        "error_kind": "exception",
+        "cause": "null",
+        "category": "postcondition_violation",
+        "elapsed_seconds": 0.06083
+      },
+      "original_rac": {
+        "status": "returned",
+        "return": 2,
+        "category": "returned",
+        "elapsed_seconds": 0.06786
+      },
+      "uninstrumented_mutant": {
+        "status": "returned",
+        "return": 3,
+        "category": "returned",
+        "elapsed_seconds": 0.03445
+      },
+      "original_passed": true
+    }
+  },
+  "checked_inputs": 4,
+  "timeouts": 0,
+  "evaluation_failures": 0,
+  "coverage": {
+    "frozen_ensures_clauses": 1,
+    "explicit_requires_clauses": 0,
+    "assignable_clauses": 1,
+    "loop_clauses": 0,
+    "clauses_removed": [],
+    "rac_compilation_usable": true,
+    "unsupported_diagnostics": [],
+    "postcondition_negative_control": {
+      "oracle": "Unchanged frozen JML; only this artificial control body is altered.",
+      "inputs": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "compile_usable": true,
+      "observation": {
+        "status": "failure",
+        "class": "org.jmlspecs.runtime.JmlAssertionError",
+        "message": "/mnt/d/ResearchProject/output/c_mutant_results_withdrawn_20261008T004534/withdrawn/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/java_counterexamples_verified_pilot5_20261008_evosuite_bounded/calibration/TestThreeEqual/TestThreeEqual.java:14: verify: JML postcondition is false\n/mnt/d/ResearchProject/output/c_mutant_results_withdrawn_20261008T004534/withdrawn/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/java_counterexamples_verified_pilot5_20261008_evosuite_bounded/calibration/TestThreeEqual/TestThreeEqual.java:11: verify: Associated declaration: /mnt/d/ResearchProject/output/c_mutant_results_withdrawn_20261008T004534/withdrawn/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/java_counterexamples_verified_pilot5_20261008_evosuite_bounded/calibration/TestThreeEqual/TestThreeEqual.java:14:",
+        "error_kind": "exception",
+        "cause": "null",
+        "category": "postcondition_violation",
+        "elapsed_seconds": 0.03983
+      },
+      "status": "postcondition_check_confirmed"
+    },
+    "scope": "Executable RAC checks; frame support assessed separately in calibration.",
+    "assignable_runtime_check_status": "violation_not_detected_in_control; do not claim assignable coverage",
+    "ensures_runtime_check_status": "negative-control confirmed for supported postconditions"
+  },
+  "search_command": [
+    "/root/tools/openjml/jdk/bin/java",
+    "-Xmx192m",
+    "-Dorg.jmlspecs.openjml.rac=exception",
+    "-cp",
+    "/mnt/d/ResearchProject/output/c_mutant_results_withdrawn_20261008T004534/withdrawn/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/java_counterexamples_verified_pilot5_20261008_evosuite_bounded/harness_classes:/root/tools/openjml/jmlruntime.jar",
+    "RuntimeHarness",
+    "/mnt/d/ResearchProject/output/c_mutant_results_withdrawn_20261008T004534/withdrawn/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/java_counterexamples_verified_pilot5_20261008_evosuite_bounded/cases/TestThreeEqual/mutant_10/java/rac_classes",
+    "TestThreeEqual",
+    "testThreeEqual",
+    "3"
+  ],
+  "observation_categories": {
+    "returned": 3,
+    "postcondition_violation": 1
+  },
+  "safety_witness": null,
+  "other_jml_witness": null,
+  "search_exhausted": false,
+  "status": "validated_postcondition_violation",
+  "complete": true,
+  "elapsed_seconds": 7.785
+}

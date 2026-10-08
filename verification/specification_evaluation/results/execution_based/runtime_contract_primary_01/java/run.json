@@ -1,0 +1,130 @@
+{
+  "complete": true,
+  "completed_at": "2026-10-08T08:57:27.658906+00:00",
+  "cpu_affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "elapsed_seconds": 455.42,
+  "elapsed_seconds_basis": "Sum of recorded component-run times; no new combined execution",
+  "expected_mutants": 192,
+  "generic_calibration": {
+    "compile": {
+      "command": [
+        "/root/tools/openjml/openjml",
+        "--rac",
+        "--nullable-by-default",
+        "--show-not-implemented",
+        "--show-not-executable",
+        "--rac-precondition-entry",
+        "--rac-show-source=line",
+        "-d",
+        "/mnt/d/ResearchProject/verification/specification_evaluation/results/runtime_contract_verified_java_01/calibration/entry_and_frame/rac_classes",
+        "/mnt/d/ResearchProject/verification/specification_evaluation/results/runtime_contract_verified_java_01/calibration/entry_and_frame/EntryFrame.java"
+      ],
+      "elapsed_seconds": 1.573,
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "",
+      "unsupported_diagnostics": [],
+      "usable": true
+    },
+    "frame_violation": {
+      "category": "returned",
+      "elapsed_seconds": 0.02783,
+      "return": 1,
+      "status": "returned"
+    },
+    "precondition_admitted": {
+      "category": "returned",
+      "elapsed_seconds": 0.0272,
+      "return": 1,
+      "status": "returned"
+    },
+    "precondition_excluded": {
+      "category": "precondition_failure",
+      "cause": "null",
+      "class": "org.jmlspecs.runtime.JmlAssertionError$PreconditionEntry",
+      "elapsed_seconds": 0.03314,
+      "error_kind": "exception",
+      "message": "/mnt/d/ResearchProject/verification/specification_evaluation/results/runtime_contract_verified_java_01/calibration/entry_and_frame/EntryFrame.java:3: verify: JML precondition is false",
+      "status": "failure"
+    }
+  },
+  "input_recipe_source": "/mnt/d/ResearchProject/output/retired_c_search_scripts_20261008T005329/c_replay_oracles.py",
+  "input_source": "/mnt/d/ResearchProject/differential_testing/generation/test_inputs-653ade686f.json",
+  "integration": {
+    "baseline_snapshot": "/mnt/d/ResearchProject/verification/specification_evaluation/results/runtime_contract_primary_01/java/baseline_before_freshness_integration",
+    "findpoints_mutants_integrated": 22,
+    "new_executions": 0,
+    "runtime_scope": "Only freshness is unchecked, symmetrically for FindPoints original and mutants",
+    "source": "/mnt/d/ResearchProject/verification/specification_evaluation/results/runtime_contract_java_omit_fresh_01",
+    "unchanged_program_results_reused": 12
+  },
+  "omit_fresh_requested": true,
+  "policy": "java-rac-frozen-postconditions-evosuite-bounded-pilot-v1-omit-fresh-v1",
+  "programs": [
+    "CountIntgralPoints",
+    "DiameterCircle",
+    "DogAge",
+    "FindPoints",
+    "FindRectNum",
+    "HexagonalNum",
+    "MaxOfTwo",
+    "NoOfCubes",
+    "OddBitSetNumber",
+    "SquarePerimeter",
+    "SumNums",
+    "TestThreeEqual",
+    "VolumeCube"
+  ],
+  "runtime_omissions": {
+    "CountIntgralPoints": [],
+    "DiameterCircle": [],
+    "DogAge": [],
+    "FindPoints": [
+      {
+        "annotation_id": "annotation_1",
+        "expression": "\\fresh(\\result)",
+        "original_text": "/*@ public normal_behavior\n      @ assignable \\nothing;\n      @ ensures \\result != null && \\fresh(\\result) && \\result.length == 2;\n      @ ensures l1 < l2 && r1 < r2 ==> \\result[0] == (l1 < r1 ? l1 : r1) && \\result[1] == (r2 > l2 ? r2 : l2);\n      @ ensures l1 > l2 && r1 > r2 ==> \\result[0] == (l2 < r2 ? l2 : r2) && \\result[1] == (l1 > r1 ? l1 : r1);\n      @ ensures !(l1 < l2 && r1 < r2) && !(l1 > l2 && r1 > r2) ==> \\result[0] == l1 && \\result[1] == r1;\n      @*/",
+        "reason": "Unsupported by installed RAC; unchecked for both original and mutants",
+        "runtime_text": "/*@ public normal_behavior\n      @ assignable \\nothing;\n      @ ensures \\result != null && \\result.length == 2;\n      @ ensures l1 < l2 && r1 < r2 ==> \\result[0] == (l1 < r1 ? l1 : r1) && \\result[1] == (r2 > l2 ? r2 : l2);\n      @ ensures l1 > l2 && r1 > r2 ==> \\result[0] == (l2 < r2 ? l2 : r2) && \\result[1] == (l1 > r1 ? l1 : r1);\n      @ ensures !(l1 < l2 && r1 < r2) && !(l1 > l2 && r1 > r2) ==> \\result[0] == l1 && \\result[1] == r1;\n      @*/"
+      }
+    ],
+    "FindRectNum": [],
+    "HexagonalNum": [],
+    "MaxOfTwo": [],
+    "NoOfCubes": [],
+    "OddBitSetNumber": [],
+    "SquarePerimeter": [],
+    "SumNums": [],
+    "TestThreeEqual": [],
+    "VolumeCube": []
+  },
+  "source_run": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300",
+  "started_at": "2026-10-08T07:51:56.362592+00:00",
+  "tools": {
+    "java": {
+      "command": [
+        "/root/tools/openjml/jdk/bin/java",
+        "-version"
+      ],
+      "version": "openjdk version \"21-internal\" 2023-09-19\nOpenJDK Runtime Environment (build 21-internal-adhoc.runner.OpenJMLsrc)\nOpenJDK 64-Bit Server VM (build 21-internal-adhoc.runner.OpenJMLsrc, mixed mode)"
+    },
+    "openjml": {
+      "command": [
+        "/root/tools/openjml/openjml",
+        "--version"
+      ],
+      "version": "openjml 21.0.27"
+    }
+  },
+  "workers": 4
+}

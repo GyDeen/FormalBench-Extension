@@ -1,0 +1,111 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 10,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_sub",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\n  assigns \\nothing;\n  ensures \\result == (int32_t)((integer)left - right);\n*/"
+    },
+    {
+      "boundary_token": 38,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_add",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\n  assigns \\nothing;\n  ensures \\result == (int32_t)((integer)left + right);\n*/"
+    },
+    {
+      "boundary_token": 66,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_abs",
+      "id": "annotation_3",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\n  assigns \\nothing;\n  ensures \\result == (value < 0 ? (int32_t)(-(integer)value) : value);\n*/"
+    },
+    {
+      "boundary_token": 95,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_min",
+      "id": "annotation_4",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\n  assigns \\nothing;\n  ensures \\result == (left < right ? left : right);\n*/"
+    },
+    {
+      "boundary_token": 116,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_max",
+      "id": "annotation_5",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\n  assigns \\nothing;\n  ensures \\result == (left > right ? left : right);\n*/"
+    },
+    {
+      "boundary_token": 137,
+      "following_tokens": [
+        "int32_t",
+        "maxDifference"
+      ],
+      "function": "maxDifference",
+      "id": "annotation_6",
+      "loop_id": null,
+      "next_token": "int32_t",
+      "target": "function",
+      "text": "/*@\n  logic integer fb_absdiff(integer x, integer y) =\n    (int32_t)(x - y) < 0 ? (int32_t)(-(int32_t)(x - y)) : (int32_t)(x - y);\n  logic integer fb_difference{L}(JIntArray2 a, integer k) =\n    k <= 0 ? 0 : \\max(fb_difference(a, k - 1), fb_absdiff(a->data[k - 1]->data[0], a->data[k - 1]->data[1]));\n*/"
+    },
+    {
+      "boundary_token": 137,
+      "following_tokens": [
+        "int32_t",
+        "maxDifference"
+      ],
+      "function": "maxDifference",
+      "id": "annotation_7",
+      "loop_id": null,
+      "next_token": "int32_t",
+      "target": "function",
+      "text": "/*@\n  requires jintarray2_valid_nonnull(testArray);\n  requires \\forall integer k; 0 <= k < testArray->length ==> testArray->data[k] != \\null && testArray->data[k]->length >= 2;\n  assigns \\nothing;\n  ensures \\result == fb_difference(testArray, testArray->length > 0 ? testArray->length - 1 : 0);\n*/"
+    },
+    {
+      "boundary_token": 167,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "maxDifference",
+      "id": "annotation_8",
+      "loop_id": "loop_1",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@\n      loop invariant 0 <= i <= length && length == testArray->length;\n      loop invariant maxDiff == fb_difference(testArray, i < length ? i : (length > 0 ? length - 1 : 0));\n      loop assigns i, maxDiff, min, max;\n      loop variant length - i;\n    */"
+    }
+  ],
+  "language": "c",
+  "program": "MaxDifference",
+  "schema_version": "1.0"
+}

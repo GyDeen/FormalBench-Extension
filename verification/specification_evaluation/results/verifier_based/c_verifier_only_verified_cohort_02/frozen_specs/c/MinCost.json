@@ -1,0 +1,124 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 10,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_add",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\n  assigns \\nothing;\n  ensures \\result == (int32_t)((integer)left + right);\n*/"
+    },
+    {
+      "boundary_token": 38,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_sub",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\n  assigns \\nothing;\n  ensures \\result == (int32_t)((integer)left - right);\n*/"
+    },
+    {
+      "boundary_token": 66,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_min",
+      "id": "annotation_3",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\n  assigns \\nothing;\n  ensures \\result == (left < right ? left : right);\n*/"
+    },
+    {
+      "boundary_token": 87,
+      "following_tokens": [
+        "int32_t",
+        "minCost"
+      ],
+      "function": "minCost",
+      "id": "annotation_4",
+      "loop_id": null,
+      "next_token": "int32_t",
+      "target": "function",
+      "text": "/*@\n  logic integer fb_cost{L}(JIntArray2 a, integer r, integer c) =\n    r <= 0 && c <= 0 ? a->data[0]->data[0] :\n    r <= 0 ? (int32_t)(fb_cost(a, 0, c - 1) + a->data[0]->data[c]) :\n    c <= 0 ? (int32_t)(fb_cost(a, r - 1, 0) + a->data[r]->data[0]) :\n    (int32_t)(\\min(fb_cost(a, r - 1, c - 1), \\min(fb_cost(a, r - 1, c), fb_cost(a, r, c - 1))) + a->data[r]->data[c]);\n*/"
+    },
+    {
+      "boundary_token": 87,
+      "following_tokens": [
+        "int32_t",
+        "minCost"
+      ],
+      "function": "minCost",
+      "id": "annotation_5",
+      "loop_id": null,
+      "next_token": "int32_t",
+      "target": "function",
+      "text": "/*@\n  requires jintarray2_valid_nonnull(cost) && 0 <= m < cost->length && n >= 0;\n  requires \\forall integer k; 0 <= k <= m ==> cost->data[k] != \\null && n < cost->data[k]->length;\n  assigns \\nothing;\n  ensures \\result == fb_cost(cost, m, n);\n*/"
+    },
+    {
+      "boundary_token": 154,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "minCost",
+      "id": "annotation_6",
+      "loop_id": "loop_1",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@\n      loop invariant 1 <= i <= (integer)m + 1;\n      loop invariant jintarray2_valid_nonnull(tc);\n      loop invariant \\forall integer r; 0 <= r < i ==> tc->data[r]->data[0] == fb_cost(cost, r, 0);\n      loop assigns i, tc->data[0 .. m]->data[0];\n      loop variant (integer)m - i + 1;\n    */"
+    },
+    {
+      "boundary_token": 226,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "minCost",
+      "id": "annotation_7",
+      "loop_id": "loop_2",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@\n      loop invariant 1 <= j <= (integer)n + 1;\n      loop invariant jintarray2_valid_nonnull(tc);\n      loop invariant \\forall integer c; 0 <= c < j ==> tc->data[0]->data[c] == fb_cost(cost, 0, c);\n      loop assigns j, tc->data[0]->data[0 .. n];\n      loop variant (integer)n - j + 1;\n    */"
+    },
+    {
+      "boundary_token": 298,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "minCost",
+      "id": "annotation_8",
+      "loop_id": "loop_3",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@\n      loop invariant 1 <= i <= (integer)m + 1;\n      loop invariant jintarray2_valid_nonnull(tc);\n      loop invariant \\forall integer r, c; 0 <= r < i && 0 <= c <= n ==> tc->data[r]->data[c] == fb_cost(cost, r, c);\n      loop invariant \\forall integer r; i <= r <= m ==> tc->data[r]->data[0] == fb_cost(cost, r, 0);\n      loop assigns i, tc->data[0 .. m]->data[0 .. n];\n      loop variant (integer)m - i + 1;\n    */"
+    },
+    {
+      "boundary_token": 320,
+      "following_tokens": [
+        "for",
+        "("
+      ],
+      "function": "minCost",
+      "id": "annotation_9",
+      "loop_id": "loop_4",
+      "next_token": "for",
+      "target": "loop",
+      "text": "/*@\n          loop invariant 1 <= j <= (integer)n + 1;\n          loop invariant jintarray2_valid_nonnull(tc);\n          loop invariant \\forall integer c; 0 <= c < j ==> tc->data[i]->data[c] == fb_cost(cost, i, c);\n          loop assigns j, tc->data[i]->data[0 .. n];\n          loop variant (integer)n - j + 1;\n        */"
+    }
+  ],
+  "language": "c",
+  "program": "MinCost",
+  "schema_version": "1.0"
+}

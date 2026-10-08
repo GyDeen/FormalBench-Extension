@@ -1,0 +1,46 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "nextPowerOf2",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "/*@ public normal_behavior\n      @ assignable \\nothing;\n      @ diverges n > 1073741824;\n      @ ensures n <= 1073741824;\n      @ ensures 1 <= \\result <= 1073741824 && \\result >= n;\n      @ ensures (\\result & (\\result - 1)) == 0;\n      @ ensures \\result == 1 || \\result / 2 < n;\n      @*/"
+    },
+    {
+      "boundary_token": 31,
+      "following_tokens": [
+        "public",
+        "static"
+      ],
+      "function": "nextPowerOf2",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "public",
+      "target": "function",
+      "text": "//@ code_java_math"
+    },
+    {
+      "boundary_token": 57,
+      "following_tokens": [
+        "while",
+        "("
+      ],
+      "function": "nextPowerOf2",
+      "id": "annotation_3",
+      "loop_id": "loop_1",
+      "next_token": "while",
+      "target": "loop",
+      "text": "/*@ loop_invariant i == 0 || i == Integer.MIN_VALUE || (1 <= i <= 1073741824 && (i & (i - 1)) == 0);\n          @ loop_invariant n <= 1073741824 ==> 1 <= i <= 1073741824;\n          @ loop_invariant n <= 1073741824 ==> i == 1 || i / 2 < n;\n          @ loop_writes i;\n          @*/"
+    }
+  ],
+  "language": "java",
+  "program": "NextPowerOf2",
+  "schema_version": "1.0"
+}

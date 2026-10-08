@@ -1,0 +1,121 @@
+{
+  "policy": "java-rac-frozen-postconditions-evosuite-bounded-pilot-v1",
+  "program": "NoOfCubes",
+  "mutant_id": "6",
+  "role": "mutant_6",
+  "frozen_specification": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/frozen_specs/java/NoOfCubes.json",
+  "source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/fault_mutants/run_ukcw__uc/NoOfCubes/mutants/6/java/NoOfCubes.java",
+  "input_pool": {
+    "saved_first_calls": 3,
+    "bounded_before_deduplication": 184,
+    "unique_candidates": 134,
+    "admissible_inputs": 134,
+    "invalid_java_int_inputs": 0,
+    "excluded_by_entry_preconditions": 0,
+    "entry_precondition": "true (no explicit requires; all parameters primitive int)",
+    "admissible_by_origin": {
+      "evosuite": 3,
+      "bounded": 131
+    }
+  },
+  "specification_detected": true,
+  "safety_detected": false,
+  "other_jml_detected": false,
+  "witness": {
+    "inputs": {
+      "n": 0,
+      "k": 0
+    },
+    "origin": "saved_test:NoOfCubes_ESTest.test1",
+    "preconditions_satisfied": true,
+    "observation": {
+      "status": "failure",
+      "class": "org.jmlspecs.runtime.JmlAssertionError",
+      "message": "/mnt/d/ResearchProject/verification/specification_evaluation/results/runtime_contract_verified_java_01/cases/NoOfCubes/mutant_6/java/NoOfCubes.java:14: verify: JML postcondition is false\n/mnt/d/ResearchProject/verification/specification_evaluation/results/runtime_contract_verified_java_01/cases/NoOfCubes/mutant_6/java/NoOfCubes.java:11: verify: Associated declaration: /mnt/d/ResearchProject/verification/specification_evaluation/results/runtime_contract_verified_java_01/cases/NoOfCubes/mutant_6/java/NoOfCubes.java:14:",
+      "error_kind": "exception",
+      "cause": "null",
+      "category": "postcondition_violation",
+      "elapsed_seconds": 0.02739
+    },
+    "audit": {
+      "fresh_interpreted_rac": {
+        "status": "failure",
+        "class": "org.jmlspecs.runtime.JmlAssertionError",
+        "message": "/mnt/d/ResearchProject/verification/specification_evaluation/results/runtime_contract_verified_java_01/cases/NoOfCubes/mutant_6/java/NoOfCubes.java:14: verify: JML postcondition is false\n/mnt/d/ResearchProject/verification/specification_evaluation/results/runtime_contract_verified_java_01/cases/NoOfCubes/mutant_6/java/NoOfCubes.java:11: verify: Associated declaration: /mnt/d/ResearchProject/verification/specification_evaluation/results/runtime_contract_verified_java_01/cases/NoOfCubes/mutant_6/java/NoOfCubes.java:14:",
+        "error_kind": "exception",
+        "cause": "null",
+        "category": "postcondition_violation",
+        "elapsed_seconds": 0.0441
+      },
+      "original_rac": {
+        "status": "returned",
+        "return": 1,
+        "category": "returned",
+        "elapsed_seconds": 0.03943
+      },
+      "uninstrumented_mutant": {
+        "status": "returned",
+        "return": 0,
+        "category": "returned",
+        "elapsed_seconds": 0.03784
+      },
+      "original_passed": true
+    }
+  },
+  "checked_inputs": 2,
+  "timeouts": 0,
+  "evaluation_failures": 0,
+  "language": "java",
+  "coverage": {
+    "frozen_ensures_clauses": 1,
+    "explicit_requires_clauses": 0,
+    "assignable_clauses": 1,
+    "loop_clauses": 0,
+    "clauses_removed": [],
+    "rac_compilation_usable": true,
+    "unsupported_diagnostics": [],
+    "postcondition_negative_control": {
+      "oracle": "Unchanged frozen JML; only this artificial control body is altered.",
+      "inputs": {
+        "n": 0,
+        "k": 0
+      },
+      "compile_usable": true,
+      "observation": {
+        "status": "failure",
+        "class": "org.jmlspecs.runtime.JmlAssertionError",
+        "message": "/mnt/d/ResearchProject/verification/specification_evaluation/results/runtime_contract_verified_java_01/calibration/NoOfCubes/NoOfCubes.java:14: verify: JML postcondition is false\n/mnt/d/ResearchProject/verification/specification_evaluation/results/runtime_contract_verified_java_01/calibration/NoOfCubes/NoOfCubes.java:11: verify: Associated declaration: /mnt/d/ResearchProject/verification/specification_evaluation/results/runtime_contract_verified_java_01/calibration/NoOfCubes/NoOfCubes.java:14:",
+        "error_kind": "exception",
+        "cause": "null",
+        "category": "postcondition_violation",
+        "elapsed_seconds": 0.03409
+      },
+      "status": "postcondition_check_confirmed"
+    },
+    "scope": "Executable RAC checks; frame support assessed separately in calibration.",
+    "assignable_runtime_check_status": "violation_not_detected_in_control; do not claim assignable coverage",
+    "ensures_runtime_check_status": "negative-control confirmed for supported postconditions"
+  },
+  "search_command": [
+    "/root/tools/openjml/jdk/bin/java",
+    "-Xmx192m",
+    "-Dorg.jmlspecs.openjml.rac=exception",
+    "-cp",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/runtime_contract_verified_java_01/harness_classes:/root/tools/openjml/jmlruntime.jar",
+    "RuntimeHarness",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/runtime_contract_verified_java_01/cases/NoOfCubes/mutant_6/java/rac_classes",
+    "NoOfCubes",
+    "noOfCubes",
+    "2"
+  ],
+  "observation_categories": {
+    "returned": 1,
+    "postcondition_violation": 1
+  },
+  "safety_witness": null,
+  "other_jml_witness": null,
+  "search_exhausted": false,
+  "status": "validated_postcondition_violation",
+  "complete": true,
+  "elapsed_seconds": 8.08
+}

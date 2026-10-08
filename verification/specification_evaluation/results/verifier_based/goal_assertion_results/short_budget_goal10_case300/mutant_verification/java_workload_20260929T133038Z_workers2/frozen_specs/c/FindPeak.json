@@ -1,0 +1,85 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 10,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_add",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\n  assigns \\nothing;\n  ensures \\result == (int32_t)((integer)left + right);\n*/"
+    },
+    {
+      "boundary_token": 38,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_sub",
+      "id": "annotation_2",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\n  assigns \\nothing;\n  ensures \\result == (int32_t)((integer)left - right);\n*/"
+    },
+    {
+      "boundary_token": 66,
+      "following_tokens": [
+        "static",
+        "int32_t"
+      ],
+      "function": "java_div",
+      "id": "annotation_3",
+      "loop_id": null,
+      "next_token": "static",
+      "target": "function",
+      "text": "/*@\n  requires divisor != 0;\n  assigns \\nothing;\n  ensures \\result == (int32_t)((integer)dividend / divisor);\n*/"
+    },
+    {
+      "boundary_token": 102,
+      "following_tokens": [
+        "int32_t",
+        "findPeak"
+      ],
+      "function": "findPeak",
+      "id": "annotation_4",
+      "loop_id": null,
+      "next_token": "int32_t",
+      "target": "function",
+      "text": "/*@\n  logic integer fb_peak{L}(JIntArray a, integer lo, integer hi) =\n    lo >= hi ? lo : a->data[lo + (hi - lo) / 2] < a->data[lo + (hi - lo) / 2 + 1] ?\n    fb_peak(a, lo + (hi - lo) / 2 + 1, hi) : fb_peak(a, lo, lo + (hi - lo) / 2);\n*/"
+    },
+    {
+      "boundary_token": 102,
+      "following_tokens": [
+        "int32_t",
+        "findPeak"
+      ],
+      "function": "findPeak",
+      "id": "annotation_5",
+      "loop_id": null,
+      "next_token": "int32_t",
+      "target": "function",
+      "text": "/*@\n  requires n >= 0;\n  requires n <= 1 || (jintarray_valid_nonnull(arr) && n <= arr->length);\n  assigns \\nothing;\n  ensures n <= 1 ==> \\result == 0;\n  ensures n > 1 ==> \\result == fb_peak(arr, 0, n - 1);\n  ensures n > 1 ==> 0 <= \\result < n;\n  ensures n > 1 && \\result > 0 ==> arr->data[\\result] >= arr->data[\\result - 1];\n  ensures n > 1 && \\result < n - 1 ==> arr->data[\\result] >= arr->data[\\result + 1];\n*/"
+    },
+    {
+      "boundary_token": 127,
+      "following_tokens": [
+        "while",
+        "("
+      ],
+      "function": "findPeak",
+      "id": "annotation_6",
+      "loop_id": "loop_1",
+      "next_token": "while",
+      "target": "loop",
+      "text": "/*@\n      loop invariant n <= 1 ==> left == 0 && right == n - 1;\n      loop invariant n > 1 ==> 0 <= left <= right < n;\n      loop invariant n > 1 ==> fb_peak(arr, left, right) == fb_peak(arr, 0, n - 1);\n      loop invariant n > 1 && left > 0 ==> arr->data[left] >= arr->data[left - 1];\n      loop invariant n > 1 && right < n - 1 ==> arr->data[right] >= arr->data[right + 1];\n      loop assigns left, right;\n      loop variant (integer)right - left;\n    */"
+    }
+  ],
+  "language": "c",
+  "program": "FindPeak",
+  "schema_version": "1.0"
+}
