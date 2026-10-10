@@ -1,0 +1,173 @@
+{
+    "scope":  "Standalone experimental arithmetic verification, not benchmark mutant detection",
+    "status":  "partial_implementation_proof",
+    "trusted_support_library":  false,
+    "integrated_into_benchmark_evaluation":  false,
+    "client_proof_interpretation":  "Conditional on declared contracts; not an implementation proof",
+    "total_target_elapsed_seconds":  37.293,
+    "runner_exit_code":  1,
+    "tool":  "33.0 (Arsenic)",
+    "settings":  {
+                     "frama_c":  "frama-c",
+                     "provers":  "Alt-Ergo:2.4.3,Z3:4.8.12",
+                     "why3_extra_config":  "/mnt/d/ResearchProject/verification/java_arrays/scripts/why3-alt-ergo-2.4.3.conf",
+                     "timeout":  10,
+                     "run_timeout":  300,
+                     "wp_par":  2,
+                     "memlimit":  1000,
+                     "machdep":  "x86_64",
+                     "model":  "Typed+ref",
+                     "target":  null,
+                     "output":  "/mnt/d/ResearchProject/verification/JArithmetic/results/local/wp"
+                 },
+    "originals":  50,
+    "originals_with_helpers":  45,
+    "implementation_helpers_proved":  7,
+    "implementation_helper_count":  8,
+    "positive_client_goals_proved":  42,
+    "positive_client_goal_count":  42,
+    "generated_inputs_used":  false,
+    "java_execution_used":  false,
+    "helpers":  [
+                    {
+                        "helper":  "java_abs",
+                        "original_count":  1,
+                        "proved_goals":  3,
+                        "reported_goals":  3,
+                        "status":  "proved",
+                        "unresolved_goals":  [
+
+                                             ]
+                    },
+                    {
+                        "helper":  "java_add",
+                        "original_count":  37,
+                        "proved_goals":  2,
+                        "reported_goals":  2,
+                        "status":  "proved",
+                        "unresolved_goals":  [
+
+                                             ]
+                    },
+                    {
+                        "helper":  "java_div",
+                        "original_count":  4,
+                        "proved_goals":  5,
+                        "reported_goals":  5,
+                        "status":  "proved",
+                        "unresolved_goals":  [
+
+                                             ]
+                    },
+                    {
+                        "helper":  "java_max",
+                        "original_count":  4,
+                        "proved_goals":  3,
+                        "reported_goals":  3,
+                        "status":  "proved",
+                        "unresolved_goals":  [
+
+                                             ]
+                    },
+                    {
+                        "helper":  "java_min",
+                        "original_count":  4,
+                        "proved_goals":  3,
+                        "reported_goals":  3,
+                        "status":  "proved",
+                        "unresolved_goals":  [
+
+                                             ]
+                    },
+                    {
+                        "helper":  "java_mul",
+                        "original_count":  20,
+                        "proved_goals":  1,
+                        "reported_goals":  2,
+                        "status":  "unresolved",
+                        "unresolved_goals":  [
+                                                 {
+                                                     "goal":  "typed_ref_java_mul_ensures",
+                                                     "property":  "java_mul_ensures",
+                                                     "state":  "unknown",
+                                                     "verdict":  "timeout"
+                                                 }
+                                             ]
+                    },
+                    {
+                        "helper":  "java_shl",
+                        "original_count":  1,
+                        "proved_goals":  3,
+                        "reported_goals":  3,
+                        "status":  "proved",
+                        "unresolved_goals":  [
+
+                                             ]
+                    },
+                    {
+                        "helper":  "java_sub",
+                        "original_count":  27,
+                        "proved_goals":  2,
+                        "reported_goals":  2,
+                        "status":  "proved",
+                        "unresolved_goals":  [
+
+                                             ]
+                    }
+                ],
+    "targets":  [
+                    {
+                        "target":  "implementation",
+                        "outcome":  "unknown/timeout",
+                        "proved_goals":  22,
+                        "reported_goals":  23,
+                        "elapsed_seconds":  13.324,
+                        "expected_result_met":  false,
+                        "negative_controls":  null,
+                        "record":  "local/wp/implementation/record.json"
+                    },
+                    {
+                        "target":  "check_wrap",
+                        "outcome":  "proved",
+                        "proved_goals":  18,
+                        "reported_goals":  18,
+                        "elapsed_seconds":  1.163,
+                        "expected_result_met":  true,
+                        "negative_controls":  null,
+                        "record":  "local/wp/check_wrap/record.json"
+                    },
+                    {
+                        "target":  "check_division",
+                        "outcome":  "proved",
+                        "proved_goals":  15,
+                        "reported_goals":  15,
+                        "elapsed_seconds":  1.009,
+                        "expected_result_met":  true,
+                        "negative_controls":  null,
+                        "record":  "local/wp/check_division/record.json"
+                    },
+                    {
+                        "target":  "check_order_shift",
+                        "outcome":  "proved",
+                        "proved_goals":  9,
+                        "reported_goals":  9,
+                        "elapsed_seconds":  0.714,
+                        "expected_result_met":  true,
+                        "negative_controls":  null,
+                        "record":  "local/wp/check_order_shift/record.json"
+                    },
+                    {
+                        "target":  "negative_controls",
+                        "outcome":  "unknown/timeout",
+                        "proved_goals":  4,
+                        "reported_goals":  6,
+                        "elapsed_seconds":  21.083,
+                        "expected_result_met":  true,
+                        "negative_controls":  {
+                                                  "wrong_wrap_not_proved":  true,
+                                                  "zero_division_not_proved":  true
+                                              },
+                        "record":  "local/wp/negative_controls/record.json"
+                    }
+                ]
+}
