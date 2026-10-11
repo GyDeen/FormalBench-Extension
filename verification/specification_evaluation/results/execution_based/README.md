@@ -2,14 +2,16 @@
 
 Only independently reproduced postcondition violations on admitted inputs contribute to the primary numerator. The frozen generated specification supplies the oracle; any runtime omission is explicitly recorded and applied to both original and mutants. Safety failures are separate.
 
-| Evaluation | Verified originals | Evaluable originals | Selected mutants | Evaluable mutants | Postcondition detections | Pooled rate | Separate safety flags |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| Java - unchanged contracts | 12 | 12 | 170 | 170 | 170 | 100.00% | 22 |
-| Java - FindPoints (`\fresh` unchecked) | 1 | 1 | 22 | 22 | 22 | 100.00% | 0 |
-| Java total | 13 | 13 | 192 | 192 | 192 | 100.00% | 22 |
-| C | 6 | 6 | 80 | 80 | 79 | 98.75% | 1 |
+| Evaluation | Verified originals | Evaluable originals | Selected mutants | Evaluable mutants | Postcondition detections | Mean across programs (primary) | Pooled rate | Separate safety flags |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| Java - unchanged contracts | 12 | 12 | 170 | 170 | 170 | 100.00% | 100.00% | 22 |
+| Java - FindPoints (`\fresh` unchecked) | 1 | 1 | 22 | 22 | 22 | 100.00% | 100.00% | 0 |
+| Java total | 13 | 13 | 192 | 192 | 192 | 100.00% | 100.00% | 22 |
+| C | 6 | 6 | 80 | 80 | 79 | 99.28% | 98.75% | 1 |
 
 Component rows partition the Java cohort; the Java total includes each mutant once. The separate FindPoints row identifies its reduced runtime-checking coverage.
+
+The primary mean gives each evaluable program equal weight. The pooled rate is descriptive and weights programs by their evaluated mutant counts.
 
 The primary mean across 13 runtime-evaluable Java programs is 100.00%.
 The primary mean across 6 runtime-evaluable C programs is 99.28%.

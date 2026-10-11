@@ -37,20 +37,23 @@ def collect(output):
 def write_report(output,result):
     lines=['# Primary runtime contract mutant detection','',
            'Only independently reproduced postcondition violations on admitted inputs contribute to the primary numerator. The frozen generated specification supplies the oracle; any runtime omission is explicitly recorded and applied to both original and mutants. Safety failures are separate.','',
-           '| Evaluation | Verified originals | Evaluable originals | Selected mutants | Evaluable mutants | Postcondition detections | Pooled rate | Separate safety flags |',
-           '|---|---:|---:|---:|---:|---:|---:|---:|']
-    def add_row(label,originals,evaluable,data):
+           '| Evaluation | Verified originals | Evaluable originals | Selected mutants | Evaluable mutants | Postcondition detections | Mean across programs (primary) | Pooled rate | Separate safety flags |',
+           '|---|---:|---:|---:|---:|---:|---:|---:|---:|']
+    def add_row(label,originals,evaluable,data,mean):
         n=data['runtime_evaluated_mutants']
         rate=f"{data['postcondition_detected']/n:.2%}" if n else 'unavailable'
-        lines.append(f"| {label} | {originals} | {evaluable} | {data['selected_mutants']} | {n} | {data['postcondition_detected']} | {rate} | {data['safety_detected']} |")
+        mean_rate=f"{mean:.2%}" if mean is not None else 'unavailable'
+        lines.append(f"| {label} | {originals} | {evaluable} | {data['selected_mutants']} | {n} | {data['postcondition_detected']} | {mean_rate} | {rate} | {data['safety_detected']} |")
     for lang,data in result['languages'].items():
         groups=data['evaluation_groups']
         if len(groups)>1:
             for group in groups:
                 label=lang.capitalize()+' - '+(', '.join(group['programs'])+' (`\\fresh` unchecked)' if group['label']=='freshness unchecked' else 'unchanged contracts')
-                add_row(label,len(group['programs']),group['runtime_evaluable_originals'],group)
-        add_row(lang.capitalize()+(' total' if len(groups)>1 else ''),len(data['per_program']),data['program_mean_denominator'],data)
-    lines+=['', 'Component rows partition the Java cohort; the Java total includes each mutant once. The separate FindPoints row identifies its reduced runtime-checking coverage.','']
+                rates=[r['postcondition_detected']/r['runtime_evaluated_mutants'] for r in data['per_program'] if r['program'] in group['programs'] and r['runtime_evaluated_mutants']]
+                add_row(label,len(group['programs']),group['runtime_evaluable_originals'],group,statistics.mean(rates) if rates else None)
+        add_row(lang.capitalize()+(' total' if len(groups)>1 else ''),len(data['per_program']),data['program_mean_denominator'],data,data['mean_program_detection_rate'])
+    lines+=['', 'Component rows partition the Java cohort; the Java total includes each mutant once. The separate FindPoints row identifies its reduced runtime-checking coverage.','',
+            'The primary mean gives each evaluable program equal weight. The pooled rate is descriptive and weights programs by their evaluated mutant counts.','']
     for lang,data in result['languages'].items():
         rate=data['mean_program_detection_rate']
         if rate is not None:lines.append(f"The primary mean across {data['program_mean_denominator']} runtime-evaluable {lang.capitalize()} programs is {rate:.2%}.")
