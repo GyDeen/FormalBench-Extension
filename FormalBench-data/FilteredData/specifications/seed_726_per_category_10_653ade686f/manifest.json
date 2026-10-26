@@ -14,7 +14,6 @@
     "verification/java_arrays/contracts/jintarray.acsl.h": "83cfffb114f3cad5e5553951b0a239298a8e52e47bfbe783d4bceedead0983bb",
     "verification/java_arrays/contracts/jintarray2.acsl.h": "976047a31f67f24008deec58da879eddf81f37b2ab09e83da3978cd269773696"
   },
-  "policy": "Initial generation used original sources only, without mutant sources or evaluation results. The 2026-09-27 compatibility revisions use original-only syntax/tool diagnostics; no mutant sources or outcomes used.",
   "records": [
     {
       "program": "CombSort",
@@ -805,12 +804,22 @@
       "program": "MoveFirst",
       "language": "c",
       "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/MoveFirst.c",
-      "original_sha256": "7d0f37d2521cb9c801292870b4875266de3afdcfb020411423e8d9c71660c8d3",
+      "original_sha256": "5a60783091cc017be865385aa7d4dd5c3d5960d3088c284de7fb116a923b86ae",
       "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/MoveFirst.c",
-      "annotated_sha256": "9830adf69a061edbab497c5905ed71e1c72d5c0ae1ee834c10f3e4da2ac93f61",
+      "annotated_sha256": "ed48088c32d71fc96763b523cc0ad364976d46920afedf9979240dce3e2fbb91",
       "executable_tokens_unchanged": true,
-      "status": "generated_not_proof_checked",
-      "notes": []
+      "status": "verification_attempted_unknown",
+      "syntax_status": "passed",
+      "notes": [
+        "2026-10-01 translation revision: The copy loop uses direct input lengths and the shared System.arraycopy lowering; the contract preserves null/empty identity, freshness, and rotation contents."
+      ],
+      "compatibility_check": {
+        "date": "2026-10-01",
+        "syntax_check_exit_code": 0,
+        "failure_stage": null,
+        "outcome": "unknown/timeout",
+        "record": "verification/specification_evaluation/results/translation_repairs_20261001_goal10_case300/cases/MoveFirst/original/c/record.json"
+      }
     },
     {
       "program": "MultiplyElements",
@@ -827,12 +836,22 @@
       "program": "MultiplyElements",
       "language": "c",
       "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/MultiplyElements.c",
-      "original_sha256": "3ca27d63134bf52a0c92783149df4fef35193cc71645b5238b3802ceabb1b712",
+      "original_sha256": "f1f2567b9e4b878845227dbc9480746bac62fbaf9feaaa8bca62d03ad58a4b20",
       "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/MultiplyElements.c",
-      "annotated_sha256": "0018ce96593fef23efe1273b63691d4296eadd05276ef5d4253c867e5d24f676",
+      "annotated_sha256": "e539e6fbfb97f81799686a134d842fc87790bb0d82968af21857e3d8a708946d",
       "executable_tokens_unchanged": true,
-      "status": "generated_not_proof_checked",
-      "notes": []
+      "status": "verification_attempted_unknown",
+      "syntax_status": "passed",
+      "notes": [
+        "2026-10-01 translation revision: Direct array-length expressions replace introduced length/limit caches; adjacent-product and Java wrapping contracts are retained."
+      ],
+      "compatibility_check": {
+        "date": "2026-10-01",
+        "syntax_check_exit_code": 0,
+        "failure_stage": null,
+        "outcome": "unknown/timeout",
+        "record": "verification/specification_evaluation/results/translation_repairs_20261001_goal10_case300/cases/MultiplyElements/original/c/record.json"
+      }
     },
     {
       "program": "NewmanPrime",
@@ -877,14 +896,23 @@
       "program": "NextPowerOf2",
       "language": "c",
       "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/NextPowerOf2.c",
-      "original_sha256": "09b1a5d7334da786c07b846b02d2ab4d58f5bb1bda985b850e01b90c062b4cb3",
+      "original_sha256": "b185507390fbdcc6ad5cf3a02f5774bda9c807123580b9f26e3f64d7d110f354",
       "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/NextPowerOf2.c",
-      "annotated_sha256": "c1c1d9826a4235ace2b08836573b4a10d0a313fac36208ebc92ccdf602a6a534",
+      "annotated_sha256": "d66f4cb533f73403a145b12ee12824cba86579eb6f9c4d26366bf6d6abb08e2a",
       "executable_tokens_unchanged": true,
-      "status": "generated_not_proof_checked",
+      "status": "verification_attempted_unknown",
+      "syntax_status": "passed",
       "notes": [
-        "For n>2^30 the shift eventually reaches 0 and loops forever. This domain is preserved with conditional termination and no normal return; an unconditional decreasing loop variant would be false."
-      ]
+        "For n>2^30 the shift eventually reaches 0 and loops forever. This domain is preserved with conditional termination and no normal return; an unconditional decreasing loop variant would be false.",
+        "2026-10-01 translation revision: The general java_shl(value, distance) helper preserves Java's masked shift-distance and wrapping semantics."
+      ],
+      "compatibility_check": {
+        "date": "2026-10-01",
+        "syntax_check_exit_code": 0,
+        "failure_stage": null,
+        "outcome": "unknown/timeout",
+        "record": "verification/specification_evaluation/results/translation_repairs_20261001_goal10_case300/cases/NextPowerOf2/original/c/record.json"
+      }
     },
     {
       "program": "NoOfCubes",
@@ -981,12 +1009,22 @@
       "program": "PairWise",
       "language": "c",
       "original": "FormalBench-data/FilteredData/translated_c/seed_726_per_category_10_653ade686f/PairWise.c",
-      "original_sha256": "75c6ccc88b6c558dbb42ee417c5442b5dae7930b6f8683f777d094da476cd21f",
+      "original_sha256": "76419ae82e3ffb71344b9c4a9322d6dc020519db69dace5c4988d1535e335e90",
       "annotated": "FormalBench-data/FilteredData/specifications/seed_726_per_category_10_653ade686f/c/PairWise.c",
-      "annotated_sha256": "fd3db5e6dcf0c23368e65eea97266392a4a386956d2a53d95c8fc8a09a5a4739",
+      "annotated_sha256": "b22f93e3a000d407b6b7376a18e3ff3e85b64744339326ebc7ccb8212b0372c2",
       "executable_tokens_unchanged": true,
-      "status": "generated_not_proof_checked",
-      "notes": []
+      "status": "verification_attempted_unknown",
+      "syntax_status": "passed",
+      "notes": [
+        "2026-10-01 translation revision: Direct array-length and two-dimensional JArray accessor expressions replace introduced length/limit/row caches; adjacent-pair, freshness, and distinct-row contracts remain."
+      ],
+      "compatibility_check": {
+        "date": "2026-10-01",
+        "syntax_check_exit_code": 0,
+        "failure_stage": null,
+        "outcome": "unknown/timeout",
+        "record": "verification/specification_evaluation/results/translation_repairs_20261001_goal10_case300/cases/PairWise/original/c/record.json"
+      }
     },
     {
       "program": "ParabolaVertex",

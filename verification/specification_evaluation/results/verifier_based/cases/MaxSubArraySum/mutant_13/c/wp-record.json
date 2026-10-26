@@ -1,0 +1,1040 @@
+{
+  "annotated_source": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_02/cases/MaxSubArraySum/mutant_13/c/MaxSubArraySum.c",
+  "attempt_status": "complete",
+  "c_counterexample_capture": {
+    "counterexamples/wp_models.py": "72ebacf059ff3f2c5706a23a882dfd48ed5f65888a46f3f1eae9f250dc4a1afa"
+  },
+  "command": [
+    "/root/.opam/default/bin/frama-c",
+    "-machdep",
+    "x86_64",
+    "-load-module",
+    "/mnt/d/ResearchProject/.tools/frama-c-compat/1e5af7b10d6dd41df377/float_negation_33.cmxs",
+    "-paired-c-prepare",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_02/cases/MaxSubArraySum/mutant_13/c/MaxSubArraySum.c",
+    "-then",
+    "-wp",
+    "-wp-rte",
+    "-wp-no-filter-init",
+    "-wp-model",
+    "Typed+ref",
+    "-wp-prover",
+    "Z3:4.8.12",
+    "-wp-timeout",
+    "10",
+    "-wp-memlimit",
+    "1000",
+    "-wp-par",
+    "2",
+    "-wp-cache",
+    "none",
+    "-wp-report-json",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_02/cases/MaxSubArraySum/mutant_13/c/wp-report.json",
+    "-wp-counter-examples",
+    "-wp-status",
+    "-wp-out",
+    "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_02/cases/MaxSubArraySum/mutant_13/c/wp"
+  ],
+  "counterexample_models": [],
+  "elapsed_seconds": 12.733,
+  "exit_code": 0,
+  "failure_stage": null,
+  "frozen_spec": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_02/frozen_specs/c/MaxSubArraySum.json",
+  "goals": [
+    {
+      "category": "specification",
+      "explicit_invalidity": false,
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_02/cases/MaxSubArraySum/mutant_13/c/MaxSubArraySum.c",
+      "function": "java_add",
+      "goal": "typed_ref_java_add_ensures",
+      "line": 6,
+      "property": "java_add_ensures",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0015
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0005
+        }
+      ],
+      "report_source": "wp_json",
+      "smoke": false,
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "explicit_invalidity": false,
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_02/cases/MaxSubArraySum/mutant_13/c/MaxSubArraySum.c",
+      "function": "java_add",
+      "goal": "typed_ref_java_add_assigns",
+      "line": 8,
+      "property": "java_add_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "report_source": "wp_json",
+      "smoke": false,
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "explicit_invalidity": false,
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_02/cases/MaxSubArraySum/mutant_13/c/MaxSubArraySum.c",
+      "function": "java_sub",
+      "goal": "typed_ref_java_sub_ensures",
+      "line": 11,
+      "property": "java_sub_ensures",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00128
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0134
+        }
+      ],
+      "report_source": "wp_json",
+      "smoke": false,
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "explicit_invalidity": false,
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_02/cases/MaxSubArraySum/mutant_13/c/MaxSubArraySum.c",
+      "function": "java_sub",
+      "goal": "typed_ref_java_sub_assigns",
+      "line": 13,
+      "property": "java_sub_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "report_source": "wp_json",
+      "smoke": false,
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "explicit_invalidity": false,
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_02/cases/MaxSubArraySum/mutant_13/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_terminates",
+      "line": 26,
+      "property": "maxSubArraySum_terminates",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "report_source": "wp_json",
+      "smoke": false,
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "explicit_invalidity": false,
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_02/cases/MaxSubArraySum/mutant_13/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_ensures",
+      "line": 24,
+      "property": "maxSubArraySum_ensures",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00965
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 1.43
+        }
+      ],
+      "report_source": "wp_json",
+      "smoke": false,
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "explicit_invalidity": false,
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_02/cases/MaxSubArraySum/mutant_13/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_exits",
+      "line": 26,
+      "property": "maxSubArraySum_exits",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "report_source": "wp_json",
+      "smoke": false,
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "explicit_invalidity": false,
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_02/cases/MaxSubArraySum/mutant_13/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_loop_invariant_established",
+      "line": 33,
+      "property": "maxSubArraySum_loop_invariant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00389
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0165
+        }
+      ],
+      "report_source": "wp_json",
+      "smoke": false,
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "explicit_invalidity": false,
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_02/cases/MaxSubArraySum/mutant_13/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_loop_invariant_preserved",
+      "line": 33,
+      "property": "maxSubArraySum_loop_invariant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0242
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0263
+        }
+      ],
+      "report_source": "wp_json",
+      "smoke": false,
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "explicit_invalidity": false,
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_02/cases/MaxSubArraySum/mutant_13/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_loop_invariant_2_established",
+      "line": 34,
+      "property": "maxSubArraySum_loop_invariant_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "report_source": "wp_json",
+      "smoke": false,
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "explicit_invalidity": false,
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_02/cases/MaxSubArraySum/mutant_13/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_loop_invariant_2_preserved",
+      "line": 34,
+      "property": "maxSubArraySum_loop_invariant_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0273
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0238
+        }
+      ],
+      "report_source": "wp_json",
+      "smoke": false,
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "explicit_invalidity": false,
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_02/cases/MaxSubArraySum/mutant_13/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_loop_invariant_3_established",
+      "line": 35,
+      "property": "maxSubArraySum_loop_invariant_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00375
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0238
+        }
+      ],
+      "report_source": "wp_json",
+      "smoke": false,
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "explicit_invalidity": false,
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_02/cases/MaxSubArraySum/mutant_13/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_loop_invariant_3_preserved",
+      "line": 35,
+      "property": "maxSubArraySum_loop_invariant_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0343
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0118
+        }
+      ],
+      "report_source": "wp_json",
+      "smoke": false,
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "explicit_invalidity": false,
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_02/cases/MaxSubArraySum/mutant_13/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_loop_invariant_4_established",
+      "line": 36,
+      "property": "maxSubArraySum_loop_invariant_4",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00532
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.012
+        }
+      ],
+      "report_source": "wp_json",
+      "smoke": false,
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "explicit_invalidity": false,
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_02/cases/MaxSubArraySum/mutant_13/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_loop_invariant_4_preserved",
+      "line": 36,
+      "property": "maxSubArraySum_loop_invariant_4",
+      "proved_subgoals": 0,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0399
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 0,
+          "time": 0
+        }
+      ],
+      "report_source": "wp_json",
+      "smoke": false,
+      "state": "unknown",
+      "timeout_subgoals": 1,
+      "unknown_subgoals": 0,
+      "verdict": "timeout"
+    },
+    {
+      "category": "specification",
+      "explicit_invalidity": false,
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_02/cases/MaxSubArraySum/mutant_13/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_loop_assigns_part1",
+      "line": 37,
+      "property": "maxSubArraySum_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "report_source": "wp_json",
+      "smoke": false,
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "explicit_invalidity": false,
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_02/cases/MaxSubArraySum/mutant_13/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_loop_assigns_part2",
+      "line": 37,
+      "property": "maxSubArraySum_loop_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "report_source": "wp_json",
+      "smoke": false,
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "explicit_invalidity": false,
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_02/cases/MaxSubArraySum/mutant_13/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_assigns_normal_part1",
+      "line": 26,
+      "property": "maxSubArraySum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "report_source": "wp_json",
+      "smoke": false,
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "explicit_invalidity": false,
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_02/cases/MaxSubArraySum/mutant_13/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_assigns_normal_part2",
+      "line": 26,
+      "property": "maxSubArraySum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "report_source": "wp_json",
+      "smoke": false,
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "explicit_invalidity": false,
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_02/cases/MaxSubArraySum/mutant_13/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_assigns_normal_part3",
+      "line": 26,
+      "property": "maxSubArraySum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "report_source": "wp_json",
+      "smoke": false,
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "explicit_invalidity": false,
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_02/cases/MaxSubArraySum/mutant_13/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_assigns_normal_part4",
+      "line": 26,
+      "property": "maxSubArraySum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "report_source": "wp_json",
+      "smoke": false,
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "explicit_invalidity": false,
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_02/cases/MaxSubArraySum/mutant_13/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_assigns_exit_part1",
+      "line": 26,
+      "property": "maxSubArraySum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "report_source": "wp_json",
+      "smoke": false,
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "explicit_invalidity": false,
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_02/cases/MaxSubArraySum/mutant_13/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_assigns_exit_part2",
+      "line": 26,
+      "property": "maxSubArraySum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "report_source": "wp_json",
+      "smoke": false,
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "explicit_invalidity": false,
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_02/cases/MaxSubArraySum/mutant_13/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_assigns_exit_part3",
+      "line": 26,
+      "property": "maxSubArraySum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "report_source": "wp_json",
+      "smoke": false,
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "explicit_invalidity": false,
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_02/cases/MaxSubArraySum/mutant_13/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_assigns_exit_part4",
+      "line": 26,
+      "property": "maxSubArraySum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "report_source": "wp_json",
+      "smoke": false,
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "explicit_invalidity": false,
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_02/cases/MaxSubArraySum/mutant_13/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_assigns_exit_part5",
+      "line": 26,
+      "property": "maxSubArraySum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "report_source": "wp_json",
+      "smoke": false,
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "explicit_invalidity": false,
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_02/cases/MaxSubArraySum/mutant_13/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_assigns_exit_part6",
+      "line": 26,
+      "property": "maxSubArraySum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "report_source": "wp_json",
+      "smoke": false,
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "explicit_invalidity": false,
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_02/cases/MaxSubArraySum/mutant_13/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_assigns_exit_part7",
+      "line": 26,
+      "property": "maxSubArraySum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "report_source": "wp_json",
+      "smoke": false,
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "explicit_invalidity": false,
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_02/cases/MaxSubArraySum/mutant_13/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_assigns_exit_part8",
+      "line": 26,
+      "property": "maxSubArraySum_assigns",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "report_source": "wp_json",
+      "smoke": false,
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "explicit_invalidity": false,
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_02/cases/MaxSubArraySum/mutant_13/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_loop_variant_positive",
+      "line": 38,
+      "property": "maxSubArraySum_loop_variant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 1,
+          "time": 0
+        }
+      ],
+      "report_source": "wp_json",
+      "smoke": false,
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "specification",
+      "explicit_invalidity": false,
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_02/cases/MaxSubArraySum/mutant_13/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_loop_variant_decrease",
+      "line": 38,
+      "property": "maxSubArraySum_loop_variant",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.0254
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0171
+        }
+      ],
+      "report_source": "wp_json",
+      "smoke": false,
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "explicit_invalidity": false,
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_02/cases/MaxSubArraySum/mutant_13/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_call_jarray_get_requires",
+      "line": 41,
+      "property": "jarray_get_requires",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00714
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0227
+        }
+      ],
+      "report_source": "wp_json",
+      "smoke": false,
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "explicit_invalidity": false,
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_02/cases/MaxSubArraySum/mutant_13/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_call_jarray_get_requires_2",
+      "line": 41,
+      "property": "jarray_get_requires_2",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00679
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.0169
+        }
+      ],
+      "report_source": "wp_json",
+      "smoke": false,
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    },
+    {
+      "category": "precondition/RTE",
+      "explicit_invalidity": false,
+      "failed_subgoals": 0,
+      "file": "/mnt/d/ResearchProject/verification/specification_evaluation/results/c_verifier_only_verified_cohort_02/cases/MaxSubArraySum/mutant_13/c/MaxSubArraySum.c",
+      "function": "maxSubArraySum",
+      "goal": "typed_ref_maxSubArraySum_call_jarray_get_requires_3",
+      "line": 41,
+      "property": "jarray_get_requires_3",
+      "proved_subgoals": 1,
+      "provers": [
+        {
+          "prover": "qed",
+          "success": 0,
+          "time": 0.00929
+        },
+        {
+          "prover": "Z3:4.8.12",
+          "success": 1,
+          "time": 0.00384
+        }
+      ],
+      "report_source": "wp_json",
+      "smoke": false,
+      "state": "proved",
+      "timeout_subgoals": 0,
+      "unknown_subgoals": 0,
+      "verdict": "valid"
+    }
+  ],
+  "language": "c",
+  "logs": {
+    "stderr": "stderr.log",
+    "stdout": "stdout.log",
+    "wp_report": "wp-report.json"
+  },
+  "mutant_id": "13",
+  "outcome": "unknown/timeout",
+  "program": "MaxSubArraySum",
+  "raw_source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/fault_mutants/run_ukcw__uc/MaxSubArraySum/mutants/13/c/MaxSubArraySum.c",
+  "reason": "At least one WP goal remains unresolved",
+  "role": "mutant",
+  "selection": "direct_match",
+  "settings": {
+    "c_provers": "Z3:4.8.12",
+    "capture_c_counterexamples": true,
+    "goal_timeout": 10,
+    "java_prover": "cvc4",
+    "machdep": "x86_64",
+    "memory_model": "Typed+ref",
+    "timeout": 300,
+    "why3_extra_config": null,
+    "wp_memlimit": 1000,
+    "wp_par": 2
+  },
+  "timed_out": false,
+  "transfer": {
+    "annotation_count": 5,
+    "internal_annotation_coverage": "complete",
+    "method": "frozen structured JSON with audited C declaration bindings",
+    "omitted_annotations": [],
+    "placements": [
+      {
+        "boundary_token": 10,
+        "function": "java_add",
+        "id": "annotation_1",
+        "loop_id": null,
+        "mutant_offset": 46,
+        "next_token": "static",
+        "target": "function"
+      },
+      {
+        "boundary_token": 38,
+        "function": "java_sub",
+        "id": "annotation_2",
+        "loop_id": null,
+        "mutant_offset": 155,
+        "next_token": "static",
+        "target": "function"
+      },
+      {
+        "boundary_token": 66,
+        "function": "maxSubArraySum",
+        "id": "annotation_3",
+        "loop_id": null,
+        "mutant_offset": 265,
+        "next_token": "int32_t",
+        "target": "function"
+      },
+      {
+        "boundary_token": 66,
+        "function": "maxSubArraySum",
+        "id": "annotation_4",
+        "loop_id": null,
+        "mutant_offset": 265,
+        "next_token": "int32_t",
+        "target": "function"
+      },
+      {
+        "boundary_token": 101,
+        "function": "maxSubArraySum",
+        "id": "annotation_5",
+        "loop_id": "loop_1",
+        "mutant_offset": 490,
+        "next_token": "for",
+        "target": "loop"
+      }
+    ],
+    "removed_loop_annotations": 0,
+    "removed_temporary_policy": "original pure initializer with stable dependencies"
+  },
+  "verification_started": true,
+  "verifier": {
+    "compatibility": {
+      "module": "/mnt/d/ResearchProject/.tools/frama-c-compat/1e5af7b10d6dd41df377/float_negation_33.cmxs",
+      "name": "Frama-C 33.0 implicit floating-negation coercion repair",
+      "source": "/mnt/d/ResearchProject/verification/specification_evaluation/framac/float_negation_33.ml"
+    },
+    "path": "/root/.opam/default/bin/frama-c",
+    "version_command": [
+      "/root/.opam/default/bin/frama-c",
+      "-version"
+    ],
+    "version_exit_code": 0,
+    "version_output": "33.0 (Arsenic)"
+  },
+  "verifier_detection": {
+    "detected": false,
+    "evidence": [],
+    "excluded_models": [],
+    "execution_validated": false,
+    "policy": "frama_c_wp_specification_counterexample_or_explicit_invalidity_v2",
+    "safety_detected": false,
+    "source": "Frama-C/WP",
+    "specification_detected": false,
+    "status": "inconclusive",
+    "timed_out": false,
+    "unclassified_detected": false
+  }
+}

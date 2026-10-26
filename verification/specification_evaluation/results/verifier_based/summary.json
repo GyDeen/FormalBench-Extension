@@ -1,0 +1,184 @@
+{
+    "schema_version":  "1.0",
+    "metric":  "verifier-origin specification mutant-detection rate",
+    "scope":  "Only mutants of language-specific fully verified originals",
+    "complete_verified_cohorts":  true,
+    "safety_contributes_to_detection":  false,
+    "primary_aggregation":  "Mean of program-level detection rates",
+    "pooled_rates":  "Descriptive proportions of eligible mutants",
+    "languages":  {
+                      "java":  {
+                                   "verified_originals":  13,
+                                   "eligible_mutants":  192,
+                                   "specification_detected":  121,
+                                   "pooled_detection_rate":  0.63020833333333337,
+                                   "mean_program_detection_rate":  0.62138246369015593,
+                                   "precondition_or_rte_failures":  17,
+                                   "unknown_or_timeout":  54,
+                                   "detection_basis":  "Saved OpenJML ESC specification diagnostics, not independently validated runtime executions",
+                                   "per_program":  [
+                                                       {
+                                                           "program":  "CountIntgralPoints",
+                                                           "eligible_mutants":  20,
+                                                           "specification_detected":  6,
+                                                           "precondition_or_rte_failures":  3,
+                                                           "unknown_or_timeout":  11
+                                                       },
+                                                       {
+                                                           "program":  "DiameterCircle",
+                                                           "eligible_mutants":  4,
+                                                           "specification_detected":  2,
+                                                           "precondition_or_rte_failures":  2,
+                                                           "unknown_or_timeout":  0
+                                                       },
+                                                       {
+                                                           "program":  "DogAge",
+                                                           "eligible_mutants":  27,
+                                                           "specification_detected":  27,
+                                                           "precondition_or_rte_failures":  0,
+                                                           "unknown_or_timeout":  0
+                                                       },
+                                                       {
+                                                           "program":  "FindPoints",
+                                                           "eligible_mutants":  22,
+                                                           "specification_detected":  21,
+                                                           "precondition_or_rte_failures":  0,
+                                                           "unknown_or_timeout":  1
+                                                       },
+                                                       {
+                                                           "program":  "FindRectNum",
+                                                           "eligible_mutants":  8,
+                                                           "specification_detected":  2,
+                                                           "precondition_or_rte_failures":  1,
+                                                           "unknown_or_timeout":  5
+                                                       },
+                                                       {
+                                                           "program":  "HexagonalNum",
+                                                           "eligible_mutants":  12,
+                                                           "specification_detected":  5,
+                                                           "precondition_or_rte_failures":  1,
+                                                           "unknown_or_timeout":  6
+                                                       },
+                                                       {
+                                                           "program":  "MaxOfTwo",
+                                                           "eligible_mutants":  2,
+                                                           "specification_detected":  2,
+                                                           "precondition_or_rte_failures":  0,
+                                                           "unknown_or_timeout":  0
+                                                       },
+                                                       {
+                                                           "program":  "NoOfCubes",
+                                                           "eligible_mutants":  33,
+                                                           "specification_detected":  2,
+                                                           "precondition_or_rte_failures":  3,
+                                                           "unknown_or_timeout":  28
+                                                       },
+                                                       {
+                                                           "program":  "OddBitSetNumber",
+                                                           "eligible_mutants":  17,
+                                                           "specification_detected":  17,
+                                                           "precondition_or_rte_failures":  0,
+                                                           "unknown_or_timeout":  0
+                                                       },
+                                                       {
+                                                           "program":  "SquarePerimeter",
+                                                           "eligible_mutants":  4,
+                                                           "specification_detected":  2,
+                                                           "precondition_or_rte_failures":  2,
+                                                           "unknown_or_timeout":  0
+                                                       },
+                                                       {
+                                                           "program":  "SumNums",
+                                                           "eligible_mutants":  13,
+                                                           "specification_detected":  11,
+                                                           "precondition_or_rte_failures":  2,
+                                                           "unknown_or_timeout":  0
+                                                       },
+                                                       {
+                                                           "program":  "TestThreeEqual",
+                                                           "eligible_mutants":  22,
+                                                           "specification_detected":  22,
+                                                           "precondition_or_rte_failures":  0,
+                                                           "unknown_or_timeout":  0
+                                                       },
+                                                       {
+                                                           "program":  "VolumeCube",
+                                                           "eligible_mutants":  8,
+                                                           "specification_detected":  2,
+                                                           "precondition_or_rte_failures":  3,
+                                                           "unknown_or_timeout":  3
+                                                       }
+                                                   ]
+                               },
+                      "c":  {
+                                "verified_originals":  6,
+                                "eligible_mutants":  80,
+                                "specification_detected":  7,
+                                "pooled_detection_rate":  0.0875,
+                                "mean_program_detection_rate":  0.068627450980392149,
+                                "safety_detected":  0,
+                                "raw_wp_candidate_flags":  11,
+                                "not_detected":  73,
+                                "detection_basis":  "Frozen specification violations independently replayed from full Frama-C/WP model inputs; no independently generated inputs",
+                                "per_program":  [
+                                                    {
+                                                        "program":  "CountList",
+                                                        "eligible_mutants":  3,
+                                                        "specification_detected":  0,
+                                                        "safety_detected":  0,
+                                                        "not_detected":  3,
+                                                        "unresolved":  3,
+                                                        "raw_wp_candidate_flags":  0
+                                                    },
+                                                    {
+                                                        "program":  "MaxOfTwo",
+                                                        "eligible_mutants":  2,
+                                                        "specification_detected":  0,
+                                                        "safety_detected":  0,
+                                                        "not_detected":  2,
+                                                        "unresolved":  2,
+                                                        "raw_wp_candidate_flags":  0
+                                                    },
+                                                    {
+                                                        "program":  "MaxSubArraySum",
+                                                        "eligible_mutants":  23,
+                                                        "specification_detected":  0,
+                                                        "safety_detected":  0,
+                                                        "not_detected":  23,
+                                                        "unresolved":  23,
+                                                        "raw_wp_candidate_flags":  0
+                                                    },
+                                                    {
+                                                        "program":  "OddBitSetNumber",
+                                                        "eligible_mutants":  17,
+                                                        "specification_detected":  7,
+                                                        "safety_detected":  0,
+                                                        "not_detected":  10,
+                                                        "unresolved":  10,
+                                                        "raw_wp_candidate_flags":  11
+                                                    },
+                                                    {
+                                                        "program":  "SumNums",
+                                                        "eligible_mutants":  13,
+                                                        "specification_detected":  0,
+                                                        "safety_detected":  0,
+                                                        "not_detected":  13,
+                                                        "unresolved":  13,
+                                                        "raw_wp_candidate_flags":  0
+                                                    },
+                                                    {
+                                                        "program":  "TestThreeEqual",
+                                                        "eligible_mutants":  22,
+                                                        "specification_detected":  0,
+                                                        "safety_detected":  0,
+                                                        "not_detected":  22,
+                                                        "unresolved":  22,
+                                                        "raw_wp_candidate_flags":  0
+                                                    }
+                                                ],
+                                "unresolved":  73
+                            }
+                  },
+    "confidence_interval":  null,
+    "new_executions":  0
+}

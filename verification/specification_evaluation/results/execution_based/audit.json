@@ -1,0 +1,46 @@
+{
+  "c_search_rerun": false,
+  "findpoints_runtime_adaptation": {
+    "audited_mutants": 22,
+    "confirmed_negative_controls": 5,
+    "original_admitted_inputs_passed": 4212,
+    "primary_witness_origins": {
+      "evosuite": 22
+    },
+    "runtime_omissions": [
+      {
+        "annotation_id": "annotation_1",
+        "expression": "\\fresh(\\result)",
+        "original_text": "/*@ public normal_behavior\n      @ assignable \\nothing;\n      @ ensures \\result != null && \\fresh(\\result) && \\result.length == 2;\n      @ ensures l1 < l2 && r1 < r2 ==> \\result[0] == (l1 < r1 ? l1 : r1) && \\result[1] == (r2 > l2 ? r2 : l2);\n      @ ensures l1 > l2 && r1 > r2 ==> \\result[0] == (l2 < r2 ? l2 : r2) && \\result[1] == (l1 > r1 ? l1 : r1);\n      @ ensures !(l1 < l2 && r1 < r2) && !(l1 > l2 && r1 > r2) ==> \\result[0] == l1 && \\result[1] == r1;\n      @*/",
+        "reason": "Unsupported by installed RAC; unchecked for both original and mutants",
+        "runtime_text": "/*@ public normal_behavior\n      @ assignable \\nothing;\n      @ ensures \\result != null && \\result.length == 2;\n      @ ensures l1 < l2 && r1 < r2 ==> \\result[0] == (l1 < r1 ? l1 : r1) && \\result[1] == (r2 > l2 ? r2 : l2);\n      @ ensures l1 > l2 && r1 > r2 ==> \\result[0] == (l2 < r2 ? l2 : r2) && \\result[1] == (l1 > r1 ? l1 : r1);\n      @ ensures !(l1 < l2 && r1 < r2) && !(l1 > l2 && r1 > r2) ==> \\result[0] == l1 && \\result[1] == r1;\n      @*/"
+      }
+    ]
+  },
+  "frozen_clauses_removed": false,
+  "integration": {
+    "baseline_snapshot": "/mnt/d/ResearchProject/verification/specification_evaluation/results/runtime_contract_primary_01/java/baseline_before_freshness_integration",
+    "findpoints_mutants_integrated": 22,
+    "new_executions": 0,
+    "runtime_scope": "Only freshness is unchecked, symmetrically for FindPoints original and mutants",
+    "source": "/mnt/d/ResearchProject/verification/specification_evaluation/results/runtime_contract_java_omit_fresh_01",
+    "unchanged_program_results_reused": 12
+  },
+  "saved_evidence_audit": {
+    "c": {
+      "primary_witness_origins": {
+        "evosuite": 79
+      },
+      "separate_safety": 1,
+      "validated_primary": 79
+    },
+    "java": {
+      "primary_witness_origins": {
+        "bounded": 1,
+        "evosuite": 191
+      },
+      "separate_safety": 22,
+      "validated_primary": 192
+    }
+  }
+}

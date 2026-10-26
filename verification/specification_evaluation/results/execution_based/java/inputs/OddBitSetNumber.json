@@ -1,0 +1,312 @@
+{
+  "program": "OddBitSetNumber",
+  "counts": {
+    "saved_first_calls": 3,
+    "bounded_before_deduplication": 160,
+    "unique_candidates": 42,
+    "admissible_inputs": 42,
+    "invalid_java_int_inputs": 0,
+    "excluded_by_entry_preconditions": 0,
+    "entry_precondition": "true (no explicit requires; all parameters primitive int)",
+    "admissible_by_origin": {
+      "evosuite": 3,
+      "bounded": 39
+    }
+  },
+  "candidates": [
+    {
+      "inputs": {
+        "n": 0
+      },
+      "origin": "saved_test:OddBitSetNumber_ESTest.test0",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": 2125
+      },
+      "origin": "saved_test:OddBitSetNumber_ESTest.test1",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": -3882
+      },
+      "origin": "saved_test:OddBitSetNumber_ESTest.test2",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": -2
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": -1
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": 1
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": 2
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": 3
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": 4
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": 7
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": 2147483647
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": 63
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": 32
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": 16
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": -2147483648
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": 31
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": 8
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": 64
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": 128
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": 256
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": 512
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": 1024
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": 2048
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": 4096
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": 8192
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": 16384
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": 32768
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": 65536
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": 131072
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": 262144
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": 524288
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": 1048576
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": 2097152
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": 4194304
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": 8388608
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": 16777216
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": 33554432
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": 67108864
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": 134217728
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": 268435456
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": 536870912
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    },
+    {
+      "inputs": {
+        "n": 1073741824
+      },
+      "origin": "bounded_search_seed726",
+      "preconditions_satisfied": true
+    }
+  ]
+}

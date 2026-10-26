@@ -29,25 +29,23 @@ static int32_t java_sub(int32_t left, int32_t right) {
   ensures testArray != \null && testArray->length > 0 ==> (\forall integer k; 1 <= k < testArray->length ==> \result->data[k] == testArray->data[k - 1]);
 */
 JIntArray moveFirst(JIntArray testArray) {
-    if (jarray_is_null(testArray) || jarray_length(testArray) == 0) {
+    if ((jarray_is_null(testArray) || (jarray_length(testArray) == INT32_C(0)))) {
         return testArray;
     }
 
-    int32_t length = jarray_length(testArray);
-    JIntArray res = jarray_new(length);
-    jarray_set(res, 0, jarray_get(testArray, java_sub(length, 1)));
-    int32_t copyLength = java_sub(length, 1);
+    JIntArray res = jarray_new(jarray_length(testArray));
+    int32_t __value_1 = jarray_get(testArray, java_sub(jarray_length(testArray), INT32_C(1)));
+    jarray_set(res, INT32_C(0), __value_1);
     /*@
-      loop invariant 0 <= i <= copyLength;
-      loop invariant copyLength == length - 1 && length == testArray->length;
-      loop invariant jintarray_valid_nonnull(res) && res->length == length;
-      loop invariant res->data[0] == testArray->data[length - 1];
-      loop invariant \forall integer k; 1 <= k <= i ==> res->data[k] == testArray->data[k - 1];
-      loop assigns i, res->data[1 .. length - 1];
-      loop variant copyLength - i;
+      loop invariant 0 <= __copy_index_2 <= testArray->length - 1;
+      loop invariant jintarray_valid_nonnull(res) && res->length == testArray->length;
+      loop invariant res->data[0] == testArray->data[testArray->length - 1];
+      loop invariant \forall integer k; 1 <= k <= __copy_index_2 ==> res->data[k] == testArray->data[k - 1];
+      loop assigns __copy_index_2, res->data[1 .. testArray->length - 1];
+      loop variant testArray->length - 1 - __copy_index_2;
     */
-    for (int32_t i = 0; i < copyLength; i = java_add(i, 1)) {
-        jarray_set(res, java_add(i, 1), jarray_get(testArray, i));
+    for (int32_t __copy_index_2 = 0; __copy_index_2 < java_sub(jarray_length(testArray), INT32_C(1)); __copy_index_2 = java_add(__copy_index_2, INT32_C(1))) {
+        jarray_set(res, java_add(INT32_C(1), __copy_index_2), jarray_get(testArray, java_add(INT32_C(0), __copy_index_2)));
     }
     return res;
 }

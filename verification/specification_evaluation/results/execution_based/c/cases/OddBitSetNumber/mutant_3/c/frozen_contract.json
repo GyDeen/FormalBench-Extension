@@ -1,0 +1,19 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 10,
+      "following_tokens": [
+        "int32_t",
+        "oddBitSetNumber"
+      ],
+      "function": "oddBitSetNumber",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "int32_t",
+      "target": "function",
+      "text": "/*@\n  assigns \\nothing;\n  ensures \\result == (int32_t)((uint32_t)n | (((uint32_t)n & 0xAAAAAAAA) >> 1) | (((uint32_t)n & 0xCCCCCCCC) >> 2) | (((uint32_t)n & 0xF0F0F0F0) >> 4) | (((uint32_t)n & 0xFF00FF00) >> 8) | (((uint32_t)n & 0xFFFF0000) >> 16));\n*/"
+    }
+  ],
+  "language": "c",
+  "program": "OddBitSetNumber"
+}

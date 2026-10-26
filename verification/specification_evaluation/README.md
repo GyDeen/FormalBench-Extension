@@ -1,172 +1,83 @@
-# Paired specification evaluation
+# Specification evaluation
 
-The evaluation targets are the 50 selected **FormalBench-data originals** and
-their 977 retained, behaviour-changing **Java/C mutant pairs**. The adapter
-reads `fault_mutants/run_ukcw__uc/selection_manifest.json` and never generates
-new mutants. JArray is only the fixed library interface assumed by translated
-C programs; its implementation and validation clients are **not** evaluated
-as study programs, mutants, or entries in the paired score.
+Original consistency uses OpenJML ESC for Java and Frama-C WP for C. The primary completeness measurement is now **strict rejection of every differing returned mutant output across the fixed input pool**.
 
-## Inputs
+For each admitted input, compare the original and mutant normal return values (arrays by contents). A mutant passes only when the whole input pool has been examined, at least one returned output differs, and the executable frozen postcondition rejects every differing output. One accepted faulty output fails the mutant. Missing trials or unresolved checks leave it incomplete. Mutants with no differing normal return are reported separately.
 
-Supply one annotated original per selected program and language:
+\[
+C_{\mathrm{strict}} = \frac{N_{\mathrm{passed\ mutants}}}{N_{\mathrm{passed\ mutants}} + N_{\mathrm{failed\ mutants}}}.
+\]
 
-```
-java_specs/<Class>.java    JML comments in the original Java source
-c_specs/<Class>.c          ACSL comments in the original translated C source
-```
+The strict rate is withheld while any mutant remains incomplete. Safety failures are separate and do not count as differing normal returns or strict passes. Per-input rejection fractions and first-witness detection counts are secondary diagnostics.
 
-The same LLM and report prompt should independently annotate each Java
-original and its C translation. The generator must see only the target-language
-original, not its counterpart or any mutant. For C it may see the relevant
-read-only JArray declarations and contracts. The adapter cannot enforce model
-identity or prompt context; retain that generation provenance alongside the
-output. The annotations must leave executable source tokens unchanged. During
-`prepare`, the adapter extracts them into one frozen JSON file per program and
-language, for example `frozen_specs/java/CombSort.json`. An
-external generator can instead be given through `--java-generator` and
-`--c-generator`; each is an argument template containing `{source}` and
-`{output}`. The command is run without a shell, and its output is validated
-before extraction. This permits use of FormalBench's specification-generation
-workflow without coupling the verifier to a particular model or credentials.
+## Current results
 
-Each JSON file stores the program and language, the original executable-token
-hash, and an ordered `annotations` array. Every entry records its exact JML or
-ACSL `text`, `target` (`function`, `loop`, or `statement`), owning `function`
-when identifiable, a `loop_id` for loop annotations, and token-context anchors.
-For example:
+The [completed strict evaluation](STRICT_COMPLETENESS_RESULTS_20261026.md) covers all 341,386 mutant/input pairs: 192 Java strict passes; 79 C strict passes and one C safety-only case. All 120,662 differing Java returns and all 31,385 differing C returns were rejected. There are no accepted faulty returns or unresolved checks.
 
-```json
-{
-  "schema_version": "1.0",
-  "program": "CombSort",
-  "language": "java",
-  "original_executable_token_sha256": "...",
-  "annotations": [
-    {
-      "id": "annotation_1",
-      "target": "function",
-      "function": "combSort",
-      "loop_id": null,
-      "boundary_token": 3,
-      "next_token": "int",
-      "following_tokens": ["int", "["],
-      "text": "//@ ensures ...;"
-    }
-  ]
-}
-```
+Historical first-witness results under `results/execution_based/` and verifier diagnostics under `results/verifier_based/` remain historical evidence. Their mutant-detection scores do not define the current completeness measurement. Only the final Markdown report and runnable scripts are versioned for this strict run; full new execution records remain local.
 
-The token fields above illustrate the format; actual anchors come from the
-original source. JSON becomes the authoritative specification after `prepare`.
-Later stages need only the same output directory, not the annotated-source
-directories or generator.
+## Primary workflow
 
-From the repository root, prepare and freeze all original specifications first:
+The existing ordered CLI still freezes specifications and verifies originals:
 
-```bash
-python3 -m verification.specification_evaluation run \
-  --stage prepare \
-  --manifest FormalBench-data/FilteredData/fault_mutants/run_ukcw__uc/selection_manifest.json \
-  --java-specs java_specs --c-specs c_specs \
-  --output verification/specification_evaluation/results/study_01
-```
-
-Dry-run placement of that same frozen JSON on every selected original and
-mutant, without invoking a verifier:
-
-```bash
-python3 -m verification.specification_evaluation check \
-  --output verification/specification_evaluation/results/study_01
-```
-
-Before preparation, `check --java-specs java_specs --c-specs c_specs` can also
-validate the annotated inputs; it extracts the same JSON structure in memory.
-
-Next, attach the frozen JSON annotations to untouched originals and verify
-them, then attach the same annotation text to eligible mutants. Both commands
-use the same output directory and verifier
-settings:
-
-```bash
+```sh
+python3 -m verification.specification_evaluation run --stage prepare \
+  --java-specs java_specs --c-specs c_specs --output results/study
 python3 -m verification.specification_evaluation run --stage originals \
-  --output verification/specification_evaluation/results/study_01
+  --openjml /root/tools/openjml/openjml --frama-c frama-c \
+  --java-prover z3-4.3.X --output results/study
 python3 -m verification.specification_evaluation run --stage mutants \
-  --output verification/specification_evaluation/results/study_01
+  --java-workers 4 --c-workers 4 --output results/study
 ```
 
-`--stage all` combines the three phases. Use `--program CombSort --max-pairs 2`
-for a pilot, then rerun with the same output directory to complete the population.
-Missing OpenJML, Frama-C, or
-provers must be installed/configured before a real run. Defaults use OpenJML
-with CVC4 and Frama-C WP with the JArray study's `x86_64`, `Typed+ref`,
-Alt-Ergo/Z3, per-goal time, and memory settings. Pass the compatible Why3
-configuration with `--why3-extra-config` when required by the installed
-Frama-C/Why3 versions.
+The mutant stage now always runs exhaustive collection followed by strict reconstruction. It writes the primary summary, Markdown report and per-input rows under `mutant_detection/`, with raw trials under the separate sibling `mutant_detection_runtime/`. Workflow completion includes full input coverage when runtime completeness is present.
 
-## Transfer and verification rules
+For the retained verified-original study:
 
-JML/ACSL comments are the only specification text transferred. The adapter
-first checks that the supplied annotated original has the same executable
-tokens as its raw original, then extracts the comments once into JSON. For
-each original or mutant, it attaches annotations derived from those frozen comments to untouched source,
-uses token and function/loop anchors rather than line numbers, and checks that
-the resulting file retains every executable source token. An
-ambiguous transfer produces a `syntax/tool failure` record with
-`failure_stage: annotation_transfer`; it is never counted as a rejected mutant.
+```sh
+OPENJML_HOME=/path/to/openjml python3 -m verification.specification_evaluation.execution.completeness \
+  --study verification/specification_evaluation/results/verifier_based \
+  --output output/strict_completeness \
+  --workers 4
+```
 
-C declaration renames are recorded as explicit bindings. A removed adjacent
-scalar loop-bound temporary may be expanded using its **original** pure
-initializer, with Java wrapping arithmetic preserved. Its dependencies must
-remain in scope, stable throughout the loop, and free of pointer escapes. The
-mutant's changed bound is never substituted into the specification. This
-includes an original `jarray2_length` or `jdouble_array2_length` temporary
-only when the array's length remains stable. Rename the declaration and its
-uses when the mapping is unique; do not rewrite a mutation that changes one
-variable use to a different variable. Ambiguous scope, capture, snapshot, or
-dependency mappings remain transfer failures.
+`--runtime-output PATH` overrides the default sibling `OUTPUT_runtime` directory. Add `--language java` or `--language c`, or repeat `--program NAME`, to select a smaller cohort. Choose fresh directories when changing contracts, inputs or settings. Historical result directories are protected from overwrite by the primary entry point.
 
-For either language, when a `for` or `while` leaf loop is unambiguously deleted, retained loop
-headers must map uniquely with the same nesting and the deleted loop must
-have an identifiable empty-statement replacement before a preserved following
-sibling. Only that loop's annotations
-are omitted, with an audit entry and
-`internal_annotation_coverage: partial_due_to_deleted_loop`. Function
-contracts and surviving assertions remain attached and are verified. An
-assertion before a deleted call is retained before its unambiguous
-empty-statement replacement. If another annotation lies in the deleted loop
-body or at the removed loop anchor and cannot be retained, transfer fails.
-Ambiguous structural changes still fail transfer.
-Deleted `do` loops remain transfer failures until they have a separately
-audited correspondence rule.
-The omitted loop annotation is a structural attachment-loss **candidate**; it
-is not itself evidence that the retained specification rejected the mutant.
+The independently usable reconstruction command remains available for existing raw evidence:
 
-A frozen contract referring to `__fc_stdout` retains the Frama-C stdio model
-through `-cpp-extra-args=-include stdio.h`, including mutants that remove printf
-and its include. This supplies declarations without editing the mutant source.
+```sh
+python3 -m verification.specification_evaluation.execution.input_completeness \
+  --source output/strict_completeness_runtime \
+  --output output/strict_completeness_reconstructed
+```
 
-Every translated C **program** case gets a frozen copy of the fixed JArray
-ACSL headers, generated array types, and a local `java_arrays.h` shim. Frama-C
-runs WP and RTE on that FormalBench-data C program with
-callee precondition goals enabled, initialization filtering disabled, and a
-machine-readable report. `proved` requires every reported WP goal to pass;
-timed-out or otherwise unresolved `requires` goals remain `unknown/timeout`.
-An explicit invalid precondition or RTE goal is recorded separately from a
-specification violation. OpenJML proof-failure warnings are recorded as Java
-verification failures, with precondition and runtime-safety warnings separated.
+Completed exhaustive case records are reused. Interrupted cases lacking final records rerun from their first input. First-witness cache records have a different policy and cannot substitute for exhaustive collection. The per-language collector summaries retain existential detection counts as diagnostics; the primary `summary.json` contains strict per-mutant verdicts.
 
-## Evidence categories and scores
+## Inputs and executable coverage
 
-The unit of scoring is one selected mutant in one language, paired with that
-language's original. A parser or annotation-placement failure is never a
-behavioral rejection. Use these evidence categories:
+Only mutants belonging to fully verified originals enter each language's cohort. The retained study contains 50 originals and 977 screened Java/C mutant pairs; this evaluation generates no new mutants. Verified cohorts differ between languages.
 
-| Evidence | Record and treatment |
-| --- | --- |
-| Specification rejection | A valid transfer reaches the verifier, which rejects an applicable generated specification obligation. `outcome: specification violation`; count in the **primary** rate only if the original proved. |
-| Structural rejection | Audited, unambiguous removal of an annotated loop's attachment point, after ruling out renaming/translation differences. Count separately from specification rejection; both may apply to one mutant. Reduced internal coverage is recorded. |
-| Safety rejection | A runtime-safety or callee-precondition obligation fails under the original input assumptions. `outcome: precondition/RTE failure`; count separately. |
-| Transfer/tool failure | Annotation mapping, unsupported specification syntax, configuration, solver invocation, or verifier implementation prevents meaningful checking. Use `failure_stage` to separate transfer, unsupported specification, and other tool failures; never count as detection. |
-| Unknown/timeout | Neither acceptance nor rejection is established within the budget. Keep unresolved in the eligible denominator. |
-| Invalid mutant | Ordinary compilation/typechecking of the **unannotated** mutant fails independently of the annotation transfer. Report/exclude it; a verifier parse failure alone does not establish this category. |
+Saved EvoSuite first calls precede the shared seed-726 bounded-input recipe. Preconditions and input types are checked; duplicate inputs and resource exclusions are recorded. All selected programs in this run have no omitted multi-call saved tests. Original controls must pass the full pool. Output differences identify faults relative to the original; the frozen executable specification decides rejection. EvoSuite assertions and solver models are not rejection oracles.
+
+Java uses OpenJML 21.0.27 RAC, fresh classloaders per input and separate interpreted replay processes per mutant case. C uses executable equivalents of frozen ACSL return/content clauses, O0/UBSan search and O1/ASan+UBSan replay. Exhaustive C search/replay limits are two/five seconds; Java search/replay limits are half a second/two seconds. Timeouts remain visible and do not stop exhaustive mutant collection after three occurrences. A failed original control still blocks its mutants.
+
+Set `OPENJML_HOME` to an existing installation directory; the default is `/root/tools/openjml`. A C compiler with the recorded sanitizer support is required. Runtime commands and settings are retained in generated evidence.
+
+Java FindPoints freshness is explicitly unchecked symmetrically for original and mutants; full frozen JML remains unchanged. Non-nullness, length and content clauses remain checked. Java frame coverage is unconfirmed. C loop invariants, variants, assertions and full write/allocation sets remain unchecked. These finite-input results do not establish universal completeness or full-clause coverage.
+
+No content digests are generated or validated. Frozen contracts and source transfer are checked directly; resume uses completed case records and policy identifiers.
+
+## Code and checks
+
+| Module | Responsibility |
+|---|---|
+| `workflow.py`, `manifest.py`, `specifications/`, `backends/` | Population, frozen contracts and original consistency |
+| `execution/completeness.py` | Default exhaustive execution and primary strict result |
+| `execution/input_completeness.py` | Per-input comparison, strict verdicts and reconstructed reports |
+| `execution/java_completeness.py`, `java_rac.py`, `java_inputs.py` | Java execution, original controls and replay |
+| `execution/c_completeness.py`, `c_contracts.py`, `c_native.py` | C executable predicates and sanitized replay |
+| `reporting/` | Original consistency and links to strict completeness |
+
+```sh
+python3 -m unittest verification.specification_evaluation.execution.input_completeness_checks
+```

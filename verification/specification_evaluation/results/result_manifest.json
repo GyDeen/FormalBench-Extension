@@ -1,0 +1,33 @@
+{
+    "schema_version":  "2.0",
+    "scope":  "Final completeness results for language-specific fully verified originals",
+    "result_sets":  {
+                        "verifier_based":  {
+                                               "directory":  "verifier_based",
+                                               "summary":  "verifier_based/summary.json",
+                                               "readme":  "verifier_based/README.md",
+                                               "java_detected":  121,
+                                               "java_eligible":  192,
+                                               "c_detected":  7,
+                                               "c_eligible":  80,
+                                               "safety_contributes_to_detection":  false,
+                                               "contributes_to_primary_runtime_detection":  false
+                                           },
+                        "execution_based":  {
+                                                "directory":  "execution_based",
+                                                "summary":  "execution_based/summary.json",
+                                                "readme":  "execution_based/README.md",
+                                                "java_detected":  192,
+                                                "java_evaluated":  192,
+                                                "c_detected":  79,
+                                                "c_evaluated":  80,
+                                                "safety_contributes_to_detection":  false,
+                                                "findpoints_separate_row":  true,
+                                                "findpoints_freshness_unchecked_for_original_and_mutants":  true
+                                            }
+                    },
+    "intermediate_archive":  "output/intermediate_completeness_results_20261008",
+    "historical_command_paths_preserved":  true,
+    "new_executions":  0,
+    "staging_scope":  "Generated reports, result JSON, input/trial evidence and specification JSON; implementation and toolchain files excluded"
+}

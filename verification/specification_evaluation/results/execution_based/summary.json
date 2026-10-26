@@ -1,0 +1,346 @@
+{
+  "complete": true,
+  "languages": {
+    "c": {
+      "complete": true,
+      "coverage": {
+        "other_checks": "observable input-array frames, result identity and selected allocation checks",
+        "primary": "frozen return-value/content postconditions",
+        "unchecked": [
+          "loop invariants",
+          "loop variants",
+          "statement assertions",
+          "full allocation/free sets",
+          "full write sets"
+        ],
+        "unsupported_policy": "visible evaluation failure; never treated as satisfied"
+      },
+      "evaluation_groups": [
+        {
+          "label": "unchanged runtime contracts",
+          "postcondition_detected": 79,
+          "programs": [
+            "CountList",
+            "MaxOfTwo",
+            "MaxSubArraySum",
+            "OddBitSetNumber",
+            "SumNums",
+            "TestThreeEqual"
+          ],
+          "runtime_evaluable_originals": 6,
+          "runtime_evaluated_mutants": 80,
+          "safety_detected": 1,
+          "selected_mutants": 80,
+          "unavailable_mutants": 0
+        }
+      ],
+      "mean_program_detection_rate": 0.9927536231884058,
+      "per_program": [
+        {
+          "original_status": "original_passed_all_inputs",
+          "postcondition_detected": 3,
+          "program": "CountList",
+          "runtime_evaluated_mutants": 3,
+          "safety_detected": 0,
+          "selected_mutants": 3,
+          "unavailable_mutants": 0
+        },
+        {
+          "original_status": "original_passed_all_inputs",
+          "postcondition_detected": 2,
+          "program": "MaxOfTwo",
+          "runtime_evaluated_mutants": 2,
+          "safety_detected": 0,
+          "selected_mutants": 2,
+          "unavailable_mutants": 0
+        },
+        {
+          "original_status": "original_passed_all_inputs",
+          "postcondition_detected": 22,
+          "program": "MaxSubArraySum",
+          "runtime_evaluated_mutants": 23,
+          "safety_detected": 1,
+          "selected_mutants": 23,
+          "unavailable_mutants": 0
+        },
+        {
+          "original_status": "original_passed_all_inputs",
+          "postcondition_detected": 17,
+          "program": "OddBitSetNumber",
+          "runtime_evaluated_mutants": 17,
+          "safety_detected": 0,
+          "selected_mutants": 17,
+          "unavailable_mutants": 0
+        },
+        {
+          "original_status": "original_passed_all_inputs",
+          "postcondition_detected": 13,
+          "program": "SumNums",
+          "runtime_evaluated_mutants": 13,
+          "safety_detected": 0,
+          "selected_mutants": 13,
+          "unavailable_mutants": 0
+        },
+        {
+          "original_status": "original_passed_all_inputs",
+          "postcondition_detected": 22,
+          "program": "TestThreeEqual",
+          "runtime_evaluated_mutants": 22,
+          "safety_detected": 0,
+          "selected_mutants": 22,
+          "unavailable_mutants": 0
+        }
+      ],
+      "policy": "c-runtime-frozen-postconditions-evosuite-bounded-v1",
+      "postcondition_detected": 79,
+      "program_mean_denominator": 6,
+      "runtime_evaluable_detection_rate": 0.9875,
+      "runtime_evaluated_mutants": 80,
+      "safety_detected": 1,
+      "selected_mutants": 80,
+      "source_run": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300",
+      "unavailable_mutants": 0
+    },
+    "java": {
+      "assignable_runtime_check_status": "violation_not_detected_in_control; do not claim assignable coverage",
+      "case_statuses": {
+        "validated_postcondition_violation": 192
+      },
+      "complete": true,
+      "elapsed_seconds": 455.42,
+      "elapsed_seconds_basis": "Sum of recorded component-run times; no new combined execution",
+      "evaluation_groups": [
+        {
+          "label": "unchanged runtime contracts",
+          "postcondition_detected": 170,
+          "programs": [
+            "CountIntgralPoints",
+            "DiameterCircle",
+            "DogAge",
+            "FindRectNum",
+            "HexagonalNum",
+            "MaxOfTwo",
+            "NoOfCubes",
+            "OddBitSetNumber",
+            "SquarePerimeter",
+            "SumNums",
+            "TestThreeEqual",
+            "VolumeCube"
+          ],
+          "runtime_evaluable_originals": 12,
+          "runtime_evaluated_mutants": 170,
+          "safety_detected": 22,
+          "selected_mutants": 170,
+          "unavailable_mutants": 0
+        },
+        {
+          "label": "freshness unchecked",
+          "postcondition_detected": 22,
+          "programs": [
+            "FindPoints"
+          ],
+          "runtime_evaluable_originals": 1,
+          "runtime_evaluated_mutants": 22,
+          "safety_detected": 0,
+          "selected_mutants": 22,
+          "unavailable_mutants": 0
+        }
+      ],
+      "integration": {
+        "baseline_snapshot": "/mnt/d/ResearchProject/verification/specification_evaluation/results/runtime_contract_primary_01/java/baseline_before_freshness_integration",
+        "findpoints_mutants_integrated": 22,
+        "new_executions": 0,
+        "runtime_scope": "Only freshness is unchecked, symmetrically for FindPoints original and mutants",
+        "source": "/mnt/d/ResearchProject/verification/specification_evaluation/results/runtime_contract_java_omit_fresh_01",
+        "unchanged_program_results_reused": 12
+      },
+      "interpretation": "Evaluable-cohort rate is conditional on RAC compatibility; unavailable mutants are unresolved, not satisfied contracts.",
+      "mean_program_detection_rate": 1.0,
+      "other_jml_detected": 0,
+      "per_program": [
+        {
+          "admissible_inputs": 4209,
+          "original_status": "original_passed_all_inputs",
+          "other_jml_detected": 0,
+          "postcondition_detected": 20,
+          "program": "CountIntgralPoints",
+          "runtime_evaluated_mutants": 20,
+          "safety_detected": 4,
+          "selected_mutants": 20,
+          "unavailable_mutants": 0
+        },
+        {
+          "admissible_inputs": 16,
+          "original_status": "original_passed_all_inputs",
+          "other_jml_detected": 0,
+          "postcondition_detected": 4,
+          "program": "DiameterCircle",
+          "runtime_evaluated_mutants": 4,
+          "safety_detected": 2,
+          "selected_mutants": 4,
+          "unavailable_mutants": 0
+        },
+        {
+          "admissible_inputs": 16,
+          "original_status": "original_passed_all_inputs",
+          "other_jml_detected": 0,
+          "postcondition_detected": 27,
+          "program": "DogAge",
+          "runtime_evaluated_mutants": 27,
+          "safety_detected": 0,
+          "selected_mutants": 27,
+          "unavailable_mutants": 0
+        },
+        {
+          "admissible_inputs": 4212,
+          "original_status": "original_passed_all_inputs",
+          "other_jml_detected": 0,
+          "postcondition_detected": 22,
+          "program": "FindPoints",
+          "runtime_evaluated_mutants": 22,
+          "safety_detected": 0,
+          "selected_mutants": 22,
+          "unavailable_mutants": 0
+        },
+        {
+          "admissible_inputs": 16,
+          "original_status": "original_passed_all_inputs",
+          "other_jml_detected": 0,
+          "postcondition_detected": 8,
+          "program": "FindRectNum",
+          "runtime_evaluated_mutants": 8,
+          "safety_detected": 0,
+          "selected_mutants": 8,
+          "unavailable_mutants": 0
+        },
+        {
+          "admissible_inputs": 16,
+          "original_status": "original_passed_all_inputs",
+          "other_jml_detected": 0,
+          "postcondition_detected": 12,
+          "program": "HexagonalNum",
+          "runtime_evaluated_mutants": 12,
+          "safety_detected": 2,
+          "selected_mutants": 12,
+          "unavailable_mutants": 0
+        },
+        {
+          "admissible_inputs": 135,
+          "original_status": "original_passed_all_inputs",
+          "other_jml_detected": 0,
+          "postcondition_detected": 2,
+          "program": "MaxOfTwo",
+          "runtime_evaluated_mutants": 2,
+          "safety_detected": 0,
+          "selected_mutants": 2,
+          "unavailable_mutants": 0
+        },
+        {
+          "admissible_inputs": 134,
+          "original_status": "original_passed_all_inputs",
+          "other_jml_detected": 0,
+          "postcondition_detected": 33,
+          "program": "NoOfCubes",
+          "runtime_evaluated_mutants": 33,
+          "safety_detected": 10,
+          "selected_mutants": 33,
+          "unavailable_mutants": 0
+        },
+        {
+          "admissible_inputs": 42,
+          "original_status": "original_passed_all_inputs",
+          "other_jml_detected": 0,
+          "postcondition_detected": 17,
+          "program": "OddBitSetNumber",
+          "runtime_evaluated_mutants": 17,
+          "safety_detected": 0,
+          "selected_mutants": 17,
+          "unavailable_mutants": 0
+        },
+        {
+          "admissible_inputs": 16,
+          "original_status": "original_passed_all_inputs",
+          "other_jml_detected": 0,
+          "postcondition_detected": 4,
+          "program": "SquarePerimeter",
+          "runtime_evaluated_mutants": 4,
+          "safety_detected": 2,
+          "selected_mutants": 4,
+          "unavailable_mutants": 0
+        },
+        {
+          "admissible_inputs": 4210,
+          "original_status": "original_passed_all_inputs",
+          "other_jml_detected": 0,
+          "postcondition_detected": 13,
+          "program": "SumNums",
+          "runtime_evaluated_mutants": 13,
+          "safety_detected": 2,
+          "selected_mutants": 13,
+          "unavailable_mutants": 0
+        },
+        {
+          "admissible_inputs": 614,
+          "original_status": "original_passed_all_inputs",
+          "other_jml_detected": 0,
+          "postcondition_detected": 22,
+          "program": "TestThreeEqual",
+          "runtime_evaluated_mutants": 22,
+          "safety_detected": 0,
+          "selected_mutants": 22,
+          "unavailable_mutants": 0
+        },
+        {
+          "admissible_inputs": 16,
+          "original_status": "original_passed_all_inputs",
+          "other_jml_detected": 0,
+          "postcondition_detected": 8,
+          "program": "VolumeCube",
+          "runtime_evaluated_mutants": 8,
+          "safety_detected": 0,
+          "selected_mutants": 8,
+          "unavailable_mutants": 0
+        }
+      ],
+      "policy": "java-rac-frozen-postconditions-evosuite-bounded-pilot-v1-omit-fresh-v1",
+      "postcondition_detected": 192,
+      "primary_witness_origins": {
+        "bounded": 1,
+        "evosuite": 191
+      },
+      "program_mean_denominator": 13,
+      "runtime_evaluable_detection_rate": 1.0,
+      "runtime_evaluated_mutants": 192,
+      "runtime_omissions": {
+        "CountIntgralPoints": [],
+        "DiameterCircle": [],
+        "DogAge": [],
+        "FindPoints": [
+          {
+            "annotation_id": "annotation_1",
+            "expression": "\\fresh(\\result)",
+            "original_text": "/*@ public normal_behavior\n      @ assignable \\nothing;\n      @ ensures \\result != null && \\fresh(\\result) && \\result.length == 2;\n      @ ensures l1 < l2 && r1 < r2 ==> \\result[0] == (l1 < r1 ? l1 : r1) && \\result[1] == (r2 > l2 ? r2 : l2);\n      @ ensures l1 > l2 && r1 > r2 ==> \\result[0] == (l2 < r2 ? l2 : r2) && \\result[1] == (l1 > r1 ? l1 : r1);\n      @ ensures !(l1 < l2 && r1 < r2) && !(l1 > l2 && r1 > r2) ==> \\result[0] == l1 && \\result[1] == r1;\n      @*/",
+            "reason": "Unsupported by installed RAC; unchecked for both original and mutants",
+            "runtime_text": "/*@ public normal_behavior\n      @ assignable \\nothing;\n      @ ensures \\result != null && \\result.length == 2;\n      @ ensures l1 < l2 && r1 < r2 ==> \\result[0] == (l1 < r1 ? l1 : r1) && \\result[1] == (r2 > l2 ? r2 : l2);\n      @ ensures l1 > l2 && r1 > r2 ==> \\result[0] == (l2 < r2 ? l2 : r2) && \\result[1] == (l1 > r1 ? l1 : r1);\n      @ ensures !(l1 < l2 && r1 < r2) && !(l1 > l2 && r1 > r2) ==> \\result[0] == l1 && \\result[1] == r1;\n      @*/"
+          }
+        ],
+        "FindRectNum": [],
+        "HexagonalNum": [],
+        "MaxOfTwo": [],
+        "NoOfCubes": [],
+        "OddBitSetNumber": [],
+        "SquarePerimeter": [],
+        "SumNums": [],
+        "TestThreeEqual": [],
+        "VolumeCube": []
+      },
+      "safety_detected": 22,
+      "selected_mutants": 192,
+      "unavailable_mutants": 0
+    }
+  },
+  "metric": "runtime contract postcondition mutant-detection rate",
+  "pooled_rates": "descriptive; runtime compatibility exclusions reported separately",
+  "primary_aggregation": "mean of program-level rates among runtime-evaluable verified originals",
+  "safety_contributes_to_primary": false
+}

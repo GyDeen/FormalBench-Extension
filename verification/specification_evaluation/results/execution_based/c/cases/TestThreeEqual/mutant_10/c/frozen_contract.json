@@ -1,0 +1,19 @@
+{
+  "annotations": [
+    {
+      "boundary_token": 10,
+      "following_tokens": [
+        "int32_t",
+        "testThreeEqual"
+      ],
+      "function": "testThreeEqual",
+      "id": "annotation_1",
+      "loop_id": null,
+      "next_token": "int32_t",
+      "target": "function",
+      "text": "/*@\n  assigns \\nothing;\n  ensures \\result == (x == y && y == z ? 3 : (x == y || y == z || x == z ? 2 : 0));\n*/"
+    }
+  ],
+  "language": "c",
+  "program": "TestThreeEqual"
+}

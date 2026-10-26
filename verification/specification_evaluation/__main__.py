@@ -5,15 +5,15 @@ import json
 import sys
 from pathlib import Path
 
-from .manifest import (
+from verification.specification_evaluation.manifest import (
     DEFAULT_C,
     DEFAULT_JAVA,
     DEFAULT_MANIFEST,
     InputError,
     load_population,
 )
-from .verifiers import Settings
-from .workflow import run_population, validate_transfers
+from verification.specification_evaluation.backends.verifiers import Settings
+from verification.specification_evaluation.workflow import run_population, validate_transfers
 
 
 def positive(value: str) -> int:
@@ -46,7 +46,7 @@ def arguments() -> argparse.Namespace:
     run = subcommands.choices["run"]
     run.add_argument("--output", type=Path, required=True, help="new or resumable run directory")
     run.add_argument("--stage", choices=("prepare", "originals", "mutants", "all"),
-                     default="all", help="ordered study phase; all runs them in sequence")
+                     default="all", help="original static verification, then runtime mutant detection; all runs the ordered stages")
     run.add_argument("--java-generator", help="argument template with {source} and {output}")
     run.add_argument("--c-generator", help="argument template with {source} and {output}")
     run.add_argument("--max-pairs", type=positive, help="limit mutant pairs for a pilot run")
@@ -56,13 +56,20 @@ def arguments() -> argparse.Namespace:
     run.add_argument("--c-provers", default="Alt-Ergo:2.4.3,Z3:4.8.12")
     run.add_argument("--timeout", type=positive, default=300, help="process limit in seconds")
     run.add_argument("--goal-timeout", type=positive, default=10,
-                     help="per-goal solver timeout for OpenJML and Frama-C WP")
+                     help="per-goal solver timeout for original OpenJML/Frama-C proofs")
     run.add_argument("--memory-model", default="Typed+ref")
     run.add_argument("--machdep", default="x86_64")
     run.add_argument("--wp-memlimit", type=positive, default=1000)
     run.add_argument("--wp-par", type=positive, default=4)
-    run.add_argument("--parallel-languages", action="store_true",
-                     help="run Java and C verifiers together for each program")
+    run.add_argument("--c-workers", type=positive, default=1,
+                     help="concurrent C cases; WP jobs apply only to original static verification")
+    run.add_argument("--java-workers", type=positive, default=1,
+                     help="concurrent Java original proofs or runtime mutant checks")
+    run.add_argument("--capture-java-workload", action="store_true",
+                     help="save generated assertions and solver input traces (use a new run directory)")
+    run.add_argument("--parallel-languages", "--independent-languages",
+                     dest="parallel_languages", action="store_true",
+                     help="run Java and C original verification queues independently")
     run.add_argument("--language", action="append", choices=("java", "c"),
                      help="evaluate only this language; repeat for both")
     run.add_argument("--retry-tool-failures", action="store_true",
@@ -103,6 +110,7 @@ def main() -> int:
             args.timeout, args.goal_timeout, args.memory_model, args.machdep,
             args.wp_memlimit, args.wp_par,
             args.why3_extra_config.resolve() if args.why3_extra_config else None,
+            False,
         )
         summary = run_population(population, programs, args.output,
                                  args.java_specs.resolve() if args.java_specs else None,
@@ -110,11 +118,9 @@ def main() -> int:
                                  args.java_generator, args.c_generator, settings,
                                  args.max_pairs, args.stage, args.parallel_languages,
                                  tuple(dict.fromkeys(args.language or ("java", "c"))),
-                                 args.retry_tool_failures)
-        print(json.dumps({key: summary[key] for key in
-                          ("eligible_pair_count", "originals", "mutants", "primary_detection",
-                           "supplementary_evidence", "pairs", "complete")},
-                         indent=2))
+                                 args.retry_tool_failures, args.c_workers, args.java_workers,
+                                 args.capture_java_workload)
+        print(json.dumps(summary, indent=2))
         return 0
     except (InputError, OSError, ValueError) as error:
         print(f"specification evaluation error: {error}", file=sys.stderr)

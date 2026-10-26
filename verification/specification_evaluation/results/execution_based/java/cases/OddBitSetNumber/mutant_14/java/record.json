@@ -1,0 +1,117 @@
+{
+  "policy": "java-rac-frozen-postconditions-evosuite-bounded-pilot-v1",
+  "program": "OddBitSetNumber",
+  "mutant_id": "14",
+  "role": "mutant_14",
+  "frozen_specification": "/mnt/d/ResearchProject/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/frozen_specs/java/OddBitSetNumber.json",
+  "source": "/mnt/d/ResearchProject/FormalBench-data/FilteredData/fault_mutants/run_ukcw__uc/OddBitSetNumber/mutants/14/java/OddBitSetNumber.java",
+  "input_pool": {
+    "saved_first_calls": 3,
+    "bounded_before_deduplication": 160,
+    "unique_candidates": 42,
+    "admissible_inputs": 42,
+    "invalid_java_int_inputs": 0,
+    "excluded_by_entry_preconditions": 0,
+    "entry_precondition": "true (no explicit requires; all parameters primitive int)",
+    "admissible_by_origin": {
+      "evosuite": 3,
+      "bounded": 39
+    }
+  },
+  "specification_detected": true,
+  "safety_detected": false,
+  "other_jml_detected": false,
+  "witness": {
+    "inputs": {
+      "n": 0
+    },
+    "origin": "saved_test:OddBitSetNumber_ESTest.test0",
+    "preconditions_satisfied": true,
+    "observation": {
+      "status": "failure",
+      "class": "org.jmlspecs.runtime.JmlAssertionError",
+      "message": "/mnt/d/ResearchProject/output/c_mutant_results_withdrawn_20261008T004534/withdrawn/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/java_counterexamples_verified_pilot5_20261008_evosuite_bounded/cases/OddBitSetNumber/mutant_14/java/OddBitSetNumber.java:14: verify: JML postcondition is false\n/mnt/d/ResearchProject/output/c_mutant_results_withdrawn_20261008T004534/withdrawn/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/java_counterexamples_verified_pilot5_20261008_evosuite_bounded/cases/OddBitSetNumber/mutant_14/java/OddBitSetNumber.java:11: verify: Associated declaration: /mnt/d/ResearchProject/output/c_mutant_results_withdrawn_20261008T004534/withdrawn/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/java_counterexamples_verified_pilot5_20261008_evosuite_bounded/cases/OddBitSetNumber/mutant_14/java/OddBitSetNumber.java:14:",
+      "error_kind": "exception",
+      "cause": "null",
+      "category": "postcondition_violation",
+      "elapsed_seconds": 0.03381
+    },
+    "audit": {
+      "fresh_interpreted_rac": {
+        "status": "failure",
+        "class": "org.jmlspecs.runtime.JmlAssertionError",
+        "message": "/mnt/d/ResearchProject/output/c_mutant_results_withdrawn_20261008T004534/withdrawn/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/java_counterexamples_verified_pilot5_20261008_evosuite_bounded/cases/OddBitSetNumber/mutant_14/java/OddBitSetNumber.java:14: verify: JML postcondition is false\n/mnt/d/ResearchProject/output/c_mutant_results_withdrawn_20261008T004534/withdrawn/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/java_counterexamples_verified_pilot5_20261008_evosuite_bounded/cases/OddBitSetNumber/mutant_14/java/OddBitSetNumber.java:11: verify: Associated declaration: /mnt/d/ResearchProject/output/c_mutant_results_withdrawn_20261008T004534/withdrawn/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/java_counterexamples_verified_pilot5_20261008_evosuite_bounded/cases/OddBitSetNumber/mutant_14/java/OddBitSetNumber.java:14:",
+        "error_kind": "exception",
+        "cause": "null",
+        "category": "postcondition_violation",
+        "elapsed_seconds": 0.03162
+      },
+      "original_rac": {
+        "status": "returned",
+        "return": 0,
+        "category": "returned",
+        "elapsed_seconds": 0.03268
+      },
+      "uninstrumented_mutant": {
+        "status": "returned",
+        "return": 252645135,
+        "category": "returned",
+        "elapsed_seconds": 0.02915
+      },
+      "original_passed": true
+    }
+  },
+  "checked_inputs": 1,
+  "timeouts": 0,
+  "evaluation_failures": 0,
+  "coverage": {
+    "frozen_ensures_clauses": 1,
+    "explicit_requires_clauses": 0,
+    "assignable_clauses": 1,
+    "loop_clauses": 0,
+    "clauses_removed": [],
+    "rac_compilation_usable": true,
+    "unsupported_diagnostics": [],
+    "postcondition_negative_control": {
+      "oracle": "Unchanged frozen JML; only this artificial control body is altered.",
+      "inputs": {
+        "n": 0
+      },
+      "compile_usable": true,
+      "observation": {
+        "status": "failure",
+        "class": "org.jmlspecs.runtime.JmlAssertionError",
+        "message": "/mnt/d/ResearchProject/output/c_mutant_results_withdrawn_20261008T004534/withdrawn/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/java_counterexamples_verified_pilot5_20261008_evosuite_bounded/calibration/OddBitSetNumber/OddBitSetNumber.java:14: verify: JML postcondition is false\n/mnt/d/ResearchProject/output/c_mutant_results_withdrawn_20261008T004534/withdrawn/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/java_counterexamples_verified_pilot5_20261008_evosuite_bounded/calibration/OddBitSetNumber/OddBitSetNumber.java:11: verify: Associated declaration: /mnt/d/ResearchProject/output/c_mutant_results_withdrawn_20261008T004534/withdrawn/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/java_counterexamples_verified_pilot5_20261008_evosuite_bounded/calibration/OddBitSetNumber/OddBitSetNumber.java:14:",
+        "error_kind": "exception",
+        "cause": "null",
+        "category": "postcondition_violation",
+        "elapsed_seconds": 0.0322
+      },
+      "status": "postcondition_check_confirmed"
+    },
+    "scope": "Executable RAC checks; frame support assessed separately in calibration.",
+    "assignable_runtime_check_status": "violation_not_detected_in_control; do not claim assignable coverage",
+    "ensures_runtime_check_status": "negative-control confirmed for supported postconditions"
+  },
+  "search_command": [
+    "/root/tools/openjml/jdk/bin/java",
+    "-Xmx192m",
+    "-Dorg.jmlspecs.openjml.rac=exception",
+    "-cp",
+    "/mnt/d/ResearchProject/output/c_mutant_results_withdrawn_20261008T004534/withdrawn/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/java_counterexamples_verified_pilot5_20261008_evosuite_bounded/harness_classes:/root/tools/openjml/jmlruntime.jar",
+    "RuntimeHarness",
+    "/mnt/d/ResearchProject/output/c_mutant_results_withdrawn_20261008T004534/withdrawn/verification/specification_evaluation/results/originals_stop_tool_error_20260927T161243Z_goal10_case300/counterexamples/java_counterexamples_verified_pilot5_20261008_evosuite_bounded/cases/OddBitSetNumber/mutant_14/java/rac_classes",
+    "OddBitSetNumber",
+    "oddBitSetNumber",
+    "1"
+  ],
+  "observation_categories": {
+    "postcondition_violation": 1
+  },
+  "safety_witness": null,
+  "other_jml_witness": null,
+  "search_exhausted": false,
+  "status": "validated_postcondition_violation",
+  "complete": true,
+  "elapsed_seconds": 9.282
+}
