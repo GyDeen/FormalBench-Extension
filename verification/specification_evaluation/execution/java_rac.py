@@ -1,6 +1,7 @@
 """Run unchanged frozen JML with installed OpenJML RAC; no solver or hashes."""
 from __future__ import annotations
 import json
+import os
 from pathlib import Path
 import queue
 import subprocess
@@ -8,9 +9,10 @@ import threading
 import time
 from differential_testing.execution.java_harness import JAVA_SUPPORT
 
-OPENJML = '/root/tools/openjml/openjml'
-JAVA = '/root/tools/openjml/jdk/bin/java'
-RUNTIME = '/root/tools/openjml/jmlruntime.jar'
+OPENJML_HOME = Path(os.environ.get('OPENJML_HOME', '/root/tools/openjml'))
+OPENJML = str(OPENJML_HOME / 'openjml')
+JAVA = str(OPENJML_HOME / 'jdk/bin/java')
+RUNTIME = str(OPENJML_HOME / 'jmlruntime.jar')
 
 HARNESS = 'public class RuntimeHarness {\n' + JAVA_SUPPORT + r'''
  public static void main(String[] args) throws Exception {

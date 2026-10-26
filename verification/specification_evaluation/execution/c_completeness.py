@@ -44,18 +44,21 @@ def pool(program, tests):
                       'unique_candidates':len(seen),'admissible_inputs':len(accepted),'excluded':dict(excluded)}
 
 
-def case(study, output, program, mid, raw, inputs, counts, baseline=None, require_binary=False):
+def case(study, output, program, mid, raw, inputs, counts, baseline=None, require_binary=False, exhaustive=False):
+    policy=POLICY + ('-exhaustive-v1' if exhaustive else '')
     role='original' if mid is None else 'mutant_'+mid
     directory=output/'cases'/program/role/'c';directory.mkdir(parents=True,exist_ok=True)
     path=directory/'record.json'
     if path.exists():
         old=read_json(path)
         usable_binary=old.get('search_binary') and Path(old['search_binary']).exists()
-        if old.get('complete') and old.get('policy')==POLICY and (not require_binary or usable_binary):return old
-    record={'policy':POLICY,'program':program,'mutant_id':mid,'role':role,'language':'c',
+        if old.get('complete') and old.get('policy')==policy and (not require_binary or usable_binary):return old
+    record={'policy':policy,'program':program,'mutant_id':mid,'role':role,'language':'c',
             'coverage':COVERAGE,'specification_detected':False,'safety_detected':False,
             'other_contract_detected':False,'input_pool':counts,'checked_inputs':0,'timeouts':0,
-            'witness':None,'safety_witness':None,'source':str(raw),'evaluation_failures':0}
+            'witness':None,'safety_witness':None,'source':str(raw),'evaluation_failures':0,
+            'execution_timeout_seconds':2 if exhaustive else .5,
+            'replay_timeout_seconds':5 if exhaustive else 2}
     started=time.monotonic()
     try:
         frozen=read_json(study/f'frozen_specs/c/{program}.json')
@@ -70,7 +73,7 @@ def case(study, output, program, mid, raw, inputs, counts, baseline=None, requir
         audit_binary=None; other=None; categories=Counter()
         with (directory/'trials.jsonl').open('w') as stream:
             for candidate in inputs:
-                x=candidate['inputs'];run=execute(binary,program,x,.5)
+                x=candidate['inputs'];run=execute(binary,program,x,record['execution_timeout_seconds'])
                 failed=violations(program,x,run['observation']) if run['status']=='returned' else []
                 trial={**candidate,'observation':run,'failed_clauses':failed}
                 record['checked_inputs']+=1;categories[run['status']]+=1
@@ -79,9 +82,9 @@ def case(study, output, program, mid, raw, inputs, counts, baseline=None, requir
                     if audit_binary is None:
                         record['evaluation_failures']+=1
                     else:
-                        replay=execute(audit_binary,program,x,2)
+                        replay=execute(audit_binary,program,x,record['replay_timeout_seconds'])
                         replay_failed=violations(program,x,replay['observation']) if replay['status']=='returned' else []
-                        original=execute(Path(baseline['search_binary']),program,x,2) if baseline else None
+                        original=execute(Path(baseline['search_binary']),program,x,record['replay_timeout_seconds']) if baseline else None
                         baseline_ok=original is not None and original['status']=='returned' and not violations(program,x,original['observation'])
                         trial['audit']={'sanitized_replay':replay,'replayed_failed_clauses':replay_failed,
                                         'original':original,'original_passed':baseline_ok}
@@ -95,10 +98,10 @@ def case(study, output, program, mid, raw, inputs, counts, baseline=None, requir
                             record['other_contract_detected']=True;other=trial
                 elif run['status'] not in {'returned','timeout'}:record['evaluation_failures']+=1
                 stream.write(json.dumps(trial)+'\n');stream.flush()
-                if record['specification_detected'] or mid is None and (failed or run['status']!='returned'):break
+                if (record['specification_detected'] and not exhaustive) or mid is None and (failed or run['status']!='returned'):break
                 if run['status']=='timeout':
                     record['timeouts']+=1
-                    if record['timeouts']>=3:break
+                    if record['timeouts']>=3 and not exhaustive:break
         record['search_binary']=str(binary);record['other_contract_witness']=other
         record['search_exhausted']=record['checked_inputs']==len(inputs);record['observation_categories']=dict(categories)
         if record['specification_detected']:record['status']='validated_postcondition_violation'
@@ -124,7 +127,8 @@ def summarize(records,originals,output,source,programs):
                             'safety_detected':sum(r['safety_detected'] for r in rows),
                             'unavailable_mutants':len(rows)-evaluated,'original_status':originals[p]['status']})
     evaluated=sum(r['runtime_evaluated_mutants'] for r in per_program);n=sum(r['postcondition_detected'] for r in per_program)
-    result={'policy':POLICY,'complete':True,'source_run':str(source),'per_program':per_program,
+    result={'policy':records[0]['policy'] if records else POLICY,
+            'exhaustive_inputs':bool(records) and all('-exhaustive-v1' in r['policy'] for r in records),'complete':True,'source_run':str(source),'per_program':per_program,
             'selected_mutants':len(records),'runtime_evaluated_mutants':evaluated,'postcondition_detected':n,
             'safety_detected':sum(r['safety_detected'] for r in records),
             'runtime_evaluable_detection_rate':n/evaluated if evaluated else None,'unavailable_mutants':len(records)-evaluated,
@@ -134,7 +138,7 @@ def summarize(records,originals,output,source,programs):
     return result
 
 
-def run_c(study,output,programs=None,workers=4,manifest=None,max_pairs=None):
+def run_c(study,output,programs=None,workers=4,manifest=None,max_pairs=None,exhaustive=False):
     study=Path(study).resolve();output=Path(output).resolve();output.mkdir(parents=True,exist_ok=True)
     programs=tuple(sorted(p.parent.parent.parent.name for p in study.glob('cases/*/original/c/record.json')
                           if read_json(p).get('outcome')=='proved' and (not programs or p.parent.parent.parent.name in programs)))
@@ -148,16 +152,16 @@ def run_c(study,output,programs=None,workers=4,manifest=None,max_pairs=None):
         p,mid=key.split('/')
         saved_path=output/f'cases/{p}/mutant_{mid}/c/record.json'
         saved=read_json(saved_path) if saved_path.exists() else None
-        if not saved or not saved.get('complete') or saved.get('policy')!=POLICY:
+        if not saved or not saved.get('complete') or saved.get('policy')!=POLICY + ('-exhaustive-v1' if exhaustive else ''):
             pending_programs.add(p)
     pools,counts={},{}
     for program in programs:
         pools[program],counts[program]=pool(program,tests)
         write_json(output/f'inputs/{program}.json',{'counts':counts[program],'candidates':pools[program]})
     with ThreadPoolExecutor(max_workers=workers) as executor:
-        futures={executor.submit(case,study,output,p,None,DEFAULT_C/(p+'.c'),pools[p],counts[p],require_binary=p in pending_programs):p for p in programs}
+        futures={executor.submit(case,study,output,p,None,DEFAULT_C/(p+'.c'),pools[p],counts[p],require_binary=p in pending_programs,exhaustive=exhaustive):p for p in programs}
         originals={futures[f]:f.result() for f in as_completed(futures)}
     with ThreadPoolExecutor(max_workers=workers) as executor:
-        futures=[executor.submit(case,study,output,p,mid,manifest_path.parent/f'{p}/mutants/{mid}/c/{p}.c',pools[p],counts[p],originals[p]) for p,mid in (k.split('/') for k in keys)]
+        futures=[executor.submit(case,study,output,p,mid,manifest_path.parent/f'{p}/mutants/{mid}/c/{p}.c',pools[p],counts[p],originals[p],exhaustive=exhaustive) for p,mid in (k.split('/') for k in keys)]
         records=[f.result() for f in as_completed(futures)]
     return summarize(records,originals,output,study,programs)

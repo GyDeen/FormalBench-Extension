@@ -40,8 +40,8 @@ def observe(target, program, entry, names, harness, directory, values, interpret
     finally: session.close()
 
 
-def search_case(program, mutant_id, raw, spec, pool, pool_info, output, harness, baseline=None, calibration=None, prior=None):
-    policy = runtime_policy(bool(spec.get('runtime_omissions')))
+def search_case(program, mutant_id, raw, spec, pool, pool_info, output, harness, baseline=None, calibration=None, prior=None, exhaustive=False):
+    policy = runtime_policy(bool(spec.get('runtime_omissions'))) + ('-exhaustive-v1' if exhaustive else '')
     role = 'original' if mutant_id is None else 'mutant_'+mutant_id
     directory = output/'cases'/program/role/'java'
     record_path = directory/'record.json'
@@ -49,6 +49,17 @@ def search_case(program, mutant_id, raw, spec, pool, pool_info, output, harness,
         old = json.loads(record_path.read_text())
         if old.get('policy') == policy and old.get('complete'):
             print('RESUME', program, role, old['status'], flush=True); return old
+    replay_sessions = {}
+    def replay(target, program, entry, names, harness, directory, values):
+        if not exhaustive:
+            return observe(target, program, entry, names, harness, directory, values)
+        identity = (str(target), str(directory))
+        if identity not in replay_sessions:
+            replay_sessions[identity] = Session(target, program, entry, names, harness, directory, True)
+        result = replay_sessions[identity].execute(values, timeout=2)
+        if result.get('category') in {'timeout', 'evaluation_error'}:
+            replay_sessions.pop(identity).close()
+        return result
     started = time.monotonic()
     directory.mkdir(parents=True, exist_ok=True)
     entry = spec['annotations'][0]['function']
@@ -65,7 +76,7 @@ def search_case(program, mutant_id, raw, spec, pool, pool_info, output, harness,
         write(record_path, record); return record
     try:
         source, ret, names = frozen_source(raw.read_text(), spec['annotations'], entry)
-        original_signature = signature((BASE/f'cases/{program}/original/java/{program}.java').read_text(), entry)
+        original_signature = signature((REPO/f'FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/{program}.java').read_text(), entry)
         if (ret, names) != (original_signature[1], original_signature[2]):
             raise ValueError('Mutant entry signature differs from frozen original')
         saved_source = directory/(program+'.java'); saved_source.write_text(source)
@@ -103,10 +114,10 @@ def search_case(program, mutant_id, raw, spec, pool, pool_info, output, harness,
                         trial = {**candidate, 'observation':run}
                         kind = run['category']
                         if kind in {'postcondition_violation', 'other_jml_failure', 'runtime_safety_failure', 'exception_contract_failure'}:
-                            audit = observe(directory/'rac_classes',program,entry,names,harness,directory,candidate['inputs'])
+                            audit = replay(directory/'rac_classes',program,entry,names,harness,directory,candidate['inputs'])
                             original_target = directory/'rac_classes' if baseline is None else output/'cases'/program/'original/java/rac_classes'
-                            original = observe(original_target,program,entry,names,harness,directory/'baseline_audit',candidate['inputs']) if baseline else None
-                            actual = observe(directory/'plain_classes',program,entry,names,harness,directory/'plain_audit',candidate['inputs'])
+                            original = replay(original_target,program,entry,names,harness,directory/'baseline_audit',candidate['inputs']) if baseline else None
+                            actual = replay(directory/'plain_classes',program,entry,names,harness,directory/'plain_audit',candidate['inputs'])
                             audit_record = {'fresh_interpreted_rac':audit, 'original_rac':original, 'uninstrumented_mutant':actual,
                                             'original_passed': original is not None and original['category']=='returned'}
                             trial['audit'] = audit_record
@@ -130,11 +141,11 @@ def search_case(program, mutant_id, raw, spec, pool, pool_info, output, harness,
                         elif kind in {'evaluation_error','precondition_failure','specification_evaluation_failure','execution_failure'}:
                             record['evaluation_failures']+=1
                         trials.write(json.dumps(trial)+'\n');trials.flush()
-                        if record['specification_detected'] or (baseline is None and kind != 'returned'):
+                        if (record['specification_detected'] and not exhaustive) or (baseline is None and kind != 'returned'):
                             break
                         if kind=='timeout':
                             record['timeouts']+=1
-                            if record['timeouts']>=3: break
+                            if record['timeouts']>=3 and not exhaustive: break
                             session.close();session=Session(directory/'rac_classes',program,entry,names,harness,directory)
             finally: session.close()
             record['observation_categories']=dict(statuses)
@@ -149,6 +160,8 @@ def search_case(program, mutant_id, raw, spec, pool, pool_info, output, harness,
             else: record['status']='no_postcondition_violation_found'
     except Exception as error:
         record['status']='evaluation_error';record['reason']=str(error)
+    for replay_session in replay_sessions.values(): replay_session.close()
+    record['replay_isolation'] = 'separate interpreted replay processes per case; fresh classloader per input' if exhaustive else 'fresh interpreted JVM per replay'
     record.update(complete=True, elapsed_seconds=round(time.monotonic()-started,3))
     write(record_path,record)
     print('DONE', program,role,record['status'],'inputs='+str(record['checked_inputs']),flush=True)
@@ -240,6 +253,7 @@ def summarize(records,originals,metadata,output):
                      'admissible_inputs':originals[program]['input_pool']['admissible_inputs']})
     executable=sum(r['runtime_evaluated_mutants'] for r in rows);detected=sum(r['postcondition_detected'] for r in rows)
     result={'policy':metadata['policy'],'complete':True,'per_program':rows,'selected_mutants':len(records),
+            'exhaustive_inputs':metadata.get('exhaustive_inputs',False),
             'runtime_omissions':metadata.get('runtime_omissions',{}),
             'runtime_evaluated_mutants':executable,'postcondition_detected':detected,
             'runtime_evaluable_detection_rate':detected/executable if executable else None,
@@ -266,7 +280,7 @@ def summarize(records,originals,metadata,output):
             '- Saved EvoSuite first calls are tried before the withdrawn C scalar bounded recipe: seed 726; all tuples over {-2,-1,0,1,2,3,4,7}; 120 seeded tuples including int boundaries; additional single-bit inputs for OddBitSetNumber. The old unused array-generation RNG consumption is preserved. Duplicate tuples are tried once. No solver candidates or EvoSuite assertions are used.',
             '- Selected frozen entry contracts have no explicit requires and accept primitive int arguments. Input files record unique candidates and admissible counts before execution; zero inputs are excluded by contract preconditions.',
             '- Frozen annotations are inserted at the matching entry method, with only explicitly recorded runtime omissions applied symmetrically to originals and mutants. The full frozen contract and runtime copy are saved separately. Signature mismatches, internal annotations, or pre-existing annotations fail visibly. No generated repair is applied. No hash validation or hash provenance is added.',
-            '- Each input uses a fresh classloader to restore mutant static state. Search timeout is 0.5 seconds per input after JVM startup; witness replay is 2 seconds in a fresh JVM with -Xint. Three timeouts stop a case. Search stops at the first reproduced postcondition violation; safety encountered earlier is retained. These counts do not exhaustively enumerate every failure category after detection.',
+            ('- Each input uses a fresh classloader. Exhaustive mode attempts every mutant input, including after a reproduced postcondition violation or three timeouts. Original control failures still block the mutant. Search/replay timeouts remain 0.5/2 seconds; failures remain unresolved.' if metadata.get('exhaustive_inputs') else '- Each input uses a fresh classloader to restore mutant static state. Search timeout is 0.5 seconds per input after JVM startup; witness replay is 2 seconds in a fresh JVM with -Xint. Three timeouts stop a case. Search stops at the first reproduced postcondition violation; safety encountered earlier is retained. These counts do not exhaustively enumerate every failure category after detection.'),
             f"- {metadata['workers']} workers, bounded CPU affinity, 192 MB per JVM. Compile timeout 60 seconds. Java arithmetic follows executable int operations and the frozen code_java_math/java_math clauses. No ESC solver is used in this run.",
             '- Compiler diagnostics for unsupported or non-executable constructs are retained and block execution. Successful compilation is supplemented with an artificial failing postcondition control for each executable program, entry-precondition and frame controls, and original executions over the full pool.',
             '- Freshness is explicitly unchecked in the runtime projection for both original and mutants; other return non-null, length and content postconditions remain. Frozen JML is unchanged.' if metadata.get('omit_fresh_requested') else '- FindPoints retains its fresh clause. Its original RAC compilation fails on that expression; its mutants are blocked by this original instrumentation failure.',
@@ -282,7 +296,7 @@ def summarize(records,originals,metadata,output):
     return result
 
 
-def run_java(study, output, programs=None, workers=4, manifest=None, max_pairs=None, omit_fresh=False):
+def run_java(study, output, programs=None, workers=4, manifest=None, max_pairs=None, omit_fresh=False, exhaustive=False):
     global BASE
     BASE = Path(study).resolve()
     output=Path(output).resolve();output.mkdir(parents=True,exist_ok=True)
@@ -298,10 +312,10 @@ def run_java(study, output, programs=None, workers=4, manifest=None, max_pairs=N
     selected=json.loads(manifest_path.read_text())
     keys=sorted([k for group in selected['retained'].values() for k in group if k.split('/')[0] in programs],key=lambda k:(k.split('/')[0],int(k.split('/')[1])))
     if max_pairs is not None: keys=keys[:max_pairs]
-    metadata={'policy':runtime_policy(omit_fresh),'omit_fresh_requested':omit_fresh,'runtime_omissions':{},'programs':list(programs),'expected_mutants':len(keys),'source_run':str(BASE),
+    metadata={'exhaustive_inputs':exhaustive,'policy':runtime_policy(omit_fresh) + ('-exhaustive-v1' if exhaustive else ''),'omit_fresh_requested':omit_fresh,'runtime_omissions':{},'programs':list(programs),'expected_mutants':len(keys),'source_run':str(BASE),
               'input_source':str(REPO/'differential_testing/generation/test_inputs-653ade686f.json'),
               'input_recipe_source':str(REPO/'output/retired_c_search_scripts_20261008T005329/c_replay_oracles.py'),
-              'workers':workers,'cpu_affinity':sorted(os.sched_getaffinity(0)),
+              'workers':workers,'cpu_affinity':sorted(os.sched_getaffinity(0)) if hasattr(os, 'sched_getaffinity') else None,
               'started_at':datetime.now(timezone.utc).isoformat(),'complete':False,'_started':time.monotonic()}
     harness=output/'harness_classes';harness.mkdir(exist_ok=True)
     harness_source=output/'RuntimeHarness.java';harness_source.write_text(HARNESS)
@@ -319,7 +333,7 @@ def run_java(study, output, programs=None, workers=4, manifest=None, max_pairs=N
         specs[program]=runtime_specification(json.loads((BASE/f'frozen_specs/java/{program}.json').read_text()),omit_fresh)
         metadata['runtime_omissions'][program]=specs[program]['runtime_omissions']
         entry=specs[program]['annotations'][0]['function']
-        _,_,names=signature((BASE/f'cases/{program}/original/java/{program}.java').read_text(),entry)
+        _,_,names=signature((REPO/f'FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/{program}.java').read_text(),entry)
         pools[program],info[program]=input_pool(program,entry,names,tests,specs[program]['annotations'])
         write(output/f'inputs/{program}.json',{'program':program,'counts':info[program],'candidates':pools[program]})
         calibration[program]=calibrate(program,specs[program],output,harness)
@@ -327,7 +341,7 @@ def run_java(study, output, programs=None, workers=4, manifest=None, max_pairs=N
     metadata['generic_calibration']=generic_calibration(output,harness)
     originals={}
     with ThreadPoolExecutor(max_workers=workers) as executor:
-        futures={executor.submit(search_case,p,None,REPO/f'FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/{p}.java',specs[p],pools[p],info[p],output,harness,calibration=calibration):p for p in programs}
+        futures={executor.submit(search_case,p,None,REPO/f'FormalBench-data/FilteredData/selected_java/seed_726_per_category_10_653ade686f/{p}.java',specs[p],pools[p],info[p],output,harness,calibration=calibration,exhaustive=exhaustive):p for p in programs}
         for future in as_completed(futures): originals[futures[future]]=future.result()
     records=[]
     with ThreadPoolExecutor(max_workers=workers) as executor:
@@ -335,7 +349,7 @@ def run_java(study, output, programs=None, workers=4, manifest=None, max_pairs=N
         for key in keys:
             program,mid=key.split('/')
             raw=manifest_path.parent/f'{program}/mutants/{mid}/java/{program}.java'
-            futures.append(executor.submit(search_case,program,mid,raw,specs[program],pools[program],info[program],output,harness,originals[program],calibration))
+            futures.append(executor.submit(search_case,program,mid,raw,specs[program],pools[program],info[program],output,harness,originals[program],calibration,exhaustive=exhaustive))
         for future in as_completed(futures): records.append(future.result())
     records.sort(key=lambda r:(r['program'],int(r['mutant_id'])))
     return summarize(records,originals,metadata,output)
