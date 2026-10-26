@@ -250,7 +250,10 @@ def summarize(output: Path, population: Population) -> dict[str, Any]:
             row[language] = outcome
         rows.append(row)
     primary = output / 'mutant_detection' / 'summary.json'
-    summary = {'evaluation': 'original verifier consistency and runtime contract mutant detection', 'eligible_pair_count': len(population.pairs), 'originals': {k: dict(v) for k, v in originals.items()}, 'original_records': rows, 'runtime_completeness': read_json(primary) if primary.is_file() else None, 'complete': all(('not run' not in v for v in originals.values()))}
+    summary = {'evaluation': 'original verifier consistency and strict completeness over differing returned outputs', 'eligible_pair_count': len(population.pairs), 'originals': {k: dict(v) for k, v in originals.items()}, 'original_records': rows, 'runtime_completeness': read_json(primary) if primary.is_file() else None, 'complete': all(('not run' not in v for v in originals.values()))}
+    runtime = summary['runtime_completeness']
+    if runtime is not None:
+        summary['complete'] = summary['complete'] and runtime.get('full_input_evaluation_complete', False)
     write_json(output / 'summary.json', summary)
     return summary
 
@@ -269,7 +272,7 @@ def run_population(population, programs, output, java_specs, c_specs, java_gener
         return summarize(output, population)
     executables = {language: executable_info(settings.openjml if language == 'java' else settings.frama_c, '--version' if language == 'java' else '-version') for language in languages}
     support = support_files()
-    write_json(output / 'run.json', {'schema_version': '3.0', 'selection_manifest': str(population.manifest), 'java_originals': str(population.java_originals), 'c_originals': str(population.c_originals), 'settings': _settings_record(settings), 'verifiers': executables, 'primary_completeness': 'runtime postcondition mutant detection', 'jarray_support_files': support})
+    write_json(output / 'run.json', {'schema_version': '3.0', 'selection_manifest': str(population.manifest), 'java_originals': str(population.java_originals), 'c_originals': str(population.c_originals), 'settings': _settings_record(settings), 'verifiers': executables, 'primary_completeness': 'strict rejection of every differing returned output in the input pool', 'jarray_support_files': support})
     tasks = {language: [] for language in languages}
     for language in languages:
         for program in programs:

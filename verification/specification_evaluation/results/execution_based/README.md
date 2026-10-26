@@ -1,4 +1,6 @@
-# Primary runtime contract mutant detection
+# Historical first-witness runtime contract mutant detection
+
+This is the historical first-witness measurement. The primary evaluation now requires rejection of every differing normal return across the full input pool; see [the completed strict results](../../STRICT_COMPLETENESS_RESULTS_20261026.md).
 
 Only independently reproduced postcondition violations on admitted inputs contribute to the primary numerator. The frozen generated specification supplies the oracle; any runtime omission is explicitly recorded and applied to both original and mutants. Safety failures are separate.
 

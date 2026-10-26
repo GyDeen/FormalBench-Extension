@@ -296,7 +296,7 @@ def summarize(records,originals,metadata,output):
     return result
 
 
-def run_java(study, output, programs=None, workers=4, manifest=None, max_pairs=None, omit_fresh=False, exhaustive=False):
+def run_java(study, output, programs=None, workers=4, manifest=None, max_pairs=None, omit_fresh=False, exhaustive=True):
     global BASE
     BASE = Path(study).resolve()
     output=Path(output).resolve();output.mkdir(parents=True,exist_ok=True)

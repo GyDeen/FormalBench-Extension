@@ -1,5 +1,6 @@
 """Report original consistency and the primary runtime completeness result."""
 import argparse
+import os
 from pathlib import Path
 from verification.specification_evaluation.manifest import DEFAULT_MANIFEST,DEFAULT_JAVA,DEFAULT_C,load_population
 from verification.specification_evaluation.workflow import summarize
@@ -8,10 +9,14 @@ from verification.specification_evaluation.workflow import summarize
 def build(output, selection=None):
     summary=summarize(Path(output),load_population(DEFAULT_MANIFEST,DEFAULT_JAVA,DEFAULT_C))
     lines=['# Original consistency','',
-           'OpenJML ESC and Frama-C WP evaluate originals only. Primary mutant completeness uses runtime checks of frozen contracts; safety is excluded from its postcondition count.','',
+           'OpenJML ESC and Frama-C WP evaluate originals only. Primary mutant completeness requires rejection of every differing normally returned output across the full tested input pool; safety failures are separate.','',
            '| Program | Java | C |','|---|---|---|']
     lines += [f"| {r['program']} | {r['java']} | {r['c']} |" for r in summary['original_records']]
-    lines += ['', 'Current runtime completeness: [primary results](../execution_based/README.md). Historical verifier mutant evidence is retained separately and does not contribute to runtime completeness.']
+    primary = Path(output) / 'mutant_detection/README.md'
+    if not primary.exists():
+        primary = Path(__file__).resolve().parents[1] / 'STRICT_COMPLETENESS_RESULTS_20261026.md'
+    link = os.path.relpath(primary, Path(output))
+    lines += ['', f'Current strict completeness: [primary results]({link}). Historical first-witness and verifier-mutant evidence does not define the primary score.']
     (Path(output)/'README.md').write_text('\n'.join(lines)+'\n')
     return summary
 

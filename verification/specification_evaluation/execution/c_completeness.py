@@ -138,7 +138,7 @@ def summarize(records,originals,output,source,programs):
     return result
 
 
-def run_c(study,output,programs=None,workers=4,manifest=None,max_pairs=None,exhaustive=False):
+def run_c(study,output,programs=None,workers=4,manifest=None,max_pairs=None,exhaustive=True):
     study=Path(study).resolve();output=Path(output).resolve();output.mkdir(parents=True,exist_ok=True)
     programs=tuple(sorted(p.parent.parent.parent.name for p in study.glob('cases/*/original/c/record.json')
                           if read_json(p).get('outcome')=='proved' and (not programs or p.parent.parent.parent.name in programs)))

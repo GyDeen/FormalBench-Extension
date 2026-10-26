@@ -26,7 +26,7 @@ These are results over finite input pools and executable return/content postcond
 - Zero recorded timeouts or evaluation failures. All 13 Java and six C originals passed their full pools.
 - Input pools exactly match the historical archive; all 13,652 Java and 6,077 C original outputs match archived returned values.
 - Frozen contract copies match the verifier archive by direct JSON comparison. No digest validation was used.
-- Nine regression checks pass, including mixed accepted/rejected faulty outputs and missing-input handling.
+- Twelve regression checks pass, including mixed accepted/rejected faulty outputs, missing-input handling and default-workflow integration.
 - OpenJML 21.0.27 macOS arm64 was used from the project-local tool directory. C exhaustive search/replay limits were two/five seconds. Java replay uses separate interpreted processes per case with fresh classloaders per input. The generated case records retain these runtime settings.
 
 ## Run the strict check
@@ -34,8 +34,8 @@ These are results over finite input pools and executable return/content postcond
 Run from the repository root with Python 3, a C compiler with AddressSanitizer/UndefinedBehaviorSanitizer support, and OpenJML 21.0.27. Set `OPENJML_HOME` to the OpenJML installation directory; otherwise the runner defaults to `/root/tools/openjml`.
 
 ```sh
-OPENJML_HOME=/path/to/openjml python3 -m verification.specification_evaluation.execution.input_completeness \
-  --execute \
+OPENJML_HOME=/path/to/openjml python3 -m verification.specification_evaluation.execution.completeness \
+  --study verification/specification_evaluation/results/verifier_based \
   --runtime-output output/strict_completeness_runtime \
   --output output/strict_completeness_dataset \
   --workers 4
