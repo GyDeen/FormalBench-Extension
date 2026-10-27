@@ -1,0 +1,439 @@
+{
+  "date": "2026-10-26",
+  "branch": "feature/completeness_eval",
+  "metric": "mutants rejecting every differing returned output across the input pool",
+  "full_input_evaluation_complete": true,
+  "source_dataset": "output/strict_completeness_20261026_dataset",
+  "languages": [
+    {
+      "language": "java",
+      "selected_mutants": 192,
+      "counts": {
+        "same_output": 126852,
+        "different_output_rejected": 120662,
+        "safety_failure": 3982
+      },
+      "expected_input_pairs": 251496,
+      "known_different_returned_outputs": 120662,
+      "decided_different_outputs": 120662,
+      "observed_rejection_rate": 1.0,
+      "unresolved_input_pairs": 0,
+      "all_input_pairs_resolved": true,
+      "strict_mutant_verdicts": {
+        "passed": 192
+      },
+      "strict_mutant_rejection_rate": 1.0,
+      "strict_rate_complete": true,
+      "per_program": [
+        {
+          "program": "CountIntgralPoints",
+          "counts": {
+            "same_output": 11075,
+            "different_output_rejected": 70255,
+            "safety_failure": 2850
+          },
+          "expected_input_pairs": 84180,
+          "known_different_returned_outputs": 70255,
+          "decided_different_outputs": 70255,
+          "observed_rejection_rate": 1.0,
+          "unresolved_input_pairs": 0,
+          "all_input_pairs_resolved": true,
+          "strict_mutant_verdicts": {
+            "passed": 20
+          },
+          "strict_mutant_rejection_rate": 1.0,
+          "strict_rate_complete": true
+        },
+        {
+          "program": "DiameterCircle",
+          "counts": {
+            "safety_failure": 2,
+            "different_output_rejected": 58,
+            "same_output": 4
+          },
+          "expected_input_pairs": 64,
+          "known_different_returned_outputs": 58,
+          "decided_different_outputs": 58,
+          "observed_rejection_rate": 1.0,
+          "unresolved_input_pairs": 0,
+          "all_input_pairs_resolved": true,
+          "strict_mutant_verdicts": {
+            "passed": 4
+          },
+          "strict_mutant_rejection_rate": 1.0,
+          "strict_rate_complete": true
+        },
+        {
+          "program": "DogAge",
+          "counts": {
+            "same_output": 233,
+            "different_output_rejected": 199
+          },
+          "expected_input_pairs": 432,
+          "known_different_returned_outputs": 199,
+          "decided_different_outputs": 199,
+          "observed_rejection_rate": 1.0,
+          "unresolved_input_pairs": 0,
+          "all_input_pairs_resolved": true,
+          "strict_mutant_verdicts": {
+            "passed": 27
+          },
+          "strict_mutant_rejection_rate": 1.0,
+          "strict_rate_complete": true
+        },
+        {
+          "program": "FindPoints",
+          "counts": {
+            "same_output": 72544,
+            "different_output_rejected": 20120
+          },
+          "expected_input_pairs": 92664,
+          "known_different_returned_outputs": 20120,
+          "decided_different_outputs": 20120,
+          "observed_rejection_rate": 1.0,
+          "unresolved_input_pairs": 0,
+          "all_input_pairs_resolved": true,
+          "strict_mutant_verdicts": {
+            "passed": 22
+          },
+          "strict_mutant_rejection_rate": 1.0,
+          "strict_rate_complete": true
+        },
+        {
+          "program": "FindRectNum",
+          "counts": {
+            "same_output": 9,
+            "different_output_rejected": 117,
+            "safety_failure": 2
+          },
+          "expected_input_pairs": 128,
+          "known_different_returned_outputs": 117,
+          "decided_different_outputs": 117,
+          "observed_rejection_rate": 1.0,
+          "unresolved_input_pairs": 0,
+          "all_input_pairs_resolved": true,
+          "strict_mutant_verdicts": {
+            "passed": 8
+          },
+          "strict_mutant_rejection_rate": 1.0,
+          "strict_rate_complete": true
+        },
+        {
+          "program": "HexagonalNum",
+          "counts": {
+            "safety_failure": 2,
+            "different_output_rejected": 172,
+            "same_output": 18
+          },
+          "expected_input_pairs": 192,
+          "known_different_returned_outputs": 172,
+          "decided_different_outputs": 172,
+          "observed_rejection_rate": 1.0,
+          "unresolved_input_pairs": 0,
+          "all_input_pairs_resolved": true,
+          "strict_mutant_verdicts": {
+            "passed": 12
+          },
+          "strict_mutant_rejection_rate": 1.0,
+          "strict_rate_complete": true
+        },
+        {
+          "program": "MaxOfTwo",
+          "counts": {
+            "same_output": 144,
+            "different_output_rejected": 126
+          },
+          "expected_input_pairs": 270,
+          "known_different_returned_outputs": 126,
+          "decided_different_outputs": 126,
+          "observed_rejection_rate": 1.0,
+          "unresolved_input_pairs": 0,
+          "all_input_pairs_resolved": true,
+          "strict_mutant_verdicts": {
+            "passed": 2
+          },
+          "strict_mutant_rejection_rate": 1.0,
+          "strict_rate_complete": true
+        },
+        {
+          "program": "NoOfCubes",
+          "counts": {
+            "same_output": 396,
+            "safety_failure": 86,
+            "different_output_rejected": 3940
+          },
+          "expected_input_pairs": 4422,
+          "known_different_returned_outputs": 3940,
+          "decided_different_outputs": 3940,
+          "observed_rejection_rate": 1.0,
+          "unresolved_input_pairs": 0,
+          "all_input_pairs_resolved": true,
+          "strict_mutant_verdicts": {
+            "passed": 33
+          },
+          "strict_mutant_rejection_rate": 1.0,
+          "strict_rate_complete": true
+        },
+        {
+          "program": "OddBitSetNumber",
+          "counts": {
+            "different_output_rejected": 550,
+            "same_output": 164
+          },
+          "expected_input_pairs": 714,
+          "known_different_returned_outputs": 550,
+          "decided_different_outputs": 550,
+          "observed_rejection_rate": 1.0,
+          "unresolved_input_pairs": 0,
+          "all_input_pairs_resolved": true,
+          "strict_mutant_verdicts": {
+            "passed": 17
+          },
+          "strict_mutant_rejection_rate": 1.0,
+          "strict_rate_complete": true
+        },
+        {
+          "program": "SquarePerimeter",
+          "counts": {
+            "safety_failure": 2,
+            "different_output_rejected": 59,
+            "same_output": 3
+          },
+          "expected_input_pairs": 64,
+          "known_different_returned_outputs": 59,
+          "decided_different_outputs": 59,
+          "observed_rejection_rate": 1.0,
+          "unresolved_input_pairs": 0,
+          "all_input_pairs_resolved": true,
+          "strict_mutant_verdicts": {
+            "passed": 4
+          },
+          "strict_mutant_rejection_rate": 1.0,
+          "strict_rate_complete": true
+        },
+        {
+          "program": "SumNums",
+          "counts": {
+            "safety_failure": 1034,
+            "same_output": 31645,
+            "different_output_rejected": 22051
+          },
+          "expected_input_pairs": 54730,
+          "known_different_returned_outputs": 22051,
+          "decided_different_outputs": 22051,
+          "observed_rejection_rate": 1.0,
+          "unresolved_input_pairs": 0,
+          "all_input_pairs_resolved": true,
+          "strict_mutant_verdicts": {
+            "passed": 13
+          },
+          "strict_mutant_rejection_rate": 1.0,
+          "strict_rate_complete": true
+        },
+        {
+          "program": "TestThreeEqual",
+          "counts": {
+            "same_output": 10605,
+            "different_output_rejected": 2903
+          },
+          "expected_input_pairs": 13508,
+          "known_different_returned_outputs": 2903,
+          "decided_different_outputs": 2903,
+          "observed_rejection_rate": 1.0,
+          "unresolved_input_pairs": 0,
+          "all_input_pairs_resolved": true,
+          "strict_mutant_verdicts": {
+            "passed": 22
+          },
+          "strict_mutant_rejection_rate": 1.0,
+          "strict_rate_complete": true
+        },
+        {
+          "program": "VolumeCube",
+          "counts": {
+            "different_output_rejected": 112,
+            "safety_failure": 4,
+            "same_output": 12
+          },
+          "expected_input_pairs": 128,
+          "known_different_returned_outputs": 112,
+          "decided_different_outputs": 112,
+          "observed_rejection_rate": 1.0,
+          "unresolved_input_pairs": 0,
+          "all_input_pairs_resolved": true,
+          "strict_mutant_verdicts": {
+            "passed": 8
+          },
+          "strict_mutant_rejection_rate": 1.0,
+          "strict_rate_complete": true
+        }
+      ]
+    },
+    {
+      "language": "c",
+      "selected_mutants": 80,
+      "counts": {
+        "different_output_rejected": 31385,
+        "same_output": 55745,
+        "safety_failure": 2760
+      },
+      "expected_input_pairs": 89890,
+      "known_different_returned_outputs": 31385,
+      "decided_different_outputs": 31385,
+      "observed_rejection_rate": 1.0,
+      "unresolved_input_pairs": 0,
+      "all_input_pairs_resolved": true,
+      "strict_mutant_verdicts": {
+        "passed": 79,
+        "no_differing_returned_output": 1
+      },
+      "strict_mutant_rejection_rate": 1.0,
+      "strict_rate_complete": true,
+      "per_program": [
+        {
+          "program": "CountList",
+          "counts": {
+            "different_output_rejected": 488,
+            "same_output": 124
+          },
+          "expected_input_pairs": 612,
+          "known_different_returned_outputs": 488,
+          "decided_different_outputs": 488,
+          "observed_rejection_rate": 1.0,
+          "unresolved_input_pairs": 0,
+          "all_input_pairs_resolved": true,
+          "strict_mutant_verdicts": {
+            "passed": 3
+          },
+          "strict_mutant_rejection_rate": 1.0,
+          "strict_rate_complete": true
+        },
+        {
+          "program": "MaxOfTwo",
+          "counts": {
+            "same_output": 144,
+            "different_output_rejected": 126
+          },
+          "expected_input_pairs": 270,
+          "known_different_returned_outputs": 126,
+          "decided_different_outputs": 126,
+          "observed_rejection_rate": 1.0,
+          "unresolved_input_pairs": 0,
+          "all_input_pairs_resolved": true,
+          "strict_mutant_verdicts": {
+            "passed": 2
+          },
+          "strict_mutant_rejection_rate": 1.0,
+          "strict_rate_complete": true
+        },
+        {
+          "program": "MaxSubArraySum",
+          "counts": {
+            "same_output": 13063,
+            "safety_failure": 1726,
+            "different_output_rejected": 5267
+          },
+          "expected_input_pairs": 20056,
+          "known_different_returned_outputs": 5267,
+          "decided_different_outputs": 5267,
+          "observed_rejection_rate": 1.0,
+          "unresolved_input_pairs": 0,
+          "all_input_pairs_resolved": true,
+          "strict_mutant_verdicts": {
+            "no_differing_returned_output": 1,
+            "passed": 22
+          },
+          "strict_mutant_rejection_rate": 1.0,
+          "strict_rate_complete": true
+        },
+        {
+          "program": "OddBitSetNumber",
+          "counts": {
+            "different_output_rejected": 550,
+            "same_output": 164
+          },
+          "expected_input_pairs": 714,
+          "known_different_returned_outputs": 550,
+          "decided_different_outputs": 550,
+          "observed_rejection_rate": 1.0,
+          "unresolved_input_pairs": 0,
+          "all_input_pairs_resolved": true,
+          "strict_mutant_verdicts": {
+            "passed": 17
+          },
+          "strict_mutant_rejection_rate": 1.0,
+          "strict_rate_complete": true
+        },
+        {
+          "program": "SumNums",
+          "counts": {
+            "safety_failure": 1034,
+            "same_output": 31645,
+            "different_output_rejected": 22051
+          },
+          "expected_input_pairs": 54730,
+          "known_different_returned_outputs": 22051,
+          "decided_different_outputs": 22051,
+          "observed_rejection_rate": 1.0,
+          "unresolved_input_pairs": 0,
+          "all_input_pairs_resolved": true,
+          "strict_mutant_verdicts": {
+            "passed": 13
+          },
+          "strict_mutant_rejection_rate": 1.0,
+          "strict_rate_complete": true
+        },
+        {
+          "program": "TestThreeEqual",
+          "counts": {
+            "same_output": 10605,
+            "different_output_rejected": 2903
+          },
+          "expected_input_pairs": 13508,
+          "known_different_returned_outputs": 2903,
+          "decided_different_outputs": 2903,
+          "observed_rejection_rate": 1.0,
+          "unresolved_input_pairs": 0,
+          "all_input_pairs_resolved": true,
+          "strict_mutant_verdicts": {
+            "passed": 22
+          },
+          "strict_mutant_rejection_rate": 1.0,
+          "strict_rate_complete": true
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "input_pools_identical_to_archive": {
+      "java": true,
+      "c": true
+    },
+    "original_outputs_matching_archive": {
+      "java": 13652,
+      "c": 6077
+    },
+    "comparison_method": "Direct JSON candidate and returned-value comparison; no digest validation.",
+    "java_tool_version": "OpenJML 21.0.27 macOS arm64",
+    "java_replay_isolation": "Separate interpreted replay processes per mutant case; fresh classloader per input",
+    "c_search_timeout_seconds": 2,
+    "c_replay_timeout_seconds": 5,
+    "final_case_validation": {
+      "java": {
+        "completed_mutants": 192,
+        "all_full_input_pools_checked": true,
+        "frozen_contract_copies_match": true,
+        "timeouts": 0,
+        "evaluation_failures": 0
+      },
+      "c": {
+        "completed_mutants": 80,
+        "all_full_input_pools_checked": true,
+        "frozen_contract_copies_match": true,
+        "timeouts": 0,
+        "evaluation_failures": 0
+      }
+    },
+    "full_input_evaluation_complete": true
+  }
+}
